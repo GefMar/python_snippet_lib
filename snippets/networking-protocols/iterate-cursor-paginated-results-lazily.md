@@ -82,7 +82,7 @@ def iterate_cursor_pages(
         except TypeError as error:
             raise TypeError("cursors must be hashable") from error
         if repeated:
-            raise CursorCycleError(f"cursor cycle detected at {cursor!r}")
+            raise CursorCycleError("cursor cycle detected")
 
         page = fetch_page(cursor)
         if not isinstance(page, CursorPage):
