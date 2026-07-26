@@ -112,8 +112,8 @@ def render_json_unified_diff(
     for label_name, label in (("before_name", before_name), ("after_name", after_name)):
         if not isinstance(label, str) or not label:
             raise ValueError(f"{label_name} must be non-empty text")
-        if "\n" in label or "\r" in label:
-            raise ValueError(f"{label_name} must fit on one line")
+        if not label.isprintable():
+            raise ValueError(f"{label_name} must contain only printable text")
     if isinstance(context_lines, bool) or not isinstance(context_lines, int):
         raise TypeError("context_lines must be an integer")
     if context_lines < 0:

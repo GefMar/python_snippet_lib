@@ -21,8 +21,9 @@ Generate deterministic event times by inverting the cumulative integral of a rat
 For each one-based event ordinal, the algorithm finds the time at which the
 integrated rate reaches that integer. It emits ordinals through the floor of
 the total area under the rate curve, so there is no artificial event at time
-zero. A rationalized quadratic root avoids the cancellation in directly
-subtracting nearly equal floating-point values.
+zero. Scaling both endpoint rates by the duration keeps extremely steep,
+short ramps representable, while a normalized quadratic root avoids the
+cancellation in directly subtracting nearly equal floating-point values.
 
 ## When to Use
 
@@ -69,7 +70,13 @@ def linear_rate_event_times(
     if max_events <= 0:
         raise ValueError("max_events must be positive")
 
-    total = (start + end) * span / 2.0
+    start_count = start * span
+    end_count = end * span
+    if not math.isfinite(start_count) or not math.isfinite(end_count):
+        raise ValueError("the integrated event count is too large")
+    start_half = start_count / 2.0
+    end_half = end_count / 2.0
+    total = start_half + end_half
     if not math.isfinite(total):
         raise ValueError("the integrated event count is too large")
     event_count = math.floor(total)
@@ -78,14 +85,16 @@ def linear_rate_event_times(
     if event_count == 0:
         return ()
 
-    slope = (end - start) / span
-    if slope == 0.0:
-        return tuple(ordinal / start for ordinal in range(1, event_count + 1))
+    start_share = start_half / total
+    end_share = end_half / total
+    linear = 2.0 * start_share
+    quadratic = end_share - start_share
 
     times: list[float] = []
     for ordinal in range(1, event_count + 1):
-        discriminant = start * start + 2.0 * slope * ordinal
-        scale = max(start * start, abs(2.0 * slope * ordinal), 1.0)
+        target_share = ordinal / total
+        discriminant = linear * linear + 4.0 * quadratic * target_share
+        scale = max(linear * linear, abs(4.0 * quadratic * target_share), 1.0)
         if discriminant < 0.0 and math.isclose(
             discriminant,
             0.0,
@@ -96,14 +105,17 @@ def linear_rate_event_times(
         if discriminant < 0.0:
             raise ArithmeticError("event threshold has no real time")
 
-        denominator = start + math.sqrt(discriminant)
+        denominator = linear + math.sqrt(discriminant)
         if denominator <= 0.0:
-            raise ArithmeticError("event threshold has no non-negative time")
-        event_time = 2.0 * ordinal / denominator
-        if event_time > span and math.isclose(event_time, span, rel_tol=1e-12):
-            event_time = span
-        if not 0.0 <= event_time <= span:
+            raise ArithmeticError("event threshold has no positive time")
+        time_share = 2.0 * target_share / denominator
+        if time_share > 1.0 and math.isclose(time_share, 1.0, rel_tol=1e-12):
+            time_share = 1.0
+        event_time = span * time_share
+        if not math.isfinite(event_time) or not 0.0 < event_time <= span:
             raise ArithmeticError("event time fell outside the schedule")
+        if times and event_time <= times[-1]:
+            raise ArithmeticError("event times exceed floating-point resolution")
         times.append(event_time)
 
     return tuple(times)

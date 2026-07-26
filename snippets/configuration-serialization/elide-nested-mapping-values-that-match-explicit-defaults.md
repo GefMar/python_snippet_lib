@@ -19,11 +19,12 @@ related:
 
 Store only the type-sensitive differences between a complete JSON mapping and explicit defaults, then reconstruct an independent complete document from the same defaults.
 
-Mapping keys equal to their defaults are omitted recursively. Arrays are
-atomic values, so an unequal array is retained in full and its positions never
-shift. Unknown keys and meaningful falsy values remain. Before compaction, the
-function requires every default key to exist in the full document; otherwise
-missing data could be silently reintroduced during expansion.
+Mapping entries whose values equal their corresponding defaults are omitted
+recursively. Arrays are atomic values, so an unequal array is retained in full
+and its positions never shift. Unknown keys and meaningful falsy values remain.
+Before compaction, the function requires every default key to exist in the full
+document; otherwise missing data could be silently reintroduced during
+expansion.
 
 ## When to Use
 
@@ -37,6 +38,7 @@ when a configuration may intentionally omit a defaulted key.
 
 ```python
 import math
+from typing import cast
 
 
 def _clone_json(value: object, active: set[int] | None = None) -> object:
@@ -48,23 +50,29 @@ def _clone_json(value: object, active: set[int] | None = None) -> object:
             raise ValueError("JSON numbers must be finite")
         return value
     if type(value) is list:
+        items = cast(list[object], value)
         identity = id(value)
         if identity in active:
             raise ValueError("cyclic lists are not valid JSON")
         active.add(identity)
         try:
-            return [_clone_json(item, active) for item in value]
+            return [_clone_json(item, active) for item in items]
         finally:
             active.remove(identity)
     if type(value) is dict:
+        mapping = cast(dict[object, object], value)
         identity = id(value)
         if identity in active:
             raise ValueError("cyclic mappings are not valid JSON")
-        if any(type(key) is not str for key in value):
+        if any(type(key) is not str for key in mapping):
             raise TypeError("JSON object keys must be strings")
+        string_mapping = cast(dict[str, object], mapping)
         active.add(identity)
         try:
-            return {key: _clone_json(item, active) for key, item in value.items()}
+            return {
+                key: _clone_json(item, active)
+                for key, item in string_mapping.items()
+            }
         finally:
             active.remove(identity)
     raise TypeError(f"unsupported JSON value: {type(value).__name__}")
@@ -74,13 +82,18 @@ def _json_equal(left: object, right: object) -> bool:
     if type(left) is not type(right):
         return False
     if type(left) is dict:
-        return left.keys() == right.keys() and all(
-            _json_equal(left[key], right[key]) for key in left
+        left_mapping = cast(dict[str, object], left)
+        right_mapping = cast(dict[str, object], right)
+        return left_mapping.keys() == right_mapping.keys() and all(
+            _json_equal(left_mapping[key], right_mapping[key])
+            for key in left_mapping
         )
     if type(left) is list:
-        return len(left) == len(right) and all(
+        left_items = cast(list[object], left)
+        right_items = cast(list[object], right)
+        return len(left_items) == len(right_items) and all(
             _json_equal(left_item, right_item)
-            for left_item, right_item in zip(left, right, strict=True)
+            for left_item, right_item in zip(left_items, right_items, strict=True)
         )
     return left == right
 
@@ -96,7 +109,11 @@ def _require_complete(
             raise ValueError(f"full document is missing default path {child_path!r}")
         full_value = full[key]
         if type(full_value) is dict and type(default_value) is dict:
-            _require_complete(full_value, default_value, child_path)
+            _require_complete(
+                cast(dict[str, object], full_value),
+                cast(dict[str, object], default_value),
+                child_path,
+            )
 
 
 def _elide(
@@ -113,7 +130,10 @@ def _elide(
         if _json_equal(full_value, default_value):
             continue
         if type(full_value) is dict and type(default_value) is dict:
-            result[key] = _elide(full_value, default_value)
+            result[key] = _elide(
+                cast(dict[str, object], full_value),
+                cast(dict[str, object], default_value),
+            )
         else:
             result[key] = _clone_json(full_value)
     return result
@@ -125,8 +145,8 @@ def elide_json_defaults(
 ) -> dict[str, object]:
     if type(full_document) is not dict or type(default_document) is not dict:
         raise TypeError("full_document and default_document must be JSON objects")
-    full = _clone_json(full_document)
-    defaults = _clone_json(default_document)
+    full = cast(dict[str, object], _clone_json(full_document))
+    defaults = cast(dict[str, object], _clone_json(default_document))
     _require_complete(full, defaults)
     return _elide(full, defaults)
 
@@ -139,7 +159,10 @@ def _expand(
     for key, override_value in overrides.items():
         default_value = defaults.get(key)
         if type(override_value) is dict and type(default_value) is dict:
-            result[key] = _expand(override_value, default_value)
+            result[key] = _expand(
+                cast(dict[str, object], override_value),
+                cast(dict[str, object], default_value),
+            )
         else:
             result[key] = _clone_json(override_value)
     return result
@@ -151,8 +174,8 @@ def expand_json_defaults(
 ) -> dict[str, object]:
     if type(compact_document) is not dict or type(default_document) is not dict:
         raise TypeError("compact_document and default_document must be JSON objects")
-    compact = _clone_json(compact_document)
-    defaults = _clone_json(default_document)
+    compact = cast(dict[str, object], _clone_json(compact_document))
+    defaults = cast(dict[str, object], _clone_json(default_document))
     return _expand(compact, defaults)
 ```
 

@@ -37,7 +37,7 @@ invalidation, distributed state, or more than one cache policy.
 ```python
 from collections.abc import Callable
 from functools import lru_cache, wraps
-from typing import ParamSpec, TypeVar
+from typing import ParamSpec, TypeVar, cast
 
 
 P = ParamSpec("P")
@@ -60,7 +60,10 @@ def bypassable_lru_cache(
         if not callable(function):
             raise TypeError("the decorated value must be callable")
 
-        cached = lru_cache(maxsize=maxsize)(function)
+        cached = cast(
+            Callable[P, ResultT],
+            lru_cache(maxsize=maxsize)(function),
+        )
 
         @wraps(function)
         def wrapper(*args: P.args, **kwargs: P.kwargs) -> ResultT:

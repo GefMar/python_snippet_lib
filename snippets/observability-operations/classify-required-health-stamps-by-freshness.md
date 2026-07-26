@@ -111,7 +111,6 @@ def classify_health_stamps(
         if previous is None or stamp.succeeded_at > previous:
             latest[stamp.source] = stamp.succeeded_at
 
-    lower_bound = now - max_age
     return tuple(
         HealthResult(
             source=source,
@@ -119,7 +118,7 @@ def classify_health_stamps(
                 Freshness.MISSING
                 if source not in latest
                 else Freshness.FRESH
-                if latest[source] >= lower_bound
+                if now - latest[source] <= max_age
                 else Freshness.STALE
             ),
             last_success=latest.get(source),
