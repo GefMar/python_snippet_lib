@@ -17,15 +17,15 @@ not edit it by hand.
 
 | Category | Scope | Snippets |
 | --- | --- | ---: |
-| [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 13 |
+| [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 15 |
 | [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 13 |
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 3 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 5 |
 | [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 1 |
-| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 11 |
+| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 13 |
 | [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 2 |
 | [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 4 |
-| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 10 |
+| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 11 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 0 |
 | [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 0 |
 | [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 4 |
@@ -39,12 +39,14 @@ not edit it by hand.
 | [Build a Read-Only Mapping with Canonical Text Keys](snippets/python-language/build-a-read-only-mapping-with-canonical-text-keys.md) | python-language | recipe | interoperability, validation |
 | [Build an Immutable Slice-Aware Sequence](snippets/python-language/build-an-immutable-slice-aware-sequence.md) | python-language | recipe | data-transformation, interoperability |
 | [Dispatch Named Strategies with an Explicit Function Mapping](snippets/python-language/dispatch-named-strategies-with-an-explicit-function-mapping.md) | python-language | pattern | configuration, interoperability |
+| [Handle Search Exhaustion with for/else](snippets/python-language/handle-search-exhaustion-with-for-else.md) | python-language | idiom | data-transformation, validation |
 | [Keep Exception Handlers Narrow with try/else](snippets/python-language/keep-exception-handlers-narrow-with-try-else.md) | python-language | idiom | parsing, validation |
 | [Load Text Templates from Package Resources](snippets/python-language/load-text-templates-from-package-resources.md) | python-language | recipe | resource-management, validation |
 | [Make a Defensive Copy at a Mutable Input Boundary](snippets/python-language/make-a-defensive-copy-at-a-mutable-input-boundary.md) | python-language | idiom | data-transformation, resource-management |
 | [Model a Quantity with One Canonical Unit](snippets/python-language/model-a-quantity-with-one-canonical-unit.md) | python-language | pattern | data-transformation, validation |
 | [Pass Constructor-Only Context with dataclasses.InitVar](snippets/python-language/pass-constructor-only-context-with-initvar.md) | python-language | idiom | data-transformation, validation |
 | [Read Fixed-Size Blocks with iter() and a Sentinel](snippets/python-language/read-fixed-size-blocks-with-iter-sentinel.md) | python-language | idiom | performance-optimization, resource-management |
+| [Type a Narrow Structural Interface with Protocol](snippets/python-language/type-a-narrow-structural-interface-with-protocol.md) | python-language | pattern | interoperability, validation |
 | [Validate Reused Fields with a Data Descriptor](snippets/python-language/validate-reused-fields-with-a-data-descriptor.md) | python-language | pattern | validation |
 | [Walk a Tree Recursively with yield from](snippets/python-language/walk-a-tree-recursively-with-yield-from.md) | python-language | idiom | data-transformation |
 | [Build a Canonical Unicode Caseless Comparison Key](snippets/algorithms-data-structures/build-a-canonical-unicode-caseless-comparison-key.md) | algorithms-data-structures | algorithm | interoperability, validation |
@@ -76,8 +78,10 @@ not edit it by hand.
 | [Measure Time in a State Within a Half-Open Window](snippets/data-processing/measure-time-in-a-state-within-a-half-open-window.md) | data-processing | algorithm | data-transformation |
 | [Normalize Optional CSV Columns in a Single Pass](snippets/data-processing/normalize-optional-csv-columns-in-a-single-pass.md) | data-processing | recipe | data-transformation, parsing, validation |
 | [Parse Pipe-Delimited Tables with Continuation Rows](snippets/data-processing/parse-pipe-delimited-tables-with-continuation-rows.md) | data-processing | algorithm | data-transformation, parsing |
+| [Project Nested Records with Explicit Field Paths](snippets/data-processing/project-nested-records-with-explicit-field-paths.md) | data-processing | recipe | data-transformation, validation |
 | [Sample a Stream with a Fixed-Size Reservoir](snippets/data-processing/sample-a-stream-with-a-fixed-size-reservoir.md) | data-processing | algorithm | data-transformation, resource-management |
 | [Sample Stream Items Independently with a Fixed Probability](snippets/data-processing/sample-stream-items-independently-with-a-fixed-probability.md) | data-processing | algorithm | data-transformation |
+| [Select One Record per Key with an Explicit Ranking Rule](snippets/data-processing/select-one-record-per-key-with-an-explicit-ranking-rule.md) | data-processing | algorithm | data-transformation, validation |
 | [Split Quoted and Bracketed Log Fields](snippets/data-processing/split-quoted-and-bracketed-log-fields.md) | data-processing | algorithm | data-transformation, parsing |
 | [Yield Stream Items with Bounded Neighbor Context](snippets/data-processing/yield-stream-items-with-bounded-neighbor-context.md) | data-processing | recipe | data-transformation, performance-optimization |
 | [Calculate a Symmetrically Trimmed Mean](snippets/machine-learning-statistics/calculate-a-symmetrically-trimmed-mean.md) | machine-learning-statistics | recipe | data-transformation, performance-optimization |
@@ -96,6 +100,7 @@ not edit it by hand.
 | [Parse Explicit Decimal and Binary Byte Sizes](snippets/configuration-serialization/parse-explicit-decimal-and-binary-byte-sizes.md) | configuration-serialization | recipe | configuration, parsing, validation |
 | [Prune Empty Values from JSON-Like Data](snippets/configuration-serialization/prune-empty-values-from-json-like-data.md) | configuration-serialization | recipe | data-transformation, serialization |
 | [Resolve an Absolute or Percentage Limit](snippets/configuration-serialization/resolve-an-absolute-or-percentage-limit.md) | configuration-serialization | recipe | configuration, parsing, validation |
+| [Substitute Typed Values into a JSON-Like Template](snippets/configuration-serialization/substitute-typed-values-into-a-json-like-template.md) | configuration-serialization | recipe | configuration, serialization, validation |
 | [Count Values in Fixed Upper-Bound Bins](snippets/observability-operations/count-values-in-fixed-upper-bound-bins.md) | observability-operations | algorithm | data-transformation, observability |
 | [Format Log Records as JSON with Explicit Extra Fields](snippets/observability-operations/format-log-records-as-json-with-explicit-extra-fields.md) | observability-operations | recipe | observability, serialization |
 | [Measure and Freeze Elapsed Time in a Context](snippets/observability-operations/measure-and-freeze-elapsed-time-in-a-context.md) | observability-operations | idiom | observability, performance-optimization |
