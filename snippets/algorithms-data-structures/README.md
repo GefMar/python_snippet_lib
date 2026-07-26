@@ -9,6 +9,7 @@ determines correctness independent of a product domain.
 | Snippet | Type | Use Cases | Problem |
 | --- | --- | --- | --- |
 | [Build a Canonical Unicode Caseless Comparison Key](build-a-canonical-unicode-caseless-comparison-key.md) | algorithm | interoperability, validation | Create a normalized casefold key that makes canonically equivalent Unicode text compare equal without changing the displayed value. |
+| [Build a Capacity-Sized Bloom Filter](build-a-capacity-sized-bloom-filter.md) | algorithm | performance-optimization, validation | Represent approximate membership in a compact bit array sized from an expected item count and acceptable false-positive rate. |
 | [Cover a Half-Open Integer Range with Dyadic Intervals](cover-a-half-open-integer-range-with-dyadic-intervals.md) | algorithm | data-transformation, performance-optimization | Decompose a non-negative half-open integer range into a small ordered set of aligned power-of-two blocks without gaps or overlaps. |
 | [Find a Point in Disjoint Half-Open Intervals](find-a-point-in-disjoint-half-open-intervals.md) | algorithm | performance-optimization, validation | Build a validated sorted index of disjoint half-open integer intervals and locate a containing entry with binary search. |
 | [Find a Strict Majority with Boyer-Moore Voting](find-a-strict-majority-with-boyer-moore-voting.md) | algorithm | data-transformation, validation | Select a possible majority with constant auxiliary state, then verify that it occurs strictly more than half the time. |
