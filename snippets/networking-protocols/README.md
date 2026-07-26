@@ -8,6 +8,7 @@ determine correctness.
 <!-- catalog:category:start -->
 | Snippet | Type | Use Cases | Problem |
 | --- | --- | --- | --- |
+| [Collect Matching Cursor Pages with an Explicit Page Budget](collect-matching-cursor-pages-with-an-explicit-page-budget.md) | pattern | networking, resource-management | Collect a requested number of matching items across cursor pages while making every successful stop condition explicit. |
 | [Iterate Cursor-Paginated Results Lazily](iterate-cursor-paginated-results-lazily.md) | pattern | networking, resource-management | Hide cursor pagination behind an iterator while keeping page fetches lazy, ordered, and bounded by explicit safety checks. |
 | [Read and Write Size-Capped Varint Frames](read-and-write-size-capped-varint-frames.md) | recipe | networking, serialization, validation | Frame byte payloads on a blocking stream with a canonical unsigned LEB128 length while rejecting oversized declarations before reading their bodies. |
 <!-- catalog:category:end -->
