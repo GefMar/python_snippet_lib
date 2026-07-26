@@ -8,6 +8,7 @@ serialization semantics determine correctness.
 <!-- catalog:category:start -->
 | Snippet | Type | Use Cases | Problem |
 | --- | --- | --- | --- |
+| [Convert a Weekday Bitmask to a Canonical Cron Schedule](convert-a-weekday-bitmask-to-a-canonical-cron-schedule.md) | recipe | configuration, serialization, validation | Translate a checkbox-style weekday bitmask and strict local wall time into one deliberately limited five-field cron representation. |
 | [Convert Decimal Values to Exact Minor Units](convert-decimal-values-to-exact-minor-units.md) | recipe | interoperability, validation | Convert a finite decimal value to an integer at an explicitly supplied scale without rounding or depending on ambient precision. |
 | [Get Nested Values with a Validated Dot Path](get-nested-values-with-a-validated-dot-path.md) | recipe | configuration, parsing | Resolve a small dot-path grammar against JSON-like mappings and lists while keeping missing values distinct from malformed paths. |
 | [Merge Nested Mappings Without Mutating Inputs](merge-nested-mappings-without-mutating-inputs.md) | recipe | configuration, data-transformation | Recursively merge colliding mappings into new dictionary containers while letting every non-mapping override replace the corresponding base value. |
