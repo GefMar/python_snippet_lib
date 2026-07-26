@@ -22,8 +22,9 @@ Flatten nested JSON into deterministic, type-preserving path lines before render
 
 Every container receives an `object` or `array` marker, and every scalar uses
 canonical JSON text. Paths follow JSON Pointer token escaping, mapping keys are
-sorted, and arrays keep numeric indexes. Quoting the path itself as JSON keeps
-tabs and newlines inside keys from creating extra output lines.
+sorted, and arrays keep numeric indexes. ASCII-escaped JSON strings keep every
+path and scalar on one physical output line, even when source text contains
+Unicode line separators.
 
 ## When to Use
 
@@ -49,7 +50,7 @@ def _pointer(tokens: tuple[str, ...]) -> str:
 
 
 def _path_text(tokens: tuple[str, ...]) -> str:
-    return json.dumps(_pointer(tokens), ensure_ascii=False)
+    return json.dumps(_pointer(tokens), ensure_ascii=True)
 
 
 def flatten_json_lines(value: object) -> tuple[str, ...]:
@@ -59,7 +60,7 @@ def flatten_json_lines(value: object) -> tuple[str, ...]:
     def visit(node: object, path: tuple[str, ...]) -> None:
         path_text = _path_text(path)
         if node is None or type(node) in (bool, int, str):
-            encoded = json.dumps(node, ensure_ascii=False, separators=(",", ":"))
+            encoded = json.dumps(node, ensure_ascii=True, separators=(",", ":"))
             lines.append(f"{path_text}\tvalue\t{encoded}")
             return
         if type(node) is float:
@@ -184,10 +185,10 @@ time in difficult cases even below `max_lines`. Container markers preserve
 object-versus-array structure, but array insertions shift later numeric paths
 and can create a larger display diff. The output is diagnostic text, not a
 minimal edit script, JSON Patch, or reversible format. Python's JSON scalar
-formatting and Unicode code points define this local representation. Very deep
-input can hit the recursion limit, and the line cap is not a defense for
-hostile structures with extreme depth or scalar size. Values appear verbatim
-in the diff, so redact secrets before calling the renderer.
+formatting defines this local representation, with non-ASCII text escaped for
+line safety. Very deep input can hit the recursion limit, and the line cap is
+not a defense for hostile structures with extreme depth or scalar size. Values
+appear in the diff, so redact secrets before calling the renderer.
 
 ## Related Snippets
 

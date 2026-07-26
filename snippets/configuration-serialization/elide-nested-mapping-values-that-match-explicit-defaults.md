@@ -95,6 +95,8 @@ def _json_equal(left: object, right: object) -> bool:
             _json_equal(left_item, right_item)
             for left_item, right_item in zip(left_items, right_items, strict=True)
         )
+    if type(left) is float and left == 0.0 and right == 0.0:
+        return math.copysign(1.0, left) == math.copysign(1.0, right)
     return left == right
 
 
@@ -197,7 +199,8 @@ full = {
 }
 compact = elide_json_defaults(full, defaults)
 expanded = expand_json_defaults(compact, defaults)
-expanded["extra"]["owner"] = "changed"
+expanded_extra = cast(dict[str, object], expanded["extra"])
+expanded_extra["owner"] = "changed"
 
 try:
     elide_json_defaults(
@@ -233,7 +236,8 @@ assert (
 Compaction and expansion traverse and copy the JSON tree, using memory
 proportional to the result. Arrays are intentionally all-or-nothing overrides;
 large arrays with one change remain large. Equality is type-sensitive, so
-`true`, `1`, and `1.0` are distinct despite Python's ordinary equality rules.
+`true`, `1`, and `1.0` are distinct despite Python's ordinary equality rules;
+positive and negative floating-point zero also remain distinct.
 The compact form cannot represent deletion of a defaulted key, and applying it
 to changed defaults can change the reconstructed document. Persist a defaults
 version or migrate compact data whenever defaults evolve. Deeply nested input

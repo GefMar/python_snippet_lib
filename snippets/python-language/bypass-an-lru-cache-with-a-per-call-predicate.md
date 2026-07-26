@@ -37,18 +37,26 @@ invalidation, distributed state, or more than one cache policy.
 ```python
 from collections.abc import Callable
 from functools import lru_cache, wraps
-from typing import ParamSpec, TypeVar, cast
+from typing import ParamSpec, Protocol, TypeVar, cast
 
 
 P = ParamSpec("P")
 ResultT = TypeVar("ResultT")
 
 
+class _CacheDecorator(Protocol[P]):
+    def __call__(
+        self,
+        function: Callable[P, ResultT],
+        /,
+    ) -> Callable[P, ResultT]: ...
+
+
 def bypassable_lru_cache(
     *,
     maxsize: int,
     bypass: Callable[P, bool],
-) -> Callable[..., Callable[P, ResultT]]:
+) -> _CacheDecorator[P]:
     if isinstance(maxsize, bool) or not isinstance(maxsize, int):
         raise TypeError("maxsize must be an integer")
     if maxsize <= 0:

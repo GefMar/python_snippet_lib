@@ -22,7 +22,9 @@ The evaluator receives a fixed aware `now`, a positive freshness window, and
 an ordered set of required source names. It validates every stamp, keeps the
 latest success for each source, and returns one result per requirement in the
 declared order. A stamp exactly on the lower time boundary is still fresh;
-future timestamps are rejected rather than treated as healthy.
+future timestamps are rejected rather than treated as healthy. Comparisons
+normalize aware timestamps to UTC so daylight-saving folds are ordered by
+their actual instants instead of repeated wall-clock values.
 
 ## When to Use
 
@@ -37,7 +39,7 @@ not explain why the latest check failed.
 ```python
 from collections.abc import Iterable, Sequence
 from dataclasses import dataclass
-from datetime import datetime, timedelta
+from datetime import UTC, datetime, timedelta
 from enum import StrEnum
 
 
@@ -67,6 +69,14 @@ def _require_aware(value: datetime, *, name: str) -> None:
         raise ValueError(f"{name} must be timezone-aware")
 
 
+def _as_utc(value: datetime, *, name: str) -> datetime:
+    _require_aware(value, name=name)
+    try:
+        return value.astimezone(UTC)
+    except OverflowError as error:
+        raise ValueError(f"{name} cannot be represented in UTC") from error
+
+
 def classify_health_stamps(
     required_sources: Sequence[str],
     stamps: Iterable[HealthStamp],
@@ -89,14 +99,14 @@ def classify_health_stamps(
         raise ValueError("required sources must be non-empty text")
     if len(set(ordered_sources)) != len(ordered_sources):
         raise ValueError("required sources must be unique")
-    _require_aware(now, name="now")
+    current_utc = _as_utc(now, name="now")
     if not isinstance(max_age, timedelta):
         raise TypeError("max_age must be a timedelta")
     if max_age <= timedelta(0):
         raise ValueError("max_age must be positive")
 
     required = set(ordered_sources)
-    latest: dict[str, datetime] = {}
+    latest: dict[str, tuple[datetime, datetime]] = {}
     for stamp in stamps:
         if not isinstance(stamp, HealthStamp):
             raise TypeError("stamps must contain HealthStamp values")
@@ -104,12 +114,12 @@ def classify_health_stamps(
             raise ValueError("stamp sources must be non-empty text")
         if stamp.source not in required:
             raise ValueError("encountered an unexpected health source")
-        _require_aware(stamp.succeeded_at, name="stamp.succeeded_at")
-        if stamp.succeeded_at > now:
+        stamp_utc = _as_utc(stamp.succeeded_at, name="stamp.succeeded_at")
+        if stamp_utc > current_utc:
             raise ValueError("health stamps must not be in the future")
         previous = latest.get(stamp.source)
-        if previous is None or stamp.succeeded_at > previous:
-            latest[stamp.source] = stamp.succeeded_at
+        if previous is None or stamp_utc > previous[0]:
+            latest[stamp.source] = (stamp_utc, stamp.succeeded_at)
 
     return tuple(
         HealthResult(
@@ -118,10 +128,10 @@ def classify_health_stamps(
                 Freshness.MISSING
                 if source not in latest
                 else Freshness.FRESH
-                if now - latest[source] <= max_age
+                if current_utc - latest[source][0] <= max_age
                 else Freshness.STALE
             ),
-            last_success=latest.get(source),
+            last_success=(latest[source][1] if source in latest else None),
         )
         for source in ordered_sources
     )
