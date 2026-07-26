@@ -17,18 +17,18 @@ not edit it by hand.
 
 | Category | Scope | Snippets |
 | --- | --- | ---: |
-| [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 12 |
-| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 12 |
+| [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 13 |
+| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 13 |
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 3 |
-| [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 3 |
+| [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 5 |
 | [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 1 |
 | [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 11 |
 | [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 2 |
 | [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 4 |
-| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 9 |
+| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 10 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 0 |
 | [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 0 |
-| [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 3 |
+| [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 4 |
 
 ### Snippets
 
@@ -36,6 +36,7 @@ not edit it by hand.
 | --- | --- | --- | --- |
 | [Apply Partial Dataclass Updates with an Omitted-Value Sentinel](snippets/python-language/apply-partial-dataclass-updates-with-an-omitted-value-sentinel.md) | python-language | recipe | data-transformation, validation |
 | [Batch Any Iterable Lazily with itertools.batched](snippets/python-language/batch-any-iterable-lazily-with-itertools-batched.md) | python-language | idiom | data-transformation, resource-management |
+| [Build a Read-Only Mapping with Canonical Text Keys](snippets/python-language/build-a-read-only-mapping-with-canonical-text-keys.md) | python-language | recipe | interoperability, validation |
 | [Build an Immutable Slice-Aware Sequence](snippets/python-language/build-an-immutable-slice-aware-sequence.md) | python-language | recipe | data-transformation, interoperability |
 | [Dispatch Named Strategies with an Explicit Function Mapping](snippets/python-language/dispatch-named-strategies-with-an-explicit-function-mapping.md) | python-language | pattern | configuration, interoperability |
 | [Keep Exception Handlers Narrow with try/else](snippets/python-language/keep-exception-handlers-narrow-with-try-else.md) | python-language | idiom | parsing, validation |
@@ -50,6 +51,7 @@ not edit it by hand.
 | [Build a Capacity-Sized Bloom Filter](snippets/algorithms-data-structures/build-a-capacity-sized-bloom-filter.md) | algorithms-data-structures | algorithm | performance-optimization, validation |
 | [Choose Nice Linear Axis Bounds and Tick Step](snippets/algorithms-data-structures/choose-nice-linear-axis-bounds-and-tick-step.md) | algorithms-data-structures | algorithm | data-transformation |
 | [Cover a Half-Open Integer Range with Dyadic Intervals](snippets/algorithms-data-structures/cover-a-half-open-integer-range-with-dyadic-intervals.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization |
+| [Estimate Distinct Byte Strings with a Mergeable HyperLogLog](snippets/algorithms-data-structures/estimate-distinct-byte-strings-with-a-mergeable-hyperloglog.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization |
 | [Estimate Stream Frequencies with a Count-Min Sketch](snippets/algorithms-data-structures/estimate-stream-frequencies-with-a-count-min-sketch.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization |
 | [Find a Point in Disjoint Half-Open Intervals](snippets/algorithms-data-structures/find-a-point-in-disjoint-half-open-intervals.md) | algorithms-data-structures | algorithm | performance-optimization, validation |
 | [Find a Strict Majority with Boyer-Moore Voting](snippets/algorithms-data-structures/find-a-strict-majority-with-boyer-moore-voting.md) | algorithms-data-structures | algorithm | data-transformation, validation |
@@ -62,7 +64,9 @@ not edit it by hand.
 | [Gather Async Results with Bounded Concurrency](snippets/concurrency-lifecycle/gather-async-results-with-bounded-concurrency.md) | concurrency-lifecycle | recipe | concurrency-control, resource-management |
 | [Stop a Polling Worker Cooperatively with an Event](snippets/concurrency-lifecycle/stop-a-polling-worker-cooperatively-with-an-event.md) | concurrency-lifecycle | pattern | concurrency-control, resource-management |
 | [Assign Stable Schedule Slots with a Digest](snippets/reliability-resilience/assign-stable-schedule-slots-with-a-digest.md) | reliability-resilience | algorithm | performance-optimization, resource-management |
+| [Cache Values with a Monotonic TTL and Early Jitter](snippets/reliability-resilience/cache-values-with-a-monotonic-ttl-and-early-jitter.md) | reliability-resilience | recipe | caching, resource-management |
 | [Hold a Switch Active Through a Monotonic Cooldown](snippets/reliability-resilience/hold-a-switch-active-through-a-monotonic-cooldown.md) | reliability-resilience | pattern | observability, resource-management |
+| [Resolve Incoming Configuration with Last-Known-Good Values](snippets/reliability-resilience/resolve-incoming-configuration-with-last-known-good-values.md) | reliability-resilience | pattern | configuration, validation |
 | [Wait for a Predicate Until a Monotonic Deadline](snippets/reliability-resilience/wait-for-a-predicate-until-a-monotonic-deadline.md) | reliability-resilience | recipe | retry-recovery |
 | [Read and Write Size-Capped Varint Frames](snippets/networking-protocols/read-and-write-size-capped-varint-frames.md) | networking-protocols | recipe | networking, serialization, validation |
 | [Aggregate Consecutive Values into Weighted Runs](snippets/data-processing/aggregate-consecutive-values-into-weighted-runs.md) | data-processing | algorithm | data-transformation |
@@ -86,6 +90,7 @@ not edit it by hand.
 | [Convert Decimal Values to Exact Minor Units](snippets/configuration-serialization/convert-decimal-values-to-exact-minor-units.md) | configuration-serialization | recipe | interoperability, validation |
 | [Expand Bounded Nested Brace Alternatives](snippets/configuration-serialization/expand-bounded-nested-brace-alternatives.md) | configuration-serialization | algorithm | parsing, validation |
 | [Get Nested Values with a Validated Dot Path](snippets/configuration-serialization/get-nested-values-with-a-validated-dot-path.md) | configuration-serialization | recipe | configuration, parsing |
+| [Merge Nested Configuration with an Explicit Delete Sentinel](snippets/configuration-serialization/merge-nested-configuration-with-an-explicit-delete-sentinel.md) | configuration-serialization | recipe | configuration, data-transformation |
 | [Merge Nested Mappings Without Mutating Inputs](snippets/configuration-serialization/merge-nested-mappings-without-mutating-inputs.md) | configuration-serialization | recipe | configuration, data-transformation |
 | [Parse Compact Durations into timedelta](snippets/configuration-serialization/parse-compact-durations-into-timedelta.md) | configuration-serialization | recipe | configuration, parsing, validation |
 | [Parse Explicit Decimal and Binary Byte Sizes](snippets/configuration-serialization/parse-explicit-decimal-and-binary-byte-sizes.md) | configuration-serialization | recipe | configuration, parsing, validation |
@@ -93,6 +98,7 @@ not edit it by hand.
 | [Resolve an Absolute or Percentage Limit](snippets/configuration-serialization/resolve-an-absolute-or-percentage-limit.md) | configuration-serialization | recipe | configuration, parsing, validation |
 | [Count Values in Fixed Upper-Bound Bins](snippets/observability-operations/count-values-in-fixed-upper-bound-bins.md) | observability-operations | algorithm | data-transformation, observability |
 | [Format Log Records as JSON with Explicit Extra Fields](snippets/observability-operations/format-log-records-as-json-with-explicit-extra-fields.md) | observability-operations | recipe | observability, serialization |
+| [Measure and Freeze Elapsed Time in a Context](snippets/observability-operations/measure-and-freeze-elapsed-time-in-a-context.md) | observability-operations | idiom | observability, performance-optimization |
 | [Scope Structured Log Fields with Context Variables](snippets/observability-operations/scope-structured-log-fields-with-context-variables.md) | observability-operations | pattern | concurrency-control, observability |
 <!-- catalog:root:end -->
 
