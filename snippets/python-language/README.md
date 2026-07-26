@@ -9,6 +9,7 @@ are the learning objective, not merely the implementation language.
 | Snippet | Type | Use Cases | Problem |
 | --- | --- | --- | --- |
 | [Apply Partial Dataclass Updates with an Omitted-Value Sentinel](apply-partial-dataclass-updates-with-an-omitted-value-sentinel.md) | recipe | data-transformation, validation | Use a unique sentinel to distinguish an omitted dataclass patch field from an explicit None, false, or zero value. |
+| [Batch Any Iterable Lazily with itertools.batched](batch-any-iterable-lazily-with-itertools-batched.md) | idiom | data-transformation, resource-management | Use the standard library batching iterator to consume any iterable lazily as fixed-size tuples without reimplementing iterator slicing. |
 | [Build an Immutable Slice-Aware Sequence](build-an-immutable-slice-aware-sequence.md) | recipe | data-transformation, interoperability | Back a custom sequence with a tuple and return the same documented sequence type for slices instead of exposing the storage tuple. |
 | [Dispatch Named Strategies with an Explicit Function Mapping](dispatch-named-strategies-with-an-explicit-function-mapping.md) | pattern | configuration, interoperability | Select stateless behavior by name with an explicit read-only mapping instead of a class hierarchy or hidden global registry. |
 | [Keep Exception Handlers Narrow with try/else](keep-exception-handlers-narrow-with-try-else.md) | idiom | parsing, validation | Put success-only work in a try statement's else clause so the preceding handler covers only the operation expected to fail. |
