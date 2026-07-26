@@ -17,18 +17,18 @@ not edit it by hand.
 
 | Category | Scope | Snippets |
 | --- | --- | ---: |
-| [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 15 |
-| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 13 |
+| [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 16 |
+| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 14 |
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 3 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 5 |
 | [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 2 |
 | [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 16 |
 | [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 2 |
 | [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 4 |
-| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 11 |
+| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 14 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 0 |
 | [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 0 |
-| [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 5 |
+| [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 6 |
 
 ### Snippets
 
@@ -38,6 +38,7 @@ not edit it by hand.
 | [Batch Any Iterable Lazily with itertools.batched](snippets/python-language/batch-any-iterable-lazily-with-itertools-batched.md) | python-language | idiom | data-transformation, resource-management |
 | [Build a Read-Only Mapping with Canonical Text Keys](snippets/python-language/build-a-read-only-mapping-with-canonical-text-keys.md) | python-language | recipe | interoperability, validation |
 | [Build an Immutable Slice-Aware Sequence](snippets/python-language/build-an-immutable-slice-aware-sequence.md) | python-language | recipe | data-transformation, interoperability |
+| [Bypass an LRU Cache with a Per-Call Predicate](snippets/python-language/bypass-an-lru-cache-with-a-per-call-predicate.md) | python-language | pattern | caching, performance-optimization |
 | [Dispatch Named Strategies with an Explicit Function Mapping](snippets/python-language/dispatch-named-strategies-with-an-explicit-function-mapping.md) | python-language | pattern | configuration, interoperability |
 | [Handle Search Exhaustion with for/else](snippets/python-language/handle-search-exhaustion-with-for-else.md) | python-language | idiom | data-transformation, validation |
 | [Keep Exception Handlers Narrow with try/else](snippets/python-language/keep-exception-handlers-narrow-with-try-else.md) | python-language | idiom | parsing, validation |
@@ -57,6 +58,7 @@ not edit it by hand.
 | [Estimate Stream Frequencies with a Count-Min Sketch](snippets/algorithms-data-structures/estimate-stream-frequencies-with-a-count-min-sketch.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization |
 | [Find a Point in Disjoint Half-Open Intervals](snippets/algorithms-data-structures/find-a-point-in-disjoint-half-open-intervals.md) | algorithms-data-structures | algorithm | performance-optimization, validation |
 | [Find a Strict Majority with Boyer-Moore Voting](snippets/algorithms-data-structures/find-a-strict-majority-with-boyer-moore-voting.md) | algorithms-data-structures | algorithm | data-transformation, validation |
+| [Generate Event Times for a Linear Rate Ramp](snippets/algorithms-data-structures/generate-event-times-for-a-linear-rate-ramp.md) | algorithms-data-structures | algorithm | automation, performance-optimization |
 | [Map Keys with an Immutable Consistent Hash Ring](snippets/algorithms-data-structures/map-keys-with-an-immutable-consistent-hash-ring.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization |
 | [Map Points Between Rectangular Coordinate Spaces](snippets/algorithms-data-structures/map-points-between-rectangular-coordinate-spaces.md) | algorithms-data-structures | algorithm | data-transformation, interoperability |
 | [Resolve Stable Ordering Constraints with Topological Sort](snippets/algorithms-data-structures/resolve-stable-ordering-constraints-with-topological-sort.md) | algorithms-data-structures | algorithm | data-transformation, validation |
@@ -96,15 +98,19 @@ not edit it by hand.
 | [Store Bytes by Their Content Digest](snippets/storage-databases/store-bytes-by-their-content-digest.md) | storage-databases | recipe | caching, persistence |
 | [Convert a Weekday Bitmask to a Canonical Cron Schedule](snippets/configuration-serialization/convert-a-weekday-bitmask-to-a-canonical-cron-schedule.md) | configuration-serialization | recipe | configuration, serialization, validation |
 | [Convert Decimal Values to Exact Minor Units](snippets/configuration-serialization/convert-decimal-values-to-exact-minor-units.md) | configuration-serialization | recipe | interoperability, validation |
+| [Elide Nested Mapping Values That Match Explicit Defaults](snippets/configuration-serialization/elide-nested-mapping-values-that-match-explicit-defaults.md) | configuration-serialization | recipe | configuration, serialization |
 | [Expand Bounded Nested Brace Alternatives](snippets/configuration-serialization/expand-bounded-nested-brace-alternatives.md) | configuration-serialization | algorithm | parsing, validation |
+| [Fingerprint a Set-Like JSON Array Deterministically](snippets/configuration-serialization/fingerprint-a-set-like-json-array-deterministically.md) | configuration-serialization | algorithm | serialization, validation |
 | [Get Nested Values with a Validated Dot Path](snippets/configuration-serialization/get-nested-values-with-a-validated-dot-path.md) | configuration-serialization | recipe | configuration, parsing |
 | [Merge Nested Configuration with an Explicit Delete Sentinel](snippets/configuration-serialization/merge-nested-configuration-with-an-explicit-delete-sentinel.md) | configuration-serialization | recipe | configuration, data-transformation |
 | [Merge Nested Mappings Without Mutating Inputs](snippets/configuration-serialization/merge-nested-mappings-without-mutating-inputs.md) | configuration-serialization | recipe | configuration, data-transformation |
 | [Parse Compact Durations into timedelta](snippets/configuration-serialization/parse-compact-durations-into-timedelta.md) | configuration-serialization | recipe | configuration, parsing, validation |
 | [Parse Explicit Decimal and Binary Byte Sizes](snippets/configuration-serialization/parse-explicit-decimal-and-binary-byte-sizes.md) | configuration-serialization | recipe | configuration, parsing, validation |
 | [Prune Empty Values from JSON-Like Data](snippets/configuration-serialization/prune-empty-values-from-json-like-data.md) | configuration-serialization | recipe | data-transformation, serialization |
+| [Render a Stable Unified Diff for Nested JSON Values](snippets/configuration-serialization/render-a-stable-unified-diff-for-nested-json-values.md) | configuration-serialization | recipe | serialization, testing, validation |
 | [Resolve an Absolute or Percentage Limit](snippets/configuration-serialization/resolve-an-absolute-or-percentage-limit.md) | configuration-serialization | recipe | configuration, parsing, validation |
 | [Substitute Typed Values into a JSON-Like Template](snippets/configuration-serialization/substitute-typed-values-into-a-json-like-template.md) | configuration-serialization | recipe | configuration, serialization, validation |
+| [Classify Required Health Stamps by Freshness](snippets/observability-operations/classify-required-health-stamps-by-freshness.md) | observability-operations | recipe | observability, validation |
 | [Count Values in Fixed Upper-Bound Bins](snippets/observability-operations/count-values-in-fixed-upper-bound-bins.md) | observability-operations | algorithm | data-transformation, observability |
 | [Format Log Records as JSON with Explicit Extra Fields](snippets/observability-operations/format-log-records-as-json-with-explicit-extra-fields.md) | observability-operations | recipe | observability, serialization |
 | [Measure and Freeze Elapsed Time in a Context](snippets/observability-operations/measure-and-freeze-elapsed-time-in-a-context.md) | observability-operations | idiom | observability, performance-optimization |
