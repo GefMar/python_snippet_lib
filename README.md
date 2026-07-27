@@ -19,14 +19,14 @@ not edit it by hand.
 | --- | --- | ---: |
 | [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 18 |
 | [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 19 |
-| [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 12 |
-| [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 9 |
-| [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 7 |
+| [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 13 |
+| [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 11 |
+| [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 8 |
 | [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 16 |
 | [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 3 |
 | [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 11 |
 | [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 20 |
-| [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 7 |
+| [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 8 |
 | [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 2 |
 | [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 10 |
 
@@ -77,6 +77,7 @@ not edit it by hand.
 | [Guard an Async Resource with Explicit Lifecycle States](snippets/concurrency-lifecycle/guard-an-async-resource-with-explicit-lifecycle-states.md) | concurrency-lifecycle | pattern | concurrency-control, lifecycle-management, resource-management |
 | [Guard Readers with a Writer-Priority Read-Write Lock](snippets/concurrency-lifecycle/guard-readers-with-a-writer-priority-read-write-lock.md) | concurrency-lifecycle | pattern | concurrency-control, resource-management |
 | [Initialize One Shared Resource Lazily with Serialized Retries](snippets/concurrency-lifecycle/initialize-one-shared-resource-lazily-with-serialized-retries.md) | concurrency-lifecycle | pattern | concurrency-control, lifecycle-management, retry-recovery |
+| [Prevent Overlapping POSIX Jobs with a Nonblocking File Lock](snippets/concurrency-lifecycle/prevent-overlapping-posix-jobs-with-a-nonblocking-file-lock.md) | concurrency-lifecycle | recipe | automation, concurrency-control |
 | [Refresh an Async Value Within a Bounded Stale Window](snippets/concurrency-lifecycle/refresh-an-async-value-within-a-bounded-stale-window.md) | concurrency-lifecycle | pattern | caching, concurrency-control, lifecycle-management, retry-recovery |
 | [Run an Async Worker on Clock-Aligned Ticks Without Catch-Up](snippets/concurrency-lifecycle/run-an-async-worker-on-clock-aligned-ticks-without-catch-up.md) | concurrency-lifecycle | pattern | automation, concurrency-control, lifecycle-management |
 | [Run Bounded Thread Work by Priority and Submission Order](snippets/concurrency-lifecycle/run-bounded-thread-work-by-priority-and-submission-order.md) | concurrency-lifecycle | pattern | concurrency-control, lifecycle-management, resource-management |
@@ -85,13 +86,16 @@ not edit it by hand.
 | [Submit a Callable with a Snapshot of the Current Context](snippets/concurrency-lifecycle/submit-a-callable-with-a-snapshot-of-the-current-context.md) | concurrency-lifecycle | recipe | concurrency-control, interoperability, observability |
 | [Assign Stable Schedule Slots with a Digest](snippets/reliability-resilience/assign-stable-schedule-slots-with-a-digest.md) | reliability-resilience | algorithm | performance-optimization, resource-management |
 | [Cache Values with a Monotonic TTL and Early Jitter](snippets/reliability-resilience/cache-values-with-a-monotonic-ttl-and-early-jitter.md) | reliability-resilience | recipe | caching, resource-management |
+| [Commit a Source Checkpoint Only After the Sink Accepts a Batch](snippets/reliability-resilience/commit-a-source-checkpoint-only-after-the-sink-accepts-a-batch.md) | reliability-resilience | pattern | data-transformation, retry-recovery |
 | [Compensate Completed Workflow Steps in Reverse Order](snippets/reliability-resilience/compensate-completed-workflow-steps-in-reverse-order.md) | reliability-resilience | pattern | automation, resource-management, retry-recovery |
 | [Hold a Switch Active Through a Monotonic Cooldown](snippets/reliability-resilience/hold-a-switch-active-through-a-monotonic-cooldown.md) | reliability-resilience | pattern | observability, resource-management |
 | [Model Independent Blocking Reasons as an Immutable Set](snippets/reliability-resilience/model-independent-blocking-reasons-as-an-immutable-set.md) | reliability-resilience | pattern | configuration, validation |
 | [Poll a Remote Operation Within Deadline and Failure Budgets](snippets/reliability-resilience/poll-a-remote-operation-within-deadline-and-failure-budgets.md) | reliability-resilience | integration | automation, networking, resource-management, retry-recovery |
 | [Propagate a Monotonic Deadline with ContextVar](snippets/reliability-resilience/propagate-a-monotonic-deadline-with-contextvar.md) | reliability-resilience | pattern | concurrency-control, lifecycle-management, retry-recovery |
 | [Resolve Incoming Configuration with Last-Known-Good Values](snippets/reliability-resilience/resolve-incoming-configuration-with-last-known-good-values.md) | reliability-resilience | pattern | configuration, validation |
+| [Retry Only Eligible Items in a Bounded Batch](snippets/reliability-resilience/retry-only-eligible-items-in-a-bounded-batch.md) | reliability-resilience | pattern | networking, retry-recovery |
 | [Wait for a Predicate Until a Monotonic Deadline](snippets/reliability-resilience/wait-for-a-predicate-until-a-monotonic-deadline.md) | reliability-resilience | recipe | retry-recovery |
+| [Build a Canonical HTTP Origin Key](snippets/networking-protocols/build-a-canonical-http-origin-key.md) | networking-protocols | recipe | networking, validation |
 | [Collect Matching Cursor Pages with an Explicit Page Budget](snippets/networking-protocols/collect-matching-cursor-pages-with-an-explicit-page-budget.md) | networking-protocols | pattern | networking, resource-management |
 | [Iterate Cursor-Paginated Results Lazily](snippets/networking-protocols/iterate-cursor-paginated-results-lazily.md) | networking-protocols | pattern | networking, resource-management |
 | [Parse a Bounded ASCII Media Type Value](snippets/networking-protocols/parse-a-bounded-ascii-media-type-value.md) | networking-protocols | recipe | interoperability, parsing, serialization, validation |
@@ -151,6 +155,7 @@ not edit it by hand.
 | [Substitute Typed Values into a JSON-Like Template](snippets/configuration-serialization/substitute-typed-values-into-a-json-like-template.md) | configuration-serialization | recipe | configuration, serialization, validation |
 | [Audit Symlinks in a Bounded Directory Tree](snippets/security-privacy/audit-symlinks-in-a-bounded-directory-tree.md) | security-privacy | recipe | resource-management, security, validation |
 | [Authenticate Bounded Payloads with Versioned HMAC Keys](snippets/security-privacy/authenticate-bounded-payloads-with-versioned-hmac-keys.md) | security-privacy | pattern | security, serialization, validation |
+| [Create and Verify a Short-Lived HMAC Download URL](snippets/security-privacy/create-and-verify-a-short-lived-hmac-download-url.md) | security-privacy | pattern | networking, security |
 | [Load an Authenticated Legacy Pickle with Restricted Globals](snippets/security-privacy/load-an-authenticated-legacy-pickle-with-restricted-globals.md) | security-privacy | recipe | interoperability, security, serialization, validation |
 | [Redact a Printable ASCII Secret with a Bounded Visible Tail](snippets/security-privacy/redact-a-printable-ascii-secret-with-a-bounded-visible-tail.md) | security-privacy | recipe | observability, security, validation |
 | [Redact Explicit Paths in Bounded JSON-Like Data](snippets/security-privacy/redact-explicit-paths-in-bounded-json-like-data.md) | security-privacy | recipe | data-transformation, observability, security, validation |

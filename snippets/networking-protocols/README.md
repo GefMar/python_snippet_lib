@@ -8,6 +8,7 @@ determine correctness.
 <!-- catalog:category:start -->
 | Snippet | Type | Use Cases | Problem |
 | --- | --- | --- | --- |
+| [Build a Canonical HTTP Origin Key](build-a-canonical-http-origin-key.md) | recipe | networking, validation | Convert one strict HTTP or HTTPS origin into a stable key with a normalized host and an explicit port. |
 | [Collect Matching Cursor Pages with an Explicit Page Budget](collect-matching-cursor-pages-with-an-explicit-page-budget.md) | pattern | networking, resource-management | Collect a requested number of matching items across cursor pages while making every successful stop condition explicit. |
 | [Iterate Cursor-Paginated Results Lazily](iterate-cursor-paginated-results-lazily.md) | pattern | networking, resource-management | Hide cursor pagination behind an iterator while keeping page fetches lazy, ordered, and bounded by explicit safety checks. |
 | [Parse a Bounded ASCII Media Type Value](parse-a-bounded-ascii-media-type-value.md) | recipe | interoperability, parsing, serialization, validation | Parse one strict media type and its parameters into an immutable value instead of passing an ambiguous raw header string through an application. |
