@@ -8,6 +8,7 @@ determines correctness independent of a product domain.
 <!-- catalog:category:start -->
 | Snippet | Type | Use Cases | Problem |
 | --- | --- | --- | --- |
+| [Accept Sparse Observations That Preserve Strict Position-Time Order](accept-sparse-observations-that-preserve-strict-position-time-order.md) | algorithm | data-transformation, validation | Accept sparse position-time observations online only when the accepted state remains strictly increasing by position. |
 | [Apportion a Non-Negative Integer Total Without Rounding Drift](apportion-a-non-negative-integer-total-without-rounding-drift.md) | algorithm | data-transformation, resource-management, validation | Divide a non-negative integer into a bounded number of nearly equal integer shares while preserving the total exactly. |
 | [Build a Canonical Unicode Caseless Comparison Key](build-a-canonical-unicode-caseless-comparison-key.md) | algorithm | interoperability, validation | Create a normalized casefold key that makes canonically equivalent Unicode text compare equal without changing the displayed value. |
 | [Build a Capacity-Sized Bloom Filter](build-a-capacity-sized-bloom-filter.md) | algorithm | performance-optimization, validation | Represent approximate membership in a compact bit array sized from an expected item count and acceptable false-positive rate. |

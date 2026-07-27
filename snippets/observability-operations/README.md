@@ -8,6 +8,7 @@ primary behavior.
 <!-- catalog:category:start -->
 | Snippet | Type | Use Cases | Problem |
 | --- | --- | --- | --- |
+| [Capture a Bounded Pickle-Friendly Exception Report](capture-a-bounded-pickle-friendly-exception-report.md) | recipe | interoperability, observability, serialization | Flatten one exception and its native cause or context chain into bounded immutable diagnostic data instead of trying to serialize live exception state. |
 | [Classify Required Health Stamps by Freshness](classify-required-health-stamps-by-freshness.md) | recipe | observability, validation | Classify every required source as fresh, stale, or missing from its latest successful timestamp instead of running expensive checks in the read path. |
 | [Count Values in Fixed Upper-Bound Bins](count-values-in-fixed-upper-bound-bins.md) | algorithm | data-transformation, observability | Count finite observations in stable right-closed bins defined by a strictly increasing sequence of upper bounds. |
 | [Format Log Records as JSON with Explicit Extra Fields](format-log-records-as-json-with-explicit-extra-fields.md) | recipe | observability, serialization | Serialize each log record to one strict JSON object while keeping caller-supplied extra fields separate from standard logging metadata. |

@@ -18,17 +18,17 @@ not edit it by hand.
 | Category | Scope | Snippets |
 | --- | --- | ---: |
 | [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 17 |
-| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 17 |
+| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 18 |
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 3 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 7 |
-| [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 3 |
+| [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 5 |
 | [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 16 |
 | [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 3 |
 | [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 7 |
-| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 17 |
+| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 18 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 3 |
 | [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 1 |
-| [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 8 |
+| [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 9 |
 
 ### Snippets
 
@@ -51,6 +51,7 @@ not edit it by hand.
 | [Type a Narrow Structural Interface with Protocol](snippets/python-language/type-a-narrow-structural-interface-with-protocol.md) | python-language | pattern | interoperability, validation |
 | [Validate Reused Fields with a Data Descriptor](snippets/python-language/validate-reused-fields-with-a-data-descriptor.md) | python-language | pattern | validation |
 | [Walk a Tree Recursively with yield from](snippets/python-language/walk-a-tree-recursively-with-yield-from.md) | python-language | idiom | data-transformation |
+| [Accept Sparse Observations That Preserve Strict Position-Time Order](snippets/algorithms-data-structures/accept-sparse-observations-that-preserve-strict-position-time-order.md) | algorithms-data-structures | algorithm | data-transformation, validation |
 | [Apportion a Non-Negative Integer Total Without Rounding Drift](snippets/algorithms-data-structures/apportion-a-non-negative-integer-total-without-rounding-drift.md) | algorithms-data-structures | algorithm | data-transformation, resource-management, validation |
 | [Build a Canonical Unicode Caseless Comparison Key](snippets/algorithms-data-structures/build-a-canonical-unicode-caseless-comparison-key.md) | algorithms-data-structures | algorithm | interoperability, validation |
 | [Build a Capacity-Sized Bloom Filter](snippets/algorithms-data-structures/build-a-capacity-sized-bloom-filter.md) | algorithms-data-structures | algorithm | performance-optimization, validation |
@@ -80,6 +81,8 @@ not edit it by hand.
 | [Wait for a Predicate Until a Monotonic Deadline](snippets/reliability-resilience/wait-for-a-predicate-until-a-monotonic-deadline.md) | reliability-resilience | recipe | retry-recovery |
 | [Collect Matching Cursor Pages with an Explicit Page Budget](snippets/networking-protocols/collect-matching-cursor-pages-with-an-explicit-page-budget.md) | networking-protocols | pattern | networking, resource-management |
 | [Iterate Cursor-Paginated Results Lazily](snippets/networking-protocols/iterate-cursor-paginated-results-lazily.md) | networking-protocols | pattern | networking, resource-management |
+| [Parse a Bounded ASCII Media Type Value](snippets/networking-protocols/parse-a-bounded-ascii-media-type-value.md) | networking-protocols | recipe | interoperability, parsing, serialization, validation |
+| [Parse a Bounded Host and Port with Bracketed IPv6](snippets/networking-protocols/parse-a-bounded-host-and-port-with-bracketed-ipv6.md) | networking-protocols | recipe | networking, parsing, validation |
 | [Read and Write Size-Capped Varint Frames](snippets/networking-protocols/read-and-write-size-capped-varint-frames.md) | networking-protocols | recipe | networking, serialization, validation |
 | [Aggregate Consecutive Values into Weighted Runs](snippets/data-processing/aggregate-consecutive-values-into-weighted-runs.md) | data-processing | algorithm | data-transformation |
 | [Batch Items by Estimated Byte Size](snippets/data-processing/batch-items-by-estimated-byte-size.md) | data-processing | algorithm | data-transformation, resource-management |
@@ -121,6 +124,7 @@ not edit it by hand.
 | [Parse Compact Durations into timedelta](snippets/configuration-serialization/parse-compact-durations-into-timedelta.md) | configuration-serialization | recipe | configuration, parsing, validation |
 | [Parse Explicit Decimal and Binary Byte Sizes](snippets/configuration-serialization/parse-explicit-decimal-and-binary-byte-sizes.md) | configuration-serialization | recipe | configuration, parsing, validation |
 | [Prune Empty Values from JSON-Like Data](snippets/configuration-serialization/prune-empty-values-from-json-like-data.md) | configuration-serialization | recipe | data-transformation, serialization |
+| [Reject Unknown Options with Conservative Typo Suggestions](snippets/configuration-serialization/reject-unknown-options-with-conservative-typo-suggestions.md) | configuration-serialization | recipe | configuration, validation |
 | [Render a Stable Unified Diff for Nested JSON Values](snippets/configuration-serialization/render-a-stable-unified-diff-for-nested-json-values.md) | configuration-serialization | recipe | serialization, testing, validation |
 | [Resolve an Absolute or Percentage Limit](snippets/configuration-serialization/resolve-an-absolute-or-percentage-limit.md) | configuration-serialization | recipe | configuration, parsing, validation |
 | [Substitute Typed Values into a JSON-Like Template](snippets/configuration-serialization/substitute-typed-values-into-a-json-like-template.md) | configuration-serialization | recipe | configuration, serialization, validation |
@@ -128,6 +132,7 @@ not edit it by hand.
 | [Validate a Conservative Unicode Filename Component](snippets/security-privacy/validate-a-conservative-unicode-filename-component.md) | security-privacy | recipe | interoperability, validation |
 | [Verify an RFC 7636 S256 PKCE Challenge](snippets/security-privacy/verify-an-rfc-7636-s256-pkce-challenge.md) | security-privacy | recipe | interoperability, security, validation |
 | [Wait for Named Queue Conditions Under One Monotonic Deadline](snippets/testing-tooling/wait-for-named-queue-conditions-under-one-monotonic-deadline.md) | testing-tooling | testing-technique | concurrency-control, testing, validation |
+| [Capture a Bounded Pickle-Friendly Exception Report](snippets/observability-operations/capture-a-bounded-pickle-friendly-exception-report.md) | observability-operations | recipe | interoperability, observability, serialization |
 | [Classify Required Health Stamps by Freshness](snippets/observability-operations/classify-required-health-stamps-by-freshness.md) | observability-operations | recipe | observability, validation |
 | [Count Values in Fixed Upper-Bound Bins](snippets/observability-operations/count-values-in-fixed-upper-bound-bins.md) | observability-operations | algorithm | data-transformation, observability |
 | [Format Log Records as JSON with Explicit Extra Fields](snippets/observability-operations/format-log-records-as-json-with-explicit-extra-fields.md) | observability-operations | recipe | observability, serialization |
