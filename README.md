@@ -20,13 +20,13 @@ not edit it by hand.
 | [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 18 |
 | [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 19 |
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 14 |
-| [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 12 |
+| [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 13 |
 | [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 12 |
-| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 20 |
+| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 21 |
 | [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 8 |
-| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 12 |
+| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 14 |
 | [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 23 |
-| [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 10 |
+| [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 11 |
 | [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 5 |
 | [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 10 |
 
@@ -89,6 +89,7 @@ not edit it by hand.
 | [Cache Values with a Monotonic TTL and Early Jitter](snippets/reliability-resilience/cache-values-with-a-monotonic-ttl-and-early-jitter.md) | reliability-resilience | recipe | caching, resource-management |
 | [Commit a Source Checkpoint Only After the Sink Accepts a Batch](snippets/reliability-resilience/commit-a-source-checkpoint-only-after-the-sink-accepts-a-batch.md) | reliability-resilience | pattern | data-transformation, retry-recovery |
 | [Compensate Completed Workflow Steps in Reverse Order](snippets/reliability-resilience/compensate-completed-workflow-steps-in-reverse-order.md) | reliability-resilience | pattern | automation, resource-management, retry-recovery |
+| [Flush Fixed-Size Batches Through a Scoped Sink](snippets/reliability-resilience/flush-fixed-size-batches-through-a-scoped-sink.md) | reliability-resilience | pattern | data-transformation, resource-management, retry-recovery |
 | [Hold a Switch Active Through a Monotonic Cooldown](snippets/reliability-resilience/hold-a-switch-active-through-a-monotonic-cooldown.md) | reliability-resilience | pattern | observability, resource-management |
 | [Model Independent Blocking Reasons as an Immutable Set](snippets/reliability-resilience/model-independent-blocking-reasons-as-an-immutable-set.md) | reliability-resilience | pattern | configuration, validation |
 | [Poll a Remote Operation Within Deadline and Failure Budgets](snippets/reliability-resilience/poll-a-remote-operation-within-deadline-and-failure-budgets.md) | reliability-resilience | integration | automation, networking, resource-management, retry-recovery |
@@ -110,6 +111,7 @@ not edit it by hand.
 | [Resume a Bounded HTTP Byte Stream with Validated Range Responses](snippets/networking-protocols/resume-a-bounded-http-byte-stream-with-validated-range-responses.md) | networking-protocols | integration | networking, resource-management, retry-recovery, validation |
 | [Yield Bounded SSE Frames with Serialized Comment Keepalives](snippets/networking-protocols/yield-bounded-sse-frames-with-serialized-comment-keepalives.md) | networking-protocols | integration | concurrency-control, networking, resource-management, serialization |
 | [Aggregate Consecutive Values into Weighted Runs](snippets/data-processing/aggregate-consecutive-values-into-weighted-runs.md) | data-processing | algorithm | data-transformation |
+| [Audit pandas Missing-Value Shares Against Column Policies](snippets/data-processing/audit-pandas-missing-value-shares-against-column-policies.md) | data-processing | integration | data-transformation, validation |
 | [Batch Items by Estimated Byte Size](snippets/data-processing/batch-items-by-estimated-byte-size.md) | data-processing | algorithm | data-transformation, resource-management |
 | [Check a Value Against an Asymmetric Tolerance Band](snippets/data-processing/check-a-value-against-an-asymmetric-tolerance-band.md) | data-processing | algorithm | validation |
 | [Collect Expected Parse Failures Without Stopping a Batch](snippets/data-processing/collect-expected-parse-failures-without-stopping-a-batch.md) | data-processing | pattern | parsing, validation |
@@ -137,11 +139,13 @@ not edit it by hand.
 | [Fit and Apply Fixed Quantile Clipping Bounds](snippets/machine-learning-statistics/fit-and-apply-fixed-quantile-clipping-bounds.md) | machine-learning-statistics | recipe | data-transformation, validation |
 | [Flag Groupwise Numeric Outliers with IQR Fences](snippets/machine-learning-statistics/flag-groupwise-numeric-outliers-with-iqr-fences.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Measure Drift Between Two Fixed-Bin Count Distributions with PSI](snippets/machine-learning-statistics/measure-drift-between-two-fixed-bin-count-distributions-with-psi.md) | machine-learning-statistics | algorithm | observability, validation |
+| [Build a Bounded File Manifest with Internal Symlink Aliases](snippets/storage-databases/build-a-bounded-file-manifest-with-internal-symlink-aliases.md) | storage-databases | recipe | persistence, resource-management, validation |
 | [Build and Apply a Deterministic Mapping Delta](snippets/storage-databases/build-and-apply-a-deterministic-mapping-delta.md) | storage-databases | algorithm | data-transformation, persistence |
 | [Check Whether a Generated File Is Older Than Its Inputs](snippets/storage-databases/check-whether-a-generated-file-is-older-than-its-inputs.md) | storage-databases | recipe | automation, caching, validation |
 | [Compare and Swap a Versioned SQLite Setting with One Conditional Update](snippets/storage-databases/compare-and-swap-a-versioned-sqlite-setting-with-one-conditional-update.md) | storage-databases | recipe | concurrency-control, persistence |
 | [Compare Bounded Apparent Sizes of Two File-Tree Snapshots](snippets/storage-databases/compare-bounded-apparent-sizes-of-two-file-tree-snapshots.md) | storage-databases | recipe | automation, persistence, resource-management |
 | [Fingerprint a Bounded Flat File Set with Framed SHA-256](snippets/storage-databases/fingerprint-a-bounded-flat-file-set-with-framed-sha-256.md) | storage-databases | recipe | caching, persistence, validation |
+| [Plan an Incremental Cumulative Snapshot from Partition Dates](snippets/storage-databases/plan-an-incremental-cumulative-snapshot-from-partition-dates.md) | storage-databases | algorithm | automation, data-transformation, validation |
 | [Read the Last Bounded Binary Lines with a Read-Only mmap](snippets/storage-databases/read-the-last-bounded-binary-lines-with-a-read-only-mmap.md) | storage-databases | recipe | parsing, performance-optimization, resource-management |
 | [Replace a File Atomically with a Sibling Temporary File](snippets/storage-databases/replace-a-file-atomically-with-a-sibling-temporary-file.md) | storage-databases | recipe | persistence, resource-management |
 | [Select Expired Backup Names with Strict UTC Timestamps](snippets/storage-databases/select-expired-backup-names-with-strict-utc-timestamps.md) | storage-databases | recipe | automation, parsing, validation |
@@ -177,6 +181,7 @@ not edit it by hand.
 | [Create and Verify a Short-Lived HMAC Download URL](snippets/security-privacy/create-and-verify-a-short-lived-hmac-download-url.md) | security-privacy | pattern | networking, security |
 | [Encrypt a Bounded Value with a Versioned AES-GCM Key Envelope](snippets/security-privacy/encrypt-a-bounded-value-with-a-versioned-aes-gcm-key-envelope.md) | security-privacy | integration | security, serialization, validation |
 | [Load an Authenticated Legacy Pickle with Restricted Globals](snippets/security-privacy/load-an-authenticated-legacy-pickle-with-restricted-globals.md) | security-privacy | recipe | interoperability, security, serialization, validation |
+| [Plan a Bounded Notebook Storage Key with Collision Suggestions](snippets/security-privacy/plan-a-bounded-notebook-storage-key-with-collision-suggestions.md) | security-privacy | recipe | persistence, security, validation |
 | [Redact a Printable ASCII Secret with a Bounded Visible Tail](snippets/security-privacy/redact-a-printable-ascii-secret-with-a-bounded-visible-tail.md) | security-privacy | recipe | observability, security, validation |
 | [Redact Explicit Paths in Bounded JSON-Like Data](snippets/security-privacy/redact-explicit-paths-in-bounded-json-like-data.md) | security-privacy | recipe | data-transformation, observability, security, validation |
 | [Separate Executable and Redacted Views of a Command Argument Vector](snippets/security-privacy/separate-executable-and-redacted-views-of-a-command-argument-vector.md) | security-privacy | pattern | observability, security, validation |
