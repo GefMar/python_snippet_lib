@@ -8,6 +8,7 @@ is how that workflow is constructed or validated.
 <!-- catalog:category:start -->
 | Snippet | Type | Use Cases | Problem |
 | --- | --- | --- | --- |
+| [Apply a Reusable Click Option Bundle to Subcommands](apply-a-reusable-click-option-bundle-to-subcommands.md) | integration | automation, configuration, testing | Apply the same Click option declarations to several subcommands while creating independent option objects for every command. |
 | [Compare a Bounded Text Capture Against a Golden Fixture](compare-a-bounded-text-capture-against-a-golden-fixture.md) | testing-technique | testing, validation | Compare an already captured exit status and text streams with an exact golden record while keeping mismatch diagnostics deterministic and bounded. |
 | [Extract Bounded Native-Test Failure Highlights](extract-bounded-native-test-failure-highlights.md) | recipe | observability, parsing, testing | Extract a small, attributed set of diagnostic lines from already bounded native-test stdout and stderr without treating the result as a complete report. |
 | [Generate a Seeded Metric with Bounded Flapping Runs](generate-a-seeded-metric-with-bounded-flapping-runs.md) | testing-technique | observability, testing | Produce deterministic test metric values whose flapped state persists for a bounded randomly chosen run. |
