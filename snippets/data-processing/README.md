@@ -9,6 +9,7 @@ problem.
 | Snippet | Type | Use Cases | Problem |
 | --- | --- | --- | --- |
 | [Aggregate Consecutive Values into Weighted Runs](aggregate-consecutive-values-into-weighted-runs.md) | algorithm | data-transformation | Combine adjacent equal keys in an ordered stream while preserving run order, item count, and a finite non-negative total weight. |
+| [Audit pandas Missing-Value Shares Against Column Policies](audit-pandas-missing-value-shares-against-column-policies.md) | integration | data-transformation, validation | Measure pandas missing-value shares for explicitly governed columns and compare each share with an immutable policy without changing the frame. |
 | [Batch Items by Estimated Byte Size](batch-items-by-estimated-byte-size.md) | algorithm | data-transformation, resource-management | Group a stream lazily into tuples whose positive estimated sizes never exceed a strict per-batch byte limit. |
 | [Check a Value Against an Asymmetric Tolerance Band](check-a-value-against-an-asymmetric-tolerance-band.md) | algorithm | validation | Validate one finite observation against independently sized lower and upper margins around a finite reference value. |
 | [Collect Expected Parse Failures Without Stopping a Batch](collect-expected-parse-failures-without-stopping-a-batch.md) | pattern | parsing, validation | Represent expected input failures as typed values so one malformed item does not discard successful results from the same batch. |
