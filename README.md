@@ -18,13 +18,13 @@ not edit it by hand.
 | Category | Scope | Snippets |
 | --- | --- | ---: |
 | [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 21 |
-| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 26 |
+| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 27 |
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 18 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 16 |
-| [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 15 |
+| [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 17 |
 | [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 41 |
-| [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 16 |
-| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 16 |
+| [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 17 |
+| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 17 |
 | [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 30 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 13 |
 | [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 8 |
@@ -61,6 +61,7 @@ not edit it by hand.
 | [Build a Canonical Unicode Caseless Comparison Key](snippets/algorithms-data-structures/build-a-canonical-unicode-caseless-comparison-key.md) | algorithms-data-structures | algorithm | interoperability, validation |
 | [Build a Capacity-Sized Bloom Filter](snippets/algorithms-data-structures/build-a-capacity-sized-bloom-filter.md) | algorithms-data-structures | algorithm | performance-optimization, validation |
 | [Choose Nice Linear Axis Bounds and Tick Step](snippets/algorithms-data-structures/choose-nice-linear-axis-bounds-and-tick-step.md) | algorithms-data-structures | algorithm | data-transformation |
+| [Choose the First Eligible Candidate from Ordered Priority Groups](snippets/algorithms-data-structures/choose-the-first-eligible-candidate-from-ordered-priority-groups.md) | algorithms-data-structures | algorithm | data-transformation, validation |
 | [Cover a Half-Open Integer Range with Dyadic Intervals](snippets/algorithms-data-structures/cover-a-half-open-integer-range-with-dyadic-intervals.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization |
 | [Estimate Distinct Byte Strings with a Mergeable HyperLogLog](snippets/algorithms-data-structures/estimate-distinct-byte-strings-with-a-mergeable-hyperloglog.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization |
 | [Estimate Stream Frequencies with a Count-Min Sketch](snippets/algorithms-data-structures/estimate-stream-frequencies-with-a-count-min-sketch.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization |
@@ -122,6 +123,7 @@ not edit it by hand.
 | [Collect Matching Cursor Pages with an Explicit Page Budget](snippets/networking-protocols/collect-matching-cursor-pages-with-an-explicit-page-budget.md) | networking-protocols | pattern | networking, resource-management |
 | [Encode a Bounded HTTP/1.1 Chunked Body for Protocol Tests](snippets/networking-protocols/encode-a-bounded-http-1-1-chunked-body-for-protocol-tests.md) | networking-protocols | recipe | networking, serialization, testing, validation |
 | [Extract Bounded Field Violations from a google.rpc Status Payload](snippets/networking-protocols/extract-bounded-field-violations-from-a-google-rpc-status-payload.md) | networking-protocols | integration | networking, parsing, validation |
+| [Extract Bounded Singleton HTTP Headers with Explicit Rules](snippets/networking-protocols/extract-bounded-singleton-http-headers-with-explicit-rules.md) | networking-protocols | recipe | networking, parsing, validation |
 | [Iterate Cursor-Paginated Results Lazily](snippets/networking-protocols/iterate-cursor-paginated-results-lazily.md) | networking-protocols | pattern | networking, resource-management |
 | [Parse a Bounded ASCII Media Type Value](snippets/networking-protocols/parse-a-bounded-ascii-media-type-value.md) | networking-protocols | recipe | interoperability, parsing, serialization, validation |
 | [Parse a Bounded Host and Port with Bracketed IPv6](snippets/networking-protocols/parse-a-bounded-host-and-port-with-bracketed-ipv6.md) | networking-protocols | recipe | networking, parsing, validation |
@@ -129,6 +131,7 @@ not edit it by hand.
 | [Read and Write Size-Capped Varint Frames](snippets/networking-protocols/read-and-write-size-capped-varint-frames.md) | networking-protocols | recipe | networking, serialization, validation |
 | [Release a Pooled Response Connection Only After Clean EOF](snippets/networking-protocols/release-a-pooled-response-connection-only-after-clean-eof.md) | networking-protocols | pattern | lifecycle-management, networking, resource-management, validation |
 | [Resume a Bounded HTTP Byte Stream with Validated Range Responses](snippets/networking-protocols/resume-a-bounded-http-byte-stream-with-validated-range-responses.md) | networking-protocols | integration | networking, resource-management, retry-recovery, validation |
+| [Run Ordered HTTP Request and Response Layers Around One Handler](snippets/networking-protocols/run-ordered-http-request-and-response-layers-around-one-handler.md) | networking-protocols | pattern | data-transformation, networking, validation |
 | [Yield Bounded SSE Frames with Serialized Comment Keepalives](snippets/networking-protocols/yield-bounded-sse-frames-with-serialized-comment-keepalives.md) | networking-protocols | integration | concurrency-control, networking, resource-management, serialization |
 | [Aggregate Consecutive Values into Weighted Runs](snippets/data-processing/aggregate-consecutive-values-into-weighted-runs.md) | data-processing | algorithm | data-transformation |
 | [Aggregate pandas Groups into Explicit Flat Columns](snippets/data-processing/aggregate-pandas-groups-into-explicit-flat-columns.md) | data-processing | integration | data-transformation, interoperability, validation |
@@ -179,6 +182,7 @@ not edit it by hand.
 | [Detect a Recent Drop Against a Disjoint pandas Baseline Window](snippets/machine-learning-statistics/detect-a-recent-drop-against-a-disjoint-pandas-baseline-window.md) | machine-learning-statistics | integration | observability, validation |
 | [Encode Categories with Out-of-Fold Smoothed Target Means](snippets/machine-learning-statistics/encode-categories-with-out-of-fold-smoothed-target-means.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Encode Cyclic Positions with Sine and Cosine](snippets/machine-learning-statistics/encode-cyclic-positions-with-sine-and-cosine.md) | machine-learning-statistics | algorithm | data-transformation |
+| [Fit and Apply a Frozen pandas Median Z-Score Profile](snippets/machine-learning-statistics/fit-and-apply-a-frozen-pandas-median-z-score-profile.md) | machine-learning-statistics | integration | data-transformation, validation |
 | [Fit and Apply an Exact Categorical Frequency Encoder](snippets/machine-learning-statistics/fit-and-apply-an-exact-categorical-frequency-encoder.md) | machine-learning-statistics | recipe | data-transformation, validation |
 | [Fit and Apply Fixed Quantile Clipping Bounds](snippets/machine-learning-statistics/fit-and-apply-fixed-quantile-clipping-bounds.md) | machine-learning-statistics | recipe | data-transformation, validation |
 | [Fit PCA with NumPy and Report Cumulative Explained Variance](snippets/machine-learning-statistics/fit-pca-with-numpy-and-report-cumulative-explained-variance.md) | machine-learning-statistics | algorithm | data-transformation, validation |
@@ -195,6 +199,7 @@ not edit it by hand.
 | [Decide Whether to Restore a Versioned Snapshot](snippets/storage-databases/decide-whether-to-restore-a-versioned-snapshot.md) | storage-databases | algorithm | configuration, data-transformation, validation |
 | [Fingerprint a Bounded Flat File Set with Framed SHA-256](snippets/storage-databases/fingerprint-a-bounded-flat-file-set-with-framed-sha-256.md) | storage-databases | recipe | caching, persistence, validation |
 | [Plan an Incremental Cumulative Snapshot from Partition Dates](snippets/storage-databases/plan-an-incremental-cumulative-snapshot-from-partition-dates.md) | storage-databases | algorithm | automation, data-transformation, validation |
+| [Project a Dataclass into a Validated Insert Row](snippets/storage-databases/project-a-dataclass-into-a-validated-insert-row.md) | storage-databases | recipe | data-transformation, persistence, validation |
 | [Read the Last Bounded Binary Lines with a Read-Only mmap](snippets/storage-databases/read-the-last-bounded-binary-lines-with-a-read-only-mmap.md) | storage-databases | recipe | parsing, performance-optimization, resource-management |
 | [Replace a File Atomically with a Sibling Temporary File](snippets/storage-databases/replace-a-file-atomically-with-a-sibling-temporary-file.md) | storage-databases | recipe | persistence, resource-management |
 | [Select Expired Backup Names with Strict UTC Timestamps](snippets/storage-databases/select-expired-backup-names-with-strict-utc-timestamps.md) | storage-databases | recipe | automation, parsing, validation |
