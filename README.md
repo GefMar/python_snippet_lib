@@ -18,17 +18,17 @@ not edit it by hand.
 | Category | Scope | Snippets |
 | --- | --- | ---: |
 | [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 20 |
-| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 24 |
-| [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 17 |
+| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 26 |
+| [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 18 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 15 |
 | [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 15 |
-| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 39 |
+| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 40 |
 | [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 16 |
 | [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 15 |
 | [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 29 |
-| [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 12 |
+| [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 13 |
 | [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 8 |
-| [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 13 |
+| [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 14 |
 
 ### Snippets
 
@@ -70,6 +70,8 @@ not edit it by hand.
 | [Map Keys with an Immutable Consistent Hash Ring](snippets/algorithms-data-structures/map-keys-with-an-immutable-consistent-hash-ring.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization |
 | [Map Points Between Rectangular Coordinate Spaces](snippets/algorithms-data-structures/map-points-between-rectangular-coordinate-spaces.md) | algorithms-data-structures | algorithm | data-transformation, interoperability |
 | [Match Strict Mutual Nearest Neighbors with a Comparison Budget](snippets/algorithms-data-structures/match-strict-mutual-nearest-neighbors-with-a-comparison-budget.md) | algorithms-data-structures | algorithm | data-transformation, validation |
+| [Model Newest-Wins Lookups with Bounded Immutable LSM Segments](snippets/algorithms-data-structures/model-newest-wins-lookups-with-bounded-immutable-lsm-segments.md) | algorithms-data-structures | pattern | data-transformation, resource-management |
+| [Rank Bounded Records with Stable Ties and Neighbor Windows](snippets/algorithms-data-structures/rank-bounded-records-with-stable-ties-and-neighbor-windows.md) | algorithms-data-structures | algorithm | data-transformation, validation |
 | [Rank Hierarchy Paths with Bounded Weighted Edit Distance](snippets/algorithms-data-structures/rank-hierarchy-paths-with-bounded-weighted-edit-distance.md) | algorithms-data-structures | algorithm | data-transformation, validation |
 | [Read a Bounded Range from Non-Overlapping Byte Segments](snippets/algorithms-data-structures/read-a-bounded-range-from-non-overlapping-byte-segments.md) | algorithms-data-structures | algorithm | data-transformation, resource-management, validation |
 | [Repair Selected Hierarchy Parents Through a Bounded Ancestor Map](snippets/algorithms-data-structures/repair-selected-hierarchy-parents-through-a-bounded-ancestor-map.md) | algorithms-data-structures | algorithm | data-transformation, validation |
@@ -78,6 +80,7 @@ not edit it by hand.
 | [Sort Dotted Release Labels with an Explicit Last Marker](snippets/algorithms-data-structures/sort-dotted-release-labels-with-an-explicit-last-marker.md) | algorithms-data-structures | algorithm | data-transformation, parsing |
 | [Sort Newline-Terminated Binary Records with Bounded Merge Passes](snippets/algorithms-data-structures/sort-newline-terminated-binary-records-with-bounded-merge-passes.md) | algorithms-data-structures | algorithm | data-transformation, resource-management |
 | [Traverse a Parent Graph with Breadth-First Search](snippets/algorithms-data-structures/traverse-a-parent-graph-with-breadth-first-search.md) | algorithms-data-structures | algorithm | data-transformation, validation |
+| [Collect a Bounded Thread-Pool Batch Under One Deadline](snippets/concurrency-lifecycle/collect-a-bounded-thread-pool-batch-under-one-deadline.md) | concurrency-lifecycle | pattern | concurrency-control, lifecycle-management, resource-management |
 | [Collect Thread-Pool Results and Errors as Futures Complete](snippets/concurrency-lifecycle/collect-thread-pool-results-and-errors-as-futures-complete.md) | concurrency-lifecycle | recipe | concurrency-control, resource-management |
 | [Drain Bounded Deferred Writes Outside the Queue Lock](snippets/concurrency-lifecycle/drain-bounded-deferred-writes-outside-the-queue-lock.md) | concurrency-lifecycle | pattern | concurrency-control, networking, resource-management |
 | [Elect One Final Releaser from Bounded Named Leases](snippets/concurrency-lifecycle/elect-one-final-releaser-from-bounded-named-leases.md) | concurrency-lifecycle | pattern | concurrency-control, lifecycle-management, resource-management |
@@ -135,6 +138,7 @@ not edit it by hand.
 | [Check a Value Against an Asymmetric Tolerance Band](snippets/data-processing/check-a-value-against-an-asymmetric-tolerance-band.md) | data-processing | algorithm | validation |
 | [Clean a pandas Series with First-Match Rules and Audit Counts](snippets/data-processing/clean-a-pandas-series-with-first-match-rules-and-audit-counts.md) | data-processing | integration | data-transformation, validation |
 | [Collect Expected Parse Failures Without Stopping a Batch](snippets/data-processing/collect-expected-parse-failures-without-stopping-a-batch.md) | data-processing | pattern | parsing, validation |
+| [Compare Ordered Integer Time-Series Snapshots with Explicit Tolerance](snippets/data-processing/compare-ordered-integer-time-series-snapshots-with-explicit-tolerance.md) | data-processing | algorithm | data-transformation, validation |
 | [Count Static Imports Across Bounded Python Notebook Cells](snippets/data-processing/count-static-imports-across-bounded-python-notebook-cells.md) | data-processing | algorithm | data-transformation, parsing, validation |
 | [Derive an Other Bucket from Exact pandas Totals](snippets/data-processing/derive-an-other-bucket-from-exact-pandas-totals.md) | data-processing | integration | data-transformation, validation |
 | [Enforce a Many-to-One pandas Left-Merge Contract](snippets/data-processing/enforce-a-many-to-one-pandas-left-merge-contract.md) | data-processing | integration | data-transformation, interoperability, validation |
@@ -235,6 +239,7 @@ not edit it by hand.
 | [Redact Explicit Paths in Bounded JSON-Like Data](snippets/security-privacy/redact-explicit-paths-in-bounded-json-like-data.md) | security-privacy | recipe | data-transformation, observability, security, validation |
 | [Separate Executable and Redacted Views of a Command Argument Vector](snippets/security-privacy/separate-executable-and-redacted-views-of-a-command-argument-vector.md) | security-privacy | pattern | observability, security, validation |
 | [Validate a Conservative Unicode Filename Component](snippets/security-privacy/validate-a-conservative-unicode-filename-component.md) | security-privacy | recipe | interoperability, validation |
+| [Verify a Bounded Byte Stream Before Returning Its Payload](snippets/security-privacy/verify-a-bounded-byte-stream-before-returning-its-payload.md) | security-privacy | recipe | resource-management, security, validation |
 | [Verify an RFC 7636 S256 PKCE Challenge](snippets/security-privacy/verify-an-rfc-7636-s256-pkce-challenge.md) | security-privacy | recipe | interoperability, security, validation |
 | [Apply a Reusable Click Option Bundle to Subcommands](snippets/testing-tooling/apply-a-reusable-click-option-bundle-to-subcommands.md) | testing-tooling | integration | automation, configuration, testing |
 | [Build a Bounded Release DAG Around a Manual Barrier](snippets/testing-tooling/build-a-bounded-release-dag-around-a-manual-barrier.md) | testing-tooling | pattern | automation, testing, validation |
@@ -252,6 +257,7 @@ not edit it by hand.
 | [Format Log Records as JSON with Explicit Extra Fields](snippets/observability-operations/format-log-records-as-json-with-explicit-extra-fields.md) | observability-operations | recipe | observability, serialization |
 | [Group Metric Samples by Their Exact Label-Key Shape](snippets/observability-operations/group-metric-samples-by-their-exact-label-key-shape.md) | observability-operations | algorithm | data-transformation, observability, validation |
 | [Measure and Freeze Elapsed Time in a Context](snippets/observability-operations/measure-and-freeze-elapsed-time-in-a-context.md) | observability-operations | idiom | observability, performance-optimization |
+| [Measure Cache Hit Ratios from Monotonic Counter Snapshots](snippets/observability-operations/measure-cache-hit-ratios-from-monotonic-counter-snapshots.md) | observability-operations | algorithm | observability, validation |
 | [Process Log Records in a Background Thread with QueueListener](snippets/observability-operations/process-log-records-in-a-background-thread-with-queuelistener.md) | observability-operations | recipe | concurrency-control, lifecycle-management, observability |
 | [Read a Bounded Log Delta Across One Rename-Based Rotation](snippets/observability-operations/read-a-bounded-log-delta-across-one-rename-based-rotation.md) | observability-operations | recipe | observability, resource-management, retry-recovery |
 | [Report Partition Offsets Behind a Fixed Checkpoint](snippets/observability-operations/report-partition-offsets-behind-a-fixed-checkpoint.md) | observability-operations | algorithm | observability, validation |
