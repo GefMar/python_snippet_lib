@@ -227,8 +227,8 @@ operation in a fresh 96-digit context. Relative division rounds to that
 precision when its decimal expansion does not terminate. Digit, exponent,
 magnitude, scale, and result-count limits intentionally reject otherwise valid
 `Decimal` values so adversarial coefficients or exponents cannot make this
-small view builder consume unbounded resources. Exponent validation performs a
-fixed 129 `same_quantum()` comparisons, and the digit count is derived from the
+small view builder consume unbounded resources. Exponent validation performs at
+most 129 `same_quantum()` comparisons, and the digit count is derived from the
 adjusted position; rejection does not materialize a coefficient tuple or text
 representation.
 

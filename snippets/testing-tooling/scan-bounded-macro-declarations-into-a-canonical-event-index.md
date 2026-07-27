@@ -18,7 +18,7 @@ related:
 
 ## Idea and Problem
 
-Scan a small tuple of named text units for two exact macro-shaped declarations and return one immutable, order-independent event index.
+Scan a small tuple of named text units for two exact macro-shaped declarations and return one immutable event index independent of unit order.
 
 An event implicitly belongs to the most recent group in the same unit. Resetting
 that state at each unit boundary prevents a missing group declaration from
