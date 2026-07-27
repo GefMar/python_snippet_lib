@@ -8,6 +8,7 @@ are the learning objective, not merely the implementation language.
 <!-- catalog:category:start -->
 | Snippet | Type | Use Cases | Problem |
 | --- | --- | --- | --- |
+| [Add Bounded Stage Context Without Replacing an Exception](add-bounded-stage-context-without-replacing-an-exception.md) | idiom | observability, validation | Add one bounded diagnostic note at a synchronous stage boundary, then re-raise the same exception without replacing its type or traceback chain. |
 | [Apply Partial Dataclass Updates with an Omitted-Value Sentinel](apply-partial-dataclass-updates-with-an-omitted-value-sentinel.md) | recipe | data-transformation, validation | Use a unique sentinel to distinguish an omitted dataclass patch field from an explicit None, false, or zero value. |
 | [Batch Any Iterable Lazily with itertools.batched](batch-any-iterable-lazily-with-itertools-batched.md) | idiom | data-transformation, resource-management | Use the standard library batching iterator to consume any iterable lazily as fixed-size tuples without reimplementing iterator slicing. |
 | [Build a Read-Only Mapping with Canonical Text Keys](build-a-read-only-mapping-with-canonical-text-keys.md) | recipe | interoperability, validation | Build a read-only mapping once so construction, lookup, membership, get, and iteration all share one Unicode caseless key invariant. |

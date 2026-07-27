@@ -17,10 +17,10 @@ not edit it by hand.
 
 | Category | Scope | Snippets |
 | --- | --- | ---: |
-| [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 19 |
-| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 23 |
-| [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 15 |
-| [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 14 |
+| [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 20 |
+| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 24 |
+| [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 17 |
+| [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 15 |
 | [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 15 |
 | [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 39 |
 | [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 16 |
@@ -34,6 +34,7 @@ not edit it by hand.
 
 | Snippet | Category | Type | Use Cases |
 | --- | --- | --- | --- |
+| [Add Bounded Stage Context Without Replacing an Exception](snippets/python-language/add-bounded-stage-context-without-replacing-an-exception.md) | python-language | idiom | observability, validation |
 | [Apply Partial Dataclass Updates with an Omitted-Value Sentinel](snippets/python-language/apply-partial-dataclass-updates-with-an-omitted-value-sentinel.md) | python-language | recipe | data-transformation, validation |
 | [Batch Any Iterable Lazily with itertools.batched](snippets/python-language/batch-any-iterable-lazily-with-itertools-batched.md) | python-language | idiom | data-transformation, resource-management |
 | [Build a Read-Only Mapping with Canonical Text Keys](snippets/python-language/build-a-read-only-mapping-with-canonical-text-keys.md) | python-language | recipe | interoperability, validation |
@@ -72,12 +73,14 @@ not edit it by hand.
 | [Rank Hierarchy Paths with Bounded Weighted Edit Distance](snippets/algorithms-data-structures/rank-hierarchy-paths-with-bounded-weighted-edit-distance.md) | algorithms-data-structures | algorithm | data-transformation, validation |
 | [Read a Bounded Range from Non-Overlapping Byte Segments](snippets/algorithms-data-structures/read-a-bounded-range-from-non-overlapping-byte-segments.md) | algorithms-data-structures | algorithm | data-transformation, resource-management, validation |
 | [Repair Selected Hierarchy Parents Through a Bounded Ancestor Map](snippets/algorithms-data-structures/repair-selected-hierarchy-parents-through-a-bounded-ancestor-map.md) | algorithms-data-structures | algorithm | data-transformation, validation |
+| [Report Exact Capacity Deficits for Bounded Resource Profiles](snippets/algorithms-data-structures/report-exact-capacity-deficits-for-bounded-resource-profiles.md) | algorithms-data-structures | algorithm | automation, resource-management, validation |
 | [Resolve Stable Ordering Constraints with Topological Sort](snippets/algorithms-data-structures/resolve-stable-ordering-constraints-with-topological-sort.md) | algorithms-data-structures | algorithm | data-transformation, validation |
 | [Sort Dotted Release Labels with an Explicit Last Marker](snippets/algorithms-data-structures/sort-dotted-release-labels-with-an-explicit-last-marker.md) | algorithms-data-structures | algorithm | data-transformation, parsing |
 | [Sort Newline-Terminated Binary Records with Bounded Merge Passes](snippets/algorithms-data-structures/sort-newline-terminated-binary-records-with-bounded-merge-passes.md) | algorithms-data-structures | algorithm | data-transformation, resource-management |
 | [Traverse a Parent Graph with Breadth-First Search](snippets/algorithms-data-structures/traverse-a-parent-graph-with-breadth-first-search.md) | algorithms-data-structures | algorithm | data-transformation, validation |
 | [Collect Thread-Pool Results and Errors as Futures Complete](snippets/concurrency-lifecycle/collect-thread-pool-results-and-errors-as-futures-complete.md) | concurrency-lifecycle | recipe | concurrency-control, resource-management |
 | [Drain Bounded Deferred Writes Outside the Queue Lock](snippets/concurrency-lifecycle/drain-bounded-deferred-writes-outside-the-queue-lock.md) | concurrency-lifecycle | pattern | concurrency-control, networking, resource-management |
+| [Elect One Final Releaser from Bounded Named Leases](snippets/concurrency-lifecycle/elect-one-final-releaser-from-bounded-named-leases.md) | concurrency-lifecycle | pattern | concurrency-control, lifecycle-management, resource-management |
 | [Gather Async Results with Bounded Concurrency](snippets/concurrency-lifecycle/gather-async-results-with-bounded-concurrency.md) | concurrency-lifecycle | recipe | concurrency-control, resource-management |
 | [Guard an Async Resource with Explicit Lifecycle States](snippets/concurrency-lifecycle/guard-an-async-resource-with-explicit-lifecycle-states.md) | concurrency-lifecycle | pattern | concurrency-control, lifecycle-management, resource-management |
 | [Guard Readers with a Writer-Priority Read-Write Lock](snippets/concurrency-lifecycle/guard-readers-with-a-writer-priority-read-write-lock.md) | concurrency-lifecycle | pattern | concurrency-control, resource-management |
@@ -91,6 +94,7 @@ not edit it by hand.
 | [Stop a Polling Worker Cooperatively with an Event](snippets/concurrency-lifecycle/stop-a-polling-worker-cooperatively-with-an-event.md) | concurrency-lifecycle | pattern | concurrency-control, resource-management |
 | [Stream Bounded stdout and stderr Lines from a POSIX Process](snippets/concurrency-lifecycle/stream-bounded-stdout-and-stderr-lines-from-a-posix-process.md) | concurrency-lifecycle | integration | automation, concurrency-control, lifecycle-management, resource-management |
 | [Submit a Callable with a Snapshot of the Current Context](snippets/concurrency-lifecycle/submit-a-callable-with-a-snapshot-of-the-current-context.md) | concurrency-lifecycle | recipe | concurrency-control, interoperability, observability |
+| [Track Current and Peak Scoped Work with a Synchronized Counter](snippets/concurrency-lifecycle/track-current-and-peak-scoped-work-with-a-synchronized-counter.md) | concurrency-lifecycle | pattern | concurrency-control, observability, resource-management |
 | [Adjust a Bounded Batch Size from Processing Time](snippets/reliability-resilience/adjust-a-bounded-batch-size-from-processing-time.md) | reliability-resilience | algorithm | performance-optimization, resource-management |
 | [Assign Stable Schedule Slots with a Digest](snippets/reliability-resilience/assign-stable-schedule-slots-with-a-digest.md) | reliability-resilience | algorithm | performance-optimization, resource-management |
 | [Cache Values with a Monotonic TTL and Early Jitter](snippets/reliability-resilience/cache-values-with-a-monotonic-ttl-and-early-jitter.md) | reliability-resilience | recipe | caching, resource-management |
@@ -99,6 +103,7 @@ not edit it by hand.
 | [Flush Fixed-Size Batches Through a Scoped Sink](snippets/reliability-resilience/flush-fixed-size-batches-through-a-scoped-sink.md) | reliability-resilience | pattern | data-transformation, resource-management, retry-recovery |
 | [Hold a Switch Active Through a Monotonic Cooldown](snippets/reliability-resilience/hold-a-switch-active-through-a-monotonic-cooldown.md) | reliability-resilience | pattern | observability, resource-management |
 | [Model Independent Blocking Reasons as an Immutable Set](snippets/reliability-resilience/model-independent-blocking-reasons-as-an-immutable-set.md) | reliability-resilience | pattern | configuration, validation |
+| [Plan Remaining Stages from a Validated Completed Prefix](snippets/reliability-resilience/plan-remaining-stages-from-a-validated-completed-prefix.md) | reliability-resilience | algorithm | automation, retry-recovery, validation |
 | [Poll a Remote Operation Within Deadline and Failure Budgets](snippets/reliability-resilience/poll-a-remote-operation-within-deadline-and-failure-budgets.md) | reliability-resilience | integration | automation, networking, resource-management, retry-recovery |
 | [Propagate a Monotonic Deadline with ContextVar](snippets/reliability-resilience/propagate-a-monotonic-deadline-with-contextvar.md) | reliability-resilience | pattern | concurrency-control, lifecycle-management, retry-recovery |
 | [Resolve Incoming Configuration with Last-Known-Good Values](snippets/reliability-resilience/resolve-incoming-configuration-with-last-known-good-values.md) | reliability-resilience | pattern | configuration, validation |
