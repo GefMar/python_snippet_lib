@@ -17,15 +17,15 @@ not edit it by hand.
 
 | Category | Scope | Snippets |
 | --- | --- | ---: |
-| [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 17 |
-| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 18 |
-| [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 6 |
+| [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 18 |
+| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 19 |
+| [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 8 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 7 |
 | [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 5 |
 | [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 16 |
 | [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 3 |
-| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 7 |
-| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 19 |
+| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 10 |
+| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 20 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 3 |
 | [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 2 |
 | [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 9 |
@@ -40,6 +40,7 @@ not edit it by hand.
 | [Build an Immutable Slice-Aware Sequence](snippets/python-language/build-an-immutable-slice-aware-sequence.md) | python-language | recipe | data-transformation, interoperability |
 | [Bypass an LRU Cache with a Per-Call Predicate](snippets/python-language/bypass-an-lru-cache-with-a-per-call-predicate.md) | python-language | pattern | caching, performance-optimization |
 | [Cache One Zero-Argument Method Result per Weakly Referenced Instance](snippets/python-language/cache-one-zero-argument-method-result-per-weakly-referenced-instance.md) | python-language | pattern | caching, resource-management |
+| [Collect Decorated Methods in Class Definition Order](snippets/python-language/collect-decorated-methods-in-class-definition-order.md) | python-language | pattern | automation, configuration |
 | [Dispatch Named Strategies with an Explicit Function Mapping](snippets/python-language/dispatch-named-strategies-with-an-explicit-function-mapping.md) | python-language | pattern | configuration, interoperability |
 | [Handle Search Exhaustion with for/else](snippets/python-language/handle-search-exhaustion-with-for-else.md) | python-language | idiom | data-transformation, validation |
 | [Keep Exception Handlers Narrow with try/else](snippets/python-language/keep-exception-handlers-narrow-with-try-else.md) | python-language | idiom | parsing, validation |
@@ -53,6 +54,7 @@ not edit it by hand.
 | [Walk a Tree Recursively with yield from](snippets/python-language/walk-a-tree-recursively-with-yield-from.md) | python-language | idiom | data-transformation |
 | [Accept Sparse Observations That Preserve Strict Position-Time Order](snippets/algorithms-data-structures/accept-sparse-observations-that-preserve-strict-position-time-order.md) | algorithms-data-structures | algorithm | data-transformation, validation |
 | [Apportion a Non-Negative Integer Total Without Rounding Drift](snippets/algorithms-data-structures/apportion-a-non-negative-integer-total-without-rounding-drift.md) | algorithms-data-structures | algorithm | data-transformation, resource-management, validation |
+| [Bisect a Bracketed Monotone Async Metric Within an Evaluation Budget](snippets/algorithms-data-structures/bisect-a-bracketed-monotone-async-metric-within-an-evaluation-budget.md) | algorithms-data-structures | algorithm | performance-optimization, validation |
 | [Build a Canonical Unicode Caseless Comparison Key](snippets/algorithms-data-structures/build-a-canonical-unicode-caseless-comparison-key.md) | algorithms-data-structures | algorithm | interoperability, validation |
 | [Build a Capacity-Sized Bloom Filter](snippets/algorithms-data-structures/build-a-capacity-sized-bloom-filter.md) | algorithms-data-structures | algorithm | performance-optimization, validation |
 | [Choose Nice Linear Axis Bounds and Tick Step](snippets/algorithms-data-structures/choose-nice-linear-axis-bounds-and-tick-step.md) | algorithms-data-structures | algorithm | data-transformation |
@@ -73,6 +75,8 @@ not edit it by hand.
 | [Drain Bounded Deferred Writes Outside the Queue Lock](snippets/concurrency-lifecycle/drain-bounded-deferred-writes-outside-the-queue-lock.md) | concurrency-lifecycle | pattern | concurrency-control, networking, resource-management |
 | [Gather Async Results with Bounded Concurrency](snippets/concurrency-lifecycle/gather-async-results-with-bounded-concurrency.md) | concurrency-lifecycle | recipe | concurrency-control, resource-management |
 | [Guard an Async Resource with Explicit Lifecycle States](snippets/concurrency-lifecycle/guard-an-async-resource-with-explicit-lifecycle-states.md) | concurrency-lifecycle | pattern | concurrency-control, lifecycle-management, resource-management |
+| [Guard Readers with a Writer-Priority Read-Write Lock](snippets/concurrency-lifecycle/guard-readers-with-a-writer-priority-read-write-lock.md) | concurrency-lifecycle | pattern | concurrency-control, resource-management |
+| [Run an Async Worker on Clock-Aligned Ticks Without Catch-Up](snippets/concurrency-lifecycle/run-an-async-worker-on-clock-aligned-ticks-without-catch-up.md) | concurrency-lifecycle | pattern | automation, concurrency-control, lifecycle-management |
 | [Stop a Polling Worker Cooperatively with an Event](snippets/concurrency-lifecycle/stop-a-polling-worker-cooperatively-with-an-event.md) | concurrency-lifecycle | pattern | concurrency-control, resource-management |
 | [Submit a Callable with a Snapshot of the Current Context](snippets/concurrency-lifecycle/submit-a-callable-with-a-snapshot-of-the-current-context.md) | concurrency-lifecycle | recipe | concurrency-control, interoperability, observability |
 | [Assign Stable Schedule Slots with a Digest](snippets/reliability-resilience/assign-stable-schedule-slots-with-a-digest.md) | reliability-resilience | algorithm | performance-optimization, resource-management |
@@ -108,6 +112,9 @@ not edit it by hand.
 | [Encode Cyclic Positions with Sine and Cosine](snippets/machine-learning-statistics/encode-cyclic-positions-with-sine-and-cosine.md) | machine-learning-statistics | algorithm | data-transformation |
 | [Build and Apply a Deterministic Mapping Delta](snippets/storage-databases/build-and-apply-a-deterministic-mapping-delta.md) | storage-databases | algorithm | data-transformation, persistence |
 | [Check Whether a Generated File Is Older Than Its Inputs](snippets/storage-databases/check-whether-a-generated-file-is-older-than-its-inputs.md) | storage-databases | recipe | automation, caching, validation |
+| [Compare and Swap a Versioned SQLite Setting with One Conditional Update](snippets/storage-databases/compare-and-swap-a-versioned-sqlite-setting-with-one-conditional-update.md) | storage-databases | recipe | concurrency-control, persistence |
+| [Compare Bounded Apparent Sizes of Two File-Tree Snapshots](snippets/storage-databases/compare-bounded-apparent-sizes-of-two-file-tree-snapshots.md) | storage-databases | recipe | automation, persistence, resource-management |
+| [Read the Last Bounded Binary Lines with a Read-Only mmap](snippets/storage-databases/read-the-last-bounded-binary-lines-with-a-read-only-mmap.md) | storage-databases | recipe | parsing, performance-optimization, resource-management |
 | [Replace a File Atomically with a Sibling Temporary File](snippets/storage-databases/replace-a-file-atomically-with-a-sibling-temporary-file.md) | storage-databases | recipe | persistence, resource-management |
 | [Select Snapshot Representatives by UTC Calendar Buckets](snippets/storage-databases/select-snapshot-representatives-by-utc-calendar-buckets.md) | storage-databases | algorithm | automation, persistence |
 | [Split a Binary Stream into Exclusively Created Numbered Parts](snippets/storage-databases/split-a-binary-stream-into-exclusively-created-numbered-parts.md) | storage-databases | recipe | automation, persistence, resource-management |
@@ -128,6 +135,7 @@ not edit it by hand.
 | [Parse Compact Durations into timedelta](snippets/configuration-serialization/parse-compact-durations-into-timedelta.md) | configuration-serialization | recipe | configuration, parsing, validation |
 | [Parse Explicit Decimal and Binary Byte Sizes](snippets/configuration-serialization/parse-explicit-decimal-and-binary-byte-sizes.md) | configuration-serialization | recipe | configuration, parsing, validation |
 | [Prune Empty Values from JSON-Like Data](snippets/configuration-serialization/prune-empty-values-from-json-like-data.md) | configuration-serialization | recipe | data-transformation, serialization |
+| [Register and Unregister a Bounded Single-Byte Charmap Codec](snippets/configuration-serialization/register-and-unregister-a-bounded-single-byte-charmap-codec.md) | configuration-serialization | integration | interoperability, serialization |
 | [Reject Unknown Options with Conservative Typo Suggestions](snippets/configuration-serialization/reject-unknown-options-with-conservative-typo-suggestions.md) | configuration-serialization | recipe | configuration, validation |
 | [Render a Stable Unified Diff for Nested JSON Values](snippets/configuration-serialization/render-a-stable-unified-diff-for-nested-json-values.md) | configuration-serialization | recipe | serialization, testing, validation |
 | [Resolve an Absolute or Percentage Limit](snippets/configuration-serialization/resolve-an-absolute-or-percentage-limit.md) | configuration-serialization | recipe | configuration, parsing, validation |
