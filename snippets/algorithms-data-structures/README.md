@@ -8,6 +8,7 @@ determines correctness independent of a product domain.
 <!-- catalog:category:start -->
 | Snippet | Type | Use Cases | Problem |
 | --- | --- | --- | --- |
+| [Apportion a Non-Negative Integer Total Without Rounding Drift](apportion-a-non-negative-integer-total-without-rounding-drift.md) | algorithm | data-transformation, resource-management, validation | Divide a non-negative integer into a bounded number of nearly equal integer shares while preserving the total exactly. |
 | [Build a Canonical Unicode Caseless Comparison Key](build-a-canonical-unicode-caseless-comparison-key.md) | algorithm | interoperability, validation | Create a normalized casefold key that makes canonically equivalent Unicode text compare equal without changing the displayed value. |
 | [Build a Capacity-Sized Bloom Filter](build-a-capacity-sized-bloom-filter.md) | algorithm | performance-optimization, validation | Represent approximate membership in a compact bit array sized from an expected item count and acceptable false-positive rate. |
 | [Choose Nice Linear Axis Bounds and Tick Step](choose-nice-linear-axis-bounds-and-tick-step.md) | algorithm | data-transformation | Enclose a finite numeric range with linear-axis bounds and a readable tick step based on 1, 2, or 5 times a power of ten. |
