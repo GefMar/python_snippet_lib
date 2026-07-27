@@ -8,6 +8,7 @@ privacy or hostile-input invariant is central.
 <!-- catalog:category:start -->
 | Snippet | Type | Use Cases | Problem |
 | --- | --- | --- | --- |
+| [Audit Parsed Compose Services for Digest-Pinned Images](audit-parsed-compose-services-for-digest-pinned-images.md) | recipe | configuration, security, validation | Audit already parsed Compose service records with a conservative rule that accepts each declared image only when it ends in one lowercase SHA-256 digest pin. |
 | [Audit Symlinks in a Bounded Directory Tree](audit-symlinks-in-a-bounded-directory-tree.md) | recipe | resource-management, security, validation | Inspect a stable directory without following links and reject any symbolic link whose resolved target is missing or outside the inspected root. |
 | [Authenticate Bounded Payloads with Versioned HMAC Keys](authenticate-bounded-payloads-with-versioned-hmac-keys.md) | pattern | security, serialization, validation | Authenticate a bounded payload with the key assigned to the current time epoch while retaining older versioned keys for verification. |
 | [Create and Verify a Short-Lived HMAC Download URL](create-and-verify-a-short-lived-hmac-download-url.md) | pattern | networking, security | Issue a replayable HTTPS capability URL whose exact endpoint, resource, audience, issuance time, expiry, and key ID are authenticated together. |
