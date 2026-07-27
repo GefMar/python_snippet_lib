@@ -21,13 +21,13 @@ not edit it by hand.
 | [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 19 |
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 14 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 12 |
-| [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 10 |
-| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 18 |
-| [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 3 |
+| [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 12 |
+| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 19 |
+| [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 4 |
 | [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 11 |
-| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 21 |
-| [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 9 |
-| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 4 |
+| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 22 |
+| [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 10 |
+| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 5 |
 | [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 10 |
 
 ### Snippets
@@ -97,6 +97,7 @@ not edit it by hand.
 | [Retry Only Eligible Items in a Bounded Batch](snippets/reliability-resilience/retry-only-eligible-items-in-a-bounded-batch.md) | reliability-resilience | pattern | networking, retry-recovery |
 | [Schedule the Next Review from Outcome and Bounded Coverage](snippets/reliability-resilience/schedule-the-next-review-from-outcome-and-bounded-coverage.md) | reliability-resilience | algorithm | automation, retry-recovery, validation |
 | [Wait for a Predicate Until a Monotonic Deadline](snippets/reliability-resilience/wait-for-a-predicate-until-a-monotonic-deadline.md) | reliability-resilience | recipe | retry-recovery |
+| [Apply an HTTP Patch Only When a Strong ETag Still Matches](snippets/networking-protocols/apply-an-http-patch-only-when-a-strong-etag-still-matches.md) | networking-protocols | integration | networking, validation |
 | [Build a Canonical HTTP Origin Key](snippets/networking-protocols/build-a-canonical-http-origin-key.md) | networking-protocols | recipe | networking, validation |
 | [Choose Buffered or Streaming Multipart Encoding from Bounded Parts](snippets/networking-protocols/choose-buffered-or-streaming-multipart-encoding-from-bounded-parts.md) | networking-protocols | integration | networking, resource-management, serialization, validation |
 | [Collect Matching Cursor Pages with an Explicit Page Budget](snippets/networking-protocols/collect-matching-cursor-pages-with-an-explicit-page-budget.md) | networking-protocols | pattern | networking, resource-management |
@@ -107,10 +108,12 @@ not edit it by hand.
 | [Read and Write Size-Capped Varint Frames](snippets/networking-protocols/read-and-write-size-capped-varint-frames.md) | networking-protocols | recipe | networking, serialization, validation |
 | [Release a Pooled Response Connection Only After Clean EOF](snippets/networking-protocols/release-a-pooled-response-connection-only-after-clean-eof.md) | networking-protocols | pattern | lifecycle-management, networking, resource-management, validation |
 | [Resume a Bounded HTTP Byte Stream with Validated Range Responses](snippets/networking-protocols/resume-a-bounded-http-byte-stream-with-validated-range-responses.md) | networking-protocols | integration | networking, resource-management, retry-recovery, validation |
+| [Yield Bounded SSE Frames with Serialized Comment Keepalives](snippets/networking-protocols/yield-bounded-sse-frames-with-serialized-comment-keepalives.md) | networking-protocols | integration | concurrency-control, networking, resource-management, serialization |
 | [Aggregate Consecutive Values into Weighted Runs](snippets/data-processing/aggregate-consecutive-values-into-weighted-runs.md) | data-processing | algorithm | data-transformation |
 | [Batch Items by Estimated Byte Size](snippets/data-processing/batch-items-by-estimated-byte-size.md) | data-processing | algorithm | data-transformation, resource-management |
 | [Check a Value Against an Asymmetric Tolerance Band](snippets/data-processing/check-a-value-against-an-asymmetric-tolerance-band.md) | data-processing | algorithm | validation |
 | [Collect Expected Parse Failures Without Stopping a Batch](snippets/data-processing/collect-expected-parse-failures-without-stopping-a-batch.md) | data-processing | pattern | parsing, validation |
+| [Count Static Imports Across Bounded Python Notebook Cells](snippets/data-processing/count-static-imports-across-bounded-python-notebook-cells.md) | data-processing | algorithm | data-transformation, parsing, validation |
 | [Group Items by an Exact Compatibility Signature and Report Unmatched Inputs](snippets/data-processing/group-items-by-an-exact-compatibility-signature-and-report-unmatched-inputs.md) | data-processing | algorithm | data-transformation, validation |
 | [Isolate Independently Failing Items by Bisecting a Bounded Batch](snippets/data-processing/isolate-independently-failing-items-by-bisecting-a-bounded-batch.md) | data-processing | algorithm | data-transformation, resource-management, validation |
 | [Limit Text Lines Across Arbitrary Chunks](snippets/data-processing/limit-text-lines-across-arbitrary-chunks.md) | data-processing | recipe | parsing, resource-management |
@@ -128,6 +131,7 @@ not edit it by hand.
 | [Calculate a Symmetrically Trimmed Mean](snippets/machine-learning-statistics/calculate-a-symmetrically-trimmed-mean.md) | machine-learning-statistics | recipe | data-transformation, performance-optimization |
 | [Compute a Wilson Score Interval for a Binomial Proportion](snippets/machine-learning-statistics/compute-a-wilson-score-interval-for-a-binomial-proportion.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Encode Cyclic Positions with Sine and Cosine](snippets/machine-learning-statistics/encode-cyclic-positions-with-sine-and-cosine.md) | machine-learning-statistics | algorithm | data-transformation |
+| [Measure Drift Between Two Fixed-Bin Count Distributions with PSI](snippets/machine-learning-statistics/measure-drift-between-two-fixed-bin-count-distributions-with-psi.md) | machine-learning-statistics | algorithm | observability, validation |
 | [Build and Apply a Deterministic Mapping Delta](snippets/storage-databases/build-and-apply-a-deterministic-mapping-delta.md) | storage-databases | algorithm | data-transformation, persistence |
 | [Check Whether a Generated File Is Older Than Its Inputs](snippets/storage-databases/check-whether-a-generated-file-is-older-than-its-inputs.md) | storage-databases | recipe | automation, caching, validation |
 | [Compare and Swap a Versioned SQLite Setting with One Conditional Update](snippets/storage-databases/compare-and-swap-a-versioned-sqlite-setting-with-one-conditional-update.md) | storage-databases | recipe | concurrency-control, persistence |
@@ -143,6 +147,7 @@ not edit it by hand.
 | [Build a Deterministic Size-Capped USTAR Archive from Bytes](snippets/configuration-serialization/build-a-deterministic-size-capped-ustar-archive-from-bytes.md) | configuration-serialization | recipe | resource-management, serialization, validation |
 | [Convert a Weekday Bitmask to a Canonical Cron Schedule](snippets/configuration-serialization/convert-a-weekday-bitmask-to-a-canonical-cron-schedule.md) | configuration-serialization | recipe | configuration, serialization, validation |
 | [Convert Decimal Values to Exact Minor Units](snippets/configuration-serialization/convert-decimal-values-to-exact-minor-units.md) | configuration-serialization | recipe | interoperability, validation |
+| [Derive a Versioned Record Key from Explicit Identity Fields](snippets/configuration-serialization/derive-a-versioned-record-key-from-explicit-identity-fields.md) | configuration-serialization | algorithm | serialization, validation |
 | [Elide Nested Mapping Values That Match Explicit Defaults](snippets/configuration-serialization/elide-nested-mapping-values-that-match-explicit-defaults.md) | configuration-serialization | recipe | configuration, serialization |
 | [Embed a Small Routing Hint in a Random UUIDv8](snippets/configuration-serialization/embed-a-small-routing-hint-in-a-random-uuidv8.md) | configuration-serialization | recipe | interoperability, serialization, validation |
 | [Evaluate a Bounded Boolean Tag Expression with an AST Allowlist](snippets/configuration-serialization/evaluate-a-bounded-boolean-tag-expression-with-an-ast-allowlist.md) | configuration-serialization | algorithm | configuration, parsing, validation |
@@ -167,8 +172,10 @@ not edit it by hand.
 | [Load an Authenticated Legacy Pickle with Restricted Globals](snippets/security-privacy/load-an-authenticated-legacy-pickle-with-restricted-globals.md) | security-privacy | recipe | interoperability, security, serialization, validation |
 | [Redact a Printable ASCII Secret with a Bounded Visible Tail](snippets/security-privacy/redact-a-printable-ascii-secret-with-a-bounded-visible-tail.md) | security-privacy | recipe | observability, security, validation |
 | [Redact Explicit Paths in Bounded JSON-Like Data](snippets/security-privacy/redact-explicit-paths-in-bounded-json-like-data.md) | security-privacy | recipe | data-transformation, observability, security, validation |
+| [Separate Executable and Redacted Views of a Command Argument Vector](snippets/security-privacy/separate-executable-and-redacted-views-of-a-command-argument-vector.md) | security-privacy | pattern | observability, security, validation |
 | [Validate a Conservative Unicode Filename Component](snippets/security-privacy/validate-a-conservative-unicode-filename-component.md) | security-privacy | recipe | interoperability, validation |
 | [Verify an RFC 7636 S256 PKCE Challenge](snippets/security-privacy/verify-an-rfc-7636-s256-pkce-challenge.md) | security-privacy | recipe | interoperability, security, validation |
+| [Compare a Bounded Text Capture Against a Golden Fixture](snippets/testing-tooling/compare-a-bounded-text-capture-against-a-golden-fixture.md) | testing-tooling | testing-technique | testing, validation |
 | [Extract Bounded Native-Test Failure Highlights](snippets/testing-tooling/extract-bounded-native-test-failure-highlights.md) | testing-tooling | recipe | observability, parsing, testing |
 | [Parse a Bounded Space-Indented Test Outline into Leaf Paths](snippets/testing-tooling/parse-a-bounded-space-indented-test-outline-into-leaf-paths.md) | testing-tooling | algorithm | parsing, testing, validation |
 | [Verify Ordered HTTP Client Expectations with Bounded Mismatch Reports](snippets/testing-tooling/verify-ordered-http-client-expectations-with-bounded-mismatch-reports.md) | testing-tooling | testing-technique | networking, testing, validation |
