@@ -44,10 +44,26 @@ _MAX_ENTRIES = 64
 _MAX_PERMISSIONS = 16
 
 
-@dataclass(frozen=True, slots=True)
+@dataclass(frozen=True, slots=True, init=False)
 class ClosedRoutePolicy:
     principal_grants: Mapping[str, frozenset[str]]
     route_requirements: Mapping[str, frozenset[str]]
+
+    def __init__(
+        self,
+        principal_grants: Mapping[str, Collection[str]],
+        route_requirements: Mapping[str, Collection[str]],
+    ) -> None:
+        object.__setattr__(
+            self,
+            "principal_grants",
+            _freeze_permissions(principal_grants, kind="principal"),
+        )
+        object.__setattr__(
+            self,
+            "route_requirements",
+            _freeze_permissions(route_requirements, kind="route"),
+        )
 
 
 def _valid_name(value: object) -> bool:
@@ -81,17 +97,6 @@ def _freeze_permissions(
         frozen[name] = frozenset(permissions)
 
     return MappingProxyType(frozen)
-
-
-def build_closed_route_policy(
-    principal_grants: Mapping[str, Collection[str]],
-    route_requirements: Mapping[str, Collection[str]],
-) -> ClosedRoutePolicy:
-    principals = _freeze_permissions(principal_grants, kind="principal")
-    routes = _freeze_permissions(route_requirements, kind="route")
-    return ClosedRoutePolicy(principals, routes)
-
-
 def is_route_allowed(
     policy: ClosedRoutePolicy,
     *,
@@ -117,7 +122,7 @@ def is_route_allowed(
 ```python
 principal_source = {"reader": {"report.read"}}
 route_source = {"report.view": {"report.read", "report.audit"}}
-policy = build_closed_route_policy(principal_source, route_source)
+policy = ClosedRoutePolicy(principal_source, route_source)
 
 principal_source["reader"].clear()
 route_source["report.view"].clear()
