@@ -17,15 +17,15 @@ not edit it by hand.
 
 | Category | Scope | Snippets |
 | --- | --- | ---: |
-| [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 20 |
+| [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 21 |
 | [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 26 |
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 18 |
-| [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 15 |
+| [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 16 |
 | [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 15 |
-| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 40 |
+| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 41 |
 | [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 16 |
-| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 15 |
-| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 29 |
+| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 16 |
+| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 30 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 13 |
 | [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 8 |
 | [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 14 |
@@ -46,6 +46,7 @@ not edit it by hand.
 | [Dispatch on an Exact Tuple of Argument Types](snippets/python-language/dispatch-on-an-exact-tuple-of-argument-types.md) | python-language | pattern | data-transformation, interoperability, validation |
 | [Handle Search Exhaustion with for/else](snippets/python-language/handle-search-exhaustion-with-for-else.md) | python-language | idiom | data-transformation, validation |
 | [Keep Exception Handlers Narrow with try/else](snippets/python-language/keep-exception-handlers-narrow-with-try-else.md) | python-language | idiom | parsing, validation |
+| [Load Bounded Trusted Extension Factories by One Entry Point](snippets/python-language/load-bounded-trusted-extension-factories-by-one-entry-point.md) | python-language | recipe | interoperability, validation |
 | [Load Text Templates from Package Resources](snippets/python-language/load-text-templates-from-package-resources.md) | python-language | recipe | resource-management, validation |
 | [Make a Defensive Copy at a Mutable Input Boundary](snippets/python-language/make-a-defensive-copy-at-a-mutable-input-boundary.md) | python-language | idiom | data-transformation, resource-management |
 | [Model a Quantity with One Canonical Unit](snippets/python-language/model-a-quantity-with-one-canonical-unit.md) | python-language | pattern | data-transformation, validation |
@@ -109,6 +110,7 @@ not edit it by hand.
 | [Plan Remaining Stages from a Validated Completed Prefix](snippets/reliability-resilience/plan-remaining-stages-from-a-validated-completed-prefix.md) | reliability-resilience | algorithm | automation, retry-recovery, validation |
 | [Poll a Remote Operation Within Deadline and Failure Budgets](snippets/reliability-resilience/poll-a-remote-operation-within-deadline-and-failure-budgets.md) | reliability-resilience | integration | automation, networking, resource-management, retry-recovery |
 | [Propagate a Monotonic Deadline with ContextVar](snippets/reliability-resilience/propagate-a-monotonic-deadline-with-contextvar.md) | reliability-resilience | pattern | concurrency-control, lifecycle-management, retry-recovery |
+| [Reduce Bounded Acknowledgements into Exactly-Once Completions](snippets/reliability-resilience/reduce-bounded-acknowledgements-into-exactly-once-completions.md) | reliability-resilience | algorithm | retry-recovery, validation |
 | [Resolve Incoming Configuration with Last-Known-Good Values](snippets/reliability-resilience/resolve-incoming-configuration-with-last-known-good-values.md) | reliability-resilience | pattern | configuration, validation |
 | [Retry Only Eligible Items in a Bounded Batch](snippets/reliability-resilience/retry-only-eligible-items-in-a-bounded-batch.md) | reliability-resilience | pattern | networking, retry-recovery |
 | [Schedule the Next Review from Outcome and Bounded Coverage](snippets/reliability-resilience/schedule-the-next-review-from-outcome-and-bounded-coverage.md) | reliability-resilience | algorithm | automation, retry-recovery, validation |
@@ -135,6 +137,7 @@ not edit it by hand.
 | [Audit pandas Missing-Value Shares Against Column Policies](snippets/data-processing/audit-pandas-missing-value-shares-against-column-policies.md) | data-processing | integration | data-transformation, validation |
 | [Batch Items by Estimated Byte Size](snippets/data-processing/batch-items-by-estimated-byte-size.md) | data-processing | algorithm | data-transformation, resource-management |
 | [Build a Bounded Structural Profile of a pandas DataFrame](snippets/data-processing/build-a-bounded-structural-profile-of-a-pandas-dataframe.md) | data-processing | integration | data-transformation, observability, validation |
+| [Build a Conflict-Checked Remap from Synthetic XLSX Review Rows](snippets/data-processing/build-a-conflict-checked-remap-from-synthetic-xlsx-review-rows.md) | data-processing | integration | data-transformation, interoperability, validation |
 | [Check a Value Against an Asymmetric Tolerance Band](snippets/data-processing/check-a-value-against-an-asymmetric-tolerance-band.md) | data-processing | algorithm | validation |
 | [Clean a pandas Series with First-Match Rules and Audit Counts](snippets/data-processing/clean-a-pandas-series-with-first-match-rules-and-audit-counts.md) | data-processing | integration | data-transformation, validation |
 | [Collect Expected Parse Failures Without Stopping a Batch](snippets/data-processing/collect-expected-parse-failures-without-stopping-a-batch.md) | data-processing | pattern | parsing, validation |
@@ -199,6 +202,7 @@ not edit it by hand.
 | [Split a Binary Stream into Exclusively Created Numbered Parts](snippets/storage-databases/split-a-binary-stream-into-exclusively-created-numbered-parts.md) | storage-databases | recipe | automation, persistence, resource-management |
 | [Split a Half-Open UTC Range Across Ordered Storage Tiers](snippets/storage-databases/split-a-half-open-utc-range-across-ordered-storage-tiers.md) | storage-databases | algorithm | data-transformation, persistence, validation |
 | [Store Bytes by Their Content Digest](snippets/storage-databases/store-bytes-by-their-content-digest.md) | storage-databases | recipe | caching, persistence |
+| [Validate a Bounded Stage-Verify-Pointer-Switch Log](snippets/storage-databases/validate-a-bounded-stage-verify-pointer-switch-log.md) | storage-databases | pattern | persistence, validation |
 | [Append a Fixed-Width CRC Check to a Human-Readable Identifier](snippets/configuration-serialization/append-a-fixed-width-crc-check-to-a-human-readable-identifier.md) | configuration-serialization | recipe | interoperability, serialization, validation |
 | [Build a Deterministic Size-Capped USTAR Archive from Bytes](snippets/configuration-serialization/build-a-deterministic-size-capped-ustar-archive-from-bytes.md) | configuration-serialization | recipe | resource-management, serialization, validation |
 | [Convert a Weekday Bitmask to a Canonical Cron Schedule](snippets/configuration-serialization/convert-a-weekday-bitmask-to-a-canonical-cron-schedule.md) | configuration-serialization | recipe | configuration, serialization, validation |
@@ -215,6 +219,7 @@ not edit it by hand.
 | [Match a Client Against a Bounded Platform Availability Rule](snippets/configuration-serialization/match-a-client-against-a-bounded-platform-availability-rule.md) | configuration-serialization | recipe | configuration, interoperability, validation |
 | [Merge Nested Configuration with an Explicit Delete Sentinel](snippets/configuration-serialization/merge-nested-configuration-with-an-explicit-delete-sentinel.md) | configuration-serialization | recipe | configuration, data-transformation |
 | [Merge Nested Mappings Without Mutating Inputs](snippets/configuration-serialization/merge-nested-mappings-without-mutating-inputs.md) | configuration-serialization | recipe | configuration, data-transformation |
+| [Migrate One Bounded JSON Record to a Current Version](snippets/configuration-serialization/migrate-one-bounded-json-record-to-a-current-version.md) | configuration-serialization | recipe | data-transformation, serialization, validation |
 | [Parse a Bounded Component Options Expression](snippets/configuration-serialization/parse-a-bounded-component-options-expression.md) | configuration-serialization | algorithm | parsing, validation |
 | [Parse a Bounded Flat Placeholder Template](snippets/configuration-serialization/parse-a-bounded-flat-placeholder-template.md) | configuration-serialization | algorithm | configuration, parsing, validation |
 | [Parse a Bounded Nested Bracket Tree](snippets/configuration-serialization/parse-a-bounded-nested-bracket-tree.md) | configuration-serialization | algorithm | parsing, validation |
