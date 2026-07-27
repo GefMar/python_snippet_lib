@@ -9,6 +9,7 @@ primary behavior.
 | Snippet | Type | Use Cases | Problem |
 | --- | --- | --- | --- |
 | [Capture a Bounded Pickle-Friendly Exception Report](capture-a-bounded-pickle-friendly-exception-report.md) | recipe | interoperability, observability, serialization | Flatten one exception and its native cause or context chain into bounded immutable diagnostic data instead of trying to serialize live exception state. |
+| [Classify a Finite Value with Warning and Critical Limits](classify-a-finite-value-with-warning-and-critical-limits.md) | recipe | observability, validation | Classify one finite float as ok, warning, or critical using an explicit direction and strictly ordered inclusive limits. |
 | [Classify Required Health Stamps by Freshness](classify-required-health-stamps-by-freshness.md) | recipe | observability, validation | Classify every required source as fresh, stale, or missing from its latest successful timestamp instead of running expensive checks in the read path. |
 | [Compute a Process CPU Rate from Two Linux procfs Samples](compute-a-process-cpu-rate-from-two-linux-procfs-samples.md) | algorithm | data-transformation, observability, validation | Compute a Linux process CPU rate from two explicit procfs stat samples without reading a file, consulting a clock, or maintaining a cache. |
 | [Count Values in Fixed Upper-Bound Bins](count-values-in-fixed-upper-bound-bins.md) | algorithm | data-transformation, observability | Count finite observations in stable right-closed bins defined by a strictly increasing sequence of upper bounds. |

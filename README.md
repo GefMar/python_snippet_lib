@@ -21,14 +21,14 @@ not edit it by hand.
 | [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 23 |
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 15 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 14 |
-| [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 14 |
-| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 38 |
-| [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 15 |
+| [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 15 |
+| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 39 |
+| [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 16 |
 | [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 15 |
 | [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 29 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 12 |
-| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 7 |
-| [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 12 |
+| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 8 |
+| [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 13 |
 
 ### Snippets
 
@@ -108,6 +108,7 @@ not edit it by hand.
 | [Apply an HTTP Patch Only When a Strong ETag Still Matches](snippets/networking-protocols/apply-an-http-patch-only-when-a-strong-etag-still-matches.md) | networking-protocols | integration | networking, validation |
 | [Build a Canonical HTTP Origin Key](snippets/networking-protocols/build-a-canonical-http-origin-key.md) | networking-protocols | recipe | networking, validation |
 | [Choose Buffered or Streaming Multipart Encoding from Bounded Parts](snippets/networking-protocols/choose-buffered-or-streaming-multipart-encoding-from-bounded-parts.md) | networking-protocols | integration | networking, resource-management, serialization, validation |
+| [Choose Grouped Endpoints with Explicit Random Fairness](snippets/networking-protocols/choose-grouped-endpoints-with-explicit-random-fairness.md) | networking-protocols | algorithm | networking, validation |
 | [Collect Matching Cursor Pages with an Explicit Page Budget](snippets/networking-protocols/collect-matching-cursor-pages-with-an-explicit-page-budget.md) | networking-protocols | pattern | networking, resource-management |
 | [Encode a Bounded HTTP/1.1 Chunked Body for Protocol Tests](snippets/networking-protocols/encode-a-bounded-http-1-1-chunked-body-for-protocol-tests.md) | networking-protocols | recipe | networking, serialization, testing, validation |
 | [Extract Bounded Field Violations from a google.rpc Status Payload](snippets/networking-protocols/extract-bounded-field-violations-from-a-google-rpc-status-payload.md) | networking-protocols | integration | networking, parsing, validation |
@@ -121,6 +122,7 @@ not edit it by hand.
 | [Yield Bounded SSE Frames with Serialized Comment Keepalives](snippets/networking-protocols/yield-bounded-sse-frames-with-serialized-comment-keepalives.md) | networking-protocols | integration | concurrency-control, networking, resource-management, serialization |
 | [Aggregate Consecutive Values into Weighted Runs](snippets/data-processing/aggregate-consecutive-values-into-weighted-runs.md) | data-processing | algorithm | data-transformation |
 | [Aggregate pandas Groups into Explicit Flat Columns](snippets/data-processing/aggregate-pandas-groups-into-explicit-flat-columns.md) | data-processing | integration | data-transformation, interoperability, validation |
+| [Assemble Fixed-Width Feature Slots from Bounded Named Sources](snippets/data-processing/assemble-fixed-width-feature-slots-from-bounded-named-sources.md) | data-processing | algorithm | data-transformation, validation |
 | [Audit Candidate pandas Downcasts Before Applying Them](snippets/data-processing/audit-candidate-pandas-downcasts-before-applying-them.md) | data-processing | integration | data-transformation, performance-optimization, resource-management, validation |
 | [Audit pandas Missing-Value Shares Against Column Policies](snippets/data-processing/audit-pandas-missing-value-shares-against-column-policies.md) | data-processing | integration | data-transformation, validation |
 | [Batch Items by Estimated Byte Size](snippets/data-processing/batch-items-by-estimated-byte-size.md) | data-processing | algorithm | data-transformation, resource-management |
@@ -172,6 +174,7 @@ not edit it by hand.
 | [Measure Drift Between Two Fixed-Bin Count Distributions with PSI](snippets/machine-learning-statistics/measure-drift-between-two-fixed-bin-count-distributions-with-psi.md) | machine-learning-statistics | algorithm | observability, validation |
 | [Sample Weighted Negative Items Outside Explicit User Histories](snippets/machine-learning-statistics/sample-weighted-negative-items-outside-explicit-user-histories.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Score Feature Importances Against Bounded Null Runs](snippets/machine-learning-statistics/score-feature-importances-against-bounded-null-runs.md) | machine-learning-statistics | algorithm | data-transformation, validation |
+| [Select a Forecast Vector Only When It Beats a Frozen Baseline](snippets/machine-learning-statistics/select-a-forecast-vector-only-when-it-beats-a-frozen-baseline.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Build a Bounded File Manifest with Internal Symlink Aliases](snippets/storage-databases/build-a-bounded-file-manifest-with-internal-symlink-aliases.md) | storage-databases | recipe | persistence, resource-management, validation |
 | [Build and Apply a Deterministic Mapping Delta](snippets/storage-databases/build-and-apply-a-deterministic-mapping-delta.md) | storage-databases | algorithm | data-transformation, persistence |
 | [Check Whether a Generated File Is Older Than Its Inputs](snippets/storage-databases/check-whether-a-generated-file-is-older-than-its-inputs.md) | storage-databases | recipe | automation, caching, validation |
@@ -229,6 +232,7 @@ not edit it by hand.
 | [Validate a Conservative Unicode Filename Component](snippets/security-privacy/validate-a-conservative-unicode-filename-component.md) | security-privacy | recipe | interoperability, validation |
 | [Verify an RFC 7636 S256 PKCE Challenge](snippets/security-privacy/verify-an-rfc-7636-s256-pkce-challenge.md) | security-privacy | recipe | interoperability, security, validation |
 | [Apply a Reusable Click Option Bundle to Subcommands](snippets/testing-tooling/apply-a-reusable-click-option-bundle-to-subcommands.md) | testing-tooling | integration | automation, configuration, testing |
+| [Build a Bounded Release DAG Around a Manual Barrier](snippets/testing-tooling/build-a-bounded-release-dag-around-a-manual-barrier.md) | testing-tooling | pattern | automation, testing, validation |
 | [Compare a Bounded Text Capture Against a Golden Fixture](snippets/testing-tooling/compare-a-bounded-text-capture-against-a-golden-fixture.md) | testing-tooling | testing-technique | testing, validation |
 | [Extract Bounded Native-Test Failure Highlights](snippets/testing-tooling/extract-bounded-native-test-failure-highlights.md) | testing-tooling | recipe | observability, parsing, testing |
 | [Generate a Seeded Metric with Bounded Flapping Runs](snippets/testing-tooling/generate-a-seeded-metric-with-bounded-flapping-runs.md) | testing-tooling | testing-technique | observability, testing |
@@ -236,6 +240,7 @@ not edit it by hand.
 | [Verify Ordered HTTP Client Expectations with Bounded Mismatch Reports](snippets/testing-tooling/verify-ordered-http-client-expectations-with-bounded-mismatch-reports.md) | testing-tooling | testing-technique | networking, testing, validation |
 | [Wait for Named Queue Conditions Under One Monotonic Deadline](snippets/testing-tooling/wait-for-named-queue-conditions-under-one-monotonic-deadline.md) | testing-tooling | testing-technique | concurrency-control, testing, validation |
 | [Capture a Bounded Pickle-Friendly Exception Report](snippets/observability-operations/capture-a-bounded-pickle-friendly-exception-report.md) | observability-operations | recipe | interoperability, observability, serialization |
+| [Classify a Finite Value with Warning and Critical Limits](snippets/observability-operations/classify-a-finite-value-with-warning-and-critical-limits.md) | observability-operations | recipe | observability, validation |
 | [Classify Required Health Stamps by Freshness](snippets/observability-operations/classify-required-health-stamps-by-freshness.md) | observability-operations | recipe | observability, validation |
 | [Compute a Process CPU Rate from Two Linux procfs Samples](snippets/observability-operations/compute-a-process-cpu-rate-from-two-linux-procfs-samples.md) | observability-operations | algorithm | data-transformation, observability, validation |
 | [Count Values in Fixed Upper-Bound Bins](snippets/observability-operations/count-values-in-fixed-upper-bound-bins.md) | observability-operations | algorithm | data-transformation, observability |
