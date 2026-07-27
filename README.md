@@ -17,15 +17,15 @@ not edit it by hand.
 
 | Category | Scope | Snippets |
 | --- | --- | ---: |
-| [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 18 |
+| [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 19 |
 | [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 20 |
-| [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 14 |
+| [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 15 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 13 |
 | [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 12 |
-| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 26 |
+| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 27 |
 | [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 8 |
 | [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 14 |
-| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 23 |
+| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 26 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 11 |
 | [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 5 |
 | [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 10 |
@@ -42,6 +42,7 @@ not edit it by hand.
 | [Cache One Zero-Argument Method Result per Weakly Referenced Instance](snippets/python-language/cache-one-zero-argument-method-result-per-weakly-referenced-instance.md) | python-language | pattern | caching, resource-management |
 | [Collect Decorated Methods in Class Definition Order](snippets/python-language/collect-decorated-methods-in-class-definition-order.md) | python-language | pattern | automation, configuration |
 | [Dispatch Named Strategies with an Explicit Function Mapping](snippets/python-language/dispatch-named-strategies-with-an-explicit-function-mapping.md) | python-language | pattern | configuration, interoperability |
+| [Dispatch on an Exact Tuple of Argument Types](snippets/python-language/dispatch-on-an-exact-tuple-of-argument-types.md) | python-language | pattern | data-transformation, interoperability, validation |
 | [Handle Search Exhaustion with for/else](snippets/python-language/handle-search-exhaustion-with-for-else.md) | python-language | idiom | data-transformation, validation |
 | [Keep Exception Handlers Narrow with try/else](snippets/python-language/keep-exception-handlers-narrow-with-try-else.md) | python-language | idiom | parsing, validation |
 | [Load Text Templates from Package Resources](snippets/python-language/load-text-templates-from-package-resources.md) | python-language | recipe | resource-management, validation |
@@ -79,6 +80,7 @@ not edit it by hand.
 | [Guard Readers with a Writer-Priority Read-Write Lock](snippets/concurrency-lifecycle/guard-readers-with-a-writer-priority-read-write-lock.md) | concurrency-lifecycle | pattern | concurrency-control, resource-management |
 | [Initialize One Shared Resource Lazily with Serialized Retries](snippets/concurrency-lifecycle/initialize-one-shared-resource-lazily-with-serialized-retries.md) | concurrency-lifecycle | pattern | concurrency-control, lifecycle-management, retry-recovery |
 | [Map a Large Iterable with a Bounded Thread-Pool Submission Buffer](snippets/concurrency-lifecycle/map-a-large-iterable-with-a-bounded-thread-pool-submission-buffer.md) | concurrency-lifecycle | recipe | concurrency-control, resource-management |
+| [Plan Priority Batches with an Age-Gated Tail](snippets/concurrency-lifecycle/plan-priority-batches-with-an-age-gated-tail.md) | concurrency-lifecycle | algorithm | concurrency-control, lifecycle-management, resource-management |
 | [Prevent Overlapping POSIX Jobs with a Nonblocking File Lock](snippets/concurrency-lifecycle/prevent-overlapping-posix-jobs-with-a-nonblocking-file-lock.md) | concurrency-lifecycle | recipe | automation, concurrency-control |
 | [Refresh an Async Value Within a Bounded Stale Window](snippets/concurrency-lifecycle/refresh-an-async-value-within-a-bounded-stale-window.md) | concurrency-lifecycle | pattern | caching, concurrency-control, lifecycle-management, retry-recovery |
 | [Run an Async Worker on Clock-Aligned Ticks Without Catch-Up](snippets/concurrency-lifecycle/run-an-async-worker-on-clock-aligned-ticks-without-catch-up.md) | concurrency-lifecycle | pattern | automation, concurrency-control, lifecycle-management |
@@ -130,6 +132,7 @@ not edit it by hand.
 | [Project Nested Records with Explicit Field Paths](snippets/data-processing/project-nested-records-with-explicit-field-paths.md) | data-processing | recipe | data-transformation, validation |
 | [Route Estimated Work by Ordered Source and Size Rules](snippets/data-processing/route-estimated-work-by-ordered-source-and-size-rules.md) | data-processing | recipe | data-transformation, resource-management, validation |
 | [Route Items by Ordered Text Prefixes](snippets/data-processing/route-items-by-ordered-text-prefixes.md) | data-processing | recipe | data-transformation, validation |
+| [Run a Pipeline with Lazy Conversion Between Two Views](snippets/data-processing/run-a-pipeline-with-lazy-conversion-between-two-views.md) | data-processing | pattern | data-transformation, interoperability |
 | [Sample a Stream with a Fixed-Size Reservoir](snippets/data-processing/sample-a-stream-with-a-fixed-size-reservoir.md) | data-processing | algorithm | data-transformation, resource-management |
 | [Sample a Weighted Stream with a Fixed-Size Reservoir](snippets/data-processing/sample-a-weighted-stream-with-a-fixed-size-reservoir.md) | data-processing | algorithm | data-transformation, performance-optimization, resource-management |
 | [Sample Stream Items Independently with a Fixed Probability](snippets/data-processing/sample-stream-items-independently-with-a-fixed-probability.md) | data-processing | algorithm | data-transformation |
@@ -167,12 +170,15 @@ not edit it by hand.
 | [Elide Nested Mapping Values That Match Explicit Defaults](snippets/configuration-serialization/elide-nested-mapping-values-that-match-explicit-defaults.md) | configuration-serialization | recipe | configuration, serialization |
 | [Embed a Small Routing Hint in a Random UUIDv8](snippets/configuration-serialization/embed-a-small-routing-hint-in-a-random-uuidv8.md) | configuration-serialization | recipe | interoperability, serialization, validation |
 | [Evaluate a Bounded Boolean Tag Expression with an AST Allowlist](snippets/configuration-serialization/evaluate-a-bounded-boolean-tag-expression-with-an-ast-allowlist.md) | configuration-serialization | algorithm | configuration, parsing, validation |
+| [Evaluate Salted Percentage Rollouts with Integer Buckets](snippets/configuration-serialization/evaluate-salted-percentage-rollouts-with-integer-buckets.md) | configuration-serialization | algorithm | configuration, data-transformation, validation |
 | [Expand a Bounded EUI-48 Address Interval](snippets/configuration-serialization/expand-a-bounded-eui-48-address-interval.md) | configuration-serialization | algorithm | data-transformation, parsing, validation |
 | [Expand Bounded Nested Brace Alternatives](snippets/configuration-serialization/expand-bounded-nested-brace-alternatives.md) | configuration-serialization | algorithm | parsing, validation |
 | [Fingerprint a Set-Like JSON Array Deterministically](snippets/configuration-serialization/fingerprint-a-set-like-json-array-deterministically.md) | configuration-serialization | algorithm | serialization, validation |
 | [Get Nested Values with a Validated Dot Path](snippets/configuration-serialization/get-nested-values-with-a-validated-dot-path.md) | configuration-serialization | recipe | configuration, parsing |
+| [Match a Client Against a Bounded Platform Availability Rule](snippets/configuration-serialization/match-a-client-against-a-bounded-platform-availability-rule.md) | configuration-serialization | recipe | configuration, interoperability, validation |
 | [Merge Nested Configuration with an Explicit Delete Sentinel](snippets/configuration-serialization/merge-nested-configuration-with-an-explicit-delete-sentinel.md) | configuration-serialization | recipe | configuration, data-transformation |
 | [Merge Nested Mappings Without Mutating Inputs](snippets/configuration-serialization/merge-nested-mappings-without-mutating-inputs.md) | configuration-serialization | recipe | configuration, data-transformation |
+| [Parse a Bounded Component Options Expression](snippets/configuration-serialization/parse-a-bounded-component-options-expression.md) | configuration-serialization | algorithm | parsing, validation |
 | [Parse a Bounded Nested Bracket Tree](snippets/configuration-serialization/parse-a-bounded-nested-bracket-tree.md) | configuration-serialization | algorithm | parsing, validation |
 | [Parse Compact Durations into timedelta](snippets/configuration-serialization/parse-compact-durations-into-timedelta.md) | configuration-serialization | recipe | configuration, parsing, validation |
 | [Parse Explicit Decimal and Binary Byte Sizes](snippets/configuration-serialization/parse-explicit-decimal-and-binary-byte-sizes.md) | configuration-serialization | recipe | configuration, parsing, validation |
