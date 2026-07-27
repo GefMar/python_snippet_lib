@@ -20,15 +20,15 @@ not edit it by hand.
 | [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 21 |
 | [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 28 |
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 19 |
-| [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 16 |
+| [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 17 |
 | [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 17 |
-| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 41 |
+| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 42 |
 | [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 17 |
 | [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 17 |
-| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 33 |
-| [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 13 |
+| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 34 |
+| [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 14 |
 | [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 8 |
-| [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 14 |
+| [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 15 |
 
 ### Snippets
 
@@ -110,6 +110,7 @@ not edit it by hand.
 | [Flush Fixed-Size Batches Through a Scoped Sink](snippets/reliability-resilience/flush-fixed-size-batches-through-a-scoped-sink.md) | reliability-resilience | pattern | data-transformation, resource-management, retry-recovery |
 | [Hold a Switch Active Through a Monotonic Cooldown](snippets/reliability-resilience/hold-a-switch-active-through-a-monotonic-cooldown.md) | reliability-resilience | pattern | observability, resource-management |
 | [Model Independent Blocking Reasons as an Immutable Set](snippets/reliability-resilience/model-independent-blocking-reasons-as-an-immutable-set.md) | reliability-resilience | pattern | configuration, validation |
+| [Plan a Versioned Transition for the Current Workflow Attempt](snippets/reliability-resilience/plan-a-versioned-transition-for-the-current-workflow-attempt.md) | reliability-resilience | pattern | concurrency-control, lifecycle-management, validation |
 | [Plan Remaining Stages from a Validated Completed Prefix](snippets/reliability-resilience/plan-remaining-stages-from-a-validated-completed-prefix.md) | reliability-resilience | algorithm | automation, retry-recovery, validation |
 | [Poll a Remote Operation Within Deadline and Failure Budgets](snippets/reliability-resilience/poll-a-remote-operation-within-deadline-and-failure-budgets.md) | reliability-resilience | integration | automation, networking, resource-management, retry-recovery |
 | [Propagate a Monotonic Deadline with ContextVar](snippets/reliability-resilience/propagate-a-monotonic-deadline-with-contextvar.md) | reliability-resilience | pattern | concurrency-control, lifecycle-management, retry-recovery |
@@ -163,6 +164,7 @@ not edit it by hand.
 | [Normalize Optional CSV Columns in a Single Pass](snippets/data-processing/normalize-optional-csv-columns-in-a-single-pass.md) | data-processing | recipe | data-transformation, parsing, validation |
 | [Overlay Aligned Time Series at the Finest Step](snippets/data-processing/overlay-aligned-time-series-at-the-finest-step.md) | data-processing | algorithm | data-transformation, validation |
 | [Parse Pipe-Delimited Tables with Continuation Rows](snippets/data-processing/parse-pipe-delimited-tables-with-continuation-rows.md) | data-processing | algorithm | data-transformation, parsing |
+| [Project Bounded Records into Multiple Closed Output Schemas](snippets/data-processing/project-bounded-records-into-multiple-closed-output-schemas.md) | data-processing | recipe | data-transformation, resource-management, validation |
 | [Project Nested Records with Explicit Field Paths](snippets/data-processing/project-nested-records-with-explicit-field-paths.md) | data-processing | recipe | data-transformation, validation |
 | [Read Bounded CSV Text into pandas Under an Explicit Schema](snippets/data-processing/read-bounded-csv-text-into-pandas-under-an-explicit-schema.md) | data-processing | integration | data-transformation, parsing, validation |
 | [Reshape Repeated pandas Column Families with Wide-to-Long](snippets/data-processing/reshape-repeated-pandas-column-families-with-wide-to-long.md) | data-processing | integration | data-transformation, interoperability, validation |
@@ -227,6 +229,7 @@ not edit it by hand.
 | [Load a Bounded Allocation Rule with Marshmallow Cross-Field Validation](snippets/configuration-serialization/load-a-bounded-allocation-rule-with-marshmallow-cross-field-validation.md) | configuration-serialization | integration | configuration, validation |
 | [Load a Bounded Protobuf Descriptor Set in Dependency Order](snippets/configuration-serialization/load-a-bounded-protobuf-descriptor-set-in-dependency-order.md) | configuration-serialization | integration | interoperability, serialization, validation |
 | [Match a Client Against a Bounded Platform Availability Rule](snippets/configuration-serialization/match-a-client-against-a-bounded-platform-availability-rule.md) | configuration-serialization | recipe | configuration, interoperability, validation |
+| [Merge Bounded Ordered Nodes with Qualified Tombstones](snippets/configuration-serialization/merge-bounded-ordered-nodes-with-qualified-tombstones.md) | configuration-serialization | algorithm | configuration, data-transformation, validation |
 | [Merge Nested Configuration with an Explicit Delete Sentinel](snippets/configuration-serialization/merge-nested-configuration-with-an-explicit-delete-sentinel.md) | configuration-serialization | recipe | configuration, data-transformation |
 | [Merge Nested Mappings Without Mutating Inputs](snippets/configuration-serialization/merge-nested-mappings-without-mutating-inputs.md) | configuration-serialization | recipe | configuration, data-transformation |
 | [Migrate One Bounded JSON Record to a Current Version](snippets/configuration-serialization/migrate-one-bounded-json-record-to-a-current-version.md) | configuration-serialization | recipe | data-transformation, serialization, validation |
@@ -246,6 +249,7 @@ not edit it by hand.
 | [Audit Parsed Compose Services for Digest-Pinned Images](snippets/security-privacy/audit-parsed-compose-services-for-digest-pinned-images.md) | security-privacy | recipe | configuration, security, validation |
 | [Audit Symlinks in a Bounded Directory Tree](snippets/security-privacy/audit-symlinks-in-a-bounded-directory-tree.md) | security-privacy | recipe | resource-management, security, validation |
 | [Authenticate Bounded Payloads with Versioned HMAC Keys](snippets/security-privacy/authenticate-bounded-payloads-with-versioned-hmac-keys.md) | security-privacy | pattern | security, serialization, validation |
+| [Authorize a Principal Against a Closed Route Policy Map](snippets/security-privacy/authorize-a-principal-against-a-closed-route-policy-map.md) | security-privacy | recipe | security, validation |
 | [Create and Verify a Short-Lived HMAC Download URL](snippets/security-privacy/create-and-verify-a-short-lived-hmac-download-url.md) | security-privacy | pattern | networking, security |
 | [Encrypt a Bounded Value with a Versioned AES-GCM Key Envelope](snippets/security-privacy/encrypt-a-bounded-value-with-a-versioned-aes-gcm-key-envelope.md) | security-privacy | integration | security, serialization, validation |
 | [Load an Authenticated Legacy Pickle with Restricted Globals](snippets/security-privacy/load-an-authenticated-legacy-pickle-with-restricted-globals.md) | security-privacy | recipe | interoperability, security, serialization, validation |
@@ -267,6 +271,7 @@ not edit it by hand.
 | [Capture a Bounded Pickle-Friendly Exception Report](snippets/observability-operations/capture-a-bounded-pickle-friendly-exception-report.md) | observability-operations | recipe | interoperability, observability, serialization |
 | [Classify a Finite Value with Warning and Critical Limits](snippets/observability-operations/classify-a-finite-value-with-warning-and-critical-limits.md) | observability-operations | recipe | observability, validation |
 | [Classify Required Health Stamps by Freshness](snippets/observability-operations/classify-required-health-stamps-by-freshness.md) | observability-operations | recipe | observability, validation |
+| [Collect Validated Metric Specifications from Explicit Classes](snippets/observability-operations/collect-validated-metric-specifications-from-explicit-classes.md) | observability-operations | pattern | configuration, observability, validation |
 | [Compute a Process CPU Rate from Two Linux procfs Samples](snippets/observability-operations/compute-a-process-cpu-rate-from-two-linux-procfs-samples.md) | observability-operations | algorithm | data-transformation, observability, validation |
 | [Count Values in Fixed Upper-Bound Bins](snippets/observability-operations/count-values-in-fixed-upper-bound-bins.md) | observability-operations | algorithm | data-transformation, observability |
 | [Format Log Records as JSON with Explicit Extra Fields](snippets/observability-operations/format-log-records-as-json-with-explicit-extra-fields.md) | observability-operations | recipe | observability, serialization |
