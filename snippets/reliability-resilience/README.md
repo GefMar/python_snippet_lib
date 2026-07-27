@@ -8,6 +8,7 @@ correctness or lease behavior is the primary invariant.
 <!-- catalog:category:start -->
 | Snippet | Type | Use Cases | Problem |
 | --- | --- | --- | --- |
+| [Adjust a Bounded Batch Size from Processing Time](adjust-a-bounded-batch-size-from-processing-time.md) | algorithm | performance-optimization, resource-management | Apply one deterministic batch-size adjustment when a completed full batch falls outside an explicit processing-time deadband. |
 | [Assign Stable Schedule Slots with a Digest](assign-stable-schedule-slots-with-a-digest.md) | algorithm | performance-optimization, resource-management | Assign a string key reproducibly to one of a fixed number of schedule slots using a domain-separated digest instead of Python's process-randomized hash. |
 | [Cache Values with a Monotonic TTL and Early Jitter](cache-values-with-a-monotonic-ttl-and-early-jitter.md) | recipe | caching, resource-management | Bound an in-process cache and spread its expirations before a monotonic freshness ceiling without making cached None values look like misses. |
 | [Commit a Source Checkpoint Only After the Sink Accepts a Batch](commit-a-source-checkpoint-only-after-the-sink-accepts-a-batch.md) | pattern | data-transformation, retry-recovery | Advance a source checkpoint only after the sink has durably accepted every prepared event from that exact bounded batch. |
