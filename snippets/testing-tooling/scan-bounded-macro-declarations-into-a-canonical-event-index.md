@@ -103,6 +103,9 @@ def _validate_units(
             raise ValueError(f"duplicate unit name: {unit.name!r}")
         if type(unit.text) is not str:
             raise TypeError("unit text must be exact text")
+        remaining_bytes = _MAX_UTF8_BYTES - total_bytes
+        if len(unit.text) > remaining_bytes:
+            raise ValueError("unit text exceeds the aggregate UTF-8 byte limit")
         if "\r" in unit.text:
             raise MacroDeclarationError(
                 f"{unit.name}: only LF line separators are supported"
@@ -114,14 +117,16 @@ def _validate_units(
             raise MacroDeclarationError(
                 f"{unit.name}: text is not encodable as UTF-8"
             ) from error
-        total_bytes += len(encoded)
-        if total_bytes > _MAX_UTF8_BYTES:
+        encoded_size = len(encoded)
+        if encoded_size > remaining_bytes:
             raise ValueError("unit text exceeds the aggregate UTF-8 byte limit")
+        total_bytes += encoded_size
 
-        lines = tuple(unit.text.split("\n"))
-        total_lines += len(lines)
-        if total_lines > _MAX_LINES:
+        remaining_lines = _MAX_LINES - total_lines
+        lines = tuple(unit.text.split("\n", remaining_lines))
+        if len(lines) > remaining_lines:
             raise ValueError("unit text exceeds the aggregate line limit")
+        total_lines += len(lines)
         for line_number, line in enumerate(lines, start=1):
             if len(line.encode("utf-8")) > _MAX_LINE_BYTES:
                 raise ValueError(
@@ -212,10 +217,11 @@ assert (index, orphan_rejected) == (
 ## Trade-offs and Limitations
 
 The result deduplicates equal group names and equal `(group, event)` pairs,
-then sorts both tuples, so unit order and declaration order do not affect the
-index. The event limit still counts every matching declaration before that
-deduplication. Source locations are used for errors but intentionally omitted
-from the canonical inventory.
+then sorts both tuples, so unit order does not affect a valid index. Declaration
+order remains semantically significant because each event belongs to the most
+recent group in its unit. The event limit still counts every matching
+declaration before deduplication. Source locations are used for errors but
+intentionally omitted from the canonical inventory.
 
 This is not a C++ parser or a general-language parser. Leading or trailing
 whitespace, comments, multiline invocations, quoted-string escapes, aliases,

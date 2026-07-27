@@ -50,6 +50,10 @@ _MAX_SCALE = 8
 _MAX_SCALES = 8
 _WORK_PRECISION = 96
 _WORK_EXPONENT_LIMIT = 96
+_SUPPORTED_QUANTA = tuple(
+    (exponent, Decimal(f"1e{exponent}"))
+    for exponent in range(_MIN_INPUT_EXPONENT, _MAX_INPUT_EXPONENT + 1)
+)
 
 
 @dataclass(frozen=True, slots=True)
@@ -67,13 +71,21 @@ def _validated_decimal(value: object, *, name: str) -> Decimal:
     if not value.is_finite():
         raise ValueError(f"{name} must be finite")
 
-    parts = value.as_tuple()
-    if len(parts.digits) > _MAX_INPUT_DIGITS:
-        raise ValueError(f"{name} exceeds the supported digit count")
-    if type(parts.exponent) is not int:
-        raise ValueError(f"{name} must have a finite integer exponent")
-    if not _MIN_INPUT_EXPONENT <= parts.exponent <= _MAX_INPUT_EXPONENT:
+    exponent = next(
+        (
+            candidate
+            for candidate, quantum in _SUPPORTED_QUANTA
+            if value.same_quantum(quantum)
+        ),
+        None,
+    )
+    if exponent is None:
         raise ValueError(f"{name} exponent is outside the supported range")
+    digit_count = (
+        1 if value.is_zero() else value.adjusted() - exponent + 1
+    )
+    if digit_count > _MAX_INPUT_DIGITS:
+        raise ValueError(f"{name} exceeds the supported digit count")
     if value.copy_abs() > _MAX_ABSOLUTE_VALUE:
         raise ValueError(f"{name} magnitude exceeds the supported limit")
     return value
@@ -215,7 +227,10 @@ operation in a fresh 96-digit context. Relative division rounds to that
 precision when its decimal expansion does not terminate. Digit, exponent,
 magnitude, scale, and result-count limits intentionally reject otherwise valid
 `Decimal` values so adversarial coefficients or exponents cannot make this
-small view builder consume unbounded resources.
+small view builder consume unbounded resources. Exponent validation performs a
+fixed 129 `same_quantum()` comparisons, and the digit count is derived from the
+adjusted position; rejection does not materialize a coefficient tuple or text
+representation.
 
 The absolute delta is signed, while the relative denominator is the magnitude
 of the quantized previous value. Quantization can turn a nonzero input into

@@ -17,7 +17,7 @@ not edit it by hand.
 
 | Category | Scope | Snippets |
 | --- | --- | ---: |
-| [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 22 |
+| [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 21 |
 | [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 28 |
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 20 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 17 |
@@ -25,7 +25,7 @@ not edit it by hand.
 | [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 43 |
 | [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 17 |
 | [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 17 |
-| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 35 |
+| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 36 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 14 |
 | [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 9 |
 | [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 15 |
@@ -50,7 +50,6 @@ not edit it by hand.
 | [Load Text Templates from Package Resources](snippets/python-language/load-text-templates-from-package-resources.md) | python-language | recipe | resource-management, validation |
 | [Make a Defensive Copy at a Mutable Input Boundary](snippets/python-language/make-a-defensive-copy-at-a-mutable-input-boundary.md) | python-language | idiom | data-transformation, resource-management |
 | [Model a Quantity with One Canonical Unit](snippets/python-language/model-a-quantity-with-one-canonical-unit.md) | python-language | pattern | data-transformation, validation |
-| [Normalize Bounded Named Options with Explicit Default Semantics](snippets/python-language/normalize-bounded-named-options-with-explicit-default-semantics.md) | python-language | recipe | configuration, data-transformation, validation |
 | [Pass Constructor-Only Context with dataclasses.InitVar](snippets/python-language/pass-constructor-only-context-with-initvar.md) | python-language | idiom | data-transformation, validation |
 | [Read Fixed-Size Blocks with iter() and a Sentinel](snippets/python-language/read-fixed-size-blocks-with-iter-sentinel.md) | python-language | idiom | performance-optimization, resource-management |
 | [Type a Narrow Structural Interface with Protocol](snippets/python-language/type-a-narrow-structural-interface-with-protocol.md) | python-language | pattern | interoperability, validation |
@@ -236,6 +235,7 @@ not edit it by hand.
 | [Merge Nested Configuration with an Explicit Delete Sentinel](snippets/configuration-serialization/merge-nested-configuration-with-an-explicit-delete-sentinel.md) | configuration-serialization | recipe | configuration, data-transformation |
 | [Merge Nested Mappings Without Mutating Inputs](snippets/configuration-serialization/merge-nested-mappings-without-mutating-inputs.md) | configuration-serialization | recipe | configuration, data-transformation |
 | [Migrate One Bounded JSON Record to a Current Version](snippets/configuration-serialization/migrate-one-bounded-json-record-to-a-current-version.md) | configuration-serialization | recipe | data-transformation, serialization, validation |
+| [Normalize Bounded Named Options with Explicit Default Semantics](snippets/configuration-serialization/normalize-bounded-named-options-with-explicit-default-semantics.md) | configuration-serialization | recipe | configuration, data-transformation, validation |
 | [Parse a Bounded Component Options Expression](snippets/configuration-serialization/parse-a-bounded-component-options-expression.md) | configuration-serialization | algorithm | parsing, validation |
 | [Parse a Bounded Flat Placeholder Template](snippets/configuration-serialization/parse-a-bounded-flat-placeholder-template.md) | configuration-serialization | algorithm | configuration, parsing, validation |
 | [Parse a Bounded Nested Bracket Tree](snippets/configuration-serialization/parse-a-bounded-nested-bracket-tree.md) | configuration-serialization | algorithm | parsing, validation |

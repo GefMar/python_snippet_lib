@@ -125,7 +125,8 @@ class PendingFuturePoller(Generic[ResultT]):
                     return Pending()
                 return self._consume_done(future)
             except BaseException:
-                self._future = None
+                if future.done():
+                    self._future = None
                 raise
             else:
                 self._future = None
@@ -190,7 +191,9 @@ The helper calls the factory and waits while holding a nonblocking lock. A
 second `poll()` or `cancel_and_release()` therefore fails immediately instead
 of sharing the wait. Factory exceptions leave the slot empty. Success,
 cancellation, and any stored `BaseException` clear the slot before returning
-or propagating; a later poll may consequently create new work.
+or propagating; a later poll may consequently create new work. An external
+`BaseException` that interrupts the wait while the future is still pending is
+re-raised without clearing the slot, so a later poll resumes the same work.
 
 After a wait raises `TimeoutError`, `done()` separates a still-pending future
 from a terminal one. If completion races with that check, a done future is read

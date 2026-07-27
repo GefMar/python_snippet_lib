@@ -9,9 +9,9 @@ tested_python:
   - "3.14"
 dependencies: []
 related:
-  - apply-partial-dataclass-updates-with-an-omitted-value-sentinel.md
-  - build-a-read-only-mapping-with-canonical-text-keys.md
-  - ../configuration-serialization/reject-unknown-options-with-conservative-typo-suggestions.md
+  - ../python-language/apply-partial-dataclass-updates-with-an-omitted-value-sentinel.md
+  - ../python-language/build-a-read-only-mapping-with-canonical-text-keys.md
+  - reject-unknown-options-with-conservative-typo-suggestions.md
 ---
 
 # Normalize Bounded Named Options with Explicit Default Semantics
@@ -130,9 +130,12 @@ def normalize_named_options(
 
     normalized = []
     for rule in validated_rules:
-        value = raw[rule.name] if rule.name in raw else rule.default
-        if value is _MISSING:
-            raise AssertionError("a validated rule has no value")
+        if rule.name in raw:
+            value = raw[rule.name]
+        else:
+            value = rule.default
+            if value is _MISSING:
+                raise AssertionError("a validated rule has no default")
         if value is None:
             if not rule.nullable:
                 raise ValueError(f"option {rule.name!r} does not allow None")
@@ -215,7 +218,7 @@ option changes a complete closed schema and should be versioned accordingly.
 ## Related Snippets
 
 <!-- catalog:related:start -->
-- [Apply Partial Dataclass Updates with an Omitted-Value Sentinel](apply-partial-dataclass-updates-with-an-omitted-value-sentinel.md)
-- [Build a Read-Only Mapping with Canonical Text Keys](build-a-read-only-mapping-with-canonical-text-keys.md)
-- [Reject Unknown Options with Conservative Typo Suggestions](../configuration-serialization/reject-unknown-options-with-conservative-typo-suggestions.md)
+- [Apply Partial Dataclass Updates with an Omitted-Value Sentinel](../python-language/apply-partial-dataclass-updates-with-an-omitted-value-sentinel.md)
+- [Build a Read-Only Mapping with Canonical Text Keys](../python-language/build-a-read-only-mapping-with-canonical-text-keys.md)
+- [Reject Unknown Options with Conservative Typo Suggestions](reject-unknown-options-with-conservative-typo-suggestions.md)
 <!-- catalog:related:end -->

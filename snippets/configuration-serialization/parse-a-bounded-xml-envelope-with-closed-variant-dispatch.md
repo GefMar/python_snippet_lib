@@ -195,7 +195,7 @@ def parse_bounded_xml_envelope(payload: bytes) -> Envelope:
             forbid_entities=True,
             forbid_external=True,
         )
-    except (ParseError, DefusedXmlException, LookupError):
+    except (ParseError, DefusedXmlException, LookupError, ValueError):
         raise XmlEnvelopeError("invalid XML envelope") from None
 
     _validate_tree_budget(root)
