@@ -19,15 +19,15 @@ not edit it by hand.
 | --- | --- | ---: |
 | [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 17 |
 | [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 18 |
-| [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 3 |
+| [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 6 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 7 |
 | [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 5 |
 | [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 16 |
 | [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 3 |
 | [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 7 |
-| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 18 |
+| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 19 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 3 |
-| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 1 |
+| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 2 |
 | [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 9 |
 
 ### Snippets
@@ -70,8 +70,11 @@ not edit it by hand.
 | [Sort Newline-Terminated Binary Records with Bounded Merge Passes](snippets/algorithms-data-structures/sort-newline-terminated-binary-records-with-bounded-merge-passes.md) | algorithms-data-structures | algorithm | data-transformation, resource-management |
 | [Traverse a Parent Graph with Breadth-First Search](snippets/algorithms-data-structures/traverse-a-parent-graph-with-breadth-first-search.md) | algorithms-data-structures | algorithm | data-transformation, validation |
 | [Collect Thread-Pool Results and Errors as Futures Complete](snippets/concurrency-lifecycle/collect-thread-pool-results-and-errors-as-futures-complete.md) | concurrency-lifecycle | recipe | concurrency-control, resource-management |
+| [Drain Bounded Deferred Writes Outside the Queue Lock](snippets/concurrency-lifecycle/drain-bounded-deferred-writes-outside-the-queue-lock.md) | concurrency-lifecycle | pattern | concurrency-control, networking, resource-management |
 | [Gather Async Results with Bounded Concurrency](snippets/concurrency-lifecycle/gather-async-results-with-bounded-concurrency.md) | concurrency-lifecycle | recipe | concurrency-control, resource-management |
+| [Guard an Async Resource with Explicit Lifecycle States](snippets/concurrency-lifecycle/guard-an-async-resource-with-explicit-lifecycle-states.md) | concurrency-lifecycle | pattern | concurrency-control, lifecycle-management, resource-management |
 | [Stop a Polling Worker Cooperatively with an Event](snippets/concurrency-lifecycle/stop-a-polling-worker-cooperatively-with-an-event.md) | concurrency-lifecycle | pattern | concurrency-control, resource-management |
+| [Submit a Callable with a Snapshot of the Current Context](snippets/concurrency-lifecycle/submit-a-callable-with-a-snapshot-of-the-current-context.md) | concurrency-lifecycle | recipe | concurrency-control, interoperability, observability |
 | [Assign Stable Schedule Slots with a Digest](snippets/reliability-resilience/assign-stable-schedule-slots-with-a-digest.md) | reliability-resilience | algorithm | performance-optimization, resource-management |
 | [Cache Values with a Monotonic TTL and Early Jitter](snippets/reliability-resilience/cache-values-with-a-monotonic-ttl-and-early-jitter.md) | reliability-resilience | recipe | caching, resource-management |
 | [Compensate Completed Workflow Steps in Reverse Order](snippets/reliability-resilience/compensate-completed-workflow-steps-in-reverse-order.md) | reliability-resilience | pattern | automation, resource-management, retry-recovery |
@@ -111,6 +114,7 @@ not edit it by hand.
 | [Split a Half-Open UTC Range Across Ordered Storage Tiers](snippets/storage-databases/split-a-half-open-utc-range-across-ordered-storage-tiers.md) | storage-databases | algorithm | data-transformation, persistence, validation |
 | [Store Bytes by Their Content Digest](snippets/storage-databases/store-bytes-by-their-content-digest.md) | storage-databases | recipe | caching, persistence |
 | [Append a Fixed-Width CRC Check to a Human-Readable Identifier](snippets/configuration-serialization/append-a-fixed-width-crc-check-to-a-human-readable-identifier.md) | configuration-serialization | recipe | interoperability, serialization, validation |
+| [Build a Deterministic Size-Capped USTAR Archive from Bytes](snippets/configuration-serialization/build-a-deterministic-size-capped-ustar-archive-from-bytes.md) | configuration-serialization | recipe | resource-management, serialization, validation |
 | [Convert a Weekday Bitmask to a Canonical Cron Schedule](snippets/configuration-serialization/convert-a-weekday-bitmask-to-a-canonical-cron-schedule.md) | configuration-serialization | recipe | configuration, serialization, validation |
 | [Convert Decimal Values to Exact Minor Units](snippets/configuration-serialization/convert-decimal-values-to-exact-minor-units.md) | configuration-serialization | recipe | interoperability, validation |
 | [Elide Nested Mapping Values That Match Explicit Defaults](snippets/configuration-serialization/elide-nested-mapping-values-that-match-explicit-defaults.md) | configuration-serialization | recipe | configuration, serialization |
@@ -131,6 +135,7 @@ not edit it by hand.
 | [Redact a Printable ASCII Secret with a Bounded Visible Tail](snippets/security-privacy/redact-a-printable-ascii-secret-with-a-bounded-visible-tail.md) | security-privacy | recipe | observability, security, validation |
 | [Validate a Conservative Unicode Filename Component](snippets/security-privacy/validate-a-conservative-unicode-filename-component.md) | security-privacy | recipe | interoperability, validation |
 | [Verify an RFC 7636 S256 PKCE Challenge](snippets/security-privacy/verify-an-rfc-7636-s256-pkce-challenge.md) | security-privacy | recipe | interoperability, security, validation |
+| [Parse a Bounded Space-Indented Test Outline into Leaf Paths](snippets/testing-tooling/parse-a-bounded-space-indented-test-outline-into-leaf-paths.md) | testing-tooling | algorithm | parsing, testing, validation |
 | [Wait for Named Queue Conditions Under One Monotonic Deadline](snippets/testing-tooling/wait-for-named-queue-conditions-under-one-monotonic-deadline.md) | testing-tooling | testing-technique | concurrency-control, testing, validation |
 | [Capture a Bounded Pickle-Friendly Exception Report](snippets/observability-operations/capture-a-bounded-pickle-friendly-exception-report.md) | observability-operations | recipe | interoperability, observability, serialization |
 | [Classify Required Health Stamps by Freshness](snippets/observability-operations/classify-required-health-stamps-by-freshness.md) | observability-operations | recipe | observability, validation |
