@@ -9,6 +9,7 @@ determine correctness.
 | Snippet | Type | Use Cases | Problem |
 | --- | --- | --- | --- |
 | [Calculate a Symmetrically Trimmed Mean](calculate-a-symmetrically-trimmed-mean.md) | recipe | data-transformation, performance-optimization | Reduce the influence of extreme observations by removing an explicit count from both sorted ends before taking the mean. |
+| [Compute a Row-Wise Maximum of Rolling Minima](compute-a-row-wise-maximum-of-rolling-minima.md) | algorithm | data-transformation, validation | Summarize each bounded time row by taking the largest minimum found across all of its contiguous fixed-width windows. |
 | [Compute a Wilson Score Interval for a Binomial Proportion](compute-a-wilson-score-interval-for-a-binomial-proportion.md) | algorithm | data-transformation, validation | Estimate a two-sided confidence interval for a binomial proportion with Wilson score bounds instead of a symmetric Wald interval. |
 | [Detect a Recent Drop Against a Disjoint pandas Baseline Window](detect-a-recent-drop-against-a-disjoint-pandas-baseline-window.md) | integration | observability, validation | Compare recent finite measurements with an earlier non-overlapping baseline and return a diagnostic drop decision. |
 | [Encode Categories with Out-of-Fold Smoothed Target Means](encode-categories-with-out-of-fold-smoothed-target-means.md) | algorithm | data-transformation, validation | Encode bounded categorical training rows with smoothed target means calculated without any observation from the row's assigned fold. |

@@ -21,14 +21,14 @@ not edit it by hand.
 | [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 22 |
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 15 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 14 |
-| [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 12 |
-| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 32 |
-| [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 11 |
+| [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 13 |
+| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 34 |
+| [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 12 |
 | [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 14 |
-| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 27 |
+| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 29 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 11 |
 | [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 6 |
-| [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 10 |
+| [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 11 |
 
 ### Snippets
 
@@ -112,6 +112,7 @@ not edit it by hand.
 | [Iterate Cursor-Paginated Results Lazily](snippets/networking-protocols/iterate-cursor-paginated-results-lazily.md) | networking-protocols | pattern | networking, resource-management |
 | [Parse a Bounded ASCII Media Type Value](snippets/networking-protocols/parse-a-bounded-ascii-media-type-value.md) | networking-protocols | recipe | interoperability, parsing, serialization, validation |
 | [Parse a Bounded Host and Port with Bracketed IPv6](snippets/networking-protocols/parse-a-bounded-host-and-port-with-bracketed-ipv6.md) | networking-protocols | recipe | networking, parsing, validation |
+| [Parse a Bounded Three-State JSON Response Envelope](snippets/networking-protocols/parse-a-bounded-three-state-json-response-envelope.md) | networking-protocols | integration | networking, parsing, validation |
 | [Read and Write Size-Capped Varint Frames](snippets/networking-protocols/read-and-write-size-capped-varint-frames.md) | networking-protocols | recipe | networking, serialization, validation |
 | [Release a Pooled Response Connection Only After Clean EOF](snippets/networking-protocols/release-a-pooled-response-connection-only-after-clean-eof.md) | networking-protocols | pattern | lifecycle-management, networking, resource-management, validation |
 | [Resume a Bounded HTTP Byte Stream with Validated Range Responses](snippets/networking-protocols/resume-a-bounded-http-byte-stream-with-validated-range-responses.md) | networking-protocols | integration | networking, resource-management, retry-recovery, validation |
@@ -126,6 +127,7 @@ not edit it by hand.
 | [Clean a pandas Series with First-Match Rules and Audit Counts](snippets/data-processing/clean-a-pandas-series-with-first-match-rules-and-audit-counts.md) | data-processing | integration | data-transformation, validation |
 | [Collect Expected Parse Failures Without Stopping a Batch](snippets/data-processing/collect-expected-parse-failures-without-stopping-a-batch.md) | data-processing | pattern | parsing, validation |
 | [Count Static Imports Across Bounded Python Notebook Cells](snippets/data-processing/count-static-imports-across-bounded-python-notebook-cells.md) | data-processing | algorithm | data-transformation, parsing, validation |
+| [Derive an Other Bucket from Exact pandas Totals](snippets/data-processing/derive-an-other-bucket-from-exact-pandas-totals.md) | data-processing | integration | data-transformation, validation |
 | [Enforce a Many-to-One pandas Left-Merge Contract](snippets/data-processing/enforce-a-many-to-one-pandas-left-merge-contract.md) | data-processing | integration | data-transformation, interoperability, validation |
 | [Fan Out Events into Bounded Lookback Windows](snippets/data-processing/fan-out-events-into-bounded-lookback-windows.md) | data-processing | algorithm | data-transformation, resource-management, validation |
 | [Group Items by an Exact Compatibility Signature and Report Unmatched Inputs](snippets/data-processing/group-items-by-an-exact-compatibility-signature-and-report-unmatched-inputs.md) | data-processing | algorithm | data-transformation, validation |
@@ -133,6 +135,7 @@ not edit it by hand.
 | [Join Two Strictly Increasing Streams by Exact Timestamp](snippets/data-processing/join-two-strictly-increasing-streams-by-exact-timestamp.md) | data-processing | pattern | data-transformation, resource-management, validation |
 | [Limit Text Lines Across Arbitrary Chunks](snippets/data-processing/limit-text-lines-across-arbitrary-chunks.md) | data-processing | recipe | parsing, resource-management |
 | [Measure Time in a State Within a Half-Open Window](snippets/data-processing/measure-time-in-a-state-within-a-half-open-window.md) | data-processing | algorithm | data-transformation |
+| [Merge Bounded Row Batches with a First-Seen Schema Union](snippets/data-processing/merge-bounded-row-batches-with-a-first-seen-schema-union.md) | data-processing | algorithm | data-transformation, validation |
 | [Normalize Optional CSV Columns in a Single Pass](snippets/data-processing/normalize-optional-csv-columns-in-a-single-pass.md) | data-processing | recipe | data-transformation, parsing, validation |
 | [Overlay Aligned Time Series at the Finest Step](snippets/data-processing/overlay-aligned-time-series-at-the-finest-step.md) | data-processing | algorithm | data-transformation, validation |
 | [Parse Pipe-Delimited Tables with Continuation Rows](snippets/data-processing/parse-pipe-delimited-tables-with-continuation-rows.md) | data-processing | algorithm | data-transformation, parsing |
@@ -149,6 +152,7 @@ not edit it by hand.
 | [Validate Parsed CSV Rows with Bounded Structured Problems](snippets/data-processing/validate-parsed-csv-rows-with-bounded-structured-problems.md) | data-processing | recipe | parsing, validation |
 | [Yield Stream Items with Bounded Neighbor Context](snippets/data-processing/yield-stream-items-with-bounded-neighbor-context.md) | data-processing | recipe | data-transformation, performance-optimization |
 | [Calculate a Symmetrically Trimmed Mean](snippets/machine-learning-statistics/calculate-a-symmetrically-trimmed-mean.md) | machine-learning-statistics | recipe | data-transformation, performance-optimization |
+| [Compute a Row-Wise Maximum of Rolling Minima](snippets/machine-learning-statistics/compute-a-row-wise-maximum-of-rolling-minima.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Compute a Wilson Score Interval for a Binomial Proportion](snippets/machine-learning-statistics/compute-a-wilson-score-interval-for-a-binomial-proportion.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Detect a Recent Drop Against a Disjoint pandas Baseline Window](snippets/machine-learning-statistics/detect-a-recent-drop-against-a-disjoint-pandas-baseline-window.md) | machine-learning-statistics | integration | observability, validation |
 | [Encode Categories with Out-of-Fold Smoothed Target Means](snippets/machine-learning-statistics/encode-categories-with-out-of-fold-smoothed-target-means.md) | machine-learning-statistics | algorithm | data-transformation, validation |
@@ -190,6 +194,7 @@ not edit it by hand.
 | [Merge Nested Configuration with an Explicit Delete Sentinel](snippets/configuration-serialization/merge-nested-configuration-with-an-explicit-delete-sentinel.md) | configuration-serialization | recipe | configuration, data-transformation |
 | [Merge Nested Mappings Without Mutating Inputs](snippets/configuration-serialization/merge-nested-mappings-without-mutating-inputs.md) | configuration-serialization | recipe | configuration, data-transformation |
 | [Parse a Bounded Component Options Expression](snippets/configuration-serialization/parse-a-bounded-component-options-expression.md) | configuration-serialization | algorithm | parsing, validation |
+| [Parse a Bounded Flat Placeholder Template](snippets/configuration-serialization/parse-a-bounded-flat-placeholder-template.md) | configuration-serialization | algorithm | configuration, parsing, validation |
 | [Parse a Bounded Nested Bracket Tree](snippets/configuration-serialization/parse-a-bounded-nested-bracket-tree.md) | configuration-serialization | algorithm | parsing, validation |
 | [Parse Compact Durations into timedelta](snippets/configuration-serialization/parse-compact-durations-into-timedelta.md) | configuration-serialization | recipe | configuration, parsing, validation |
 | [Parse Explicit Decimal and Binary Byte Sizes](snippets/configuration-serialization/parse-explicit-decimal-and-binary-byte-sizes.md) | configuration-serialization | recipe | configuration, parsing, validation |
@@ -198,6 +203,7 @@ not edit it by hand.
 | [Register and Unregister a Bounded Single-Byte Charmap Codec](snippets/configuration-serialization/register-and-unregister-a-bounded-single-byte-charmap-codec.md) | configuration-serialization | integration | interoperability, serialization |
 | [Reject Unknown Options with Conservative Typo Suggestions](snippets/configuration-serialization/reject-unknown-options-with-conservative-typo-suggestions.md) | configuration-serialization | recipe | configuration, validation |
 | [Render a Stable Unified Diff for Nested JSON Values](snippets/configuration-serialization/render-a-stable-unified-diff-for-nested-json-values.md) | configuration-serialization | recipe | serialization, testing, validation |
+| [Render Fixed Date Placeholders from an Explicit Anchor](snippets/configuration-serialization/render-fixed-date-placeholders-from-an-explicit-anchor.md) | configuration-serialization | recipe | automation, configuration, validation |
 | [Resolve an Absolute or Percentage Limit](snippets/configuration-serialization/resolve-an-absolute-or-percentage-limit.md) | configuration-serialization | recipe | configuration, parsing, validation |
 | [Substitute Typed Values into a JSON-Like Template](snippets/configuration-serialization/substitute-typed-values-into-a-json-like-template.md) | configuration-serialization | recipe | configuration, serialization, validation |
 | [Audit Symlinks in a Bounded Directory Tree](snippets/security-privacy/audit-symlinks-in-a-bounded-directory-tree.md) | security-privacy | recipe | resource-management, security, validation |
@@ -221,6 +227,7 @@ not edit it by hand.
 | [Classify Required Health Stamps by Freshness](snippets/observability-operations/classify-required-health-stamps-by-freshness.md) | observability-operations | recipe | observability, validation |
 | [Count Values in Fixed Upper-Bound Bins](snippets/observability-operations/count-values-in-fixed-upper-bound-bins.md) | observability-operations | algorithm | data-transformation, observability |
 | [Format Log Records as JSON with Explicit Extra Fields](snippets/observability-operations/format-log-records-as-json-with-explicit-extra-fields.md) | observability-operations | recipe | observability, serialization |
+| [Group Metric Samples by Their Exact Label-Key Shape](snippets/observability-operations/group-metric-samples-by-their-exact-label-key-shape.md) | observability-operations | algorithm | data-transformation, observability, validation |
 | [Measure and Freeze Elapsed Time in a Context](snippets/observability-operations/measure-and-freeze-elapsed-time-in-a-context.md) | observability-operations | idiom | observability, performance-optimization |
 | [Process Log Records in a Background Thread with QueueListener](snippets/observability-operations/process-log-records-in-a-background-thread-with-queuelistener.md) | observability-operations | recipe | concurrency-control, lifecycle-management, observability |
 | [Read a Bounded Log Delta Across One Rename-Based Rotation](snippets/observability-operations/read-a-bounded-log-delta-across-one-rename-based-rotation.md) | observability-operations | recipe | observability, resource-management, retry-recovery |
