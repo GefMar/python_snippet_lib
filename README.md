@@ -20,15 +20,15 @@ not edit it by hand.
 | [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 21 |
 | [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 29 |
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 24 |
-| [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 17 |
+| [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 18 |
 | [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 17 |
 | [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 43 |
 | [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 17 |
-| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 19 |
-| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 37 |
+| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 21 |
+| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 38 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 15 |
 | [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 11 |
-| [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 15 |
+| [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 16 |
 
 ### Snippets
 
@@ -119,6 +119,7 @@ not edit it by hand.
 | [Plan a Versioned Transition for the Current Workflow Attempt](snippets/reliability-resilience/plan-a-versioned-transition-for-the-current-workflow-attempt.md) | reliability-resilience | pattern | concurrency-control, lifecycle-management, validation |
 | [Plan Remaining Stages from a Validated Completed Prefix](snippets/reliability-resilience/plan-remaining-stages-from-a-validated-completed-prefix.md) | reliability-resilience | algorithm | automation, retry-recovery, validation |
 | [Poll a Remote Operation Within Deadline and Failure Budgets](snippets/reliability-resilience/poll-a-remote-operation-within-deadline-and-failure-budgets.md) | reliability-resilience | integration | automation, networking, resource-management, retry-recovery |
+| [Poll with Deterministic Capped Backoff Under One Monotonic Deadline](snippets/reliability-resilience/poll-with-deterministic-capped-backoff-under-one-monotonic-deadline.md) | reliability-resilience | recipe | retry-recovery, testing |
 | [Propagate a Monotonic Deadline with ContextVar](snippets/reliability-resilience/propagate-a-monotonic-deadline-with-contextvar.md) | reliability-resilience | pattern | concurrency-control, lifecycle-management, retry-recovery |
 | [Reduce Bounded Acknowledgements into Exactly-Once Completions](snippets/reliability-resilience/reduce-bounded-acknowledgements-into-exactly-once-completions.md) | reliability-resilience | algorithm | retry-recovery, validation |
 | [Resolve Incoming Configuration with Last-Known-Good Values](snippets/reliability-resilience/resolve-incoming-configuration-with-last-known-good-values.md) | reliability-resilience | pattern | configuration, validation |
@@ -205,6 +206,7 @@ not edit it by hand.
 | [Build a Bounded File Manifest with Internal Symlink Aliases](snippets/storage-databases/build-a-bounded-file-manifest-with-internal-symlink-aliases.md) | storage-databases | recipe | persistence, resource-management, validation |
 | [Build and Apply a Deterministic Mapping Delta](snippets/storage-databases/build-and-apply-a-deterministic-mapping-delta.md) | storage-databases | algorithm | data-transformation, persistence |
 | [Check Whether a Generated File Is Older Than Its Inputs](snippets/storage-databases/check-whether-a-generated-file-is-older-than-its-inputs.md) | storage-databases | recipe | automation, caching, validation |
+| [Commit One SQLite Item Mutation and Its Checkpoint Atomically](snippets/storage-databases/commit-one-sqlite-item-mutation-and-its-checkpoint-atomically.md) | storage-databases | pattern | persistence, retry-recovery |
 | [Compare and Swap a Versioned SQLite Setting with One Conditional Update](snippets/storage-databases/compare-and-swap-a-versioned-sqlite-setting-with-one-conditional-update.md) | storage-databases | recipe | concurrency-control, persistence |
 | [Compare Bounded Apparent Sizes of Two File-Tree Snapshots](snippets/storage-databases/compare-bounded-apparent-sizes-of-two-file-tree-snapshots.md) | storage-databases | recipe | automation, persistence, resource-management |
 | [Decide Whether to Restore a Versioned Snapshot](snippets/storage-databases/decide-whether-to-restore-a-versioned-snapshot.md) | storage-databases | algorithm | configuration, data-transformation, validation |
@@ -214,6 +216,7 @@ not edit it by hand.
 | [Plan an Incremental Cumulative Snapshot from Partition Dates](snippets/storage-databases/plan-an-incremental-cumulative-snapshot-from-partition-dates.md) | storage-databases | algorithm | automation, data-transformation, validation |
 | [Project a Dataclass into a Validated Insert Row](snippets/storage-databases/project-a-dataclass-into-a-validated-insert-row.md) | storage-databases | recipe | data-transformation, persistence, validation |
 | [Read the Last Bounded Binary Lines with a Read-Only mmap](snippets/storage-databases/read-the-last-bounded-binary-lines-with-a-read-only-mmap.md) | storage-databases | recipe | parsing, performance-optimization, resource-management |
+| [Replace a Complete Bounded SQLite Cache Snapshot with a Generation](snippets/storage-databases/replace-a-complete-bounded-sqlite-cache-snapshot-with-a-generation.md) | storage-databases | pattern | caching, persistence, retry-recovery |
 | [Replace a File Atomically with a Sibling Temporary File](snippets/storage-databases/replace-a-file-atomically-with-a-sibling-temporary-file.md) | storage-databases | recipe | persistence, resource-management |
 | [Select Expired Backup Names with Strict UTC Timestamps](snippets/storage-databases/select-expired-backup-names-with-strict-utc-timestamps.md) | storage-databases | recipe | automation, parsing, validation |
 | [Select Snapshot Representatives by UTC Calendar Buckets](snippets/storage-databases/select-snapshot-representatives-by-utc-calendar-buckets.md) | storage-databases | algorithm | automation, persistence |
@@ -230,6 +233,7 @@ not edit it by hand.
 | [Derive a Versioned Record Key from Explicit Identity Fields](snippets/configuration-serialization/derive-a-versioned-record-key-from-explicit-identity-fields.md) | configuration-serialization | algorithm | serialization, validation |
 | [Elide Nested Mapping Values That Match Explicit Defaults](snippets/configuration-serialization/elide-nested-mapping-values-that-match-explicit-defaults.md) | configuration-serialization | recipe | configuration, serialization |
 | [Embed a Small Routing Hint in a Random UUIDv8](snippets/configuration-serialization/embed-a-small-routing-hint-in-a-random-uuidv8.md) | configuration-serialization | recipe | interoperability, serialization, validation |
+| [Evaluate a Bounded Boolean Rule Tree from Closed JSON](snippets/configuration-serialization/evaluate-a-bounded-boolean-rule-tree-from-closed-json.md) | configuration-serialization | pattern | configuration, data-transformation, validation |
 | [Evaluate a Bounded Boolean Tag Expression with an AST Allowlist](snippets/configuration-serialization/evaluate-a-bounded-boolean-tag-expression-with-an-ast-allowlist.md) | configuration-serialization | algorithm | configuration, parsing, validation |
 | [Evaluate Salted Percentage Rollouts with Integer Buckets](snippets/configuration-serialization/evaluate-salted-percentage-rollouts-with-integer-buckets.md) | configuration-serialization | algorithm | configuration, data-transformation, validation |
 | [Expand a Bounded EUI-48 Address Interval](snippets/configuration-serialization/expand-a-bounded-eui-48-address-interval.md) | configuration-serialization | algorithm | data-transformation, parsing, validation |
@@ -299,6 +303,7 @@ not edit it by hand.
 | [Report Partition Offsets Behind a Fixed Checkpoint](snippets/observability-operations/report-partition-offsets-behind-a-fixed-checkpoint.md) | observability-operations | algorithm | observability, validation |
 | [Resolve the Latest Status with an Explicit Mapping](snippets/observability-operations/resolve-the-latest-status-with-an-explicit-mapping.md) | observability-operations | pattern | interoperability, observability, validation |
 | [Scope Structured Log Fields with Context Variables](snippets/observability-operations/scope-structured-log-fields-with-context-variables.md) | observability-operations | pattern | concurrency-control, observability |
+| [Share Bounded Counters and Duration Histograms Across Spawned Processes](snippets/observability-operations/share-bounded-counters-and-duration-histograms-across-spawned-processes.md) | observability-operations | pattern | concurrency-control, observability, resource-management |
 <!-- catalog:root:end -->
 
 ## Snippet Content
