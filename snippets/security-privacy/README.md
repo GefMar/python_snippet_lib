@@ -8,6 +8,7 @@ privacy or hostile-input invariant is central.
 <!-- catalog:category:start -->
 | Snippet | Type | Use Cases | Problem |
 | --- | --- | --- | --- |
+| [Audit Bounded Relative POSIX Archive Member Names Under a Closed Policy](audit-bounded-relative-posix-archive-member-names-under-a-closed-policy.md) | recipe | parsing, resource-management, security, validation | Audit one exact tuple of already-decoded archive member names under bounded conservative relative POSIX lexical rules without opening an archive or touching a filesystem. |
 | [Audit Parsed Compose Services for Digest-Pinned Images](audit-parsed-compose-services-for-digest-pinned-images.md) | recipe | configuration, security, validation | Audit already parsed Compose service records with a conservative rule that accepts each declared image only when it ends in one lowercase SHA-256 digest pin. |
 | [Audit Symlinks in a Bounded Directory Tree](audit-symlinks-in-a-bounded-directory-tree.md) | recipe | resource-management, security, validation | Inspect a stable directory without following links and reject any symbolic link whose resolved target is missing or outside the inspected root. |
 | [Authenticate Bounded Payloads with Versioned HMAC Keys](authenticate-bounded-payloads-with-versioned-hmac-keys.md) | pattern | security, serialization, validation | Authenticate a bounded payload with the key assigned to the current time epoch while retaining older versioned keys for verification. |

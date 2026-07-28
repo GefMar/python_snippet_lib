@@ -17,16 +17,16 @@ not edit it by hand.
 
 | Category | Scope | Snippets |
 | --- | --- | ---: |
-| [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 22 |
-| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 31 |
+| [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 23 |
+| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 32 |
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 31 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 28 |
-| [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 22 |
-| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 50 |
+| [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 23 |
+| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 51 |
 | [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 18 |
 | [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 27 |
 | [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 51 |
-| [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 18 |
+| [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 19 |
 | [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 16 |
 | [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 17 |
 
@@ -36,6 +36,7 @@ not edit it by hand.
 | --- | --- | --- | --- |
 | [Add Bounded Stage Context Without Replacing an Exception](snippets/python-language/add-bounded-stage-context-without-replacing-an-exception.md) | python-language | idiom | observability, validation |
 | [Apply Partial Dataclass Updates with an Omitted-Value Sentinel](snippets/python-language/apply-partial-dataclass-updates-with-an-omitted-value-sentinel.md) | python-language | recipe | data-transformation, validation |
+| [Attach Best-Effort Cleanup with weakref.finalize Without Retaining the Owner](snippets/python-language/attach-best-effort-cleanup-with-weakref-finalize-without-retaining-the-owner.md) | python-language | pattern | lifecycle-management, resource-management |
 | [Batch Any Iterable Lazily with itertools.batched](snippets/python-language/batch-any-iterable-lazily-with-itertools-batched.md) | python-language | idiom | data-transformation, resource-management |
 | [Build a Read-Only Mapping with Canonical Text Keys](snippets/python-language/build-a-read-only-mapping-with-canonical-text-keys.md) | python-language | recipe | interoperability, validation |
 | [Build an Immutable Slice-Aware Sequence](snippets/python-language/build-an-immutable-slice-aware-sequence.md) | python-language | recipe | data-transformation, interoperability |
@@ -65,6 +66,7 @@ not edit it by hand.
 | [Choose Nice Linear Axis Bounds and Tick Step](snippets/algorithms-data-structures/choose-nice-linear-axis-bounds-and-tick-step.md) | algorithms-data-structures | algorithm | data-transformation |
 | [Choose the First Eligible Candidate from Ordered Priority Groups](snippets/algorithms-data-structures/choose-the-first-eligible-candidate-from-ordered-priority-groups.md) | algorithms-data-structures | algorithm | data-transformation, validation |
 | [Classify Bounded DAG Stages as Ready, Waiting, or Blocked](snippets/algorithms-data-structures/classify-bounded-dag-stages-as-ready-waiting-or-blocked.md) | algorithms-data-structures | algorithm | automation, concurrency-control, validation |
+| [Coalesce Bounded Half-Open Integer Intervals Under an Explicit Adjacency Policy](snippets/algorithms-data-structures/coalesce-bounded-half-open-integer-intervals-under-an-explicit-adjacency-policy.md) | algorithms-data-structures | algorithm | data-transformation, validation |
 | [Cover a Half-Open Integer Range with Dyadic Intervals](snippets/algorithms-data-structures/cover-a-half-open-integer-range-with-dyadic-intervals.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization |
 | [Estimate Distinct Byte Strings with a Mergeable HyperLogLog](snippets/algorithms-data-structures/estimate-distinct-byte-strings-with-a-mergeable-hyperloglog.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization |
 | [Estimate Stream Frequencies with a Count-Min Sketch](snippets/algorithms-data-structures/estimate-stream-frequencies-with-a-count-min-sketch.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization |
@@ -163,6 +165,7 @@ not edit it by hand.
 | [Parse a Bounded Host and Port with Bracketed IPv6](snippets/networking-protocols/parse-a-bounded-host-and-port-with-bracketed-ipv6.md) | networking-protocols | recipe | networking, parsing, validation |
 | [Parse a Bounded Percent-Encoded Query String as Strict UTF-8 with Explicit Duplicate Rules](snippets/networking-protocols/parse-a-bounded-percent-encoded-query-string-as-strict-utf-8-with-explicit-duplicate-rules.md) | networking-protocols | recipe | interoperability, networking, parsing, validation |
 | [Parse a Bounded Three-State JSON Response Envelope](snippets/networking-protocols/parse-a-bounded-three-state-json-response-envelope.md) | networking-protocols | integration | networking, parsing, validation |
+| [Parse One Bounded Printable-ASCII HTTP/1 Field Section with Exact CRLF Framing](snippets/networking-protocols/parse-one-bounded-printable-ascii-http-1-field-section-with-exact-crlf-framing.md) | networking-protocols | recipe | networking, parsing, validation |
 | [Read and Write Size-Capped Varint Frames](snippets/networking-protocols/read-and-write-size-capped-varint-frames.md) | networking-protocols | recipe | networking, serialization, validation |
 | [Release a Pooled Response Connection Only After Clean EOF](snippets/networking-protocols/release-a-pooled-response-connection-only-after-clean-eof.md) | networking-protocols | pattern | lifecycle-management, networking, resource-management, validation |
 | [Resume a Bounded HTTP Byte Stream with Validated Range Responses](snippets/networking-protocols/resume-a-bounded-http-byte-stream-with-validated-range-responses.md) | networking-protocols | integration | networking, resource-management, retry-recovery, validation |
@@ -193,6 +196,7 @@ not edit it by hand.
 | [Group Items by an Exact Compatibility Signature and Report Unmatched Inputs](snippets/data-processing/group-items-by-an-exact-compatibility-signature-and-report-unmatched-inputs.md) | data-processing | algorithm | data-transformation, validation |
 | [Integrate Regular Rate Samples Across Explicit Time Buckets](snippets/data-processing/integrate-regular-rate-samples-across-explicit-time-buckets.md) | data-processing | algorithm | data-transformation, observability, validation |
 | [Isolate Independently Failing Items by Bisecting a Bounded Batch](snippets/data-processing/isolate-independently-failing-items-by-bisecting-a-bounded-batch.md) | data-processing | algorithm | data-transformation, resource-management, validation |
+| [Join Bounded Strictly Increasing Sequences by the Latest Prior Timestamp](snippets/data-processing/join-bounded-strictly-increasing-sequences-by-the-latest-prior-timestamp.md) | data-processing | algorithm | data-transformation, validation |
 | [Join Two Strictly Increasing Streams by Exact Timestamp](snippets/data-processing/join-two-strictly-increasing-streams-by-exact-timestamp.md) | data-processing | pattern | data-transformation, resource-management, validation |
 | [Limit Text Lines Across Arbitrary Chunks](snippets/data-processing/limit-text-lines-across-arbitrary-chunks.md) | data-processing | recipe | parsing, resource-management |
 | [Map Exact pandas Dtypes to a Neutral Storage Schema](snippets/data-processing/map-exact-pandas-dtypes-to-a-neutral-storage-schema.md) | data-processing | integration | data-transformation, interoperability, validation |
@@ -314,6 +318,7 @@ not edit it by hand.
 | [Resolve Bounded Configuration Through Dependent Adapters](snippets/configuration-serialization/resolve-bounded-configuration-through-dependent-adapters.md) | configuration-serialization | pattern | configuration, data-transformation, validation |
 | [Resolve Declared Input Paths from an Explicit Execution Mode](snippets/configuration-serialization/resolve-declared-input-paths-from-an-explicit-execution-mode.md) | configuration-serialization | pattern | configuration, data-transformation, validation |
 | [Substitute Typed Values into a JSON-Like Template](snippets/configuration-serialization/substitute-typed-values-into-a-json-like-template.md) | configuration-serialization | recipe | configuration, serialization, validation |
+| [Audit Bounded Relative POSIX Archive Member Names Under a Closed Policy](snippets/security-privacy/audit-bounded-relative-posix-archive-member-names-under-a-closed-policy.md) | security-privacy | recipe | parsing, resource-management, security, validation |
 | [Audit Parsed Compose Services for Digest-Pinned Images](snippets/security-privacy/audit-parsed-compose-services-for-digest-pinned-images.md) | security-privacy | recipe | configuration, security, validation |
 | [Audit Symlinks in a Bounded Directory Tree](snippets/security-privacy/audit-symlinks-in-a-bounded-directory-tree.md) | security-privacy | recipe | resource-management, security, validation |
 | [Authenticate Bounded Payloads with Versioned HMAC Keys](snippets/security-privacy/authenticate-bounded-payloads-with-versioned-hmac-keys.md) | security-privacy | pattern | security, serialization, validation |
