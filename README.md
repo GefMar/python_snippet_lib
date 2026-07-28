@@ -20,14 +20,14 @@ not edit it by hand.
 | [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 21 |
 | [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 30 |
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 29 |
-| [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 21 |
+| [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 23 |
 | [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 19 |
-| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 48 |
+| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 49 |
 | [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 17 |
 | [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 26 |
-| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 45 |
+| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 46 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 16 |
-| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 12 |
+| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 13 |
 | [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 17 |
 
 ### Snippets
@@ -119,12 +119,14 @@ not edit it by hand.
 | [Cache Values with a Monotonic TTL and Early Jitter](snippets/reliability-resilience/cache-values-with-a-monotonic-ttl-and-early-jitter.md) | reliability-resilience | recipe | caching, resource-management |
 | [Commit a Source Checkpoint Only After the Sink Accepts a Batch](snippets/reliability-resilience/commit-a-source-checkpoint-only-after-the-sink-accepts-a-batch.md) | reliability-resilience | pattern | data-transformation, retry-recovery |
 | [Compensate Completed Workflow Steps in Reverse Order](snippets/reliability-resilience/compensate-completed-workflow-steps-in-reverse-order.md) | reliability-resilience | pattern | automation, resource-management, retry-recovery |
+| [Decide Whether a Bounded Work Snapshot Permits a New Attempt](snippets/reliability-resilience/decide-whether-a-bounded-work-snapshot-permits-a-new-attempt.md) | reliability-resilience | algorithm | lifecycle-management, retry-recovery, validation |
 | [Flush Fixed-Size Batches Through a Scoped Sink](snippets/reliability-resilience/flush-fixed-size-batches-through-a-scoped-sink.md) | reliability-resilience | pattern | data-transformation, resource-management, retry-recovery |
 | [Hold a Switch Active Through a Monotonic Cooldown](snippets/reliability-resilience/hold-a-switch-active-through-a-monotonic-cooldown.md) | reliability-resilience | pattern | observability, resource-management |
 | [Model Independent Blocking Reasons as an Immutable Set](snippets/reliability-resilience/model-independent-blocking-reasons-as-an-immutable-set.md) | reliability-resilience | pattern | configuration, validation |
 | [Plan a Versioned Transition for the Current Workflow Attempt](snippets/reliability-resilience/plan-a-versioned-transition-for-the-current-workflow-attempt.md) | reliability-resilience | pattern | concurrency-control, lifecycle-management, validation |
 | [Plan Once-only Cancellation for Expired Tasks](snippets/reliability-resilience/plan-once-only-cancellation-for-expired-tasks.md) | reliability-resilience | pattern | concurrency-control, lifecycle-management, retry-recovery |
 | [Plan Readiness Recovery Through a Monotonic Reset Cooldown](snippets/reliability-resilience/plan-readiness-recovery-through-a-monotonic-reset-cooldown.md) | reliability-resilience | pattern | lifecycle-management, retry-recovery, validation |
+| [Plan Recovery Across Object and Metadata Publication States](snippets/reliability-resilience/plan-recovery-across-object-and-metadata-publication-states.md) | reliability-resilience | algorithm | lifecycle-management, persistence, retry-recovery, validation |
 | [Plan Remaining Stages from a Validated Completed Prefix](snippets/reliability-resilience/plan-remaining-stages-from-a-validated-completed-prefix.md) | reliability-resilience | algorithm | automation, retry-recovery, validation |
 | [Poll a Remote Operation Within Deadline and Failure Budgets](snippets/reliability-resilience/poll-a-remote-operation-within-deadline-and-failure-budgets.md) | reliability-resilience | integration | automation, networking, resource-management, retry-recovery |
 | [Poll with Deterministic Capped Backoff Under One Monotonic Deadline](snippets/reliability-resilience/poll-with-deterministic-capped-backoff-under-one-monotonic-deadline.md) | reliability-resilience | recipe | retry-recovery, testing |
@@ -162,6 +164,7 @@ not edit it by hand.
 | [Batch Items by Estimated Byte Size](snippets/data-processing/batch-items-by-estimated-byte-size.md) | data-processing | algorithm | data-transformation, resource-management |
 | [Build a Bounded Structural Profile of a pandas DataFrame](snippets/data-processing/build-a-bounded-structural-profile-of-a-pandas-dataframe.md) | data-processing | integration | data-transformation, observability, validation |
 | [Build a Conflict-Checked Remap from Synthetic XLSX Review Rows](snippets/data-processing/build-a-conflict-checked-remap-from-synthetic-xlsx-review-rows.md) | data-processing | integration | data-transformation, interoperability, validation |
+| [Build Bounded Digest Summaries Across Explicit Lookback Horizons](snippets/data-processing/build-bounded-digest-summaries-across-explicit-lookback-horizons.md) | data-processing | algorithm | data-transformation, resource-management, validation |
 | [Build Quantized Decimal Views with Deltas at Explicit Scales](snippets/data-processing/build-quantized-decimal-views-with-deltas-at-explicit-scales.md) | data-processing | recipe | data-transformation, validation |
 | [Check a Value Against an Asymmetric Tolerance Band](snippets/data-processing/check-a-value-against-an-asymmetric-tolerance-band.md) | data-processing | algorithm | validation |
 | [Clean a pandas Series with First-Match Rules and Audit Counts](snippets/data-processing/clean-a-pandas-series-with-first-match-rules-and-audit-counts.md) | data-processing | integration | data-transformation, validation |
@@ -279,6 +282,7 @@ not edit it by hand.
 | [Parse Compact Durations into timedelta](snippets/configuration-serialization/parse-compact-durations-into-timedelta.md) | configuration-serialization | recipe | configuration, parsing, validation |
 | [Parse Explicit Decimal and Binary Byte Sizes](snippets/configuration-serialization/parse-explicit-decimal-and-binary-byte-sizes.md) | configuration-serialization | recipe | configuration, parsing, validation |
 | [Patch One YAML Scalar While Preserving Round-Trip Layout](snippets/configuration-serialization/patch-one-yaml-scalar-while-preserving-round-trip-layout.md) | configuration-serialization | integration | configuration, serialization, validation |
+| [Plan a Bounded JSON Reconciliation Under Explicit Path Policies](snippets/configuration-serialization/plan-a-bounded-json-reconciliation-under-explicit-path-policies.md) | configuration-serialization | pattern | configuration, data-transformation, validation |
 | [Plan Trusted Field Adapters from Registered Protobuf Options](snippets/configuration-serialization/plan-trusted-field-adapters-from-registered-protobuf-options.md) | configuration-serialization | integration | configuration, interoperability, serialization, validation |
 | [Project Complete Artifact Bundles into Closed Tagged Views](snippets/configuration-serialization/project-complete-artifact-bundles-into-closed-tagged-views.md) | configuration-serialization | recipe | configuration, data-transformation, validation |
 | [Prune Empty Values from JSON-Like Data](snippets/configuration-serialization/prune-empty-values-from-json-like-data.md) | configuration-serialization | recipe | data-transformation, serialization |
@@ -307,6 +311,7 @@ not edit it by hand.
 | [Verify a Bounded Byte Stream Before Returning Its Payload](snippets/security-privacy/verify-a-bounded-byte-stream-before-returning-its-payload.md) | security-privacy | recipe | resource-management, security, validation |
 | [Verify an RFC 7636 S256 PKCE Challenge](snippets/security-privacy/verify-an-rfc-7636-s256-pkce-challenge.md) | security-privacy | recipe | interoperability, security, validation |
 | [Apply a Reusable Click Option Bundle to Subcommands](snippets/testing-tooling/apply-a-reusable-click-option-bundle-to-subcommands.md) | testing-tooling | integration | automation, configuration, testing |
+| [Audit a Bounded Directive Tree with Isolated Inherited Context](snippets/testing-tooling/audit-a-bounded-directive-tree-with-isolated-inherited-context.md) | testing-tooling | pattern | configuration, testing, validation |
 | [Build a Bounded Release DAG Around a Manual Barrier](snippets/testing-tooling/build-a-bounded-release-dag-around-a-manual-barrier.md) | testing-tooling | pattern | automation, testing, validation |
 | [Compare a Bounded Text Capture Against a Golden Fixture](snippets/testing-tooling/compare-a-bounded-text-capture-against-a-golden-fixture.md) | testing-tooling | testing-technique | testing, validation |
 | [Extract Bounded Native-Test Failure Highlights](snippets/testing-tooling/extract-bounded-native-test-failure-highlights.md) | testing-tooling | recipe | observability, parsing, testing |
