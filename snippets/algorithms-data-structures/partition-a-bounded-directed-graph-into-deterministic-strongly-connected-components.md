@@ -291,10 +291,13 @@ assert (
 
 ## Trade-offs and Limitations
 
-Validation and partitioning take O(V + E) time and memory within the 64-node,
-16-target-per-node, 256-edge, and 4,096-text-byte limits. The algorithm keeps
-both forward and reverse adjacency plus explicit DFS stacks. It performs no
-recursive calls and does not mutate the caller's tuple or frozen node values.
+Validation and the two graph traversals take O(V + E) time and memory within
+the 64-node, 16-target-per-node, 256-edge, and 4,096-text-byte limits.
+Deterministic presentation additionally sorts members, components, and
+outgoing component identifiers, adding O(V log V + E log V) worst-case time.
+The algorithm keeps both forward and reverse adjacency plus explicit DFS
+stacks. It performs no recursive calls and does not mutate the caller's tuple
+or frozen node values.
 
 Component identifiers are their positions in the returned component tuple.
 They follow the earliest declared member, not a topological order. Members use
