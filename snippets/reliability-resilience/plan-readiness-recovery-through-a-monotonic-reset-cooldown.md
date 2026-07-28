@@ -18,7 +18,7 @@ related:
 
 ## Idea and Problem
 
-Reduce bounded readiness observations into acknowledged reset requests without turning a transient or repeated unready report into a reset storm.
+Reduce one readiness observation into an acknowledged reset plan without turning a transient or repeated unready report into a reset storm.
 
 A running target must remain continuously unready for a grace interval before
 one numbered request is planned. That request stays pending until a later
@@ -29,10 +29,10 @@ requests. Tokens are stable increasing counters carried in the returned state.
 
 ## When to Use
 
-Use this pattern when readiness observations and reset acknowledgements have
-already been collected from one non-decreasing monotonic clock. A separate
-owner can consume the returned requests and feed each acknowledged token into a
-later observation. The state must remain within the lifetime and epoch of that
+Use this pattern one observation at a time when readiness and reset
+acknowledgements come from one non-decreasing monotonic clock. A separate owner
+must consume a returned request before feeding its acknowledged token into a
+later transition. The state must remain within the lifetime and epoch of that
 clock.
 
 This policy plans resets only for a target that is running but unready. A stopped
@@ -46,7 +46,6 @@ import math
 from dataclasses import dataclass
 from enum import StrEnum
 
-_MAX_OBSERVATIONS = 1_024
 _MAX_POLICY_SECONDS = 30 * 24 * 60 * 60
 _MAX_RESET_REQUESTS = 256
 _MAX_TOKEN = 2**63 - 1
@@ -93,7 +92,7 @@ class ResetRequest:
 @dataclass(frozen=True, slots=True)
 class ReadinessRecoveryPlan:
     state: ReadinessRecoveryState
-    reset_requests: tuple[ResetRequest, ...]
+    reset_request: ResetRequest | None
     action_limit_reached: bool
 
 
@@ -233,8 +232,12 @@ def _validated_state(
                 raise ValueError("a cooldown requires an acknowledged request")
             if cooldown_until <= last_observed_at:
                 raise ValueError("an expired cooldown must not remain in state")
-            if cooldown_until - last_observed_at > _MAX_POLICY_SECONDS:
-                raise ValueError("state cooldown exceeds the supported duration")
+            maximum_cooldown_until = _future_deadline(
+                last_observed_at,
+                policy.reset_cooldown_seconds,
+            )
+            if cooldown_until > maximum_cooldown_until:
+                raise ValueError("state cooldown exceeds the current policy duration")
 
     return ReadinessRecoveryState(
         last_observed_at=last_observed_at,
@@ -247,130 +250,111 @@ def _validated_state(
     )
 
 
-def _validated_observations(
+def _validated_observation(
     value: object,
     *,
     after: float | None,
-) -> tuple[ReadinessObservation, ...]:
-    if type(value) is not tuple:
-        raise TypeError("observations must be an exact tuple")
-    if len(value) > _MAX_OBSERVATIONS:
-        raise ValueError(f"observations must contain at most {_MAX_OBSERVATIONS} records")
-
-    previous = after
-    observations: list[ReadinessObservation] = []
-    for index, raw_observation in enumerate(value):
-        field = f"observations[{index}]"
-        if type(raw_observation) is not ReadinessObservation:
-            raise TypeError(f"{field} must be an exact ReadinessObservation")
-        observed_at = _finite_nonnegative_time(
-            raw_observation.observed_at,
-            field=f"{field}.observed_at",
+) -> ReadinessObservation:
+    if type(value) is not ReadinessObservation:
+        raise TypeError("observation must be an exact ReadinessObservation")
+    observed_at = _finite_nonnegative_time(
+        value.observed_at,
+        field="observation.observed_at",
+    )
+    if after is not None and observed_at < after:
+        raise StaleReadinessInputError("observation time must be non-decreasing")
+    if type(value.status) is not Readiness:
+        raise TypeError("observation.status must be an exact Readiness value")
+    acknowledged_token = value.acknowledged_token
+    if acknowledged_token is not None:
+        acknowledged_token = _token(
+            acknowledged_token,
+            field="observation.acknowledged_token",
+            minimum=1,
         )
-        if previous is not None and observed_at < previous:
-            raise StaleReadinessInputError("observation times must be non-decreasing")
-        if type(raw_observation.status) is not Readiness:
-            raise TypeError(f"{field}.status must be an exact Readiness value")
-        acknowledged_token = raw_observation.acknowledged_token
-        if acknowledged_token is not None:
-            acknowledged_token = _token(
-                acknowledged_token,
-                field=f"{field}.acknowledged_token",
-                minimum=1,
-            )
-        observations.append(
-            ReadinessObservation(
-                observed_at=observed_at,
-                status=raw_observation.status,
-                acknowledged_token=acknowledged_token,
-            )
-        )
-        previous = observed_at
-    return tuple(observations)
+    return ReadinessObservation(
+        observed_at=observed_at,
+        status=value.status,
+        acknowledged_token=acknowledged_token,
+    )
 
 
 def plan_readiness_recovery(
     state: ReadinessRecoveryState,
-    observations: tuple[ReadinessObservation, ...],
+    observation: ReadinessObservation,
     policy: ResetPolicy,
 ) -> ReadinessRecoveryPlan:
-    """Reduce immutable observations into state and reset requests."""
+    """Reduce one immutable observation into state and at most one request."""
     checked_policy = _validated_policy(policy)
     current = _validated_state(state, policy=checked_policy)
-    checked_observations = _validated_observations(
-        observations,
+    checked_observation = _validated_observation(
+        observation,
         after=current.last_observed_at,
     )
 
-    requests: list[ResetRequest] = []
-    action_limit_reached = False
-    for observation in checked_observations:
-        now = observation.observed_at
-        cooldown_until = current.cooldown_until
-        if cooldown_until is not None and now >= cooldown_until:
-            cooldown_until = None
+    now = checked_observation.observed_at
+    cooldown_until = current.cooldown_until
+    if cooldown_until is not None and now >= cooldown_until:
+        cooldown_until = None
 
-        issued = current.last_issued_token
-        acknowledged = current.last_acknowledged_token
-        pending_requested_at = current.pending_requested_at
-        if observation.acknowledged_token is not None:
-            if issued == acknowledged or pending_requested_at is None:
-                raise StaleReadinessInputError("acknowledgement has no pending request")
-            if observation.acknowledged_token != issued:
-                raise StaleReadinessInputError("acknowledgement token is stale or unknown")
-            if now <= pending_requested_at:
-                raise StaleReadinessInputError("acknowledgement must be later than its request")
-            acknowledged = issued
-            pending_requested_at = None
-            cooldown_until = _future_deadline(
-                now,
-                checked_policy.reset_cooldown_seconds,
+    issued = current.last_issued_token
+    acknowledged = current.last_acknowledged_token
+    pending_requested_at = current.pending_requested_at
+    if checked_observation.acknowledged_token is not None:
+        if issued == acknowledged or pending_requested_at is None:
+            raise StaleReadinessInputError("acknowledgement has no pending request")
+        if checked_observation.acknowledged_token != issued:
+            raise StaleReadinessInputError("acknowledgement token is stale or unknown")
+        if now <= pending_requested_at:
+            raise StaleReadinessInputError("acknowledgement must be later than its request")
+        acknowledged = issued
+        pending_requested_at = None
+        cooldown_until = _future_deadline(
+            now,
+            checked_policy.reset_cooldown_seconds,
+        )
+
+    if checked_observation.status is Readiness.RUNNING_UNREADY:
+        if current.last_status is Readiness.RUNNING_UNREADY and current.unready_since is not None:
+            unready_since = current.unready_since
+        else:
+            unready_since = now
+    else:
+        unready_since = None
+
+    reset_request = None
+    action_limit_reached = False
+    has_pending_request = issued == acknowledged + 1
+    if (
+        checked_observation.status is Readiness.RUNNING_UNREADY
+        and not has_pending_request
+        and cooldown_until is None
+        and now - unready_since >= checked_policy.unready_grace_seconds
+    ):
+        if issued >= checked_policy.max_reset_requests:
+            action_limit_reached = True
+        else:
+            issued += 1
+            pending_requested_at = now
+            reset_request = ResetRequest(
+                token=issued,
+                requested_at=now,
+                continuously_unready_since=unready_since,
             )
 
-        if observation.status is Readiness.RUNNING_UNREADY:
-            if (
-                current.last_status is Readiness.RUNNING_UNREADY
-                and current.unready_since is not None
-            ):
-                unready_since = current.unready_since
-            else:
-                unready_since = now
-        else:
-            unready_since = None
-
-        has_pending_request = issued == acknowledged + 1
-        if (
-            observation.status is Readiness.RUNNING_UNREADY
-            and not has_pending_request
-            and cooldown_until is None
-            and now - unready_since >= checked_policy.unready_grace_seconds
-        ):
-            if issued >= checked_policy.max_reset_requests:
-                action_limit_reached = True
-            else:
-                issued += 1
-                pending_requested_at = now
-                requests.append(
-                    ResetRequest(
-                        token=issued,
-                        requested_at=now,
-                        continuously_unready_since=unready_since,
-                    )
-                )
-
-        current = ReadinessRecoveryState(
-            last_observed_at=now,
-            last_status=observation.status,
-            unready_since=unready_since,
-            cooldown_until=cooldown_until,
-            last_issued_token=issued,
-            last_acknowledged_token=acknowledged,
-            pending_requested_at=pending_requested_at,
-        )
+    current = ReadinessRecoveryState(
+        last_observed_at=now,
+        last_status=checked_observation.status,
+        unready_since=unready_since,
+        cooldown_until=cooldown_until,
+        last_issued_token=issued,
+        last_acknowledged_token=acknowledged,
+        pending_requested_at=pending_requested_at,
+    )
 
     return ReadinessRecoveryPlan(
         state=current,
-        reset_requests=tuple(requests),
+        reset_request=reset_request,
         action_limit_reached=action_limit_reached,
     )
 ```
@@ -383,25 +367,60 @@ policy = ResetPolicy(
     reset_cooldown_seconds=4,
     max_reset_requests=2,
 )
-observations = (
+state = ReadinessRecoveryState()
+for observation in (
     ReadinessObservation(0, Readiness.STOPPED),
     ReadinessObservation(1, Readiness.RUNNING_UNREADY),
     ReadinessObservation(5, Readiness.RUNNING_UNREADY),
-    ReadinessObservation(6, Readiness.RUNNING_UNREADY),  # request token 1
-    ReadinessObservation(6, Readiness.RUNNING_UNREADY),  # pending: no duplicate
-    ReadinessObservation(7, Readiness.RUNNING_UNREADY, acknowledged_token=1),
-    ReadinessObservation(10, Readiness.RUNNING_UNREADY),  # cooldown
-    ReadinessObservation(11, Readiness.RUNNING_UNREADY),  # request token 2
-    ReadinessObservation(12, Readiness.RUNNING_READY, acknowledged_token=2),
-    ReadinessObservation(16, Readiness.RUNNING_UNREADY),  # fresh grace starts
-    ReadinessObservation(21, Readiness.RUNNING_UNREADY),  # cap reached
-)
+):
+    transition = plan_readiness_recovery(state, observation, policy)
+    assert transition.reset_request is None
+    state = transition.state
 
-plan = plan_readiness_recovery(ReadinessRecoveryState(), observations, policy)
+first = plan_readiness_recovery(
+    state,
+    ReadinessObservation(6, Readiness.RUNNING_UNREADY),
+    policy,
+)
+pending = plan_readiness_recovery(
+    first.state,
+    ReadinessObservation(6, Readiness.RUNNING_UNREADY),
+    policy,
+)
+acknowledged_first = plan_readiness_recovery(
+    pending.state,
+    ReadinessObservation(7, Readiness.RUNNING_UNREADY, acknowledged_token=1),
+    policy,
+)
+cooling_down = plan_readiness_recovery(
+    acknowledged_first.state,
+    ReadinessObservation(10, Readiness.RUNNING_UNREADY),
+    policy,
+)
+second = plan_readiness_recovery(
+    cooling_down.state,
+    ReadinessObservation(11, Readiness.RUNNING_UNREADY),
+    policy,
+)
+acknowledged_second = plan_readiness_recovery(
+    second.state,
+    ReadinessObservation(12, Readiness.RUNNING_READY, acknowledged_token=2),
+    policy,
+)
+fresh_grace = plan_readiness_recovery(
+    acknowledged_second.state,
+    ReadinessObservation(16, Readiness.RUNNING_UNREADY),
+    policy,
+)
+capped = plan_readiness_recovery(
+    fresh_grace.state,
+    ReadinessObservation(21, Readiness.RUNNING_UNREADY),
+    policy,
+)
 try:
     plan_readiness_recovery(
-        plan.state,
-        (ReadinessObservation(20, Readiness.STOPPED),),
+        capped.state,
+        ReadinessObservation(20, Readiness.STOPPED),
         policy,
     )
 except StaleReadinessInputError:
@@ -409,11 +428,29 @@ except StaleReadinessInputError:
 else:
     stale_rejected = False
 
-assert plan.reset_requests == (
+try:
+    plan_readiness_recovery(
+        ReadinessRecoveryState(
+            last_observed_at=10,
+            last_status=Readiness.RUNNING_READY,
+            cooldown_until=20,
+            last_issued_token=1,
+            last_acknowledged_token=1,
+        ),
+        ReadinessObservation(10, Readiness.RUNNING_READY),
+        policy,
+    )
+except ValueError:
+    impossible_cooldown_rejected = True
+else:
+    impossible_cooldown_rejected = False
+
+assert (first.reset_request, pending.reset_request, second.reset_request) == (
     ResetRequest(1, 6.0, 1.0),
+    None,
     ResetRequest(2, 11.0, 1.0),
 )
-assert plan.state == ReadinessRecoveryState(
+assert capped.state == ReadinessRecoveryState(
     last_observed_at=21.0,
     last_status=Readiness.RUNNING_UNREADY,
     unready_since=16.0,
@@ -422,17 +459,20 @@ assert plan.state == ReadinessRecoveryState(
     last_acknowledged_token=2,
     pending_requested_at=None,
 )
-assert plan.action_limit_reached is True
+assert capped.reset_request is None
+assert capped.action_limit_reached is True
 assert stale_rejected is True
+assert impossible_cooldown_rejected is True
 ```
 
 ## Trade-offs and Limitations
 
-Reduction is linear in at most 1,024 observations and can emit at most 256
-requests over a state's lifetime. Equal timestamps are accepted, but an
-acknowledgement must have a strictly later timestamp than its request. A pending
-request suppresses all duplicates until acknowledged; if acknowledgement never
-arrives, this planner deliberately remains pending.
+Each transition consumes one observation and emits at most one request; a state
+can emit at most 256 requests over its lifetime. Equal observation timestamps
+are accepted, but an acknowledgement must arrive in a later transition with a
+strictly later timestamp than its request. A pending request suppresses all
+duplicates until acknowledged; if acknowledgement never arrives, this planner
+deliberately remains pending.
 
 Readiness is observation-driven, so grace and cooldown boundaries do nothing
 until another observation is supplied. Acknowledging a token confirms only that

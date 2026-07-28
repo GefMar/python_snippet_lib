@@ -104,10 +104,20 @@ class RpcMethod:
     application_errors: tuple[type[Exception], ...] = ()
 
 
-@dataclass(frozen=True, slots=True)
+@dataclass(frozen=True, slots=True, init=False)
 class RpcDispatcher:
     routes: Mapping[str, CodecRoute]
     methods: Mapping[str, RpcMethod]
+
+    def __init__(
+        self,
+        routes: tuple[CodecRoute, ...],
+        methods: tuple[RpcMethod, ...],
+    ) -> None:
+        route_map = _validated_route_map(routes)
+        method_map = _validated_method_map(methods)
+        object.__setattr__(self, "routes", MappingProxyType(route_map))
+        object.__setattr__(self, "methods", MappingProxyType(method_map))
 
 
 @dataclass(frozen=True, slots=True)
@@ -207,10 +217,7 @@ def _valid_method_name(name: object) -> bool:
     )
 
 
-def build_rpc_dispatcher(
-    routes: tuple[CodecRoute, ...],
-    methods: tuple[RpcMethod, ...],
-) -> RpcDispatcher:
+def _validated_route_map(routes: object) -> dict[str, CodecRoute]:
     if type(routes) is not tuple or not 1 <= len(routes) <= _MAX_ROUTES:
         raise ValueError("invalid route registry")
 
@@ -225,7 +232,10 @@ def build_rpc_dispatcher(
         if not callable(route.decoder) or not callable(route.encoder):
             raise TypeError("route codecs must be callable")
         route_map[route.path] = route
+    return route_map
 
+
+def _validated_method_map(methods: object) -> dict[str, RpcMethod]:
     if type(methods) is not tuple or not 1 <= len(methods) <= _MAX_METHODS:
         raise ValueError("invalid method dispatcher")
 
@@ -252,11 +262,14 @@ def build_rpc_dispatcher(
             ):
                 raise TypeError("application errors must be narrow exception classes")
         method_map[method.name] = method
+    return method_map
 
-    return RpcDispatcher(
-        routes=MappingProxyType(route_map),
-        methods=MappingProxyType(method_map),
-    )
+
+def build_rpc_dispatcher(
+    routes: tuple[CodecRoute, ...],
+    methods: tuple[RpcMethod, ...],
+) -> RpcDispatcher:
+    return RpcDispatcher(routes, methods)
 
 
 def _read_envelope(decoded: object) -> tuple[object, tuple[FrozenNode, ...]]:
@@ -382,6 +395,13 @@ dispatcher = build_rpc_dispatcher(
     ),
 )
 
+try:
+    RpcDispatcher(dict(dispatcher.routes), dict(dispatcher.methods))
+except ValueError:
+    mutable_registry_rejected = True
+else:
+    mutable_registry_rejected = False
+
 requests = (
     dispatch_rpc(
         dispatcher,
@@ -423,7 +443,7 @@ except TypeError:
 else:
     registry_is_read_only = False
 
-assert (requests, registry_is_read_only) == (
+assert (requests, mutable_registry_rejected, registry_is_read_only) == (
     (
         RpcReply(RpcCode.OK, b'{"result":5}'),
         RpcReply(RpcCode.ROUTE),
@@ -434,17 +454,19 @@ assert (requests, registry_is_read_only) == (
         RpcReply(RpcCode.ENCODING),
     ),
     True,
+    True,
 )
 ```
 
 ## Trade-offs and Limitations
 
-The two read-only mappings are defensive snapshots, but their registered
-callables are trusted application code. Exact exception-class matching keeps a
-declared application failure from swallowing unrelated subclasses; ordinary
-unexpected exceptions become `handler`, while control-flow `BaseException`
-instances still propagate. All request errors discard exception text and values,
-which is predictable but intentionally offers little diagnostic detail.
+The validating constructor accepts only exact bounded tuples and stores
+read-only defensive snapshots, but their registered callables are trusted
+application code. Exact exception-class matching keeps a declared application
+failure from swallowing unrelated subclasses; ordinary unexpected exceptions
+become `handler`, while control-flow `BaseException` instances still propagate.
+All request errors discard exception text and values, which is predictable but
+intentionally offers little diagnostic detail.
 
 The frozen decoded tree rejects aliases and cycles and accepts only exact JSON-
 like built-in values. Decoder-specific concerns such as duplicate members must
