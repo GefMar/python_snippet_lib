@@ -18,11 +18,11 @@ not edit it by hand.
 | Category | Scope | Snippets |
 | --- | --- | ---: |
 | [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 21 |
-| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 29 |
-| [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 27 |
+| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 30 |
+| [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 29 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 21 |
 | [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 19 |
-| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 46 |
+| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 48 |
 | [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 17 |
 | [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 26 |
 | [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 45 |
@@ -60,6 +60,7 @@ not edit it by hand.
 | [Bisect a Bracketed Monotone Async Metric Within an Evaluation Budget](snippets/algorithms-data-structures/bisect-a-bracketed-monotone-async-metric-within-an-evaluation-budget.md) | algorithms-data-structures | algorithm | performance-optimization, validation |
 | [Build a Canonical Unicode Caseless Comparison Key](snippets/algorithms-data-structures/build-a-canonical-unicode-caseless-comparison-key.md) | algorithms-data-structures | algorithm | interoperability, validation |
 | [Build a Capacity-Sized Bloom Filter](snippets/algorithms-data-structures/build-a-capacity-sized-bloom-filter.md) | algorithms-data-structures | algorithm | performance-optimization, validation |
+| [Build and Evaluate a Bounded Binary Assignment Constraint System](snippets/algorithms-data-structures/build-and-evaluate-a-bounded-binary-assignment-constraint-system.md) | algorithms-data-structures | algorithm | data-transformation, resource-management, validation |
 | [Choose Nice Linear Axis Bounds and Tick Step](snippets/algorithms-data-structures/choose-nice-linear-axis-bounds-and-tick-step.md) | algorithms-data-structures | algorithm | data-transformation |
 | [Choose the First Eligible Candidate from Ordered Priority Groups](snippets/algorithms-data-structures/choose-the-first-eligible-candidate-from-ordered-priority-groups.md) | algorithms-data-structures | algorithm | data-transformation, validation |
 | [Classify Bounded DAG Stages as Ready, Waiting, or Blocked](snippets/algorithms-data-structures/classify-bounded-dag-stages-as-ready-waiting-or-blocked.md) | algorithms-data-structures | algorithm | automation, concurrency-control, validation |
@@ -99,6 +100,7 @@ not edit it by hand.
 | [Plan Priority Batches with an Age-Gated Tail](snippets/concurrency-lifecycle/plan-priority-batches-with-an-age-gated-tail.md) | concurrency-lifecycle | algorithm | concurrency-control, lifecycle-management, resource-management |
 | [Poll an Owned Source Until a Monotonic Idle Deadline](snippets/concurrency-lifecycle/poll-an-owned-source-until-a-monotonic-idle-deadline.md) | concurrency-lifecycle | pattern | concurrency-control, lifecycle-management, resource-management |
 | [Prevent Overlapping POSIX Jobs with a Nonblocking File Lock](snippets/concurrency-lifecycle/prevent-overlapping-posix-jobs-with-a-nonblocking-file-lock.md) | concurrency-lifecycle | recipe | automation, concurrency-control |
+| [Race a Preferred Async Read Against Bounded Alternatives](snippets/concurrency-lifecycle/race-a-preferred-async-read-against-bounded-alternatives.md) | concurrency-lifecycle | pattern | concurrency-control, lifecycle-management, resource-management |
 | [Refresh an Async Value Within a Bounded Stale Window](snippets/concurrency-lifecycle/refresh-an-async-value-within-a-bounded-stale-window.md) | concurrency-lifecycle | pattern | caching, concurrency-control, lifecycle-management, retry-recovery |
 | [Refresh Bounded Named Targets at Their Nearest Monotonic Deadline](snippets/concurrency-lifecycle/refresh-bounded-named-targets-at-their-nearest-monotonic-deadline.md) | concurrency-lifecycle | pattern | caching, concurrency-control, lifecycle-management, retry-recovery |
 | [Report Equal-Share Lease Ownership Excess from a Bounded Queue Snapshot](snippets/concurrency-lifecycle/report-equal-share-lease-ownership-excess-from-a-bounded-queue-snapshot.md) | concurrency-lifecycle | algorithm | concurrency-control, resource-management, validation |
@@ -107,6 +109,7 @@ not edit it by hand.
 | [Run Bounded Thread Work by Priority and Submission Order](snippets/concurrency-lifecycle/run-bounded-thread-work-by-priority-and-submission-order.md) | concurrency-lifecycle | pattern | concurrency-control, lifecycle-management, resource-management |
 | [Run Bounded Weighted Jobs Under Shared Process Capacity](snippets/concurrency-lifecycle/run-bounded-weighted-jobs-under-shared-process-capacity.md) | concurrency-lifecycle | pattern | concurrency-control, lifecycle-management, resource-management |
 | [Run One Async Operation with a Bounded Resource Stack](snippets/concurrency-lifecycle/run-one-async-operation-with-a-bounded-resource-stack.md) | concurrency-lifecycle | pattern | concurrency-control, lifecycle-management, resource-management |
+| [Select a Reusable Lease for an Explicit Remaining Horizon](snippets/concurrency-lifecycle/select-a-reusable-lease-for-an-explicit-remaining-horizon.md) | concurrency-lifecycle | algorithm | concurrency-control, lifecycle-management, resource-management, validation |
 | [Stop a Polling Worker Cooperatively with an Event](snippets/concurrency-lifecycle/stop-a-polling-worker-cooperatively-with-an-event.md) | concurrency-lifecycle | pattern | concurrency-control, resource-management |
 | [Stream Bounded stdout and stderr Lines from a POSIX Process](snippets/concurrency-lifecycle/stream-bounded-stdout-and-stderr-lines-from-a-posix-process.md) | concurrency-lifecycle | integration | automation, concurrency-control, lifecycle-management, resource-management |
 | [Submit a Callable with a Snapshot of the Current Context](snippets/concurrency-lifecycle/submit-a-callable-with-a-snapshot-of-the-current-context.md) | concurrency-lifecycle | recipe | concurrency-control, interoperability, observability |
@@ -167,6 +170,7 @@ not edit it by hand.
 | [Count Static Imports Across Bounded Python Notebook Cells](snippets/data-processing/count-static-imports-across-bounded-python-notebook-cells.md) | data-processing | algorithm | data-transformation, parsing, validation |
 | [Derive an Other Bucket from Exact pandas Totals](snippets/data-processing/derive-an-other-bucket-from-exact-pandas-totals.md) | data-processing | integration | data-transformation, validation |
 | [Enforce a Many-to-One pandas Left-Merge Contract](snippets/data-processing/enforce-a-many-to-one-pandas-left-merge-contract.md) | data-processing | integration | data-transformation, interoperability, validation |
+| [Expand and Merge Bounded Structured Key Pairs with Stable Deduplication](snippets/data-processing/expand-and-merge-bounded-structured-key-pairs-with-stable-deduplication.md) | data-processing | algorithm | data-transformation, performance-optimization, validation |
 | [Extract a Finite 2D Bounding Box from Bounded WKB](snippets/data-processing/extract-a-finite-2d-bounding-box-from-bounded-wkb.md) | data-processing | integration | data-transformation, parsing, validation |
 | [Extract Bounded Features with an Explicit Abstention Outcome](snippets/data-processing/extract-bounded-features-with-an-explicit-abstention-outcome.md) | data-processing | algorithm | data-transformation, validation |
 | [Fan Out Events into Bounded Lookback Windows](snippets/data-processing/fan-out-events-into-bounded-lookback-windows.md) | data-processing | algorithm | data-transformation, resource-management, validation |
@@ -181,6 +185,7 @@ not edit it by hand.
 | [Normalize Optional CSV Columns in a Single Pass](snippets/data-processing/normalize-optional-csv-columns-in-a-single-pass.md) | data-processing | recipe | data-transformation, parsing, validation |
 | [Overlay Aligned Time Series at the Finest Step](snippets/data-processing/overlay-aligned-time-series-at-the-finest-step.md) | data-processing | algorithm | data-transformation, validation |
 | [Parse Pipe-Delimited Tables with Continuation Rows](snippets/data-processing/parse-pipe-delimited-tables-with-continuation-rows.md) | data-processing | algorithm | data-transformation, parsing |
+| [Project a Bounded Document Snapshot into Collision-Audited Secondary Index Rows](snippets/data-processing/project-a-bounded-document-snapshot-into-collision-audited-secondary-index-rows.md) | data-processing | recipe | data-transformation, resource-management, validation |
 | [Project Bounded Records into Multiple Closed Output Schemas](snippets/data-processing/project-bounded-records-into-multiple-closed-output-schemas.md) | data-processing | recipe | data-transformation, resource-management, validation |
 | [Project Nested Records with Explicit Field Paths](snippets/data-processing/project-nested-records-with-explicit-field-paths.md) | data-processing | recipe | data-transformation, validation |
 | [Read Bounded CSV Text into pandas Under an Explicit Schema](snippets/data-processing/read-bounded-csv-text-into-pandas-under-an-explicit-schema.md) | data-processing | integration | data-transformation, parsing, validation |
