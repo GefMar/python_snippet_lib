@@ -239,10 +239,8 @@ def poll_owned_source(
 
             if idle_deadline is None:
                 idle_deadline = now + timeout
-                if not math.isfinite(idle_deadline):
-                    primary_failure = PollFailure(
-                        PollFailureKind.CLOCK_VALUE_INVALID
-                    )
+                if not math.isfinite(idle_deadline) or idle_deadline <= now:
+                    primary_failure = PollFailure(PollFailureKind.CLOCK_VALUE_INVALID)
                     break
             if now >= idle_deadline:
                 stop = PollStopKind.IDLE_TIMEOUT
@@ -316,9 +314,7 @@ class ScriptedSource:
 
 
 manual = ManualClock(early_wakes=(0.5,))
-scripted = ScriptedSource(
-    (Item("first"), Idle(), Item("second"), Idle())
-)
+scripted = ScriptedSource((Item("first"), Idle(), Item("second"), Idle()))
 report = poll_owned_source(
     OwnedPollSource(scripted.read, scripted.close),
     idle_timeout=2,
@@ -396,6 +392,17 @@ boundary_report = poll_owned_source(
 )
 
 
+large_clock_source = ScriptedSource((Idle(),))
+large_clock_waits: list[float] = []
+large_clock_report = poll_owned_source(
+    OwnedPollSource(large_clock_source.read, large_clock_source.close),
+    idle_timeout=1,
+    poll_budget=5,
+    clock=lambda: 1e308,
+    wait=large_clock_waits.append,
+)
+
+
 class InterruptedSource:
     def __init__(self) -> None:
         self.close_calls = 0
@@ -438,6 +445,10 @@ assert (
     boundary_report.polls,
     boundary_report.stop,
     boundary_source.close_calls,
+    large_clock_report.stop,
+    large_clock_report.primary_failure,
+    large_clock_waits,
+    large_clock_source.close_calls,
     interrupt_propagated,
     interrupted_source.close_calls,
 ) == (
@@ -456,6 +467,10 @@ assert (
     (),
     2,
     PollStopKind.IDLE_TIMEOUT,
+    1,
+    PollStopKind.FAILED,
+    PollFailure(PollFailureKind.CLOCK_VALUE_INVALID),
+    [],
     1,
     True,
     1,
@@ -478,6 +493,10 @@ and close failures occupy separate fields, and only stable enum values plus a
 bounded exception type name are retained. Messages, exception objects,
 tracebacks, and frames are discarded. Input validation happens before
 ownership begins and therefore does not call `close`.
+
+A finite clock sample is still rejected if adding the positive timeout cannot
+advance it at that float magnitude. Treating such a rounded deadline as elapsed
+would report a false idle timeout instead of a clock-representation failure.
 
 Only `Exception` subclasses become failure records. A process-control
 `BaseException` from polling triggers exactly one close attempt and then

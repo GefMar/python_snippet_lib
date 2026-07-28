@@ -75,18 +75,14 @@ class AdapterCallbackError(RuntimeError):
     def __init__(self, adapter_name: str, exception_kind: str) -> None:
         self.adapter_name = adapter_name
         self.exception_kind = exception_kind
-        super().__init__(
-            f"adapter {adapter_name!r} callback raised {exception_kind}"
-        )
+        super().__init__(f"adapter {adapter_name!r} callback raised {exception_kind}")
 
 
 class AdapterContractError(TypeError):
     def __init__(self, adapter_name: str, failure_kind: str) -> None:
         self.adapter_name = adapter_name
         self.failure_kind = failure_kind
-        super().__init__(
-            f"adapter {adapter_name!r} returned {failure_kind}"
-        )
+        super().__init__(f"adapter {adapter_name!r} returned {failure_kind}")
 
 
 class AdapterResolver(Protocol):
@@ -148,10 +144,7 @@ def _reject_adapter_cycles(
     options_by_name: dict[str, OptionSpec],
 ) -> None:
     dependencies_by_adapter = {
-        adapter.name: {
-            options_by_name[dependency].adapter
-            for dependency in adapter.dependencies
-        }
+        adapter.name: {options_by_name[dependency].adapter for dependency in adapter.dependencies}
         for adapter in adapters
     }
     ordered_names = tuple(adapter.name for adapter in adapters)
@@ -160,8 +153,7 @@ def _reject_adapter_cycles(
         phase = tuple(
             name
             for name in ordered_names
-            if name not in completed
-            and dependencies_by_adapter[name] <= completed
+            if name not in completed and dependencies_by_adapter[name] <= completed
         )
         if not phase:
             raise ConfigurationSpecError("adapter dependencies contain a cycle")
@@ -203,9 +195,7 @@ def _validate_specs(
             raise TypeError("every adapter resolver must be callable")
 
     options_by_name: dict[str, OptionSpec] = {}
-    outputs: dict[str, list[OptionSpec]] = {
-        adapter.name: [] for adapter in adapters
-    }
+    outputs: dict[str, list[OptionSpec]] = {adapter.name: [] for adapter in adapters}
     default_text_bytes = 0
     for option in options:
         if type(option) is not OptionSpec:
@@ -228,9 +218,7 @@ def _validate_specs(
             _, size = _checked_value(option.default, option.value_type)
             default_text_bytes += size
             if default_text_bytes > _MAX_AGGREGATE_TEXT_BYTES:
-                raise ConfigurationSpecError(
-                    "option defaults exceed 64 KiB of aggregate text"
-                )
+                raise ConfigurationSpecError("option defaults exceed 64 KiB of aggregate text")
         options_by_name[option.name] = option
         outputs[option.adapter].append(option)
 
@@ -244,9 +232,7 @@ def _validate_specs(
         options=options,
         adapters=adapters,
         options_by_name=options_by_name,
-        outputs_by_adapter={
-            name: tuple(owned) for name, owned in outputs.items()
-        },
+        outputs_by_adapter={name: tuple(owned) for name, owned in outputs.items()},
     )
 
 
@@ -271,17 +257,12 @@ def _adapter_values(
     resolved: dict[str, ConfigValue],
     resolved_text_bytes: int,
 ) -> tuple[dict[str, ConfigValue], int]:
-    dependency_values = MappingProxyType(
-        {name: resolved[name] for name in adapter.dependencies}
-    )
+    dependency_values = MappingProxyType({name: resolved[name] for name in adapter.dependencies})
     raw_values, exception_kind = _invoke_adapter(adapter, dependency_values)
     if exception_kind is not None:
         raise AdapterCallbackError(adapter.name, exception_kind)
 
-    owned = {
-        option.name: option
-        for option in checked.outputs_by_adapter[adapter.name]
-    }
+    owned = {option.name: option for option in checked.outputs_by_adapter[adapter.name]}
     if type(raw_values) is not dict or len(raw_values) > len(owned):
         raise AdapterContractError(adapter.name, "an invalid result mapping")
 
@@ -332,8 +313,7 @@ def resolve_dependent_configuration(
         ready = tuple(
             adapter
             for adapter in checked.adapters
-            if adapter.name not in active
-            and all(name in resolved for name in adapter.dependencies)
+            if adapter.name not in active and all(name in resolved for name in adapter.dependencies)
         )
         if not ready:
             break
@@ -347,17 +327,10 @@ def resolve_dependent_configuration(
             resolved.update(values)
             active.add(adapter.name)
 
-    inactive = tuple(
-        adapter for adapter in checked.adapters if adapter.name not in active
-    )
+    inactive = tuple(adapter for adapter in checked.adapters if adapter.name not in active)
     if any(adapter.required for adapter in inactive):
-        raise ConfigurationResolutionError(
-            "a required adapter has unresolved dependencies"
-        )
-    if any(
-        all(name in resolved for name in adapter.dependencies)
-        for adapter in inactive
-    ):
+        raise ConfigurationResolutionError("a required adapter has unresolved dependencies")
+    if any(all(name in resolved for name in adapter.dependencies) for adapter in inactive):
         raise AssertionError("an inactive optional adapter has no missing dependency")
 
     published: dict[str, ConfigValue] = {}
@@ -394,12 +367,7 @@ def read_environment(
 def build_address(
     dependencies: Mapping[str, ConfigValue],
 ) -> dict[str, object]:
-    return {
-        "endpoint": (
-            f"{dependencies['region']}.example.test:"
-            f"{dependencies['port']}"
-        )
-    }
+    return {"endpoint": (f"{dependencies['region']}.example.test:{dependencies['port']}")}
 
 
 def choose_workers(

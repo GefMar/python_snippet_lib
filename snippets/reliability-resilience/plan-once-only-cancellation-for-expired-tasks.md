@@ -40,7 +40,6 @@ this in-memory coordinator cannot create either one.
 
 ```python
 import re
-from collections.abc import Sequence
 from dataclasses import dataclass
 from datetime import UTC, datetime, timedelta
 from enum import StrEnum
@@ -133,9 +132,10 @@ def _validated_task(value: object, *, index: int) -> TaskSnapshot:
         raise ValueError(f"{field}.version must be a bounded version token")
     if type(value.soft_exempt) is not bool:
         raise TypeError(f"{field}.soft_exempt must be a boolean")
-    if value.cancel_pending_reason is not None and type(
-        value.cancel_pending_reason
-    ) is not ExpiryReason:
+    if (
+        value.cancel_pending_reason is not None
+        and type(value.cancel_pending_reason) is not ExpiryReason
+    ):
         raise TypeError(f"{field}.cancel_pending_reason must be an ExpiryReason or None")
     return TaskSnapshot(
         task_id=value.task_id,
@@ -171,7 +171,7 @@ def _idempotency_key(task: TaskSnapshot) -> str:
 
 
 def cancel_expired_tasks_once(
-    tasks: Sequence[TaskSnapshot],
+    tasks: tuple[TaskSnapshot, ...],
     *,
     now: datetime,
     soft_after_seconds: int,
@@ -179,8 +179,8 @@ def cancel_expired_tasks_once(
     claim_cancellation: ClaimCancellation,
     request_cancellation: RequestCancellation,
 ) -> tuple[CancellationOutcome, ...]:
-    if not isinstance(tasks, Sequence) or isinstance(tasks, (str, bytes, bytearray)):
-        raise TypeError("tasks must be a finite sequence")
+    if type(tasks) is not tuple:
+        raise TypeError("tasks must be an exact tuple")
     if not 1 <= len(tasks) <= _MAX_TASKS:
         raise ValueError("tasks must contain between 1 and 128 snapshots")
     if not callable(claim_cancellation) or not callable(request_cancellation):
@@ -380,7 +380,8 @@ assert claim_calls[-1][3] == first[3].idempotency_key
 
 ## Trade-offs and Limitations
 
-The pass accepts 1 to 128 exact frozen snapshots. IDs are unique lowercase
+The pass accepts one exact tuple containing 1 to 128 frozen snapshots, so a
+custom iterable cannot understate the callback budget. IDs are unique lowercase
 canonical tokens of at most 64 characters; versions are opaque conservative
 tokens of at most 64 characters. All timestamps must be aware UTC values. Both
 durations are integral seconds from 1 through 31,536,000, with the hard duration
@@ -394,7 +395,7 @@ There is at most one claim and one remote call per snapshot. Claim exceptions or
 unknown results become `claim_uncertain`; remote exceptions, unknown results, and
 reported failures become `cancel_pending`. Processing then continues in input
 order. Validation copies every snapshot before the first callback, and neither
-the caller's sequence nor its snapshots are mutated. Outcomes contain only
+the caller's tuple nor its snapshots are mutated. Outcomes contain only
 bounded identifiers, keys, reasons, and closed kinds; they never contain exception
 text, tracebacks, or callback values. Control-flow exceptions such as cancellation
 and keyboard interruption are not swallowed.

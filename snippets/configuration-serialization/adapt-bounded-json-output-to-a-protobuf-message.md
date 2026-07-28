@@ -69,6 +69,7 @@ _ERROR_CODES = frozenset(
         "invalid_utf8",
         "node_limit",
         "non_finite_number",
+        "opaque_any",
         "protobuf_rejected",
         "root_not_object",
         "trailing_data",
@@ -165,7 +166,12 @@ def _fresh_populated_message(
         message = factory()
     except Exception:
         return None, "factory_failed"
-    if not isinstance(message, Message) or message.ListFields():
+    if not isinstance(message, Message):
+        return None, "factory_result"
+    try:
+        if message.ListFields() or message.ByteSize() != 0:
+            return None, "factory_result"
+    except Exception:
         return None, "factory_result"
     try:
         json_format.ParseDict(
@@ -175,15 +181,17 @@ def _fresh_populated_message(
         )
     except Exception:
         return None, "protobuf_rejected"
-    if _contains_non_finite_float(message):
-        return None, "non_finite_number"
+    if (post_conversion_error := _post_conversion_error(message)) is not None:
+        return None, post_conversion_error
     return message, None
 
 
-def _contains_non_finite_float(root: Message) -> bool:
+def _post_conversion_error(root: Message) -> str | None:
     stack = [root]
     while stack:
         message = stack.pop()
+        if message.DESCRIPTOR.full_name == "google.protobuf.Any":
+            return "opaque_any"
         for field, supplied in message.ListFields():
             if field.is_repeated:
                 if field.message_type is not None and field.message_type.GetOptions().map_entry:
@@ -201,10 +209,10 @@ def _contains_non_finite_float(root: Message) -> bool:
                 FieldDescriptor.TYPE_FLOAT,
             ):
                 if any(not math.isfinite(value) for value in values):
-                    return True
+                    return "non_finite_number"
             elif value_field.cpp_type == FieldDescriptor.CPPTYPE_MESSAGE:
                 stack.extend(values)
-    return False
+    return None
 
 
 def adapt_bounded_json_to_protobuf(
@@ -280,13 +288,34 @@ non_finite = rejection_code(
     new_uninterpreted_option,
 )
 
-assert (message.name, message.package, duplicate, unknown, trailing, non_finite) == (
+
+def new_any_message() -> Message:
+    from google.protobuf import any_pb2
+
+    return any_pb2.Any()
+
+
+opaque_any = rejection_code(
+    b'{"@type":"type.googleapis.com/google.protobuf.FileDescriptorProto","name":"nested.proto"}',
+    new_any_message,
+)
+
+assert (
+    message.name,
+    message.package,
+    duplicate,
+    unknown,
+    trailing,
+    non_finite,
+    opaque_any,
+) == (
     "orchid/event.proto",
     "orchid",
     "duplicate_key",
     "protobuf_rejected",
     "trailing_data",
     "non_finite_number",
+    "opaque_any",
 )
 ```
 
@@ -299,16 +328,19 @@ but the 65,536-byte input ceiling bounds that work. Numeric range, enum, map,
 well-known-type, and field-name semantics remain those of the pinned Protobuf
 JSON adapter. A post-conversion reflection pass also rejects non-finite float
 or double fields, including the Protobuf JSON string spellings for those
-values.
+values. Populated `google.protobuf.Any` fields are rejected because their
+embedded wire bytes are opaque to that bounded reflection pass; unpack such
+fields under a separate trusted type registry before using this recipe.
 
 All schema and conversion failures intentionally collapse to short stable
 codes, which makes the public error safe but unsuitable for detailed debugging.
 The zero-argument factory must return a new, unaliased and initially empty
-message on every call. The function rejects a pre-populated result, but Python
-cannot prove that an empty result is unaliased. When the factory honors the
-contract, only the new candidate can be partially mutated before a rejection,
-and that candidate is discarded. No subprocess, environment, token, network,
-descriptor download, or caller-supplied destination is accessed.
+message on every call. The function rejects declared values and unknown wire
+bytes already present in the factory result, but Python cannot prove that an
+empty result is unaliased. When the factory honors the contract, only the new
+candidate can be partially mutated before a rejection, and that candidate is
+discarded. No subprocess, environment, token, network, descriptor download, or
+caller-supplied destination is accessed.
 
 ## Related Snippets
 
