@@ -77,27 +77,28 @@ def _preflight_exception_group(
         )
 
     pending: list[tuple[BaseExceptionGroup, int]] = [(value, 1)]
-    group_nodes = 0
+    group_nodes = 1
     leaf_exceptions = 0
 
     while pending:
         group, depth = pending.pop()
-        if type(group) not in _BUILTIN_GROUP_TYPES:
-            raise TypeError("every nested group must use a built-in group type")
-        if depth > _MAX_GROUP_DEPTH:
-            raise ExceptionGroupLimitError(
-                "exception group nesting exceeds the supported depth"
-            )
-
-        group_nodes += 1
-        if group_nodes > _MAX_GROUP_NODES:
-            raise ExceptionGroupLimitError(
-                "exception group node count exceeds the supported limit"
-            )
-
         for child in group.exceptions:
             if isinstance(child, BaseExceptionGroup):
-                pending.append((child, depth + 1))
+                if type(child) not in _BUILTIN_GROUP_TYPES:
+                    raise TypeError(
+                        "every nested group must use a built-in group type"
+                    )
+                child_depth = depth + 1
+                if child_depth > _MAX_GROUP_DEPTH:
+                    raise ExceptionGroupLimitError(
+                        "exception group nesting exceeds the supported depth"
+                    )
+                if group_nodes == _MAX_GROUP_NODES:
+                    raise ExceptionGroupLimitError(
+                        "exception group node count exceeds the supported limit"
+                    )
+                group_nodes += 1
+                pending.append((child, child_depth))
             else:
                 leaf_exceptions += 1
                 if leaf_exceptions > _MAX_LEAF_EXCEPTIONS:
@@ -154,6 +155,30 @@ no_match, unchanged = split_bounded_exception_group(group, (SyntaxError,))
 full_match, no_remainder = split_bounded_exception_group(group, (Exception,))
 lookup_match, other = split_bounded_exception_group(group, (LookupError,))
 
+at_node_limit = ExceptionGroup(
+    "at node limit",
+    tuple(
+        ExceptionGroup("child", (ValueError(),))
+        for _ in range(_MAX_GROUP_NODES - 1)
+    ),
+)
+split_bounded_exception_group(at_node_limit, (SyntaxError,))
+try:
+    split_bounded_exception_group(
+        ExceptionGroup(
+            "over node limit",
+            tuple(
+                ExceptionGroup("child", (ValueError(),))
+                for _ in range(_MAX_GROUP_NODES)
+            ),
+        ),
+        (SyntaxError,),
+    )
+except ExceptionGroupLimitError:
+    wide_group_rejected = True
+else:
+    wide_group_rejected = False
+
 assert (
     no_match,
     leaves(unchanged),
@@ -163,6 +188,7 @@ assert (
     leaves(other),
     lookup_match.__notes__ if lookup_match is not None else None,
     leaves(lookup_match)[0].__traceback__ is key_traceback,
+    wide_group_rejected,
 ) == (
     None,
     (value_error, key_error, timeout_error),
@@ -172,15 +198,17 @@ assert (
     (value_error, timeout_error),
     ["bounded operation"],
     True,
+    True,
 )
 ```
 
 ## Trade-offs and Limitations
 
-Preflight is iterative and linear in at most 256 group nodes and 1,024 leaf
-exceptions, with root depth defined as one. The limits bound traversal before
-the standard-library split begins; the split itself still allocates derived
-group nodes. Exact built-in group types keep the wrapper's ordinary validation
+Preflight is iterative, stores at most 256 discovered group nodes, and counts
+at most 1,024 leaf exceptions, with root depth defined as one. It fails on the
+first additional group or leaf. The limits bound traversal before the
+standard-library split begins; the split itself still allocates derived group
+nodes. Exact built-in group types keep the wrapper's ordinary validation
 failures closed and avoid invoking a custom group's `derive()` implementation.
 
 `BaseExceptionGroup.split()` preserves matched tree structure, group messages,
