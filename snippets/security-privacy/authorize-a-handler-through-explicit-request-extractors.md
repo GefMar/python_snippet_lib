@@ -116,6 +116,8 @@ class RequestAuthorizationSpec:
 
 def _require_synchronous_callable(value: object, *, name: str) -> None:
     implementation = inspect.getattr_static(value, "__call__", None)
+    while isinstance(implementation, (staticmethod, classmethod)):
+        implementation = implementation.__func__
     if (
         not callable(value)
         or inspect.iscoroutinefunction(value)
@@ -271,13 +273,15 @@ else:
 
 
 class AsyncCredential:
-    async def __call__(self, request: Request) -> str | None:
+    @staticmethod
+    async def __call__(request: Request) -> str | None:
         return request.headers.get("Authorization")
 
 
 class AsyncHandler:
-    async def __call__(self, request: Request) -> str:
-        return request.path_values["parcel"]
+    @classmethod
+    async def __call__(cls, request: Request):
+        yield request.path_values["parcel"]
 
 
 try:
@@ -314,9 +318,10 @@ resource list; arbitrary mapping iterators therefore cannot exceed the callback
 budget. The decorator is synchronous: a blocking authorizer adds request
 latency, while an async framework needs a separately designed async gate.
 Declared coroutine and async-generator functions, including callable-object
-implementations, are rejected during construction or decoration. A nominally
-synchronous callback must still honor its documented value contract, and a
-handler's return contract remains the handler author's responsibility.
+implementations wrapped by standard static or class method descriptors, are
+rejected during construction or decoration. A nominally synchronous callback
+must still honor its documented value contract, and a handler's return contract
+remains the handler author's responsibility.
 Normal failures deliberately lose diagnostic detail, so emit only
 non-sensitive, bounded operational counters outside this wrapper if denials
 need monitoring.
