@@ -47,7 +47,7 @@ _DNS_LABEL = re.compile(
     r"[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?",
     re.ASCII,
 )
-_NUMERIC_LABEL = re.compile(r"[0-9]+", re.ASCII)
+_LEGACY_NUMERIC_LABEL = re.compile(r"(?:[0-9]+|0x[0-9a-f]+)", re.ASCII)
 
 
 def _dns_hostname(value: object, *, field: str) -> str:
@@ -67,6 +67,8 @@ def _dns_hostname(value: object, *, field: str) -> str:
         raise ValueError(f"{field} must not contain empty labels")
     if any(len(label) > 63 or _DNS_LABEL.fullmatch(label) is None for label in labels):
         raise ValueError(f"{field} contains an invalid DNS label")
+    if any(label.startswith("xn--") for label in labels):
+        raise ValueError(f"{field} must not contain IDNA A-labels")
 
     try:
         ip_address(value)
@@ -74,7 +76,7 @@ def _dns_hostname(value: object, *, field: str) -> str:
         pass
     else:
         raise ValueError(f"{field} must not be an IP address")
-    if all(_NUMERIC_LABEL.fullmatch(label) is not None for label in labels):
+    if all(_LEGACY_NUMERIC_LABEL.fullmatch(label) is not None for label in labels):
         raise ValueError(f"{field} must not be an ambiguous numeric address")
     return value
 
@@ -214,6 +216,8 @@ invalid_hosts = (
     "service.example.",
     "service..example",
     "192.0.2.1",
+    "0x7f.0x0.0x0.0x1",
+    "xn--bcher-kva.example",
 )
 rejected = []
 for host in invalid_hosts:

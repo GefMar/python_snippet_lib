@@ -51,7 +51,7 @@ from concurrent.futures import Future, ThreadPoolExecutor, wait
 from dataclasses import dataclass
 from threading import Lock
 from types import TracebackType
-from typing import Generic, Protocol, TypeVar
+from typing import Generic, NoReturn, Protocol, TypeVar
 
 
 MessageT = TypeVar("MessageT")
@@ -90,6 +90,12 @@ class ConnectorFailure:
 
 
 @dataclass(frozen=True, slots=True)
+class ConnectorCloseFailure:
+    name: str
+    error: BaseException
+
+
+@dataclass(frozen=True, slots=True)
 class ConnectorWaitReport:
     failures: tuple[ConnectorFailure, ...]
     unfinished_names: tuple[str, ...]
@@ -106,9 +112,37 @@ class ConnectorWaitError(RuntimeError):
 
 
 class ConnectorCleanupError(RuntimeError):
-    def __init__(self, failures: tuple[ConnectorFailure, ...]) -> None:
+    def __init__(self, failures: tuple[ConnectorCloseFailure, ...]) -> None:
         self.failures = failures
         super().__init__(f"{len(failures)} connector closes failed")
+
+
+def _raise_cleanup_failures(
+    failures: tuple[ConnectorCloseFailure, ...],
+    body_error: BaseException | None,
+) -> NoReturn:
+    cleanup_error = ConnectorCleanupError(failures)
+    process_control_errors = tuple(
+        failure.error
+        for failure in failures
+        if not isinstance(failure.error, Exception)
+    )
+    if body_error is None and not process_control_errors:
+        raise cleanup_error
+
+    grouped: tuple[BaseException, ...] = (
+        (() if body_error is None else (body_error,))
+        + (cleanup_error,)
+        + process_control_errors
+    )
+    message = (
+        "connector cleanup failed"
+        if body_error is None
+        else "connector body and cleanup failed"
+    )
+    if all(isinstance(error, Exception) for error in grouped):
+        raise ExceptionGroup(message, grouped) from None
+    raise BaseExceptionGroup(message, grouped) from None
 
 
 def _shared_deadline(timeout: int | float) -> float:
@@ -183,21 +217,15 @@ class ConnectorWaitGroup(Generic[MessageT]):
             self._closed = True
             self._entered = False
 
-        failures: list[ConnectorFailure] = []
+        failures: list[ConnectorCloseFailure] = []
         for connector in self._connectors:
             try:
                 connector.adapter.close()
-            except Exception as error:
-                failures.append(ConnectorFailure(connector.name, error))
+            except BaseException as error:
+                failures.append(ConnectorCloseFailure(connector.name, error))
 
         if failures:
-            cleanup_error = ConnectorCleanupError(tuple(failures))
-            if exc is not None:
-                raise BaseExceptionGroup(
-                    "connector body and cleanup both failed",
-                    (exc, cleanup_error),
-                ) from None
-            raise cleanup_error
+            _raise_cleanup_failures(tuple(failures), exc)
 
     def wait_for_all(
         self,
@@ -408,9 +436,11 @@ that is still invoking the group.
 Connector and cleanup failures retain their exception objects, and returned
 matches retain their values, so the frozen wrappers provide only shallow
 immutability. Cleanup attempts every connector even after ordinary exceptions;
-if the body and cleanup both fail, a `BaseExceptionGroup` preserves both. A
-process-control exception raised directly by `close()` is outside that
-ordinary-error aggregation contract.
+it also finishes the remaining close attempts after a process-control
+exception. Ordinary cleanup failures use `ConnectorCleanupError`. A body
+failure or process-control cleanup failure is preserved in an appropriately
+typed `ExceptionGroup` or `BaseExceptionGroup`, with every named close failure
+also available through the cleanup error.
 
 The implementation eagerly creates one thread per connector and is therefore
 limited to 32 distinct adapter objects. It provides no retries, predicate

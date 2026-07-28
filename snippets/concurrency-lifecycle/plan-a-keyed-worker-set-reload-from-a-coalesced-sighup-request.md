@@ -28,9 +28,11 @@ names that must stop.
 ## When to Use
 
 Use this pattern in a Unix daemon whose worker membership is keyed by stable
-names and reconciled by one lifecycle owner. The owner must already have exact
-current and desired tuples and must define how workers start, become visible,
-stop, and report failures.
+names and reconciled by one lifecycle owner. The owner keeps the exact current
+tuple, but it must load and validate the desired tuple only after
+`take_coalesced_reload_request()` returns true. The configuration publisher
+must complete its atomic replacement before sending SIGHUP. The owner must
+also define how workers start, become visible, stop, and report failures.
 
 Use a queue or counter when every request must be processed separately. Use a
 supervisor or service manager when the safer reload policy is to replace the
@@ -170,9 +172,12 @@ assert (
 
 ## Trade-offs and Limitations
 
-The boolean is level-triggered rather than counted. A `True` value consumed at
-the safe point represents every request recorded so far; a handler assignment
-after it is reset remains pending for the next safe point. The handler,
+The boolean is level-triggered rather than counted. Returning true transfers
+one current reload obligation to the caller. A handler assignment that occurs
+between the function's read and reset coalesces into that already transferred
+obligation; the caller must therefore load configuration only after the
+function returns. An assignment after the reset remains pending for the next
+safe point. The handler,
 `take_coalesced_reload_request()`, and any `signal.signal` installation are
 main-thread-only. The boolean is not a synchronization primitive and must not
 be read or written by worker threads. SIGHUP is Unix-specific, and this
