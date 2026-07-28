@@ -20,13 +20,13 @@ not edit it by hand.
 | [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 21 |
 | [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 30 |
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 31 |
-| [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 25 |
-| [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 19 |
+| [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 27 |
+| [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 20 |
 | [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 50 |
 | [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 17 |
 | [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 27 |
-| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 47 |
-| [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 16 |
+| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 48 |
+| [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 17 |
 | [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 16 |
 | [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 17 |
 
@@ -129,6 +129,7 @@ not edit it by hand.
 | [Plan a Versioned Transition for the Current Workflow Attempt](snippets/reliability-resilience/plan-a-versioned-transition-for-the-current-workflow-attempt.md) | reliability-resilience | pattern | concurrency-control, lifecycle-management, validation |
 | [Plan an Idempotent Retry from an Allowlisted Target Hint](snippets/reliability-resilience/plan-an-idempotent-retry-from-an-allowlisted-target-hint.md) | reliability-resilience | algorithm | concurrency-control, retry-recovery, validation |
 | [Plan Once-only Cancellation for Expired Tasks](snippets/reliability-resilience/plan-once-only-cancellation-for-expired-tasks.md) | reliability-resilience | pattern | concurrency-control, lifecycle-management, retry-recovery |
+| [Plan One Periodic-Service Step from an Explicit Monotonic Snapshot](snippets/reliability-resilience/plan-one-periodic-service-step-from-an-explicit-monotonic-snapshot.md) | reliability-resilience | algorithm | lifecycle-management, retry-recovery, validation |
 | [Plan Readiness Recovery Through a Monotonic Reset Cooldown](snippets/reliability-resilience/plan-readiness-recovery-through-a-monotonic-reset-cooldown.md) | reliability-resilience | pattern | lifecycle-management, retry-recovery, validation |
 | [Plan Recovery Across Object and Metadata Publication States](snippets/reliability-resilience/plan-recovery-across-object-and-metadata-publication-states.md) | reliability-resilience | algorithm | lifecycle-management, persistence, retry-recovery, validation |
 | [Plan Remaining Stages from a Validated Completed Prefix](snippets/reliability-resilience/plan-remaining-stages-from-a-validated-completed-prefix.md) | reliability-resilience | algorithm | automation, retry-recovery, validation |
@@ -137,6 +138,7 @@ not edit it by hand.
 | [Propagate a Monotonic Deadline with ContextVar](snippets/reliability-resilience/propagate-a-monotonic-deadline-with-contextvar.md) | reliability-resilience | pattern | concurrency-control, lifecycle-management, retry-recovery |
 | [Reduce Bounded Acknowledgements into Exactly-Once Completions](snippets/reliability-resilience/reduce-bounded-acknowledgements-into-exactly-once-completions.md) | reliability-resilience | algorithm | retry-recovery, validation |
 | [Replay a Frozen Read Outcome for an Exact Access Budget](snippets/reliability-resilience/replay-a-frozen-read-outcome-for-an-exact-access-budget.md) | reliability-resilience | pattern | caching, concurrency-control, retry-recovery |
+| [Resolve a Guarded Retry Decision from Operation and Worker Policies](snippets/reliability-resilience/resolve-a-guarded-retry-decision-from-operation-and-worker-policies.md) | reliability-resilience | algorithm | retry-recovery, validation |
 | [Resolve Incoming Configuration with Last-Known-Good Values](snippets/reliability-resilience/resolve-incoming-configuration-with-last-known-good-values.md) | reliability-resilience | pattern | configuration, validation |
 | [Retry Only Eligible Items in a Bounded Batch](snippets/reliability-resilience/retry-only-eligible-items-in-a-bounded-batch.md) | reliability-resilience | pattern | networking, retry-recovery |
 | [Schedule the Next Review from Outcome and Bounded Coverage](snippets/reliability-resilience/schedule-the-next-review-from-outcome-and-bounded-coverage.md) | reliability-resilience | algorithm | automation, retry-recovery, validation |
@@ -146,6 +148,7 @@ not edit it by hand.
 | [Build a Canonical HTTP Origin Key](snippets/networking-protocols/build-a-canonical-http-origin-key.md) | networking-protocols | recipe | networking, validation |
 | [Choose Buffered or Streaming Multipart Encoding from Bounded Parts](snippets/networking-protocols/choose-buffered-or-streaming-multipart-encoding-from-bounded-parts.md) | networking-protocols | integration | networking, resource-management, serialization, validation |
 | [Choose Grouped Endpoints with Explicit Random Fairness](snippets/networking-protocols/choose-grouped-endpoints-with-explicit-random-fairness.md) | networking-protocols | algorithm | networking, validation |
+| [Classify a Pre-Resolved IP Against a Bounded CIDR-Zone Snapshot](snippets/networking-protocols/classify-a-pre-resolved-ip-against-a-bounded-cidr-zone-snapshot.md) | networking-protocols | algorithm | caching, networking, validation |
 | [Collect Matching Cursor Pages with an Explicit Page Budget](snippets/networking-protocols/collect-matching-cursor-pages-with-an-explicit-page-budget.md) | networking-protocols | pattern | networking, resource-management |
 | [Dispatch a Bounded RPC Envelope Through a Closed Path-to-Codec Registry](snippets/networking-protocols/dispatch-a-bounded-rpc-envelope-through-a-closed-path-to-codec-registry.md) | networking-protocols | integration | networking, serialization, validation |
 | [Encode a Bounded HTTP/1.1 Chunked Body for Protocol Tests](snippets/networking-protocols/encode-a-bounded-http-1-1-chunked-body-for-protocol-tests.md) | networking-protocols | recipe | networking, serialization, testing, validation |
@@ -285,6 +288,7 @@ not edit it by hand.
 | [Parse a Bounded Flat Placeholder Template](snippets/configuration-serialization/parse-a-bounded-flat-placeholder-template.md) | configuration-serialization | algorithm | configuration, parsing, validation |
 | [Parse a Bounded Nested Bracket Tree](snippets/configuration-serialization/parse-a-bounded-nested-bracket-tree.md) | configuration-serialization | algorithm | parsing, validation |
 | [Parse a Bounded XML Envelope with Closed Variant Dispatch](snippets/configuration-serialization/parse-a-bounded-xml-envelope-with-closed-variant-dispatch.md) | configuration-serialization | integration | parsing, security, validation |
+| [Parse Bounded UTF-8 JSON Without Duplicate Object Names or Non-Finite Numbers](snippets/configuration-serialization/parse-bounded-utf-8-json-without-duplicate-object-names-or-non-finite-numbers.md) | configuration-serialization | recipe | parsing, security, serialization, validation |
 | [Parse Compact Durations into timedelta](snippets/configuration-serialization/parse-compact-durations-into-timedelta.md) | configuration-serialization | recipe | configuration, parsing, validation |
 | [Parse Explicit Decimal and Binary Byte Sizes](snippets/configuration-serialization/parse-explicit-decimal-and-binary-byte-sizes.md) | configuration-serialization | recipe | configuration, parsing, validation |
 | [Patch One YAML Scalar While Preserving Round-Trip Layout](snippets/configuration-serialization/patch-one-yaml-scalar-while-preserving-round-trip-layout.md) | configuration-serialization | integration | configuration, serialization, validation |
@@ -313,6 +317,7 @@ not edit it by hand.
 | [Plan a Bounded Notebook Storage Key with Collision Suggestions](snippets/security-privacy/plan-a-bounded-notebook-storage-key-with-collision-suggestions.md) | security-privacy | recipe | persistence, security, validation |
 | [Redact a Printable ASCII Secret with a Bounded Visible Tail](snippets/security-privacy/redact-a-printable-ascii-secret-with-a-bounded-visible-tail.md) | security-privacy | recipe | observability, security, validation |
 | [Redact Explicit Paths in Bounded JSON-Like Data](snippets/security-privacy/redact-explicit-paths-in-bounded-json-like-data.md) | security-privacy | recipe | data-transformation, observability, security, validation |
+| [Scan Bounded Table Cells Without Retaining Matched Secrets](snippets/security-privacy/scan-bounded-table-cells-without-retaining-matched-secrets.md) | security-privacy | recipe | security, validation |
 | [Separate Executable and Redacted Views of a Command Argument Vector](snippets/security-privacy/separate-executable-and-redacted-views-of-a-command-argument-vector.md) | security-privacy | pattern | observability, security, validation |
 | [Validate a Conservative Unicode Filename Component](snippets/security-privacy/validate-a-conservative-unicode-filename-component.md) | security-privacy | recipe | interoperability, validation |
 | [Verify a Bounded Byte Stream Before Returning Its Payload](snippets/security-privacy/verify-a-bounded-byte-stream-before-returning-its-payload.md) | security-privacy | recipe | resource-management, security, validation |
