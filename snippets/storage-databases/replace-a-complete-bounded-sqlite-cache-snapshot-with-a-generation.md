@@ -70,32 +70,39 @@ def initialize_generation_cache(connection: sqlite3.Connection) -> None:
         raise TypeError("connection must be a sqlite3.Connection")
     if connection.in_transaction:
         raise RuntimeError("connection must be idle")
-    connection.execute(
-        """
-        CREATE TABLE IF NOT EXISTS cache_generation (
-            singleton INTEGER PRIMARY KEY CHECK (singleton = 1),
-            current_generation INTEGER NOT NULL CHECK (current_generation >= 0)
-        ) STRICT
-        """
-    )
-    connection.execute(
-        """
-        INSERT OR IGNORE INTO cache_generation(singleton, current_generation)
-        VALUES (1, 0)
-        """
-    )
-    connection.execute(
-        """
-        CREATE TABLE IF NOT EXISTS cache_entries (
-            entry_key TEXT PRIMARY KEY,
-            payload BLOB NOT NULL,
-            generation INTEGER NOT NULL CHECK (generation > 0)
-        ) STRICT
-        """
-    )
-    connection.execute(
-        "CREATE INDEX IF NOT EXISTS cache_entries_generation ON cache_entries(generation)"
-    )
+    connection.execute("BEGIN IMMEDIATE")
+    try:
+        connection.execute(
+            """
+            CREATE TABLE IF NOT EXISTS cache_generation (
+                singleton INTEGER PRIMARY KEY CHECK (singleton = 1),
+                current_generation INTEGER NOT NULL CHECK (current_generation >= 0)
+            ) STRICT
+            """
+        )
+        connection.execute(
+            """
+            INSERT OR IGNORE INTO cache_generation(singleton, current_generation)
+            VALUES (1, 0)
+            """
+        )
+        connection.execute(
+            """
+            CREATE TABLE IF NOT EXISTS cache_entries (
+                entry_key TEXT PRIMARY KEY,
+                payload BLOB NOT NULL,
+                generation INTEGER NOT NULL CHECK (generation > 0)
+            ) STRICT
+            """
+        )
+        connection.execute(
+            "CREATE INDEX IF NOT EXISTS cache_entries_generation ON cache_entries(generation)"
+        )
+        connection.execute("COMMIT")
+    except BaseException:
+        if connection.in_transaction:
+            connection.execute("ROLLBACK")
+        raise
 
 
 def _validated_snapshot(
@@ -198,8 +205,9 @@ def replace_complete_cache_snapshot(
 ## Example
 
 ```python
-connection = sqlite3.connect(":memory:", isolation_level=None)
+connection = sqlite3.connect(":memory:")
 initialize_generation_cache(connection)
+initializer_left_idle = not connection.in_transaction
 
 first = replace_complete_cache_snapshot(
     connection,
@@ -247,6 +255,7 @@ connection.close()
 
 assert (
     first,
+    initializer_left_idle,
     second,
     visible_after_second,
     rollback_preserved,
@@ -254,6 +263,7 @@ assert (
     remaining_rows,
 ) == (
     CacheSnapshotReplacement(1, 2, 0),
+    True,
     CacheSnapshotReplacement(2, 2, 1),
     [("item-b", b"updated", 2), ("item-c", b"third", 2)],
     True,

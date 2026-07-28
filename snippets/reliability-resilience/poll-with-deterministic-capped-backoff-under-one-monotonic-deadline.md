@@ -24,6 +24,8 @@ polling is wasteful. Validate the complete schedule first, clamp every sleep to
 remaining time, and report the last observed value with actual attempts and
 elapsed time. The result distinguishes readiness from exhaustion without a
 second probe after the budget has ended.
+A zero timeout has explicit probe-once semantics: evaluate readiness once and
+never sleep, even if the injected clock advances during that probe.
 
 ## When to Use
 
@@ -138,6 +140,8 @@ def poll_with_capped_backoff(
     deadline = started + timeout
     if not math.isfinite(deadline):
         raise ValueError("the resulting monotonic deadline must be finite")
+    if timeout > 0.0 and deadline <= started:
+        raise ValueError("positive timeout must advance the monotonic deadline")
     last_clock = started
     delay = initial_delay
     attempts = 0
@@ -152,6 +156,8 @@ def poll_with_capped_backoff(
         last_clock = observed_at
         elapsed = observed_at - started
 
+        if timeout == 0.0:
+            return BackoffOutcome(ready, value, attempts, elapsed)
         if observed_at > deadline:
             return BackoffOutcome(False, value, attempts, elapsed)
         if ready:
@@ -225,6 +231,26 @@ expired = poll_with_capped_backoff(
     sleeper=oversleep,
 )
 
+probe_once = FakeTime()
+
+
+def ready_after_one_probe() -> str:
+    probe_once.now += 0.25
+    return "ready"
+
+
+immediate = poll_with_capped_backoff(
+    ready_after_one_probe,
+    lambda value: value == "ready",
+    timeout=0,
+    initial_delay=1,
+    maximum_delay=2,
+    multiplier=2,
+    maximum_attempts=3,
+    clock=probe_once.monotonic,
+    sleeper=probe_once.sleep,
+)
+
 stalled = FakeTime()
 try:
     poll_with_capped_backoff(
@@ -248,12 +274,16 @@ assert (
     clock.sleeps,
     expired,
     overslept.sleeps,
+    immediate,
+    probe_once.sleeps,
     stalled_sleep_rejected,
 ) == (
     BackoffOutcome(True, "ready", 3, 3.0),
     [1.0, 2.0],
     BackoffOutcome(False, "waiting", 1, 1.25),
     [1.0],
+    BackoffOutcome(True, "ready", 1, 0.25),
+    [],
     True,
 )
 ```

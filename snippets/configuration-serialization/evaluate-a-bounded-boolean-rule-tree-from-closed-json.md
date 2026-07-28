@@ -104,6 +104,12 @@ class PredicateNode:
 RuleNode: TypeAlias = AllNode | AnyNode | NotNode | PredicateNode
 
 
+@dataclass(frozen=True, slots=True)
+class CompiledBooleanRuleTree:
+    root: RuleNode
+    definitions: Mapping[str, PredicateDefinition]
+
+
 def _name(value: object, *, field: str) -> str:
     if type(value) is not str or _NAME(value) is None:
         raise RuleConfigurationError(f"{field} must be a conservative ASCII identifier")
@@ -205,7 +211,7 @@ def _decode_json(document: object) -> object:
 def load_boolean_rule_tree(
     document: str,
     registry: tuple[PredicateDefinition, ...],
-) -> tuple[RuleNode, Mapping[str, PredicateDefinition]]:
+) -> CompiledBooleanRuleTree:
     definitions = _validated_registry(registry)
     decoded = _decode_json(document)
     node_count = 0
@@ -260,14 +266,15 @@ def load_boolean_rule_tree(
         return PredicateNode(predicate_name, arguments)
 
     root = parse_node(decoded, depth=1)
-    return root, MappingProxyType(definitions)
+    return CompiledBooleanRuleTree(root, MappingProxyType(definitions))
 
 
 def evaluate_boolean_rule_tree(
-    root: RuleNode,
-    registry: Mapping[str, PredicateDefinition],
+    compiled: CompiledBooleanRuleTree,
     context: Mapping[str, Scalar],
 ) -> bool:
+    if type(compiled) is not CompiledBooleanRuleTree:
+        raise TypeError("compiled must be an exact CompiledBooleanRuleTree")
     if not isinstance(context, Mapping) or len(context) > _MAX_CONTEXT_VALUES:
         raise RuleConfigurationError("context must be a bounded mapping")
     context_snapshot: dict[str, Scalar] = {}
@@ -282,6 +289,7 @@ def evaluate_boolean_rule_tree(
             field=f"context value {name}",
         )
     frozen_context = MappingProxyType(context_snapshot)
+    registry = compiled.definitions
 
     def evaluate(node: RuleNode) -> bool:
         if type(node) is AllNode:
@@ -303,7 +311,7 @@ def evaluate_boolean_rule_tree(
             raise TypeError("predicate must return an exact boolean")
         return result
 
-    return evaluate(root)
+    return evaluate(compiled.root)
 ```
 
 ## Example
@@ -344,15 +352,13 @@ document = """
   ]
 }
 """
-tree, definitions = load_boolean_rule_tree(document, registry)
+compiled = load_boolean_rule_tree(document, registry)
 accepted = evaluate_boolean_rule_tree(
-    tree,
-    definitions,
+    compiled,
     {"score": 9, "state": "active"},
 )
 rejected = evaluate_boolean_rule_tree(
-    tree,
-    definitions,
+    compiled,
     {"score": 9, "state": "paused"},
 )
 
@@ -371,8 +377,10 @@ assert (accepted, rejected, duplicate_key_rejected) == (True, False, True)
 
 ## Trade-offs and Limitations
 
-Loading takes linear work in at most 128 nodes and produces immutable tuples,
-but evaluation may short-circuit and therefore not call every predicate. The
+Loading takes linear work in at most 128 nodes and produces one immutable
+compiled value that keeps the validated tree and its registry together. The
+nodes use immutable tuples, the definition table is read-only, and evaluation
+may short-circuit and therefore not call every predicate. The
 registry callbacks are trusted application code; closed registration prevents
 JSON from selecting arbitrary callables but does not make a slow, stateful, or
 incorrect callback safe. Keep callbacks pure and cheap.
