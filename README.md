@@ -19,14 +19,14 @@ not edit it by hand.
 | --- | --- | ---: |
 | [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 21 |
 | [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 29 |
-| [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 26 |
-| [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 19 |
+| [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 27 |
+| [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 20 |
 | [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 17 |
 | [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 43 |
 | [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 17 |
 | [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 21 |
-| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 39 |
-| [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 15 |
+| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 41 |
+| [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 16 |
 | [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 12 |
 | [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 17 |
 
@@ -97,6 +97,7 @@ not edit it by hand.
 | [Own One External Mount Lease with Exception-Safe Cleanup](snippets/concurrency-lifecycle/own-one-external-mount-lease-with-exception-safe-cleanup.md) | concurrency-lifecycle | pattern | lifecycle-management, resource-management |
 | [Plan a Keyed Worker-Set Reload from a Coalesced SIGHUP Request](snippets/concurrency-lifecycle/plan-a-keyed-worker-set-reload-from-a-coalesced-sighup-request.md) | concurrency-lifecycle | pattern | automation, concurrency-control, lifecycle-management |
 | [Plan Priority Batches with an Age-Gated Tail](snippets/concurrency-lifecycle/plan-priority-batches-with-an-age-gated-tail.md) | concurrency-lifecycle | algorithm | concurrency-control, lifecycle-management, resource-management |
+| [Poll an Owned Source Until a Monotonic Idle Deadline](snippets/concurrency-lifecycle/poll-an-owned-source-until-a-monotonic-idle-deadline.md) | concurrency-lifecycle | pattern | concurrency-control, lifecycle-management, resource-management |
 | [Prevent Overlapping POSIX Jobs with a Nonblocking File Lock](snippets/concurrency-lifecycle/prevent-overlapping-posix-jobs-with-a-nonblocking-file-lock.md) | concurrency-lifecycle | recipe | automation, concurrency-control |
 | [Refresh an Async Value Within a Bounded Stale Window](snippets/concurrency-lifecycle/refresh-an-async-value-within-a-bounded-stale-window.md) | concurrency-lifecycle | pattern | caching, concurrency-control, lifecycle-management, retry-recovery |
 | [Refresh Bounded Named Targets at Their Nearest Monotonic Deadline](snippets/concurrency-lifecycle/refresh-bounded-named-targets-at-their-nearest-monotonic-deadline.md) | concurrency-lifecycle | pattern | caching, concurrency-control, lifecycle-management, retry-recovery |
@@ -119,6 +120,7 @@ not edit it by hand.
 | [Hold a Switch Active Through a Monotonic Cooldown](snippets/reliability-resilience/hold-a-switch-active-through-a-monotonic-cooldown.md) | reliability-resilience | pattern | observability, resource-management |
 | [Model Independent Blocking Reasons as an Immutable Set](snippets/reliability-resilience/model-independent-blocking-reasons-as-an-immutable-set.md) | reliability-resilience | pattern | configuration, validation |
 | [Plan a Versioned Transition for the Current Workflow Attempt](snippets/reliability-resilience/plan-a-versioned-transition-for-the-current-workflow-attempt.md) | reliability-resilience | pattern | concurrency-control, lifecycle-management, validation |
+| [Plan Once-only Cancellation for Expired Tasks](snippets/reliability-resilience/plan-once-only-cancellation-for-expired-tasks.md) | reliability-resilience | pattern | concurrency-control, lifecycle-management, retry-recovery |
 | [Plan Remaining Stages from a Validated Completed Prefix](snippets/reliability-resilience/plan-remaining-stages-from-a-validated-completed-prefix.md) | reliability-resilience | algorithm | automation, retry-recovery, validation |
 | [Poll a Remote Operation Within Deadline and Failure Budgets](snippets/reliability-resilience/poll-a-remote-operation-within-deadline-and-failure-budgets.md) | reliability-resilience | integration | automation, networking, resource-management, retry-recovery |
 | [Poll with Deterministic Capped Backoff Under One Monotonic Deadline](snippets/reliability-resilience/poll-with-deterministic-capped-backoff-under-one-monotonic-deadline.md) | reliability-resilience | recipe | retry-recovery, testing |
@@ -227,6 +229,7 @@ not edit it by hand.
 | [Split a Half-Open UTC Range Across Ordered Storage Tiers](snippets/storage-databases/split-a-half-open-utc-range-across-ordered-storage-tiers.md) | storage-databases | algorithm | data-transformation, persistence, validation |
 | [Store Bytes by Their Content Digest](snippets/storage-databases/store-bytes-by-their-content-digest.md) | storage-databases | recipe | caching, persistence |
 | [Validate a Bounded Stage-Verify-Pointer-Switch Log](snippets/storage-databases/validate-a-bounded-stage-verify-pointer-switch-log.md) | storage-databases | pattern | persistence, validation |
+| [Adapt Bounded JSON Output to a Protobuf Message](snippets/configuration-serialization/adapt-bounded-json-output-to-a-protobuf-message.md) | configuration-serialization | integration | interoperability, serialization, validation |
 | [Append a Fixed-Width CRC Check to a Human-Readable Identifier](snippets/configuration-serialization/append-a-fixed-width-crc-check-to-a-human-readable-identifier.md) | configuration-serialization | recipe | interoperability, serialization, validation |
 | [Build a Bounded Ordered Rule Pipeline from Closed JSON Configuration](snippets/configuration-serialization/build-a-bounded-ordered-rule-pipeline-from-closed-json-configuration.md) | configuration-serialization | pattern | configuration, serialization, validation |
 | [Build a Deterministic Size-Capped USTAR Archive from Bytes](snippets/configuration-serialization/build-a-deterministic-size-capped-ustar-archive-from-bytes.md) | configuration-serialization | recipe | resource-management, serialization, validation |
@@ -265,10 +268,12 @@ not edit it by hand.
 | [Render a Stable Unified Diff for Nested JSON Values](snippets/configuration-serialization/render-a-stable-unified-diff-for-nested-json-values.md) | configuration-serialization | recipe | serialization, testing, validation |
 | [Render Fixed Date Placeholders from an Explicit Anchor](snippets/configuration-serialization/render-fixed-date-placeholders-from-an-explicit-anchor.md) | configuration-serialization | recipe | automation, configuration, validation |
 | [Resolve an Absolute or Percentage Limit](snippets/configuration-serialization/resolve-an-absolute-or-percentage-limit.md) | configuration-serialization | recipe | configuration, parsing, validation |
+| [Resolve Bounded Configuration Through Dependent Adapters](snippets/configuration-serialization/resolve-bounded-configuration-through-dependent-adapters.md) | configuration-serialization | pattern | configuration, data-transformation, validation |
 | [Substitute Typed Values into a JSON-Like Template](snippets/configuration-serialization/substitute-typed-values-into-a-json-like-template.md) | configuration-serialization | recipe | configuration, serialization, validation |
 | [Audit Parsed Compose Services for Digest-Pinned Images](snippets/security-privacy/audit-parsed-compose-services-for-digest-pinned-images.md) | security-privacy | recipe | configuration, security, validation |
 | [Audit Symlinks in a Bounded Directory Tree](snippets/security-privacy/audit-symlinks-in-a-bounded-directory-tree.md) | security-privacy | recipe | resource-management, security, validation |
 | [Authenticate Bounded Payloads with Versioned HMAC Keys](snippets/security-privacy/authenticate-bounded-payloads-with-versioned-hmac-keys.md) | security-privacy | pattern | security, serialization, validation |
+| [Authorize a Handler Through Explicit Request Extractors](snippets/security-privacy/authorize-a-handler-through-explicit-request-extractors.md) | security-privacy | pattern | security, validation |
 | [Authorize a Principal Against a Closed Route Policy Map](snippets/security-privacy/authorize-a-principal-against-a-closed-route-policy-map.md) | security-privacy | recipe | security, validation |
 | [Create and Verify a Short-Lived HMAC Download URL](snippets/security-privacy/create-and-verify-a-short-lived-hmac-download-url.md) | security-privacy | pattern | networking, security |
 | [Derive an Authentication Host from an Explicit DNS Suffix Policy](snippets/security-privacy/derive-an-authentication-host-from-an-explicit-dns-suffix-policy.md) | security-privacy | recipe | security, validation |
