@@ -18,16 +18,16 @@ not edit it by hand.
 | Category | Scope | Snippets |
 | --- | --- | ---: |
 | [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 21 |
-| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 28 |
-| [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 23 |
+| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 29 |
+| [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 24 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 17 |
 | [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 17 |
 | [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 43 |
 | [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 17 |
-| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 17 |
-| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 36 |
+| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 19 |
+| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 37 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 15 |
-| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 10 |
+| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 11 |
 | [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 15 |
 
 ### Snippets
@@ -74,6 +74,7 @@ not edit it by hand.
 | [Map Points Between Rectangular Coordinate Spaces](snippets/algorithms-data-structures/map-points-between-rectangular-coordinate-spaces.md) | algorithms-data-structures | algorithm | data-transformation, interoperability |
 | [Match Strict Mutual Nearest Neighbors with a Comparison Budget](snippets/algorithms-data-structures/match-strict-mutual-nearest-neighbors-with-a-comparison-budget.md) | algorithms-data-structures | algorithm | data-transformation, validation |
 | [Model Newest-Wins Lookups with Bounded Immutable LSM Segments](snippets/algorithms-data-structures/model-newest-wins-lookups-with-bounded-immutable-lsm-segments.md) | algorithms-data-structures | pattern | data-transformation, resource-management |
+| [Partition Tagged Items into Minimum Stable Conflict-Free Groups](snippets/algorithms-data-structures/partition-tagged-items-into-minimum-stable-conflict-free-groups.md) | algorithms-data-structures | algorithm | data-transformation, validation |
 | [Rank Bounded Records with Stable Ties and Neighbor Windows](snippets/algorithms-data-structures/rank-bounded-records-with-stable-ties-and-neighbor-windows.md) | algorithms-data-structures | algorithm | data-transformation, validation |
 | [Rank Hierarchy Paths with Bounded Weighted Edit Distance](snippets/algorithms-data-structures/rank-hierarchy-paths-with-bounded-weighted-edit-distance.md) | algorithms-data-structures | algorithm | data-transformation, validation |
 | [Read a Bounded Range from Non-Overlapping Byte Segments](snippets/algorithms-data-structures/read-a-bounded-range-from-non-overlapping-byte-segments.md) | algorithms-data-structures | algorithm | data-transformation, resource-management, validation |
@@ -97,6 +98,7 @@ not edit it by hand.
 | [Plan Priority Batches with an Age-Gated Tail](snippets/concurrency-lifecycle/plan-priority-batches-with-an-age-gated-tail.md) | concurrency-lifecycle | algorithm | concurrency-control, lifecycle-management, resource-management |
 | [Prevent Overlapping POSIX Jobs with a Nonblocking File Lock](snippets/concurrency-lifecycle/prevent-overlapping-posix-jobs-with-a-nonblocking-file-lock.md) | concurrency-lifecycle | recipe | automation, concurrency-control |
 | [Refresh an Async Value Within a Bounded Stale Window](snippets/concurrency-lifecycle/refresh-an-async-value-within-a-bounded-stale-window.md) | concurrency-lifecycle | pattern | caching, concurrency-control, lifecycle-management, retry-recovery |
+| [Refresh Bounded Named Targets at Their Nearest Monotonic Deadline](snippets/concurrency-lifecycle/refresh-bounded-named-targets-at-their-nearest-monotonic-deadline.md) | concurrency-lifecycle | pattern | caching, concurrency-control, lifecycle-management, retry-recovery |
 | [Report Equal-Share Lease Ownership Excess from a Bounded Queue Snapshot](snippets/concurrency-lifecycle/report-equal-share-lease-ownership-excess-from-a-bounded-queue-snapshot.md) | concurrency-lifecycle | algorithm | concurrency-control, resource-management, validation |
 | [Reuse One Pending Future Across Non-Cancelling Poll Timeouts](snippets/concurrency-lifecycle/reuse-one-pending-future-across-non-cancelling-poll-timeouts.md) | concurrency-lifecycle | pattern | concurrency-control, lifecycle-management, resource-management |
 | [Run an Async Worker on Clock-Aligned Ticks Without Catch-Up](snippets/concurrency-lifecycle/run-an-async-worker-on-clock-aligned-ticks-without-catch-up.md) | concurrency-lifecycle | pattern | automation, concurrency-control, lifecycle-management |
@@ -207,6 +209,8 @@ not edit it by hand.
 | [Compare Bounded Apparent Sizes of Two File-Tree Snapshots](snippets/storage-databases/compare-bounded-apparent-sizes-of-two-file-tree-snapshots.md) | storage-databases | recipe | automation, persistence, resource-management |
 | [Decide Whether to Restore a Versioned Snapshot](snippets/storage-databases/decide-whether-to-restore-a-versioned-snapshot.md) | storage-databases | algorithm | configuration, data-transformation, validation |
 | [Fingerprint a Bounded Flat File Set with Framed SHA-256](snippets/storage-databases/fingerprint-a-bounded-flat-file-set-with-framed-sha-256.md) | storage-databases | recipe | caching, persistence, validation |
+| [Map a Namespaced POSIX Path Beneath a Logical Local Root](snippets/storage-databases/map-a-namespaced-posix-path-beneath-a-logical-local-root.md) | storage-databases | recipe | data-transformation, persistence, validation |
+| [Plan an Additive SQLite Column Projection](snippets/storage-databases/plan-an-additive-sqlite-column-projection.md) | storage-databases | recipe | data-transformation, persistence, validation |
 | [Plan an Incremental Cumulative Snapshot from Partition Dates](snippets/storage-databases/plan-an-incremental-cumulative-snapshot-from-partition-dates.md) | storage-databases | algorithm | automation, data-transformation, validation |
 | [Project a Dataclass into a Validated Insert Row](snippets/storage-databases/project-a-dataclass-into-a-validated-insert-row.md) | storage-databases | recipe | data-transformation, persistence, validation |
 | [Read the Last Bounded Binary Lines with a Read-Only mmap](snippets/storage-databases/read-the-last-bounded-binary-lines-with-a-read-only-mmap.md) | storage-databases | recipe | parsing, performance-optimization, resource-management |
@@ -218,6 +222,7 @@ not edit it by hand.
 | [Store Bytes by Their Content Digest](snippets/storage-databases/store-bytes-by-their-content-digest.md) | storage-databases | recipe | caching, persistence |
 | [Validate a Bounded Stage-Verify-Pointer-Switch Log](snippets/storage-databases/validate-a-bounded-stage-verify-pointer-switch-log.md) | storage-databases | pattern | persistence, validation |
 | [Append a Fixed-Width CRC Check to a Human-Readable Identifier](snippets/configuration-serialization/append-a-fixed-width-crc-check-to-a-human-readable-identifier.md) | configuration-serialization | recipe | interoperability, serialization, validation |
+| [Build a Bounded Ordered Rule Pipeline from Closed JSON Configuration](snippets/configuration-serialization/build-a-bounded-ordered-rule-pipeline-from-closed-json-configuration.md) | configuration-serialization | pattern | configuration, serialization, validation |
 | [Build a Deterministic Size-Capped USTAR Archive from Bytes](snippets/configuration-serialization/build-a-deterministic-size-capped-ustar-archive-from-bytes.md) | configuration-serialization | recipe | resource-management, serialization, validation |
 | [Convert a Weekday Bitmask to a Canonical Cron Schedule](snippets/configuration-serialization/convert-a-weekday-bitmask-to-a-canonical-cron-schedule.md) | configuration-serialization | recipe | configuration, serialization, validation |
 | [Convert Decimal Values to Exact Minor Units](snippets/configuration-serialization/convert-decimal-values-to-exact-minor-units.md) | configuration-serialization | recipe | interoperability, validation |
@@ -273,6 +278,7 @@ not edit it by hand.
 | [Compare a Bounded Text Capture Against a Golden Fixture](snippets/testing-tooling/compare-a-bounded-text-capture-against-a-golden-fixture.md) | testing-tooling | testing-technique | testing, validation |
 | [Extract Bounded Native-Test Failure Highlights](snippets/testing-tooling/extract-bounded-native-test-failure-highlights.md) | testing-tooling | recipe | observability, parsing, testing |
 | [Generate a Seeded Metric with Bounded Flapping Runs](snippets/testing-tooling/generate-a-seeded-metric-with-bounded-flapping-runs.md) | testing-tooling | testing-technique | observability, testing |
+| [Parse a Bounded Debugger Function Listing into Canonical Source Locations](snippets/testing-tooling/parse-a-bounded-debugger-function-listing-into-canonical-source-locations.md) | testing-tooling | testing-technique | parsing, testing, validation |
 | [Parse a Bounded Space-Indented Test Outline into Leaf Paths](snippets/testing-tooling/parse-a-bounded-space-indented-test-outline-into-leaf-paths.md) | testing-tooling | algorithm | parsing, testing, validation |
 | [Scan Bounded Macro Declarations into a Canonical Event Index](snippets/testing-tooling/scan-bounded-macro-declarations-into-a-canonical-event-index.md) | testing-tooling | algorithm | parsing, testing, validation |
 | [Verify Ordered HTTP Client Expectations with Bounded Mismatch Reports](snippets/testing-tooling/verify-ordered-http-client-expectations-with-bounded-mismatch-reports.md) | testing-tooling | testing-technique | networking, testing, validation |
