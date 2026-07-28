@@ -43,7 +43,7 @@ endpoint or authorization decision.
 ```python
 import math
 import re
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from enum import StrEnum
 from ipaddress import (
     IPv4Address,
@@ -100,6 +100,10 @@ def _literal(value: object, *, field_name: str) -> IPv4Address | IPv6Address:
         raise ValueError(f"{field_name} must be an exact IPv4 or IPv6 literal") from None
 
 
+def _network(value: str) -> IPv4Network | IPv6Network:
+    return ip_network(value, strict=True)
+
+
 def _finite_time(value: object, *, field_name: str) -> int | float:
     if type(value) not in (int, float):
         raise TypeError(f"{field_name} must be an exact integer or float")
@@ -120,29 +124,19 @@ def _base_status(zone_ids: tuple[str, ...]) -> ZoneStatus:
 class CidrZone:
     cidr: str
     zone_id: str
-    _network: IPv4Network | IPv6Network = field(
-        init=False,
-        repr=False,
-        compare=False,
-    )
 
     def __post_init__(self) -> None:
         if type(self.cidr) is not str:
             raise TypeError("cidr must be an exact string")
-        if not 1 <= len(self.cidr) <= _MAX_CIDR_TEXT:
-            raise ValueError("cidr length is outside the supported range")
+        if not 1 <= len(self.cidr) <= _MAX_CIDR_TEXT or "%" in self.cidr:
+            raise ValueError("cidr must be a bounded unscoped network")
         try:
-            network = ip_network(self.cidr, strict=True)
+            network = _network(self.cidr)
         except ValueError:
             raise ValueError("cidr must be an aligned IPv4 or IPv6 network") from None
         if self.cidr != network.with_prefixlen:
             raise ValueError("cidr must use canonical network notation")
         _zone_token(self.zone_id)
-        object.__setattr__(self, "_network", network)
-
-    @property
-    def network(self) -> IPv4Network | IPv6Network:
-        return self._network
 
 
 @dataclass(frozen=True, slots=True)
@@ -165,7 +159,7 @@ class ZoneSnapshot:
         for assignment in self.assignments:
             if type(assignment) is not CidrZone:
                 raise TypeError("assignments must contain exact CidrZone values")
-            if assignment.network.version != expected_version:
+            if _network(assignment.cidr).version != expected_version:
                 raise ValueError("every CIDR must match the snapshot family")
             identity = (assignment.cidr, assignment.zone_id)
             if identity in seen:
@@ -256,9 +250,10 @@ def classify_ip_zone(
     longest_prefix = -1
     winning_zones: set[str] = set()
     for assignment in snapshot.assignments:
-        if parsed not in assignment.network:
+        network = _network(assignment.cidr)
+        if parsed not in network:
             continue
-        prefix_length = assignment.network.prefixlen
+        prefix_length = network.prefixlen
         if prefix_length > longest_prefix:
             longest_prefix = prefix_length
             winning_zones = {assignment.zone_id}
@@ -303,6 +298,12 @@ at_expiry = classify_ip_zone(
     monotonic_now=50,
     cache=observation,
 )
+try:
+    CidrZone("fe80::%en0/64", "violet")
+except ValueError:
+    scoped_cidr_rejected = True
+else:
+    scoped_cidr_rejected = False
 large_integer_hit = classify_ip_zone(
     "192.0.2.10",
     snapshot,
@@ -323,6 +324,7 @@ assert (
     (miss.status, miss.zone_ids),
     (hit.status, hit.cached_status, hit.zone_ids),
     at_expiry.status,
+    scoped_cidr_rejected,
     large_integer_hit.status,
     (ipv6.address, ipv6.status),
 ) == (
@@ -331,6 +333,7 @@ assert (
     (ZoneStatus.UNCOVERED, ()),
     (ZoneStatus.CACHED, ZoneStatus.MATCHED, ("outer",)),
     ZoneStatus.MATCHED,
+    True,
     ZoneStatus.CACHED,
     ("2001:db8::7", ZoneStatus.MATCHED),
 )
@@ -338,12 +341,15 @@ assert (
 
 ## Trade-offs and Limitations
 
-Classification scans at most 256 assignments, so its time cost is linear in
-the snapshot size. More-specific CIDRs intentionally override broader ones.
-At one prefix length, two canonical CIDRs cannot overlap unless they name the
-same network; identical network-and-zone duplicates are rejected, while the
-same network assigned to different zones is retained and reported as
-`AMBIGUOUS` instead of being resolved by input order.
+Classification reparses at most 256 canonical CIDR strings into short-lived
+standard-library network objects, so its time cost is linear in the snapshot
+size. No parsed network object is stored in or exposed by an assignment, so
+mutating some other parse cannot change the frozen string snapshot.
+More-specific CIDRs intentionally override broader ones. At one prefix length,
+two canonical CIDRs cannot overlap unless they name the same network; identical
+network-and-zone duplicates are rejected, while the same network assigned to
+different zones is retained and reported as `AMBIGUOUS` instead of being
+resolved by input order.
 
 A cache hit trusts the stored base decision and does not compare it with the
 CIDR records. Exact normalized address and case-sensitive topology ID equality

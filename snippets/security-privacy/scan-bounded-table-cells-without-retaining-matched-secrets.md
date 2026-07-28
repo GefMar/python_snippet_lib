@@ -217,14 +217,19 @@ All names, rows, cells, byte totals, and findings are validated or capped before
 a result is returned. An overrun raises a static, value-free exception instead
 of returning a partial prefix. Input-row representation hides both fields, and
 the function never slices a matched value or places cell text in a finding,
-exception, log, digest, or fingerprint. It performs no table or distributed
-data access, logging, persistence, mutation, callback, or I/O.
+exception message, explicit error field, log, digest, or fingerprint. It
+performs no table or distributed data access, logging, persistence, mutation,
+callback, or I/O.
 
 Python cannot erase the caller's immutable strings from memory. The regular
-expression engine also holds temporary references while scanning, and debuggers
-or traceback-local capture can extend their lifetime. Minimize the supplied
-table, discard it promptly under the caller's own lifetime policy, and use a
-lower-level controlled-memory design when memory erasure is a requirement.
+expression engine also holds temporary references while scanning. Every raised
+exception automatically retains traceback frames whose locals can include the
+rows, current cell, and match object; do not retain exception objects, and
+disable traceback-local capture at this boundary. If even transient traceback
+linkage is forbidden, use a separately designed structured over-limit outcome
+instead of raising from the scan. Minimize the supplied table, discard it
+promptly under the caller's own lifetime policy, and use a lower-level
+controlled-memory design when memory erasure is a requirement.
 
 ## Related Snippets
 
