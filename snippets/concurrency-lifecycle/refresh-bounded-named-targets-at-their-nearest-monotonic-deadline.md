@@ -34,7 +34,7 @@ Use this owner when 1-32 trusted, cooperative, zero-argument callbacks can run
 sequentially in one thread. Deadlines must come from `time.monotonic()`, and
 each callback must have its own I/O timeout so shutdown latency is bounded by
 the callback contract. Ordinary callback failures are isolated and retried
-after a positive cooldown.
+after a cooldown of at least 10 milliseconds.
 
 Use a bounded executor when refreshes must overlap. Use an async task owner in
 an async application. If a callback cannot return cooperatively, isolate it in
@@ -53,6 +53,7 @@ from threading import TIMEOUT_MAX, Condition, Thread, current_thread
 
 _MAX_TARGETS = 32
 _MAX_WAIT_SECONDS = min(30 * 24 * 60 * 60, TIMEOUT_MAX / 2)
+_MIN_REFRESH_INTERVAL_SECONDS = 0.01
 _NAME = re.compile(r"[a-z][a-z0-9_-]{0,63}", re.ASCII)
 
 
@@ -75,30 +76,42 @@ class RefreshWorkerTerminated(RuntimeError):
     def __init__(self, failure: RefreshFailure) -> None:
         self.failure = failure
         super().__init__(
-            f"refresh worker terminated at {failure.target_name} "
-            f"with {failure.exception_type}"
+            f"refresh worker terminated at {failure.target_name} with {failure.exception_type}"
         )
 
 
-def _time_value(
-    value: object,
-    field: str,
-    *,
-    positive: bool,
-    bounded_duration: bool = False,
-) -> float:
+def _finite_number(value: object, field: str) -> float:
     if type(value) not in (int, float):
         raise TypeError(f"{field} must be an exact int or float")
-    converted = float(value)
+    try:
+        converted = float(value)
+    except OverflowError:
+        raise ValueError(f"{field} is not representable as a float") from None
     if not math.isfinite(converted):
         raise ValueError(f"{field} must be finite")
-    if positive:
-        if converted <= 0:
-            raise ValueError(f"{field} must be positive")
-    elif converted < 0:
-        raise ValueError(f"{field} must be non-negative")
-    if bounded_duration and converted > _MAX_WAIT_SECONDS:
+    return converted
+
+
+def _deadline(value: object, field: str) -> float:
+    return _finite_number(value, field)
+
+
+def _duration(value: object, field: str) -> float:
+    converted = _finite_number(value, field)
+    if converted <= 0:
+        raise ValueError(f"{field} must be positive")
+    if converted > _MAX_WAIT_SECONDS:
         raise ValueError(f"{field} exceeds the platform-safe wait limit")
+    return converted
+
+
+def _refresh_interval(value: object, field: str) -> float:
+    converted = _duration(value, field)
+    if converted < _MIN_REFRESH_INTERVAL_SECONDS:
+        raise ValueError(f"{field} must be at least 10 milliseconds")
+    reference = time.monotonic()
+    if reference + converted <= reference:
+        raise ValueError(f"{field} does not advance the monotonic clock")
     return converted
 
 
@@ -124,26 +137,29 @@ class DeadlineRefresher:
             if not callable(target.callback):
                 raise TypeError("target callback must be callable")
             names.add(target.name)
-            checked.append(target)
-            first_deadline = _time_value(
+            first_deadline = _deadline(
                 target.first_deadline,
                 "first_deadline",
-                positive=False,
             )
             if first_deadline - time.monotonic() > _MAX_WAIT_SECONDS:
                 raise ValueError("first_deadline exceeds the platform-safe wait limit")
             deadlines.append(first_deadline)
-            _time_value(
+            success_interval = _refresh_interval(
                 target.success_interval,
                 "success_interval",
-                positive=True,
-                bounded_duration=True,
             )
-            _time_value(
+            failure_cooldown = _refresh_interval(
                 target.failure_cooldown,
                 "failure_cooldown",
-                positive=True,
-                bounded_duration=True,
+            )
+            checked.append(
+                RefreshTarget(
+                    name=target.name,
+                    callback=target.callback,
+                    first_deadline=first_deadline,
+                    success_interval=success_interval,
+                    failure_cooldown=failure_cooldown,
+                )
             )
 
         self._targets = tuple(checked)
@@ -179,7 +195,7 @@ class DeadlineRefresher:
     def request_earlier(self, target_name: str, deadline: float) -> None:
         if type(target_name) is not str:
             raise TypeError("target_name must be an exact string")
-        requested = _time_value(deadline, "deadline", positive=False)
+        requested = _deadline(deadline, "deadline")
         if requested - time.monotonic() > _MAX_WAIT_SECONDS:
             raise ValueError("deadline exceeds the platform-safe wait limit")
         with self._condition:
@@ -207,12 +223,7 @@ class DeadlineRefresher:
             )
 
     def stop(self, timeout: float) -> None:
-        wait_limit = _time_value(
-            timeout,
-            "timeout",
-            positive=True,
-            bounded_duration=True,
-        )
+        wait_limit = _duration(timeout, "timeout")
         with self._condition:
             if not self._started or self._thread is None:
                 raise RuntimeError("refresher has not been started")
@@ -336,7 +347,9 @@ every timed wait below the platform limit. Callbacks run sequentially and
 outside the condition lock; a slow callback delays later targets that are
 already due. A request arriving during its callback is retained as a pending
 deadline and can cause an immediate second pass. An ordinary `Exception` is
-recorded by bounded type name and isolated from other targets.
+recorded by bounded type name and isolated from other targets. Success and
+failure intervals have a 10-millisecond floor and must advance the current
+monotonic value, preventing a subnormal duration from creating a busy loop.
 
 `stop()` is deliberately observable rather than pretending to kill Python
 code: after a timeout, the non-daemon thread remains in stopping state and the
