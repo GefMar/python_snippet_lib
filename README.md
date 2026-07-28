@@ -22,10 +22,10 @@ not edit it by hand.
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 27 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 21 |
 | [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 19 |
-| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 44 |
+| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 46 |
 | [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 17 |
-| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 24 |
-| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 44 |
+| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 26 |
+| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 45 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 16 |
 | [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 12 |
 | [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 17 |
@@ -184,6 +184,7 @@ not edit it by hand.
 | [Project Bounded Records into Multiple Closed Output Schemas](snippets/data-processing/project-bounded-records-into-multiple-closed-output-schemas.md) | data-processing | recipe | data-transformation, resource-management, validation |
 | [Project Nested Records with Explicit Field Paths](snippets/data-processing/project-nested-records-with-explicit-field-paths.md) | data-processing | recipe | data-transformation, validation |
 | [Read Bounded CSV Text into pandas Under an Explicit Schema](snippets/data-processing/read-bounded-csv-text-into-pandas-under-an-explicit-schema.md) | data-processing | integration | data-transformation, parsing, validation |
+| [Reconcile a Bounded Partial Record Under Explicit Field Policies](snippets/data-processing/reconcile-a-bounded-partial-record-under-explicit-field-policies.md) | data-processing | pattern | concurrency-control, data-transformation, validation |
 | [Reshape Repeated pandas Column Families with Wide-to-Long](snippets/data-processing/reshape-repeated-pandas-column-families-with-wide-to-long.md) | data-processing | integration | data-transformation, interoperability, validation |
 | [Route Estimated Work by Ordered Source and Size Rules](snippets/data-processing/route-estimated-work-by-ordered-source-and-size-rules.md) | data-processing | recipe | data-transformation, resource-management, validation |
 | [Route Items by Ordered Text Prefixes](snippets/data-processing/route-items-by-ordered-text-prefixes.md) | data-processing | recipe | data-transformation, validation |
@@ -193,6 +194,7 @@ not edit it by hand.
 | [Sample Stream Items Independently with a Fixed Probability](snippets/data-processing/sample-stream-items-independently-with-a-fixed-probability.md) | data-processing | algorithm | data-transformation |
 | [Select One Record per Key with an Explicit Ranking Rule](snippets/data-processing/select-one-record-per-key-with-an-explicit-ranking-rule.md) | data-processing | algorithm | data-transformation, validation |
 | [Split Quoted and Bracketed Log Fields](snippets/data-processing/split-quoted-and-bracketed-log-fields.md) | data-processing | algorithm | data-transformation, parsing |
+| [Validate and Expand a Bounded Image Variant Specification](snippets/data-processing/validate-and-expand-a-bounded-image-variant-specification.md) | data-processing | algorithm | data-transformation, resource-management, validation |
 | [Validate Parsed CSV Rows with Bounded Structured Problems](snippets/data-processing/validate-parsed-csv-rows-with-bounded-structured-problems.md) | data-processing | recipe | parsing, validation |
 | [Yield Stream Items with Bounded Neighbor Context](snippets/data-processing/yield-stream-items-with-bounded-neighbor-context.md) | data-processing | recipe | data-transformation, performance-optimization |
 | [Assemble Out-of-Fold Scores from Explicit Validation Splits](snippets/machine-learning-statistics/assemble-out-of-fold-scores-from-explicit-validation-splits.md) | machine-learning-statistics | algorithm | data-transformation, validation |
@@ -225,10 +227,12 @@ not edit it by hand.
 | [Plan an Additive SQLite Column Projection](snippets/storage-databases/plan-an-additive-sqlite-column-projection.md) | storage-databases | recipe | data-transformation, persistence, validation |
 | [Plan an Incremental Cumulative Snapshot from Partition Dates](snippets/storage-databases/plan-an-incremental-cumulative-snapshot-from-partition-dates.md) | storage-databases | algorithm | automation, data-transformation, validation |
 | [Plan Bounded Parameterized Backfill Statements by Date Window](snippets/storage-databases/plan-bounded-parameterized-backfill-statements-by-date-window.md) | storage-databases | pattern | automation, persistence, validation |
+| [Plan Bounded Table Initialization and Ordered Row Batches](snippets/storage-databases/plan-bounded-table-initialization-and-ordered-row-batches.md) | storage-databases | pattern | data-transformation, persistence, validation |
 | [Project a Dataclass into a Validated Insert Row](snippets/storage-databases/project-a-dataclass-into-a-validated-insert-row.md) | storage-databases | recipe | data-transformation, persistence, validation |
 | [Read the Last Bounded Binary Lines with a Read-Only mmap](snippets/storage-databases/read-the-last-bounded-binary-lines-with-a-read-only-mmap.md) | storage-databases | recipe | parsing, performance-optimization, resource-management |
 | [Replace a Complete Bounded SQLite Cache Snapshot with a Generation](snippets/storage-databases/replace-a-complete-bounded-sqlite-cache-snapshot-with-a-generation.md) | storage-databases | pattern | caching, persistence, retry-recovery |
 | [Replace a File Atomically with a Sibling Temporary File](snippets/storage-databases/replace-a-file-atomically-with-a-sibling-temporary-file.md) | storage-databases | recipe | persistence, resource-management |
+| [Select Elapsed-Time Coverage Anchors from Bounded Snapshots](snippets/storage-databases/select-elapsed-time-coverage-anchors-from-bounded-snapshots.md) | storage-databases | algorithm | automation, data-transformation, validation |
 | [Select Expired Backup Names with Strict UTC Timestamps](snippets/storage-databases/select-expired-backup-names-with-strict-utc-timestamps.md) | storage-databases | recipe | automation, parsing, validation |
 | [Select Snapshot Representatives by UTC Calendar Buckets](snippets/storage-databases/select-snapshot-representatives-by-utc-calendar-buckets.md) | storage-databases | algorithm | automation, persistence |
 | [Split a Binary Stream into Exclusively Created Numbered Parts](snippets/storage-databases/split-a-binary-stream-into-exclusively-created-numbered-parts.md) | storage-databases | recipe | automation, persistence, resource-management |
@@ -271,6 +275,7 @@ not edit it by hand.
 | [Parse Explicit Decimal and Binary Byte Sizes](snippets/configuration-serialization/parse-explicit-decimal-and-binary-byte-sizes.md) | configuration-serialization | recipe | configuration, parsing, validation |
 | [Patch One YAML Scalar While Preserving Round-Trip Layout](snippets/configuration-serialization/patch-one-yaml-scalar-while-preserving-round-trip-layout.md) | configuration-serialization | integration | configuration, serialization, validation |
 | [Plan Trusted Field Adapters from Registered Protobuf Options](snippets/configuration-serialization/plan-trusted-field-adapters-from-registered-protobuf-options.md) | configuration-serialization | integration | configuration, interoperability, serialization, validation |
+| [Project Complete Artifact Bundles into Closed Tagged Views](snippets/configuration-serialization/project-complete-artifact-bundles-into-closed-tagged-views.md) | configuration-serialization | recipe | configuration, data-transformation, validation |
 | [Prune Empty Values from JSON-Like Data](snippets/configuration-serialization/prune-empty-values-from-json-like-data.md) | configuration-serialization | recipe | data-transformation, serialization |
 | [Register and Unregister a Bounded Single-Byte Charmap Codec](snippets/configuration-serialization/register-and-unregister-a-bounded-single-byte-charmap-codec.md) | configuration-serialization | integration | interoperability, serialization |
 | [Reject Unknown Options with Conservative Typo Suggestions](snippets/configuration-serialization/reject-unknown-options-with-conservative-typo-suggestions.md) | configuration-serialization | recipe | configuration, validation |
