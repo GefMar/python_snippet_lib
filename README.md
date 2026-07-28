@@ -17,15 +17,15 @@ not edit it by hand.
 
 | Category | Scope | Snippets |
 | --- | --- | ---: |
-| [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 21 |
+| [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 22 |
 | [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 30 |
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 31 |
-| [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 27 |
-| [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 20 |
+| [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 28 |
+| [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 21 |
 | [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 50 |
 | [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 17 |
 | [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 27 |
-| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 48 |
+| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 50 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 17 |
 | [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 16 |
 | [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 17 |
@@ -52,6 +52,7 @@ not edit it by hand.
 | [Model a Quantity with One Canonical Unit](snippets/python-language/model-a-quantity-with-one-canonical-unit.md) | python-language | pattern | data-transformation, validation |
 | [Pass Constructor-Only Context with dataclasses.InitVar](snippets/python-language/pass-constructor-only-context-with-initvar.md) | python-language | idiom | data-transformation, validation |
 | [Read Fixed-Size Blocks with iter() and a Sentinel](snippets/python-language/read-fixed-size-blocks-with-iter-sentinel.md) | python-language | idiom | performance-optimization, resource-management |
+| [Split a Bounded ExceptionGroup by Closed Exception Types](snippets/python-language/split-a-bounded-exceptiongroup-by-closed-exception-types.md) | python-language | pattern | validation |
 | [Type a Narrow Structural Interface with Protocol](snippets/python-language/type-a-narrow-structural-interface-with-protocol.md) | python-language | pattern | interoperability, validation |
 | [Validate Reused Fields with a Data Descriptor](snippets/python-language/validate-reused-fields-with-a-data-descriptor.md) | python-language | pattern | validation |
 | [Walk a Tree Recursively with yield from](snippets/python-language/walk-a-tree-recursively-with-yield-from.md) | python-language | idiom | data-transformation |
@@ -129,6 +130,7 @@ not edit it by hand.
 | [Plan a Versioned Transition for the Current Workflow Attempt](snippets/reliability-resilience/plan-a-versioned-transition-for-the-current-workflow-attempt.md) | reliability-resilience | pattern | concurrency-control, lifecycle-management, validation |
 | [Plan an Idempotent Retry from an Allowlisted Target Hint](snippets/reliability-resilience/plan-an-idempotent-retry-from-an-allowlisted-target-hint.md) | reliability-resilience | algorithm | concurrency-control, retry-recovery, validation |
 | [Plan Once-only Cancellation for Expired Tasks](snippets/reliability-resilience/plan-once-only-cancellation-for-expired-tasks.md) | reliability-resilience | pattern | concurrency-control, lifecycle-management, retry-recovery |
+| [Plan One Discrete Token-Bucket Admission from an Explicit Tick Snapshot](snippets/reliability-resilience/plan-one-discrete-token-bucket-admission-from-an-explicit-tick-snapshot.md) | reliability-resilience | algorithm | concurrency-control, resource-management, validation |
 | [Plan One Periodic-Service Step from an Explicit Monotonic Snapshot](snippets/reliability-resilience/plan-one-periodic-service-step-from-an-explicit-monotonic-snapshot.md) | reliability-resilience | algorithm | lifecycle-management, retry-recovery, validation |
 | [Plan Readiness Recovery Through a Monotonic Reset Cooldown](snippets/reliability-resilience/plan-readiness-recovery-through-a-monotonic-reset-cooldown.md) | reliability-resilience | pattern | lifecycle-management, retry-recovery, validation |
 | [Plan Recovery Across Object and Metadata Publication States](snippets/reliability-resilience/plan-recovery-across-object-and-metadata-publication-states.md) | reliability-resilience | algorithm | lifecycle-management, persistence, retry-recovery, validation |
@@ -157,6 +159,7 @@ not edit it by hand.
 | [Iterate Cursor-Paginated Results Lazily](snippets/networking-protocols/iterate-cursor-paginated-results-lazily.md) | networking-protocols | pattern | networking, resource-management |
 | [Parse a Bounded ASCII Media Type Value](snippets/networking-protocols/parse-a-bounded-ascii-media-type-value.md) | networking-protocols | recipe | interoperability, parsing, serialization, validation |
 | [Parse a Bounded Host and Port with Bracketed IPv6](snippets/networking-protocols/parse-a-bounded-host-and-port-with-bracketed-ipv6.md) | networking-protocols | recipe | networking, parsing, validation |
+| [Parse a Bounded Percent-Encoded Query String as Strict UTF-8 with Explicit Duplicate Rules](snippets/networking-protocols/parse-a-bounded-percent-encoded-query-string-as-strict-utf-8-with-explicit-duplicate-rules.md) | networking-protocols | recipe | interoperability, networking, parsing, validation |
 | [Parse a Bounded Three-State JSON Response Envelope](snippets/networking-protocols/parse-a-bounded-three-state-json-response-envelope.md) | networking-protocols | integration | networking, parsing, validation |
 | [Read and Write Size-Capped Varint Frames](snippets/networking-protocols/read-and-write-size-capped-varint-frames.md) | networking-protocols | recipe | networking, serialization, validation |
 | [Release a Pooled Response Connection Only After Clean EOF](snippets/networking-protocols/release-a-pooled-response-connection-only-after-clean-eof.md) | networking-protocols | pattern | lifecycle-management, networking, resource-management, validation |
@@ -263,6 +266,7 @@ not edit it by hand.
 | [Build a Deterministic Size-Capped USTAR Archive from Bytes](snippets/configuration-serialization/build-a-deterministic-size-capped-ustar-archive-from-bytes.md) | configuration-serialization | recipe | resource-management, serialization, validation |
 | [Convert a Weekday Bitmask to a Canonical Cron Schedule](snippets/configuration-serialization/convert-a-weekday-bitmask-to-a-canonical-cron-schedule.md) | configuration-serialization | recipe | configuration, serialization, validation |
 | [Convert Decimal Values to Exact Minor Units](snippets/configuration-serialization/convert-decimal-values-to-exact-minor-units.md) | configuration-serialization | recipe | interoperability, validation |
+| [Decode Canonical Unpadded Base64url Under Encoded and Decoded Byte Limits](snippets/configuration-serialization/decode-canonical-unpadded-base64url-under-encoded-and-decoded-byte-limits.md) | configuration-serialization | recipe | interoperability, parsing, serialization, validation |
 | [Derive a Versioned Cache Key from Deterministically Encoded Bounded JSON](snippets/configuration-serialization/derive-a-versioned-cache-key-from-deterministically-encoded-bounded-json.md) | configuration-serialization | algorithm | caching, configuration, serialization, validation |
 | [Derive a Versioned Record Key from Explicit Identity Fields](snippets/configuration-serialization/derive-a-versioned-record-key-from-explicit-identity-fields.md) | configuration-serialization | algorithm | serialization, validation |
 | [Elide Nested Mapping Values That Match Explicit Defaults](snippets/configuration-serialization/elide-nested-mapping-values-that-match-explicit-defaults.md) | configuration-serialization | recipe | configuration, serialization |
@@ -288,6 +292,7 @@ not edit it by hand.
 | [Parse a Bounded Flat Placeholder Template](snippets/configuration-serialization/parse-a-bounded-flat-placeholder-template.md) | configuration-serialization | algorithm | configuration, parsing, validation |
 | [Parse a Bounded Nested Bracket Tree](snippets/configuration-serialization/parse-a-bounded-nested-bracket-tree.md) | configuration-serialization | algorithm | parsing, validation |
 | [Parse a Bounded XML Envelope with Closed Variant Dispatch](snippets/configuration-serialization/parse-a-bounded-xml-envelope-with-closed-variant-dispatch.md) | configuration-serialization | integration | parsing, security, validation |
+| [Parse a Closed RFC 3339 Timestamp Subset into an Aware Datetime](snippets/configuration-serialization/parse-a-closed-rfc-3339-timestamp-subset-into-an-aware-datetime.md) | configuration-serialization | recipe | configuration, interoperability, parsing, validation |
 | [Parse Bounded UTF-8 JSON Without Duplicate Object Names or Non-Finite Numbers](snippets/configuration-serialization/parse-bounded-utf-8-json-without-duplicate-object-names-or-non-finite-numbers.md) | configuration-serialization | recipe | parsing, security, serialization, validation |
 | [Parse Compact Durations into timedelta](snippets/configuration-serialization/parse-compact-durations-into-timedelta.md) | configuration-serialization | recipe | configuration, parsing, validation |
 | [Parse Explicit Decimal and Binary Byte Sizes](snippets/configuration-serialization/parse-explicit-decimal-and-binary-byte-sizes.md) | configuration-serialization | recipe | configuration, parsing, validation |
