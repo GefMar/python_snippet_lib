@@ -48,11 +48,11 @@ import re
 import time
 from collections.abc import Callable
 from dataclasses import dataclass
-from threading import Condition, Thread, current_thread
+from threading import TIMEOUT_MAX, Condition, Thread, current_thread
 
 
 _MAX_TARGETS = 32
-_MAX_DELAY_SECONDS = 366 * 24 * 60 * 60
+_MAX_WAIT_SECONDS = min(30 * 24 * 60 * 60, TIMEOUT_MAX / 2)
 _NAME = re.compile(r"[a-z][a-z0-9_-]{0,63}", re.ASCII)
 
 
@@ -69,6 +69,15 @@ class RefreshTarget:
 class RefreshFailure:
     target_name: str
     exception_type: str
+
+
+class RefreshWorkerTerminated(RuntimeError):
+    def __init__(self, failure: RefreshFailure) -> None:
+        self.failure = failure
+        super().__init__(
+            f"refresh worker terminated at {failure.target_name} "
+            f"with {failure.exception_type}"
+        )
 
 
 def _time_value(
@@ -88,8 +97,8 @@ def _time_value(
             raise ValueError(f"{field} must be positive")
     elif converted < 0:
         raise ValueError(f"{field} must be non-negative")
-    if bounded_duration and converted > _MAX_DELAY_SECONDS:
-        raise ValueError(f"{field} exceeds the one-year limit")
+    if bounded_duration and converted > _MAX_WAIT_SECONDS:
+        raise ValueError(f"{field} exceeds the platform-safe wait limit")
     return converted
 
 
@@ -121,8 +130,8 @@ class DeadlineRefresher:
                 "first_deadline",
                 positive=False,
             )
-            if first_deadline - time.monotonic() > _MAX_DELAY_SECONDS:
-                raise ValueError("first_deadline is more than one year away")
+            if first_deadline - time.monotonic() > _MAX_WAIT_SECONDS:
+                raise ValueError("first_deadline exceeds the platform-safe wait limit")
             deadlines.append(first_deadline)
             _time_value(
                 target.success_interval,
@@ -140,7 +149,10 @@ class DeadlineRefresher:
         self._targets = tuple(checked)
         self._index = {target.name: index for index, target in enumerate(checked)}
         self._deadlines = deadlines
+        self._in_flight = [False] * len(checked)
+        self._pending_deadlines: list[float | None] = [None] * len(checked)
         self._failures: dict[str, RefreshFailure] = {}
+        self._fatal_failure: RefreshFailure | None = None
         self._condition = Condition()
         self._thread: Thread | None = None
         self._started = False
@@ -168,6 +180,8 @@ class DeadlineRefresher:
         if type(target_name) is not str:
             raise TypeError("target_name must be an exact string")
         requested = _time_value(deadline, "deadline", positive=False)
+        if requested - time.monotonic() > _MAX_WAIT_SECONDS:
+            raise ValueError("deadline exceeds the platform-safe wait limit")
         with self._condition:
             if not self._started or self._stopping:
                 raise RuntimeError("refresher is not running")
@@ -175,7 +189,12 @@ class DeadlineRefresher:
                 index = self._index[target_name]
             except KeyError:
                 raise ValueError("unknown target name") from None
-            if requested < self._deadlines[index]:
+            if self._in_flight[index]:
+                pending = self._pending_deadlines[index]
+                if pending is None or requested < pending:
+                    self._pending_deadlines[index] = requested
+                self._condition.notify()
+            elif requested < self._deadlines[index]:
                 self._deadlines[index] = requested
                 self._condition.notify()
 
@@ -206,6 +225,10 @@ class DeadlineRefresher:
         thread.join(wait_limit)
         if thread.is_alive():
             raise TimeoutError("refresh callback did not stop before the deadline")
+        with self._condition:
+            fatal_failure = self._fatal_failure
+        if fatal_failure is not None:
+            raise RefreshWorkerTerminated(fatal_failure)
 
     def _run(self) -> None:
         while True:
@@ -228,6 +251,7 @@ class DeadlineRefresher:
                 with self._condition:
                     if self._stopping:
                         return
+                    self._in_flight[index] = True
                 target = self._targets[index]
                 try:
                     target.callback()
@@ -237,13 +261,32 @@ class DeadlineRefresher:
                         target_name=target.name,
                         exception_type=type(error).__name__[:64],
                     )
+                except BaseException as error:
+                    fatal_failure = RefreshFailure(
+                        target_name=target.name,
+                        exception_type=type(error).__name__[:64],
+                    )
+                    with self._condition:
+                        self._in_flight[index] = False
+                        self._pending_deadlines[index] = None
+                        self._failures[target.name] = fatal_failure
+                        self._fatal_failure = fatal_failure
+                        self._stopping = True
+                        self._condition.notify_all()
+                    return
                 else:
                     interval = target.success_interval
                     failure = None
 
                 completed_at = time.monotonic()
                 with self._condition:
-                    self._deadlines[index] = completed_at + interval
+                    scheduled = completed_at + interval
+                    pending = self._pending_deadlines[index]
+                    self._deadlines[index] = (
+                        scheduled if pending is None else min(scheduled, pending)
+                    )
+                    self._in_flight[index] = False
+                    self._pending_deadlines[index] = None
                     if failure is None:
                         self._failures.pop(target.name, None)
                     else:
@@ -288,18 +331,22 @@ assert completed and calls == ["index"] and worker.failure_snapshot() == ()
 
 Each scheduling pass scans at most 32 deadlines, so its work is `O(t)` with
 `O(t)` state. First deadlines, intervals, cooldowns, and join timeouts are
-bounded to at most one year ahead or one year long, preventing an unbounded
-platform wait. Callbacks run sequentially and outside the condition lock; a
-slow callback delays later targets that are already due. An ordinary
-`Exception` is recorded by bounded type name and isolated from other targets.
-A `BaseException` still terminates the worker, and this compact owner does not
-expose a separate unexpected-thread-exit channel.
+capped at the smaller of 30 days and half of `threading.TIMEOUT_MAX`, keeping
+every timed wait below the platform limit. Callbacks run sequentially and
+outside the condition lock; a slow callback delays later targets that are
+already due. A request arriving during its callback is retained as a pending
+deadline and can cause an immediate second pass. An ordinary `Exception` is
+recorded by bounded type name and isolated from other targets.
 
 `stop()` is deliberately observable rather than pretending to kill Python
 code: after a timeout, the non-daemon thread remains in stopping state and the
-owner may call `stop()` again to join it after the callback returns. The class
-cannot be restarted and does not own cache values, freshness checks, callback
-deadlines, parallelism, persistence, jitter, logging, or wall-clock schedules.
+owner may call `stop()` again to join it after the callback returns. A callback
+`BaseException` terminates the worker, makes later requests fail, and causes
+`stop()` to raise `RefreshWorkerTerminated` with bounded target/type metadata;
+the original exception object and message are deliberately not retained. The
+class cannot be restarted and does not own cache values, freshness checks,
+callback deadlines, parallelism, persistence, jitter, logging, or wall-clock
+schedules.
 
 ## Related Snippets
 

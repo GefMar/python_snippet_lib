@@ -153,6 +153,8 @@ def parse_debugger_function_locations(
         raise ValueError("text limit exceeded")
 
     lines = text.split("\n")
+    if lines[-1] == "":
+        lines.pop()
     if len(lines) > _MAX_LINES:
         raise ValueError("line-count limit exceeded")
     if any(len(line) > _MAX_LINE_CHARS for line in lines):
