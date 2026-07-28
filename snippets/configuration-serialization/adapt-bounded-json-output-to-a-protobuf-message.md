@@ -50,6 +50,7 @@ from typing import TypeVar
 from google.protobuf import json_format
 from google.protobuf.descriptor import FieldDescriptor
 from google.protobuf.message import Message
+from google.protobuf.unknown_fields import UnknownFieldSet
 
 MessageT = TypeVar("MessageT", bound=Message)
 
@@ -169,7 +170,7 @@ def _fresh_populated_message(
     if not isinstance(message, Message):
         return None, "factory_result"
     try:
-        if message.ListFields() or message.ByteSize() != 0:
+        if message.ListFields() or len(UnknownFieldSet(message)) != 0:
             return None, "factory_result"
     except Exception:
         return None, "factory_result"
@@ -180,6 +181,8 @@ def _fresh_populated_message(
             ignore_unknown_fields=False,
         )
     except Exception:
+        return None, "protobuf_rejected"
+    if not message.IsInitialized():
         return None, "protobuf_rejected"
     if (post_conversion_error := _post_conversion_error(message)) is not None:
         return None, post_conversion_error
@@ -289,6 +292,30 @@ non_finite = rejection_code(
 )
 
 
+def new_name_part() -> Message:
+    from google.protobuf import descriptor_pb2
+
+    return descriptor_pb2.UninterpretedOption.NamePart()
+
+
+proto2_message = adapt_bounded_json_to_protobuf(
+    b'{"namePart":"leaf","isExtension":false}',
+    new_name_part,
+)
+missing_required = rejection_code(b'{"namePart":"leaf"}', new_name_part)
+
+
+def new_message_with_unknown_wire_data() -> Message:
+    from google.protobuf import descriptor_pb2
+
+    candidate = descriptor_pb2.FileDescriptorProto()
+    candidate.ParseFromString(b"\xf8\x07\x01")
+    return candidate
+
+
+unknown_factory = rejection_code(payload, new_message_with_unknown_wire_data)
+
+
 def new_any_message() -> Message:
     from google.protobuf import any_pb2
 
@@ -307,6 +334,10 @@ assert (
     unknown,
     trailing,
     non_finite,
+    proto2_message.name_part,
+    proto2_message.is_extension,
+    missing_required,
+    unknown_factory,
     opaque_any,
 ) == (
     "orchid/event.proto",
@@ -315,6 +346,10 @@ assert (
     "protobuf_rejected",
     "trailing_data",
     "non_finite_number",
+    "leaf",
+    False,
+    "protobuf_rejected",
+    "factory_result",
     "opaque_any",
 )
 ```
@@ -336,11 +371,13 @@ All schema and conversion failures intentionally collapse to short stable
 codes, which makes the public error safe but unsuitable for detailed debugging.
 The zero-argument factory must return a new, unaliased and initially empty
 message on every call. The function rejects declared values and unknown wire
-bytes already present in the factory result, but Python cannot prove that an
-empty result is unaliased. When the factory honors the contract, only the new
-candidate can be partially mutated before a rejection, and that candidate is
-discarded. No subprocess, environment, token, network, descriptor download, or
-caller-supplied destination is accessed.
+fields already present in the factory result without serializing it, so a fresh
+proto2 message with required fields is allowed. After conversion, every proto2
+required field must be initialized. Python cannot prove that an empty result is
+unaliased; when the factory honors the contract, only the new candidate can be
+partially mutated before a rejection, and that candidate is discarded. No
+subprocess, environment, token, network, descriptor download, or caller-supplied
+destination is accessed.
 
 ## Related Snippets
 

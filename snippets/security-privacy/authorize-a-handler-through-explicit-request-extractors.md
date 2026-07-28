@@ -41,7 +41,7 @@ request values and delegates the decision to an injected authorizer.
 ```python
 import inspect
 import re
-from collections.abc import Callable, Mapping
+from collections.abc import Callable
 from dataclasses import dataclass
 from functools import wraps
 from typing import ParamSpec, Protocol, TypeVar
@@ -87,28 +87,23 @@ class RequestAuthorizationSpec:
         self,
         *,
         credential_extractor: Extractor,
-        resource_extractors: Mapping[str, Extractor],
+        resource_extractors: dict[str, Extractor],
         authorizer: Authorizer,
     ) -> None:
         _require_synchronous_callable(credential_extractor, name="credential extractor")
         _require_synchronous_callable(authorizer, name="authorizer")
-        if not isinstance(resource_extractors, Mapping):
-            raise TypeError("resource extractors must be a mapping")
-        if not 1 <= len(resource_extractors) <= _MAX_RESOURCE_EXTRACTORS:
+        if type(resource_extractors) is not dict:
+            raise TypeError("resource extractors must be an exact dict")
+        extractor_snapshot = resource_extractors.copy()
+        if not 1 <= len(extractor_snapshot) <= _MAX_RESOURCE_EXTRACTORS:
             raise ValueError("resource extractor count is outside the supported range")
 
         frozen: list[_NamedResourceExtractor] = []
-        seen_names: set[str] = set()
-        for name, extractor in resource_extractors.items():
+        for name, extractor in extractor_snapshot.items():
             if type(name) is not str or _RESOURCE_NAME(name) is None:
                 raise ValueError("resource names must use the supported ASCII syntax")
-            if name in seen_names:
-                raise ValueError("resource names must be unique")
             _require_synchronous_callable(extractor, name="resource extractor")
-            seen_names.add(name)
             frozen.append(_NamedResourceExtractor(name, extractor))
-        if len(frozen) != len(resource_extractors):
-            raise ValueError("resource extractor mapping changed during validation")
 
         object.__setattr__(self, "credential_extractor", credential_extractor)
         object.__setattr__(
@@ -120,7 +115,14 @@ class RequestAuthorizationSpec:
 
 
 def _require_synchronous_callable(value: object, *, name: str) -> None:
-    if not callable(value) or inspect.iscoroutinefunction(value):
+    implementation = inspect.getattr_static(value, "__call__", None)
+    if (
+        not callable(value)
+        or inspect.iscoroutinefunction(value)
+        or inspect.isasyncgenfunction(value)
+        or inspect.iscoroutinefunction(implementation)
+        or inspect.isasyncgenfunction(implementation)
+    ):
         raise TypeError(f"{name} must be a synchronous callable")
 
 
@@ -216,8 +218,8 @@ def authorize_handler(
 ```python
 @dataclass(frozen=True, slots=True)
 class Request:
-    headers: Mapping[str, str]
-    path_values: Mapping[str, str]
+    headers: dict[str, str]
+    path_values: dict[str, str]
 
 
 def credential_from_header(request: Request) -> str | None:
@@ -267,15 +269,55 @@ except RequestAuthorizationDenied as error:
 else:
     denial_code = "handler_ran"
 
-assert (show_label(allowed), denial_code) == ("label:box-17", "request_not_authorized")
+
+class AsyncCredential:
+    async def __call__(self, request: Request) -> str | None:
+        return request.headers.get("Authorization")
+
+
+class AsyncHandler:
+    async def __call__(self, request: Request) -> str:
+        return request.path_values["parcel"]
+
+
+try:
+    RequestAuthorizationSpec(
+        credential_extractor=AsyncCredential(),
+        resource_extractors={"parcel": parcel_from_path},
+        authorizer=may_view,
+    )
+except TypeError:
+    async_extractor_rejected = True
+else:
+    async_extractor_rejected = False
+
+try:
+    authorize_handler(spec)(AsyncHandler())
+except TypeError:
+    async_handler_rejected = True
+else:
+    async_handler_rejected = False
+
+assert (
+    show_label(allowed),
+    denial_code,
+    async_extractor_rejected,
+    async_handler_rejected,
+) == ("label:box-17", "request_not_authorized", True, True)
 ```
 
 ## Trade-offs and Limitations
 
-Every extracted value is limited to 512 UTF-8 bytes, and the resource list is
-fixed at construction. The decorator is synchronous: a blocking authorizer
-adds request latency, while an async framework needs a separately designed
-async gate. Normal failures deliberately lose diagnostic detail, so emit only
+Every extracted value is limited to 512 UTF-8 bytes. Construction accepts only
+an exact `dict`, copies its one to eight entries, and then freezes a sorted
+resource list; arbitrary mapping iterators therefore cannot exceed the callback
+budget. The decorator is synchronous: a blocking authorizer adds request
+latency, while an async framework needs a separately designed async gate.
+Declared coroutine and async-generator functions, including callable-object
+implementations, are rejected during construction or decoration. A nominally
+synchronous callback must still honor its documented value contract, and a
+handler's return contract remains the handler author's responsibility.
+Normal failures deliberately lose diagnostic detail, so emit only
 non-sensitive, bounded operational counters outside this wrapper if denials
 need monitoring.
 
