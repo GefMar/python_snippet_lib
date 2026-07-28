@@ -125,9 +125,7 @@ def _validate_graph(
         target_positions: list[int] = []
         for target in targets:
             if target not in positions:
-                raise ValueError(
-                    f"node {ordered_names[source_index]!r} has an undeclared target"
-                )
+                raise ValueError(f"node {ordered_names[source_index]!r} has an undeclared target")
             target_positions.append(positions[target])
         adjacency.append(tuple(target_positions))
     return tuple(ordered_names), tuple(adjacency)
@@ -215,12 +213,9 @@ def partition_strongly_connected_components(
 
     return StronglyConnectedPartition(
         components=tuple(
-            tuple(names[member] for member in members)
-            for members in member_positions
+            tuple(names[member] for member in members) for members in member_positions
         ),
-        condensation_targets=tuple(
-            tuple(sorted(targets)) for targets in condensation_sets
-        ),
+        condensation_targets=tuple(tuple(sorted(targets)) for targets in condensation_sets),
     )
 ```
 
@@ -247,18 +242,14 @@ reordered_targets = (
 )
 
 try:
-    partition_strongly_connected_components(
-        (DirectedNode("known", ("missing",)),)
-    )
+    partition_strongly_connected_components((DirectedNode("known", ("missing",)),))
 except ValueError:
     undeclared_target_rejected = True
 else:
     undeclared_target_rejected = False
 
 try:
-    partition_strongly_connected_components(
-        (DirectedNode("same", ("same", "same")),)
-    )
+    partition_strongly_connected_components((DirectedNode("same", ("same", "same")),))
 except ValueError:
     duplicate_edge_rejected = True
 else:

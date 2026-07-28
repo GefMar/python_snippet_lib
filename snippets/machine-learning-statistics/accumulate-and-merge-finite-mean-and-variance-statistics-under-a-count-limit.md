@@ -75,9 +75,7 @@ class MeanVarianceState:
             raise ValueError("sum_squared_deviations must be finite")
         if self.sum_squared_deviations < 0.0:
             raise ValueError("sum_squared_deviations must be non-negative")
-        if self.count == 0 and (
-            self.mean != 0.0 or self.sum_squared_deviations != 0.0
-        ):
+        if self.count == 0 and (self.mean != 0.0 or self.sum_squared_deviations != 0.0):
             raise ValueError("an empty state must have zero mean and deviation sum")
         if self.count == 1 and self.sum_squared_deviations != 0.0:
             raise ValueError("a one-observation state must have zero deviation sum")
@@ -97,9 +95,7 @@ def _validated_count_limit(value: object) -> int:
     if type(value) is not int:
         raise TypeError("max_count must be an exact integer")
     if not 1 <= value <= _MAX_EXACT_FLOAT_COUNT:
-        raise ValueError(
-            f"max_count must be between 1 and {_MAX_EXACT_FLOAT_COUNT}"
-        )
+        raise ValueError(f"max_count must be between 1 and {_MAX_EXACT_FLOAT_COUNT}")
     return value
 
 

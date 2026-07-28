@@ -45,7 +45,6 @@ checksum detects accidental corruption but is not a message authenticator.
 import zlib
 from enum import StrEnum
 
-
 _MAX_INPUT_LIMIT = 16 * 1024 * 1024
 _MAX_OUTPUT_LIMIT = 64 * 1024 * 1024
 

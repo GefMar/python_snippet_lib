@@ -82,10 +82,7 @@ def classify_local_datetime(
         if recovered_wall == local:
             candidates_by_instant.setdefault(instant, round_tripped)
 
-    candidates = tuple(
-        candidates_by_instant[instant]
-        for instant in sorted(candidates_by_instant)
-    )
+    candidates = tuple(candidates_by_instant[instant] for instant in sorted(candidates_by_instant))
     if not candidates:
         kind = LocalDatetimeKind.NONEXISTENT
     elif len(candidates) == 1:
