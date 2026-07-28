@@ -21,11 +21,11 @@ not edit it by hand.
 | [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 29 |
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 27 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 21 |
-| [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 18 |
-| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 43 |
+| [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 19 |
+| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 44 |
 | [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 17 |
-| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 22 |
-| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 43 |
+| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 24 |
+| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 44 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 16 |
 | [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 12 |
 | [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 17 |
@@ -133,6 +133,7 @@ not edit it by hand.
 | [Schedule the Next Review from Outcome and Bounded Coverage](snippets/reliability-resilience/schedule-the-next-review-from-outcome-and-bounded-coverage.md) | reliability-resilience | algorithm | automation, retry-recovery, validation |
 | [Wait for a Predicate Until a Monotonic Deadline](snippets/reliability-resilience/wait-for-a-predicate-until-a-monotonic-deadline.md) | reliability-resilience | recipe | retry-recovery |
 | [Apply an HTTP Patch Only When a Strong ETag Still Matches](snippets/networking-protocols/apply-an-http-patch-only-when-a-strong-etag-still-matches.md) | networking-protocols | integration | networking, validation |
+| [Build a Bounded HTTP Request Target from Typed Segments](snippets/networking-protocols/build-a-bounded-http-request-target-from-typed-segments.md) | networking-protocols | recipe | networking, serialization, validation |
 | [Build a Canonical HTTP Origin Key](snippets/networking-protocols/build-a-canonical-http-origin-key.md) | networking-protocols | recipe | networking, validation |
 | [Choose Buffered or Streaming Multipart Encoding from Bounded Parts](snippets/networking-protocols/choose-buffered-or-streaming-multipart-encoding-from-bounded-parts.md) | networking-protocols | integration | networking, resource-management, serialization, validation |
 | [Choose Grouped Endpoints with Explicit Random Fairness](snippets/networking-protocols/choose-grouped-endpoints-with-explicit-random-fairness.md) | networking-protocols | algorithm | networking, validation |
@@ -167,6 +168,7 @@ not edit it by hand.
 | [Derive an Other Bucket from Exact pandas Totals](snippets/data-processing/derive-an-other-bucket-from-exact-pandas-totals.md) | data-processing | integration | data-transformation, validation |
 | [Enforce a Many-to-One pandas Left-Merge Contract](snippets/data-processing/enforce-a-many-to-one-pandas-left-merge-contract.md) | data-processing | integration | data-transformation, interoperability, validation |
 | [Extract a Finite 2D Bounding Box from Bounded WKB](snippets/data-processing/extract-a-finite-2d-bounding-box-from-bounded-wkb.md) | data-processing | integration | data-transformation, parsing, validation |
+| [Extract Bounded Features with an Explicit Abstention Outcome](snippets/data-processing/extract-bounded-features-with-an-explicit-abstention-outcome.md) | data-processing | algorithm | data-transformation, validation |
 | [Fan Out Events into Bounded Lookback Windows](snippets/data-processing/fan-out-events-into-bounded-lookback-windows.md) | data-processing | algorithm | data-transformation, resource-management, validation |
 | [Group Items by an Exact Compatibility Signature and Report Unmatched Inputs](snippets/data-processing/group-items-by-an-exact-compatibility-signature-and-report-unmatched-inputs.md) | data-processing | algorithm | data-transformation, validation |
 | [Integrate Regular Rate Samples Across Explicit Time Buckets](snippets/data-processing/integrate-regular-rate-samples-across-explicit-time-buckets.md) | data-processing | algorithm | data-transformation, observability, validation |
@@ -219,8 +221,10 @@ not edit it by hand.
 | [Decide Whether to Restore a Versioned Snapshot](snippets/storage-databases/decide-whether-to-restore-a-versioned-snapshot.md) | storage-databases | algorithm | configuration, data-transformation, validation |
 | [Fingerprint a Bounded Flat File Set with Framed SHA-256](snippets/storage-databases/fingerprint-a-bounded-flat-file-set-with-framed-sha-256.md) | storage-databases | recipe | caching, persistence, validation |
 | [Map a Namespaced POSIX Path Beneath a Logical Local Root](snippets/storage-databases/map-a-namespaced-posix-path-beneath-a-logical-local-root.md) | storage-databases | recipe | data-transformation, persistence, validation |
+| [Plan a Bounded Named POSIX Layout Under Explicit Roots](snippets/storage-databases/plan-a-bounded-named-posix-layout-under-explicit-roots.md) | storage-databases | algorithm | data-transformation, persistence, validation |
 | [Plan an Additive SQLite Column Projection](snippets/storage-databases/plan-an-additive-sqlite-column-projection.md) | storage-databases | recipe | data-transformation, persistence, validation |
 | [Plan an Incremental Cumulative Snapshot from Partition Dates](snippets/storage-databases/plan-an-incremental-cumulative-snapshot-from-partition-dates.md) | storage-databases | algorithm | automation, data-transformation, validation |
+| [Plan Bounded Parameterized Backfill Statements by Date Window](snippets/storage-databases/plan-bounded-parameterized-backfill-statements-by-date-window.md) | storage-databases | pattern | automation, persistence, validation |
 | [Project a Dataclass into a Validated Insert Row](snippets/storage-databases/project-a-dataclass-into-a-validated-insert-row.md) | storage-databases | recipe | data-transformation, persistence, validation |
 | [Read the Last Bounded Binary Lines with a Read-Only mmap](snippets/storage-databases/read-the-last-bounded-binary-lines-with-a-read-only-mmap.md) | storage-databases | recipe | parsing, performance-optimization, resource-management |
 | [Replace a Complete Bounded SQLite Cache Snapshot with a Generation](snippets/storage-databases/replace-a-complete-bounded-sqlite-cache-snapshot-with-a-generation.md) | storage-databases | pattern | caching, persistence, retry-recovery |
@@ -274,6 +278,7 @@ not edit it by hand.
 | [Render Fixed Date Placeholders from an Explicit Anchor](snippets/configuration-serialization/render-fixed-date-placeholders-from-an-explicit-anchor.md) | configuration-serialization | recipe | automation, configuration, validation |
 | [Resolve an Absolute or Percentage Limit](snippets/configuration-serialization/resolve-an-absolute-or-percentage-limit.md) | configuration-serialization | recipe | configuration, parsing, validation |
 | [Resolve Bounded Configuration Through Dependent Adapters](snippets/configuration-serialization/resolve-bounded-configuration-through-dependent-adapters.md) | configuration-serialization | pattern | configuration, data-transformation, validation |
+| [Resolve Declared Input Paths from an Explicit Execution Mode](snippets/configuration-serialization/resolve-declared-input-paths-from-an-explicit-execution-mode.md) | configuration-serialization | pattern | configuration, data-transformation, validation |
 | [Substitute Typed Values into a JSON-Like Template](snippets/configuration-serialization/substitute-typed-values-into-a-json-like-template.md) | configuration-serialization | recipe | configuration, serialization, validation |
 | [Audit Parsed Compose Services for Digest-Pinned Images](snippets/security-privacy/audit-parsed-compose-services-for-digest-pinned-images.md) | security-privacy | recipe | configuration, security, validation |
 | [Audit Symlinks in a Bounded Directory Tree](snippets/security-privacy/audit-symlinks-in-a-bounded-directory-tree.md) | security-privacy | recipe | resource-management, security, validation |
