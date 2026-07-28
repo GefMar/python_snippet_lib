@@ -18,17 +18,17 @@ not edit it by hand.
 | Category | Scope | Snippets |
 | --- | --- | ---: |
 | [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 23 |
-| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 50 |
-| [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 32 |
+| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 52 |
+| [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 33 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 30 |
 | [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 24 |
 | [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 53 |
-| [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 22 |
+| [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 23 |
 | [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 28 |
 | [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 56 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 19 |
 | [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 16 |
-| [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 18 |
+| [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 19 |
 
 ### Snippets
 
@@ -73,6 +73,7 @@ not edit it by hand.
 | [Compute a Bounded Integer Maximum Flow and Canonical Minimum Cut with Edmonds-Karp](snippets/algorithms-data-structures/compute-a-bounded-integer-maximum-flow-and-canonical-minimum-cut-with-edmonds-karp.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Compute Bounded Bellman-Ford Distances and Detect Reachable Negative Cycles](snippets/algorithms-data-structures/compute-bounded-bellman-ford-distances-and-detect-reachable-negative-cycles.md) | algorithms-data-structures | algorithm | data-transformation, validation |
 | [Compute Full-Window Trailing Maxima with a Monotonic Index Deque](snippets/algorithms-data-structures/compute-full-window-trailing-maxima-with-a-monotonic-index-deque.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
+| [Compute the Transitive Reduction of a Bounded Directed Acyclic Graph](snippets/algorithms-data-structures/compute-the-transitive-reduction-of-a-bounded-directed-acyclic-graph.md) | algorithms-data-structures | algorithm | data-transformation, validation |
 | [Cover a Half-Open Integer Range with Dyadic Intervals](snippets/algorithms-data-structures/cover-a-half-open-integer-range-with-dyadic-intervals.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization |
 | [Decompose One Bounded Functional-Graph Orbit into Prefix and Cycle](snippets/algorithms-data-structures/decompose-one-bounded-functional-graph-orbit-into-prefix-and-cycle.md) | algorithms-data-structures | algorithm | data-transformation, validation |
 | [Estimate Distinct Byte Strings with a Mergeable HyperLogLog](snippets/algorithms-data-structures/estimate-distinct-byte-strings-with-a-mergeable-hyperloglog.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization |
@@ -87,6 +88,7 @@ not edit it by hand.
 | [Generate Event Times for a Linear Rate Ramp](snippets/algorithms-data-structures/generate-event-times-for-a-linear-rate-ramp.md) | algorithms-data-structures | algorithm | automation, performance-optimization |
 | [Group a One-Dimensional NumPy Structured Array into Stable Index Sets](snippets/algorithms-data-structures/group-a-one-dimensional-numpy-structured-array-into-stable-index-sets.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Maintain Bounded Point Adds and Half-Open Range Sums with a Fenwick Tree](snippets/algorithms-data-structures/maintain-bounded-point-adds-and-half-open-range-sums-with-a-fenwick-tree.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
+| [Maintain Point Replacements and Half-Open Range Minima with a Segment Tree](snippets/algorithms-data-structures/maintain-point-replacements-and-half-open-range-minima-with-a-segment-tree.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Map Keys with an Immutable Consistent Hash Ring](snippets/algorithms-data-structures/map-keys-with-an-immutable-consistent-hash-ring.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization |
 | [Map Points Between Rectangular Coordinate Spaces](snippets/algorithms-data-structures/map-points-between-rectangular-coordinate-spaces.md) | algorithms-data-structures | algorithm | data-transformation, interoperability |
 | [Match Strict Mutual Nearest Neighbors with a Comparison Budget](snippets/algorithms-data-structures/match-strict-mutual-nearest-neighbors-with-a-comparison-budget.md) | algorithms-data-structures | algorithm | data-transformation, validation |
@@ -108,6 +110,7 @@ not edit it by hand.
 | [Traverse a Parent Graph with Breadth-First Search](snippets/algorithms-data-structures/traverse-a-parent-graph-with-breadth-first-search.md) | algorithms-data-structures | algorithm | data-transformation, validation |
 | [Two-Color a Bounded Undirected Graph or Return an Odd-Cycle Witness](snippets/algorithms-data-structures/two-color-a-bounded-undirected-graph-or-return-an-odd-cycle-witness.md) | algorithms-data-structures | algorithm | data-transformation, validation |
 | [Acquire a Fixed Set of Keyed Thread Locks in Canonical Order](snippets/concurrency-lifecycle/acquire-a-fixed-set-of-keyed-thread-locks-in-canonical-order.md) | concurrency-lifecycle | pattern | concurrency-control, resource-management, validation |
+| [Collect a Bounded Async-Generator Prefix with Deterministic Closure](snippets/concurrency-lifecycle/collect-a-bounded-async-generator-prefix-with-deterministic-closure.md) | concurrency-lifecycle | pattern | concurrency-control, lifecycle-management, resource-management |
 | [Collect a Bounded Thread-Pool Batch Under One Deadline](snippets/concurrency-lifecycle/collect-a-bounded-thread-pool-batch-under-one-deadline.md) | concurrency-lifecycle | pattern | concurrency-control, lifecycle-management, resource-management |
 | [Collect Thread-Pool Results and Errors as Futures Complete](snippets/concurrency-lifecycle/collect-thread-pool-results-and-errors-as-futures-complete.md) | concurrency-lifecycle | recipe | concurrency-control, resource-management |
 | [Drain Bounded Deferred Writes Outside the Queue Lock](snippets/concurrency-lifecycle/drain-bounded-deferred-writes-outside-the-queue-lock.md) | concurrency-lifecycle | pattern | concurrency-control, networking, resource-management |
@@ -249,6 +252,7 @@ not edit it by hand.
 | [Accumulate and Merge Finite Mean and Variance Statistics Under a Count Limit](snippets/machine-learning-statistics/accumulate-and-merge-finite-mean-and-variance-statistics-under-a-count-limit.md) | machine-learning-statistics | algorithm | data-transformation, performance-optimization, validation |
 | [Adjust Bounded Exact P-Values with Holm's Step-Down Method](snippets/machine-learning-statistics/adjust-bounded-exact-p-values-with-holms-step-down-method.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Assemble Out-of-Fold Scores from Explicit Validation Splits](snippets/machine-learning-statistics/assemble-out-of-fold-scores-from-explicit-validation-splits.md) | machine-learning-statistics | algorithm | data-transformation, validation |
+| [Build an Exact Bounded Multiclass Confusion Matrix](snippets/machine-learning-statistics/build-an-exact-bounded-multiclass-confusion-matrix.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Calculate a Symmetrically Trimmed Mean](snippets/machine-learning-statistics/calculate-a-symmetrically-trimmed-mean.md) | machine-learning-statistics | recipe | data-transformation, performance-optimization |
 | [Compute a Bounded Numerically Stable Log-Sum-Exp for Finite Floats](snippets/machine-learning-statistics/compute-a-bounded-numerically-stable-log-sum-exp-for-finite-floats.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Compute a Row-Wise Maximum of Rolling Minima](snippets/machine-learning-statistics/compute-a-row-wise-maximum-of-rolling-minima.md) | machine-learning-statistics | algorithm | data-transformation, validation |
@@ -396,6 +400,7 @@ not edit it by hand.
 | [Count Values in Fixed Upper-Bound Bins](snippets/observability-operations/count-values-in-fixed-upper-bound-bins.md) | observability-operations | algorithm | data-transformation, observability |
 | [Format Log Records as JSON with Explicit Extra Fields](snippets/observability-operations/format-log-records-as-json-with-explicit-extra-fields.md) | observability-operations | recipe | observability, serialization |
 | [Group Metric Samples by Their Exact Label-Key Shape](snippets/observability-operations/group-metric-samples-by-their-exact-label-key-shape.md) | observability-operations | algorithm | data-transformation, observability, validation |
+| [Locate an Exact Quantile Rank in Bounded Fixed-Bucket Counts](snippets/observability-operations/locate-an-exact-quantile-rank-in-bounded-fixed-bucket-counts.md) | observability-operations | algorithm | data-transformation, observability, validation |
 | [Measure and Freeze Elapsed Time in a Context](snippets/observability-operations/measure-and-freeze-elapsed-time-in-a-context.md) | observability-operations | idiom | observability, performance-optimization |
 | [Measure Cache Hit Ratios from Monotonic Counter Snapshots](snippets/observability-operations/measure-cache-hit-ratios-from-monotonic-counter-snapshots.md) | observability-operations | algorithm | observability, validation |
 | [Process Log Records in a Background Thread with QueueListener](snippets/observability-operations/process-log-records-in-a-background-thread-with-queuelistener.md) | observability-operations | recipe | concurrency-control, lifecycle-management, observability |
