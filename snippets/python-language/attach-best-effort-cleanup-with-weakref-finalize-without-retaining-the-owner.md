@@ -32,10 +32,12 @@ already has a preferred explicit cleanup path. The cleanup callback must be
 short, synchronous, safe to call without the owner, and able to identify the
 external resource from the immutable identifier alone.
 
-This version deliberately sets `finalizer.atexit` to `False`. It does not run
-cleanup during interpreter shutdown, when module globals, event loops, threads,
-or external adapters may already be unavailable. Use a durable external
-reconciler when abandoned resources must be recovered after process exit.
+This version deliberately sets `finalizer.atexit` to `False`, opting a
+still-live finalizer out of `weakref`'s automatic exit sweep. It is not a hard
+shutdown boundary: an earlier `atexit` handler or ordinary collection during
+the exit phase can still release the owner and trigger cleanup. The callback
+must remain safe for that possibility. Use a durable external reconciler when
+abandoned resources must be recovered after process exit.
 
 ## Implementation
 
@@ -136,9 +138,10 @@ remain reachable until cleanup.
 release. An exception from explicit `close()` propagates after the finalizer is
 already dead; an exception from collection-triggered cleanup cannot be returned
 to application code. There is no retry state, thread or task affinity, async
-awaiting, timeout, cancellation handling, or interpreter-exit cleanup. Use an
-explicit context manager, `try`/`finally`, or an async resource stack for
-critical resources and operations whose cleanup outcome must be observed.
+awaiting, timeout, cancellation handling, or guaranteed interpreter-exit
+recovery. Use an explicit context manager, `try`/`finally`, or an async
+resource stack for critical resources and operations whose cleanup outcome
+must be observed.
 
 ## Related Snippets
 

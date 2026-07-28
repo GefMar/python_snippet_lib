@@ -212,11 +212,11 @@ assert (
 
 ## Trade-offs and Limitations
 
-The scan is linear in the bounded input and allocates one bytes slice and two
-strings per accepted field before freezing the result. The total limit checks
-bytes that the caller has already materialized; it is not a streaming read
-budget. Line length excludes its CRLF delimiter, and equality with every limit
-is accepted.
+The scan is linear in the bounded input and allocates temporary byte slices
+and two decoded strings per accepted field before freezing the result. The
+total limit checks bytes that the caller has already materialized; it is not a
+streaming read budget. Line length excludes its CRLF delimiter, and equality
+with every limit is accepted.
 
 This is a deliberately closed subset of HTTP/1 field syntax. It rejects HTAB,
 obsolete text, controls, DEL, non-ASCII bytes, obsolete line folding, and
