@@ -19,15 +19,15 @@ not edit it by hand.
 | --- | --- | ---: |
 | [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 21 |
 | [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 30 |
-| [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 30 |
-| [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 24 |
+| [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 31 |
+| [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 25 |
 | [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 19 |
 | [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 50 |
 | [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 17 |
-| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 26 |
-| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 46 |
+| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 27 |
+| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 47 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 16 |
-| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 15 |
+| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 16 |
 | [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 17 |
 
 ### Snippets
@@ -111,6 +111,7 @@ not edit it by hand.
 | [Run Bounded Weighted Jobs Under Shared Process Capacity](snippets/concurrency-lifecycle/run-bounded-weighted-jobs-under-shared-process-capacity.md) | concurrency-lifecycle | pattern | concurrency-control, lifecycle-management, resource-management |
 | [Run One Async Operation with a Bounded Resource Stack](snippets/concurrency-lifecycle/run-one-async-operation-with-a-bounded-resource-stack.md) | concurrency-lifecycle | pattern | concurrency-control, lifecycle-management, resource-management |
 | [Select a Reusable Lease for an Explicit Remaining Horizon](snippets/concurrency-lifecycle/select-a-reusable-lease-for-an-explicit-remaining-horizon.md) | concurrency-lifecycle | algorithm | concurrency-control, lifecycle-management, resource-management, validation |
+| [Select an Immediate Predecessor from a Bounded Contender Snapshot](snippets/concurrency-lifecycle/select-an-immediate-predecessor-from-a-bounded-contender-snapshot.md) | concurrency-lifecycle | algorithm | concurrency-control, lifecycle-management, validation |
 | [Stop a Polling Worker Cooperatively with an Event](snippets/concurrency-lifecycle/stop-a-polling-worker-cooperatively-with-an-event.md) | concurrency-lifecycle | pattern | concurrency-control, resource-management |
 | [Stream Bounded stdout and stderr Lines from a POSIX Process](snippets/concurrency-lifecycle/stream-bounded-stdout-and-stderr-lines-from-a-posix-process.md) | concurrency-lifecycle | integration | automation, concurrency-control, lifecycle-management, resource-management |
 | [Submit a Callable with a Snapshot of the Current Context](snippets/concurrency-lifecycle/submit-a-callable-with-a-snapshot-of-the-current-context.md) | concurrency-lifecycle | recipe | concurrency-control, interoperability, observability |
@@ -118,6 +119,7 @@ not edit it by hand.
 | [Adjust a Bounded Batch Size from Processing Time](snippets/reliability-resilience/adjust-a-bounded-batch-size-from-processing-time.md) | reliability-resilience | algorithm | performance-optimization, resource-management |
 | [Assign Stable Schedule Slots with a Digest](snippets/reliability-resilience/assign-stable-schedule-slots-with-a-digest.md) | reliability-resilience | algorithm | performance-optimization, resource-management |
 | [Cache Values with a Monotonic TTL and Early Jitter](snippets/reliability-resilience/cache-values-with-a-monotonic-ttl-and-early-jitter.md) | reliability-resilience | recipe | caching, resource-management |
+| [Classify an Owner-Scoped Heartbeat Lease Snapshot](snippets/reliability-resilience/classify-an-owner-scoped-heartbeat-lease-snapshot.md) | reliability-resilience | algorithm | concurrency-control, lifecycle-management, retry-recovery, validation |
 | [Commit a Source Checkpoint Only After the Sink Accepts a Batch](snippets/reliability-resilience/commit-a-source-checkpoint-only-after-the-sink-accepts-a-batch.md) | reliability-resilience | pattern | data-transformation, retry-recovery |
 | [Compensate Completed Workflow Steps in Reverse Order](snippets/reliability-resilience/compensate-completed-workflow-steps-in-reverse-order.md) | reliability-resilience | pattern | automation, resource-management, retry-recovery |
 | [Decide Whether a Bounded Work Snapshot Permits a New Attempt](snippets/reliability-resilience/decide-whether-a-bounded-work-snapshot-permits-a-new-attempt.md) | reliability-resilience | algorithm | lifecycle-management, retry-recovery, validation |
@@ -239,6 +241,7 @@ not edit it by hand.
 | [Plan an Incremental Cumulative Snapshot from Partition Dates](snippets/storage-databases/plan-an-incremental-cumulative-snapshot-from-partition-dates.md) | storage-databases | algorithm | automation, data-transformation, validation |
 | [Plan Bounded Parameterized Backfill Statements by Date Window](snippets/storage-databases/plan-bounded-parameterized-backfill-statements-by-date-window.md) | storage-databases | pattern | automation, persistence, validation |
 | [Plan Bounded Table Initialization and Ordered Row Batches](snippets/storage-databases/plan-bounded-table-initialization-and-ordered-row-batches.md) | storage-databases | pattern | data-transformation, persistence, validation |
+| [Plan Verified Staged Partition Publication](snippets/storage-databases/plan-verified-staged-partition-publication.md) | storage-databases | algorithm | automation, persistence, validation |
 | [Project a Dataclass into a Validated Insert Row](snippets/storage-databases/project-a-dataclass-into-a-validated-insert-row.md) | storage-databases | recipe | data-transformation, persistence, validation |
 | [Read the Last Bounded Binary Lines with a Read-Only mmap](snippets/storage-databases/read-the-last-bounded-binary-lines-with-a-read-only-mmap.md) | storage-databases | recipe | parsing, performance-optimization, resource-management |
 | [Replace a Complete Bounded SQLite Cache Snapshot with a Generation](snippets/storage-databases/replace-a-complete-bounded-sqlite-cache-snapshot-with-a-generation.md) | storage-databases | pattern | caching, persistence, retry-recovery |
@@ -293,6 +296,7 @@ not edit it by hand.
 | [Reject Unknown Options with Conservative Typo Suggestions](snippets/configuration-serialization/reject-unknown-options-with-conservative-typo-suggestions.md) | configuration-serialization | recipe | configuration, validation |
 | [Render a Stable Unified Diff for Nested JSON Values](snippets/configuration-serialization/render-a-stable-unified-diff-for-nested-json-values.md) | configuration-serialization | recipe | serialization, testing, validation |
 | [Render Fixed Date Placeholders from an Explicit Anchor](snippets/configuration-serialization/render-fixed-date-placeholders-from-an-explicit-anchor.md) | configuration-serialization | recipe | automation, configuration, validation |
+| [Resolve a Bounded Configuration Fragment Graph](snippets/configuration-serialization/resolve-a-bounded-configuration-fragment-graph.md) | configuration-serialization | algorithm | configuration, data-transformation, validation |
 | [Resolve an Absolute or Percentage Limit](snippets/configuration-serialization/resolve-an-absolute-or-percentage-limit.md) | configuration-serialization | recipe | configuration, parsing, validation |
 | [Resolve Bounded Configuration Through Dependent Adapters](snippets/configuration-serialization/resolve-bounded-configuration-through-dependent-adapters.md) | configuration-serialization | pattern | configuration, data-transformation, validation |
 | [Resolve Declared Input Paths from an Explicit Execution Mode](snippets/configuration-serialization/resolve-declared-input-paths-from-an-explicit-execution-mode.md) | configuration-serialization | pattern | configuration, data-transformation, validation |
@@ -317,6 +321,7 @@ not edit it by hand.
 | [Attach a Validated Internal Size Breakdown to One Artifact Report](snippets/testing-tooling/attach-a-validated-internal-size-breakdown-to-one-artifact-report.md) | testing-tooling | recipe | data-transformation, resource-management, testing, validation |
 | [Audit a Bounded Directive Tree with Isolated Inherited Context](snippets/testing-tooling/audit-a-bounded-directive-tree-with-isolated-inherited-context.md) | testing-tooling | pattern | configuration, testing, validation |
 | [Build a Bounded Release DAG Around a Manual Barrier](snippets/testing-tooling/build-a-bounded-release-dag-around-a-manual-barrier.md) | testing-tooling | pattern | automation, testing, validation |
+| [Build a Collision-Audited Artifact Copy Plan](snippets/testing-tooling/build-a-collision-audited-artifact-copy-plan.md) | testing-tooling | algorithm | automation, resource-management, testing, validation |
 | [Compare a Bounded Text Capture Against a Golden Fixture](snippets/testing-tooling/compare-a-bounded-text-capture-against-a-golden-fixture.md) | testing-tooling | testing-technique | testing, validation |
 | [Extract Bounded Native-Test Failure Highlights](snippets/testing-tooling/extract-bounded-native-test-failure-highlights.md) | testing-tooling | recipe | observability, parsing, testing |
 | [Generate a Seeded Metric with Bounded Flapping Runs](snippets/testing-tooling/generate-a-seeded-metric-with-bounded-flapping-runs.md) | testing-tooling | testing-technique | observability, testing |
