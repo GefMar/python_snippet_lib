@@ -18,17 +18,17 @@ not edit it by hand.
 | Category | Scope | Snippets |
 | --- | --- | ---: |
 | [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 23 |
-| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 32 |
+| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 33 |
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 31 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 28 |
-| [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 23 |
+| [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 24 |
 | [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 51 |
-| [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 18 |
+| [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 19 |
 | [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 27 |
-| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 51 |
+| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 52 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 19 |
 | [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 16 |
-| [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 17 |
+| [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 18 |
 
 ### Snippets
 
@@ -79,6 +79,7 @@ not edit it by hand.
 | [Match Strict Mutual Nearest Neighbors with a Comparison Budget](snippets/algorithms-data-structures/match-strict-mutual-nearest-neighbors-with-a-comparison-budget.md) | algorithms-data-structures | algorithm | data-transformation, validation |
 | [Model Newest-Wins Lookups with Bounded Immutable LSM Segments](snippets/algorithms-data-structures/model-newest-wins-lookups-with-bounded-immutable-lsm-segments.md) | algorithms-data-structures | pattern | data-transformation, resource-management |
 | [Partition a Bounded Directed Graph into Deterministic Strongly Connected Components](snippets/algorithms-data-structures/partition-a-bounded-directed-graph-into-deterministic-strongly-connected-components.md) | algorithms-data-structures | algorithm | data-transformation, validation |
+| [Partition a Bounded Undirected Graph into Deterministic Components with Union-Find](snippets/algorithms-data-structures/partition-a-bounded-undirected-graph-into-deterministic-components-with-union-find.md) | algorithms-data-structures | algorithm | data-transformation, validation |
 | [Partition Tagged Items into Minimum Stable Conflict-Free Groups](snippets/algorithms-data-structures/partition-tagged-items-into-minimum-stable-conflict-free-groups.md) | algorithms-data-structures | algorithm | data-transformation, validation |
 | [Rank Bounded Records with Stable Ties and Neighbor Windows](snippets/algorithms-data-structures/rank-bounded-records-with-stable-ties-and-neighbor-windows.md) | algorithms-data-structures | algorithm | data-transformation, validation |
 | [Rank Hierarchy Paths with Bounded Weighted Edit Distance](snippets/algorithms-data-structures/rank-hierarchy-paths-with-bounded-weighted-edit-distance.md) | algorithms-data-structures | algorithm | data-transformation, validation |
@@ -154,6 +155,7 @@ not edit it by hand.
 | [Choose Buffered or Streaming Multipart Encoding from Bounded Parts](snippets/networking-protocols/choose-buffered-or-streaming-multipart-encoding-from-bounded-parts.md) | networking-protocols | integration | networking, resource-management, serialization, validation |
 | [Choose Grouped Endpoints with Explicit Random Fairness](snippets/networking-protocols/choose-grouped-endpoints-with-explicit-random-fairness.md) | networking-protocols | algorithm | networking, validation |
 | [Classify a Pre-Resolved IP Against a Bounded CIDR-Zone Snapshot](snippets/networking-protocols/classify-a-pre-resolved-ip-against-a-bounded-cidr-zone-snapshot.md) | networking-protocols | algorithm | caching, networking, validation |
+| [Collapse a Bounded Same-Family CIDR Set Without Changing Its Address Union](snippets/networking-protocols/collapse-a-bounded-same-family-cidr-set-without-changing-its-address-union.md) | networking-protocols | algorithm | data-transformation, networking, validation |
 | [Collect Matching Cursor Pages with an Explicit Page Budget](snippets/networking-protocols/collect-matching-cursor-pages-with-an-explicit-page-budget.md) | networking-protocols | pattern | networking, resource-management |
 | [Dispatch a Bounded RPC Envelope Through a Closed Path-to-Codec Registry](snippets/networking-protocols/dispatch-a-bounded-rpc-envelope-through-a-closed-path-to-codec-registry.md) | networking-protocols | integration | networking, serialization, validation |
 | [Encode a Bounded HTTP/1.1 Chunked Body for Protocol Tests](snippets/networking-protocols/encode-a-bounded-http-1-1-chunked-body-for-protocol-tests.md) | networking-protocols | recipe | networking, serialization, testing, validation |
@@ -227,6 +229,7 @@ not edit it by hand.
 | [Calculate a Symmetrically Trimmed Mean](snippets/machine-learning-statistics/calculate-a-symmetrically-trimmed-mean.md) | machine-learning-statistics | recipe | data-transformation, performance-optimization |
 | [Compute a Row-Wise Maximum of Rolling Minima](snippets/machine-learning-statistics/compute-a-row-wise-maximum-of-rolling-minima.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Compute a Wilson Score Interval for a Binomial Proportion](snippets/machine-learning-statistics/compute-a-wilson-score-interval-for-a-binomial-proportion.md) | machine-learning-statistics | algorithm | data-transformation, validation |
+| [Compute Exact Full-Window Trailing Medians for Bounded Integers](snippets/machine-learning-statistics/compute-exact-full-window-trailing-medians-for-bounded-integers.md) | machine-learning-statistics | algorithm | data-transformation, performance-optimization, validation |
 | [Create Past-Only pandas Lag and Rolling-Mean Columns](snippets/machine-learning-statistics/create-past-only-pandas-lag-and-rolling-mean-columns.md) | machine-learning-statistics | integration | data-transformation, validation |
 | [Detect a Recent Drop Against a Disjoint pandas Baseline Window](snippets/machine-learning-statistics/detect-a-recent-drop-against-a-disjoint-pandas-baseline-window.md) | machine-learning-statistics | integration | observability, validation |
 | [Encode Categories with Out-of-Fold Smoothed Target Means](snippets/machine-learning-statistics/encode-categories-with-out-of-fold-smoothed-target-means.md) | machine-learning-statistics | algorithm | data-transformation, validation |
@@ -318,6 +321,7 @@ not edit it by hand.
 | [Resolve Bounded Configuration Through Dependent Adapters](snippets/configuration-serialization/resolve-bounded-configuration-through-dependent-adapters.md) | configuration-serialization | pattern | configuration, data-transformation, validation |
 | [Resolve Declared Input Paths from an Explicit Execution Mode](snippets/configuration-serialization/resolve-declared-input-paths-from-an-explicit-execution-mode.md) | configuration-serialization | pattern | configuration, data-transformation, validation |
 | [Substitute Typed Values into a JSON-Like Template](snippets/configuration-serialization/substitute-typed-values-into-a-json-like-template.md) | configuration-serialization | recipe | configuration, serialization, validation |
+| [Tokenize a Bounded POSIX-Style Argument String Without Expansion](snippets/configuration-serialization/tokenize-a-bounded-posix-style-argument-string-without-expansion.md) | configuration-serialization | recipe | configuration, parsing, validation |
 | [Audit Bounded Relative POSIX Archive Member Names Under a Closed Policy](snippets/security-privacy/audit-bounded-relative-posix-archive-member-names-under-a-closed-policy.md) | security-privacy | recipe | parsing, resource-management, security, validation |
 | [Audit Parsed Compose Services for Digest-Pinned Images](snippets/security-privacy/audit-parsed-compose-services-for-digest-pinned-images.md) | security-privacy | recipe | configuration, security, validation |
 | [Audit Symlinks in a Bounded Directory Tree](snippets/security-privacy/audit-symlinks-in-a-bounded-directory-tree.md) | security-privacy | recipe | resource-management, security, validation |
@@ -368,6 +372,7 @@ not edit it by hand.
 | [Read a Bounded Log Delta Across One Rename-Based Rotation](snippets/observability-operations/read-a-bounded-log-delta-across-one-rename-based-rotation.md) | observability-operations | recipe | observability, resource-management, retry-recovery |
 | [Report Partition Offsets Behind a Fixed Checkpoint](snippets/observability-operations/report-partition-offsets-behind-a-fixed-checkpoint.md) | observability-operations | algorithm | observability, validation |
 | [Resolve the Latest Status with an Explicit Mapping](snippets/observability-operations/resolve-the-latest-status-with-an-explicit-mapping.md) | observability-operations | pattern | interoperability, observability, validation |
+| [Route Metric Label Values Through a Stable Overflow Bucket Under a Cardinality Cap](snippets/observability-operations/route-metric-label-values-through-a-stable-overflow-bucket-under-a-cardinality-cap.md) | observability-operations | pattern | observability, resource-management, validation |
 | [Scope Structured Log Fields with Context Variables](snippets/observability-operations/scope-structured-log-fields-with-context-variables.md) | observability-operations | pattern | concurrency-control, observability |
 | [Share Bounded Counters and Duration Histograms Across Spawned Processes](snippets/observability-operations/share-bounded-counters-and-duration-histograms-across-spawned-processes.md) | observability-operations | pattern | concurrency-control, observability, resource-management |
 <!-- catalog:root:end -->
