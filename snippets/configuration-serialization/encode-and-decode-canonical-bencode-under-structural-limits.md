@@ -90,13 +90,13 @@ class _BencodeParser:
             raise ValueError("byte string length is empty")
         if length_token == b"0":
             length = 0
-        elif (
-            len(length_token) > 5
-            or not 49 <= length_token[0] <= 57
-            or any(byte < 48 or byte > 57 for byte in length_token[1:])
-        ):
-            raise ValueError("byte string length is not canonical")
         else:
+            if not 49 <= length_token[0] <= 57 or any(
+                byte < 48 or byte > 57 for byte in length_token[1:]
+            ):
+                raise ValueError("byte string length is not canonical")
+            if len(length_token) > 5:
+                raise ValueError("byte string exceeds the supported size")
             length = int(length_token)
         if length > _MAX_BYTE_STRING_BYTES:
             raise ValueError("byte string exceeds the supported size")
@@ -121,11 +121,12 @@ class _BencodeParser:
             digits = payload[1:] if payload.startswith(b"-") else payload
             if (
                 not digits
-                or len(digits) > 19
                 or not 49 <= digits[0] <= 57
                 or any(byte < 48 or byte > 57 for byte in digits[1:])
             ):
                 raise ValueError("integer payload is not canonical")
+            if len(digits) > 19:
+                raise ValueError("integer is outside the signed 64-bit range")
             value = int(payload)
         if not _MIN_INT64 <= value <= _MAX_INT64:
             raise ValueError("integer is outside the signed 64-bit range")
