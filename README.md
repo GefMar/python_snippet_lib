@@ -21,13 +21,13 @@ not edit it by hand.
 | [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 112 |
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 34 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 33 |
-| [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 29 |
+| [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 30 |
 | [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 62 |
 | [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 43 |
-| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 35 |
+| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 36 |
 | [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 70 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 24 |
-| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 27 |
+| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 30 |
 | [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 22 |
 
 ### Snippets
@@ -265,6 +265,7 @@ not edit it by hand.
 | [Release a Pooled Response Connection Only After Clean EOF](snippets/networking-protocols/release-a-pooled-response-connection-only-after-clean-eof.md) | networking-protocols | pattern | lifecycle-management, networking, resource-management, validation |
 | [Resume a Bounded HTTP Byte Stream with Validated Range Responses](snippets/networking-protocols/resume-a-bounded-http-byte-stream-with-validated-range-responses.md) | networking-protocols | integration | networking, resource-management, retry-recovery, validation |
 | [Run Ordered HTTP Request and Response Layers Around One Handler](snippets/networking-protocols/run-ordered-http-request-and-response-layers-around-one-handler.md) | networking-protocols | pattern | data-transformation, networking, validation |
+| [Subtract a Bounded Disjoint CIDR Exclusion Set from One Parent Network](snippets/networking-protocols/subtract-a-bounded-disjoint-cidr-exclusion-set-from-one-parent-network.md) | networking-protocols | algorithm | data-transformation, networking, validation |
 | [Unwrap One uint32 Serial Around an Explicit Absolute Reference](snippets/networking-protocols/unwrap-one-uint32-serial-around-an-explicit-absolute-reference.md) | networking-protocols | algorithm | interoperability, networking, validation |
 | [Yield Bounded SSE Frames with Serialized Comment Keepalives](snippets/networking-protocols/yield-bounded-sse-frames-with-serialized-comment-keepalives.md) | networking-protocols | integration | concurrency-control, networking, resource-management, serialization |
 | [Aggregate Consecutive Values into Weighted Runs](snippets/data-processing/aggregate-consecutive-values-into-weighted-runs.md) | data-processing | algorithm | data-transformation |
@@ -382,6 +383,7 @@ not edit it by hand.
 | [Compile a Bounded T-String into SQLite Qmark SQL and Parameters](snippets/storage-databases/compile-a-bounded-t-string-into-sqlite-qmark-sql-and-parameters.md) | storage-databases | pattern | persistence, security, validation |
 | [Decide Whether to Restore a Versioned Snapshot](snippets/storage-databases/decide-whether-to-restore-a-versioned-snapshot.md) | storage-databases | algorithm | configuration, data-transformation, validation |
 | [Fingerprint a Bounded Flat File Set with Framed SHA-256](snippets/storage-databases/fingerprint-a-bounded-flat-file-set-with-framed-sha-256.md) | storage-databases | recipe | caching, persistence, validation |
+| [Group Bounded SQLite Console Lines into Lexically Complete Batches Without Execution](snippets/storage-databases/group-bounded-sqlite-console-lines-into-lexically-complete-batches-without-execution.md) | storage-databases | recipe | automation, parsing, validation |
 | [Map a Namespaced POSIX Path Beneath a Logical Local Root](snippets/storage-databases/map-a-namespaced-posix-path-beneath-a-logical-local-root.md) | storage-databases | recipe | data-transformation, persistence, validation |
 | [Page Bounded SQLite Rows with a Composite Keyset Cursor](snippets/storage-databases/page-bounded-sqlite-rows-with-a-composite-keyset-cursor.md) | storage-databases | pattern | performance-optimization, persistence, validation |
 | [Plan a Bounded Named POSIX Layout Under Explicit Roots](snippets/storage-databases/plan-a-bounded-named-posix-layout-under-explicit-roots.md) | storage-databases | algorithm | data-transformation, persistence, validation |
@@ -505,8 +507,10 @@ not edit it by hand.
 | [Attach a Validated Internal Size Breakdown to One Artifact Report](snippets/testing-tooling/attach-a-validated-internal-size-breakdown-to-one-artifact-report.md) | testing-tooling | recipe | data-transformation, resource-management, testing, validation |
 | [Audit a Bounded Directive Tree with Isolated Inherited Context](snippets/testing-tooling/audit-a-bounded-directive-tree-with-isolated-inherited-context.md) | testing-tooling | pattern | configuration, testing, validation |
 | [Audit a Bounded Test Matrix for Complete Pairwise Coverage](snippets/testing-tooling/audit-a-bounded-test-matrix-for-complete-pairwise-coverage.md) | testing-tooling | testing-technique | testing, validation |
+| [Audit Bounded Python Source for Tab-Width-Independent Indentation](snippets/testing-tooling/audit-bounded-python-source-for-tab-width-independent-indentation.md) | testing-tooling | testing-technique | parsing, testing, validation |
 | [Build a Bounded Release DAG Around a Manual Barrier](snippets/testing-tooling/build-a-bounded-release-dag-around-a-manual-barrier.md) | testing-tooling | pattern | automation, testing, validation |
 | [Build a Collision-Audited Artifact Copy Plan](snippets/testing-tooling/build-a-collision-audited-artifact-copy-plan.md) | testing-tooling | algorithm | automation, resource-management, testing, validation |
+| [Classify Bounded Interactive Python Source as Complete, Incomplete, or Invalid](snippets/testing-tooling/classify-bounded-interactive-python-source-as-complete-incomplete-or-invalid.md) | testing-tooling | testing-technique | parsing, testing, validation |
 | [Compare a Bounded Text Capture Against a Golden Fixture](snippets/testing-tooling/compare-a-bounded-text-capture-against-a-golden-fixture.md) | testing-tooling | testing-technique | testing, validation |
 | [Compare Bounded Python Expressions Structurally without Execution](snippets/testing-tooling/compare-bounded-python-expressions-structurally-without-execution.md) | testing-tooling | testing-technique | parsing, testing, validation |
 | [Enumerate Every Contiguous Chunking of Bounded Bytes for Stream Tests](snippets/testing-tooling/enumerate-every-contiguous-chunking-of-bounded-bytes-for-stream-tests.md) | testing-tooling | testing-technique | testing, validation |
@@ -520,6 +524,7 @@ not edit it by hand.
 | [Generate Integer Boundary Probes Around Closed Cut Points](snippets/testing-tooling/generate-integer-boundary-probes-around-closed-cut-points.md) | testing-tooling | testing-technique | testing, validation |
 | [Group Generated Text Artifacts by Exact Body for Review](snippets/testing-tooling/group-generated-text-artifacts-by-exact-body-for-review.md) | testing-tooling | testing-technique | automation, testing, validation |
 | [Index Bounded Python Scope Bindings with symtable without Execution](snippets/testing-tooling/index-bounded-python-scope-bindings-with-symtable-without-execution.md) | testing-tooling | testing-technique | parsing, testing, validation |
+| [Inspect Bounded Named Class Attributes Without Invoking Descriptors](snippets/testing-tooling/inspect-bounded-named-class-attributes-without-invoking-descriptors.md) | testing-tooling | testing-technique | automation, testing, validation |
 | [Parse a Bounded Debugger Function Listing into Canonical Source Locations](snippets/testing-tooling/parse-a-bounded-debugger-function-listing-into-canonical-source-locations.md) | testing-tooling | testing-technique | parsing, testing, validation |
 | [Parse a Bounded Space-Indented Test Outline into Leaf Paths](snippets/testing-tooling/parse-a-bounded-space-indented-test-outline-into-leaf-paths.md) | testing-tooling | algorithm | parsing, testing, validation |
 | [Render Bounded Request Snapshots into a Length-Framed Replay Payload](snippets/testing-tooling/render-bounded-request-snapshots-into-a-length-framed-replay-payload.md) | testing-tooling | recipe | networking, serialization, testing, validation |
