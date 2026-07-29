@@ -17,12 +17,12 @@ not edit it by hand.
 
 | Category | Scope | Snippets |
 | --- | --- | ---: |
-| [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 23 |
-| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 102 |
+| [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 24 |
+| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 104 |
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 33 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 33 |
-| [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 26 |
-| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 58 |
+| [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 27 |
+| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 59 |
 | [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 38 |
 | [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 30 |
 | [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 63 |
@@ -43,6 +43,7 @@ not edit it by hand.
 | [Bypass an LRU Cache with a Per-Call Predicate](snippets/python-language/bypass-an-lru-cache-with-a-per-call-predicate.md) | python-language | pattern | caching, performance-optimization |
 | [Cache One Zero-Argument Method Result per Weakly Referenced Instance](snippets/python-language/cache-one-zero-argument-method-result-per-weakly-referenced-instance.md) | python-language | pattern | caching, resource-management |
 | [Collect Decorated Methods in Class Definition Order](snippets/python-language/collect-decorated-methods-in-class-definition-order.md) | python-language | pattern | automation, configuration |
+| [Compute C3 Linearizations for a Bounded Indexed Class Hierarchy](snippets/python-language/compute-c3-linearizations-for-a-bounded-indexed-class-hierarchy.md) | python-language | algorithm | automation, testing, validation |
 | [Dispatch Named Strategies with an Explicit Function Mapping](snippets/python-language/dispatch-named-strategies-with-an-explicit-function-mapping.md) | python-language | pattern | configuration, interoperability |
 | [Dispatch on an Exact Tuple of Argument Types](snippets/python-language/dispatch-on-an-exact-tuple-of-argument-types.md) | python-language | pattern | data-transformation, interoperability, validation |
 | [Handle Search Exhaustion with for/else](snippets/python-language/handle-search-exhaustion-with-for-else.md) | python-language | idiom | data-transformation, validation |
@@ -86,6 +87,8 @@ not edit it by hand.
 | [Compute Bounded All-Pairs Shortest Distances with Floyd-Warshall](snippets/algorithms-data-structures/compute-bounded-all-pairs-shortest-distances-with-floyd-warshall.md) | algorithms-data-structures | algorithm | data-transformation, validation |
 | [Compute Bounded Bellman-Ford Distances and Detect Reachable Negative Cycles](snippets/algorithms-data-structures/compute-bounded-bellman-ford-distances-and-detect-reachable-negative-cycles.md) | algorithms-data-structures | algorithm | data-transformation, validation |
 | [Compute Core Numbers and a Deterministic Degeneracy Order for a Bounded Undirected Graph](snippets/algorithms-data-structures/compute-core-numbers-and-a-deterministic-degeneracy-order-for-a-bounded-undirected-graph.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
+| [Compute Exact Dominator Sets in a Bounded Directed Flow Graph](snippets/algorithms-data-structures/compute-exact-dominator-sets-in-a-bounded-directed-flow-graph.md) | algorithms-data-structures | algorithm | data-transformation, testing, validation |
+| [Compute Exact Rational Reduced Row-Echelon Form and Rank for a Bounded Integer Matrix](snippets/algorithms-data-structures/compute-exact-rational-reduced-row-echelon-form-and-rank-for-a-bounded-integer-matrix.md) | algorithms-data-structures | algorithm | data-transformation, testing, validation |
 | [Compute Exact Unweighted Distance Sums for Every Vertex of a Bounded Tree](snippets/algorithms-data-structures/compute-exact-unweighted-distance-sums-for-every-vertex-of-a-bounded-tree.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Compute Full-Window Trailing Maxima with a Monotonic Index Deque](snippets/algorithms-data-structures/compute-full-window-trailing-maxima-with-a-monotonic-index-deque.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Compute the Transitive Reduction of a Bounded Directed Acyclic Graph](snippets/algorithms-data-structures/compute-the-transitive-reduction-of-a-bounded-directed-acyclic-graph.md) | algorithms-data-structures | algorithm | data-transformation, validation |
@@ -233,6 +236,7 @@ not edit it by hand.
 | [Classify a Pre-Resolved IP Against a Bounded CIDR-Zone Snapshot](snippets/networking-protocols/classify-a-pre-resolved-ip-against-a-bounded-cidr-zone-snapshot.md) | networking-protocols | algorithm | caching, networking, validation |
 | [Collapse a Bounded Same-Family CIDR Set Without Changing Its Address Union](snippets/networking-protocols/collapse-a-bounded-same-family-cidr-set-without-changing-its-address-union.md) | networking-protocols | algorithm | data-transformation, networking, validation |
 | [Collect Matching Cursor Pages with an Explicit Page Budget](snippets/networking-protocols/collect-matching-cursor-pages-with-an-explicit-page-budget.md) | networking-protocols | pattern | networking, resource-management |
+| [Decode One Bounded DNS Name with Strict Backward Compression Pointers](snippets/networking-protocols/decode-one-bounded-dns-name-with-strict-backward-compression-pointers.md) | networking-protocols | recipe | networking, parsing, validation |
 | [Dispatch a Bounded RPC Envelope Through a Closed Path-to-Codec Registry](snippets/networking-protocols/dispatch-a-bounded-rpc-envelope-through-a-closed-path-to-codec-registry.md) | networking-protocols | integration | networking, serialization, validation |
 | [Encode a Bounded HTTP/1.1 Chunked Body for Protocol Tests](snippets/networking-protocols/encode-a-bounded-http-1-1-chunked-body-for-protocol-tests.md) | networking-protocols | recipe | networking, serialization, testing, validation |
 | [Extract Bounded Field Violations from a google.rpc Status Payload](snippets/networking-protocols/extract-bounded-field-violations-from-a-google-rpc-status-payload.md) | networking-protocols | integration | networking, parsing, validation |
@@ -295,6 +299,7 @@ not edit it by hand.
 | [Project Nested Records with Explicit Field Paths](snippets/data-processing/project-nested-records-with-explicit-field-paths.md) | data-processing | recipe | data-transformation, validation |
 | [Read Bounded CSV Text into pandas Under an Explicit Schema](snippets/data-processing/read-bounded-csv-text-into-pandas-under-an-explicit-schema.md) | data-processing | integration | data-transformation, parsing, validation |
 | [Reconcile a Bounded Partial Record Under Explicit Field Policies](snippets/data-processing/reconcile-a-bounded-partial-record-under-explicit-field-policies.md) | data-processing | pattern | concurrency-control, data-transformation, validation |
+| [Reorder Bounded Out-of-Order Timestamped Records Under a Declared Lateness Bound](snippets/data-processing/reorder-bounded-out-of-order-timestamped-records-under-a-declared-lateness-bound.md) | data-processing | pattern | data-transformation, resource-management, validation |
 | [Reshape Repeated pandas Column Families with Wide-to-Long](snippets/data-processing/reshape-repeated-pandas-column-families-with-wide-to-long.md) | data-processing | integration | data-transformation, interoperability, validation |
 | [Route Estimated Work by Ordered Source and Size Rules](snippets/data-processing/route-estimated-work-by-ordered-source-and-size-rules.md) | data-processing | recipe | data-transformation, resource-management, validation |
 | [Route Items by Ordered Text Prefixes](snippets/data-processing/route-items-by-ordered-text-prefixes.md) | data-processing | recipe | data-transformation, validation |
