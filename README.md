@@ -22,13 +22,13 @@ not edit it by hand.
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 33 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 32 |
 | [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 26 |
-| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 55 |
-| [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 30 |
+| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 56 |
+| [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 31 |
 | [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 30 |
-| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 59 |
+| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 60 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 20 |
-| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 18 |
-| [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 21 |
+| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 19 |
+| [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 22 |
 
 ### Snippets
 
@@ -257,6 +257,7 @@ not edit it by hand.
 | [Sample a Weighted Stream with a Fixed-Size Reservoir](snippets/data-processing/sample-a-weighted-stream-with-a-fixed-size-reservoir.md) | data-processing | algorithm | data-transformation, performance-optimization, resource-management |
 | [Sample Stream Items Independently with a Fixed Probability](snippets/data-processing/sample-stream-items-independently-with-a-fixed-probability.md) | data-processing | algorithm | data-transformation |
 | [Select One Record per Key with an Explicit Ranking Rule](snippets/data-processing/select-one-record-per-key-with-an-explicit-ranking-rule.md) | data-processing | algorithm | data-transformation, validation |
+| [Shift an Exact Date by Whole Calendar Months with Explicit Day Overflow](snippets/data-processing/shift-an-exact-date-by-whole-calendar-months-with-explicit-day-overflow.md) | data-processing | algorithm | data-transformation, validation |
 | [Split Quoted and Bracketed Log Fields](snippets/data-processing/split-quoted-and-bracketed-log-fields.md) | data-processing | algorithm | data-transformation, parsing |
 | [Transpose Bounded Ragged Exact-String Rows with None for Missing Cells](snippets/data-processing/transpose-bounded-ragged-exact-string-rows-with-none-for-missing-cells.md) | data-processing | recipe | data-transformation, validation |
 | [Validate and Expand a Bounded Image Variant Specification](snippets/data-processing/validate-and-expand-a-bounded-image-variant-specification.md) | data-processing | algorithm | data-transformation, resource-management, validation |
@@ -278,6 +279,7 @@ not edit it by hand.
 | [Compute Exact Jaccard Similarity for Bounded Unique Text-Feature Sets](snippets/machine-learning-statistics/compute-exact-jaccard-similarity-for-bounded-unique-text-feature-sets.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Compute Exact Squared Pearson Correlation with Direction](snippets/machine-learning-statistics/compute-exact-squared-pearson-correlation-with-direction.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Compute Exact Unweighted Cohen's Kappa from a Confusion Matrix](snippets/machine-learning-statistics/compute-exact-unweighted-cohens-kappa-from-a-confusion-matrix.md) | machine-learning-statistics | algorithm | data-transformation, validation |
+| [Compute the Exact Gini Coefficient of Bounded Non-Negative Integers](snippets/machine-learning-statistics/compute-the-exact-gini-coefficient-of-bounded-non-negative-integers.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Create Past-Only pandas Lag and Rolling-Mean Columns](snippets/machine-learning-statistics/create-past-only-pandas-lag-and-rolling-mean-columns.md) | machine-learning-statistics | integration | data-transformation, validation |
 | [Detect a Recent Drop Against a Disjoint pandas Baseline Window](snippets/machine-learning-statistics/detect-a-recent-drop-against-a-disjoint-pandas-baseline-window.md) | machine-learning-statistics | integration | observability, validation |
 | [Encode Categories with Out-of-Fold Smoothed Target Means](snippets/machine-learning-statistics/encode-categories-with-out-of-fold-smoothed-target-means.md) | machine-learning-statistics | algorithm | data-transformation, validation |
@@ -372,6 +374,7 @@ not edit it by hand.
 | [Prune Empty Values from JSON-Like Data](snippets/configuration-serialization/prune-empty-values-from-json-like-data.md) | configuration-serialization | recipe | data-transformation, serialization |
 | [Register and Unregister a Bounded Single-Byte Charmap Codec](snippets/configuration-serialization/register-and-unregister-a-bounded-single-byte-charmap-codec.md) | configuration-serialization | integration | interoperability, serialization |
 | [Reject Unknown Options with Conservative Typo Suggestions](snippets/configuration-serialization/reject-unknown-options-with-conservative-typo-suggestions.md) | configuration-serialization | recipe | configuration, validation |
+| [Render a Finite Decimal in Canonical Plain Notation](snippets/configuration-serialization/render-a-finite-decimal-in-canonical-plain-notation.md) | configuration-serialization | recipe | interoperability, serialization, validation |
 | [Render a Stable Unified Diff for Nested JSON Values](snippets/configuration-serialization/render-a-stable-unified-diff-for-nested-json-values.md) | configuration-serialization | recipe | serialization, testing, validation |
 | [Render Fixed Date Placeholders from an Explicit Anchor](snippets/configuration-serialization/render-fixed-date-placeholders-from-an-explicit-anchor.md) | configuration-serialization | recipe | automation, configuration, validation |
 | [Resolve a Bounded Configuration Fragment Graph](snippets/configuration-serialization/resolve-a-bounded-configuration-fragment-graph.md) | configuration-serialization | algorithm | configuration, data-transformation, validation |
@@ -410,6 +413,7 @@ not edit it by hand.
 | [Compare a Bounded Text Capture Against a Golden Fixture](snippets/testing-tooling/compare-a-bounded-text-capture-against-a-golden-fixture.md) | testing-tooling | testing-technique | testing, validation |
 | [Extract Bounded Native-Test Failure Highlights](snippets/testing-tooling/extract-bounded-native-test-failure-highlights.md) | testing-tooling | recipe | observability, parsing, testing |
 | [Generate a Seeded Metric with Bounded Flapping Runs](snippets/testing-tooling/generate-a-seeded-metric-with-bounded-flapping-runs.md) | testing-tooling | testing-technique | observability, testing |
+| [Generate Integer Boundary Probes Around Closed Cut Points](snippets/testing-tooling/generate-integer-boundary-probes-around-closed-cut-points.md) | testing-tooling | testing-technique | testing, validation |
 | [Group Generated Text Artifacts by Exact Body for Review](snippets/testing-tooling/group-generated-text-artifacts-by-exact-body-for-review.md) | testing-tooling | testing-technique | automation, testing, validation |
 | [Parse a Bounded Debugger Function Listing into Canonical Source Locations](snippets/testing-tooling/parse-a-bounded-debugger-function-listing-into-canonical-source-locations.md) | testing-tooling | testing-technique | parsing, testing, validation |
 | [Parse a Bounded Space-Indented Test Outline into Leaf Paths](snippets/testing-tooling/parse-a-bounded-space-indented-test-outline-into-leaf-paths.md) | testing-tooling | algorithm | parsing, testing, validation |
@@ -440,6 +444,7 @@ not edit it by hand.
 | [Route Metric Label Values Through a Stable Overflow Bucket Under a Cardinality Cap](snippets/observability-operations/route-metric-label-values-through-a-stable-overflow-bucket-under-a-cardinality-cap.md) | observability-operations | pattern | observability, resource-management, validation |
 | [Scope Structured Log Fields with Context Variables](snippets/observability-operations/scope-structured-log-fields-with-context-variables.md) | observability-operations | pattern | concurrency-control, observability |
 | [Share Bounded Counters and Duration Histograms Across Spawned Processes](snippets/observability-operations/share-bounded-counters-and-duration-histograms-across-spawned-processes.md) | observability-operations | pattern | concurrency-control, observability, resource-management |
+| [Truncate Valid UTF-8 Text to a Byte Budget with an Explicit Marker](snippets/observability-operations/truncate-valid-utf-8-text-to-a-byte-budget-with-an-explicit-marker.md) | observability-operations | recipe | data-transformation, observability, validation |
 <!-- catalog:root:end -->
 
 ## Snippet Content
