@@ -100,7 +100,7 @@ def compute_core_decomposition(
         normalized_edges.append(normalized)
 
     adjacency: list[list[int]] = [[] for _ in range(vertex_count)]
-    for first, second in sorted(normalized_edges):
+    for first, second in normalized_edges:
         adjacency[first].append(second)
         adjacency[second].append(first)
 
