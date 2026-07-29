@@ -17,7 +17,7 @@ not edit it by hand.
 
 | Category | Scope | Snippets |
 | --- | --- | ---: |
-| [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 25 |
+| [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 26 |
 | [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 112 |
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 34 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 33 |
@@ -25,9 +25,9 @@ not edit it by hand.
 | [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 62 |
 | [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 43 |
 | [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 36 |
-| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 70 |
-| [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 24 |
-| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 30 |
+| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 72 |
+| [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 25 |
+| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 31 |
 | [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 22 |
 
 ### Snippets
@@ -42,6 +42,7 @@ not edit it by hand.
 | [Build an Immutable Slice-Aware Sequence](snippets/python-language/build-an-immutable-slice-aware-sequence.md) | python-language | recipe | data-transformation, interoperability |
 | [Bypass an LRU Cache with a Per-Call Predicate](snippets/python-language/bypass-an-lru-cache-with-a-per-call-predicate.md) | python-language | pattern | caching, performance-optimization |
 | [Cache One Zero-Argument Method Result per Weakly Referenced Instance](snippets/python-language/cache-one-zero-argument-method-result-per-weakly-referenced-instance.md) | python-language | pattern | caching, resource-management |
+| [Check a Bounded Abstract Call Shape Against a Signature Without Invocation](snippets/python-language/check-a-bounded-abstract-call-shape-against-a-signature-without-invocation.md) | python-language | recipe | automation, testing, validation |
 | [Collect Decorated Methods in Class Definition Order](snippets/python-language/collect-decorated-methods-in-class-definition-order.md) | python-language | pattern | automation, configuration |
 | [Compute C3 Linearizations for a Bounded Indexed Class Hierarchy](snippets/python-language/compute-c3-linearizations-for-a-bounded-indexed-class-hierarchy.md) | python-language | algorithm | automation, testing, validation |
 | [Dispatch Named Strategies with an Explicit Function Mapping](snippets/python-language/dispatch-named-strategies-with-an-explicit-function-mapping.md) | python-language | pattern | configuration, interoperability |
@@ -419,6 +420,7 @@ not edit it by hand.
 | [Convert a Weekday Bitmask to a Canonical Cron Schedule](snippets/configuration-serialization/convert-a-weekday-bitmask-to-a-canonical-cron-schedule.md) | configuration-serialization | recipe | configuration, serialization, validation |
 | [Convert Decimal Values to Exact Minor Units](snippets/configuration-serialization/convert-decimal-values-to-exact-minor-units.md) | configuration-serialization | recipe | interoperability, validation |
 | [Create Reproducible gzip Bytes with an Explicit Zero Modification Time](snippets/configuration-serialization/create-reproducible-gzip-bytes-with-an-explicit-zero-modification-time.md) | configuration-serialization | recipe | resource-management, serialization, validation |
+| [Decode a Closed Integer Capability Mask with Strict IntFlag Boundaries](snippets/configuration-serialization/decode-a-closed-integer-capability-mask-with-strict-intflag-boundaries.md) | configuration-serialization | recipe | configuration, interoperability, parsing, validation |
 | [Decode Canonical Unpadded Base64url Under Encoded and Decoded Byte Limits](snippets/configuration-serialization/decode-canonical-unpadded-base64url-under-encoded-and-decoded-byte-limits.md) | configuration-serialization | recipe | interoperability, parsing, serialization, validation |
 | [Decode One Bounded Strict UTF-8 Stream Across Arbitrary Byte Chunks](snippets/configuration-serialization/decode-one-bounded-strict-utf-8-stream-across-arbitrary-byte-chunks.md) | configuration-serialization | recipe | parsing, resource-management, validation |
 | [Derive a Versioned Cache Key from Deterministically Encoded Bounded JSON](snippets/configuration-serialization/derive-a-versioned-cache-key-from-deterministically-encoded-bounded-json.md) | configuration-serialization | algorithm | caching, configuration, serialization, validation |
@@ -436,6 +438,7 @@ not edit it by hand.
 | [Expand a Bounded EUI-48 Address Interval](snippets/configuration-serialization/expand-a-bounded-eui-48-address-interval.md) | configuration-serialization | algorithm | data-transformation, parsing, validation |
 | [Expand a Bounded Plan Matrix with Explicit Target Overrides](snippets/configuration-serialization/expand-a-bounded-plan-matrix-with-explicit-target-overrides.md) | configuration-serialization | algorithm | configuration, data-transformation, validation |
 | [Expand Bounded Nested Brace Alternatives](snippets/configuration-serialization/expand-bounded-nested-brace-alternatives.md) | configuration-serialization | algorithm | parsing, validation |
+| [Extract Bounded Uncompressed PCM Frames from an In-Memory WAV](snippets/configuration-serialization/extract-bounded-uncompressed-pcm-frames-from-an-in-memory-wav.md) | configuration-serialization | recipe | interoperability, parsing, resource-management, validation |
 | [Fingerprint a Set-Like JSON Array Deterministically](snippets/configuration-serialization/fingerprint-a-set-like-json-array-deterministically.md) | configuration-serialization | algorithm | serialization, validation |
 | [Get Nested Values with a Validated Dot Path](snippets/configuration-serialization/get-nested-values-with-a-validated-dot-path.md) | configuration-serialization | recipe | configuration, parsing |
 | [Load a Bounded Allocation Rule with Marshmallow Cross-Field Validation](snippets/configuration-serialization/load-a-bounded-allocation-rule-with-marshmallow-cross-field-validation.md) | configuration-serialization | integration | configuration, validation |
@@ -479,6 +482,7 @@ not edit it by hand.
 | [Round-Trip a Bounded Nullable String Table with CSV Quote-Not-Null](snippets/configuration-serialization/round-trip-a-bounded-nullable-string-table-with-csv-quote-notnull.md) | configuration-serialization | recipe | interoperability, parsing, serialization, validation |
 | [Substitute Typed Values into a JSON-Like Template](snippets/configuration-serialization/substitute-typed-values-into-a-json-like-template.md) | configuration-serialization | recipe | configuration, serialization, validation |
 | [Tokenize a Bounded POSIX-Style Argument String Without Expansion](snippets/configuration-serialization/tokenize-a-bounded-posix-style-argument-string-without-expansion.md) | configuration-serialization | recipe | configuration, parsing, validation |
+| [Audit a Bounded ZIP Central Directory Without Decompressing Members](snippets/security-privacy/audit-a-bounded-zip-central-directory-without-decompressing-members.md) | security-privacy | recipe | parsing, resource-management, security, validation |
 | [Audit Bounded Relative POSIX Archive Member Names Under a Closed Policy](snippets/security-privacy/audit-bounded-relative-posix-archive-member-names-under-a-closed-policy.md) | security-privacy | recipe | parsing, resource-management, security, validation |
 | [Audit Parsed Compose Services for Digest-Pinned Images](snippets/security-privacy/audit-parsed-compose-services-for-digest-pinned-images.md) | security-privacy | recipe | configuration, security, validation |
 | [Audit Symlinks in a Bounded Directory Tree](snippets/security-privacy/audit-symlinks-in-a-bounded-directory-tree.md) | security-privacy | recipe | resource-management, security, validation |
@@ -516,6 +520,7 @@ not edit it by hand.
 | [Enumerate Every Contiguous Chunking of Bounded Bytes for Stream Tests](snippets/testing-tooling/enumerate-every-contiguous-chunking-of-bounded-bytes-for-stream-tests.md) | testing-tooling | testing-technique | testing, validation |
 | [Enumerate Every Topological Order of a Tiny DAG for Schedule Tests](snippets/testing-tooling/enumerate-every-topological-order-of-a-tiny-dag-for-schedule-tests.md) | testing-tooling | testing-technique | testing, validation |
 | [Extract a Bounded Static Python Annotation Index without Evaluation](snippets/testing-tooling/extract-a-bounded-static-python-annotation-index-without-evaluation.md) | testing-tooling | testing-technique | parsing, testing, validation |
+| [Extract Bounded Doctest Examples Without Executing Them](snippets/testing-tooling/extract-bounded-doctest-examples-without-executing-them.md) | testing-tooling | testing-technique | parsing, testing, validation |
 | [Extract Bounded Native-Test Failure Highlights](snippets/testing-tooling/extract-bounded-native-test-failure-highlights.md) | testing-tooling | recipe | observability, parsing, testing |
 | [Generate a Deterministic Pairwise-Covering Matrix from Closed String Parameters](snippets/testing-tooling/generate-a-deterministic-pairwise-covering-matrix-from-closed-string-parameters.md) | testing-tooling | testing-technique | testing, validation |
 | [Generate a Minimal Cyclic Test Sequence Covering Every Fixed-Length Symbol Word](snippets/testing-tooling/generate-a-minimal-cyclic-test-sequence-covering-every-fixed-length-symbol-word.md) | testing-tooling | testing-technique | data-transformation, testing, validation |
