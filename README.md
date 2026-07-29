@@ -18,16 +18,16 @@ not edit it by hand.
 | Category | Scope | Snippets |
 | --- | --- | ---: |
 | [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 23 |
-| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 54 |
+| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 55 |
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 33 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 31 |
-| [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 24 |
+| [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 25 |
 | [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 53 |
-| [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 24 |
+| [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 25 |
 | [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 28 |
 | [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 57 |
-| [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 19 |
-| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 16 |
+| [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 20 |
+| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 17 |
 | [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 19 |
 
 ### Snippets
@@ -87,6 +87,7 @@ not edit it by hand.
 | [Find All Overlapping Exact Text Matches with Knuth-Morris-Pratt](snippets/algorithms-data-structures/find-all-overlapping-exact-text-matches-with-knuth-morris-pratt.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Find Articulation Points and Bridges in a Bounded Undirected Graph](snippets/algorithms-data-structures/find-articulation-points-and-bridges-in-a-bounded-undirected-graph.md) | algorithms-data-structures | algorithm | data-transformation, validation |
 | [Find One Deterministic Shortest Path in a Bounded Non-Negatively Weighted Directed Graph](snippets/algorithms-data-structures/find-one-deterministic-shortest-path-in-a-bounded-non-negatively-weighted-directed-graph.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
+| [Find Peak Coverage Spans Across Bounded Half-Open Integer Intervals](snippets/algorithms-data-structures/find-peak-coverage-spans-across-bounded-half-open-integer-intervals.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Generate Event Times for a Linear Rate Ramp](snippets/algorithms-data-structures/generate-event-times-for-a-linear-rate-ramp.md) | algorithms-data-structures | algorithm | automation, performance-optimization |
 | [Group a One-Dimensional NumPy Structured Array into Stable Index Sets](snippets/algorithms-data-structures/group-a-one-dimensional-numpy-structured-array-into-stable-index-sets.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Maintain Bounded Point Adds and Half-Open Range Sums with a Fenwick Tree](snippets/algorithms-data-structures/maintain-bounded-point-adds-and-half-open-range-sums-with-a-fenwick-tree.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
@@ -189,6 +190,7 @@ not edit it by hand.
 | [Extract Bounded Singleton HTTP Headers with Explicit Rules](snippets/networking-protocols/extract-bounded-singleton-http-headers-with-explicit-rules.md) | networking-protocols | recipe | networking, parsing, validation |
 | [Interpret One Bounded Retry-After Value Under a Closed Modern-Sender Profile](snippets/networking-protocols/interpret-one-bounded-retry-after-value-under-a-closed-modern-sender-profile.md) | networking-protocols | recipe | interoperability, networking, parsing, retry-recovery, validation |
 | [Iterate Cursor-Paginated Results Lazily](snippets/networking-protocols/iterate-cursor-paginated-results-lazily.md) | networking-protocols | pattern | networking, resource-management |
+| [Normalize a Closed HTTP Byte-Range Value into Bounded Half-Open Spans](snippets/networking-protocols/normalize-a-closed-http-byte-range-value-into-bounded-half-open-spans.md) | networking-protocols | recipe | networking, parsing, validation |
 | [Parse a Bounded ASCII Media Type Value](snippets/networking-protocols/parse-a-bounded-ascii-media-type-value.md) | networking-protocols | recipe | interoperability, parsing, serialization, validation |
 | [Parse a Bounded Host and Port with Bracketed IPv6](snippets/networking-protocols/parse-a-bounded-host-and-port-with-bracketed-ipv6.md) | networking-protocols | recipe | networking, parsing, validation |
 | [Parse a Bounded Percent-Encoded Query String as Strict UTF-8 with Explicit Duplicate Rules](snippets/networking-protocols/parse-a-bounded-percent-encoded-query-string-as-strict-utf-8-with-explicit-duplicate-rules.md) | networking-protocols | recipe | interoperability, networking, parsing, validation |
@@ -267,6 +269,7 @@ not edit it by hand.
 | [Detect a Recent Drop Against a Disjoint pandas Baseline Window](snippets/machine-learning-statistics/detect-a-recent-drop-against-a-disjoint-pandas-baseline-window.md) | machine-learning-statistics | integration | observability, validation |
 | [Encode Categories with Out-of-Fold Smoothed Target Means](snippets/machine-learning-statistics/encode-categories-with-out-of-fold-smoothed-target-means.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Encode Cyclic Positions with Sine and Cosine](snippets/machine-learning-statistics/encode-cyclic-positions-with-sine-and-cosine.md) | machine-learning-statistics | algorithm | data-transformation |
+| [Fit an Exact Unweighted Isotonic Regression with Pool-Adjacent Violators](snippets/machine-learning-statistics/fit-an-exact-unweighted-isotonic-regression-with-pool-adjacent-violators.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Fit and Apply a Frozen pandas Median Z-Score Profile](snippets/machine-learning-statistics/fit-and-apply-a-frozen-pandas-median-z-score-profile.md) | machine-learning-statistics | integration | data-transformation, validation |
 | [Fit and Apply an Exact Categorical Frequency Encoder](snippets/machine-learning-statistics/fit-and-apply-an-exact-categorical-frequency-encoder.md) | machine-learning-statistics | recipe | data-transformation, validation |
 | [Fit and Apply Fixed Quantile Clipping Bounds](snippets/machine-learning-statistics/fit-and-apply-fixed-quantile-clipping-bounds.md) | machine-learning-statistics | recipe | data-transformation, validation |
@@ -367,6 +370,7 @@ not edit it by hand.
 | [Authenticate Bounded Payloads with Versioned HMAC Keys](snippets/security-privacy/authenticate-bounded-payloads-with-versioned-hmac-keys.md) | security-privacy | pattern | security, serialization, validation |
 | [Authorize a Handler Through Explicit Request Extractors](snippets/security-privacy/authorize-a-handler-through-explicit-request-extractors.md) | security-privacy | pattern | security, validation |
 | [Authorize a Principal Against a Closed Route Policy Map](snippets/security-privacy/authorize-a-principal-against-a-closed-route-policy-map.md) | security-privacy | recipe | security, validation |
+| [Build and Verify a Bounded SHA-256 Merkle Inclusion Proof](snippets/security-privacy/build-and-verify-a-bounded-sha-256-merkle-inclusion-proof.md) | security-privacy | recipe | security, serialization, validation |
 | [Create and Verify a Short-Lived HMAC Download URL](snippets/security-privacy/create-and-verify-a-short-lived-hmac-download-url.md) | security-privacy | pattern | networking, security |
 | [Decompress Exactly One Zlib Stream Under Input and Output Limits](snippets/security-privacy/decompress-exactly-one-zlib-stream-under-input-and-output-limits.md) | security-privacy | recipe | resource-management, security, serialization, validation |
 | [Derive an Authentication Host from an Explicit DNS Suffix Policy](snippets/security-privacy/derive-an-authentication-host-from-an-explicit-dns-suffix-policy.md) | security-privacy | recipe | security, validation |
@@ -393,6 +397,7 @@ not edit it by hand.
 | [Parse a Bounded Space-Indented Test Outline into Leaf Paths](snippets/testing-tooling/parse-a-bounded-space-indented-test-outline-into-leaf-paths.md) | testing-tooling | algorithm | parsing, testing, validation |
 | [Render Bounded Request Snapshots into a Length-Framed Replay Payload](snippets/testing-tooling/render-bounded-request-snapshots-into-a-length-framed-replay-payload.md) | testing-tooling | recipe | networking, serialization, testing, validation |
 | [Scan Bounded Macro Declarations into a Canonical Event Index](snippets/testing-tooling/scan-bounded-macro-declarations-into-a-canonical-event-index.md) | testing-tooling | algorithm | parsing, testing, validation |
+| [Shrink a Bounded Failing Sequence to a One-Deletion-Minimal Subsequence](snippets/testing-tooling/shrink-a-bounded-failing-sequence-to-a-one-deletion-minimal-subsequence.md) | testing-tooling | testing-technique | testing, validation |
 | [Verify Ordered HTTP Client Expectations with Bounded Mismatch Reports](snippets/testing-tooling/verify-ordered-http-client-expectations-with-bounded-mismatch-reports.md) | testing-tooling | testing-technique | networking, testing, validation |
 | [Wait for Every Named Connector Under One Shared Deadline](snippets/testing-tooling/wait-for-every-named-connector-under-one-shared-deadline.md) | testing-tooling | testing-technique | concurrency-control, resource-management, testing, validation |
 | [Wait for Named Queue Conditions Under One Monotonic Deadline](snippets/testing-tooling/wait-for-named-queue-conditions-under-one-monotonic-deadline.md) | testing-tooling | testing-technique | concurrency-control, testing, validation |
