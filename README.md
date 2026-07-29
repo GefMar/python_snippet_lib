@@ -18,16 +18,16 @@ not edit it by hand.
 | Category | Scope | Snippets |
 | --- | --- | ---: |
 | [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 25 |
-| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 109 |
+| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 110 |
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 34 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 33 |
 | [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 29 |
 | [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 60 |
 | [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 42 |
-| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 34 |
-| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 67 |
-| [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 23 |
-| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 23 |
+| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 35 |
+| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 68 |
+| [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 24 |
+| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 24 |
 | [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 22 |
 
 ### Snippets
@@ -105,6 +105,7 @@ not edit it by hand.
 | [Enumerate Primes in a Bounded Half-Open Range with a Segmented Sieve](snippets/algorithms-data-structures/enumerate-primes-in-a-bounded-half-open-range-with-a-segmented-sieve.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Estimate Distinct Byte Strings with a Mergeable HyperLogLog](snippets/algorithms-data-structures/estimate-distinct-byte-strings-with-a-mergeable-hyperloglog.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization |
 | [Estimate Stream Frequencies with a Count-Min Sketch](snippets/algorithms-data-structures/estimate-stream-frequencies-with-a-count-min-sketch.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization |
+| [Evaluate a Bounded Float Polynomial with Fused Horner Steps](snippets/algorithms-data-structures/evaluate-a-bounded-float-polynomial-with-fused-horner-steps.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Factor Bounded Unicode Text into Lyndon Words with Duval's Algorithm](snippets/algorithms-data-structures/factor-bounded-unicode-text-into-lyndon-words-with-duvals-algorithm.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Find a Canonical Diameter Path in a Bounded Undirected Tree](snippets/algorithms-data-structures/find-a-canonical-diameter-path-in-a-bounded-undirected-tree.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Find a Closest Pair of Bounded Integer Points with Earliest Index-Pair Ties](snippets/algorithms-data-structures/find-a-closest-pair-of-bounded-integer-points-with-earliest-index-pair-ties.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
@@ -373,6 +374,7 @@ not edit it by hand.
 | [Commit One SQLite Item Mutation and Its Checkpoint Atomically](snippets/storage-databases/commit-one-sqlite-item-mutation-and-its-checkpoint-atomically.md) | storage-databases | pattern | persistence, retry-recovery |
 | [Compare and Swap a Versioned SQLite Setting with One Conditional Update](snippets/storage-databases/compare-and-swap-a-versioned-sqlite-setting-with-one-conditional-update.md) | storage-databases | recipe | concurrency-control, persistence |
 | [Compare Bounded Apparent Sizes of Two File-Tree Snapshots](snippets/storage-databases/compare-bounded-apparent-sizes-of-two-file-tree-snapshots.md) | storage-databases | recipe | automation, persistence, resource-management |
+| [Compile a Bounded T-String into SQLite Qmark SQL and Parameters](snippets/storage-databases/compile-a-bounded-t-string-into-sqlite-qmark-sql-and-parameters.md) | storage-databases | pattern | persistence, security, validation |
 | [Decide Whether to Restore a Versioned Snapshot](snippets/storage-databases/decide-whether-to-restore-a-versioned-snapshot.md) | storage-databases | algorithm | configuration, data-transformation, validation |
 | [Fingerprint a Bounded Flat File Set with Framed SHA-256](snippets/storage-databases/fingerprint-a-bounded-flat-file-set-with-framed-sha-256.md) | storage-databases | recipe | caching, persistence, validation |
 | [Map a Namespaced POSIX Path Beneath a Logical Local Root](snippets/storage-databases/map-a-namespaced-posix-path-beneath-a-logical-local-root.md) | storage-databases | recipe | data-transformation, persistence, validation |
@@ -444,6 +446,7 @@ not edit it by hand.
 | [Parse a Bounded INI Document Under a Closed No-Interpolation Schema](snippets/configuration-serialization/parse-a-bounded-ini-document-under-a-closed-no-interpolation-schema.md) | configuration-serialization | recipe | configuration, parsing, validation |
 | [Parse a Bounded Nested Bracket Tree](snippets/configuration-serialization/parse-a-bounded-nested-bracket-tree.md) | configuration-serialization | algorithm | parsing, validation |
 | [Parse a Bounded XML Envelope with Closed Variant Dispatch](snippets/configuration-serialization/parse-a-bounded-xml-envelope-with-closed-variant-dispatch.md) | configuration-serialization | integration | parsing, security, validation |
+| [Parse a Canonical UUIDv7 with an Explicit Millisecond Window](snippets/configuration-serialization/parse-a-canonical-uuidv7-with-an-explicit-millisecond-window.md) | configuration-serialization | recipe | interoperability, parsing, validation |
 | [Parse a Closed RFC 3339 Timestamp Subset into an Aware Datetime](snippets/configuration-serialization/parse-a-closed-rfc-3339-timestamp-subset-into-an-aware-datetime.md) | configuration-serialization | recipe | configuration, interoperability, parsing, validation |
 | [Parse and Compare Bounded Semantic Versions 2.0.0](snippets/configuration-serialization/parse-and-compare-bounded-semantic-versions-2-0-0.md) | configuration-serialization | recipe | configuration, interoperability, parsing, serialization, validation |
 | [Parse Bounded TOML into an Immutable Typed Tree](snippets/configuration-serialization/parse-bounded-toml-into-an-immutable-typed-tree.md) | configuration-serialization | recipe | configuration, parsing, serialization, validation |
@@ -485,6 +488,7 @@ not edit it by hand.
 | [Plan a Bounded Notebook Storage Key with Collision Suggestions](snippets/security-privacy/plan-a-bounded-notebook-storage-key-with-collision-suggestions.md) | security-privacy | recipe | persistence, security, validation |
 | [Redact a Printable ASCII Secret with a Bounded Visible Tail](snippets/security-privacy/redact-a-printable-ascii-secret-with-a-bounded-visible-tail.md) | security-privacy | recipe | observability, security, validation |
 | [Redact Explicit Paths in Bounded JSON-Like Data](snippets/security-privacy/redact-explicit-paths-in-bounded-json-like-data.md) | security-privacy | recipe | data-transformation, observability, security, validation |
+| [Resolve a Bounded Relative HTTP Reference under a Same-Origin Policy](snippets/security-privacy/resolve-a-bounded-relative-http-reference-under-a-same-origin-policy.md) | security-privacy | recipe | networking, security, validation |
 | [Scan Bounded Table Cells Without Retaining Matched Secrets](snippets/security-privacy/scan-bounded-table-cells-without-retaining-matched-secrets.md) | security-privacy | recipe | security, validation |
 | [Separate Executable and Redacted Views of a Command Argument Vector](snippets/security-privacy/separate-executable-and-redacted-views-of-a-command-argument-vector.md) | security-privacy | pattern | observability, security, validation |
 | [Validate a Conservative Unicode Filename Component](snippets/security-privacy/validate-a-conservative-unicode-filename-component.md) | security-privacy | recipe | interoperability, validation |
@@ -499,6 +503,7 @@ not edit it by hand.
 | [Compare a Bounded Text Capture Against a Golden Fixture](snippets/testing-tooling/compare-a-bounded-text-capture-against-a-golden-fixture.md) | testing-tooling | testing-technique | testing, validation |
 | [Enumerate Every Contiguous Chunking of Bounded Bytes for Stream Tests](snippets/testing-tooling/enumerate-every-contiguous-chunking-of-bounded-bytes-for-stream-tests.md) | testing-tooling | testing-technique | testing, validation |
 | [Enumerate Every Topological Order of a Tiny DAG for Schedule Tests](snippets/testing-tooling/enumerate-every-topological-order-of-a-tiny-dag-for-schedule-tests.md) | testing-tooling | testing-technique | testing, validation |
+| [Extract a Bounded Static Python Annotation Index without Evaluation](snippets/testing-tooling/extract-a-bounded-static-python-annotation-index-without-evaluation.md) | testing-tooling | testing-technique | parsing, testing, validation |
 | [Extract Bounded Native-Test Failure Highlights](snippets/testing-tooling/extract-bounded-native-test-failure-highlights.md) | testing-tooling | recipe | observability, parsing, testing |
 | [Generate a Deterministic Pairwise-Covering Matrix from Closed String Parameters](snippets/testing-tooling/generate-a-deterministic-pairwise-covering-matrix-from-closed-string-parameters.md) | testing-tooling | testing-technique | testing, validation |
 | [Generate a Minimal Cyclic Test Sequence Covering Every Fixed-Length Symbol Word](snippets/testing-tooling/generate-a-minimal-cyclic-test-sequence-covering-every-fixed-length-symbol-word.md) | testing-tooling | testing-technique | data-transformation, testing, validation |
