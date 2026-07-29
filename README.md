@@ -18,16 +18,16 @@ not edit it by hand.
 | Category | Scope | Snippets |
 | --- | --- | ---: |
 | [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 25 |
-| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 110 |
+| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 111 |
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 34 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 33 |
 | [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 29 |
 | [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 60 |
-| [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 42 |
+| [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 43 |
 | [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 35 |
-| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 68 |
+| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 69 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 24 |
-| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 24 |
+| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 26 |
 | [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 22 |
 
 ### Snippets
@@ -161,6 +161,7 @@ not edit it by hand.
 | [Search a Bounded Exact-Cover System with Algorithm X](snippets/algorithms-data-structures/search-a-bounded-exact-cover-system-with-algorithm-x.md) | algorithms-data-structures | algorithm | data-transformation, testing, validation |
 | [Select a Maximum-Cardinality Set of Non-Overlapping Half-Open Integer Intervals](snippets/algorithms-data-structures/select-a-maximum-cardinality-set-of-non-overlapping-half-open-integer-intervals.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Select a Maximum-Weight Set of Non-Overlapping Half-Open Integer Intervals](snippets/algorithms-data-structures/select-a-maximum-weight-set-of-non-overlapping-half-open-integer-intervals.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
+| [Select the Stable K Smallest Bounded Records with a Max-Heap](snippets/algorithms-data-structures/select-the-stable-k-smallest-bounded-records-with-a-max-heap.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Solve a Bounded Tridiagonal Integer System Exactly with Thomas Elimination](snippets/algorithms-data-structures/solve-a-bounded-tridiagonal-integer-system-exactly-with-thomas-elimination.md) | algorithms-data-structures | algorithm | data-transformation, validation |
 | [Solve a Bounded Zero-One Knapsack with Canonical Item Ties](snippets/algorithms-data-structures/solve-a-bounded-zero-one-knapsack-with-canonical-item-ties.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Sort Dotted Release Labels with an Explicit Last Marker](snippets/algorithms-data-structures/sort-dotted-release-labels-with-an-explicit-last-marker.md) | algorithms-data-structures | algorithm | data-transformation, parsing |
@@ -355,6 +356,7 @@ not edit it by hand.
 | [Encode Categories with Out-of-Fold Smoothed Target Means](snippets/machine-learning-statistics/encode-categories-with-out-of-fold-smoothed-target-means.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Encode Cyclic Positions with Sine and Cosine](snippets/machine-learning-statistics/encode-cyclic-positions-with-sine-and-cosine.md) | machine-learning-statistics | algorithm | data-transformation |
 | [Estimate an Exact Theil-Sen Slope from Bounded Integer Points](snippets/machine-learning-statistics/estimate-an-exact-theil-sen-slope-from-bounded-integer-points.md) | machine-learning-statistics | algorithm | data-transformation, validation |
+| [Evaluate a Bounded Gaussian Kernel Density on an Explicit Grid](snippets/machine-learning-statistics/evaluate-a-bounded-gaussian-kernel-density-on-an-explicit-grid.md) | machine-learning-statistics | recipe | data-transformation, performance-optimization, validation |
 | [Fit an Exact Ordinary Least-Squares Line to Bounded Integer Points](snippets/machine-learning-statistics/fit-an-exact-ordinary-least-squares-line-to-bounded-integer-points.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Fit an Exact Unweighted Isotonic Regression with Pool-Adjacent Violators](snippets/machine-learning-statistics/fit-an-exact-unweighted-isotonic-regression-with-pool-adjacent-violators.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Fit and Apply a Frozen pandas Median Z-Score Profile](snippets/machine-learning-statistics/fit-and-apply-a-frozen-pandas-median-z-score-profile.md) | machine-learning-statistics | integration | data-transformation, validation |
@@ -468,6 +470,7 @@ not edit it by hand.
 | [Resolve an Absolute or Percentage Limit](snippets/configuration-serialization/resolve-an-absolute-or-percentage-limit.md) | configuration-serialization | recipe | configuration, parsing, validation |
 | [Resolve Bounded Configuration Through Dependent Adapters](snippets/configuration-serialization/resolve-bounded-configuration-through-dependent-adapters.md) | configuration-serialization | pattern | configuration, data-transformation, validation |
 | [Resolve Declared Input Paths from an Explicit Execution Mode](snippets/configuration-serialization/resolve-declared-input-paths-from-an-explicit-execution-mode.md) | configuration-serialization | pattern | configuration, data-transformation, validation |
+| [Round-Trip a Bounded Nullable String Table with CSV Quote-Not-Null](snippets/configuration-serialization/round-trip-a-bounded-nullable-string-table-with-csv-quote-notnull.md) | configuration-serialization | recipe | interoperability, parsing, serialization, validation |
 | [Substitute Typed Values into a JSON-Like Template](snippets/configuration-serialization/substitute-typed-values-into-a-json-like-template.md) | configuration-serialization | recipe | configuration, serialization, validation |
 | [Tokenize a Bounded POSIX-Style Argument String Without Expansion](snippets/configuration-serialization/tokenize-a-bounded-posix-style-argument-string-without-expansion.md) | configuration-serialization | recipe | configuration, parsing, validation |
 | [Audit Bounded Relative POSIX Archive Member Names Under a Closed Policy](snippets/security-privacy/audit-bounded-relative-posix-archive-member-names-under-a-closed-policy.md) | security-privacy | recipe | parsing, resource-management, security, validation |
@@ -501,6 +504,7 @@ not edit it by hand.
 | [Build a Bounded Release DAG Around a Manual Barrier](snippets/testing-tooling/build-a-bounded-release-dag-around-a-manual-barrier.md) | testing-tooling | pattern | automation, testing, validation |
 | [Build a Collision-Audited Artifact Copy Plan](snippets/testing-tooling/build-a-collision-audited-artifact-copy-plan.md) | testing-tooling | algorithm | automation, resource-management, testing, validation |
 | [Compare a Bounded Text Capture Against a Golden Fixture](snippets/testing-tooling/compare-a-bounded-text-capture-against-a-golden-fixture.md) | testing-tooling | testing-technique | testing, validation |
+| [Compare Bounded Python Expressions Structurally without Execution](snippets/testing-tooling/compare-bounded-python-expressions-structurally-without-execution.md) | testing-tooling | testing-technique | parsing, testing, validation |
 | [Enumerate Every Contiguous Chunking of Bounded Bytes for Stream Tests](snippets/testing-tooling/enumerate-every-contiguous-chunking-of-bounded-bytes-for-stream-tests.md) | testing-tooling | testing-technique | testing, validation |
 | [Enumerate Every Topological Order of a Tiny DAG for Schedule Tests](snippets/testing-tooling/enumerate-every-topological-order-of-a-tiny-dag-for-schedule-tests.md) | testing-tooling | testing-technique | testing, validation |
 | [Extract a Bounded Static Python Annotation Index without Evaluation](snippets/testing-tooling/extract-a-bounded-static-python-annotation-index-without-evaluation.md) | testing-tooling | testing-technique | parsing, testing, validation |
@@ -508,6 +512,7 @@ not edit it by hand.
 | [Generate a Deterministic Pairwise-Covering Matrix from Closed String Parameters](snippets/testing-tooling/generate-a-deterministic-pairwise-covering-matrix-from-closed-string-parameters.md) | testing-tooling | testing-technique | testing, validation |
 | [Generate a Minimal Cyclic Test Sequence Covering Every Fixed-Length Symbol Word](snippets/testing-tooling/generate-a-minimal-cyclic-test-sequence-covering-every-fixed-length-symbol-word.md) | testing-tooling | testing-technique | data-transformation, testing, validation |
 | [Generate a Seeded Metric with Bounded Flapping Runs](snippets/testing-tooling/generate-a-seeded-metric-with-bounded-flapping-runs.md) | testing-tooling | testing-technique | observability, testing |
+| [Generate Binary64 Boundary Probes with math.nextafter](snippets/testing-tooling/generate-binary64-boundary-probes-with-math-nextafter.md) | testing-tooling | testing-technique | testing, validation |
 | [Generate Integer Boundary Probes Around Closed Cut Points](snippets/testing-tooling/generate-integer-boundary-probes-around-closed-cut-points.md) | testing-tooling | testing-technique | testing, validation |
 | [Group Generated Text Artifacts by Exact Body for Review](snippets/testing-tooling/group-generated-text-artifacts-by-exact-body-for-review.md) | testing-tooling | testing-technique | automation, testing, validation |
 | [Parse a Bounded Debugger Function Listing into Canonical Source Locations](snippets/testing-tooling/parse-a-bounded-debugger-function-listing-into-canonical-source-locations.md) | testing-tooling | testing-technique | parsing, testing, validation |
