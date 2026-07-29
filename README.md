@@ -21,14 +21,14 @@ not edit it by hand.
 | [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 112 |
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 34 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 33 |
-| [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 31 |
+| [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 32 |
 | [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 63 |
 | [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 44 |
-| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 37 |
+| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 38 |
 | [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 73 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 25 |
-| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 31 |
-| [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 22 |
+| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 33 |
+| [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 23 |
 
 ### Snippets
 
@@ -259,6 +259,7 @@ not edit it by hand.
 | [Parse a Bounded ASCII Media Type Value](snippets/networking-protocols/parse-a-bounded-ascii-media-type-value.md) | networking-protocols | recipe | interoperability, parsing, serialization, validation |
 | [Parse a Bounded Host and Port with Bracketed IPv6](snippets/networking-protocols/parse-a-bounded-host-and-port-with-bracketed-ipv6.md) | networking-protocols | recipe | networking, parsing, validation |
 | [Parse a Bounded Percent-Encoded Query String as Strict UTF-8 with Explicit Duplicate Rules](snippets/networking-protocols/parse-a-bounded-percent-encoded-query-string-as-strict-utf-8-with-explicit-duplicate-rules.md) | networking-protocols | recipe | interoperability, networking, parsing, validation |
+| [Parse a Bounded Response Cache-Control Field Under a Closed Profile](snippets/networking-protocols/parse-a-bounded-response-cache-control-field-under-a-closed-profile.md) | networking-protocols | recipe | interoperability, networking, parsing, validation |
 | [Parse a Bounded Three-State JSON Response Envelope](snippets/networking-protocols/parse-a-bounded-three-state-json-response-envelope.md) | networking-protocols | integration | networking, parsing, validation |
 | [Parse and Format a Strict W3C traceparent Version 00 Value](snippets/networking-protocols/parse-and-format-a-strict-w3c-traceparent-version-00-value.md) | networking-protocols | recipe | interoperability, networking, parsing, validation |
 | [Parse and Rank a Bounded Accept-Language Value](snippets/networking-protocols/parse-and-rank-a-bounded-accept-language-value.md) | networking-protocols | recipe | interoperability, parsing, validation |
@@ -398,6 +399,7 @@ not edit it by hand.
 | [Plan Bounded Table Initialization and Ordered Row Batches](snippets/storage-databases/plan-bounded-table-initialization-and-ordered-row-batches.md) | storage-databases | pattern | data-transformation, persistence, validation |
 | [Plan Verified Staged Partition Publication](snippets/storage-databases/plan-verified-staged-partition-publication.md) | storage-databases | algorithm | automation, persistence, validation |
 | [Project a Dataclass into a Validated Insert Row](snippets/storage-databases/project-a-dataclass-into-a-validated-insert-row.md) | storage-databases | recipe | data-transformation, persistence, validation |
+| [Publish a New POSIX File Without Replacement and Sync Directory Entries](snippets/storage-databases/publish-a-new-posix-file-without-replacement-and-sync-directory-entries.md) | storage-databases | recipe | concurrency-control, persistence, resource-management |
 | [Read an Exact POSIX Byte Range with os.pread Without Moving the File Descriptor Offset](snippets/storage-databases/read-an-exact-posix-byte-range-with-os-pread-without-moving-the-file-descriptor-offset.md) | storage-databases | recipe | performance-optimization, resource-management, validation |
 | [Read and Write Bounded SQLite BLOB Slices with blobopen](snippets/storage-databases/read-and-write-bounded-sqlite-blob-slices-with-blobopen.md) | storage-databases | pattern | persistence, resource-management, validation |
 | [Read the Last Bounded Binary Lines with a Read-Only mmap](snippets/storage-databases/read-the-last-bounded-binary-lines-with-a-read-only-mmap.md) | storage-databases | recipe | parsing, performance-optimization, resource-management |
@@ -522,6 +524,8 @@ not edit it by hand.
 | [Classify Bounded Interactive Python Source as Complete, Incomplete, or Invalid](snippets/testing-tooling/classify-bounded-interactive-python-source-as-complete-incomplete-or-invalid.md) | testing-tooling | testing-technique | parsing, testing, validation |
 | [Compare a Bounded Text Capture Against a Golden Fixture](snippets/testing-tooling/compare-a-bounded-text-capture-against-a-golden-fixture.md) | testing-tooling | testing-technique | testing, validation |
 | [Compare Bounded Python Expressions Structurally without Execution](snippets/testing-tooling/compare-bounded-python-expressions-structurally-without-execution.md) | testing-tooling | testing-technique | parsing, testing, validation |
+| [Decode Bounded Python Source Bytes with Python Encoding Detection](snippets/testing-tooling/decode-bounded-python-source-bytes-with-tokenize-detect-encoding.md) | testing-tooling | testing-technique | parsing, testing, validation |
+| [Drive sched Events Deterministically with a Manually Advanced Clock](snippets/testing-tooling/drive-sched-events-deterministically-with-a-manually-advanced-clock.md) | testing-tooling | testing-technique | lifecycle-management, testing, validation |
 | [Enumerate Every Contiguous Chunking of Bounded Bytes for Stream Tests](snippets/testing-tooling/enumerate-every-contiguous-chunking-of-bounded-bytes-for-stream-tests.md) | testing-tooling | testing-technique | testing, validation |
 | [Enumerate Every Topological Order of a Tiny DAG for Schedule Tests](snippets/testing-tooling/enumerate-every-topological-order-of-a-tiny-dag-for-schedule-tests.md) | testing-tooling | testing-technique | testing, validation |
 | [Extract a Bounded Static Python Annotation Index without Evaluation](snippets/testing-tooling/extract-a-bounded-static-python-annotation-index-without-evaluation.md) | testing-tooling | testing-technique | parsing, testing, validation |
@@ -545,6 +549,7 @@ not edit it by hand.
 | [Wait for Named Queue Conditions Under One Monotonic Deadline](snippets/testing-tooling/wait-for-named-queue-conditions-under-one-monotonic-deadline.md) | testing-tooling | testing-technique | concurrency-control, testing, validation |
 | [Capture a Bounded Pickle-Friendly Exception Report](snippets/observability-operations/capture-a-bounded-pickle-friendly-exception-report.md) | observability-operations | recipe | interoperability, observability, serialization |
 | [Classify a Finite Value with Warning and Critical Limits](snippets/observability-operations/classify-a-finite-value-with-warning-and-critical-limits.md) | observability-operations | recipe | observability, validation |
+| [Classify Paired Error-Budget Burn Windows from Cumulative Counter Snapshots](snippets/observability-operations/classify-paired-error-budget-burn-windows-from-cumulative-counter-snapshots.md) | observability-operations | algorithm | observability, validation |
 | [Classify Progress from Complete Bounded Counter Snapshots](snippets/observability-operations/classify-progress-from-complete-bounded-counter-snapshots.md) | observability-operations | recipe | observability, validation |
 | [Classify Required Health Stamps by Freshness](snippets/observability-operations/classify-required-health-stamps-by-freshness.md) | observability-operations | recipe | observability, validation |
 | [Collect Validated Metric Specifications from Explicit Classes](snippets/observability-operations/collect-validated-metric-specifications-from-explicit-classes.md) | observability-operations | pattern | configuration, observability, validation |
