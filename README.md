@@ -18,15 +18,15 @@ not edit it by hand.
 | Category | Scope | Snippets |
 | --- | --- | ---: |
 | [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 25 |
-| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 108 |
+| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 109 |
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 34 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 33 |
-| [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 28 |
+| [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 29 |
 | [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 60 |
 | [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 42 |
-| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 33 |
-| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 66 |
-| [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 22 |
+| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 34 |
+| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 67 |
+| [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 23 |
 | [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 23 |
 | [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 22 |
 
@@ -161,6 +161,7 @@ not edit it by hand.
 | [Select a Maximum-Cardinality Set of Non-Overlapping Half-Open Integer Intervals](snippets/algorithms-data-structures/select-a-maximum-cardinality-set-of-non-overlapping-half-open-integer-intervals.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Select a Maximum-Weight Set of Non-Overlapping Half-Open Integer Intervals](snippets/algorithms-data-structures/select-a-maximum-weight-set-of-non-overlapping-half-open-integer-intervals.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Solve a Bounded Tridiagonal Integer System Exactly with Thomas Elimination](snippets/algorithms-data-structures/solve-a-bounded-tridiagonal-integer-system-exactly-with-thomas-elimination.md) | algorithms-data-structures | algorithm | data-transformation, validation |
+| [Solve a Bounded Zero-One Knapsack with Canonical Item Ties](snippets/algorithms-data-structures/solve-a-bounded-zero-one-knapsack-with-canonical-item-ties.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Sort Dotted Release Labels with an Explicit Last Marker](snippets/algorithms-data-structures/sort-dotted-release-labels-with-an-explicit-last-marker.md) | algorithms-data-structures | algorithm | data-transformation, parsing |
 | [Sort Newline-Terminated Binary Records with Bounded Merge Passes](snippets/algorithms-data-structures/sort-newline-terminated-binary-records-with-bounded-merge-passes.md) | algorithms-data-structures | algorithm | data-transformation, resource-management |
 | [Subtract One Canonical Half-Open Integer Interval Set from Another](snippets/algorithms-data-structures/subtract-one-canonical-half-open-integer-interval-set-from-another.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
@@ -255,6 +256,7 @@ not edit it by hand.
 | [Parse a Bounded Percent-Encoded Query String as Strict UTF-8 with Explicit Duplicate Rules](snippets/networking-protocols/parse-a-bounded-percent-encoded-query-string-as-strict-utf-8-with-explicit-duplicate-rules.md) | networking-protocols | recipe | interoperability, networking, parsing, validation |
 | [Parse a Bounded Three-State JSON Response Envelope](snippets/networking-protocols/parse-a-bounded-three-state-json-response-envelope.md) | networking-protocols | integration | networking, parsing, validation |
 | [Parse and Format a Strict W3C traceparent Version 00 Value](snippets/networking-protocols/parse-and-format-a-strict-w3c-traceparent-version-00-value.md) | networking-protocols | recipe | interoperability, networking, parsing, validation |
+| [Parse and Rank a Bounded Accept-Language Value](snippets/networking-protocols/parse-and-rank-a-bounded-accept-language-value.md) | networking-protocols | recipe | interoperability, parsing, validation |
 | [Parse One Bounded Printable-ASCII HTTP/1 Field Section with Exact CRLF Framing](snippets/networking-protocols/parse-one-bounded-printable-ascii-http-1-field-section-with-exact-crlf-framing.md) | networking-protocols | recipe | networking, parsing, validation |
 | [Read and Write Size-Capped Varint Frames](snippets/networking-protocols/read-and-write-size-capped-varint-frames.md) | networking-protocols | recipe | networking, serialization, validation |
 | [Release a Pooled Response Connection Only After Clean EOF](snippets/networking-protocols/release-a-pooled-response-connection-only-after-clean-eof.md) | networking-protocols | pattern | lifecycle-management, networking, resource-management, validation |
@@ -383,6 +385,7 @@ not edit it by hand.
 | [Plan Verified Staged Partition Publication](snippets/storage-databases/plan-verified-staged-partition-publication.md) | storage-databases | algorithm | automation, persistence, validation |
 | [Project a Dataclass into a Validated Insert Row](snippets/storage-databases/project-a-dataclass-into-a-validated-insert-row.md) | storage-databases | recipe | data-transformation, persistence, validation |
 | [Read an Exact POSIX Byte Range with os.pread Without Moving the File Descriptor Offset](snippets/storage-databases/read-an-exact-posix-byte-range-with-os-pread-without-moving-the-file-descriptor-offset.md) | storage-databases | recipe | performance-optimization, resource-management, validation |
+| [Read and Write Bounded SQLite BLOB Slices with blobopen](snippets/storage-databases/read-and-write-bounded-sqlite-blob-slices-with-blobopen.md) | storage-databases | pattern | persistence, resource-management, validation |
 | [Read the Last Bounded Binary Lines with a Read-Only mmap](snippets/storage-databases/read-the-last-bounded-binary-lines-with-a-read-only-mmap.md) | storage-databases | recipe | parsing, performance-optimization, resource-management |
 | [Recover a Verified Prefix from a Bounded CRC-Framed Byte Log](snippets/storage-databases/recover-a-verified-prefix-from-a-bounded-crc-framed-byte-log.md) | storage-databases | recipe | parsing, persistence, validation |
 | [Replace a Complete Bounded SQLite Cache Snapshot with a Generation](snippets/storage-databases/replace-a-complete-bounded-sqlite-cache-snapshot-with-a-generation.md) | storage-databases | pattern | caching, persistence, retry-recovery |
@@ -443,6 +446,7 @@ not edit it by hand.
 | [Parse a Bounded XML Envelope with Closed Variant Dispatch](snippets/configuration-serialization/parse-a-bounded-xml-envelope-with-closed-variant-dispatch.md) | configuration-serialization | integration | parsing, security, validation |
 | [Parse a Closed RFC 3339 Timestamp Subset into an Aware Datetime](snippets/configuration-serialization/parse-a-closed-rfc-3339-timestamp-subset-into-an-aware-datetime.md) | configuration-serialization | recipe | configuration, interoperability, parsing, validation |
 | [Parse and Compare Bounded Semantic Versions 2.0.0](snippets/configuration-serialization/parse-and-compare-bounded-semantic-versions-2-0-0.md) | configuration-serialization | recipe | configuration, interoperability, parsing, serialization, validation |
+| [Parse Bounded TOML into an Immutable Typed Tree](snippets/configuration-serialization/parse-bounded-toml-into-an-immutable-typed-tree.md) | configuration-serialization | recipe | configuration, parsing, serialization, validation |
 | [Parse Bounded UTF-8 JSON Without Duplicate Object Names or Non-Finite Numbers](snippets/configuration-serialization/parse-bounded-utf-8-json-without-duplicate-object-names-or-non-finite-numbers.md) | configuration-serialization | recipe | parsing, security, serialization, validation |
 | [Parse Compact Durations into timedelta](snippets/configuration-serialization/parse-compact-durations-into-timedelta.md) | configuration-serialization | recipe | configuration, parsing, validation |
 | [Parse Explicit Decimal and Binary Byte Sizes](snippets/configuration-serialization/parse-explicit-decimal-and-binary-byte-sizes.md) | configuration-serialization | recipe | configuration, parsing, validation |
@@ -473,6 +477,7 @@ not edit it by hand.
 | [Create and Verify a Short-Lived HMAC Download URL](snippets/security-privacy/create-and-verify-a-short-lived-hmac-download-url.md) | security-privacy | pattern | networking, security |
 | [Decompress Exactly One Zlib Stream Under Input and Output Limits](snippets/security-privacy/decompress-exactly-one-zlib-stream-under-input-and-output-limits.md) | security-privacy | recipe | resource-management, security, serialization, validation |
 | [Derive an Authentication Host from an Explicit DNS Suffix Policy](snippets/security-privacy/derive-an-authentication-host-from-an-explicit-dns-suffix-policy.md) | security-privacy | recipe | security, validation |
+| [Derive and Verify a Bounded Password Record with a Closed scrypt Profile](snippets/security-privacy/derive-and-verify-a-bounded-password-record-with-a-closed-scrypt-profile.md) | security-privacy | pattern | security, validation |
 | [Derive Bounded Key Material with RFC 5869 HKDF-SHA-256](snippets/security-privacy/derive-bounded-key-material-with-rfc-5869-hkdf-sha-256.md) | security-privacy | recipe | interoperability, security, validation |
 | [Encrypt a Bounded Value with a Versioned AES-GCM Key Envelope](snippets/security-privacy/encrypt-a-bounded-value-with-a-versioned-aes-gcm-key-envelope.md) | security-privacy | integration | security, serialization, validation |
 | [Load an Authenticated Legacy Pickle with Restricted Globals](snippets/security-privacy/load-an-authenticated-legacy-pickle-with-restricted-globals.md) | security-privacy | recipe | interoperability, security, serialization, validation |
