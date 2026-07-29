@@ -18,16 +18,16 @@ not edit it by hand.
 | Category | Scope | Snippets |
 | --- | --- | ---: |
 | [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 25 |
-| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 111 |
+| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 112 |
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 34 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 33 |
 | [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 29 |
-| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 60 |
+| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 62 |
 | [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 43 |
 | [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 35 |
-| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 69 |
+| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 70 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 24 |
-| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 26 |
+| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 27 |
 | [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 22 |
 
 ### Snippets
@@ -63,6 +63,7 @@ not edit it by hand.
 | [Answer Bounded Lowest-Common-Ancestor Queries with Binary Lifting](snippets/algorithms-data-structures/answer-bounded-lowest-common-ancestor-queries-with-binary-lifting.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Answer Static Half-Open Range-Minimum Queries with a Sparse Table](snippets/algorithms-data-structures/answer-static-half-open-range-minimum-queries-with-a-sparse-table.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Apportion a Non-Negative Integer Total Without Rounding Drift](snippets/algorithms-data-structures/apportion-a-non-negative-integer-total-without-rounding-drift.md) | algorithms-data-structures | algorithm | data-transformation, resource-management, validation |
+| [Approximate a Bounded Fraction under a Denominator Limit with Exact Error](snippets/algorithms-data-structures/approximate-a-bounded-fraction-under-a-denominator-limit-with-exact-error.md) | algorithms-data-structures | algorithm | data-transformation, validation |
 | [Assign Bounded Half-Open Integer Intervals to the Minimum Number of Reusable Rooms](snippets/algorithms-data-structures/assign-bounded-half-open-integer-intervals-to-the-minimum-number-of-reusable-rooms.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Bisect a Bracketed Monotone Async Metric Within an Evaluation Budget](snippets/algorithms-data-structures/bisect-a-bracketed-monotone-async-metric-within-an-evaluation-budget.md) | algorithms-data-structures | algorithm | performance-optimization, validation |
 | [Build a Bounded Immutable Text Trie for Longest-Prefix Lookup](snippets/algorithms-data-structures/build-a-bounded-immutable-text-trie-for-longest-prefix-lookup.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
@@ -283,10 +284,12 @@ not edit it by hand.
 | [Count Static Imports Across Bounded Python Notebook Cells](snippets/data-processing/count-static-imports-across-bounded-python-notebook-cells.md) | data-processing | algorithm | data-transformation, parsing, validation |
 | [Derive an Other Bucket from Exact pandas Totals](snippets/data-processing/derive-an-other-bucket-from-exact-pandas-totals.md) | data-processing | integration | data-transformation, validation |
 | [Derive Reciprocal Bid-Ask Quotes with Explicit Decimal Rounding](snippets/data-processing/derive-reciprocal-bid-ask-quotes-with-explicit-decimal-rounding.md) | data-processing | recipe | data-transformation, resource-management, validation |
+| [Divide Bounded Decimals under an Explicit Context and Report Signals](snippets/data-processing/divide-bounded-decimals-under-an-explicit-context-and-report-signals.md) | data-processing | pattern | data-transformation, validation |
 | [Downsample Fixed-Width Integer Tick Buckets by First, Minimum, Maximum, and Last](snippets/data-processing/downsample-fixed-width-integer-tick-buckets-by-first-minimum-maximum-and-last.md) | data-processing | algorithm | data-transformation, performance-optimization, validation |
 | [Enforce a Many-to-One pandas Left-Merge Contract](snippets/data-processing/enforce-a-many-to-one-pandas-left-merge-contract.md) | data-processing | integration | data-transformation, interoperability, validation |
 | [Expand and Merge Bounded Structured Key Pairs with Stable Deduplication](snippets/data-processing/expand-and-merge-bounded-structured-key-pairs-with-stable-deduplication.md) | data-processing | algorithm | data-transformation, performance-optimization, validation |
 | [Extract a Finite 2D Bounding Box from Bounded WKB](snippets/data-processing/extract-a-finite-2d-bounding-box-from-bounded-wkb.md) | data-processing | integration | data-transformation, parsing, validation |
+| [Extract Bounded Anchor Targets from HTML with HTMLParser](snippets/data-processing/extract-bounded-anchor-targets-from-html-with-htmlparser.md) | data-processing | recipe | data-transformation, parsing, validation |
 | [Extract Bounded Features with an Explicit Abstention Outcome](snippets/data-processing/extract-bounded-features-with-an-explicit-abstention-outcome.md) | data-processing | algorithm | data-transformation, validation |
 | [Fan Out Events into Bounded Lookback Windows](snippets/data-processing/fan-out-events-into-bounded-lookback-windows.md) | data-processing | algorithm | data-transformation, resource-management, validation |
 | [Group Items by an Exact Compatibility Signature and Report Unmatched Inputs](snippets/data-processing/group-items-by-an-exact-compatibility-signature-and-report-unmatched-inputs.md) | data-processing | algorithm | data-transformation, validation |
@@ -436,6 +439,7 @@ not edit it by hand.
 | [Load a Bounded Allocation Rule with Marshmallow Cross-Field Validation](snippets/configuration-serialization/load-a-bounded-allocation-rule-with-marshmallow-cross-field-validation.md) | configuration-serialization | integration | configuration, validation |
 | [Load a Bounded Protobuf Descriptor Set in Dependency Order](snippets/configuration-serialization/load-a-bounded-protobuf-descriptor-set-in-dependency-order.md) | configuration-serialization | integration | interoperability, serialization, validation |
 | [Match a Client Against a Bounded Platform Availability Rule](snippets/configuration-serialization/match-a-client-against-a-bounded-platform-availability-rule.md) | configuration-serialization | recipe | configuration, interoperability, validation |
+| [Match Bounded Relative POSIX Paths with glob.translate](snippets/configuration-serialization/match-bounded-relative-posix-paths-with-glob-translate.md) | configuration-serialization | pattern | configuration, parsing, validation |
 | [Merge Bounded Ordered Nodes with Qualified Tombstones](snippets/configuration-serialization/merge-bounded-ordered-nodes-with-qualified-tombstones.md) | configuration-serialization | algorithm | configuration, data-transformation, validation |
 | [Merge Nested Configuration with an Explicit Delete Sentinel](snippets/configuration-serialization/merge-nested-configuration-with-an-explicit-delete-sentinel.md) | configuration-serialization | recipe | configuration, data-transformation |
 | [Merge Nested Mappings Without Mutating Inputs](snippets/configuration-serialization/merge-nested-mappings-without-mutating-inputs.md) | configuration-serialization | recipe | configuration, data-transformation |
@@ -515,6 +519,7 @@ not edit it by hand.
 | [Generate Binary64 Boundary Probes with math.nextafter](snippets/testing-tooling/generate-binary64-boundary-probes-with-math-nextafter.md) | testing-tooling | testing-technique | testing, validation |
 | [Generate Integer Boundary Probes Around Closed Cut Points](snippets/testing-tooling/generate-integer-boundary-probes-around-closed-cut-points.md) | testing-tooling | testing-technique | testing, validation |
 | [Group Generated Text Artifacts by Exact Body for Review](snippets/testing-tooling/group-generated-text-artifacts-by-exact-body-for-review.md) | testing-tooling | testing-technique | automation, testing, validation |
+| [Index Bounded Python Scope Bindings with symtable without Execution](snippets/testing-tooling/index-bounded-python-scope-bindings-with-symtable-without-execution.md) | testing-tooling | testing-technique | parsing, testing, validation |
 | [Parse a Bounded Debugger Function Listing into Canonical Source Locations](snippets/testing-tooling/parse-a-bounded-debugger-function-listing-into-canonical-source-locations.md) | testing-tooling | testing-technique | parsing, testing, validation |
 | [Parse a Bounded Space-Indented Test Outline into Leaf Paths](snippets/testing-tooling/parse-a-bounded-space-indented-test-outline-into-leaf-paths.md) | testing-tooling | algorithm | parsing, testing, validation |
 | [Render Bounded Request Snapshots into a Length-Framed Replay Payload](snippets/testing-tooling/render-bounded-request-snapshots-into-a-length-framed-replay-payload.md) | testing-tooling | recipe | networking, serialization, testing, validation |
