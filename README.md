@@ -22,13 +22,13 @@ not edit it by hand.
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 33 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 32 |
 | [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 26 |
-| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 54 |
-| [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 29 |
-| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 29 |
-| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 58 |
+| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 55 |
+| [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 30 |
+| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 30 |
+| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 59 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 20 |
 | [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 18 |
-| [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 20 |
+| [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 21 |
 
 ### Snippets
 
@@ -231,6 +231,7 @@ not edit it by hand.
 | [Fan Out Events into Bounded Lookback Windows](snippets/data-processing/fan-out-events-into-bounded-lookback-windows.md) | data-processing | algorithm | data-transformation, resource-management, validation |
 | [Group Items by an Exact Compatibility Signature and Report Unmatched Inputs](snippets/data-processing/group-items-by-an-exact-compatibility-signature-and-report-unmatched-inputs.md) | data-processing | algorithm | data-transformation, validation |
 | [Integrate Regular Rate Samples Across Explicit Time Buckets](snippets/data-processing/integrate-regular-rate-samples-across-explicit-time-buckets.md) | data-processing | algorithm | data-transformation, observability, validation |
+| [Interleave Bounded Finite Tuple Sources Round-Robin Until Exhausted](snippets/data-processing/interleave-bounded-finite-tuple-sources-round-robin-until-exhausted.md) | data-processing | algorithm | data-transformation, performance-optimization, validation |
 | [Isolate Independently Failing Items by Bisecting a Bounded Batch](snippets/data-processing/isolate-independently-failing-items-by-bisecting-a-bounded-batch.md) | data-processing | algorithm | data-transformation, resource-management, validation |
 | [Join Bounded Strictly Increasing Sequences by the Latest Prior Timestamp](snippets/data-processing/join-bounded-strictly-increasing-sequences-by-the-latest-prior-timestamp.md) | data-processing | algorithm | data-transformation, validation |
 | [Join Two Strictly Increasing Streams by Exact Timestamp](snippets/data-processing/join-two-strictly-increasing-streams-by-exact-timestamp.md) | data-processing | pattern | data-transformation, resource-management, validation |
@@ -274,6 +275,7 @@ not edit it by hand.
 | [Compute an Exact Paired Two-Sided Sign Test](snippets/machine-learning-statistics/compute-an-exact-paired-two-sided-sign-test.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Compute Exact Binary ROC AUC with Tied Integer Scores](snippets/machine-learning-statistics/compute-exact-binary-roc-auc-with-tied-integer-scores.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Compute Exact Full-Window Trailing Medians for Bounded Integers](snippets/machine-learning-statistics/compute-exact-full-window-trailing-medians-for-bounded-integers.md) | machine-learning-statistics | algorithm | data-transformation, performance-optimization, validation |
+| [Compute Exact Jaccard Similarity for Bounded Unique Text-Feature Sets](snippets/machine-learning-statistics/compute-exact-jaccard-similarity-for-bounded-unique-text-feature-sets.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Compute Exact Squared Pearson Correlation with Direction](snippets/machine-learning-statistics/compute-exact-squared-pearson-correlation-with-direction.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Compute Exact Unweighted Cohen's Kappa from a Confusion Matrix](snippets/machine-learning-statistics/compute-exact-unweighted-cohens-kappa-from-a-confusion-matrix.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Create Past-Only pandas Lag and Rolling-Mean Columns](snippets/machine-learning-statistics/create-past-only-pandas-lag-and-rolling-mean-columns.md) | machine-learning-statistics | integration | data-transformation, validation |
@@ -306,6 +308,7 @@ not edit it by hand.
 | [Plan Bounded Table Initialization and Ordered Row Batches](snippets/storage-databases/plan-bounded-table-initialization-and-ordered-row-batches.md) | storage-databases | pattern | data-transformation, persistence, validation |
 | [Plan Verified Staged Partition Publication](snippets/storage-databases/plan-verified-staged-partition-publication.md) | storage-databases | algorithm | automation, persistence, validation |
 | [Project a Dataclass into a Validated Insert Row](snippets/storage-databases/project-a-dataclass-into-a-validated-insert-row.md) | storage-databases | recipe | data-transformation, persistence, validation |
+| [Read an Exact POSIX Byte Range with os.pread Without Moving the File Descriptor Offset](snippets/storage-databases/read-an-exact-posix-byte-range-with-os-pread-without-moving-the-file-descriptor-offset.md) | storage-databases | recipe | performance-optimization, resource-management, validation |
 | [Read the Last Bounded Binary Lines with a Read-Only mmap](snippets/storage-databases/read-the-last-bounded-binary-lines-with-a-read-only-mmap.md) | storage-databases | recipe | parsing, performance-optimization, resource-management |
 | [Recover a Verified Prefix from a Bounded CRC-Framed Byte Log](snippets/storage-databases/recover-a-verified-prefix-from-a-bounded-crc-framed-byte-log.md) | storage-databases | recipe | parsing, persistence, validation |
 | [Replace a Complete Bounded SQLite Cache Snapshot with a Generation](snippets/storage-databases/replace-a-complete-bounded-sqlite-cache-snapshot-with-a-generation.md) | storage-databases | pattern | caching, persistence, retry-recovery |
@@ -335,6 +338,7 @@ not edit it by hand.
 | [Elide Nested Mapping Values That Match Explicit Defaults](snippets/configuration-serialization/elide-nested-mapping-values-that-match-explicit-defaults.md) | configuration-serialization | recipe | configuration, serialization |
 | [Embed a Small Routing Hint in a Random UUIDv8](snippets/configuration-serialization/embed-a-small-routing-hint-in-a-random-uuidv8.md) | configuration-serialization | recipe | interoperability, serialization, validation |
 | [Encode and Decode One Exact-Size Big-Endian Binary Record with struct.Struct](snippets/configuration-serialization/encode-and-decode-one-exact-size-big-endian-binary-record-with-struct.md) | configuration-serialization | recipe | interoperability, parsing, serialization, validation |
+| [Encode and Decode Signed 64-Bit Integers with ZigZag Mapping](snippets/configuration-serialization/encode-and-decode-signed-64-bit-integers-with-zigzag-mapping.md) | configuration-serialization | algorithm | interoperability, serialization, validation |
 | [Evaluate a Bounded Boolean Rule Tree from Closed JSON](snippets/configuration-serialization/evaluate-a-bounded-boolean-rule-tree-from-closed-json.md) | configuration-serialization | pattern | configuration, data-transformation, validation |
 | [Evaluate a Bounded Boolean Tag Expression with an AST Allowlist](snippets/configuration-serialization/evaluate-a-bounded-boolean-tag-expression-with-an-ast-allowlist.md) | configuration-serialization | algorithm | configuration, parsing, validation |
 | [Evaluate Salted Percentage Rollouts with Integer Buckets](snippets/configuration-serialization/evaluate-salted-percentage-rollouts-with-integer-buckets.md) | configuration-serialization | algorithm | configuration, data-transformation, validation |
@@ -422,6 +426,7 @@ not edit it by hand.
 | [Collect Validated Metric Specifications from Explicit Classes](snippets/observability-operations/collect-validated-metric-specifications-from-explicit-classes.md) | observability-operations | pattern | configuration, observability, validation |
 | [Compute a Process CPU Rate from Two Linux procfs Samples](snippets/observability-operations/compute-a-process-cpu-rate-from-two-linux-procfs-samples.md) | observability-operations | algorithm | data-transformation, observability, validation |
 | [Compute a Validated Delta Between Cumulative Histogram Snapshots](snippets/observability-operations/compute-a-validated-delta-between-cumulative-histogram-snapshots.md) | observability-operations | algorithm | data-transformation, observability, validation |
+| [Compute an Exact Apdex Score from Already Classified Counts](snippets/observability-operations/compute-an-exact-apdex-score-from-already-classified-counts.md) | observability-operations | algorithm | data-transformation, observability, validation |
 | [Count Values in Fixed Upper-Bound Bins](snippets/observability-operations/count-values-in-fixed-upper-bound-bins.md) | observability-operations | algorithm | data-transformation, observability |
 | [Format Log Records as JSON with Explicit Extra Fields](snippets/observability-operations/format-log-records-as-json-with-explicit-extra-fields.md) | observability-operations | recipe | observability, serialization |
 | [Group Metric Samples by Their Exact Label-Key Shape](snippets/observability-operations/group-metric-samples-by-their-exact-label-key-shape.md) | observability-operations | algorithm | data-transformation, observability, validation |
