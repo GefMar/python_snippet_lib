@@ -25,9 +25,10 @@ irrational, so the result records the numerator, denominator radicand, and
 signed squared coefficient exactly. A float is derived only as a convenient
 view.
 
-When any required marginal is zero, the denominator vanishes. Returning an
-explicit undefined result avoids silently replacing a mathematically missing
-coefficient with a policy value.
+For an admitted nonempty table, when any required marginal is zero, the
+denominator vanishes. Returning an explicit undefined result avoids silently
+replacing a mathematically missing coefficient with a policy value. An
+all-zero table is rejected because it contains no observations.
 
 ## When to Use
 
