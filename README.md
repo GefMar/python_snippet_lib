@@ -17,18 +17,18 @@ not edit it by hand.
 
 | Category | Scope | Snippets |
 | --- | --- | ---: |
-| [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 32 |
+| [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 34 |
 | [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 156 |
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 39 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 34 |
 | [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 45 |
 | [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 67 |
 | [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 50 |
-| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 45 |
-| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 79 |
+| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 46 |
+| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 80 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 28 |
 | [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 39 |
-| [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 27 |
+| [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 28 |
 
 ### Snippets
 
@@ -50,7 +50,9 @@ not edit it by hand.
 | [Dispatch on an Exact Tuple of Argument Types](snippets/python-language/dispatch-on-an-exact-tuple-of-argument-types.md) | python-language | pattern | data-transformation, interoperability, validation |
 | [Dispatch on First-Argument Type with functools.singledispatch](snippets/python-language/dispatch-on-first-argument-type-with-functools-singledispatch.md) | python-language | idiom | automation, interoperability |
 | [Handle Search Exhaustion with for/else](snippets/python-language/handle-search-exhaustion-with-for-else.md) | python-language | idiom | data-transformation, validation |
+| [Inspect Trusted Runtime Annotations while Preserving Unresolved Names](snippets/python-language/inspect-trusted-runtime-annotations-while-preserving-unresolved-names.md) | python-language | recipe | automation, validation |
 | [Keep a Compatibility Wrapper with warnings.deprecated](snippets/python-language/keep-a-compatibility-wrapper-with-warnings-deprecated.md) | python-language | pattern | interoperability, lifecycle-management, testing |
+| [Keep Bound-Method Registrations without Retaining Their Owners](snippets/python-language/keep-bound-method-registrations-without-retaining-their-owners.md) | python-language | pattern | lifecycle-management, resource-management |
 | [Keep Exception Handlers Narrow with try/else](snippets/python-language/keep-exception-handlers-narrow-with-try-else.md) | python-language | idiom | parsing, validation |
 | [Load Bounded Trusted Extension Factories by One Entry Point](snippets/python-language/load-bounded-trusted-extension-factories-by-one-entry-point.md) | python-language | recipe | interoperability, validation |
 | [Load Text Templates from Package Resources](snippets/python-language/load-text-templates-from-package-resources.md) | python-language | recipe | resource-management, validation |
@@ -474,6 +476,7 @@ not edit it by hand.
 | [Group Bounded SQLite Console Lines into Lexically Complete Batches Without Execution](snippets/storage-databases/group-bounded-sqlite-console-lines-into-lexically-complete-batches-without-execution.md) | storage-databases | recipe | automation, parsing, validation |
 | [Hand Off Bounded Bytes Through a Scoped Named Temporary Path](snippets/storage-databases/hand-off-bounded-bytes-through-a-scoped-named-temporary-path.md) | storage-databases | recipe | interoperability, persistence, resource-management |
 | [Map a Namespaced POSIX Path Beneath a Logical Local Root](snippets/storage-databases/map-a-namespaced-posix-path-beneath-a-logical-local-root.md) | storage-databases | recipe | data-transformation, persistence, validation |
+| [Open a Verified Read-Only SQLite Connection Under a Closed Hardening Profile](snippets/storage-databases/open-a-verified-read-only-sqlite-connection-under-a-closed-hardening-profile.md) | storage-databases | recipe | persistence, resource-management, security, validation |
 | [Page Bounded SQLite Rows with a Composite Keyset Cursor](snippets/storage-databases/page-bounded-sqlite-rows-with-a-composite-keyset-cursor.md) | storage-databases | pattern | performance-optimization, persistence, validation |
 | [Plan a Bounded Named POSIX Layout Under Explicit Roots](snippets/storage-databases/plan-a-bounded-named-posix-layout-under-explicit-roots.md) | storage-databases | algorithm | data-transformation, persistence, validation |
 | [Plan an Additive SQLite Column Projection](snippets/storage-databases/plan-an-additive-sqlite-column-projection.md) | storage-databases | recipe | data-transformation, persistence, validation |
@@ -575,6 +578,7 @@ not edit it by hand.
 | [Resolve a Bounded Configuration Fragment Graph](snippets/configuration-serialization/resolve-a-bounded-configuration-fragment-graph.md) | configuration-serialization | algorithm | configuration, data-transformation, validation |
 | [Resolve a Bounded Plain JSON Pointer](snippets/configuration-serialization/resolve-a-bounded-plain-json-pointer.md) | configuration-serialization | recipe | configuration, parsing, validation |
 | [Resolve an Absolute or Percentage Limit](snippets/configuration-serialization/resolve-an-absolute-or-percentage-limit.md) | configuration-serialization | recipe | configuration, parsing, validation |
+| [Resolve Bounded Configuration Layers with Winner Provenance](snippets/configuration-serialization/resolve-bounded-configuration-layers-with-winner-provenance.md) | configuration-serialization | recipe | configuration, data-transformation, validation |
 | [Resolve Bounded Configuration Through Dependent Adapters](snippets/configuration-serialization/resolve-bounded-configuration-through-dependent-adapters.md) | configuration-serialization | pattern | configuration, data-transformation, validation |
 | [Resolve Declared Input Paths from an Explicit Execution Mode](snippets/configuration-serialization/resolve-declared-input-paths-from-an-explicit-execution-mode.md) | configuration-serialization | pattern | configuration, data-transformation, validation |
 | [Round-Trip a Bounded Nullable String Table with CSV Quote-Not-Null](snippets/configuration-serialization/round-trip-a-bounded-nullable-string-table-with-csv-quote-notnull.md) | configuration-serialization | recipe | interoperability, parsing, serialization, validation |
@@ -669,6 +673,7 @@ not edit it by hand.
 | [Read a Bounded Log Delta Across One Rename-Based Rotation](snippets/observability-operations/read-a-bounded-log-delta-across-one-rename-based-rotation.md) | observability-operations | recipe | observability, resource-management, retry-recovery |
 | [Redact One LogRecord Field for One Handler Without Mutating Sibling Handlers](snippets/observability-operations/redact-one-logrecord-field-for-one-handler-without-mutating-sibling-handlers.md) | observability-operations | pattern | observability, security |
 | [Render a Bounded Prometheus Text Exposition for Integer Counter and Gauge Snapshots](snippets/observability-operations/render-a-bounded-prometheus-text-exposition-for-integer-counter-and-gauge-snapshots.md) | observability-operations | recipe | observability, serialization, validation |
+| [Report a Bounded Positive Allocation Delta from Filtered tracemalloc Snapshots](snippets/observability-operations/report-a-bounded-positive-allocation-delta-from-filtered-tracemalloc-snapshots.md) | observability-operations | recipe | observability, performance-optimization, testing |
 | [Report Partition Offsets Behind a Fixed Checkpoint](snippets/observability-operations/report-partition-offsets-behind-a-fixed-checkpoint.md) | observability-operations | algorithm | observability, validation |
 | [Resolve the Latest Status with an Explicit Mapping](snippets/observability-operations/resolve-the-latest-status-with-an-explicit-mapping.md) | observability-operations | pattern | interoperability, observability, validation |
 | [Route Metric Label Values Through a Stable Overflow Bucket Under a Cardinality Cap](snippets/observability-operations/route-metric-label-values-through-a-stable-overflow-bucket-under-a-cardinality-cap.md) | observability-operations | pattern | observability, resource-management, validation |
