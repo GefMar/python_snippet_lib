@@ -19,15 +19,15 @@ not edit it by hand.
 | --- | --- | ---: |
 | [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 29 |
 | [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 156 |
-| [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 36 |
+| [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 37 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 34 |
-| [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 42 |
+| [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 43 |
 | [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 67 |
 | [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 50 |
-| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 42 |
+| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 43 |
 | [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 76 |
-| [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 26 |
-| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 37 |
+| [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 27 |
+| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 38 |
 | [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 26 |
 
 ### Snippets
@@ -248,6 +248,7 @@ not edit it by hand.
 | [Run Bounded Thread Work by Priority and Submission Order](snippets/concurrency-lifecycle/run-bounded-thread-work-by-priority-and-submission-order.md) | concurrency-lifecycle | pattern | concurrency-control, lifecycle-management, resource-management |
 | [Run Bounded Weighted Jobs Under Shared Process Capacity](snippets/concurrency-lifecycle/run-bounded-weighted-jobs-under-shared-process-capacity.md) | concurrency-lifecycle | pattern | concurrency-control, lifecycle-management, resource-management |
 | [Run One Async Operation with a Bounded Resource Stack](snippets/concurrency-lifecycle/run-one-async-operation-with-a-bounded-resource-stack.md) | concurrency-lifecycle | pattern | concurrency-control, lifecycle-management, resource-management |
+| [Run One Trusted Stateless Function in a Short-Lived Subinterpreter](snippets/concurrency-lifecycle/run-one-trusted-stateless-function-in-a-short-lived-subinterpreter.md) | concurrency-lifecycle | pattern | lifecycle-management, resource-management, testing |
 | [Select a Reusable Lease for an Explicit Remaining Horizon](snippets/concurrency-lifecycle/select-a-reusable-lease-for-an-explicit-remaining-horizon.md) | concurrency-lifecycle | algorithm | concurrency-control, lifecycle-management, resource-management, validation |
 | [Select an Immediate Predecessor from a Bounded Contender Snapshot](snippets/concurrency-lifecycle/select-an-immediate-predecessor-from-a-bounded-contender-snapshot.md) | concurrency-lifecycle | algorithm | concurrency-control, lifecycle-management, validation |
 | [Stop a Polling Worker Cooperatively with an Event](snippets/concurrency-lifecycle/stop-a-polling-worker-cooperatively-with-an-event.md) | concurrency-lifecycle | pattern | concurrency-control, resource-management |
@@ -330,6 +331,7 @@ not edit it by hand.
 | [Run Ordered HTTP Request and Response Layers Around One Handler](snippets/networking-protocols/run-ordered-http-request-and-response-layers-around-one-handler.md) | networking-protocols | pattern | data-transformation, networking, validation |
 | [Subtract a Bounded Disjoint CIDR Exclusion Set from One Parent Network](snippets/networking-protocols/subtract-a-bounded-disjoint-cidr-exclusion-set-from-one-parent-network.md) | networking-protocols | algorithm | data-transformation, networking, validation |
 | [Unwrap One uint32 Serial Around an Explicit Absolute Reference](snippets/networking-protocols/unwrap-one-uint32-serial-around-an-explicit-absolute-reference.md) | networking-protocols | algorithm | interoperability, networking, validation |
+| [Verify One RFC 9530 SHA-256 Content-Digest Under a Closed Profile](snippets/networking-protocols/verify-one-rfc-9530-sha-256-content-digest-under-a-closed-profile.md) | networking-protocols | recipe | networking, parsing, security, validation |
 | [Yield Bounded SSE Frames with Serialized Comment Keepalives](snippets/networking-protocols/yield-bounded-sse-frames-with-serialized-comment-keepalives.md) | networking-protocols | integration | concurrency-control, networking, resource-management, serialization |
 | [Aggregate Consecutive Values into Weighted Runs](snippets/data-processing/aggregate-consecutive-values-into-weighted-runs.md) | data-processing | algorithm | data-transformation |
 | [Aggregate pandas Groups into Explicit Flat Columns](snippets/data-processing/aggregate-pandas-groups-into-explicit-flat-columns.md) | data-processing | integration | data-transformation, interoperability, validation |
@@ -460,6 +462,7 @@ not edit it by hand.
 | [Compile a Bounded T-String into SQLite Qmark SQL and Parameters](snippets/storage-databases/compile-a-bounded-t-string-into-sqlite-qmark-sql-and-parameters.md) | storage-databases | pattern | persistence, security, validation |
 | [Decide Whether to Restore a Versioned Snapshot](snippets/storage-databases/decide-whether-to-restore-a-versioned-snapshot.md) | storage-databases | algorithm | configuration, data-transformation, validation |
 | [Execute a Trusted SQLite Query Under Progress-Callback and Row Caps](snippets/storage-databases/execute-a-trusted-sqlite-query-under-progress-callback-and-row-caps.md) | storage-databases | recipe | performance-optimization, resource-management, validation |
+| [Fill a Preallocated Bytearray Exactly with os.readinto](snippets/storage-databases/fill-a-preallocated-bytearray-exactly-with-os-readinto.md) | storage-databases | recipe | performance-optimization, resource-management, validation |
 | [Fingerprint a Bounded Flat File Set with Framed SHA-256](snippets/storage-databases/fingerprint-a-bounded-flat-file-set-with-framed-sha-256.md) | storage-databases | recipe | caching, persistence, validation |
 | [Group Bounded SQLite Console Lines into Lexically Complete Batches Without Execution](snippets/storage-databases/group-bounded-sqlite-console-lines-into-lexically-complete-batches-without-execution.md) | storage-databases | recipe | automation, parsing, validation |
 | [Map a Namespaced POSIX Path Beneath a Logical Local Root](snippets/storage-databases/map-a-namespaced-posix-path-beneath-a-logical-local-root.md) | storage-databases | recipe | data-transformation, persistence, validation |
@@ -583,6 +586,7 @@ not edit it by hand.
 | [Load an Authenticated Legacy Pickle with Restricted Globals](snippets/security-privacy/load-an-authenticated-legacy-pickle-with-restricted-globals.md) | security-privacy | recipe | interoperability, security, serialization, validation |
 | [Match RFC 6238 SHA-256 TOTP Codes over a Bounded Counter Window](snippets/security-privacy/match-rfc-6238-sha-256-totp-codes-over-a-bounded-counter-window.md) | security-privacy | recipe | interoperability, security, validation |
 | [Plan a Bounded Notebook Storage Key with Collision Suggestions](snippets/security-privacy/plan-a-bounded-notebook-storage-key-with-collision-suggestions.md) | security-privacy | recipe | persistence, security, validation |
+| [Read One Descriptor-Relative Regular File Without Following Its Final Symlink](snippets/security-privacy/read-one-descriptor-relative-regular-file-without-following-its-final-symlink.md) | security-privacy | recipe | resource-management, security, validation |
 | [Redact a Printable ASCII Secret with a Bounded Visible Tail](snippets/security-privacy/redact-a-printable-ascii-secret-with-a-bounded-visible-tail.md) | security-privacy | recipe | observability, security, validation |
 | [Redact Explicit Paths in Bounded JSON-Like Data](snippets/security-privacy/redact-explicit-paths-in-bounded-json-like-data.md) | security-privacy | recipe | data-transformation, observability, security, validation |
 | [Redact Userinfo and Selected Query Values in a Bounded HTTP URL](snippets/security-privacy/redact-userinfo-and-selected-query-values-in-a-bounded-http-url.md) | security-privacy | recipe | observability, security, validation |
@@ -627,6 +631,7 @@ not edit it by hand.
 | [Shrink a Bounded Failing Sequence to a One-Deletion-Minimal Subsequence](snippets/testing-tooling/shrink-a-bounded-failing-sequence-to-a-one-deletion-minimal-subsequence.md) | testing-tooling | testing-technique | testing, validation |
 | [Verify Calls to a Standalone Function with Autospec](snippets/testing-tooling/verify-calls-to-a-standalone-function-with-create-autospec.md) | testing-tooling | testing-technique | testing, validation |
 | [Verify Ordered HTTP Client Expectations with Bounded Mismatch Reports](snippets/testing-tooling/verify-ordered-http-client-expectations-with-bounded-mismatch-reports.md) | testing-tooling | testing-technique | networking, testing, validation |
+| [Wait for a Cross-Thread Callback with ThreadingMock Instead of Sleeping](snippets/testing-tooling/wait-for-a-cross-thread-callback-with-threadingmock-instead-of-sleeping.md) | testing-tooling | testing-technique | concurrency-control, testing, validation |
 | [Wait for Every Named Connector Under One Shared Deadline](snippets/testing-tooling/wait-for-every-named-connector-under-one-shared-deadline.md) | testing-tooling | testing-technique | concurrency-control, resource-management, testing, validation |
 | [Wait for Named Queue Conditions Under One Monotonic Deadline](snippets/testing-tooling/wait-for-named-queue-conditions-under-one-monotonic-deadline.md) | testing-tooling | testing-technique | concurrency-control, testing, validation |
 | [Capture a Bounded Pickle-Friendly Exception Report](snippets/observability-operations/capture-a-bounded-pickle-friendly-exception-report.md) | observability-operations | recipe | interoperability, observability, serialization |
