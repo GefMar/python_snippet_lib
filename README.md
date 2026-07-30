@@ -21,14 +21,14 @@ not edit it by hand.
 | [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 156 |
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 39 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 34 |
-| [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 46 |
+| [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 47 |
 | [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 69 |
 | [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 51 |
 | [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 46 |
-| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 80 |
-| [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 28 |
-| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 39 |
-| [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 29 |
+| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 81 |
+| [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 29 |
+| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 40 |
+| [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 30 |
 
 ### Snippets
 
@@ -341,6 +341,7 @@ not edit it by hand.
 | [Run Ordered HTTP Request and Response Layers Around One Handler](snippets/networking-protocols/run-ordered-http-request-and-response-layers-around-one-handler.md) | networking-protocols | pattern | data-transformation, networking, validation |
 | [Subtract a Bounded Disjoint CIDR Exclusion Set from One Parent Network](snippets/networking-protocols/subtract-a-bounded-disjoint-cidr-exclusion-set-from-one-parent-network.md) | networking-protocols | algorithm | data-transformation, networking, validation |
 | [Unwrap One uint32 Serial Around an Explicit Absolute Reference](snippets/networking-protocols/unwrap-one-uint32-serial-around-an-explicit-absolute-reference.md) | networking-protocols | algorithm | interoperability, networking, validation |
+| [Update One Bounded tracestate Member While Preserving Peer Order](snippets/networking-protocols/update-one-bounded-tracestate-member-while-preserving-peer-order.md) | networking-protocols | recipe | interoperability, networking, validation |
 | [Verify One RFC 9530 SHA-256 Content-Digest Under a Closed Profile](snippets/networking-protocols/verify-one-rfc-9530-sha-256-content-digest-under-a-closed-profile.md) | networking-protocols | recipe | networking, parsing, security, validation |
 | [Yield Bounded SSE Frames with Serialized Comment Keepalives](snippets/networking-protocols/yield-bounded-sse-frames-with-serialized-comment-keepalives.md) | networking-protocols | integration | concurrency-control, networking, resource-management, serialization |
 | [Aggregate Consecutive Values into Weighted Runs](snippets/data-processing/aggregate-consecutive-values-into-weighted-runs.md) | data-processing | algorithm | data-transformation |
@@ -531,6 +532,7 @@ not edit it by hand.
 | [Elide Nested Mapping Values That Match Explicit Defaults](snippets/configuration-serialization/elide-nested-mapping-values-that-match-explicit-defaults.md) | configuration-serialization | recipe | configuration, serialization |
 | [Embed a Small Routing Hint in a Random UUIDv8](snippets/configuration-serialization/embed-a-small-routing-hint-in-a-random-uuidv8.md) | configuration-serialization | recipe | interoperability, serialization, validation |
 | [Encode a Bounded Signed Integer in Its Shortest Big-Endian Two's-Complement Byte String](snippets/configuration-serialization/encode-a-bounded-signed-integer-in-its-shortest-big-endian-twos-complement-byte-string.md) | configuration-serialization | algorithm | interoperability, serialization, validation |
+| [Encode and Decode a Bounded Big-Endian Complex Vector with struct](snippets/configuration-serialization/encode-and-decode-a-bounded-big-endian-complex-vector-with-struct.md) | configuration-serialization | recipe | interoperability, serialization, validation |
 | [Encode and Decode a Bounded Full-Block Z85 Frame](snippets/configuration-serialization/encode-and-decode-a-bounded-full-block-z85-frame.md) | configuration-serialization | recipe | interoperability, serialization, validation |
 | [Encode and Decode Canonical Bencode Under Structural Limits](snippets/configuration-serialization/encode-and-decode-canonical-bencode-under-structural-limits.md) | configuration-serialization | recipe | interoperability, parsing, serialization, validation |
 | [Encode and Decode One Exact-Size Big-Endian Binary Record with struct.Struct](snippets/configuration-serialization/encode-and-decode-one-exact-size-big-endian-binary-record-with-struct.md) | configuration-serialization | recipe | interoperability, parsing, serialization, validation |
@@ -602,6 +604,7 @@ not edit it by hand.
 | [Derive an Authentication Host from an Explicit DNS Suffix Policy](snippets/security-privacy/derive-an-authentication-host-from-an-explicit-dns-suffix-policy.md) | security-privacy | recipe | security, validation |
 | [Derive and Verify a Bounded Password Record with a Closed scrypt Profile](snippets/security-privacy/derive-and-verify-a-bounded-password-record-with-a-closed-scrypt-profile.md) | security-privacy | pattern | security, validation |
 | [Derive Bounded Key Material with RFC 5869 HKDF-SHA-256](snippets/security-privacy/derive-bounded-key-material-with-rfc-5869-hkdf-sha-256.md) | security-privacy | recipe | interoperability, security, validation |
+| [Derive Collision-Audited Keyed Pseudonyms for Bounded Identifiers](snippets/security-privacy/derive-collision-audited-keyed-pseudonyms-for-bounded-identifiers.md) | security-privacy | pattern | data-transformation, security, validation |
 | [Encrypt a Bounded Value with a Versioned AES-GCM Key Envelope](snippets/security-privacy/encrypt-a-bounded-value-with-a-versioned-aes-gcm-key-envelope.md) | security-privacy | integration | security, serialization, validation |
 | [Load an Authenticated Legacy Pickle with Restricted Globals](snippets/security-privacy/load-an-authenticated-legacy-pickle-with-restricted-globals.md) | security-privacy | recipe | interoperability, security, serialization, validation |
 | [Match RFC 6238 SHA-256 TOTP Codes over a Bounded Counter Window](snippets/security-privacy/match-rfc-6238-sha-256-totp-codes-over-a-bounded-counter-window.md) | security-privacy | recipe | interoperability, security, validation |
@@ -636,6 +639,7 @@ not edit it by hand.
 | [Extract a Bounded Static Python Annotation Index without Evaluation](snippets/testing-tooling/extract-a-bounded-static-python-annotation-index-without-evaluation.md) | testing-tooling | testing-technique | parsing, testing, validation |
 | [Extract Bounded Doctest Examples Without Executing Them](snippets/testing-tooling/extract-bounded-doctest-examples-without-executing-them.md) | testing-tooling | testing-technique | parsing, testing, validation |
 | [Extract Bounded Native-Test Failure Highlights](snippets/testing-tooling/extract-bounded-native-test-failure-highlights.md) | testing-tooling | recipe | observability, parsing, testing |
+| [Generate a Bounded One-Edit Byte Mutation Corpus](snippets/testing-tooling/generate-a-bounded-one-edit-byte-mutation-corpus.md) | testing-tooling | testing-technique | testing, validation |
 | [Generate a Deterministic Pairwise-Covering Matrix from Closed String Parameters](snippets/testing-tooling/generate-a-deterministic-pairwise-covering-matrix-from-closed-string-parameters.md) | testing-tooling | testing-technique | testing, validation |
 | [Generate a Minimal Cyclic Test Sequence Covering Every Fixed-Length Symbol Word](snippets/testing-tooling/generate-a-minimal-cyclic-test-sequence-covering-every-fixed-length-symbol-word.md) | testing-tooling | testing-technique | data-transformation, testing, validation |
 | [Generate a Seeded Metric with Bounded Flapping Runs](snippets/testing-tooling/generate-a-seeded-metric-with-bounded-flapping-runs.md) | testing-tooling | testing-technique | observability, testing |
@@ -667,6 +671,7 @@ not edit it by hand.
 | [Compute a Validated Delta Between Cumulative Histogram Snapshots](snippets/observability-operations/compute-a-validated-delta-between-cumulative-histogram-snapshots.md) | observability-operations | algorithm | data-transformation, observability, validation |
 | [Compute an Exact Apdex Score from Already Classified Counts](snippets/observability-operations/compute-an-exact-apdex-score-from-already-classified-counts.md) | observability-operations | algorithm | data-transformation, observability, validation |
 | [Compute Inclusive and Exclusive Durations for a Bounded Nested Span Forest](snippets/observability-operations/compute-inclusive-and-exclusive-durations-for-a-bounded-nested-span-forest.md) | observability-operations | algorithm | data-transformation, observability, validation |
+| [Compute Linux PSI Stall Deltas from Two Bounded System Snapshots](snippets/observability-operations/compute-linux-psi-stall-deltas-from-two-bounded-system-snapshots.md) | observability-operations | algorithm | data-transformation, observability, validation |
 | [Count Values in Fixed Upper-Bound Bins](snippets/observability-operations/count-values-in-fixed-upper-bound-bins.md) | observability-operations | algorithm | data-transformation, observability |
 | [Format Log Records as JSON with Explicit Extra Fields](snippets/observability-operations/format-log-records-as-json-with-explicit-extra-fields.md) | observability-operations | recipe | observability, serialization |
 | [Group Metric Samples by Their Exact Label-Key Shape](snippets/observability-operations/group-metric-samples-by-their-exact-label-key-shape.md) | observability-operations | algorithm | data-transformation, observability, validation |
