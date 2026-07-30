@@ -17,18 +17,18 @@ not edit it by hand.
 
 | Category | Scope | Snippets |
 | --- | --- | ---: |
-| [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 28 |
+| [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 29 |
 | [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 156 |
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 36 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 34 |
-| [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 41 |
+| [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 42 |
 | [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 67 |
 | [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 50 |
 | [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 42 |
-| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 75 |
+| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 76 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 26 |
-| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 36 |
-| [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 25 |
+| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 37 |
+| [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 26 |
 
 ### Snippets
 
@@ -57,6 +57,7 @@ not edit it by hand.
 | [Model a Quantity with One Canonical Unit](snippets/python-language/model-a-quantity-with-one-canonical-unit.md) | python-language | pattern | data-transformation, validation |
 | [Pass Constructor-Only Context with dataclasses.InitVar](snippets/python-language/pass-constructor-only-context-with-initvar.md) | python-language | idiom | data-transformation, validation |
 | [Read Fixed-Size Blocks with iter() and a Sentinel](snippets/python-language/read-fixed-size-blocks-with-iter-sentinel.md) | python-language | idiom | performance-optimization, resource-management |
+| [Return NotImplemented for Unsupported Rich Comparisons](snippets/python-language/return-notimplemented-for-unsupported-rich-comparisons.md) | python-language | idiom | interoperability, validation |
 | [Reuse Live Objects by Exact String Key with WeakValueDictionary](snippets/python-language/reuse-live-objects-by-exact-string-key-with-weakvaluedictionary.md) | python-language | pattern | caching, resource-management, validation |
 | [Split a Bounded ExceptionGroup by Closed Exception Types](snippets/python-language/split-a-bounded-exceptiongroup-by-closed-exception-types.md) | python-language | pattern | validation |
 | [Type a Narrow Structural Interface with Protocol](snippets/python-language/type-a-narrow-structural-interface-with-protocol.md) | python-language | pattern | interoperability, validation |
@@ -302,6 +303,7 @@ not edit it by hand.
 | [Decode One Bounded HTTP/1.1 Chunked Body under a Closed No-Trailers Profile](snippets/networking-protocols/decode-one-bounded-http-1-1-chunked-body-under-a-closed-no-trailers-profile.md) | networking-protocols | recipe | networking, parsing, validation |
 | [Dispatch a Bounded RPC Envelope Through a Closed Path-to-Codec Registry](snippets/networking-protocols/dispatch-a-bounded-rpc-envelope-through-a-closed-path-to-codec-registry.md) | networking-protocols | integration | networking, serialization, validation |
 | [Encode a Bounded HTTP/1.1 Chunked Body for Protocol Tests](snippets/networking-protocols/encode-a-bounded-http-1-1-chunked-body-for-protocol-tests.md) | networking-protocols | recipe | networking, serialization, testing, validation |
+| [Encode and Decode One Canonical Size-Capped Netstring](snippets/networking-protocols/encode-and-decode-one-canonical-size-capped-netstring.md) | networking-protocols | recipe | networking, serialization, validation |
 | [Evaluate a Bounded HTTP If-None-Match Field Against an Optional Current Entity Tag](snippets/networking-protocols/evaluate-a-bounded-http-if-none-match-field-against-an-optional-current-entity-tag.md) | networking-protocols | recipe | interoperability, parsing, validation |
 | [Extract Bounded Field Violations from a google.rpc Status Payload](snippets/networking-protocols/extract-bounded-field-violations-from-a-google-rpc-status-payload.md) | networking-protocols | integration | networking, parsing, validation |
 | [Extract Bounded Singleton HTTP Headers with Explicit Rules](snippets/networking-protocols/extract-bounded-singleton-http-headers-with-explicit-rules.md) | networking-protocols | recipe | networking, parsing, validation |
@@ -494,6 +496,7 @@ not edit it by hand.
 | [Build a Bounded Ordered Rule Pipeline from Closed JSON Configuration](snippets/configuration-serialization/build-a-bounded-ordered-rule-pipeline-from-closed-json-configuration.md) | configuration-serialization | pattern | configuration, serialization, validation |
 | [Build a Canonical Binary Prefix Codebook from Declared Byte Code Lengths](snippets/configuration-serialization/build-a-canonical-binary-prefix-codebook-from-declared-byte-code-lengths.md) | configuration-serialization | algorithm | data-transformation, serialization, validation |
 | [Build a Deterministic Size-Capped USTAR Archive from Bytes](snippets/configuration-serialization/build-a-deterministic-size-capped-ustar-archive-from-bytes.md) | configuration-serialization | recipe | resource-management, serialization, validation |
+| [Canonicalize Trusted Size-Capped XML for Stable UTF-8 Comparison](snippets/configuration-serialization/canonicalize-trusted-size-capped-xml-for-stable-utf-8-comparison.md) | configuration-serialization | recipe | serialization, testing, validation |
 | [Classify a Naive Local Datetime Against an Explicit ZoneInfo Transition](snippets/configuration-serialization/classify-a-naive-local-datetime-against-an-explicit-zoneinfo-transition.md) | configuration-serialization | algorithm | configuration, interoperability, validation |
 | [Convert a Weekday Bitmask to a Canonical Cron Schedule](snippets/configuration-serialization/convert-a-weekday-bitmask-to-a-canonical-cron-schedule.md) | configuration-serialization | recipe | configuration, serialization, validation |
 | [Convert Decimal Values to Exact Minor Units](snippets/configuration-serialization/convert-decimal-values-to-exact-minor-units.md) | configuration-serialization | recipe | interoperability, validation |
@@ -590,6 +593,7 @@ not edit it by hand.
 | [Verify a Bounded Byte Stream Before Returning Its Payload](snippets/security-privacy/verify-a-bounded-byte-stream-before-returning-its-payload.md) | security-privacy | recipe | resource-management, security, validation |
 | [Verify an RFC 7636 S256 PKCE Challenge](snippets/security-privacy/verify-an-rfc-7636-s256-pkce-challenge.md) | security-privacy | recipe | interoperability, security, validation |
 | [Apply a Reusable Click Option Bundle to Subcommands](snippets/testing-tooling/apply-a-reusable-click-option-bundle-to-subcommands.md) | testing-tooling | integration | automation, configuration, testing |
+| [Assert an Exact Iterator Pull Budget with a Fail-Closed Probe](snippets/testing-tooling/assert-an-exact-iterator-pull-budget-with-a-fail-closed-probe.md) | testing-tooling | testing-technique | testing, validation |
 | [Attach a Validated Internal Size Breakdown to One Artifact Report](snippets/testing-tooling/attach-a-validated-internal-size-breakdown-to-one-artifact-report.md) | testing-tooling | recipe | data-transformation, resource-management, testing, validation |
 | [Audit a Bounded Directive Tree with Isolated Inherited Context](snippets/testing-tooling/audit-a-bounded-directive-tree-with-isolated-inherited-context.md) | testing-tooling | pattern | configuration, testing, validation |
 | [Audit a Bounded Less-Than Relation for Strict Weak Ordering](snippets/testing-tooling/audit-a-bounded-less-than-relation-for-strict-weak-ordering.md) | testing-tooling | testing-technique | testing, validation |
@@ -643,6 +647,7 @@ not edit it by hand.
 | [Measure Cache Hit Ratios from Monotonic Counter Snapshots](snippets/observability-operations/measure-cache-hit-ratios-from-monotonic-counter-snapshots.md) | observability-operations | algorithm | observability, validation |
 | [Process Log Records in a Background Thread with QueueListener](snippets/observability-operations/process-log-records-in-a-background-thread-with-queuelistener.md) | observability-operations | recipe | concurrency-control, lifecycle-management, observability |
 | [Read a Bounded Log Delta Across One Rename-Based Rotation](snippets/observability-operations/read-a-bounded-log-delta-across-one-rename-based-rotation.md) | observability-operations | recipe | observability, resource-management, retry-recovery |
+| [Redact One LogRecord Field for One Handler Without Mutating Sibling Handlers](snippets/observability-operations/redact-one-logrecord-field-for-one-handler-without-mutating-sibling-handlers.md) | observability-operations | pattern | observability, security |
 | [Render a Bounded Prometheus Text Exposition for Integer Counter and Gauge Snapshots](snippets/observability-operations/render-a-bounded-prometheus-text-exposition-for-integer-counter-and-gauge-snapshots.md) | observability-operations | recipe | observability, serialization, validation |
 | [Report Partition Offsets Behind a Fixed Checkpoint](snippets/observability-operations/report-partition-offsets-behind-a-fixed-checkpoint.md) | observability-operations | algorithm | observability, validation |
 | [Resolve the Latest Status with an Explicit Mapping](snippets/observability-operations/resolve-the-latest-status-with-an-explicit-mapping.md) | observability-operations | pattern | interoperability, observability, validation |
