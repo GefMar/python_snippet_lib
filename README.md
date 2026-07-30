@@ -17,15 +17,15 @@ not edit it by hand.
 
 | Category | Scope | Snippets |
 | --- | --- | ---: |
-| [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 31 |
+| [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 32 |
 | [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 156 |
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 39 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 34 |
-| [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 43 |
+| [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 45 |
 | [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 67 |
 | [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 50 |
 | [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 45 |
-| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 77 |
+| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 79 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 28 |
 | [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 39 |
 | [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 27 |
@@ -57,6 +57,7 @@ not edit it by hand.
 | [Make a Defensive Copy at a Mutable Input Boundary](snippets/python-language/make-a-defensive-copy-at-a-mutable-input-boundary.md) | python-language | idiom | data-transformation, resource-management |
 | [Model a Quantity with One Canonical Unit](snippets/python-language/model-a-quantity-with-one-canonical-unit.md) | python-language | pattern | data-transformation, validation |
 | [Pass Constructor-Only Context with dataclasses.InitVar](snippets/python-language/pass-constructor-only-context-with-initvar.md) | python-language | idiom | data-transformation, validation |
+| [Preserve Span Invariants with a Custom Replace Protocol](snippets/python-language/preserve-span-invariants-with-a-custom-replace-protocol.md) | python-language | pattern | data-transformation, interoperability, validation |
 | [Read Fixed-Size Blocks with iter() and a Sentinel](snippets/python-language/read-fixed-size-blocks-with-iter-sentinel.md) | python-language | idiom | performance-optimization, resource-management |
 | [Return NotImplemented for Unsupported Rich Comparisons](snippets/python-language/return-notimplemented-for-unsupported-rich-comparisons.md) | python-language | idiom | interoperability, validation |
 | [Reuse Live Objects by Exact String Key with WeakValueDictionary](snippets/python-language/reuse-live-objects-by-exact-string-key-with-weakvaluedictionary.md) | python-language | pattern | caching, resource-management, validation |
@@ -302,6 +303,7 @@ not edit it by hand.
 | [Classify a Pre-Resolved IP Against a Bounded CIDR-Zone Snapshot](snippets/networking-protocols/classify-a-pre-resolved-ip-against-a-bounded-cidr-zone-snapshot.md) | networking-protocols | algorithm | caching, networking, validation |
 | [Classify One HTTP/1 Response Body Framing from Validated Metadata](snippets/networking-protocols/classify-one-http-1-response-body-framing-from-validated-metadata.md) | networking-protocols | recipe | networking, parsing, validation |
 | [Collapse a Bounded Same-Family CIDR Set Without Changing Its Address Union](snippets/networking-protocols/collapse-a-bounded-same-family-cidr-set-without-changing-its-address-union.md) | networking-protocols | algorithm | data-transformation, networking, validation |
+| [Collapse IPv4-Mapped IPv6 Literals to One Canonical Address Key](snippets/networking-protocols/collapse-ipv4-mapped-ipv6-literals-to-one-canonical-address-key.md) | networking-protocols | recipe | data-transformation, networking, validation |
 | [Collect Matching Cursor Pages with an Explicit Page Budget](snippets/networking-protocols/collect-matching-cursor-pages-with-an-explicit-page-budget.md) | networking-protocols | pattern | networking, resource-management |
 | [Compute a 16-Bit Internet Checksum Across Bounded Byte Segments](snippets/networking-protocols/compute-a-16-bit-internet-checksum-across-bounded-byte-segments.md) | networking-protocols | algorithm | data-transformation, networking, validation |
 | [Decode One Bounded DNS Name with Strict Backward Compression Pointers](snippets/networking-protocols/decode-one-bounded-dns-name-with-strict-backward-compression-pointers.md) | networking-protocols | recipe | networking, parsing, validation |
@@ -329,6 +331,7 @@ not edit it by hand.
 | [Parse and Render One Bounded WebSocket Close Payload](snippets/networking-protocols/parse-and-render-one-bounded-websocket-close-payload.md) | networking-protocols | recipe | interoperability, parsing, validation |
 | [Parse One Bounded Printable-ASCII HTTP/1 Field Section with Exact CRLF Framing](snippets/networking-protocols/parse-one-bounded-printable-ascii-http-1-field-section-with-exact-crlf-framing.md) | networking-protocols | recipe | networking, parsing, validation |
 | [Read and Write Size-Capped Varint Frames](snippets/networking-protocols/read-and-write-size-capped-varint-frames.md) | networking-protocols | recipe | networking, serialization, validation |
+| [Read One Bounded Async Byte Field with Either Line Feed or NUL Terminator](snippets/networking-protocols/read-one-bounded-async-byte-field-with-either-line-feed-or-nul-terminator.md) | networking-protocols | recipe | networking, parsing, validation |
 | [Release a Pooled Response Connection Only After Clean EOF](snippets/networking-protocols/release-a-pooled-response-connection-only-after-clean-eof.md) | networking-protocols | pattern | lifecycle-management, networking, resource-management, validation |
 | [Render One Bounded Set-Cookie Field from Explicit Attributes](snippets/networking-protocols/render-one-bounded-set-cookie-field-from-explicit-attributes.md) | networking-protocols | recipe | interoperability, networking, validation |
 | [Resume a Bounded HTTP Byte Stream with Validated Range Responses](snippets/networking-protocols/resume-a-bounded-http-byte-stream-with-validated-range-responses.md) | networking-protocols | integration | networking, resource-management, retry-recovery, validation |
@@ -551,6 +554,7 @@ not edit it by hand.
 | [Parse a Bounded INI Document Under a Closed No-Interpolation Schema](snippets/configuration-serialization/parse-a-bounded-ini-document-under-a-closed-no-interpolation-schema.md) | configuration-serialization | recipe | configuration, parsing, validation |
 | [Parse a Bounded Nested Bracket Tree](snippets/configuration-serialization/parse-a-bounded-nested-bracket-tree.md) | configuration-serialization | algorithm | parsing, validation |
 | [Parse a Bounded XML Envelope with Closed Variant Dispatch](snippets/configuration-serialization/parse-a-bounded-xml-envelope-with-closed-variant-dispatch.md) | configuration-serialization | integration | parsing, security, validation |
+| [Parse a Canonical Empty-Authority File URI into a Native Path](snippets/configuration-serialization/parse-a-canonical-empty-authority-file-uri-into-a-native-path.md) | configuration-serialization | recipe | interoperability, parsing, validation |
 | [Parse a Canonical UUIDv7 with an Explicit Millisecond Window](snippets/configuration-serialization/parse-a-canonical-uuidv7-with-an-explicit-millisecond-window.md) | configuration-serialization | recipe | interoperability, parsing, validation |
 | [Parse a Closed RFC 3339 Timestamp Subset into an Aware Datetime](snippets/configuration-serialization/parse-a-closed-rfc-3339-timestamp-subset-into-an-aware-datetime.md) | configuration-serialization | recipe | configuration, interoperability, parsing, validation |
 | [Parse and Compare Bounded Semantic Versions 2.0.0](snippets/configuration-serialization/parse-and-compare-bounded-semantic-versions-2-0-0.md) | configuration-serialization | recipe | configuration, interoperability, parsing, serialization, validation |
@@ -574,6 +578,7 @@ not edit it by hand.
 | [Resolve Bounded Configuration Through Dependent Adapters](snippets/configuration-serialization/resolve-bounded-configuration-through-dependent-adapters.md) | configuration-serialization | pattern | configuration, data-transformation, validation |
 | [Resolve Declared Input Paths from an Explicit Execution Mode](snippets/configuration-serialization/resolve-declared-input-paths-from-an-explicit-execution-mode.md) | configuration-serialization | pattern | configuration, data-transformation, validation |
 | [Round-Trip a Bounded Nullable String Table with CSV Quote-Not-Null](snippets/configuration-serialization/round-trip-a-bounded-nullable-string-table-with-csv-quote-notnull.md) | configuration-serialization | recipe | interoperability, parsing, serialization, validation |
+| [Serialize a Bounded INI Mapping Only When It Round-Trips Exactly](snippets/configuration-serialization/serialize-a-bounded-ini-mapping-only-when-it-round-trips-exactly.md) | configuration-serialization | recipe | configuration, serialization, validation |
 | [Substitute Typed Values into a JSON-Like Template](snippets/configuration-serialization/substitute-typed-values-into-a-json-like-template.md) | configuration-serialization | recipe | configuration, serialization, validation |
 | [Tokenize a Bounded POSIX-Style Argument String Without Expansion](snippets/configuration-serialization/tokenize-a-bounded-posix-style-argument-string-without-expansion.md) | configuration-serialization | recipe | configuration, parsing, validation |
 | [Audit a Bounded ZIP Central Directory Without Decompressing Members](snippets/security-privacy/audit-a-bounded-zip-central-directory-without-decompressing-members.md) | security-privacy | recipe | parsing, resource-management, security, validation |
