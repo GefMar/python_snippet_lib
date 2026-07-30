@@ -18,17 +18,17 @@ not edit it by hand.
 | Category | Scope | Snippets |
 | --- | --- | ---: |
 | [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 35 |
-| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 160 |
+| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 161 |
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 39 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 35 |
-| [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 52 |
+| [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 54 |
 | [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 71 |
-| [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 54 |
+| [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 55 |
 | [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 48 |
 | [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 82 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 31 |
 | [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 42 |
-| [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 32 |
+| [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 33 |
 
 ### Snippets
 
@@ -99,6 +99,7 @@ not edit it by hand.
 | [Classify Bounded DAG Stages as Ready, Waiting, or Blocked](snippets/algorithms-data-structures/classify-bounded-dag-stages-as-ready-waiting-or-blocked.md) | algorithms-data-structures | algorithm | automation, concurrency-control, validation |
 | [Classify the Exact Intersection of Two Closed Integer Line Segments](snippets/algorithms-data-structures/classify-the-exact-intersection-of-two-closed-integer-line-segments.md) | algorithms-data-structures | algorithm | data-transformation, testing, validation |
 | [Coalesce Bounded Half-Open Integer Intervals Under an Explicit Adjacency Policy](snippets/algorithms-data-structures/coalesce-bounded-half-open-integer-intervals-under-an-explicit-adjacency-policy.md) | algorithms-data-structures | algorithm | data-transformation, validation |
+| [Color a Bounded Simple Undirected Graph Greedily with Deterministic DSATUR](snippets/algorithms-data-structures/color-a-bounded-simple-undirected-graph-greedily-with-deterministic-dsatur.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Combine a Bounded System of Possibly Non-Coprime Integer Congruences](snippets/algorithms-data-structures/combine-a-bounded-system-of-possibly-non-coprime-integer-congruences.md) | algorithms-data-structures | algorithm | data-transformation, validation |
 | [Compute a Bounded Integer Maximum Flow and Canonical Minimum Cut with Edmonds-Karp](snippets/algorithms-data-structures/compute-a-bounded-integer-maximum-flow-and-canonical-minimum-cut-with-edmonds-karp.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Compute a Canonical Convex Hull for Bounded Integer Points](snippets/algorithms-data-structures/compute-a-canonical-convex-hull-for-bounded-integer-points.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
@@ -343,6 +344,8 @@ not edit it by hand.
 | [Parse One Bounded Printable-ASCII HTTP/1 Field Section with Exact CRLF Framing](snippets/networking-protocols/parse-one-bounded-printable-ascii-http-1-field-section-with-exact-crlf-framing.md) | networking-protocols | recipe | networking, parsing, validation |
 | [Parse One Bounded PROXY Protocol Version 1 Line](snippets/networking-protocols/parse-one-bounded-proxy-protocol-version-one-line.md) | networking-protocols | recipe | networking, parsing, validation |
 | [Parse One Bounded PROXY Protocol Version Two TCP Header Without TLVs](snippets/networking-protocols/parse-one-bounded-proxy-protocol-version-two-tcp-header-without-tlvs.md) | networking-protocols | recipe | networking, parsing, validation |
+| [Parse One Bounded RFC 8489 STUN Binding Request Envelope](snippets/networking-protocols/parse-one-bounded-rfc-8489-stun-binding-request-envelope.md) | networking-protocols | recipe | interoperability, networking, parsing, validation |
+| [Parse One Bounded RFC 9651 Structured Field Item](snippets/networking-protocols/parse-one-bounded-rfc-9651-structured-field-item.md) | networking-protocols | recipe | interoperability, networking, parsing, validation |
 | [Parse One Complete Unfragmented WebSocket Data Frame Under Role Masking Rules](snippets/networking-protocols/parse-one-complete-unfragmented-websocket-data-frame-under-role-masking-rules.md) | networking-protocols | recipe | interoperability, networking, parsing, validation |
 | [Read and Write Size-Capped Varint Frames](snippets/networking-protocols/read-and-write-size-capped-varint-frames.md) | networking-protocols | recipe | networking, serialization, validation |
 | [Read One Bounded Async Byte Field with Either Line Feed or NUL Terminator](snippets/networking-protocols/read-one-bounded-async-byte-field-with-either-line-feed-or-nul-terminator.md) | networking-protocols | recipe | networking, parsing, validation |
@@ -476,6 +479,7 @@ not edit it by hand.
 | [Flag Groupwise Numeric Outliers with IQR Fences](snippets/machine-learning-statistics/flag-groupwise-numeric-outliers-with-iqr-fences.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Measure Drift Between Two Fixed-Bin Count Distributions with PSI](snippets/machine-learning-statistics/measure-drift-between-two-fixed-bin-count-distributions-with-psi.md) | machine-learning-statistics | algorithm | observability, validation |
 | [Plan Gap-Separated Expanding-Window Validation Splits for Ordered Rows](snippets/machine-learning-statistics/plan-gap-separated-expanding-window-validation-splits-for-ordered-rows.md) | machine-learning-statistics | algorithm | data-transformation, testing, validation |
+| [Report Exact Binary Matthews-Correlation Evidence from Four Confusion Counts](snippets/machine-learning-statistics/report-exact-binary-matthews-correlation-evidence-from-four-confusion-counts.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Sample Weighted Negative Items Outside Explicit User Histories](snippets/machine-learning-statistics/sample-weighted-negative-items-outside-explicit-user-histories.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Score Feature Importances Against Bounded Null Runs](snippets/machine-learning-statistics/score-feature-importances-against-bounded-null-runs.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Select a Forecast Vector Only When It Beats a Frozen Baseline](snippets/machine-learning-statistics/select-a-forecast-vector-only-when-it-beats-a-frozen-baseline.md) | machine-learning-statistics | algorithm | data-transformation, validation |
@@ -703,6 +707,7 @@ not edit it by hand.
 | [Measure and Freeze Elapsed Time in a Context](snippets/observability-operations/measure-and-freeze-elapsed-time-in-a-context.md) | observability-operations | idiom | observability, performance-optimization |
 | [Measure Cache Hit Ratios from Monotonic Counter Snapshots](snippets/observability-operations/measure-cache-hit-ratios-from-monotonic-counter-snapshots.md) | observability-operations | algorithm | observability, validation |
 | [Parse a Size-Capped systemd Journal Export Stream into Immutable Entries](snippets/observability-operations/parse-a-size-capped-systemd-journal-export-stream-into-immutable-entries.md) | observability-operations | recipe | observability, parsing, serialization, validation |
+| [Parse One Bounded RFC 5424 Syslog Message under a Closed Version-One Profile](snippets/observability-operations/parse-one-bounded-rfc-5424-syslog-message-under-a-closed-version-one-profile.md) | observability-operations | recipe | observability, parsing, validation |
 | [Process Log Records in a Background Thread with QueueListener](snippets/observability-operations/process-log-records-in-a-background-thread-with-queuelistener.md) | observability-operations | recipe | concurrency-control, lifecycle-management, observability |
 | [Project a Bounded asyncio Call Graph Without Retaining Live Frames](snippets/observability-operations/project-a-bounded-asyncio-call-graph-without-retaining-live-frames.md) | observability-operations | recipe | concurrency-control, observability, resource-management |
 | [Read a Bounded Log Delta Across One Rename-Based Rotation](snippets/observability-operations/read-a-bounded-log-delta-across-one-rename-based-rotation.md) | observability-operations | recipe | observability, resource-management, retry-recovery |
