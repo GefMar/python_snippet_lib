@@ -17,15 +17,15 @@ not edit it by hand.
 
 | Category | Scope | Snippets |
 | --- | --- | ---: |
-| [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 34 |
+| [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 35 |
 | [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 157 |
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 39 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 34 |
-| [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 49 |
-| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 69 |
-| [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 51 |
+| [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 50 |
+| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 70 |
+| [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 52 |
 | [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 47 |
-| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 81 |
+| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 82 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 29 |
 | [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 41 |
 | [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 30 |
@@ -64,6 +64,7 @@ not edit it by hand.
 | [Return NotImplemented for Unsupported Rich Comparisons](snippets/python-language/return-notimplemented-for-unsupported-rich-comparisons.md) | python-language | idiom | interoperability, validation |
 | [Reuse Live Objects by Exact String Key with WeakValueDictionary](snippets/python-language/reuse-live-objects-by-exact-string-key-with-weakvaluedictionary.md) | python-language | pattern | caching, resource-management, validation |
 | [Split a Bounded ExceptionGroup by Closed Exception Types](snippets/python-language/split-a-bounded-exceptiongroup-by-closed-exception-types.md) | python-language | pattern | validation |
+| [Store Bounded Values by Weak Object Identity Without Equality or Hashing](snippets/python-language/store-bounded-values-by-weak-object-identity-without-equality-or-hashing.md) | python-language | pattern | caching, lifecycle-management |
 | [Type a Narrow Structural Interface with Protocol](snippets/python-language/type-a-narrow-structural-interface-with-protocol.md) | python-language | pattern | interoperability, validation |
 | [Update Native Unsigned Integers In Place Through a Cast memoryview](snippets/python-language/update-native-unsigned-integers-in-place-through-a-cast-memoryview.md) | python-language | recipe | data-transformation, performance-optimization, validation |
 | [Validate Reused Fields with a Data Descriptor](snippets/python-language/validate-reused-fields-with-a-data-descriptor.md) | python-language | pattern | validation |
@@ -332,6 +333,7 @@ not edit it by hand.
 | [Parse a Bounded Three-State JSON Response Envelope](snippets/networking-protocols/parse-a-bounded-three-state-json-response-envelope.md) | networking-protocols | integration | networking, parsing, validation |
 | [Parse and Format a Strict W3C traceparent Version 00 Value](snippets/networking-protocols/parse-and-format-a-strict-w3c-traceparent-version-00-value.md) | networking-protocols | recipe | interoperability, networking, parsing, validation |
 | [Parse and Rank a Bounded Accept-Language Value](snippets/networking-protocols/parse-and-rank-a-bounded-accept-language-value.md) | networking-protocols | recipe | interoperability, parsing, validation |
+| [Parse and Render a Bounded HTTP Vary Field Under a Closed Profile](snippets/networking-protocols/parse-and-render-a-bounded-http-vary-field-under-a-closed-profile.md) | networking-protocols | recipe | interoperability, networking, parsing, serialization, validation |
 | [Parse and Render a Bounded Server-Timing Field Under a Closed Profile](snippets/networking-protocols/parse-and-render-a-bounded-server-timing-field-under-a-closed-profile.md) | networking-protocols | recipe | interoperability, networking, parsing, serialization, validation |
 | [Parse and Render One Bounded WebSocket Close Payload](snippets/networking-protocols/parse-and-render-one-bounded-websocket-close-payload.md) | networking-protocols | recipe | interoperability, parsing, validation |
 | [Parse One Bounded Printable-ASCII HTTP/1 Field Section with Exact CRLF Framing](snippets/networking-protocols/parse-one-bounded-printable-ascii-http-1-field-section-with-exact-crlf-framing.md) | networking-protocols | recipe | networking, parsing, validation |
@@ -361,6 +363,7 @@ not edit it by hand.
 | [Build Quantized Decimal Views with Deltas at Explicit Scales](snippets/data-processing/build-quantized-decimal-views-with-deltas-at-explicit-scales.md) | data-processing | recipe | data-transformation, validation |
 | [Check a Value Against an Asymmetric Tolerance Band](snippets/data-processing/check-a-value-against-an-asymmetric-tolerance-band.md) | data-processing | algorithm | validation |
 | [Clean a pandas Series with First-Match Rules and Audit Counts](snippets/data-processing/clean-a-pandas-series-with-first-match-rules-and-audit-counts.md) | data-processing | integration | data-transformation, validation |
+| [Co-Group Bounded Sorted Integer Keys with Full-Outer Coverage](snippets/data-processing/co-group-bounded-sorted-integer-keys-with-full-outer-coverage.md) | data-processing | algorithm | data-transformation, validation |
 | [Collect Expected Parse Failures Without Stopping a Batch](snippets/data-processing/collect-expected-parse-failures-without-stopping-a-batch.md) | data-processing | pattern | parsing, validation |
 | [Compare Ordered Integer Time-Series Snapshots with Explicit Tolerance](snippets/data-processing/compare-ordered-integer-time-series-snapshots-with-explicit-tolerance.md) | data-processing | algorithm | data-transformation, validation |
 | [Count Static Imports Across Bounded Python Notebook Cells](snippets/data-processing/count-static-imports-across-bounded-python-notebook-cells.md) | data-processing | algorithm | data-transformation, parsing, validation |
@@ -443,6 +446,7 @@ not edit it by hand.
 | [Compute Exact Binary ROC AUC with Tied Integer Scores](snippets/machine-learning-statistics/compute-exact-binary-roc-auc-with-tied-integer-scores.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Compute Exact Full-Window Trailing Medians for Bounded Integers](snippets/machine-learning-statistics/compute-exact-full-window-trailing-medians-for-bounded-integers.md) | machine-learning-statistics | algorithm | data-transformation, performance-optimization, validation |
 | [Compute Exact Jaccard Similarity for Bounded Unique Text-Feature Sets](snippets/machine-learning-statistics/compute-exact-jaccard-similarity-for-bounded-unique-text-feature-sets.md) | machine-learning-statistics | algorithm | data-transformation, validation |
+| [Compute Exact Multiclass Precision, Recall, and F1 with Zero for Undefined Values](snippets/machine-learning-statistics/compute-exact-multiclass-precision-recall-and-f1-with-zero-for-undefined-values.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Compute Exact Squared Kendall Tau-b with Direction for Bounded Integer Pairs](snippets/machine-learning-statistics/compute-exact-squared-kendall-tau-b-with-direction-for-bounded-integer-pairs.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Compute Exact Squared Pearson Correlation with Direction](snippets/machine-learning-statistics/compute-exact-squared-pearson-correlation-with-direction.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Compute Exact Squared Spearman Rank Correlation with Direction](snippets/machine-learning-statistics/compute-exact-squared-spearman-rank-correlation-with-direction.md) | machine-learning-statistics | algorithm | data-transformation, validation |
@@ -538,6 +542,7 @@ not edit it by hand.
 | [Encode a Bounded Signed Integer in Its Shortest Big-Endian Two's-Complement Byte String](snippets/configuration-serialization/encode-a-bounded-signed-integer-in-its-shortest-big-endian-twos-complement-byte-string.md) | configuration-serialization | algorithm | interoperability, serialization, validation |
 | [Encode and Decode a Bounded Big-Endian Complex Vector with struct](snippets/configuration-serialization/encode-and-decode-a-bounded-big-endian-complex-vector-with-struct.md) | configuration-serialization | recipe | interoperability, serialization, validation |
 | [Encode and Decode a Bounded Full-Block Z85 Frame](snippets/configuration-serialization/encode-and-decode-a-bounded-full-block-z85-frame.md) | configuration-serialization | recipe | interoperability, serialization, validation |
+| [Encode and Decode a Canonical Size-Capped RFC 7468 Textual Block Under a Closed Profile](snippets/configuration-serialization/encode-and-decode-a-canonical-size-capped-rfc-7468-textual-block-under-a-closed-profile.md) | configuration-serialization | recipe | interoperability, parsing, serialization, validation |
 | [Encode and Decode Canonical Bencode Under Structural Limits](snippets/configuration-serialization/encode-and-decode-canonical-bencode-under-structural-limits.md) | configuration-serialization | recipe | interoperability, parsing, serialization, validation |
 | [Encode and Decode One Exact-Size Big-Endian Binary Record with struct.Struct](snippets/configuration-serialization/encode-and-decode-one-exact-size-big-endian-binary-record-with-struct.md) | configuration-serialization | recipe | interoperability, parsing, serialization, validation |
 | [Encode and Decode Signed 64-Bit Integers with ZigZag Mapping](snippets/configuration-serialization/encode-and-decode-signed-64-bit-integers-with-zigzag-mapping.md) | configuration-serialization | algorithm | interoperability, serialization, validation |
