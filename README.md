@@ -18,16 +18,16 @@ not edit it by hand.
 | Category | Scope | Snippets |
 | --- | --- | ---: |
 | [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 34 |
-| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 156 |
+| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 157 |
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 39 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 34 |
-| [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 47 |
+| [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 49 |
 | [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 69 |
 | [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 51 |
-| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 46 |
+| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 47 |
 | [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 81 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 29 |
-| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 40 |
+| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 41 |
 | [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 30 |
 
 ### Snippets
@@ -146,6 +146,7 @@ not edit it by hand.
 | [Find a Deterministic Critical Path in a Bounded Vertex-Weighted DAG](snippets/algorithms-data-structures/find-a-deterministic-critical-path-in-a-bounded-vertex-weighted-dag.md) | algorithms-data-structures | algorithm | automation, resource-management, validation |
 | [Find a Deterministic Maximum-Cardinality Matching in a Bounded Bipartite Graph](snippets/algorithms-data-structures/find-a-deterministic-maximum-cardinality-matching-in-a-bounded-bipartite-graph.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Find a Deterministic Minimum Vertex Cover in a Bounded Bipartite Graph](snippets/algorithms-data-structures/find-a-deterministic-minimum-vertex-cover-in-a-bounded-bipartite-graph.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, testing, validation |
+| [Find a Deterministic Minimum Vertex-Disjoint Path Cover of a Bounded DAG](snippets/algorithms-data-structures/find-a-deterministic-minimum-vertex-disjoint-path-cover-of-a-bounded-dag.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Find a Lexicographically First Minimum-Cost Perfect Assignment by Bitmask DP](snippets/algorithms-data-structures/find-a-lexicographically-first-minimum-cost-perfect-assignment-by-bitmask-dp.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, resource-management, validation |
 | [Find a Longest Common Integer Subsequence with Earliest Index-Pair Ties](snippets/algorithms-data-structures/find-a-longest-common-integer-subsequence-with-earliest-index-pair-ties.md) | algorithms-data-structures | algorithm | data-transformation, validation |
 | [Find a Longest Strictly Increasing Integer Subsequence with Earliest-Index Ties](snippets/algorithms-data-structures/find-a-longest-strictly-increasing-integer-subsequence-with-earliest-index-ties.md) | algorithms-data-structures | algorithm | data-transformation, validation |
@@ -308,6 +309,7 @@ not edit it by hand.
 | [Collapse IPv4-Mapped IPv6 Literals to One Canonical Address Key](snippets/networking-protocols/collapse-ipv4-mapped-ipv6-literals-to-one-canonical-address-key.md) | networking-protocols | recipe | data-transformation, networking, validation |
 | [Collect Matching Cursor Pages with an Explicit Page Budget](snippets/networking-protocols/collect-matching-cursor-pages-with-an-explicit-page-budget.md) | networking-protocols | pattern | networking, resource-management |
 | [Compute a 16-Bit Internet Checksum Across Bounded Byte Segments](snippets/networking-protocols/compute-a-16-bit-internet-checksum-across-bounded-byte-segments.md) | networking-protocols | algorithm | data-transformation, networking, validation |
+| [Compute a Bounded RFC 6298 RTO Estimate from Explicit RTT Samples](snippets/networking-protocols/compute-a-bounded-rfc-6298-rto-estimate-from-explicit-rtt-samples.md) | networking-protocols | algorithm | interoperability, networking, retry-recovery, validation |
 | [Decode One Bounded DNS Name with Strict Backward Compression Pointers](snippets/networking-protocols/decode-one-bounded-dns-name-with-strict-backward-compression-pointers.md) | networking-protocols | recipe | networking, parsing, validation |
 | [Decode One Bounded HTTP/1.1 Chunked Body under a Closed No-Trailers Profile](snippets/networking-protocols/decode-one-bounded-http-1-1-chunked-body-under-a-closed-no-trailers-profile.md) | networking-protocols | recipe | networking, parsing, validation |
 | [Dispatch a Bounded RPC Envelope Through a Closed Path-to-Codec Registry](snippets/networking-protocols/dispatch-a-bounded-rpc-envelope-through-a-closed-path-to-codec-registry.md) | networking-protocols | integration | networking, serialization, validation |
@@ -330,6 +332,7 @@ not edit it by hand.
 | [Parse a Bounded Three-State JSON Response Envelope](snippets/networking-protocols/parse-a-bounded-three-state-json-response-envelope.md) | networking-protocols | integration | networking, parsing, validation |
 | [Parse and Format a Strict W3C traceparent Version 00 Value](snippets/networking-protocols/parse-and-format-a-strict-w3c-traceparent-version-00-value.md) | networking-protocols | recipe | interoperability, networking, parsing, validation |
 | [Parse and Rank a Bounded Accept-Language Value](snippets/networking-protocols/parse-and-rank-a-bounded-accept-language-value.md) | networking-protocols | recipe | interoperability, parsing, validation |
+| [Parse and Render a Bounded Server-Timing Field Under a Closed Profile](snippets/networking-protocols/parse-and-render-a-bounded-server-timing-field-under-a-closed-profile.md) | networking-protocols | recipe | interoperability, networking, parsing, serialization, validation |
 | [Parse and Render One Bounded WebSocket Close Payload](snippets/networking-protocols/parse-and-render-one-bounded-websocket-close-payload.md) | networking-protocols | recipe | interoperability, parsing, validation |
 | [Parse One Bounded Printable-ASCII HTTP/1 Field Section with Exact CRLF Framing](snippets/networking-protocols/parse-one-bounded-printable-ascii-http-1-field-section-with-exact-crlf-framing.md) | networking-protocols | recipe | networking, parsing, validation |
 | [Parse One Bounded PROXY Protocol Version 1 Line](snippets/networking-protocols/parse-one-bounded-proxy-protocol-version-one-line.md) | networking-protocols | recipe | networking, parsing, validation |
@@ -480,6 +483,7 @@ not edit it by hand.
 | [Fingerprint a Bounded Flat File Set with Framed SHA-256](snippets/storage-databases/fingerprint-a-bounded-flat-file-set-with-framed-sha-256.md) | storage-databases | recipe | caching, persistence, validation |
 | [Group Bounded SQLite Console Lines into Lexically Complete Batches Without Execution](snippets/storage-databases/group-bounded-sqlite-console-lines-into-lexically-complete-batches-without-execution.md) | storage-databases | recipe | automation, parsing, validation |
 | [Hand Off Bounded Bytes Through a Scoped Named Temporary Path](snippets/storage-databases/hand-off-bounded-bytes-through-a-scoped-named-temporary-path.md) | storage-databases | recipe | interoperability, persistence, resource-management |
+| [Inspect a Bounded SQLite Database Header from In-Memory Bytes](snippets/storage-databases/inspect-a-bounded-sqlite-database-header-from-in-memory-bytes.md) | storage-databases | recipe | parsing, persistence, validation |
 | [Map a Namespaced POSIX Path Beneath a Logical Local Root](snippets/storage-databases/map-a-namespaced-posix-path-beneath-a-logical-local-root.md) | storage-databases | recipe | data-transformation, persistence, validation |
 | [Open a Verified Read-Only SQLite Connection Under a Closed Hardening Profile](snippets/storage-databases/open-a-verified-read-only-sqlite-connection-under-a-closed-hardening-profile.md) | storage-databases | recipe | persistence, resource-management, security, validation |
 | [Page Bounded SQLite Rows with a Composite Keyset Cursor](snippets/storage-databases/page-bounded-sqlite-rows-with-a-composite-keyset-cursor.md) | storage-databases | pattern | performance-optimization, persistence, validation |
@@ -624,6 +628,7 @@ not edit it by hand.
 | [Assert an Exact Iterator Pull Budget with a Fail-Closed Probe](snippets/testing-tooling/assert-an-exact-iterator-pull-budget-with-a-fail-closed-probe.md) | testing-tooling | testing-technique | testing, validation |
 | [Attach a Validated Internal Size Breakdown to One Artifact Report](snippets/testing-tooling/attach-a-validated-internal-size-breakdown-to-one-artifact-report.md) | testing-tooling | recipe | data-transformation, resource-management, testing, validation |
 | [Audit a Bounded Directive Tree with Isolated Inherited Context](snippets/testing-tooling/audit-a-bounded-directive-tree-with-isolated-inherited-context.md) | testing-tooling | pattern | configuration, testing, validation |
+| [Audit a Bounded Equality and Hash Profile for Trusted Values](snippets/testing-tooling/audit-a-bounded-equality-and-hash-profile-for-trusted-values.md) | testing-tooling | testing-technique | testing, validation |
 | [Audit a Bounded Less-Than Relation for Strict Weak Ordering](snippets/testing-tooling/audit-a-bounded-less-than-relation-for-strict-weak-ordering.md) | testing-tooling | testing-technique | testing, validation |
 | [Audit a Bounded Test Matrix for Complete Pairwise Coverage](snippets/testing-tooling/audit-a-bounded-test-matrix-for-complete-pairwise-coverage.md) | testing-tooling | testing-technique | testing, validation |
 | [Audit Bounded Python Source for Tab-Width-Independent Indentation](snippets/testing-tooling/audit-bounded-python-source-for-tab-width-independent-indentation.md) | testing-tooling | testing-technique | parsing, testing, validation |
