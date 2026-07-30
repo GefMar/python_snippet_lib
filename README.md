@@ -21,14 +21,14 @@ not edit it by hand.
 | [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 117 |
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 36 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 34 |
-| [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 38 |
-| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 66 |
-| [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 48 |
-| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 38 |
+| [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 39 |
+| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 67 |
+| [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 49 |
+| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 39 |
 | [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 74 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 26 |
 | [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 34 |
-| [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 24 |
+| [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 25 |
 
 ### Snippets
 
@@ -253,6 +253,7 @@ not edit it by hand.
 | [Choose Buffered or Streaming Multipart Encoding from Bounded Parts](snippets/networking-protocols/choose-buffered-or-streaming-multipart-encoding-from-bounded-parts.md) | networking-protocols | integration | networking, resource-management, serialization, validation |
 | [Choose Grouped Endpoints with Explicit Random Fairness](snippets/networking-protocols/choose-grouped-endpoints-with-explicit-random-fairness.md) | networking-protocols | algorithm | networking, validation |
 | [Classify a Pre-Resolved IP Against a Bounded CIDR-Zone Snapshot](snippets/networking-protocols/classify-a-pre-resolved-ip-against-a-bounded-cidr-zone-snapshot.md) | networking-protocols | algorithm | caching, networking, validation |
+| [Classify One HTTP/1 Response Body Framing from Validated Metadata](snippets/networking-protocols/classify-one-http-1-response-body-framing-from-validated-metadata.md) | networking-protocols | recipe | networking, parsing, validation |
 | [Collapse a Bounded Same-Family CIDR Set Without Changing Its Address Union](snippets/networking-protocols/collapse-a-bounded-same-family-cidr-set-without-changing-its-address-union.md) | networking-protocols | algorithm | data-transformation, networking, validation |
 | [Collect Matching Cursor Pages with an Explicit Page Budget](snippets/networking-protocols/collect-matching-cursor-pages-with-an-explicit-page-budget.md) | networking-protocols | pattern | networking, resource-management |
 | [Decode One Bounded DNS Name with Strict Backward Compression Pointers](snippets/networking-protocols/decode-one-bounded-dns-name-with-strict-backward-compression-pointers.md) | networking-protocols | recipe | networking, parsing, validation |
@@ -288,6 +289,7 @@ not edit it by hand.
 | [Aggregate Consecutive Values into Weighted Runs](snippets/data-processing/aggregate-consecutive-values-into-weighted-runs.md) | data-processing | algorithm | data-transformation |
 | [Aggregate pandas Groups into Explicit Flat Columns](snippets/data-processing/aggregate-pandas-groups-into-explicit-flat-columns.md) | data-processing | integration | data-transformation, interoperability, validation |
 | [Assemble Fixed-Width Feature Slots from Bounded Named Sources](snippets/data-processing/assemble-fixed-width-feature-slots-from-bounded-named-sources.md) | data-processing | algorithm | data-transformation, validation |
+| [Audit Bounded Keyed Half-Open Intervals with Gap and Overlap Evidence](snippets/data-processing/audit-bounded-keyed-half-open-intervals-with-gap-and-overlap-evidence.md) | data-processing | algorithm | data-transformation, validation |
 | [Audit Candidate pandas Downcasts Before Applying Them](snippets/data-processing/audit-candidate-pandas-downcasts-before-applying-them.md) | data-processing | integration | data-transformation, performance-optimization, resource-management, validation |
 | [Audit pandas Missing-Value Shares Against Column Policies](snippets/data-processing/audit-pandas-missing-value-shares-against-column-policies.md) | data-processing | integration | data-transformation, validation |
 | [Batch Items by Estimated Byte Size](snippets/data-processing/batch-items-by-estimated-byte-size.md) | data-processing | algorithm | data-transformation, resource-management |
@@ -372,6 +374,7 @@ not edit it by hand.
 | [Compute an Exact Two-Sample Kolmogorov-Smirnov Distance and Witness for Bounded Integer Samples](snippets/machine-learning-statistics/compute-an-exact-two-sample-kolmogorov-smirnov-distance-and-witness-for-bounded-integer-samples.md) | machine-learning-statistics | algorithm | data-transformation, testing, validation |
 | [Compute an Exact Two-Sample Permutation Test for a Mean Difference](snippets/machine-learning-statistics/compute-an-exact-two-sample-permutation-test-for-a-mean-difference.md) | machine-learning-statistics | algorithm | data-transformation, testing, validation |
 | [Compute an Exact Two-Sided Mann-Whitney U Permutation Test for Bounded Integer Samples](snippets/machine-learning-statistics/compute-an-exact-two-sided-mann-whitney-u-permutation-test-for-bounded-integer-samples.md) | machine-learning-statistics | algorithm | data-transformation, testing, validation |
+| [Compute an Exact Two-Sided Wilcoxon Signed-Rank Randomization Test for Bounded Integer Pairs](snippets/machine-learning-statistics/compute-an-exact-two-sided-wilcoxon-signed-rank-randomization-test-for-bounded-integer-pairs.md) | machine-learning-statistics | algorithm | data-transformation, testing, validation |
 | [Compute Exact Binary ROC AUC with Tied Integer Scores](snippets/machine-learning-statistics/compute-exact-binary-roc-auc-with-tied-integer-scores.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Compute Exact Full-Window Trailing Medians for Bounded Integers](snippets/machine-learning-statistics/compute-exact-full-window-trailing-medians-for-bounded-integers.md) | machine-learning-statistics | algorithm | data-transformation, performance-optimization, validation |
 | [Compute Exact Jaccard Similarity for Bounded Unique Text-Feature Sets](snippets/machine-learning-statistics/compute-exact-jaccard-similarity-for-bounded-unique-text-feature-sets.md) | machine-learning-statistics | algorithm | data-transformation, validation |
@@ -418,6 +421,7 @@ not edit it by hand.
 | [Plan an Incremental Cumulative Snapshot from Partition Dates](snippets/storage-databases/plan-an-incremental-cumulative-snapshot-from-partition-dates.md) | storage-databases | algorithm | automation, data-transformation, validation |
 | [Plan Bounded Parameterized Backfill Statements by Date Window](snippets/storage-databases/plan-bounded-parameterized-backfill-statements-by-date-window.md) | storage-databases | pattern | automation, persistence, validation |
 | [Plan Bounded Table Initialization and Ordered Row Batches](snippets/storage-databases/plan-bounded-table-initialization-and-ordered-row-batches.md) | storage-databases | pattern | data-transformation, persistence, validation |
+| [Plan Collision-Free Renames in a Bounded Flat File Namespace](snippets/storage-databases/plan-collision-free-renames-in-a-bounded-flat-file-namespace.md) | storage-databases | algorithm | automation, resource-management, validation |
 | [Plan Verified Staged Partition Publication](snippets/storage-databases/plan-verified-staged-partition-publication.md) | storage-databases | algorithm | automation, persistence, validation |
 | [Project a Dataclass into a Validated Insert Row](snippets/storage-databases/project-a-dataclass-into-a-validated-insert-row.md) | storage-databases | recipe | data-transformation, persistence, validation |
 | [Publish a New POSIX File Without Replacement and Sync Directory Entries](snippets/storage-databases/publish-a-new-posix-file-without-replacement-and-sync-directory-entries.md) | storage-databases | recipe | concurrency-control, persistence, resource-management |
@@ -589,6 +593,7 @@ not edit it by hand.
 | [Measure Cache Hit Ratios from Monotonic Counter Snapshots](snippets/observability-operations/measure-cache-hit-ratios-from-monotonic-counter-snapshots.md) | observability-operations | algorithm | observability, validation |
 | [Process Log Records in a Background Thread with QueueListener](snippets/observability-operations/process-log-records-in-a-background-thread-with-queuelistener.md) | observability-operations | recipe | concurrency-control, lifecycle-management, observability |
 | [Read a Bounded Log Delta Across One Rename-Based Rotation](snippets/observability-operations/read-a-bounded-log-delta-across-one-rename-based-rotation.md) | observability-operations | recipe | observability, resource-management, retry-recovery |
+| [Render a Bounded Prometheus Text Exposition for Integer Counter and Gauge Snapshots](snippets/observability-operations/render-a-bounded-prometheus-text-exposition-for-integer-counter-and-gauge-snapshots.md) | observability-operations | recipe | observability, serialization, validation |
 | [Report Partition Offsets Behind a Fixed Checkpoint](snippets/observability-operations/report-partition-offsets-behind-a-fixed-checkpoint.md) | observability-operations | algorithm | observability, validation |
 | [Resolve the Latest Status with an Explicit Mapping](snippets/observability-operations/resolve-the-latest-status-with-an-explicit-mapping.md) | observability-operations | pattern | interoperability, observability, validation |
 | [Route Metric Label Values Through a Stable Overflow Bucket Under a Cardinality Cap](snippets/observability-operations/route-metric-label-values-through-a-stable-overflow-bucket-under-a-cardinality-cap.md) | observability-operations | pattern | observability, resource-management, validation |
