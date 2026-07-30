@@ -18,17 +18,17 @@ not edit it by hand.
 | Category | Scope | Snippets |
 | --- | --- | ---: |
 | [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 35 |
-| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 157 |
+| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 158 |
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 39 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 34 |
-| [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 50 |
-| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 70 |
+| [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 51 |
+| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 71 |
 | [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 52 |
-| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 47 |
+| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 48 |
 | [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 82 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 29 |
 | [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 41 |
-| [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 30 |
+| [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 31 |
 
 ### Snippets
 
@@ -183,6 +183,7 @@ not edit it by hand.
 | [Generate Event Times for a Linear Rate Ramp](snippets/algorithms-data-structures/generate-event-times-for-a-linear-rate-ramp.md) | algorithms-data-structures | algorithm | automation, performance-optimization |
 | [Group a One-Dimensional NumPy Structured Array into Stable Index Sets](snippets/algorithms-data-structures/group-a-one-dimensional-numpy-structured-array-into-stable-index-sets.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Interpolate a Global Polynomial Exactly from Bounded Integer Points](snippets/algorithms-data-structures/interpolate-a-global-polynomial-exactly-from-bounded-integer-points.md) | algorithms-data-structures | algorithm | data-transformation, validation |
+| [Maintain a Bounded Integer Multiset with Fenwick Rank and Select](snippets/algorithms-data-structures/maintain-a-bounded-integer-multiset-with-fenwick-rank-and-select.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Maintain Bounded Disjoint Sets with Rollback Snapshots](snippets/algorithms-data-structures/maintain-bounded-disjoint-sets-with-rollback-snapshots.md) | algorithms-data-structures | algorithm | data-transformation, resource-management, testing, validation |
 | [Maintain Bounded Point Adds and Half-Open Range Sums with a Fenwick Tree](snippets/algorithms-data-structures/maintain-bounded-point-adds-and-half-open-range-sums-with-a-fenwick-tree.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Maintain Point Replacements and Exact Path Sums on a Bounded Tree with Heavy-Light Decomposition](snippets/algorithms-data-structures/maintain-point-replacements-and-exact-path-sums-on-a-bounded-tree-with-heavy-light-decomposition.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, resource-management |
@@ -338,6 +339,7 @@ not edit it by hand.
 | [Parse and Render One Bounded WebSocket Close Payload](snippets/networking-protocols/parse-and-render-one-bounded-websocket-close-payload.md) | networking-protocols | recipe | interoperability, parsing, validation |
 | [Parse One Bounded Printable-ASCII HTTP/1 Field Section with Exact CRLF Framing](snippets/networking-protocols/parse-one-bounded-printable-ascii-http-1-field-section-with-exact-crlf-framing.md) | networking-protocols | recipe | networking, parsing, validation |
 | [Parse One Bounded PROXY Protocol Version 1 Line](snippets/networking-protocols/parse-one-bounded-proxy-protocol-version-one-line.md) | networking-protocols | recipe | networking, parsing, validation |
+| [Parse One Bounded PROXY Protocol Version Two TCP Header Without TLVs](snippets/networking-protocols/parse-one-bounded-proxy-protocol-version-two-tcp-header-without-tlvs.md) | networking-protocols | recipe | networking, parsing, validation |
 | [Read and Write Size-Capped Varint Frames](snippets/networking-protocols/read-and-write-size-capped-varint-frames.md) | networking-protocols | recipe | networking, serialization, validation |
 | [Read One Bounded Async Byte Field with Either Line Feed or NUL Terminator](snippets/networking-protocols/read-one-bounded-async-byte-field-with-either-line-feed-or-nul-terminator.md) | networking-protocols | recipe | networking, parsing, validation |
 | [Release a Pooled Response Connection Only After Clean EOF](snippets/networking-protocols/release-a-pooled-response-connection-only-after-clean-eof.md) | networking-protocols | pattern | lifecycle-management, networking, resource-management, validation |
@@ -367,6 +369,7 @@ not edit it by hand.
 | [Collect Expected Parse Failures Without Stopping a Batch](snippets/data-processing/collect-expected-parse-failures-without-stopping-a-batch.md) | data-processing | pattern | parsing, validation |
 | [Compare Ordered Integer Time-Series Snapshots with Explicit Tolerance](snippets/data-processing/compare-ordered-integer-time-series-snapshots-with-explicit-tolerance.md) | data-processing | algorithm | data-transformation, validation |
 | [Count Static Imports Across Bounded Python Notebook Cells](snippets/data-processing/count-static-imports-across-bounded-python-notebook-cells.md) | data-processing | algorithm | data-transformation, parsing, validation |
+| [Decode Bounded Fixed-Width ASCII Records Across Arbitrary Byte Chunks](snippets/data-processing/decode-bounded-fixed-width-ascii-records-across-arbitrary-byte-chunks.md) | data-processing | pattern | data-transformation, parsing, resource-management, validation |
 | [Decode Bounded JSON Lines Across Arbitrary Text Chunks](snippets/data-processing/decode-bounded-json-lines-across-arbitrary-text-chunks.md) | data-processing | pattern | data-transformation, parsing, resource-management, validation |
 | [Derive an Other Bucket from Exact pandas Totals](snippets/data-processing/derive-an-other-bucket-from-exact-pandas-totals.md) | data-processing | integration | data-transformation, validation |
 | [Derive Reciprocal Bid-Ask Quotes with Explicit Decimal Rounding](snippets/data-processing/derive-reciprocal-bid-ask-quotes-with-explicit-decimal-rounding.md) | data-processing | recipe | data-transformation, resource-management, validation |
@@ -488,6 +491,7 @@ not edit it by hand.
 | [Group Bounded SQLite Console Lines into Lexically Complete Batches Without Execution](snippets/storage-databases/group-bounded-sqlite-console-lines-into-lexically-complete-batches-without-execution.md) | storage-databases | recipe | automation, parsing, validation |
 | [Hand Off Bounded Bytes Through a Scoped Named Temporary Path](snippets/storage-databases/hand-off-bounded-bytes-through-a-scoped-named-temporary-path.md) | storage-databases | recipe | interoperability, persistence, resource-management |
 | [Inspect a Bounded SQLite Database Header from In-Memory Bytes](snippets/storage-databases/inspect-a-bounded-sqlite-database-header-from-in-memory-bytes.md) | storage-databases | recipe | parsing, persistence, validation |
+| [Inspect the Checksum-Valid Prefix of a Bounded SQLite WAL Image](snippets/storage-databases/inspect-the-checksum-valid-prefix-of-a-bounded-sqlite-wal-image.md) | storage-databases | recipe | parsing, persistence, validation |
 | [Map a Namespaced POSIX Path Beneath a Logical Local Root](snippets/storage-databases/map-a-namespaced-posix-path-beneath-a-logical-local-root.md) | storage-databases | recipe | data-transformation, persistence, validation |
 | [Open a Verified Read-Only SQLite Connection Under a Closed Hardening Profile](snippets/storage-databases/open-a-verified-read-only-sqlite-connection-under-a-closed-hardening-profile.md) | storage-databases | recipe | persistence, resource-management, security, validation |
 | [Page Bounded SQLite Rows with a Composite Keyset Cursor](snippets/storage-databases/page-bounded-sqlite-rows-with-a-composite-keyset-cursor.md) | storage-databases | pattern | performance-optimization, persistence, validation |
@@ -681,6 +685,7 @@ not edit it by hand.
 | [Compute a Validated Delta Between Cumulative Histogram Snapshots](snippets/observability-operations/compute-a-validated-delta-between-cumulative-histogram-snapshots.md) | observability-operations | algorithm | data-transformation, observability, validation |
 | [Compute an Exact Apdex Score from Already Classified Counts](snippets/observability-operations/compute-an-exact-apdex-score-from-already-classified-counts.md) | observability-operations | algorithm | data-transformation, observability, validation |
 | [Compute Inclusive and Exclusive Durations for a Bounded Nested Span Forest](snippets/observability-operations/compute-inclusive-and-exclusive-durations-for-a-bounded-nested-span-forest.md) | observability-operations | algorithm | data-transformation, observability, validation |
+| [Compute Linux cgroup v2 CPU Deltas from Two Bounded cpu.stat Snapshots](snippets/observability-operations/compute-linux-cgroup-v2-cpu-deltas-from-two-bounded-cpu-stat-snapshots.md) | observability-operations | algorithm | data-transformation, observability, validation |
 | [Compute Linux PSI Stall Deltas from Two Bounded System Snapshots](snippets/observability-operations/compute-linux-psi-stall-deltas-from-two-bounded-system-snapshots.md) | observability-operations | algorithm | data-transformation, observability, validation |
 | [Count Values in Fixed Upper-Bound Bins](snippets/observability-operations/count-values-in-fixed-upper-bound-bins.md) | observability-operations | algorithm | data-transformation, observability |
 | [Format Log Records as JSON with Explicit Extra Fields](snippets/observability-operations/format-log-records-as-json-with-explicit-extra-fields.md) | observability-operations | recipe | observability, serialization |
