@@ -17,17 +17,17 @@ not edit it by hand.
 
 | Category | Scope | Snippets |
 | --- | --- | ---: |
-| [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 29 |
+| [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 31 |
 | [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 156 |
-| [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 38 |
+| [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 39 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 34 |
 | [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 43 |
 | [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 67 |
 | [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 50 |
 | [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 45 |
-| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 76 |
+| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 77 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 28 |
-| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 38 |
+| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 39 |
 | [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 27 |
 
 ### Snippets
@@ -50,6 +50,7 @@ not edit it by hand.
 | [Dispatch on an Exact Tuple of Argument Types](snippets/python-language/dispatch-on-an-exact-tuple-of-argument-types.md) | python-language | pattern | data-transformation, interoperability, validation |
 | [Dispatch on First-Argument Type with functools.singledispatch](snippets/python-language/dispatch-on-first-argument-type-with-functools-singledispatch.md) | python-language | idiom | automation, interoperability |
 | [Handle Search Exhaustion with for/else](snippets/python-language/handle-search-exhaustion-with-for-else.md) | python-language | idiom | data-transformation, validation |
+| [Keep a Compatibility Wrapper with warnings.deprecated](snippets/python-language/keep-a-compatibility-wrapper-with-warnings-deprecated.md) | python-language | pattern | interoperability, lifecycle-management, testing |
 | [Keep Exception Handlers Narrow with try/else](snippets/python-language/keep-exception-handlers-narrow-with-try-else.md) | python-language | idiom | parsing, validation |
 | [Load Bounded Trusted Extension Factories by One Entry Point](snippets/python-language/load-bounded-trusted-extension-factories-by-one-entry-point.md) | python-language | recipe | interoperability, validation |
 | [Load Text Templates from Package Resources](snippets/python-language/load-text-templates-from-package-resources.md) | python-language | recipe | resource-management, validation |
@@ -61,6 +62,7 @@ not edit it by hand.
 | [Reuse Live Objects by Exact String Key with WeakValueDictionary](snippets/python-language/reuse-live-objects-by-exact-string-key-with-weakvaluedictionary.md) | python-language | pattern | caching, resource-management, validation |
 | [Split a Bounded ExceptionGroup by Closed Exception Types](snippets/python-language/split-a-bounded-exceptiongroup-by-closed-exception-types.md) | python-language | pattern | validation |
 | [Type a Narrow Structural Interface with Protocol](snippets/python-language/type-a-narrow-structural-interface-with-protocol.md) | python-language | pattern | interoperability, validation |
+| [Update Native Unsigned Integers In Place Through a Cast memoryview](snippets/python-language/update-native-unsigned-integers-in-place-through-a-cast-memoryview.md) | python-language | recipe | data-transformation, performance-optimization, validation |
 | [Validate Reused Fields with a Data Descriptor](snippets/python-language/validate-reused-fields-with-a-data-descriptor.md) | python-language | pattern | validation |
 | [Walk a Tree Recursively with yield from](snippets/python-language/walk-a-tree-recursively-with-yield-from.md) | python-language | idiom | data-transformation |
 | [Accept Sparse Observations That Preserve Strict Position-Time Order](snippets/algorithms-data-structures/accept-sparse-observations-that-preserve-strict-position-time-order.md) | algorithms-data-structures | algorithm | data-transformation, validation |
@@ -224,6 +226,7 @@ not edit it by hand.
 | [Collect a Bounded Async-Generator Prefix with Deterministic Closure](snippets/concurrency-lifecycle/collect-a-bounded-async-generator-prefix-with-deterministic-closure.md) | concurrency-lifecycle | pattern | concurrency-control, lifecycle-management, resource-management |
 | [Collect a Bounded Thread-Pool Batch Under One Deadline](snippets/concurrency-lifecycle/collect-a-bounded-thread-pool-batch-under-one-deadline.md) | concurrency-lifecycle | pattern | concurrency-control, lifecycle-management, resource-management |
 | [Collect Thread-Pool Results and Errors as Futures Complete](snippets/concurrency-lifecycle/collect-thread-pool-results-and-errors-as-futures-complete.md) | concurrency-lifecycle | recipe | concurrency-control, resource-management |
+| [Correlate Bounded Async Results by Original Task as They Complete](snippets/concurrency-lifecycle/correlate-bounded-async-results-by-original-task-as-they-complete.md) | concurrency-lifecycle | pattern | concurrency-control, lifecycle-management, resource-management |
 | [Drain Bounded asyncio Queue Work with Graceful Shutdown](snippets/concurrency-lifecycle/drain-bounded-asyncio-queue-work-with-graceful-shutdown.md) | concurrency-lifecycle | pattern | concurrency-control, lifecycle-management, resource-management |
 | [Drain Bounded Deferred Writes Outside the Queue Lock](snippets/concurrency-lifecycle/drain-bounded-deferred-writes-outside-the-queue-lock.md) | concurrency-lifecycle | pattern | concurrency-control, networking, resource-management |
 | [Elect One Final Releaser from Bounded Named Leases](snippets/concurrency-lifecycle/elect-one-final-releaser-from-bounded-named-leases.md) | concurrency-lifecycle | pattern | concurrency-control, lifecycle-management, resource-management |
@@ -518,6 +521,7 @@ not edit it by hand.
 | [Elide Nested Mapping Values That Match Explicit Defaults](snippets/configuration-serialization/elide-nested-mapping-values-that-match-explicit-defaults.md) | configuration-serialization | recipe | configuration, serialization |
 | [Embed a Small Routing Hint in a Random UUIDv8](snippets/configuration-serialization/embed-a-small-routing-hint-in-a-random-uuidv8.md) | configuration-serialization | recipe | interoperability, serialization, validation |
 | [Encode a Bounded Signed Integer in Its Shortest Big-Endian Two's-Complement Byte String](snippets/configuration-serialization/encode-a-bounded-signed-integer-in-its-shortest-big-endian-twos-complement-byte-string.md) | configuration-serialization | algorithm | interoperability, serialization, validation |
+| [Encode and Decode a Bounded Full-Block Z85 Frame](snippets/configuration-serialization/encode-and-decode-a-bounded-full-block-z85-frame.md) | configuration-serialization | recipe | interoperability, serialization, validation |
 | [Encode and Decode Canonical Bencode Under Structural Limits](snippets/configuration-serialization/encode-and-decode-canonical-bencode-under-structural-limits.md) | configuration-serialization | recipe | interoperability, parsing, serialization, validation |
 | [Encode and Decode One Exact-Size Big-Endian Binary Record with struct.Struct](snippets/configuration-serialization/encode-and-decode-one-exact-size-big-endian-binary-record-with-struct.md) | configuration-serialization | recipe | interoperability, parsing, serialization, validation |
 | [Encode and Decode Signed 64-Bit Integers with ZigZag Mapping](snippets/configuration-serialization/encode-and-decode-signed-64-bit-integers-with-zigzag-mapping.md) | configuration-serialization | algorithm | interoperability, serialization, validation |
@@ -635,6 +639,7 @@ not edit it by hand.
 | [Shrink a Bounded Failing Sequence to a One-Deletion-Minimal Subsequence](snippets/testing-tooling/shrink-a-bounded-failing-sequence-to-a-one-deletion-minimal-subsequence.md) | testing-tooling | testing-technique | testing, validation |
 | [Verify Calls to a Standalone Function with Autospec](snippets/testing-tooling/verify-calls-to-a-standalone-function-with-create-autospec.md) | testing-tooling | testing-technique | testing, validation |
 | [Verify Ordered HTTP Client Expectations with Bounded Mismatch Reports](snippets/testing-tooling/verify-ordered-http-client-expectations-with-bounded-mismatch-reports.md) | testing-tooling | testing-technique | networking, testing, validation |
+| [Verify That an Async Collaborator Is Called and Awaited Exactly](snippets/testing-tooling/verify-that-an-async-collaborator-is-called-and-awaited-exactly.md) | testing-tooling | testing-technique | testing, validation |
 | [Wait for a Cross-Thread Callback with ThreadingMock Instead of Sleeping](snippets/testing-tooling/wait-for-a-cross-thread-callback-with-threadingmock-instead-of-sleeping.md) | testing-tooling | testing-technique | concurrency-control, testing, validation |
 | [Wait for Every Named Connector Under One Shared Deadline](snippets/testing-tooling/wait-for-every-named-connector-under-one-shared-deadline.md) | testing-tooling | testing-technique | concurrency-control, resource-management, testing, validation |
 | [Wait for Named Queue Conditions Under One Monotonic Deadline](snippets/testing-tooling/wait-for-named-queue-conditions-under-one-monotonic-deadline.md) | testing-tooling | testing-technique | concurrency-control, testing, validation |
