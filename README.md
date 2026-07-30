@@ -18,17 +18,17 @@ not edit it by hand.
 | Category | Scope | Snippets |
 | --- | --- | ---: |
 | [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 35 |
-| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 158 |
+| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 159 |
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 39 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 34 |
 | [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 51 |
 | [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 71 |
-| [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 52 |
+| [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 53 |
 | [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 48 |
 | [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 82 |
-| [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 29 |
-| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 41 |
-| [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 31 |
+| [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 30 |
+| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 42 |
+| [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 32 |
 
 ### Snippets
 
@@ -88,6 +88,7 @@ not edit it by hand.
 | [Build a Canonical Unicode Caseless Comparison Key](snippets/algorithms-data-structures/build-a-canonical-unicode-caseless-comparison-key.md) | algorithms-data-structures | algorithm | interoperability, validation |
 | [Build a Capacity-Sized Bloom Filter](snippets/algorithms-data-structures/build-a-capacity-sized-bloom-filter.md) | algorithms-data-structures | algorithm | performance-optimization, validation |
 | [Build a Deterministic Minimum Spanning Forest with Kruskal's Algorithm](snippets/algorithms-data-structures/build-a-deterministic-minimum-spanning-forest-with-kruskals-algorithm.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
+| [Build a Static Interval Stabbing Index for Bounded Overlapping Integer Ranges](snippets/algorithms-data-structures/build-a-static-interval-stabbing-index-for-bounded-overlapping-integer-ranges.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Build an Exact Integer Alias Table for Repeated Weighted Sampling](snippets/algorithms-data-structures/build-an-exact-integer-alias-table-for-repeated-weighted-sampling.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, testing |
 | [Build and Evaluate a Bounded Binary Assignment Constraint System](snippets/algorithms-data-structures/build-and-evaluate-a-bounded-binary-assignment-constraint-system.md) | algorithms-data-structures | algorithm | data-transformation, resource-management, validation |
 | [Choose a Deterministic Minimum Point Set Stabbing Bounded Closed Integer Intervals](snippets/algorithms-data-structures/choose-a-deterministic-minimum-point-set-stabbing-bounded-closed-integer-intervals.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
@@ -470,6 +471,7 @@ not edit it by hand.
 | [Fit PCA with NumPy and Report Cumulative Explained Variance](snippets/machine-learning-statistics/fit-pca-with-numpy-and-report-cumulative-explained-variance.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Flag Groupwise Numeric Outliers with IQR Fences](snippets/machine-learning-statistics/flag-groupwise-numeric-outliers-with-iqr-fences.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Measure Drift Between Two Fixed-Bin Count Distributions with PSI](snippets/machine-learning-statistics/measure-drift-between-two-fixed-bin-count-distributions-with-psi.md) | machine-learning-statistics | algorithm | observability, validation |
+| [Plan Gap-Separated Expanding-Window Validation Splits for Ordered Rows](snippets/machine-learning-statistics/plan-gap-separated-expanding-window-validation-splits-for-ordered-rows.md) | machine-learning-statistics | algorithm | data-transformation, testing, validation |
 | [Sample Weighted Negative Items Outside Explicit User Histories](snippets/machine-learning-statistics/sample-weighted-negative-items-outside-explicit-user-histories.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Score Feature Importances Against Bounded Null Runs](snippets/machine-learning-statistics/score-feature-importances-against-bounded-null-runs.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Select a Forecast Vector Only When It Beats a Frozen Baseline](snippets/machine-learning-statistics/select-a-forecast-vector-only-when-it-beats-a-frozen-baseline.md) | machine-learning-statistics | algorithm | data-transformation, validation |
@@ -621,6 +623,7 @@ not edit it by hand.
 | [Encrypt a Bounded Value with a Versioned AES-GCM Key Envelope](snippets/security-privacy/encrypt-a-bounded-value-with-a-versioned-aes-gcm-key-envelope.md) | security-privacy | integration | security, serialization, validation |
 | [Load an Authenticated Legacy Pickle with Restricted Globals](snippets/security-privacy/load-an-authenticated-legacy-pickle-with-restricted-globals.md) | security-privacy | recipe | interoperability, security, serialization, validation |
 | [Match RFC 6238 SHA-256 TOTP Codes over a Bounded Counter Window](snippets/security-privacy/match-rfc-6238-sha-256-totp-codes-over-a-bounded-counter-window.md) | security-privacy | recipe | interoperability, security, validation |
+| [Parse One Canonical OpenSSH Ed25519 Public Key and Compute Its SHA-256 Fingerprint](snippets/security-privacy/parse-one-canonical-openssh-ed25519-public-key-and-compute-its-sha-256-fingerprint.md) | security-privacy | recipe | interoperability, parsing, security, validation |
 | [Plan a Bounded Missing POSIX Path Beneath a Trusted Root with Allow Missing](snippets/security-privacy/plan-a-bounded-missing-posix-path-beneath-a-trusted-root-with-allow-missing.md) | security-privacy | recipe | resource-management, security, validation |
 | [Plan a Bounded Notebook Storage Key with Collision Suggestions](snippets/security-privacy/plan-a-bounded-notebook-storage-key-with-collision-suggestions.md) | security-privacy | recipe | persistence, security, validation |
 | [Read One Descriptor-Relative Regular File Without Following Its Final Symlink](snippets/security-privacy/read-one-descriptor-relative-regular-file-without-following-its-final-symlink.md) | security-privacy | recipe | resource-management, security, validation |
@@ -653,6 +656,7 @@ not edit it by hand.
 | [Extract a Bounded Static Python Annotation Index without Evaluation](snippets/testing-tooling/extract-a-bounded-static-python-annotation-index-without-evaluation.md) | testing-tooling | testing-technique | parsing, testing, validation |
 | [Extract Bounded Doctest Examples Without Executing Them](snippets/testing-tooling/extract-bounded-doctest-examples-without-executing-them.md) | testing-tooling | testing-technique | parsing, testing, validation |
 | [Extract Bounded Native-Test Failure Highlights](snippets/testing-tooling/extract-bounded-native-test-failure-highlights.md) | testing-tooling | recipe | observability, parsing, testing |
+| [Find a Shortest Invariant Violation in a Bounded Deterministic State Model](snippets/testing-tooling/find-a-shortest-invariant-violation-in-a-bounded-deterministic-state-model.md) | testing-tooling | testing-technique | testing, validation |
 | [Generate a Bounded One-Edit Byte Mutation Corpus](snippets/testing-tooling/generate-a-bounded-one-edit-byte-mutation-corpus.md) | testing-tooling | testing-technique | testing, validation |
 | [Generate a Deterministic Pairwise-Covering Matrix from Closed String Parameters](snippets/testing-tooling/generate-a-deterministic-pairwise-covering-matrix-from-closed-string-parameters.md) | testing-tooling | testing-technique | testing, validation |
 | [Generate a Minimal Cyclic Test Sequence Covering Every Fixed-Length Symbol Word](snippets/testing-tooling/generate-a-minimal-cyclic-test-sequence-covering-every-fixed-length-symbol-word.md) | testing-tooling | testing-technique | data-transformation, testing, validation |
@@ -693,6 +697,7 @@ not edit it by hand.
 | [Locate an Exact Quantile Rank in Bounded Fixed-Bucket Counts](snippets/observability-operations/locate-an-exact-quantile-rank-in-bounded-fixed-bucket-counts.md) | observability-operations | algorithm | data-transformation, observability, validation |
 | [Measure and Freeze Elapsed Time in a Context](snippets/observability-operations/measure-and-freeze-elapsed-time-in-a-context.md) | observability-operations | idiom | observability, performance-optimization |
 | [Measure Cache Hit Ratios from Monotonic Counter Snapshots](snippets/observability-operations/measure-cache-hit-ratios-from-monotonic-counter-snapshots.md) | observability-operations | algorithm | observability, validation |
+| [Parse a Size-Capped systemd Journal Export Stream into Immutable Entries](snippets/observability-operations/parse-a-size-capped-systemd-journal-export-stream-into-immutable-entries.md) | observability-operations | recipe | observability, parsing, serialization, validation |
 | [Process Log Records in a Background Thread with QueueListener](snippets/observability-operations/process-log-records-in-a-background-thread-with-queuelistener.md) | observability-operations | recipe | concurrency-control, lifecycle-management, observability |
 | [Project a Bounded asyncio Call Graph Without Retaining Live Frames](snippets/observability-operations/project-a-bounded-asyncio-call-graph-without-retaining-live-frames.md) | observability-operations | recipe | concurrency-control, observability, resource-management |
 | [Read a Bounded Log Delta Across One Rename-Based Rotation](snippets/observability-operations/read-a-bounded-log-delta-across-one-rename-based-rotation.md) | observability-operations | recipe | observability, resource-management, retry-recovery |
