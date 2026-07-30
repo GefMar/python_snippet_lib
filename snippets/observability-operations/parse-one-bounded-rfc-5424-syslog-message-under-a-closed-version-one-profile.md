@@ -34,10 +34,10 @@ message of 1 through 8,192 bytes. It fits bounded ingestion, protocol fixtures,
 and diagnostics that deliberately require this exact version-one profile and
 need typed header and structured-data values before applying local policy.
 
-The parser enforces the RFC's uniqueness rules for structured-data identifiers
-and for parameter names within each element. Its closed profile is narrower in
-escape handling: a backslash in a parameter value may introduce only `\"`,
-`\\`, or `\]`.
+The parser enforces the RFC's uniqueness rule for structured-data identifiers.
+Its closed profile is narrower by also requiring unique parameter names within
+each element and by allowing a backslash in a parameter value to introduce
+only `\"`, `\\`, or `\]`.
 Choose a maintained syslog implementation when tolerant interoperability,
 stream or datagram framing, RFC 3164 input, or relay behavior is required.
 
@@ -477,11 +477,11 @@ version `1`, uppercase `T` and `Z`, seconds from `00` through `59`, at most six
 fractional digits, and known numeric offsets other than `-00:00`. Header values
 are syntax-checked PRINTUSASCII rather than interpreted as hostnames, process
 identifiers, or registered message identifiers. Structured-data names are
-case-sensitive; element and parameter order is preserved. RFC 5424 already
-prohibits repeated element identifiers and repeated parameter names within an
-element. This profile additionally rejects unknown backslash sequences instead
-of applying the receiver recovery specified by
-[RFC 5424](https://www.rfc-editor.org/rfc/rfc5424.html).
+case-sensitive; element and parameter order is preserved. RFC 5424 prohibits
+repeated element identifiers but permits an `SD-PARAM` to occur multiple times
+inside one element. This profile rejects those repeated parameter names and
+also rejects unknown backslash sequences instead of applying the receiver
+recovery specified by [RFC 5424](https://www.rfc-editor.org/rfc/rfc5424.html).
 
 The function parses no transport framing, RFC 3164 form, truncated-message
 repair, relay recovery, structured-data registry semantics, authentication,
