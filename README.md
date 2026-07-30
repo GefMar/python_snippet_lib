@@ -21,14 +21,14 @@ not edit it by hand.
 | [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 156 |
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 39 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 34 |
-| [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 45 |
-| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 67 |
-| [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 50 |
+| [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 46 |
+| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 69 |
+| [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 51 |
 | [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 46 |
 | [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 80 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 28 |
 | [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 39 |
-| [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 28 |
+| [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 29 |
 
 ### Snippets
 
@@ -332,6 +332,7 @@ not edit it by hand.
 | [Parse and Rank a Bounded Accept-Language Value](snippets/networking-protocols/parse-and-rank-a-bounded-accept-language-value.md) | networking-protocols | recipe | interoperability, parsing, validation |
 | [Parse and Render One Bounded WebSocket Close Payload](snippets/networking-protocols/parse-and-render-one-bounded-websocket-close-payload.md) | networking-protocols | recipe | interoperability, parsing, validation |
 | [Parse One Bounded Printable-ASCII HTTP/1 Field Section with Exact CRLF Framing](snippets/networking-protocols/parse-one-bounded-printable-ascii-http-1-field-section-with-exact-crlf-framing.md) | networking-protocols | recipe | networking, parsing, validation |
+| [Parse One Bounded PROXY Protocol Version 1 Line](snippets/networking-protocols/parse-one-bounded-proxy-protocol-version-one-line.md) | networking-protocols | recipe | networking, parsing, validation |
 | [Read and Write Size-Capped Varint Frames](snippets/networking-protocols/read-and-write-size-capped-varint-frames.md) | networking-protocols | recipe | networking, serialization, validation |
 | [Read One Bounded Async Byte Field with Either Line Feed or NUL Terminator](snippets/networking-protocols/read-one-bounded-async-byte-field-with-either-line-feed-or-nul-terminator.md) | networking-protocols | recipe | networking, parsing, validation |
 | [Release a Pooled Response Connection Only After Clean EOF](snippets/networking-protocols/release-a-pooled-response-connection-only-after-clean-eof.md) | networking-protocols | pattern | lifecycle-management, networking, resource-management, validation |
@@ -384,6 +385,7 @@ not edit it by hand.
 | [Measure Time in a State Within a Half-Open Window](snippets/data-processing/measure-time-in-a-state-within-a-half-open-window.md) | data-processing | algorithm | data-transformation |
 | [Merge Bounded Row Batches with a First-Seen Schema Union](snippets/data-processing/merge-bounded-row-batches-with-a-first-seen-schema-union.md) | data-processing | algorithm | data-transformation, validation |
 | [Merge-Join Bounded Sorted Records with Duplicate-Key Cartesian Matches](snippets/data-processing/merge-join-bounded-sorted-records-with-duplicate-key-cartesian-matches.md) | data-processing | algorithm | data-transformation, validation |
+| [Normalize a Finite Binary64 Value into a Canonical Half-Open Period](snippets/data-processing/normalize-a-finite-binary64-value-into-a-canonical-half-open-period.md) | data-processing | algorithm | data-transformation, validation |
 | [Normalize Optional CSV Columns in a Single Pass](snippets/data-processing/normalize-optional-csv-columns-in-a-single-pass.md) | data-processing | recipe | data-transformation, parsing, validation |
 | [Overlay Aligned Time Series at the Finest Step](snippets/data-processing/overlay-aligned-time-series-at-the-finest-step.md) | data-processing | algorithm | data-transformation, validation |
 | [Parse Pipe-Delimited Tables with Continuation Rows](snippets/data-processing/parse-pipe-delimited-tables-with-continuation-rows.md) | data-processing | algorithm | data-transformation, parsing |
@@ -396,6 +398,7 @@ not edit it by hand.
 | [Reconcile a Bounded Partial Record Under Explicit Field Policies](snippets/data-processing/reconcile-a-bounded-partial-record-under-explicit-field-policies.md) | data-processing | pattern | concurrency-control, data-transformation, validation |
 | [Reorder Bounded Out-of-Order Timestamped Records Under a Declared Lateness Bound](snippets/data-processing/reorder-bounded-out-of-order-timestamped-records-under-a-declared-lateness-bound.md) | data-processing | pattern | data-transformation, resource-management, validation |
 | [Reshape Repeated pandas Column Families with Wide-to-Long](snippets/data-processing/reshape-repeated-pandas-column-families-with-wide-to-long.md) | data-processing | integration | data-transformation, interoperability, validation |
+| [Resolve Bounded Overlapping Integer Intervals by Priority into Canonical Winner Spans](snippets/data-processing/resolve-bounded-overlapping-integer-intervals-by-priority-into-canonical-winner-spans.md) | data-processing | algorithm | data-transformation, validation |
 | [Route Estimated Work by Ordered Source and Size Rules](snippets/data-processing/route-estimated-work-by-ordered-source-and-size-rules.md) | data-processing | recipe | data-transformation, resource-management, validation |
 | [Route Items by Ordered Text Prefixes](snippets/data-processing/route-items-by-ordered-text-prefixes.md) | data-processing | recipe | data-transformation, validation |
 | [Run a Pipeline with Lazy Conversion Between Two Views](snippets/data-processing/run-a-pipeline-with-lazy-conversion-between-two-views.md) | data-processing | pattern | data-transformation, interoperability |
@@ -420,6 +423,7 @@ not edit it by hand.
 | [Build an Exact Precision-Recall Curve from Tied Integer Scores](snippets/machine-learning-statistics/build-an-exact-precision-recall-curve-from-tied-integer-scores.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Build Exact Equal-Width Binary Calibration Bins and Expected Calibration Error](snippets/machine-learning-statistics/build-exact-equal-width-binary-calibration-bins-and-expected-calibration-error.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Calculate a Symmetrically Trimmed Mean](snippets/machine-learning-statistics/calculate-a-symmetrically-trimmed-mean.md) | machine-learning-statistics | recipe | data-transformation, performance-optimization |
+| [Compute a Bounded Finite Cosine Similarity with Scaled Norms](snippets/machine-learning-statistics/compute-a-bounded-finite-cosine-similarity-with-scaled-norms.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Compute a Bounded Numerically Stable Log-Sum-Exp for Finite Floats](snippets/machine-learning-statistics/compute-a-bounded-numerically-stable-log-sum-exp-for-finite-floats.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Compute a Row-Wise Maximum of Rolling Minima](snippets/machine-learning-statistics/compute-a-row-wise-maximum-of-rolling-minima.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Compute a Wilson Score Interval for a Binomial Proportion](snippets/machine-learning-statistics/compute-a-wilson-score-interval-for-a-binomial-proportion.md) | machine-learning-statistics | algorithm | data-transformation, validation |
@@ -658,6 +662,7 @@ not edit it by hand.
 | [Classify Progress from Complete Bounded Counter Snapshots](snippets/observability-operations/classify-progress-from-complete-bounded-counter-snapshots.md) | observability-operations | recipe | observability, validation |
 | [Classify Required Health Stamps by Freshness](snippets/observability-operations/classify-required-health-stamps-by-freshness.md) | observability-operations | recipe | observability, validation |
 | [Collect Validated Metric Specifications from Explicit Classes](snippets/observability-operations/collect-validated-metric-specifications-from-explicit-classes.md) | observability-operations | pattern | configuration, observability, validation |
+| [Compile a Bounded T-String into a Deferred Log Message](snippets/observability-operations/compile-a-bounded-t-string-into-a-deferred-log-message.md) | observability-operations | pattern | observability, validation |
 | [Compute a Process CPU Rate from Two Linux procfs Samples](snippets/observability-operations/compute-a-process-cpu-rate-from-two-linux-procfs-samples.md) | observability-operations | algorithm | data-transformation, observability, validation |
 | [Compute a Validated Delta Between Cumulative Histogram Snapshots](snippets/observability-operations/compute-a-validated-delta-between-cumulative-histogram-snapshots.md) | observability-operations | algorithm | data-transformation, observability, validation |
 | [Compute an Exact Apdex Score from Already Classified Counts](snippets/observability-operations/compute-an-exact-apdex-score-from-already-classified-counts.md) | observability-operations | algorithm | data-transformation, observability, validation |
