@@ -18,15 +18,15 @@ not edit it by hand.
 | Category | Scope | Snippets |
 | --- | --- | ---: |
 | [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 26 |
-| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 115 |
+| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 116 |
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 36 |
-| [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 33 |
-| [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 36 |
-| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 64 |
+| [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 34 |
+| [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 37 |
+| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 65 |
 | [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 47 |
 | [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 38 |
 | [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 73 |
-| [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 25 |
+| [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 26 |
 | [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 34 |
 | [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 24 |
 
@@ -159,6 +159,7 @@ not edit it by hand.
 | [Rank Bounded Records with Stable Ties and Neighbor Windows](snippets/algorithms-data-structures/rank-bounded-records-with-stable-ties-and-neighbor-windows.md) | algorithms-data-structures | algorithm | data-transformation, validation |
 | [Rank Hierarchy Paths with Bounded Weighted Edit Distance](snippets/algorithms-data-structures/rank-hierarchy-paths-with-bounded-weighted-edit-distance.md) | algorithms-data-structures | algorithm | data-transformation, validation |
 | [Read a Bounded Range from Non-Overlapping Byte Segments](snippets/algorithms-data-structures/read-a-bounded-range-from-non-overlapping-byte-segments.md) | algorithms-data-structures | algorithm | data-transformation, resource-management, validation |
+| [Realize a Bounded Simple Graph from a Degree Sequence with Havel-Hakimi](snippets/algorithms-data-structures/realize-a-bounded-simple-graph-from-a-degree-sequence-with-havel-hakimi.md) | algorithms-data-structures | algorithm | data-transformation, testing, validation |
 | [Repair Selected Hierarchy Parents Through a Bounded Ancestor Map](snippets/algorithms-data-structures/repair-selected-hierarchy-parents-through-a-bounded-ancestor-map.md) | algorithms-data-structures | algorithm | data-transformation, validation |
 | [Report Exact Capacity Deficits for Bounded Resource Profiles](snippets/algorithms-data-structures/report-exact-capacity-deficits-for-bounded-resource-profiles.md) | algorithms-data-structures | algorithm | automation, resource-management, validation |
 | [Resolve Stable Ordering Constraints with Topological Sort](snippets/algorithms-data-structures/resolve-stable-ordering-constraints-with-topological-sort.md) | algorithms-data-structures | algorithm | data-transformation, validation |
@@ -229,6 +230,7 @@ not edit it by hand.
 | [Plan Once-only Cancellation for Expired Tasks](snippets/reliability-resilience/plan-once-only-cancellation-for-expired-tasks.md) | reliability-resilience | pattern | concurrency-control, lifecycle-management, retry-recovery |
 | [Plan One Discrete Token-Bucket Admission from an Explicit Tick Snapshot](snippets/reliability-resilience/plan-one-discrete-token-bucket-admission-from-an-explicit-tick-snapshot.md) | reliability-resilience | algorithm | concurrency-control, resource-management, validation |
 | [Plan One Periodic-Service Step from an Explicit Monotonic Snapshot](snippets/reliability-resilience/plan-one-periodic-service-step-from-an-explicit-monotonic-snapshot.md) | reliability-resilience | algorithm | lifecycle-management, retry-recovery, validation |
+| [Plan One Retry Admission from a Success-Coupled Budget Snapshot](snippets/reliability-resilience/plan-one-retry-admission-from-a-success-coupled-budget-snapshot.md) | reliability-resilience | algorithm | resource-management, retry-recovery, validation |
 | [Plan Readiness Recovery Through a Monotonic Reset Cooldown](snippets/reliability-resilience/plan-readiness-recovery-through-a-monotonic-reset-cooldown.md) | reliability-resilience | pattern | lifecycle-management, retry-recovery, validation |
 | [Plan Recovery Across Object and Metadata Publication States](snippets/reliability-resilience/plan-recovery-across-object-and-metadata-publication-states.md) | reliability-resilience | algorithm | lifecycle-management, persistence, retry-recovery, validation |
 | [Plan Remaining Stages from a Validated Completed Prefix](snippets/reliability-resilience/plan-remaining-stages-from-a-validated-completed-prefix.md) | reliability-resilience | algorithm | automation, retry-recovery, validation |
@@ -260,6 +262,7 @@ not edit it by hand.
 | [Extract Bounded Singleton HTTP Headers with Explicit Rules](snippets/networking-protocols/extract-bounded-singleton-http-headers-with-explicit-rules.md) | networking-protocols | recipe | networking, parsing, validation |
 | [Interpret One Bounded Retry-After Value Under a Closed Modern-Sender Profile](snippets/networking-protocols/interpret-one-bounded-retry-after-value-under-a-closed-modern-sender-profile.md) | networking-protocols | recipe | interoperability, networking, parsing, retry-recovery, validation |
 | [Iterate Cursor-Paginated Results Lazily](snippets/networking-protocols/iterate-cursor-paginated-results-lazily.md) | networking-protocols | pattern | networking, resource-management |
+| [Negotiate One Supported Content Coding from a Bounded Accept-Encoding Field](snippets/networking-protocols/negotiate-one-supported-content-coding-from-a-bounded-accept-encoding-field.md) | networking-protocols | recipe | interoperability, parsing, validation |
 | [Negotiate One Supported Media Type from a Bounded Accept Field](snippets/networking-protocols/negotiate-one-supported-media-type-from-a-bounded-accept-field.md) | networking-protocols | recipe | interoperability, parsing, validation |
 | [Normalize a Closed HTTP Byte-Range Value into Bounded Half-Open Spans](snippets/networking-protocols/normalize-a-closed-http-byte-range-value-into-bounded-half-open-spans.md) | networking-protocols | recipe | networking, parsing, validation |
 | [Parse a Bounded ASCII Mailbox List with email.headerregistry](snippets/networking-protocols/parse-a-bounded-ascii-mailbox-list-with-email-headerregistry.md) | networking-protocols | recipe | interoperability, networking, parsing, validation |
@@ -289,6 +292,7 @@ not edit it by hand.
 | [Build a Bounded Structural Profile of a pandas DataFrame](snippets/data-processing/build-a-bounded-structural-profile-of-a-pandas-dataframe.md) | data-processing | integration | data-transformation, observability, validation |
 | [Build a Conflict-Checked Remap from Synthetic XLSX Review Rows](snippets/data-processing/build-a-conflict-checked-remap-from-synthetic-xlsx-review-rows.md) | data-processing | integration | data-transformation, interoperability, validation |
 | [Build Bounded Digest Summaries Across Explicit Lookback Horizons](snippets/data-processing/build-bounded-digest-summaries-across-explicit-lookback-horizons.md) | data-processing | algorithm | data-transformation, resource-management, validation |
+| [Build Bounded Per-Key Validity Histories from Versioned Change Records](snippets/data-processing/build-bounded-per-key-validity-histories-from-versioned-change-records.md) | data-processing | algorithm | data-transformation, validation |
 | [Build Quantized Decimal Views with Deltas at Explicit Scales](snippets/data-processing/build-quantized-decimal-views-with-deltas-at-explicit-scales.md) | data-processing | recipe | data-transformation, validation |
 | [Check a Value Against an Asymmetric Tolerance Band](snippets/data-processing/check-a-value-against-an-asymmetric-tolerance-band.md) | data-processing | algorithm | validation |
 | [Clean a pandas Series with First-Match Rules and Audit Counts](snippets/data-processing/clean-a-pandas-series-with-first-match-rules-and-audit-counts.md) | data-processing | integration | data-transformation, validation |
@@ -521,6 +525,7 @@ not edit it by hand.
 | [Plan a Bounded Notebook Storage Key with Collision Suggestions](snippets/security-privacy/plan-a-bounded-notebook-storage-key-with-collision-suggestions.md) | security-privacy | recipe | persistence, security, validation |
 | [Redact a Printable ASCII Secret with a Bounded Visible Tail](snippets/security-privacy/redact-a-printable-ascii-secret-with-a-bounded-visible-tail.md) | security-privacy | recipe | observability, security, validation |
 | [Redact Explicit Paths in Bounded JSON-Like Data](snippets/security-privacy/redact-explicit-paths-in-bounded-json-like-data.md) | security-privacy | recipe | data-transformation, observability, security, validation |
+| [Redact Userinfo and Selected Query Values in a Bounded HTTP URL](snippets/security-privacy/redact-userinfo-and-selected-query-values-in-a-bounded-http-url.md) | security-privacy | recipe | observability, security, validation |
 | [Resolve a Bounded Relative HTTP Reference under a Same-Origin Policy](snippets/security-privacy/resolve-a-bounded-relative-http-reference-under-a-same-origin-policy.md) | security-privacy | recipe | networking, security, validation |
 | [Scan Bounded Table Cells Without Retaining Matched Secrets](snippets/security-privacy/scan-bounded-table-cells-without-retaining-matched-secrets.md) | security-privacy | recipe | security, validation |
 | [Separate Executable and Redacted Views of a Command Argument Vector](snippets/security-privacy/separate-executable-and-redacted-views-of-a-command-argument-vector.md) | security-privacy | pattern | observability, security, validation |
