@@ -18,17 +18,17 @@ not edit it by hand.
 | Category | Scope | Snippets |
 | --- | --- | ---: |
 | [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 26 |
-| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 112 |
+| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 114 |
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 35 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 33 |
-| [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 34 |
+| [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 35 |
 | [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 64 |
-| [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 45 |
+| [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 46 |
 | [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 38 |
 | [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 73 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 25 |
 | [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 33 |
-| [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 23 |
+| [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 24 |
 
 ### Snippets
 
@@ -77,6 +77,7 @@ not edit it by hand.
 | [Build a Capacity-Sized Bloom Filter](snippets/algorithms-data-structures/build-a-capacity-sized-bloom-filter.md) | algorithms-data-structures | algorithm | performance-optimization, validation |
 | [Build a Deterministic Minimum Spanning Forest with Kruskal's Algorithm](snippets/algorithms-data-structures/build-a-deterministic-minimum-spanning-forest-with-kruskals-algorithm.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Build and Evaluate a Bounded Binary Assignment Constraint System](snippets/algorithms-data-structures/build-and-evaluate-a-bounded-binary-assignment-constraint-system.md) | algorithms-data-structures | algorithm | data-transformation, resource-management, validation |
+| [Choose a Deterministic Minimum Point Set Stabbing Bounded Closed Integer Intervals](snippets/algorithms-data-structures/choose-a-deterministic-minimum-point-set-stabbing-bounded-closed-integer-intervals.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Choose Nice Linear Axis Bounds and Tick Step](snippets/algorithms-data-structures/choose-nice-linear-axis-bounds-and-tick-step.md) | algorithms-data-structures | algorithm | data-transformation |
 | [Choose the First Eligible Candidate from Ordered Priority Groups](snippets/algorithms-data-structures/choose-the-first-eligible-candidate-from-ordered-priority-groups.md) | algorithms-data-structures | algorithm | data-transformation, validation |
 | [Classify a Bounded Integer Point Under the Even-Odd Polygonal Fill Rule](snippets/algorithms-data-structures/classify-a-bounded-integer-point-under-the-even-odd-polygonal-fill-rule.md) | algorithms-data-structures | algorithm | data-transformation, testing, validation |
@@ -133,6 +134,7 @@ not edit it by hand.
 | [Find the Leftmost Longest Common Substring of Two Bounded Texts](snippets/algorithms-data-structures/find-the-leftmost-longest-common-substring-of-two-bounded-texts.md) | algorithms-data-structures | algorithm | data-transformation, testing, validation |
 | [Find the Leftmost Longest Exact Text Palindrome with Manacher's Algorithm](snippets/algorithms-data-structures/find-the-leftmost-longest-exact-text-palindrome-with-manachers-algorithm.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Find the Leftmost Shortest Non-Empty Contiguous Integer Span Reaching a Sum Threshold](snippets/algorithms-data-structures/find-the-leftmost-shortest-non-empty-contiguous-integer-span-reaching-a-sum-threshold.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
+| [Find the Leftmost Shortest Unicode Window Covering a Bounded Required Multiset](snippets/algorithms-data-structures/find-the-leftmost-shortest-unicode-window-covering-a-bounded-required-multiset.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Find the Lexicographically First Eulerian Trail in a Bounded Directed Multigraph](snippets/algorithms-data-structures/find-the-lexicographically-first-eulerian-trail-in-a-bounded-directed-multigraph.md) | algorithms-data-structures | algorithm | data-transformation, testing, validation |
 | [Find the Narrowest Integer Range Covering Every Sorted Source](snippets/algorithms-data-structures/find-the-narrowest-integer-range-covering-every-sorted-source.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Find the Proposer-Optimal Stable Matching for Complete Strict Preferences](snippets/algorithms-data-structures/find-the-proposer-optimal-stable-matching-for-complete-strict-preferences.md) | algorithms-data-structures | algorithm | data-transformation, validation |
@@ -266,6 +268,7 @@ not edit it by hand.
 | [Parse a Bounded Three-State JSON Response Envelope](snippets/networking-protocols/parse-a-bounded-three-state-json-response-envelope.md) | networking-protocols | integration | networking, parsing, validation |
 | [Parse and Format a Strict W3C traceparent Version 00 Value](snippets/networking-protocols/parse-and-format-a-strict-w3c-traceparent-version-00-value.md) | networking-protocols | recipe | interoperability, networking, parsing, validation |
 | [Parse and Rank a Bounded Accept-Language Value](snippets/networking-protocols/parse-and-rank-a-bounded-accept-language-value.md) | networking-protocols | recipe | interoperability, parsing, validation |
+| [Parse and Render One Bounded WebSocket Close Payload](snippets/networking-protocols/parse-and-render-one-bounded-websocket-close-payload.md) | networking-protocols | recipe | interoperability, parsing, validation |
 | [Parse One Bounded Printable-ASCII HTTP/1 Field Section with Exact CRLF Framing](snippets/networking-protocols/parse-one-bounded-printable-ascii-http-1-field-section-with-exact-crlf-framing.md) | networking-protocols | recipe | networking, parsing, validation |
 | [Read and Write Size-Capped Varint Frames](snippets/networking-protocols/read-and-write-size-capped-varint-frames.md) | networking-protocols | recipe | networking, serialization, validation |
 | [Release a Pooled Response Connection Only After Clean EOF](snippets/networking-protocols/release-a-pooled-response-connection-only-after-clean-eof.md) | networking-protocols | pattern | lifecycle-management, networking, resource-management, validation |
@@ -342,6 +345,7 @@ not edit it by hand.
 | [Adjust Bounded Exact P-Values with Holm's Step-Down Method](snippets/machine-learning-statistics/adjust-bounded-exact-p-values-with-holms-step-down-method.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Adjust Bounded Exact P-Values with the Benjamini-Hochberg Procedure](snippets/machine-learning-statistics/adjust-bounded-exact-p-values-with-the-benjamini-hochberg-procedure.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Assemble Out-of-Fold Scores from Explicit Validation Splits](snippets/machine-learning-statistics/assemble-out-of-fold-scores-from-explicit-validation-splits.md) | machine-learning-statistics | algorithm | data-transformation, validation |
+| [Assign Bounded Labelled Rows to Deterministic Stratified Folds](snippets/machine-learning-statistics/assign-bounded-labelled-rows-to-deterministic-stratified-folds.md) | machine-learning-statistics | algorithm | data-transformation, testing, validation |
 | [Build an Exact Bounded Multiclass Confusion Matrix](snippets/machine-learning-statistics/build-an-exact-bounded-multiclass-confusion-matrix.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Build an Exact Kaplan-Meier Curve for Bounded Right-Censored Data](snippets/machine-learning-statistics/build-an-exact-kaplan-meier-curve-for-bounded-right-censored-data.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Build an Exact Precision-Recall Curve from Tied Integer Scores](snippets/machine-learning-statistics/build-an-exact-precision-recall-curve-from-tied-integer-scores.md) | machine-learning-statistics | algorithm | data-transformation, validation |
@@ -561,6 +565,7 @@ not edit it by hand.
 | [Compute a Process CPU Rate from Two Linux procfs Samples](snippets/observability-operations/compute-a-process-cpu-rate-from-two-linux-procfs-samples.md) | observability-operations | algorithm | data-transformation, observability, validation |
 | [Compute a Validated Delta Between Cumulative Histogram Snapshots](snippets/observability-operations/compute-a-validated-delta-between-cumulative-histogram-snapshots.md) | observability-operations | algorithm | data-transformation, observability, validation |
 | [Compute an Exact Apdex Score from Already Classified Counts](snippets/observability-operations/compute-an-exact-apdex-score-from-already-classified-counts.md) | observability-operations | algorithm | data-transformation, observability, validation |
+| [Compute Inclusive and Exclusive Durations for a Bounded Nested Span Forest](snippets/observability-operations/compute-inclusive-and-exclusive-durations-for-a-bounded-nested-span-forest.md) | observability-operations | algorithm | data-transformation, observability, validation |
 | [Count Values in Fixed Upper-Bound Bins](snippets/observability-operations/count-values-in-fixed-upper-bound-bins.md) | observability-operations | algorithm | data-transformation, observability |
 | [Format Log Records as JSON with Explicit Extra Fields](snippets/observability-operations/format-log-records-as-json-with-explicit-extra-fields.md) | observability-operations | recipe | observability, serialization |
 | [Group Metric Samples by Their Exact Label-Key Shape](snippets/observability-operations/group-metric-samples-by-their-exact-label-key-shape.md) | observability-operations | algorithm | data-transformation, observability, validation |
