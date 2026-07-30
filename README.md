@@ -19,16 +19,16 @@ not edit it by hand.
 | --- | --- | ---: |
 | [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 29 |
 | [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 156 |
-| [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 37 |
+| [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 38 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 34 |
 | [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 43 |
 | [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 67 |
 | [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 50 |
-| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 43 |
+| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 45 |
 | [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 76 |
-| [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 27 |
+| [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 28 |
 | [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 38 |
-| [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 26 |
+| [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 27 |
 
 ### Snippets
 
@@ -251,6 +251,7 @@ not edit it by hand.
 | [Run One Trusted Stateless Function in a Short-Lived Subinterpreter](snippets/concurrency-lifecycle/run-one-trusted-stateless-function-in-a-short-lived-subinterpreter.md) | concurrency-lifecycle | pattern | lifecycle-management, resource-management, testing |
 | [Select a Reusable Lease for an Explicit Remaining Horizon](snippets/concurrency-lifecycle/select-a-reusable-lease-for-an-explicit-remaining-horizon.md) | concurrency-lifecycle | algorithm | concurrency-control, lifecycle-management, resource-management, validation |
 | [Select an Immediate Predecessor from a Bounded Contender Snapshot](snippets/concurrency-lifecycle/select-an-immediate-predecessor-from-a-bounded-contender-snapshot.md) | concurrency-lifecycle | algorithm | concurrency-control, lifecycle-management, validation |
+| [Start One Thread with an Explicit ContextVar Inheritance Policy](snippets/concurrency-lifecycle/start-one-thread-with-an-explicit-contextvar-inheritance-policy.md) | concurrency-lifecycle | recipe | concurrency-control, observability, resource-management |
 | [Stop a Polling Worker Cooperatively with an Event](snippets/concurrency-lifecycle/stop-a-polling-worker-cooperatively-with-an-event.md) | concurrency-lifecycle | pattern | concurrency-control, resource-management |
 | [Stream Bounded stdout and stderr Lines from a POSIX Process](snippets/concurrency-lifecycle/stream-bounded-stdout-and-stderr-lines-from-a-posix-process.md) | concurrency-lifecycle | integration | automation, concurrency-control, lifecycle-management, resource-management |
 | [Submit a Callable with a Snapshot of the Current Context](snippets/concurrency-lifecycle/submit-a-callable-with-a-snapshot-of-the-current-context.md) | concurrency-lifecycle | recipe | concurrency-control, interoperability, observability |
@@ -465,6 +466,7 @@ not edit it by hand.
 | [Fill a Preallocated Bytearray Exactly with os.readinto](snippets/storage-databases/fill-a-preallocated-bytearray-exactly-with-os-readinto.md) | storage-databases | recipe | performance-optimization, resource-management, validation |
 | [Fingerprint a Bounded Flat File Set with Framed SHA-256](snippets/storage-databases/fingerprint-a-bounded-flat-file-set-with-framed-sha-256.md) | storage-databases | recipe | caching, persistence, validation |
 | [Group Bounded SQLite Console Lines into Lexically Complete Batches Without Execution](snippets/storage-databases/group-bounded-sqlite-console-lines-into-lexically-complete-batches-without-execution.md) | storage-databases | recipe | automation, parsing, validation |
+| [Hand Off Bounded Bytes Through a Scoped Named Temporary Path](snippets/storage-databases/hand-off-bounded-bytes-through-a-scoped-named-temporary-path.md) | storage-databases | recipe | interoperability, persistence, resource-management |
 | [Map a Namespaced POSIX Path Beneath a Logical Local Root](snippets/storage-databases/map-a-namespaced-posix-path-beneath-a-logical-local-root.md) | storage-databases | recipe | data-transformation, persistence, validation |
 | [Page Bounded SQLite Rows with a Composite Keyset Cursor](snippets/storage-databases/page-bounded-sqlite-rows-with-a-composite-keyset-cursor.md) | storage-databases | pattern | performance-optimization, persistence, validation |
 | [Plan a Bounded Named POSIX Layout Under Explicit Roots](snippets/storage-databases/plan-a-bounded-named-posix-layout-under-explicit-roots.md) | storage-databases | algorithm | data-transformation, persistence, validation |
@@ -493,6 +495,7 @@ not edit it by hand.
 | [Store Bytes by Their Content Digest](snippets/storage-databases/store-bytes-by-their-content-digest.md) | storage-databases | recipe | caching, persistence |
 | [Validate a Bounded Chunk Manifest Before a Conditional Version Switch](snippets/storage-databases/validate-a-bounded-chunk-manifest-before-a-conditional-version-switch.md) | storage-databases | pattern | concurrency-control, persistence, validation |
 | [Validate a Bounded Stage-Verify-Pointer-Switch Log](snippets/storage-databases/validate-a-bounded-stage-verify-pointer-switch-log.md) | storage-databases | pattern | persistence, validation |
+| [Write Bounded Byte Segments Exactly with os.writev](snippets/storage-databases/write-bounded-byte-segments-exactly-with-os-writev.md) | storage-databases | recipe | performance-optimization, resource-management, validation |
 | [Adapt Bounded JSON Output to a Protobuf Message](snippets/configuration-serialization/adapt-bounded-json-output-to-a-protobuf-message.md) | configuration-serialization | integration | interoperability, serialization, validation |
 | [Append a Fixed-Width CRC Check to a Human-Readable Identifier](snippets/configuration-serialization/append-a-fixed-width-crc-check-to-a-human-readable-identifier.md) | configuration-serialization | recipe | interoperability, serialization, validation |
 | [Apply a Bounded RFC 7396 JSON Merge Patch without Mutating Inputs](snippets/configuration-serialization/apply-a-bounded-rfc-7396-json-merge-patch-without-mutating-inputs.md) | configuration-serialization | pattern | configuration, data-transformation, validation |
@@ -585,6 +588,7 @@ not edit it by hand.
 | [Encrypt a Bounded Value with a Versioned AES-GCM Key Envelope](snippets/security-privacy/encrypt-a-bounded-value-with-a-versioned-aes-gcm-key-envelope.md) | security-privacy | integration | security, serialization, validation |
 | [Load an Authenticated Legacy Pickle with Restricted Globals](snippets/security-privacy/load-an-authenticated-legacy-pickle-with-restricted-globals.md) | security-privacy | recipe | interoperability, security, serialization, validation |
 | [Match RFC 6238 SHA-256 TOTP Codes over a Bounded Counter Window](snippets/security-privacy/match-rfc-6238-sha-256-totp-codes-over-a-bounded-counter-window.md) | security-privacy | recipe | interoperability, security, validation |
+| [Plan a Bounded Missing POSIX Path Beneath a Trusted Root with Allow Missing](snippets/security-privacy/plan-a-bounded-missing-posix-path-beneath-a-trusted-root-with-allow-missing.md) | security-privacy | recipe | resource-management, security, validation |
 | [Plan a Bounded Notebook Storage Key with Collision Suggestions](snippets/security-privacy/plan-a-bounded-notebook-storage-key-with-collision-suggestions.md) | security-privacy | recipe | persistence, security, validation |
 | [Read One Descriptor-Relative Regular File Without Following Its Final Symlink](snippets/security-privacy/read-one-descriptor-relative-regular-file-without-following-its-final-symlink.md) | security-privacy | recipe | resource-management, security, validation |
 | [Redact a Printable ASCII Secret with a Bounded Visible Tail](snippets/security-privacy/redact-a-printable-ascii-secret-with-a-bounded-visible-tail.md) | security-privacy | recipe | observability, security, validation |
@@ -651,6 +655,7 @@ not edit it by hand.
 | [Measure and Freeze Elapsed Time in a Context](snippets/observability-operations/measure-and-freeze-elapsed-time-in-a-context.md) | observability-operations | idiom | observability, performance-optimization |
 | [Measure Cache Hit Ratios from Monotonic Counter Snapshots](snippets/observability-operations/measure-cache-hit-ratios-from-monotonic-counter-snapshots.md) | observability-operations | algorithm | observability, validation |
 | [Process Log Records in a Background Thread with QueueListener](snippets/observability-operations/process-log-records-in-a-background-thread-with-queuelistener.md) | observability-operations | recipe | concurrency-control, lifecycle-management, observability |
+| [Project a Bounded asyncio Call Graph Without Retaining Live Frames](snippets/observability-operations/project-a-bounded-asyncio-call-graph-without-retaining-live-frames.md) | observability-operations | recipe | concurrency-control, observability, resource-management |
 | [Read a Bounded Log Delta Across One Rename-Based Rotation](snippets/observability-operations/read-a-bounded-log-delta-across-one-rename-based-rotation.md) | observability-operations | recipe | observability, resource-management, retry-recovery |
 | [Redact One LogRecord Field for One Handler Without Mutating Sibling Handlers](snippets/observability-operations/redact-one-logrecord-field-for-one-handler-without-mutating-sibling-handlers.md) | observability-operations | pattern | observability, security |
 | [Render a Bounded Prometheus Text Exposition for Integer Counter and Gauge Snapshots](snippets/observability-operations/render-a-bounded-prometheus-text-exposition-for-integer-counter-and-gauge-snapshots.md) | observability-operations | recipe | observability, serialization, validation |
