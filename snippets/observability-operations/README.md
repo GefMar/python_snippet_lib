@@ -8,6 +8,7 @@ primary behavior.
 <!-- catalog:category:start -->
 | Snippet | Type | Use Cases | Problem |
 | --- | --- | --- | --- |
+| [Aggregate Bounded Sampled Stacks into Deterministic Collapsed Counts](aggregate-bounded-sampled-stacks-into-deterministic-collapsed-counts.md) | algorithm | data-transformation, observability, serialization, validation | Aggregate bounded root-to-leaf stack samples into deterministic collapsed text without conflating a complete path with one of its prefixes. |
 | [Capture a Bounded Pickle-Friendly Exception Report](capture-a-bounded-pickle-friendly-exception-report.md) | recipe | interoperability, observability, serialization | Flatten one exception and its native cause or context chain into bounded immutable diagnostic data instead of trying to serialize live exception state. |
 | [Classify a Finite Value with Warning and Critical Limits](classify-a-finite-value-with-warning-and-critical-limits.md) | recipe | observability, validation | Classify one finite float as ok, warning, or critical using an explicit direction and strictly ordered inclusive limits. |
 | [Classify Paired Error-Budget Burn Windows from Cumulative Counter Snapshots](classify-paired-error-budget-burn-windows-from-cumulative-counter-snapshots.md) | algorithm | observability, validation | Compare exact error-budget burn in nested long and short counter windows without hiding resets, empty traffic, or threshold ties behind floating-point arithmetic. |
