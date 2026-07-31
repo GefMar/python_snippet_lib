@@ -90,8 +90,7 @@ class PngStructure:
 
 def _is_ascii_chunk_type(chunk_type: bytes) -> bool:
     return len(chunk_type) == 4 and all(
-        65 <= character <= 90 or 97 <= character <= 122
-        for character in chunk_type
+        65 <= character <= 90 or 97 <= character <= 122 for character in chunk_type
     )
 
 
@@ -142,9 +141,7 @@ def inspect_png_critical_structure(encoded: bytes) -> PngStructure:
         if is_critical and chunk_type not in _KNOWN_CRITICAL_CHUNKS:
             raise PngStructureError("unknown critical chunk is not supported")
 
-        chunks.append(
-            PngChunkInfo(chunk_type.decode("ascii"), data_length, chunk_offset)
-        )
+        chunks.append(PngChunkInfo(chunk_type.decode("ascii"), data_length, chunk_offset))
 
         if chunk_type == b"IHDR":
             if len(chunks) != 1 or width is not None:
@@ -219,12 +216,7 @@ def inspect_png_critical_structure(encoded: bytes) -> PngStructure:
 ```python
 def png_chunk(chunk_type: bytes, data: bytes) -> bytes:
     checksum = crc32(data, crc32(chunk_type)) & 0xFFFF_FFFF
-    return (
-        len(data).to_bytes(4, "big")
-        + chunk_type
-        + data
-        + checksum.to_bytes(4, "big")
-    )
+    return len(data).to_bytes(4, "big") + chunk_type + data + checksum.to_bytes(4, "big")
 
 
 def png_header(
@@ -324,9 +316,7 @@ maximum_chunk = make_png(
     (b"wiDe", b"x" * _MAX_PNG_CHUNK_DATA),
     (b"IDAT", b""),
 )
-assert inspect_png_critical_structure(maximum_chunk).chunks[1].data_length == (
-    _MAX_PNG_CHUNK_DATA
-)
+assert inspect_png_critical_structure(maximum_chunk).chunks[1].data_length == (_MAX_PNG_CHUNK_DATA)
 
 maximum_chunk_count = make_png(
     png_header(),
@@ -336,9 +326,7 @@ maximum_chunk_count = make_png(
 assert len(inspect_png_critical_structure(maximum_chunk_count).chunks) == 256
 
 padding_chunk_count = 16
-padding_data_bytes = (
-    _MAX_PNG_BYTES - len(minimum) - 12 * padding_chunk_count
-)
+padding_data_bytes = _MAX_PNG_BYTES - len(minimum) - 12 * padding_chunk_count
 full_padding_chunks, final_padding_bytes = divmod(
     padding_data_bytes,
     _MAX_PNG_CHUNK_DATA,

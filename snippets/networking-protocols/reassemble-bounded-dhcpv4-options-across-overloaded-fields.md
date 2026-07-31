@@ -102,9 +102,7 @@ def _parse_option_field(
             continue
         if code == _END:
             if any(field[offset:]):
-                raise DhcpOptionFieldError(
-                    f"{field_name} contains a non-Pad byte after End"
-                )
+                raise DhcpOptionFieldError(f"{field_name} contains a non-Pad byte after End")
             return (
                 fragments,
                 overload,
@@ -113,22 +111,16 @@ def _parse_option_field(
             )
 
         if offset >= len(field):
-            raise DhcpOptionFieldError(
-                f"{field_name} ends before option {code}'s length"
-            )
+            raise DhcpOptionFieldError(f"{field_name} ends before option {code}'s length")
         value_length = field[offset]
         offset += 1
         value_end = offset + value_length
         if value_end > len(field):
-            raise DhcpOptionFieldError(
-                f"option {code} crosses the end of {field_name}"
-            )
+            raise DhcpOptionFieldError(f"option {code} crosses the end of {field_name}")
         if fragment_count == _MAX_FRAGMENTS:
             raise DhcpOptionFieldError("option fragment count exceeds 256")
         if value_length > _MAX_AGGREGATE_VALUE_BYTES - aggregate_value_bytes:
-            raise DhcpOptionFieldError(
-                "aggregate option value bytes exceed 2,048"
-            )
+            raise DhcpOptionFieldError("aggregate option value bytes exceed 2,048")
 
         value = field[offset:value_end]
         fragment_count += 1
@@ -137,15 +129,11 @@ def _parse_option_field(
 
         if code == _OPTION_OVERLOAD:
             if not allow_overload:
-                raise DhcpOptionFieldError(
-                    "option 52 may appear only in the main options field"
-                )
+                raise DhcpOptionFieldError("option 52 may appear only in the main options field")
             if overload is not None:
                 raise DhcpOptionFieldError("option 52 must not be repeated")
             if value not in (b"\x01", b"\x02", b"\x03"):
-                raise DhcpOptionFieldError(
-                    "option 52 must have length one and value 1, 2, or 3"
-                )
+                raise DhcpOptionFieldError("option 52 must have length one and value 1, 2, or 3")
             overload = value[0]
         else:
             fragments.append((code, value))
@@ -172,14 +160,12 @@ def parse_dhcpv4_option_fields(
     if len(sname_field) != _SNAME_FIELD_BYTES:
         raise DhcpOptionFieldError("sname_field must contain exactly 64 bytes")
 
-    fragments, overload, fragment_count, aggregate_value_bytes = (
-        _parse_option_field(
-            main_options,
-            field_name="main_options",
-            allow_overload=True,
-            fragment_count=0,
-            aggregate_value_bytes=0,
-        )
+    fragments, overload, fragment_count, aggregate_value_bytes = _parse_option_field(
+        main_options,
+        field_name="main_options",
+        allow_overload=True,
+        fragment_count=0,
+        aggregate_value_bytes=0,
     )
 
     if overload in (1, 3):
@@ -208,8 +194,7 @@ def parse_dhcpv4_option_fields(
     return DhcpOptionSet(
         overload=overload,
         options=tuple(
-            DhcpOption(code=code, value=b"".join(parts))
-            for code, parts in grouped.items()
+            DhcpOption(code=code, value=b"".join(parts)) for code, parts in grouped.items()
         ),
     )
 ```
@@ -286,9 +271,7 @@ assert file_only == DhcpOptionSet(
 )
 
 sname_only = parse_dhcpv4_option_fields(
-    encoded_option(_OPTION_OVERLOAD, b"\x02")
-    + encoded_option(3, b"left")
-    + bytes((_END,)),
+    encoded_option(_OPTION_OVERLOAD, b"\x02") + encoded_option(3, b"left") + bytes((_END,)),
     b"inactive file".ljust(_FILE_FIELD_BYTES, b"\x7f"),
     fixed_field(_SNAME_FIELD_BYTES, encoded_option(3, b"right")),
 )
@@ -310,9 +293,7 @@ exact_fragment_cap = parse_dhcpv4_option_fields(
 assert exact_fragment_cap == DhcpOptionSet(None, (DhcpOption(1, b""),))
 
 exact_value_cap = parse_dhcpv4_option_fields(
-    encoded_option(1, b"x" * 255) * 8
-    + encoded_option(1, b"y" * 8)
-    + bytes((_END,)),
+    encoded_option(1, b"x" * 255) * 8 + encoded_option(1, b"y" * 8) + bytes((_END,)),
     bytes(_FILE_FIELD_BYTES),
     bytes(_SNAME_FIELD_BYTES),
 )
@@ -359,9 +340,7 @@ rejected = (
     is_rejected(bytes((_END, 1))),  # non-Pad after End
     is_rejected(encoded_option(_OPTION_OVERLOAD, b"") + bytes((_END,))),
     is_rejected(encoded_option(_OPTION_OVERLOAD, b"\x04") + bytes((_END,))),
-    is_rejected(
-        encoded_option(_OPTION_OVERLOAD, b"\x01") * 2 + bytes((_END,))
-    ),
+    is_rejected(encoded_option(_OPTION_OVERLOAD, b"\x01") * 2 + bytes((_END,))),
     is_rejected(
         encoded_option(_OPTION_OVERLOAD, b"\x01") + bytes((_END,)),
         bad_overload_in_file,

@@ -83,16 +83,12 @@ class StaticRangeProductMod:
 
                 products[middle - 1] = values[middle - 1]
                 for position in range(middle - 2, block_start - 1, -1):
-                    products[position] = (
-                        values[position] * products[position + 1]
-                    ) % modulus
+                    products[position] = (values[position] * products[position + 1]) % modulus
 
                 if middle < block_stop:
                     products[middle] = values[middle]
                     for position in range(middle + 1, block_stop):
-                        products[position] = (
-                            products[position - 1] * values[position]
-                        ) % modulus
+                        products[position] = (products[position - 1] * values[position]) % modulus
 
             levels.append(tuple(products))
 
@@ -160,16 +156,13 @@ generator = Random(0xD15_1017)
 for size in (3, 5, 6, 7, 9, 17, 31, 33, 65):
     for small_modulus in (6, 97):
         for _ in range(4):
-            random_values = tuple(
-                generator.randrange(small_modulus) for _ in range(size)
-            )
+            random_values = tuple(generator.randrange(small_modulus) for _ in range(size))
             checked_ranges += exercise_every_range(random_values, small_modulus)
 
 ordinary_values = (2, 3, 0, 5, 4, 2)
 ordinary = StaticRangeProductMod(ordinary_values, 12)
 ordinary_answers = tuple(
-    ordinary.product(start, stop)
-    for start, stop in ((0, 2), (0, 6), (3, 6), (3, 4), (4, 6))
+    ordinary.product(start, stop) for start, stop in ((0, 2), (0, 6), (3, 6), (3, 4), (4, 6))
 )
 
 maximum_values = (0,) * _MAX_STATIC_RANGE_PRODUCT_VALUES
@@ -179,12 +172,9 @@ maximum_ranges = (
     (1, _MAX_STATIC_RANGE_PRODUCT_VALUES - 1),
     (_MAX_STATIC_RANGE_PRODUCT_VALUES - 1, _MAX_STATIC_RANGE_PRODUCT_VALUES),
 )
-maximum_answers = tuple(
-    maximum.product(start, stop) for start, stop in maximum_ranges
-)
+maximum_answers = tuple(maximum.product(start, stop) for start, stop in maximum_ranges)
 maximum_oracle = tuple(
-    direct_range_product(maximum_values, 12, start, stop)
-    for start, stop in maximum_ranges
+    direct_range_product(maximum_values, 12, start, stop) for start, stop in maximum_ranges
 )
 
 

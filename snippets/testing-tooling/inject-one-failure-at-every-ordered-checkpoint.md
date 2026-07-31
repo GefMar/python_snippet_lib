@@ -93,9 +93,7 @@ class FailpointProbe:
         self._visited: list[str] = []
         self._tripped = False
         self._finished = False
-        self._failure = (
-            InjectedCheckpointFailure(target) if target is not None else None
-        )
+        self._failure = InjectedCheckpointFailure(target) if target is not None else None
 
     @property
     def visited(self) -> tuple[str, ...]:
@@ -116,9 +114,7 @@ class FailpointProbe:
             raise FailpointProtocolError("scenario reached an extra checkpoint")
         expected = self._labels[position]
         if label != expected:
-            raise FailpointProtocolError(
-                f"expected checkpoint {expected!r}, received {label!r}"
-            )
+            raise FailpointProtocolError(f"expected checkpoint {expected!r}, received {label!r}")
 
         self._visited.append(label)
         if label == self._target:
@@ -145,9 +141,7 @@ class FailpointProbe:
         if visited != expected_prefix:
             raise FailpointProtocolError("injected run has the wrong trace prefix")
         if escaped is not self._failure:
-            raise FailpointProtocolError(
-                "the exact injected exception did not escape the scenario"
-            )
+            raise FailpointProtocolError("the exact injected exception did not escape the scenario")
         return visited
 ```
 

@@ -126,10 +126,7 @@ def sum_signed_affine_floors_directly(
     slope: int,
     intercept: int,
 ) -> int:
-    return sum(
-        (slope * index + intercept) // modulus
-        for index in range(count)
-    )
+    return sum((slope * index + intercept) // modulus for index in range(count))
 
 
 checked = 0
@@ -184,18 +181,24 @@ base = floor_sum_signed(
 )
 index_sum = metamorphic_count * (metamorphic_count - 1) // 2
 for multiple in (-2, -1, 1, 3):
-    assert floor_sum_signed(
-        metamorphic_count,
-        metamorphic_modulus,
-        metamorphic_slope + multiple * metamorphic_modulus,
-        metamorphic_intercept,
-    ) == base + multiple * index_sum
-    assert floor_sum_signed(
-        metamorphic_count,
-        metamorphic_modulus,
-        metamorphic_slope,
-        metamorphic_intercept + multiple * metamorphic_modulus,
-    ) == base + multiple * metamorphic_count
+    assert (
+        floor_sum_signed(
+            metamorphic_count,
+            metamorphic_modulus,
+            metamorphic_slope + multiple * metamorphic_modulus,
+            metamorphic_intercept,
+        )
+        == base + multiple * index_sum
+    )
+    assert (
+        floor_sum_signed(
+            metamorphic_count,
+            metamorphic_modulus,
+            metamorphic_slope,
+            metamorphic_intercept + multiple * metamorphic_modulus,
+        )
+        == base + multiple * metamorphic_count
+    )
 
 maximum = _MAX_AFFINE_FLOOR_INPUT
 maximum_index_sum = maximum * (maximum - 1) // 2
@@ -209,17 +212,21 @@ assert floor_sum_signed(3, 2, -1, -1) == -4
 huge_modulus = maximum - 1
 huge_slope = -maximum
 huge_intercept = maximum
-assert floor_sum_signed(
-    maximum,
-    huge_modulus,
-    huge_slope,
-    huge_intercept,
-) - floor_sum_signed(
-    maximum - 1,
-    huge_modulus,
-    huge_slope,
-    huge_intercept,
-) == (huge_slope * (maximum - 1) + huge_intercept) // huge_modulus
+assert (
+    floor_sum_signed(
+        maximum,
+        huge_modulus,
+        huge_slope,
+        huge_intercept,
+    )
+    - floor_sum_signed(
+        maximum - 1,
+        huge_modulus,
+        huge_slope,
+        huge_intercept,
+    )
+    == (huge_slope * (maximum - 1) + huge_intercept) // huge_modulus
+)
 
 invalid_calls = (
     lambda: floor_sum_signed(True, 1, 0, 0),
