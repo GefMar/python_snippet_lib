@@ -18,16 +18,16 @@ not edit it by hand.
 | Category | Scope | Snippets |
 | --- | --- | ---: |
 | [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 36 |
-| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 170 |
+| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 171 |
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 39 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 35 |
-| [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 56 |
-| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 72 |
-| [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 64 |
+| [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 57 |
+| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 73 |
+| [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 65 |
 | [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 48 |
 | [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 83 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 33 |
-| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 42 |
+| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 43 |
 | [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 33 |
 
 ### Snippets
@@ -203,6 +203,7 @@ not edit it by hand.
 | [Map Points Between Rectangular Coordinate Spaces](snippets/algorithms-data-structures/map-points-between-rectangular-coordinate-spaces.md) | algorithms-data-structures | algorithm | data-transformation, interoperability |
 | [Match Strict Mutual Nearest Neighbors with a Comparison Budget](snippets/algorithms-data-structures/match-strict-mutual-nearest-neighbors-with-a-comparison-budget.md) | algorithms-data-structures | algorithm | data-transformation, validation |
 | [Merge Bounded Sorted Integer Runs with Observable Source-Order Ties](snippets/algorithms-data-structures/merge-bounded-sorted-integer-runs-with-observable-source-order-ties.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
+| [Minimize a Bounded Complete DFA into a Canonical Reachable Form](snippets/algorithms-data-structures/minimize-a-bounded-complete-dfa-into-a-canonical-reachable-form.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, testing, validation |
 | [Model Newest-Wins Lookups with Bounded Immutable LSM Segments](snippets/algorithms-data-structures/model-newest-wins-lookups-with-bounded-immutable-lsm-segments.md) | algorithms-data-structures | pattern | data-transformation, resource-management |
 | [Partition a Bounded Directed Graph into Deterministic Strongly Connected Components](snippets/algorithms-data-structures/partition-a-bounded-directed-graph-into-deterministic-strongly-connected-components.md) | algorithms-data-structures | algorithm | data-transformation, validation |
 | [Partition a Bounded Undirected Graph into Deterministic Components with Union-Find](snippets/algorithms-data-structures/partition-a-bounded-undirected-graph-into-deterministic-components-with-union-find.md) | algorithms-data-structures | algorithm | data-transformation, validation |
@@ -360,6 +361,7 @@ not edit it by hand.
 | [Parse One Complete Unfragmented WebSocket Data Frame Under Role Masking Rules](snippets/networking-protocols/parse-one-complete-unfragmented-websocket-data-frame-under-role-masking-rules.md) | networking-protocols | recipe | interoperability, networking, parsing, validation |
 | [Read and Write Size-Capped Varint Frames](snippets/networking-protocols/read-and-write-size-capped-varint-frames.md) | networking-protocols | recipe | networking, serialization, validation |
 | [Read One Bounded Async Byte Field with Either Line Feed or NUL Terminator](snippets/networking-protocols/read-one-bounded-async-byte-field-with-either-line-feed-or-nul-terminator.md) | networking-protocols | recipe | networking, parsing, validation |
+| [Reassemble One Bounded IPv4 Payload from Decoded Fragments](snippets/networking-protocols/reassemble-one-bounded-ipv4-payload-from-decoded-fragments.md) | networking-protocols | algorithm | data-transformation, interoperability, networking, validation |
 | [Reassemble One Bounded WebSocket Message from Decoded Data Fragments](snippets/networking-protocols/reassemble-one-bounded-websocket-message-from-decoded-data-fragments.md) | networking-protocols | algorithm | data-transformation, interoperability, networking, validation |
 | [Release a Pooled Response Connection Only After Clean EOF](snippets/networking-protocols/release-a-pooled-response-connection-only-after-clean-eof.md) | networking-protocols | pattern | lifecycle-management, networking, resource-management, validation |
 | [Render One Bounded Set-Cookie Field from Explicit Attributes](snippets/networking-protocols/render-one-bounded-set-cookie-field-from-explicit-attributes.md) | networking-protocols | recipe | interoperability, networking, validation |
@@ -381,6 +383,7 @@ not edit it by hand.
 | [Build a Conflict-Checked Remap from Synthetic XLSX Review Rows](snippets/data-processing/build-a-conflict-checked-remap-from-synthetic-xlsx-review-rows.md) | data-processing | integration | data-transformation, interoperability, validation |
 | [Build Bounded Digest Summaries Across Explicit Lookback Horizons](snippets/data-processing/build-bounded-digest-summaries-across-explicit-lookback-horizons.md) | data-processing | algorithm | data-transformation, resource-management, validation |
 | [Build Bounded Per-Key Validity Histories from Versioned Change Records](snippets/data-processing/build-bounded-per-key-validity-histories-from-versioned-change-records.md) | data-processing | algorithm | data-transformation, validation |
+| [Build Canonical CSR Arrays from Bounded Integer Coordinate Entries](snippets/data-processing/build-canonical-csr-arrays-from-bounded-integer-coordinate-entries.md) | data-processing | algorithm | data-transformation, performance-optimization, validation |
 | [Build Quantized Decimal Views with Deltas at Explicit Scales](snippets/data-processing/build-quantized-decimal-views-with-deltas-at-explicit-scales.md) | data-processing | recipe | data-transformation, validation |
 | [Check a Value Against an Asymmetric Tolerance Band](snippets/data-processing/check-a-value-against-an-asymmetric-tolerance-band.md) | data-processing | algorithm | validation |
 | [Clean a pandas Series with First-Match Rules and Audit Counts](snippets/data-processing/clean-a-pandas-series-with-first-match-rules-and-audit-counts.md) | data-processing | integration | data-transformation, validation |
@@ -472,6 +475,7 @@ not edit it by hand.
 | [Compute an Exact Two-Sided Mann-Whitney U Permutation Test for Bounded Integer Samples](snippets/machine-learning-statistics/compute-an-exact-two-sided-mann-whitney-u-permutation-test-for-bounded-integer-samples.md) | machine-learning-statistics | algorithm | data-transformation, testing, validation |
 | [Compute an Exact Two-Sided Wilcoxon Signed-Rank Randomization Test for Bounded Integer Pairs](snippets/machine-learning-statistics/compute-an-exact-two-sided-wilcoxon-signed-rank-randomization-test-for-bounded-integer-pairs.md) | machine-learning-statistics | algorithm | data-transformation, testing, validation |
 | [Compute Exact Binary ROC AUC with Tied Integer Scores](snippets/machine-learning-statistics/compute-exact-binary-roc-auc-with-tied-integer-scores.md) | machine-learning-statistics | algorithm | data-transformation, validation |
+| [Compute Exact Fleiss' Kappa from a Bounded Rating-Count Matrix](snippets/machine-learning-statistics/compute-exact-fleiss-kappa-from-a-bounded-rating-count-matrix.md) | machine-learning-statistics | algorithm | data-transformation, testing, validation |
 | [Compute Exact Full-Window Trailing Medians for Bounded Integers](snippets/machine-learning-statistics/compute-exact-full-window-trailing-medians-for-bounded-integers.md) | machine-learning-statistics | algorithm | data-transformation, performance-optimization, validation |
 | [Compute Exact Jaccard Similarity for Bounded Unique Text-Feature Sets](snippets/machine-learning-statistics/compute-exact-jaccard-similarity-for-bounded-unique-text-feature-sets.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Compute Exact Multiclass Precision, Recall, and F1 with Zero for Undefined Values](snippets/machine-learning-statistics/compute-exact-multiclass-precision-recall-and-f1-with-zero-for-undefined-values.md) | machine-learning-statistics | algorithm | data-transformation, validation |
@@ -677,6 +681,7 @@ not edit it by hand.
 | [Audit a Bounded Equality and Hash Profile for Trusted Values](snippets/testing-tooling/audit-a-bounded-equality-and-hash-profile-for-trusted-values.md) | testing-tooling | testing-technique | testing, validation |
 | [Audit a Bounded Less-Than Relation for Strict Weak Ordering](snippets/testing-tooling/audit-a-bounded-less-than-relation-for-strict-weak-ordering.md) | testing-tooling | testing-technique | testing, validation |
 | [Audit a Bounded Test Matrix for Complete Pairwise Coverage](snippets/testing-tooling/audit-a-bounded-test-matrix-for-complete-pairwise-coverage.md) | testing-tooling | testing-technique | testing, validation |
+| [Audit Bounded Boolean Test Rows for Unique-Cause MC/DC Coverage](snippets/testing-tooling/audit-bounded-boolean-test-rows-for-unique-cause-mc-dc-coverage.md) | testing-tooling | testing-technique | testing, validation |
 | [Audit Bounded Python Source for Tab-Width-Independent Indentation](snippets/testing-tooling/audit-bounded-python-source-for-tab-width-independent-indentation.md) | testing-tooling | testing-technique | parsing, testing, validation |
 | [Build a Bounded Release DAG Around a Manual Barrier](snippets/testing-tooling/build-a-bounded-release-dag-around-a-manual-barrier.md) | testing-tooling | pattern | automation, testing, validation |
 | [Build a Collision-Audited Artifact Copy Plan](snippets/testing-tooling/build-a-collision-audited-artifact-copy-plan.md) | testing-tooling | algorithm | automation, resource-management, testing, validation |
