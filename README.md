@@ -17,17 +17,17 @@ not edit it by hand.
 
 | Category | Scope | Snippets |
 | --- | --- | ---: |
-| [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 41 |
-| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 224 |
+| [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 42 |
+| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 226 |
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 45 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 37 |
 | [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 65 |
 | [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 95 |
 | [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 73 |
 | [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 60 |
-| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 101 |
+| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 102 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 34 |
-| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 66 |
+| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 67 |
 | [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 40 |
 
 ### Snippets
@@ -48,6 +48,7 @@ not edit it by hand.
 | [Check a Bounded Abstract Call Shape Against a Signature Without Invocation](snippets/python-language/check-a-bounded-abstract-call-shape-against-a-signature-without-invocation.md) | python-language | recipe | automation, testing, validation |
 | [Collect Decorated Methods in Class Definition Order](snippets/python-language/collect-decorated-methods-in-class-definition-order.md) | python-language | pattern | automation, configuration |
 | [Compute C3 Linearizations for a Bounded Indexed Class Hierarchy](snippets/python-language/compute-c3-linearizations-for-a-bounded-indexed-class-hierarchy.md) | python-language | algorithm | automation, testing, validation |
+| [Deep Copy Related Roots with One Shared Object Graph](snippets/python-language/deep-copy-related-roots-with-one-shared-object-graph.md) | python-language | idiom | data-transformation |
 | [Dispatch Named Strategies with an Explicit Function Mapping](snippets/python-language/dispatch-named-strategies-with-an-explicit-function-mapping.md) | python-language | pattern | configuration, interoperability |
 | [Dispatch on an Exact Tuple of Argument Types](snippets/python-language/dispatch-on-an-exact-tuple-of-argument-types.md) | python-language | pattern | data-transformation, interoperability, validation |
 | [Dispatch on First-Argument Type with functools.singledispatch](snippets/python-language/dispatch-on-first-argument-type-with-functools-singledispatch.md) | python-language | idiom | automation, interoperability |
@@ -215,6 +216,7 @@ not edit it by hand.
 | [Find Peak Coverage Spans Across Bounded Half-Open Integer Intervals](snippets/algorithms-data-structures/find-peak-coverage-spans-across-bounded-half-open-integer-intervals.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Find the Canonical Farthest Pair of Bounded Integer Points with Rotating Calipers](snippets/algorithms-data-structures/find-the-canonical-farthest-pair-of-bounded-integer-points-with-rotating-calipers.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, testing, validation |
 | [Find the Canonical Largest Rectangle Under a Bounded Integer Histogram](snippets/algorithms-data-structures/find-the-canonical-largest-rectangle-under-a-bounded-integer-histogram.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
+| [Find the Canonical Manhattan-Distance Center of Integer Points](snippets/algorithms-data-structures/find-the-canonical-manhattan-distance-center-of-integer-points.md) | algorithms-data-structures | algorithm | data-transformation, validation |
 | [Find the Canonical Maximum-Sum Non-Empty Subrectangle of a Bounded Integer Matrix](snippets/algorithms-data-structures/find-the-canonical-maximum-sum-non-empty-subrectangle-of-a-bounded-integer-matrix.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Find the Canonical Shortest Cycle in a Bounded Directed Graph](snippets/algorithms-data-structures/find-the-canonical-shortest-cycle-in-a-bounded-directed-graph.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, testing, validation |
 | [Find the Canonical Square Root Modulo a Bounded Odd Prime with Tonelli-Shanks](snippets/algorithms-data-structures/find-the-canonical-square-root-modulo-a-bounded-odd-prime-with-tonelli-shanks.md) | algorithms-data-structures | algorithm | data-transformation, validation |
@@ -258,6 +260,7 @@ not edit it by hand.
 | [Partition Tagged Items into Minimum Stable Conflict-Free Groups](snippets/algorithms-data-structures/partition-tagged-items-into-minimum-stable-conflict-free-groups.md) | algorithms-data-structures | algorithm | data-transformation, validation |
 | [Partition the Edges of a Bounded Simple Undirected Graph into Vertex-Biconnected Blocks](snippets/algorithms-data-structures/partition-the-edges-of-a-bounded-simple-undirected-graph-into-vertex-biconnected-blocks.md) | algorithms-data-structures | algorithm | data-transformation, validation |
 | [Plan a Minimum-Cost Parenthesization for a Bounded Matrix Chain](snippets/algorithms-data-structures/plan-a-minimum-cost-parenthesization-for-a-bounded-matrix-chain.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
+| [Plan Unblocked Dependency Waves with graphlib TopologicalSorter](snippets/algorithms-data-structures/plan-unblocked-dependency-waves-with-graphlib-topologicalsorter.md) | algorithms-data-structures | recipe | automation, data-transformation |
 | [Rank and Unrank Bounded Balanced-Parentheses Strings in Lexicographic Order](snippets/algorithms-data-structures/rank-and-unrank-bounded-balanced-parentheses-strings-in-lexicographic-order.md) | algorithms-data-structures | algorithm | data-transformation, testing, validation |
 | [Rank and Unrank Bounded Integer Partitions in Lexicographic Order](snippets/algorithms-data-structures/rank-and-unrank-bounded-integer-partitions-in-lexicographic-order.md) | algorithms-data-structures | algorithm | data-transformation, testing, validation |
 | [Rank and Unrank Distinct Permutations of a Bounded Integer Multiset in Lexicographic Order](snippets/algorithms-data-structures/rank-and-unrank-distinct-permutations-of-a-bounded-integer-multiset-in-lexicographic-order.md) | algorithms-data-structures | algorithm | data-transformation, testing, validation |
@@ -769,6 +772,7 @@ not edit it by hand.
 | [Resolve Declared Input Paths from an Explicit Execution Mode](snippets/configuration-serialization/resolve-declared-input-paths-from-an-explicit-execution-mode.md) | configuration-serialization | pattern | configuration, data-transformation, validation |
 | [Round-Trip a Bounded Nullable String Table with CSV Quote-Not-Null](snippets/configuration-serialization/round-trip-a-bounded-nullable-string-table-with-csv-quote-notnull.md) | configuration-serialization | recipe | interoperability, parsing, serialization, validation |
 | [Round Trip Finite Floats with Canonical Hexadecimal Text](snippets/configuration-serialization/round-trip-finite-floats-with-canonical-hexadecimal-text.md) | configuration-serialization | recipe | interoperability, serialization |
+| [Scope Live Configuration Overrides with ChainMap](snippets/configuration-serialization/scope-live-configuration-overrides-with-chainmap.md) | configuration-serialization | idiom | configuration |
 | [Select a Compatible PEP 440 Version with Explicit Prerelease Fallback](snippets/configuration-serialization/select-a-compatible-pep-440-version-with-explicit-prerelease-fallback.md) | configuration-serialization | recipe | configuration, validation |
 | [Serialize a Bounded INI Mapping Only When It Round-Trips Exactly](snippets/configuration-serialization/serialize-a-bounded-ini-mapping-only-when-it-round-trips-exactly.md) | configuration-serialization | recipe | configuration, serialization, validation |
 | [Substitute Typed Values into a JSON-Like Template](snippets/configuration-serialization/substitute-typed-values-into-a-json-like-template.md) | configuration-serialization | recipe | configuration, serialization, validation |
@@ -850,6 +854,7 @@ not edit it by hand.
 | [Generate Binary64 Boundary Probes with math.nextafter](snippets/testing-tooling/generate-binary64-boundary-probes-with-math-nextafter.md) | testing-tooling | testing-technique | testing, validation |
 | [Generate Integer Boundary Probes Around Closed Cut Points](snippets/testing-tooling/generate-integer-boundary-probes-around-closed-cut-points.md) | testing-tooling | testing-technique | testing, validation |
 | [Group Generated Text Artifacts by Exact Body for Review](snippets/testing-tooling/group-generated-text-artifacts-by-exact-body-for-review.md) | testing-tooling | testing-technique | automation, testing, validation |
+| [Identify a Corrupted Member in an Owned In-Memory ZIP Fixture](snippets/testing-tooling/identify-a-corrupted-member-in-an-owned-in-memory-zip-fixture.md) | testing-tooling | testing-technique | testing, validation |
 | [Index Bounded Python Scope Bindings with symtable without Execution](snippets/testing-tooling/index-bounded-python-scope-bindings-with-symtable-without-execution.md) | testing-tooling | testing-technique | parsing, testing, validation |
 | [Inject One Failure at Every Ordered Checkpoint](snippets/testing-tooling/inject-one-failure-at-every-ordered-checkpoint.md) | testing-tooling | pattern | lifecycle-management, resource-management, testing, validation |
 | [Inspect Bounded Named Class Attributes Without Invoking Descriptors](snippets/testing-tooling/inspect-bounded-named-class-attributes-without-invoking-descriptors.md) | testing-tooling | testing-technique | automation, testing, validation |
