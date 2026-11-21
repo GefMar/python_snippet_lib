@@ -17,15 +17,15 @@ not edit it by hand.
 
 | Category | Scope | Snippets |
 | --- | --- | ---: |
-| [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 42 |
-| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 226 |
+| [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 43 |
+| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 227 |
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 45 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 37 |
 | [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 65 |
 | [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 95 |
-| [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 73 |
-| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 60 |
-| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 102 |
+| [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 74 |
+| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 61 |
+| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 103 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 34 |
 | [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 67 |
 | [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 40 |
@@ -56,6 +56,7 @@ not edit it by hand.
 | [Initialize a Closed Cooperative super() Diamond by Consuming Keyword Arguments](snippets/python-language/initialize-a-closed-cooperative-super-diamond-by-consuming-keyword-arguments.md) | python-language | pattern | interoperability, validation |
 | [Inspect Trusted Runtime Annotations while Preserving Unresolved Names](snippets/python-language/inspect-trusted-runtime-annotations-while-preserving-unresolved-names.md) | python-language | recipe | automation, validation |
 | [Keep a Compatibility Wrapper with warnings.deprecated](snippets/python-language/keep-a-compatibility-wrapper-with-warnings-deprecated.md) | python-language | pattern | interoperability, lifecycle-management, testing |
+| [Keep a Dataclass Positional Match Interface Stable with Keyword-Only Fields](snippets/python-language/keep-a-dataclass-positional-match-interface-stable-with-keyword-only-fields.md) | python-language | idiom | interoperability, testing |
 | [Keep Bound-Method Registrations without Retaining Their Owners](snippets/python-language/keep-bound-method-registrations-without-retaining-their-owners.md) | python-language | pattern | lifecycle-management, resource-management |
 | [Keep Exception Handlers Narrow with try/else](snippets/python-language/keep-exception-handlers-narrow-with-try-else.md) | python-language | idiom | parsing, validation |
 | [Load Bounded Trusted Extension Factories by One Entry Point](snippets/python-language/load-bounded-trusted-extension-factories-by-one-entry-point.md) | python-language | recipe | interoperability, validation |
@@ -234,6 +235,7 @@ not edit it by hand.
 | [Find the Matching Range for a Literal Prefix in Sorted Strings](snippets/algorithms-data-structures/find-the-matching-range-for-a-literal-prefix-in-sorted-strings.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization |
 | [Find the Narrowest Integer Range Covering Every Sorted Source](snippets/algorithms-data-structures/find-the-narrowest-integer-range-covering-every-sorted-source.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Find the Proposer-Optimal Stable Matching for Complete Strict Preferences](snippets/algorithms-data-structures/find-the-proposer-optimal-stable-matching-for-complete-strict-preferences.md) | algorithms-data-structures | algorithm | data-transformation, validation |
+| [Find the Shortest Exact Repeating Unit of a String](snippets/algorithms-data-structures/find-the-shortest-exact-repeating-unit-of-a-string.md) | algorithms-data-structures | algorithm | data-transformation, validation |
 | [Generate Event Times for a Linear Rate Ramp](snippets/algorithms-data-structures/generate-event-times-for-a-linear-rate-ramp.md) | algorithms-data-structures | algorithm | automation, performance-optimization |
 | [Generate Smooth Weighted Round-Robin Slots for Fixed Consumers](snippets/algorithms-data-structures/generate-smooth-weighted-round-robin-slots-for-fixed-consumers.md) | algorithms-data-structures | algorithm | data-transformation, resource-management |
 | [Group a One-Dimensional NumPy Structured Array into Stable Index Sets](snippets/algorithms-data-structures/group-a-one-dimensional-numpy-structured-array-into-stable-index-sets.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
@@ -593,6 +595,7 @@ not edit it by hand.
 | [Compute Exact Unweighted Cohen's Kappa from a Confusion Matrix](snippets/machine-learning-statistics/compute-exact-unweighted-cohens-kappa-from-a-confusion-matrix.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Compute Fisher's Exact Test with a Probability-Ordered Two-Sided P-Value](snippets/machine-learning-statistics/compute-fishers-exact-test-with-a-probability-ordered-two-sided-p-value.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Compute Mutual Information from a Bounded Integer Contingency Table](snippets/machine-learning-statistics/compute-mutual-information-from-a-bounded-integer-contingency-table.md) | machine-learning-statistics | algorithm | data-transformation, validation |
+| [Compute the Chance of At Least One Independent Success with Stable Logs](snippets/machine-learning-statistics/compute-the-chance-of-at-least-one-independent-success-with-stable-logs.md) | machine-learning-statistics | recipe | data-transformation |
 | [Compute the Exact Gini Coefficient of Bounded Non-Negative Integers](snippets/machine-learning-statistics/compute-the-exact-gini-coefficient-of-bounded-non-negative-integers.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Create Past-Only pandas Lag and Rolling-Mean Columns](snippets/machine-learning-statistics/create-past-only-pandas-lag-and-rolling-mean-columns.md) | machine-learning-statistics | integration | data-transformation, validation |
 | [Detect a Recent Drop Against a Disjoint pandas Baseline Window](snippets/machine-learning-statistics/detect-a-recent-drop-against-a-disjoint-pandas-baseline-window.md) | machine-learning-statistics | integration | observability, validation |
@@ -633,6 +636,7 @@ not edit it by hand.
 | [Compile a Bounded T-String into SQLite Qmark SQL and Parameters](snippets/storage-databases/compile-a-bounded-t-string-into-sqlite-qmark-sql-and-parameters.md) | storage-databases | pattern | persistence, security, validation |
 | [Decide Whether to Restore a Versioned Snapshot](snippets/storage-databases/decide-whether-to-restore-a-versioned-snapshot.md) | storage-databases | algorithm | configuration, data-transformation, validation |
 | [Enable SQLite Foreign Keys Before Starting Managed Transactions](snippets/storage-databases/enable-sqlite-foreign-keys-before-starting-managed-transactions.md) | storage-databases | recipe | persistence, validation |
+| [Enforce Normalized Label Uniqueness with a Deterministic SQLite Function](snippets/storage-databases/enforce-normalized-label-uniqueness-with-a-deterministic-sqlite-function.md) | storage-databases | pattern | persistence, validation |
 | [Enforce One Active SQLite Row per Key with a Partial Unique Index](snippets/storage-databases/enforce-one-active-sqlite-row-per-key-with-a-partial-unique-index.md) | storage-databases | pattern | persistence, validation |
 | [Execute a Trusted SQLite Query Under Progress-Callback and Row Caps](snippets/storage-databases/execute-a-trusted-sqlite-query-under-progress-callback-and-row-caps.md) | storage-databases | recipe | performance-optimization, resource-management, validation |
 | [Fill a Preallocated Bytearray Exactly with os.readinto](snippets/storage-databases/fill-a-preallocated-bytearray-exactly-with-os-readinto.md) | storage-databases | recipe | performance-optimization, resource-management, validation |
@@ -772,6 +776,7 @@ not edit it by hand.
 | [Resolve Declared Input Paths from an Explicit Execution Mode](snippets/configuration-serialization/resolve-declared-input-paths-from-an-explicit-execution-mode.md) | configuration-serialization | pattern | configuration, data-transformation, validation |
 | [Round-Trip a Bounded Nullable String Table with CSV Quote-Not-Null](snippets/configuration-serialization/round-trip-a-bounded-nullable-string-table-with-csv-quote-notnull.md) | configuration-serialization | recipe | interoperability, parsing, serialization, validation |
 | [Round Trip Finite Floats with Canonical Hexadecimal Text](snippets/configuration-serialization/round-trip-finite-floats-with-canonical-hexadecimal-text.md) | configuration-serialization | recipe | interoperability, serialization |
+| [Round Trip Mixed UTF-8 Bytes with surrogateescape](snippets/configuration-serialization/round-trip-mixed-utf-8-bytes-with-surrogateescape.md) | configuration-serialization | idiom | data-transformation, interoperability |
 | [Scope Live Configuration Overrides with ChainMap](snippets/configuration-serialization/scope-live-configuration-overrides-with-chainmap.md) | configuration-serialization | idiom | configuration |
 | [Select a Compatible PEP 440 Version with Explicit Prerelease Fallback](snippets/configuration-serialization/select-a-compatible-pep-440-version-with-explicit-prerelease-fallback.md) | configuration-serialization | recipe | configuration, validation |
 | [Serialize a Bounded INI Mapping Only When It Round-Trips Exactly](snippets/configuration-serialization/serialize-a-bounded-ini-mapping-only-when-it-round-trips-exactly.md) | configuration-serialization | recipe | configuration, serialization, validation |
