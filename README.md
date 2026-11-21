@@ -18,16 +18,16 @@ not edit it by hand.
 | Category | Scope | Snippets |
 | --- | --- | ---: |
 | [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 52 |
-| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 243 |
-| [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 46 |
+| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 244 |
+| [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 47 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 37 |
 | [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 65 |
-| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 109 |
-| [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 80 |
+| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 110 |
+| [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 81 |
 | [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 69 |
 | [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 108 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 34 |
-| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 80 |
+| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 81 |
 | [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 43 |
 
 ### Snippets
@@ -184,6 +184,7 @@ not edit it by hand.
 | [Count Sparse Static Points in Half-Open Rectangles with an Offline Sweep](snippets/algorithms-data-structures/count-sparse-static-points-in-half-open-rectangles-with-an-offline-sweep.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Count Strict Inversions in a Bounded Integer Sequence](snippets/algorithms-data-structures/count-strict-inversions-in-a-bounded-integer-sequence.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Count Topological Orders of a Bounded Directed Graph with Subset DP](snippets/algorithms-data-structures/count-topological-orders-of-a-bounded-directed-graph-with-subset-dp.md) | algorithms-data-structures | algorithm | data-transformation, testing, validation |
+| [Count Trailing Factorial Zeros in an Arbitrary Integer Base](snippets/algorithms-data-structures/count-trailing-factorial-zeros-in-an-arbitrary-integer-base.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization |
 | [Count Unordered Coin-Change Combinations for a Bounded Target](snippets/algorithms-data-structures/count-unordered-coin-change-combinations-for-a-bounded-target.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Count Values in Bounded Index and Value Ranges with a Static Merge-Sort Tree](snippets/algorithms-data-structures/count-values-in-bounded-index-and-value-ranges-with-a-static-merge-sort-tree.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Cover a Half-Open Integer Range with Dyadic Intervals](snippets/algorithms-data-structures/cover-a-half-open-integer-range-with-dyadic-intervals.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization |
@@ -358,6 +359,7 @@ not edit it by hand.
 | [Refresh an Async Value Within a Bounded Stale Window](snippets/concurrency-lifecycle/refresh-an-async-value-within-a-bounded-stale-window.md) | concurrency-lifecycle | pattern | caching, concurrency-control, lifecycle-management, retry-recovery |
 | [Refresh Bounded Named Targets at Their Nearest Monotonic Deadline](snippets/concurrency-lifecycle/refresh-bounded-named-targets-at-their-nearest-monotonic-deadline.md) | concurrency-lifecycle | pattern | caching, concurrency-control, lifecycle-management, retry-recovery |
 | [Report Equal-Share Lease Ownership Excess from a Bounded Queue Snapshot](snippets/concurrency-lifecycle/report-equal-share-lease-ownership-excess-from-a-bounded-queue-snapshot.md) | concurrency-lifecycle | algorithm | concurrency-control, resource-management, validation |
+| [Restore Thread-Local State Between Jobs on a Reused Worker](snippets/concurrency-lifecycle/restore-thread-local-state-between-jobs-on-a-reused-worker.md) | concurrency-lifecycle | recipe | concurrency-control, lifecycle-management |
 | [Reuse One Pending Future Across Non-Cancelling Poll Timeouts](snippets/concurrency-lifecycle/reuse-one-pending-future-across-non-cancelling-poll-timeouts.md) | concurrency-lifecycle | pattern | concurrency-control, lifecycle-management, resource-management |
 | [Run an Async Worker on Clock-Aligned Ticks Without Catch-Up](snippets/concurrency-lifecycle/run-an-async-worker-on-clock-aligned-ticks-without-catch-up.md) | concurrency-lifecycle | pattern | automation, concurrency-control, lifecycle-management |
 | [Run Bounded Thread Work by Priority and Submission Order](snippets/concurrency-lifecycle/run-bounded-thread-work-by-priority-and-submission-order.md) | concurrency-lifecycle | pattern | concurrency-control, lifecycle-management, resource-management |
@@ -584,6 +586,7 @@ not edit it by hand.
 | [Try an Optional Text Header Without Consuming a Mismatch](snippets/data-processing/try-an-optional-text-header-without-consuming-a-mismatch.md) | data-processing | recipe | data-transformation, parsing |
 | [Validate and Expand a Bounded Image Variant Specification](snippets/data-processing/validate-and-expand-a-bounded-image-variant-specification.md) | data-processing | algorithm | data-transformation, resource-management, validation |
 | [Validate Parsed CSV Rows with Bounded Structured Problems](snippets/data-processing/validate-parsed-csv-rows-with-bounded-structured-problems.md) | data-processing | recipe | parsing, validation |
+| [Wrap Prose Lines Without Collapsing Explicit Line Breaks](snippets/data-processing/wrap-prose-lines-without-collapsing-explicit-line-breaks.md) | data-processing | recipe | data-transformation |
 | [Yield Only Complete Trailing Windows from a One-Shot Iterable](snippets/data-processing/yield-only-complete-trailing-windows-from-a-one-shot-iterable.md) | data-processing | recipe | data-transformation |
 | [Yield Stream Items with Bounded Neighbor Context](snippets/data-processing/yield-stream-items-with-bounded-neighbor-context.md) | data-processing | recipe | data-transformation, performance-optimization |
 | [Accumulate and Merge Finite Mean and Variance Statistics Under a Count Limit](snippets/machine-learning-statistics/accumulate-and-merge-finite-mean-and-variance-statistics-under-a-count-limit.md) | machine-learning-statistics | algorithm | data-transformation, performance-optimization, validation |
@@ -591,6 +594,7 @@ not edit it by hand.
 | [Adjust Bounded Exact P-Values with the Benjamini-Hochberg Procedure](snippets/machine-learning-statistics/adjust-bounded-exact-p-values-with-the-benjamini-hochberg-procedure.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Assemble Out-of-Fold Scores from Explicit Validation Splits](snippets/machine-learning-statistics/assemble-out-of-fold-scores-from-explicit-validation-splits.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Assign Bounded Labelled Rows to Deterministic Stratified Folds](snippets/machine-learning-statistics/assign-bounded-labelled-rows-to-deterministic-stratified-folds.md) | machine-learning-statistics | algorithm | data-transformation, testing, validation |
+| [Average Circular Directions and Report an Undefined Result](snippets/machine-learning-statistics/average-circular-directions-and-report-an-undefined-result.md) | machine-learning-statistics | recipe | data-transformation |
 | [Bound the Exact Mean from Finite Integer Histogram Bins](snippets/machine-learning-statistics/bound-the-exact-mean-from-finite-integer-histogram-bins.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Build an Exact Binary ROC Curve from Tied Integer Scores](snippets/machine-learning-statistics/build-an-exact-binary-roc-curve-from-tied-integer-scores.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Build an Exact Bounded Multiclass Confusion Matrix](snippets/machine-learning-statistics/build-an-exact-bounded-multiclass-confusion-matrix.md) | machine-learning-statistics | algorithm | data-transformation, validation |
@@ -879,6 +883,7 @@ not edit it by hand.
 | [Verify an RFC 7636 S256 PKCE Challenge](snippets/security-privacy/verify-an-rfc-7636-s256-pkce-challenge.md) | security-privacy | recipe | interoperability, security, validation |
 | [Apply a Reusable Click Option Bundle to Subcommands](snippets/testing-tooling/apply-a-reusable-click-option-bundle-to-subcommands.md) | testing-tooling | integration | automation, configuration, testing |
 | [Assert an Exact Iterator Pull Budget with a Fail-Closed Probe](snippets/testing-tooling/assert-an-exact-iterator-pull-budget-with-a-fail-closed-probe.md) | testing-tooling | testing-technique | testing, validation |
+| [Assert Structured LogRecord Fields Without Matching Rendered Text](snippets/testing-tooling/assert-structured-logrecord-fields-without-matching-rendered-text.md) | testing-tooling | testing-technique | observability, testing |
 | [Attach a Validated Internal Size Breakdown to One Artifact Report](snippets/testing-tooling/attach-a-validated-internal-size-breakdown-to-one-artifact-report.md) | testing-tooling | recipe | data-transformation, resource-management, testing, validation |
 | [Audit a Bounded Bytes Codec Against Canonical Round-Trip Cases](snippets/testing-tooling/audit-a-bounded-bytes-codec-against-canonical-round-trip-cases.md) | testing-tooling | testing-technique | testing, validation |
 | [Audit a Bounded Directive Tree with Isolated Inherited Context](snippets/testing-tooling/audit-a-bounded-directive-tree-with-isolated-inherited-context.md) | testing-tooling | pattern | configuration, testing, validation |
