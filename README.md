@@ -17,17 +17,17 @@ not edit it by hand.
 
 | Category | Scope | Snippets |
 | --- | --- | ---: |
-| [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 49 |
-| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 240 |
+| [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 50 |
+| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 241 |
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 46 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 37 |
 | [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 65 |
 | [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 107 |
-| [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 78 |
+| [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 80 |
 | [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 68 |
 | [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 107 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 34 |
-| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 77 |
+| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 78 |
 | [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 43 |
 
 ### Snippets
@@ -70,6 +70,7 @@ not edit it by hand.
 | [Overwrite a BytesIO Range Without Moving Its Cursor](snippets/python-language/overwrite-a-bytesio-range-without-moving-its-cursor.md) | python-language | recipe | data-transformation, resource-management |
 | [Pass Constructor-Only Context with dataclasses.InitVar](snippets/python-language/pass-constructor-only-context-with-initvar.md) | python-language | idiom | data-transformation, validation |
 | [Preserve Span Invariants with a Custom Replace Protocol](snippets/python-language/preserve-span-invariants-with-a-custom-replace-protocol.md) | python-language | pattern | data-transformation, interoperability, validation |
+| [Preserve Top-Level Annotated Metadata When Resolving Schema Hints](snippets/python-language/preserve-top-level-annotated-metadata-when-resolving-schema-hints.md) | python-language | recipe | automation, configuration, testing |
 | [Read a Fixed-Width Byte Record with the Index Protocol](snippets/python-language/read-a-fixed-width-byte-record-with-the-index-protocol.md) | python-language | recipe | data-transformation, validation |
 | [Read Direct Generic Base Arguments at Runtime](snippets/python-language/read-direct-generic-base-arguments-at-runtime.md) | python-language | recipe | interoperability, testing |
 | [Read Fixed-Size Blocks with iter() and a Sentinel](snippets/python-language/read-fixed-size-blocks-with-iter-sentinel.md) | python-language | idiom | performance-optimization, resource-management |
@@ -249,6 +250,7 @@ not edit it by hand.
 | [Find the Narrowest Integer Range Covering Every Sorted Source](snippets/algorithms-data-structures/find-the-narrowest-integer-range-covering-every-sorted-source.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Find the Proposer-Optimal Stable Matching for Complete Strict Preferences](snippets/algorithms-data-structures/find-the-proposer-optimal-stable-matching-for-complete-strict-preferences.md) | algorithms-data-structures | algorithm | data-transformation, validation |
 | [Find the Shortest Exact Repeating Unit of a String](snippets/algorithms-data-structures/find-the-shortest-exact-repeating-unit-of-a-string.md) | algorithms-data-structures | algorithm | data-transformation, validation |
+| [Find the Smallest Common Aligned Block Size Within a Limit](snippets/algorithms-data-structures/find-the-smallest-common-aligned-block-size-within-a-limit.md) | algorithms-data-structures | recipe | data-transformation, validation |
 | [Generate Event Times for a Linear Rate Ramp](snippets/algorithms-data-structures/generate-event-times-for-a-linear-rate-ramp.md) | algorithms-data-structures | algorithm | automation, performance-optimization |
 | [Generate Smooth Weighted Round-Robin Slots for Fixed Consumers](snippets/algorithms-data-structures/generate-smooth-weighted-round-robin-slots-for-fixed-consumers.md) | algorithms-data-structures | algorithm | data-transformation, resource-management |
 | [Group a One-Dimensional NumPy Structured Array into Stable Index Sets](snippets/algorithms-data-structures/group-a-one-dimensional-numpy-structured-array-into-stable-index-sets.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
@@ -583,6 +585,7 @@ not edit it by hand.
 | [Adjust Bounded Exact P-Values with the Benjamini-Hochberg Procedure](snippets/machine-learning-statistics/adjust-bounded-exact-p-values-with-the-benjamini-hochberg-procedure.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Assemble Out-of-Fold Scores from Explicit Validation Splits](snippets/machine-learning-statistics/assemble-out-of-fold-scores-from-explicit-validation-splits.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Assign Bounded Labelled Rows to Deterministic Stratified Folds](snippets/machine-learning-statistics/assign-bounded-labelled-rows-to-deterministic-stratified-folds.md) | machine-learning-statistics | algorithm | data-transformation, testing, validation |
+| [Bound the Exact Mean from Finite Integer Histogram Bins](snippets/machine-learning-statistics/bound-the-exact-mean-from-finite-integer-histogram-bins.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Build an Exact Binary ROC Curve from Tied Integer Scores](snippets/machine-learning-statistics/build-an-exact-binary-roc-curve-from-tied-integer-scores.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Build an Exact Bounded Multiclass Confusion Matrix](snippets/machine-learning-statistics/build-an-exact-bounded-multiclass-confusion-matrix.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Build an Exact Kaplan-Meier Curve for Bounded Right-Censored Data](snippets/machine-learning-statistics/build-an-exact-kaplan-meier-curve-for-bounded-right-censored-data.md) | machine-learning-statistics | algorithm | data-transformation, validation |
@@ -591,6 +594,7 @@ not edit it by hand.
 | [Build Exact Equal-Width Binary Calibration Bins and Expected Calibration Error](snippets/machine-learning-statistics/build-exact-equal-width-binary-calibration-bins-and-expected-calibration-error.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Calculate a Symmetrically Trimmed Mean](snippets/machine-learning-statistics/calculate-a-symmetrically-trimmed-mean.md) | machine-learning-statistics | recipe | data-transformation, performance-optimization |
 | [Cluster Bounded Integer Points with Canonical Graph-Policy DBSCAN](snippets/machine-learning-statistics/cluster-bounded-integer-points-with-canonical-graph-policy-dbscan.md) | machine-learning-statistics | algorithm | data-transformation, testing, validation |
+| [Combine Equal-Distance Speeds with an Exact Harmonic Mean](snippets/machine-learning-statistics/combine-equal-distance-speeds-with-an-exact-harmonic-mean.md) | machine-learning-statistics | recipe | data-transformation |
 | [Compute a Bounded Finite Cosine Similarity with Scaled Norms](snippets/machine-learning-statistics/compute-a-bounded-finite-cosine-similarity-with-scaled-norms.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Compute a Bounded Numerically Stable Log-Sum-Exp for Finite Floats](snippets/machine-learning-statistics/compute-a-bounded-numerically-stable-log-sum-exp-for-finite-floats.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Compute a Row-Wise Maximum of Rolling Minima](snippets/machine-learning-statistics/compute-a-row-wise-maximum-of-rolling-minima.md) | machine-learning-statistics | algorithm | data-transformation, validation |
@@ -918,6 +922,7 @@ not edit it by hand.
 | [Locate the Innermost Failing Expression as UTF-8 Byte Columns](snippets/testing-tooling/locate-the-innermost-failing-expression-as-utf-8-byte-columns.md) | testing-tooling | testing-technique | observability, testing |
 | [Parse a Bounded Debugger Function Listing into Canonical Source Locations](snippets/testing-tooling/parse-a-bounded-debugger-function-listing-into-canonical-source-locations.md) | testing-tooling | testing-technique | parsing, testing, validation |
 | [Parse a Bounded Space-Indented Test Outline into Leaf Paths](snippets/testing-tooling/parse-a-bounded-space-indented-test-outline-into-leaf-paths.md) | testing-tooling | algorithm | parsing, testing, validation |
+| [Profile One Synchronous Workload and Read Call Counts](snippets/testing-tooling/profile-one-synchronous-workload-and-read-call-counts.md) | testing-tooling | testing-technique | observability, performance-optimization, testing |
 | [Prune Named Generated Subtrees with Top-Down Path.walk](snippets/testing-tooling/prune-named-generated-subtrees-with-top-down-path-walk.md) | testing-tooling | recipe | automation, testing |
 | [Refresh a Cached Path.info Classification After Replacing an Entry](snippets/testing-tooling/refresh-a-cached-path-info-classification-after-replacing-an-entry.md) | testing-tooling | testing-technique | testing, validation |
 | [Render a Unified Diff for Byte Lines with Unknown Encoding](snippets/testing-tooling/render-a-unified-diff-for-byte-lines-with-unknown-encoding.md) | testing-tooling | testing-technique | data-transformation, testing |
