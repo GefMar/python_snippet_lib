@@ -17,15 +17,15 @@ not edit it by hand.
 
 | Category | Scope | Snippets |
 | --- | --- | ---: |
-| [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 36 |
+| [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 37 |
 | [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 214 |
-| [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 41 |
+| [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 42 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 37 |
 | [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 65 |
 | [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 78 |
 | [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 72 |
-| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 50 |
-| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 96 |
+| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 52 |
+| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 97 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 34 |
 | [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 48 |
 | [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 35 |
@@ -58,6 +58,7 @@ not edit it by hand.
 | [Load Bounded Trusted Extension Factories by One Entry Point](snippets/python-language/load-bounded-trusted-extension-factories-by-one-entry-point.md) | python-language | recipe | interoperability, validation |
 | [Load Text Templates from Package Resources](snippets/python-language/load-text-templates-from-package-resources.md) | python-language | recipe | resource-management, validation |
 | [Make a Defensive Copy at a Mutable Input Boundary](snippets/python-language/make-a-defensive-copy-at-a-mutable-input-boundary.md) | python-language | idiom | data-transformation, resource-management |
+| [Materialize a Package Resource Directory for a Path-Only Reader](snippets/python-language/materialize-a-package-resource-directory-for-a-path-only-reader.md) | python-language | recipe | interoperability, resource-management |
 | [Model a Quantity with One Canonical Unit](snippets/python-language/model-a-quantity-with-one-canonical-unit.md) | python-language | pattern | data-transformation, validation |
 | [Pass Constructor-Only Context with dataclasses.InitVar](snippets/python-language/pass-constructor-only-context-with-initvar.md) | python-language | idiom | data-transformation, validation |
 | [Preserve Span Invariants with a Custom Replace Protocol](snippets/python-language/preserve-span-invariants-with-a-custom-replace-protocol.md) | python-language | pattern | data-transformation, interoperability, validation |
@@ -299,6 +300,7 @@ not edit it by hand.
 | [Guard an Async Resource with Explicit Lifecycle States](snippets/concurrency-lifecycle/guard-an-async-resource-with-explicit-lifecycle-states.md) | concurrency-lifecycle | pattern | concurrency-control, lifecycle-management, resource-management |
 | [Guard Readers with a Writer-Priority Read-Write Lock](snippets/concurrency-lifecycle/guard-readers-with-a-writer-priority-read-write-lock.md) | concurrency-lifecycle | pattern | concurrency-control, resource-management |
 | [Initialize One Shared Resource Lazily with Serialized Retries](snippets/concurrency-lifecycle/initialize-one-shared-resource-lazily-with-serialized-retries.md) | concurrency-lifecycle | pattern | concurrency-control, lifecycle-management, retry-recovery |
+| [Keep Expected Item Failures Local in an asyncio TaskGroup](snippets/concurrency-lifecycle/keep-expected-item-failures-local-in-an-asyncio-taskgroup.md) | concurrency-lifecycle | pattern | concurrency-control, lifecycle-management |
 | [Map a Large Iterable with a Bounded Thread-Pool Submission Buffer](snippets/concurrency-lifecycle/map-a-large-iterable-with-a-bounded-thread-pool-submission-buffer.md) | concurrency-lifecycle | recipe | concurrency-control, resource-management |
 | [Own One External Mount Lease with Exception-Safe Cleanup](snippets/concurrency-lifecycle/own-one-external-mount-lease-with-exception-safe-cleanup.md) | concurrency-lifecycle | pattern | lifecycle-management, resource-management |
 | [Plan a Keyed Worker-Set Reload from a Coalesced SIGHUP Request](snippets/concurrency-lifecycle/plan-a-keyed-worker-set-reload-from-a-coalesced-sighup-request.md) | concurrency-lifecycle | pattern | automation, concurrency-control, lifecycle-management |
@@ -594,6 +596,7 @@ not edit it by hand.
 | [Fill a Preallocated Bytearray Exactly with os.readinto](snippets/storage-databases/fill-a-preallocated-bytearray-exactly-with-os-readinto.md) | storage-databases | recipe | performance-optimization, resource-management, validation |
 | [Fingerprint a Bounded Flat File Set with Framed SHA-256](snippets/storage-databases/fingerprint-a-bounded-flat-file-set-with-framed-sha-256.md) | storage-databases | recipe | caching, persistence, validation |
 | [Group Bounded SQLite Console Lines into Lexically Complete Batches Without Execution](snippets/storage-databases/group-bounded-sqlite-console-lines-into-lexically-complete-batches-without-execution.md) | storage-databases | recipe | automation, parsing, validation |
+| [Group Hard-Linked Names in One POSIX Directory](snippets/storage-databases/group-hard-linked-names-in-one-posix-directory.md) | storage-databases | recipe | persistence, validation |
 | [Hand Off Bounded Bytes Through a Scoped Named Temporary Path](snippets/storage-databases/hand-off-bounded-bytes-through-a-scoped-named-temporary-path.md) | storage-databases | recipe | interoperability, persistence, resource-management |
 | [Inspect a Bounded SQLite Database Header from In-Memory Bytes](snippets/storage-databases/inspect-a-bounded-sqlite-database-header-from-in-memory-bytes.md) | storage-databases | recipe | parsing, persistence, validation |
 | [Inspect the Checksum-Valid Prefix of a Bounded SQLite WAL Image](snippets/storage-databases/inspect-the-checksum-valid-prefix-of-a-bounded-sqlite-wal-image.md) | storage-databases | recipe | parsing, persistence, validation |
@@ -614,6 +617,7 @@ not edit it by hand.
 | [Read and Write Bounded SQLite BLOB Slices with blobopen](snippets/storage-databases/read-and-write-bounded-sqlite-blob-slices-with-blobopen.md) | storage-databases | pattern | persistence, resource-management, validation |
 | [Read the Last Bounded Binary Lines with a Read-Only mmap](snippets/storage-databases/read-the-last-bounded-binary-lines-with-a-read-only-mmap.md) | storage-databases | recipe | parsing, performance-optimization, resource-management |
 | [Recover a Verified Prefix from a Bounded CRC-Framed Byte Log](snippets/storage-databases/recover-a-verified-prefix-from-a-bounded-crc-framed-byte-log.md) | storage-databases | recipe | parsing, persistence, validation |
+| [Refresh a SQLite Read Cache After External Commits](snippets/storage-databases/refresh-a-sqlite-read-cache-after-external-commits.md) | storage-databases | pattern | caching, persistence |
 | [Replace a Complete Bounded SQLite Cache Snapshot with a Generation](snippets/storage-databases/replace-a-complete-bounded-sqlite-cache-snapshot-with-a-generation.md) | storage-databases | pattern | caching, persistence, retry-recovery |
 | [Replace a File Atomically with a Sibling Temporary File](snippets/storage-databases/replace-a-file-atomically-with-a-sibling-temporary-file.md) | storage-databases | recipe | persistence, resource-management |
 | [Scope Caller-Owned SQLite Work with an Explicit Savepoint](snippets/storage-databases/scope-caller-owned-sqlite-work-with-an-explicit-savepoint.md) | storage-databases | pattern | persistence, resource-management |
@@ -684,6 +688,7 @@ not edit it by hand.
 | [Migrate One Bounded JSON Record to a Current Version](snippets/configuration-serialization/migrate-one-bounded-json-record-to-a-current-version.md) | configuration-serialization | recipe | data-transformation, serialization, validation |
 | [Normalize a Bounded JSON Copy Before Standard Schema Validation](snippets/configuration-serialization/normalize-a-bounded-json-copy-before-standard-schema-validation.md) | configuration-serialization | integration | configuration, data-transformation, validation |
 | [Normalize Bounded Named Options with Explicit Default Semantics](snippets/configuration-serialization/normalize-bounded-named-options-with-explicit-default-semantics.md) | configuration-serialization | recipe | configuration, data-transformation, validation |
+| [Overlay Explicit CLI Boolean Flags on Loaded Settings](snippets/configuration-serialization/overlay-explicit-cli-boolean-flags-on-loaded-settings.md) | configuration-serialization | recipe | configuration, parsing |
 | [Pack and Restore a Bounded Strictly Increasing Integer Sequence with Elias–Fano](snippets/configuration-serialization/pack-and-restore-a-bounded-strictly-increasing-integer-sequence-with-elias-fano.md) | configuration-serialization | algorithm | data-transformation, serialization, validation |
 | [Pack and Unpack a Bounded Boolean Tuple with Explicit Bit Length](snippets/configuration-serialization/pack-and-unpack-a-bounded-boolean-tuple-with-explicit-bit-length.md) | configuration-serialization | algorithm | interoperability, serialization, validation |
 | [Parse a Bounded Component Options Expression](snippets/configuration-serialization/parse-a-bounded-component-options-expression.md) | configuration-serialization | algorithm | parsing, validation |
