@@ -18,16 +18,16 @@ not edit it by hand.
 | Category | Scope | Snippets |
 | --- | --- | ---: |
 | [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 48 |
-| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 235 |
-| [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 45 |
+| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 237 |
+| [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 46 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 37 |
 | [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 65 |
-| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 100 |
+| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 101 |
 | [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 78 |
 | [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 66 |
 | [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 104 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 34 |
-| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 72 |
+| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 73 |
 | [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 42 |
 
 ### Snippets
@@ -174,6 +174,7 @@ not edit it by hand.
 | [Count Exact Source-to-Target Paths in a Bounded DAG](snippets/algorithms-data-structures/count-exact-source-to-target-paths-in-a-bounded-dag.md) | algorithms-data-structures | algorithm | data-transformation, validation |
 | [Count Index-Distinct Longest Strictly Increasing Subsequences of Bounded Integers](snippets/algorithms-data-structures/count-index-distinct-longest-strictly-increasing-subsequences-of-bounded-integers.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Count Index-Distinct Pairs with a Target Sum in a Sorted Sequence](snippets/algorithms-data-structures/count-index-distinct-pairs-with-a-target-sum-in-a-sorted-sequence.md) | algorithms-data-structures | algorithm | data-transformation |
+| [Count Index-Distinct Subsequence Matches of a Fixed Token Pattern](snippets/algorithms-data-structures/count-index-distinct-subsequence-matches-of-a-fixed-token-pattern.md) | algorithms-data-structures | algorithm | data-transformation, validation |
 | [Count Minimum Adjacent Swaps Between Equal Character Multisets](snippets/algorithms-data-structures/count-minimum-adjacent-swaps-between-equal-character-multisets.md) | algorithms-data-structures | algorithm | data-transformation |
 | [Count Perfect Matchings in a Bounded Balanced Bipartite Graph with Subset DP](snippets/algorithms-data-structures/count-perfect-matchings-in-a-bounded-balanced-bipartite-graph-with-subset-dp.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, testing, validation |
 | [Count Sparse Static Points in Half-Open Rectangles with an Offline Sweep](snippets/algorithms-data-structures/count-sparse-static-points-in-half-open-rectangles-with-an-offline-sweep.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
@@ -313,6 +314,7 @@ not edit it by hand.
 | [Sort Text by Literal Text Runs and ASCII Digit Runs](snippets/algorithms-data-structures/sort-text-by-literal-text-runs-and-ascii-digit-runs.md) | algorithms-data-structures | recipe | data-transformation, validation |
 | [Subtract One Canonical Half-Open Integer Interval Set from Another](snippets/algorithms-data-structures/subtract-one-canonical-half-open-integer-interval-set-from-another.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Sum a Bounded Signed Affine Floor Sequence with Euclidean Reduction](snippets/algorithms-data-structures/sum-a-bounded-signed-affine-floor-sequence-with-euclidean-reduction.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
+| [Sum Signed Integer Loads Across Sparse Half-Open Intervals](snippets/algorithms-data-structures/sum-signed-integer-loads-across-sparse-half-open-intervals.md) | algorithms-data-structures | algorithm | data-transformation, observability |
 | [Test Unsigned 64-Bit Integers for Primality with Deterministic Miller-Rabin](snippets/algorithms-data-structures/test-unsigned-64-bit-integers-for-primality-with-deterministic-miller-rabin.md) | algorithms-data-structures | algorithm | performance-optimization, validation |
 | [Traverse a Parent Graph with Breadth-First Search](snippets/algorithms-data-structures/traverse-a-parent-graph-with-breadth-first-search.md) | algorithms-data-structures | algorithm | data-transformation, validation |
 | [Two-Color a Bounded Undirected Graph or Return an Odd-Cycle Witness](snippets/algorithms-data-structures/two-color-a-bounded-undirected-graph-or-return-an-odd-cycle-witness.md) | algorithms-data-structures | algorithm | data-transformation, validation |
@@ -352,6 +354,7 @@ not edit it by hand.
 | [Run Bounded Weighted Jobs Under Shared Process Capacity](snippets/concurrency-lifecycle/run-bounded-weighted-jobs-under-shared-process-capacity.md) | concurrency-lifecycle | pattern | concurrency-control, lifecycle-management, resource-management |
 | [Run One Async Operation with a Bounded Resource Stack](snippets/concurrency-lifecycle/run-one-async-operation-with-a-bounded-resource-stack.md) | concurrency-lifecycle | pattern | concurrency-control, lifecycle-management, resource-management |
 | [Run One Trusted Stateless Function in a Short-Lived Subinterpreter](snippets/concurrency-lifecycle/run-one-trusted-stateless-function-in-a-short-lived-subinterpreter.md) | concurrency-lifecycle | pattern | lifecycle-management, resource-management, testing |
+| [Run Several Synchronous Entry Calls on One asyncio Runner](snippets/concurrency-lifecycle/run-several-synchronous-entry-calls-on-one-asyncio-runner.md) | concurrency-lifecycle | recipe | interoperability, lifecycle-management |
 | [Select a Reusable Lease for an Explicit Remaining Horizon](snippets/concurrency-lifecycle/select-a-reusable-lease-for-an-explicit-remaining-horizon.md) | concurrency-lifecycle | algorithm | concurrency-control, lifecycle-management, resource-management, validation |
 | [Select an Immediate Predecessor from a Bounded Contender Snapshot](snippets/concurrency-lifecycle/select-an-immediate-predecessor-from-a-bounded-contender-snapshot.md) | concurrency-lifecycle | algorithm | concurrency-control, lifecycle-management, validation |
 | [Start One Thread with an Explicit ContextVar Inheritance Policy](snippets/concurrency-lifecycle/start-one-thread-with-an-explicit-contextvar-inheritance-policy.md) | concurrency-lifecycle | recipe | concurrency-control, observability, resource-management |
@@ -515,6 +518,7 @@ not edit it by hand.
 | [Limit Text Lines Across Arbitrary Chunks](snippets/data-processing/limit-text-lines-across-arbitrary-chunks.md) | data-processing | recipe | parsing, resource-management |
 | [Map Exact pandas Dtypes to a Neutral Storage Schema](snippets/data-processing/map-exact-pandas-dtypes-to-a-neutral-storage-schema.md) | data-processing | integration | data-transformation, interoperability, validation |
 | [Map String Offsets to Line and Column Across Mixed Newlines](snippets/data-processing/map-string-offsets-to-line-and-column-across-mixed-newlines.md) | data-processing | recipe | data-transformation, interoperability, validation |
+| [Map Unicode Decimal Digits to ASCII Without Changing Other Characters](snippets/data-processing/map-unicode-decimal-digits-to-ascii-without-changing-other-characters.md) | data-processing | recipe | data-transformation, interoperability |
 | [Map UTF-16 Code-Unit Offsets to Python String Boundaries](snippets/data-processing/map-utf-16-code-unit-offsets-to-python-string-boundaries.md) | data-processing | recipe | data-transformation, interoperability, validation |
 | [Match Increasing Timestamps to the Nearest Right Timestamp Within a Tolerance](snippets/data-processing/match-increasing-timestamps-to-the-nearest-right-timestamp-within-a-tolerance.md) | data-processing | algorithm | data-transformation, validation |
 | [Match Two Increasing Integer Sequences One-to-One Within a Tolerance](snippets/data-processing/match-two-increasing-integer-sequences-one-to-one-within-a-tolerance.md) | data-processing | algorithm | data-transformation, testing, validation |
@@ -904,6 +908,7 @@ not edit it by hand.
 | [Replay a Randomized Test Case from a Generator Checkpoint](snippets/testing-tooling/replay-a-randomized-test-case-from-a-generator-checkpoint.md) | testing-tooling | testing-technique | testing |
 | [Report Duplicate Entry Point Names Without Loading Plugins](snippets/testing-tooling/report-duplicate-entry-point-names-without-loading-plugins.md) | testing-tooling | testing-technique | interoperability, testing, validation |
 | [Report Independent Table Cases with unittest subTest](snippets/testing-tooling/report-independent-table-cases-with-unittest-subtest.md) | testing-tooling | testing-technique | testing, validation |
+| [Report Missing Declared Protocol Members Without Binding Descriptors](snippets/testing-tooling/report-missing-declared-protocol-members-without-binding-descriptors.md) | testing-tooling | testing-technique | interoperability, testing, validation |
 | [Run Trusted Doctest Examples with an Explicit Namespace](snippets/testing-tooling/run-trusted-doctest-examples-with-an-explicit-namespace.md) | testing-tooling | testing-technique | testing, validation |
 | [Scan Bounded Macro Declarations into a Canonical Event Index](snippets/testing-tooling/scan-bounded-macro-declarations-into-a-canonical-event-index.md) | testing-tooling | algorithm | parsing, testing, validation |
 | [Seal Test Mocks Against Unconfigured Collaborator Calls](snippets/testing-tooling/seal-test-mocks-against-unconfigured-collaborator-calls.md) | testing-tooling | testing-technique | testing, validation |
