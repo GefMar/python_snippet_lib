@@ -18,16 +18,16 @@ not edit it by hand.
 | Category | Scope | Snippets |
 | --- | --- | ---: |
 | [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 46 |
-| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 232 |
+| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 234 |
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 45 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 37 |
 | [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 65 |
-| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 99 |
+| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 100 |
 | [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 78 |
-| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 64 |
+| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 65 |
 | [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 103 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 34 |
-| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 71 |
+| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 72 |
 | [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 42 |
 
 ### Snippets
@@ -114,6 +114,7 @@ not edit it by hand.
 | [Build a Static Interval Stabbing Index for Bounded Overlapping Integer Ranges](snippets/algorithms-data-structures/build-a-static-interval-stabbing-index-for-bounded-overlapping-integer-ranges.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Build an Exact Integer Alias Table for Repeated Weighted Sampling](snippets/algorithms-data-structures/build-an-exact-integer-alias-table-for-repeated-weighted-sampling.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, testing |
 | [Build and Evaluate a Bounded Binary Assignment Constraint System](snippets/algorithms-data-structures/build-and-evaluate-a-bounded-binary-assignment-constraint-system.md) | algorithms-data-structures | algorithm | data-transformation, resource-management, validation |
+| [Calculate Total Slack in an Unlimited-Capacity Task DAG](snippets/algorithms-data-structures/calculate-total-slack-in-an-unlimited-capacity-task-dag.md) | algorithms-data-structures | algorithm | automation, data-transformation, validation |
 | [Certify a Rectangle Tiling with Exact Area and Corner Parity](snippets/algorithms-data-structures/certify-a-rectangle-tiling-with-exact-area-and-corner-parity.md) | algorithms-data-structures | algorithm | data-transformation, validation |
 | [Choose a Deterministic Minimum Point Set Stabbing Bounded Closed Integer Intervals](snippets/algorithms-data-structures/choose-a-deterministic-minimum-point-set-stabbing-bounded-closed-integer-intervals.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Choose Nice Linear Axis Bounds and Tick Step](snippets/algorithms-data-structures/choose-nice-linear-axis-bounds-and-tick-step.md) | algorithms-data-structures | algorithm | data-transformation |
@@ -170,6 +171,7 @@ not edit it by hand.
 | [Count Exact Shortest Paths from One Source in a Bounded Positively Weighted Directed Graph](snippets/algorithms-data-structures/count-exact-shortest-paths-from-one-source-in-a-bounded-positively-weighted-directed-graph.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, testing, validation |
 | [Count Exact Source-to-Target Paths in a Bounded DAG](snippets/algorithms-data-structures/count-exact-source-to-target-paths-in-a-bounded-dag.md) | algorithms-data-structures | algorithm | data-transformation, validation |
 | [Count Index-Distinct Longest Strictly Increasing Subsequences of Bounded Integers](snippets/algorithms-data-structures/count-index-distinct-longest-strictly-increasing-subsequences-of-bounded-integers.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
+| [Count Index-Distinct Pairs with a Target Sum in a Sorted Sequence](snippets/algorithms-data-structures/count-index-distinct-pairs-with-a-target-sum-in-a-sorted-sequence.md) | algorithms-data-structures | algorithm | data-transformation |
 | [Count Perfect Matchings in a Bounded Balanced Bipartite Graph with Subset DP](snippets/algorithms-data-structures/count-perfect-matchings-in-a-bounded-balanced-bipartite-graph-with-subset-dp.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, testing, validation |
 | [Count Sparse Static Points in Half-Open Rectangles with an Offline Sweep](snippets/algorithms-data-structures/count-sparse-static-points-in-half-open-rectangles-with-an-offline-sweep.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Count Strict Inversions in a Bounded Integer Sequence](snippets/algorithms-data-structures/count-strict-inversions-in-a-bounded-integer-sequence.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
@@ -549,6 +551,7 @@ not edit it by hand.
 | [Select One Record per Key with an Explicit Ranking Rule](snippets/data-processing/select-one-record-per-key-with-an-explicit-ranking-rule.md) | data-processing | algorithm | data-transformation, validation |
 | [Select Preferred Inline Text from a MIME Message](snippets/data-processing/select-preferred-inline-text-from-a-mime-message.md) | data-processing | recipe | interoperability, parsing |
 | [Shift an Exact Date by Whole Calendar Months with Explicit Day Overflow](snippets/data-processing/shift-an-exact-date-by-whole-calendar-months-with-explicit-day-overflow.md) | data-processing | algorithm | data-transformation, validation |
+| [Sort by Integer Score with Missing Values Last in Both Directions](snippets/data-processing/sort-by-integer-score-with-missing-values-last-in-both-directions.md) | data-processing | recipe | data-transformation |
 | [Split a Half-Open Date Range into Clipped ISO Weeks](snippets/data-processing/split-a-half-open-date-range-into-clipped-iso-weeks.md) | data-processing | algorithm | data-transformation, validation |
 | [Split Quoted and Bracketed Log Fields](snippets/data-processing/split-quoted-and-bracketed-log-fields.md) | data-processing | algorithm | data-transformation, parsing |
 | [Stream Count Deltas Between Two Sorted Inventories](snippets/data-processing/stream-count-deltas-between-two-sorted-inventories.md) | data-processing | algorithm | data-transformation, validation |
@@ -700,6 +703,7 @@ not edit it by hand.
 | [Validate a Bounded Chunk Manifest Before a Conditional Version Switch](snippets/storage-databases/validate-a-bounded-chunk-manifest-before-a-conditional-version-switch.md) | storage-databases | pattern | concurrency-control, persistence, validation |
 | [Validate a Bounded Stage-Verify-Pointer-Switch Log](snippets/storage-databases/validate-a-bounded-stage-verify-pointer-switch-log.md) | storage-databases | pattern | persistence, validation |
 | [Write Bounded Byte Segments Exactly with os.writev](snippets/storage-databases/write-bounded-byte-segments-exactly-with-os-writev.md) | storage-databases | recipe | performance-optimization, resource-management, validation |
+| [Write One Noninterleaved Record to a Shared POSIX Pipe](snippets/storage-databases/write-one-noninterleaved-record-to-a-shared-posix-pipe.md) | storage-databases | recipe | concurrency-control, validation |
 | [Adapt Bounded JSON Output to a Protobuf Message](snippets/configuration-serialization/adapt-bounded-json-output-to-a-protobuf-message.md) | configuration-serialization | integration | interoperability, serialization, validation |
 | [Append a Fixed-Width CRC Check to a Human-Readable Identifier](snippets/configuration-serialization/append-a-fixed-width-crc-check-to-a-human-readable-identifier.md) | configuration-serialization | recipe | interoperability, serialization, validation |
 | [Apply a Bounded RFC 6902 JSON Patch Atomically to a Detached JSON Tree](snippets/configuration-serialization/apply-a-bounded-rfc-6902-json-patch-atomically-to-a-detached-json-tree.md) | configuration-serialization | pattern | configuration, data-transformation, validation |
@@ -887,6 +891,7 @@ not edit it by hand.
 | [Locate the Innermost Failing Expression as UTF-8 Byte Columns](snippets/testing-tooling/locate-the-innermost-failing-expression-as-utf-8-byte-columns.md) | testing-tooling | testing-technique | observability, testing |
 | [Parse a Bounded Debugger Function Listing into Canonical Source Locations](snippets/testing-tooling/parse-a-bounded-debugger-function-listing-into-canonical-source-locations.md) | testing-tooling | testing-technique | parsing, testing, validation |
 | [Parse a Bounded Space-Indented Test Outline into Leaf Paths](snippets/testing-tooling/parse-a-bounded-space-indented-test-outline-into-leaf-paths.md) | testing-tooling | algorithm | parsing, testing, validation |
+| [Prune Named Generated Subtrees with Top-Down Path.walk](snippets/testing-tooling/prune-named-generated-subtrees-with-top-down-path-walk.md) | testing-tooling | recipe | automation, testing |
 | [Refresh a Cached Path.info Classification After Replacing an Entry](snippets/testing-tooling/refresh-a-cached-path-info-classification-after-replacing-an-entry.md) | testing-tooling | testing-technique | testing, validation |
 | [Render a Unified Diff for Byte Lines with Unknown Encoding](snippets/testing-tooling/render-a-unified-diff-for-byte-lines-with-unknown-encoding.md) | testing-tooling | testing-technique | data-transformation, testing |
 | [Render Bounded Request Snapshots into a Length-Framed Replay Payload](snippets/testing-tooling/render-bounded-request-snapshots-into-a-length-framed-replay-payload.md) | testing-tooling | recipe | networking, serialization, testing, validation |
