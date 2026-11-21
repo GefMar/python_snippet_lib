@@ -18,16 +18,16 @@ not edit it by hand.
 | Category | Scope | Snippets |
 | --- | --- | ---: |
 | [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 38 |
-| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 214 |
+| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 215 |
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 42 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 37 |
 | [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 65 |
-| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 84 |
+| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 85 |
 | [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 72 |
-| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 53 |
+| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 54 |
 | [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 97 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 34 |
-| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 54 |
+| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 56 |
 | [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 36 |
 
 ### Snippets
@@ -220,6 +220,7 @@ not edit it by hand.
 | [Find the Leftmost Shortest Unicode Window Covering a Bounded Required Multiset](snippets/algorithms-data-structures/find-the-leftmost-shortest-unicode-window-covering-a-bounded-required-multiset.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Find the Lexicographically First Eulerian Trail in a Bounded Directed Multigraph](snippets/algorithms-data-structures/find-the-lexicographically-first-eulerian-trail-in-a-bounded-directed-multigraph.md) | algorithms-data-structures | algorithm | data-transformation, testing, validation |
 | [Find the Lexicographically First Target Position in a Bounded Row-and-Column-Sorted Integer Matrix](snippets/algorithms-data-structures/find-the-lexicographically-first-target-position-in-a-bounded-row-and-column-sorted-integer-matrix.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
+| [Find the Matching Range for a Literal Prefix in Sorted Strings](snippets/algorithms-data-structures/find-the-matching-range-for-a-literal-prefix-in-sorted-strings.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization |
 | [Find the Narrowest Integer Range Covering Every Sorted Source](snippets/algorithms-data-structures/find-the-narrowest-integer-range-covering-every-sorted-source.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Find the Proposer-Optimal Stable Matching for Complete Strict Preferences](snippets/algorithms-data-structures/find-the-proposer-optimal-stable-matching-for-complete-strict-preferences.md) | algorithms-data-structures | algorithm | data-transformation, validation |
 | [Generate Event Times for a Linear Rate Ramp](snippets/algorithms-data-structures/generate-event-times-for-a-linear-rate-ramp.md) | algorithms-data-structures | algorithm | automation, performance-optimization |
@@ -475,6 +476,7 @@ not edit it by hand.
 | [Join Two Strictly Increasing Streams by Exact Timestamp](snippets/data-processing/join-two-strictly-increasing-streams-by-exact-timestamp.md) | data-processing | pattern | data-transformation, resource-management, validation |
 | [Limit Text Lines Across Arbitrary Chunks](snippets/data-processing/limit-text-lines-across-arbitrary-chunks.md) | data-processing | recipe | parsing, resource-management |
 | [Map Exact pandas Dtypes to a Neutral Storage Schema](snippets/data-processing/map-exact-pandas-dtypes-to-a-neutral-storage-schema.md) | data-processing | integration | data-transformation, interoperability, validation |
+| [Map UTF-16 Code-Unit Offsets to Python String Boundaries](snippets/data-processing/map-utf-16-code-unit-offsets-to-python-string-boundaries.md) | data-processing | recipe | data-transformation, interoperability, validation |
 | [Match Increasing Timestamps to the Nearest Right Timestamp Within a Tolerance](snippets/data-processing/match-increasing-timestamps-to-the-nearest-right-timestamp-within-a-tolerance.md) | data-processing | algorithm | data-transformation, validation |
 | [Match Two Increasing Integer Sequences One-to-One Within a Tolerance](snippets/data-processing/match-two-increasing-integer-sequences-one-to-one-within-a-tolerance.md) | data-processing | algorithm | data-transformation, testing, validation |
 | [Measure Time Above a Threshold Between Linear Samples](snippets/data-processing/measure-time-above-a-threshold-between-linear-samples.md) | data-processing | algorithm | data-transformation, observability |
@@ -598,6 +600,7 @@ not edit it by hand.
 | [Compare Bounded Apparent Sizes of Two File-Tree Snapshots](snippets/storage-databases/compare-bounded-apparent-sizes-of-two-file-tree-snapshots.md) | storage-databases | recipe | automation, persistence, resource-management |
 | [Compile a Bounded T-String into SQLite Qmark SQL and Parameters](snippets/storage-databases/compile-a-bounded-t-string-into-sqlite-qmark-sql-and-parameters.md) | storage-databases | pattern | persistence, security, validation |
 | [Decide Whether to Restore a Versioned Snapshot](snippets/storage-databases/decide-whether-to-restore-a-versioned-snapshot.md) | storage-databases | algorithm | configuration, data-transformation, validation |
+| [Enable SQLite Foreign Keys Before Starting Managed Transactions](snippets/storage-databases/enable-sqlite-foreign-keys-before-starting-managed-transactions.md) | storage-databases | recipe | persistence, validation |
 | [Enforce One Active SQLite Row per Key with a Partial Unique Index](snippets/storage-databases/enforce-one-active-sqlite-row-per-key-with-a-partial-unique-index.md) | storage-databases | pattern | persistence, validation |
 | [Execute a Trusted SQLite Query Under Progress-Callback and Row Caps](snippets/storage-databases/execute-a-trusted-sqlite-query-under-progress-callback-and-row-caps.md) | storage-databases | recipe | performance-optimization, resource-management, validation |
 | [Fill a Preallocated Bytearray Exactly with os.readinto](snippets/storage-databases/fill-a-preallocated-bytearray-exactly-with-os-readinto.md) | storage-databases | recipe | performance-optimization, resource-management, validation |
@@ -797,6 +800,7 @@ not edit it by hand.
 | [Extract a Bounded Static Python Annotation Index without Evaluation](snippets/testing-tooling/extract-a-bounded-static-python-annotation-index-without-evaluation.md) | testing-tooling | testing-technique | parsing, testing, validation |
 | [Extract Bounded Doctest Examples Without Executing Them](snippets/testing-tooling/extract-bounded-doctest-examples-without-executing-them.md) | testing-tooling | testing-technique | parsing, testing, validation |
 | [Extract Bounded Native-Test Failure Highlights](snippets/testing-tooling/extract-bounded-native-test-failure-highlights.md) | testing-tooling | recipe | observability, parsing, testing |
+| [Extract Function Default Expressions from Python Source](snippets/testing-tooling/extract-function-default-expressions-from-python-source.md) | testing-tooling | testing-technique | parsing, testing |
 | [Find a Shortest Invariant Violation in a Bounded Deterministic State Model](snippets/testing-tooling/find-a-shortest-invariant-violation-in-a-bounded-deterministic-state-model.md) | testing-tooling | testing-technique | testing, validation |
 | [Find the Lexicographically First Shortest Word Distinguishing Two States of a Bounded Complete DFA](snippets/testing-tooling/find-the-lexicographically-first-shortest-word-distinguishing-two-states-of-a-bounded-complete-dfa.md) | testing-tooling | testing-technique | testing, validation |
 | [Generate a Bounded One-Edit Byte Mutation Corpus](snippets/testing-tooling/generate-a-bounded-one-edit-byte-mutation-corpus.md) | testing-tooling | testing-technique | testing, validation |
@@ -818,6 +822,7 @@ not edit it by hand.
 | [Shrink a Bounded Failing Sequence to a One-Deletion-Minimal Subsequence](snippets/testing-tooling/shrink-a-bounded-failing-sequence-to-a-one-deletion-minimal-subsequence.md) | testing-tooling | testing-technique | testing, validation |
 | [Test Fixed-Width Header Changes in a Private File Mapping](snippets/testing-tooling/test-fixed-width-header-changes-in-a-private-file-mapping.md) | testing-tooling | testing-technique | resource-management, testing |
 | [Trace Transaction Boundaries in a SQLite Test Fixture](snippets/testing-tooling/trace-transaction-boundaries-in-a-sqlite-test-fixture.md) | testing-tooling | testing-technique | persistence, testing |
+| [Verify Call Order Across Attached Mocks](snippets/testing-tooling/verify-call-order-across-multiple-mocks-with-attach-mock.md) | testing-tooling | testing-technique | testing, validation |
 | [Verify Calls to a Standalone Function with Autospec](snippets/testing-tooling/verify-calls-to-a-standalone-function-with-create-autospec.md) | testing-tooling | testing-technique | testing, validation |
 | [Verify Ordered HTTP Client Expectations with Bounded Mismatch Reports](snippets/testing-tooling/verify-ordered-http-client-expectations-with-bounded-mismatch-reports.md) | testing-tooling | testing-technique | networking, testing, validation |
 | [Verify That an Async Collaborator Is Called and Awaited Exactly](snippets/testing-tooling/verify-that-an-async-collaborator-is-called-and-awaited-exactly.md) | testing-tooling | testing-technique | testing, validation |
