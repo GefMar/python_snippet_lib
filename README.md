@@ -17,14 +17,14 @@ not edit it by hand.
 
 | Category | Scope | Snippets |
 | --- | --- | ---: |
-| [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 44 |
-| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 230 |
+| [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 46 |
+| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 231 |
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 45 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 37 |
 | [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 65 |
-| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 97 |
+| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 98 |
 | [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 77 |
-| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 63 |
+| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 64 |
 | [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 103 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 34 |
 | [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 70 |
@@ -65,11 +65,13 @@ not edit it by hand.
 | [Make a Defensive Copy at a Mutable Input Boundary](snippets/python-language/make-a-defensive-copy-at-a-mutable-input-boundary.md) | python-language | idiom | data-transformation, resource-management |
 | [Materialize a Package Resource Directory for a Path-Only Reader](snippets/python-language/materialize-a-package-resource-directory-for-a-path-only-reader.md) | python-language | recipe | interoperability, resource-management |
 | [Model a Quantity with One Canonical Unit](snippets/python-language/model-a-quantity-with-one-canonical-unit.md) | python-language | pattern | data-transformation, validation |
+| [Normalize Raw Docstring Indentation with inspect.cleandoc](snippets/python-language/normalize-raw-docstring-indentation-with-inspect-cleandoc.md) | python-language | idiom | data-transformation |
 | [Overwrite a BytesIO Range Without Moving Its Cursor](snippets/python-language/overwrite-a-bytesio-range-without-moving-its-cursor.md) | python-language | recipe | data-transformation, resource-management |
 | [Pass Constructor-Only Context with dataclasses.InitVar](snippets/python-language/pass-constructor-only-context-with-initvar.md) | python-language | idiom | data-transformation, validation |
 | [Preserve Span Invariants with a Custom Replace Protocol](snippets/python-language/preserve-span-invariants-with-a-custom-replace-protocol.md) | python-language | pattern | data-transformation, interoperability, validation |
 | [Read a Fixed-Width Byte Record with the Index Protocol](snippets/python-language/read-a-fixed-width-byte-record-with-the-index-protocol.md) | python-language | recipe | data-transformation, validation |
 | [Read Fixed-Size Blocks with iter() and a Sentinel](snippets/python-language/read-fixed-size-blocks-with-iter-sentinel.md) | python-language | idiom | performance-optimization, resource-management |
+| [Recompute Abstract Methods After Installing Implementations with a Class Decorator](snippets/python-language/recompute-abstract-methods-after-installing-implementations-with-a-class-decorator.md) | python-language | recipe | interoperability, testing |
 | [Return NotImplemented for Unsupported Rich Comparisons](snippets/python-language/return-notimplemented-for-unsupported-rich-comparisons.md) | python-language | idiom | interoperability, validation |
 | [Reuse Live Objects by Exact String Key with WeakValueDictionary](snippets/python-language/reuse-live-objects-by-exact-string-key-with-weakvaluedictionary.md) | python-language | pattern | caching, resource-management, validation |
 | [Split a Bounded ExceptionGroup by Closed Exception Types](snippets/python-language/split-a-bounded-exceptiongroup-by-closed-exception-types.md) | python-language | pattern | validation |
@@ -186,6 +188,7 @@ not edit it by hand.
 | [Estimate Distinct Byte Strings with a Mergeable HyperLogLog](snippets/algorithms-data-structures/estimate-distinct-byte-strings-with-a-mergeable-hyperloglog.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization |
 | [Estimate Stream Frequencies with a Count-Min Sketch](snippets/algorithms-data-structures/estimate-stream-frequencies-with-a-count-min-sketch.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization |
 | [Evaluate a Bounded Float Polynomial with Fused Horner Steps](snippets/algorithms-data-structures/evaluate-a-bounded-float-polynomial-with-fused-horner-steps.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
+| [Evaluate an Integer Polynomial and Its First Derivative in One Horner Pass](snippets/algorithms-data-structures/evaluate-an-integer-polynomial-and-its-first-derivative-in-one-horner-pass.md) | algorithms-data-structures | algorithm | data-transformation, validation |
 | [Factor a Bounded Positive Integer by Deterministic Trial Division](snippets/algorithms-data-structures/factor-a-bounded-positive-integer-by-deterministic-trial-division.md) | algorithms-data-structures | algorithm | data-transformation, validation |
 | [Factor Bounded Unicode Text into Lyndon Words with Duval's Algorithm](snippets/algorithms-data-structures/factor-bounded-unicode-text-into-lyndon-words-with-duvals-algorithm.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Find a Canonical CYK Parse Witness for Bounded Tokens under a Strict CNF Grammar](snippets/algorithms-data-structures/find-a-canonical-cyk-parse-witness-for-bounded-tokens-under-a-strict-cnf-grammar.md) | algorithms-data-structures | algorithm | data-transformation, parsing, validation |
@@ -493,6 +496,7 @@ not edit it by hand.
 | [Extract Bounded Anchor Targets from HTML with HTMLParser](snippets/data-processing/extract-bounded-anchor-targets-from-html-with-htmlparser.md) | data-processing | recipe | data-transformation, parsing, validation |
 | [Extract Bounded Features with an Explicit Abstention Outcome](snippets/data-processing/extract-bounded-features-with-an-explicit-abstention-outcome.md) | data-processing | algorithm | data-transformation, validation |
 | [Fan Out Events into Bounded Lookback Windows](snippets/data-processing/fan-out-events-into-bounded-lookback-windows.md) | data-processing | algorithm | data-transformation, resource-management, validation |
+| [Find a Half-Open Time Slice in Sorted Records with bisect](snippets/data-processing/find-a-half-open-time-slice-in-sorted-records-with-bisect.md) | data-processing | recipe | data-transformation |
 | [Find Deterministic Content-Defined Boundaries in Bounded Bytes with a Rolling Fingerprint](snippets/data-processing/find-deterministic-content-defined-boundaries-in-bounded-bytes-with-a-rolling-fingerprint.md) | data-processing | algorithm | caching, data-transformation, performance-optimization |
 | [Group Items by an Exact Compatibility Signature and Report Unmatched Inputs](snippets/data-processing/group-items-by-an-exact-compatibility-signature-and-report-unmatched-inputs.md) | data-processing | algorithm | data-transformation, validation |
 | [Integrate Regular Rate Samples Across Explicit Time Buckets](snippets/data-processing/integrate-regular-rate-samples-across-explicit-time-buckets.md) | data-processing | algorithm | data-transformation, observability, validation |
@@ -658,6 +662,7 @@ not edit it by hand.
 | [Hold One SQLite WAL Read Snapshot Across Multiple Queries](snippets/storage-databases/hold-one-sqlite-wal-read-snapshot-across-multiple-queries.md) | storage-databases | pattern | persistence, resource-management |
 | [Inspect a Bounded SQLite Database Header from In-Memory Bytes](snippets/storage-databases/inspect-a-bounded-sqlite-database-header-from-in-memory-bytes.md) | storage-databases | recipe | parsing, persistence, validation |
 | [Inspect the Checksum-Valid Prefix of a Bounded SQLite WAL Image](snippets/storage-databases/inspect-the-checksum-valid-prefix-of-a-bounded-sqlite-wal-image.md) | storage-databases | recipe | parsing, persistence, validation |
+| [List an Open POSIX Directory After Its Path Is Replaced](snippets/storage-databases/list-an-open-posix-directory-after-its-path-is-replaced.md) | storage-databases | recipe | persistence, resource-management |
 | [Map a Namespaced POSIX Path Beneath a Logical Local Root](snippets/storage-databases/map-a-namespaced-posix-path-beneath-a-logical-local-root.md) | storage-databases | recipe | data-transformation, persistence, validation |
 | [Open a Verified Read-Only SQLite Connection Under a Closed Hardening Profile](snippets/storage-databases/open-a-verified-read-only-sqlite-connection-under-a-closed-hardening-profile.md) | storage-databases | recipe | persistence, resource-management, security, validation |
 | [Page Bounded SQLite Rows with a Composite Keyset Cursor](snippets/storage-databases/page-bounded-sqlite-rows-with-a-composite-keyset-cursor.md) | storage-databases | pattern | performance-optimization, persistence, validation |
