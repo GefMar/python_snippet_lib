@@ -17,17 +17,17 @@ not edit it by hand.
 
 | Category | Scope | Snippets |
 | --- | --- | ---: |
-| [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 39 |
+| [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 40 |
 | [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 223 |
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 45 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 37 |
 | [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 65 |
-| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 92 |
+| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 94 |
 | [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 73 |
 | [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 60 |
 | [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 100 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 34 |
-| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 63 |
+| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 65 |
 | [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 40 |
 
 ### Snippets
@@ -62,6 +62,7 @@ not edit it by hand.
 | [Make a Defensive Copy at a Mutable Input Boundary](snippets/python-language/make-a-defensive-copy-at-a-mutable-input-boundary.md) | python-language | idiom | data-transformation, resource-management |
 | [Materialize a Package Resource Directory for a Path-Only Reader](snippets/python-language/materialize-a-package-resource-directory-for-a-path-only-reader.md) | python-language | recipe | interoperability, resource-management |
 | [Model a Quantity with One Canonical Unit](snippets/python-language/model-a-quantity-with-one-canonical-unit.md) | python-language | pattern | data-transformation, validation |
+| [Overwrite a BytesIO Range Without Moving Its Cursor](snippets/python-language/overwrite-a-bytesio-range-without-moving-its-cursor.md) | python-language | recipe | data-transformation, resource-management |
 | [Pass Constructor-Only Context with dataclasses.InitVar](snippets/python-language/pass-constructor-only-context-with-initvar.md) | python-language | idiom | data-transformation, validation |
 | [Preserve Span Invariants with a Custom Replace Protocol](snippets/python-language/preserve-span-invariants-with-a-custom-replace-protocol.md) | python-language | pattern | data-transformation, interoperability, validation |
 | [Read Fixed-Size Blocks with iter() and a Sentinel](snippets/python-language/read-fixed-size-blocks-with-iter-sentinel.md) | python-language | idiom | performance-optimization, resource-management |
@@ -505,12 +506,14 @@ not edit it by hand.
 | [Parse Pipe-Delimited Tables with Continuation Rows](snippets/data-processing/parse-pipe-delimited-tables-with-continuation-rows.md) | data-processing | algorithm | data-transformation, parsing |
 | [Partition Strictly Increasing Integer Timestamps into Idle-Gap Sessions](snippets/data-processing/partition-strictly-increasing-integer-timestamps-into-idle-gap-sessions.md) | data-processing | algorithm | data-transformation, validation |
 | [Pivot Bounded Coordinate Records into a Closed Rectangular Table with Collision Evidence](snippets/data-processing/pivot-bounded-coordinate-records-into-a-closed-rectangular-table-with-collision-evidence.md) | data-processing | algorithm | data-transformation, validation |
+| [Price a FIFO Withdrawal from Integer-Cost Inventory Lots](snippets/data-processing/price-a-fifo-withdrawal-from-integer-cost-inventory-lots.md) | data-processing | recipe | data-transformation, validation |
 | [Project a Bounded Document Snapshot into Collision-Audited Secondary Index Rows](snippets/data-processing/project-a-bounded-document-snapshot-into-collision-audited-secondary-index-rows.md) | data-processing | recipe | data-transformation, resource-management, validation |
 | [Project Bounded Records into Multiple Closed Output Schemas](snippets/data-processing/project-bounded-records-into-multiple-closed-output-schemas.md) | data-processing | recipe | data-transformation, resource-management, validation |
 | [Project Nested Records with Explicit Field Paths](snippets/data-processing/project-nested-records-with-explicit-field-paths.md) | data-processing | recipe | data-transformation, validation |
 | [Read Bounded CSV Text into pandas Under an Explicit Schema](snippets/data-processing/read-bounded-csv-text-into-pandas-under-an-explicit-schema.md) | data-processing | integration | data-transformation, parsing, validation |
 | [Read CSV from a Borrowed Binary Stream Without Closing It](snippets/data-processing/read-csv-from-a-borrowed-binary-stream-without-closing-it.md) | data-processing | recipe | parsing, resource-management |
 | [Reconcile a Bounded Partial Record Under Explicit Field Policies](snippets/data-processing/reconcile-a-bounded-partial-record-under-explicit-field-policies.md) | data-processing | pattern | concurrency-control, data-transformation, validation |
+| [Reject Ambiguous DictReader Headers and Ragged CSV Rows](snippets/data-processing/reject-ambiguous-dictreader-headers-and-ragged-csv-rows.md) | data-processing | recipe | parsing, validation |
 | [Reorder Bounded Out-of-Order Timestamped Records Under a Declared Lateness Bound](snippets/data-processing/reorder-bounded-out-of-order-timestamped-records-under-a-declared-lateness-bound.md) | data-processing | pattern | data-transformation, resource-management, validation |
 | [Replace Literal Strings in One Leftmost-Longest Pass](snippets/data-processing/replace-literal-strings-in-one-leftmost-longest-pass.md) | data-processing | recipe | data-transformation |
 | [Report Missing Grid-Tick Runs Without Enumerating the Grid](snippets/data-processing/report-missing-grid-tick-runs-without-enumerating-the-grid.md) | data-processing | algorithm | data-transformation, observability, validation |
@@ -832,6 +835,7 @@ not edit it by hand.
 | [Extract Bounded Native-Test Failure Highlights](snippets/testing-tooling/extract-bounded-native-test-failure-highlights.md) | testing-tooling | recipe | observability, parsing, testing |
 | [Extract Function Default Expressions from Python Source](snippets/testing-tooling/extract-function-default-expressions-from-python-source.md) | testing-tooling | testing-technique | parsing, testing |
 | [Find a Shortest Invariant Violation in a Bounded Deterministic State Model](snippets/testing-tooling/find-a-shortest-invariant-violation-in-a-bounded-deterministic-state-model.md) | testing-tooling | testing-technique | testing, validation |
+| [Find a Top-Level Module Candidate Without Importing It](snippets/testing-tooling/find-a-top-level-module-candidate-without-importing-it.md) | testing-tooling | testing-technique | interoperability, testing, validation |
 | [Find Repeated Literal Dictionary Keys Without Executing Python](snippets/testing-tooling/find-repeated-literal-dictionary-keys-without-executing-python.md) | testing-tooling | testing-technique | testing, validation |
 | [Find the Lexicographically First Shortest Word Distinguishing Two States of a Bounded Complete DFA](snippets/testing-tooling/find-the-lexicographically-first-shortest-word-distinguishing-two-states-of-a-bounded-complete-dfa.md) | testing-tooling | testing-technique | testing, validation |
 | [Generate a Bounded One-Edit Byte Mutation Corpus](snippets/testing-tooling/generate-a-bounded-one-edit-byte-mutation-corpus.md) | testing-tooling | testing-technique | testing, validation |
@@ -847,6 +851,7 @@ not edit it by hand.
 | [Keep Repeated Tokens in Matching Blocks with SequenceMatcher](snippets/testing-tooling/keep-repeated-tokens-in-matching-blocks-with-sequence-matcher.md) | testing-tooling | testing-technique | data-transformation, testing |
 | [Parse a Bounded Debugger Function Listing into Canonical Source Locations](snippets/testing-tooling/parse-a-bounded-debugger-function-listing-into-canonical-source-locations.md) | testing-tooling | testing-technique | parsing, testing, validation |
 | [Parse a Bounded Space-Indented Test Outline into Leaf Paths](snippets/testing-tooling/parse-a-bounded-space-indented-test-outline-into-leaf-paths.md) | testing-tooling | algorithm | parsing, testing, validation |
+| [Render a Unified Diff for Byte Lines with Unknown Encoding](snippets/testing-tooling/render-a-unified-diff-for-byte-lines-with-unknown-encoding.md) | testing-tooling | testing-technique | data-transformation, testing |
 | [Render Bounded Request Snapshots into a Length-Framed Replay Payload](snippets/testing-tooling/render-bounded-request-snapshots-into-a-length-framed-replay-payload.md) | testing-tooling | recipe | networking, serialization, testing, validation |
 | [Replace Selected Python NAME Tokens without Touching Strings or Comments](snippets/testing-tooling/replace-selected-python-name-tokens-without-touching-strings-or-comments.md) | testing-tooling | recipe | automation, testing, validation |
 | [Replay a Randomized Test Case from a Generator Checkpoint](snippets/testing-tooling/replay-a-randomized-test-case-from-a-generator-checkpoint.md) | testing-tooling | testing-technique | testing |
