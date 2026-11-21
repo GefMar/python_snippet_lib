@@ -22,12 +22,12 @@ not edit it by hand.
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 42 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 37 |
 | [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 65 |
-| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 82 |
+| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 84 |
 | [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 72 |
-| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 52 |
+| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 53 |
 | [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 97 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 34 |
-| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 52 |
+| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 54 |
 | [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 36 |
 
 ### Snippets
@@ -494,6 +494,7 @@ not edit it by hand.
 | [Read Bounded CSV Text into pandas Under an Explicit Schema](snippets/data-processing/read-bounded-csv-text-into-pandas-under-an-explicit-schema.md) | data-processing | integration | data-transformation, parsing, validation |
 | [Reconcile a Bounded Partial Record Under Explicit Field Policies](snippets/data-processing/reconcile-a-bounded-partial-record-under-explicit-field-policies.md) | data-processing | pattern | concurrency-control, data-transformation, validation |
 | [Reorder Bounded Out-of-Order Timestamped Records Under a Declared Lateness Bound](snippets/data-processing/reorder-bounded-out-of-order-timestamped-records-under-a-declared-lateness-bound.md) | data-processing | pattern | data-transformation, resource-management, validation |
+| [Report Unicode NFC Collisions Before Importing Keys](snippets/data-processing/report-unicode-nfc-collisions-before-importing-keys.md) | data-processing | recipe | data-transformation, validation |
 | [Reshape Repeated pandas Column Families with Wide-to-Long](snippets/data-processing/reshape-repeated-pandas-column-families-with-wide-to-long.md) | data-processing | integration | data-transformation, interoperability, validation |
 | [Resolve Bounded Overlapping Integer Intervals by Priority into Canonical Winner Spans](snippets/data-processing/resolve-bounded-overlapping-integer-intervals-by-priority-into-canonical-winner-spans.md) | data-processing | algorithm | data-transformation, validation |
 | [Route Estimated Work by Ordered Source and Size Rules](snippets/data-processing/route-estimated-work-by-ordered-source-and-size-rules.md) | data-processing | recipe | data-transformation, resource-management, validation |
@@ -509,6 +510,7 @@ not edit it by hand.
 | [Stream Count Deltas Between Two Sorted Inventories](snippets/data-processing/stream-count-deltas-between-two-sorted-inventories.md) | data-processing | algorithm | data-transformation, validation |
 | [Summarize an Irregular Integer Gauge with Expiry](snippets/data-processing/summarize-an-irregular-integer-gauge-with-expiry.md) | data-processing | algorithm | data-transformation, observability |
 | [Transpose Bounded Ragged Exact-String Rows with None for Missing Cells](snippets/data-processing/transpose-bounded-ragged-exact-string-rows-with-none-for-missing-cells.md) | data-processing | recipe | data-transformation, validation |
+| [Try an Optional Text Header Without Consuming a Mismatch](snippets/data-processing/try-an-optional-text-header-without-consuming-a-mismatch.md) | data-processing | recipe | data-transformation, parsing |
 | [Validate and Expand a Bounded Image Variant Specification](snippets/data-processing/validate-and-expand-a-bounded-image-variant-specification.md) | data-processing | algorithm | data-transformation, resource-management, validation |
 | [Validate Parsed CSV Rows with Bounded Structured Problems](snippets/data-processing/validate-parsed-csv-rows-with-bounded-structured-problems.md) | data-processing | recipe | parsing, validation |
 | [Yield Stream Items with Bounded Neighbor Context](snippets/data-processing/yield-stream-items-with-bounded-neighbor-context.md) | data-processing | recipe | data-transformation, performance-optimization |
@@ -623,6 +625,7 @@ not edit it by hand.
 | [Read the Last Bounded Binary Lines with a Read-Only mmap](snippets/storage-databases/read-the-last-bounded-binary-lines-with-a-read-only-mmap.md) | storage-databases | recipe | parsing, performance-optimization, resource-management |
 | [Recover a Verified Prefix from a Bounded CRC-Framed Byte Log](snippets/storage-databases/recover-a-verified-prefix-from-a-bounded-crc-framed-byte-log.md) | storage-databases | recipe | parsing, persistence, validation |
 | [Refresh a SQLite Read Cache After External Commits](snippets/storage-databases/refresh-a-sqlite-read-cache-after-external-commits.md) | storage-databases | pattern | caching, persistence |
+| [Reject Ambiguous SQLite Row Aliases Before Fetching](snippets/storage-databases/reject-ambiguous-sqlite-row-aliases-before-fetching.md) | storage-databases | pattern | persistence, validation |
 | [Replace a Complete Bounded SQLite Cache Snapshot with a Generation](snippets/storage-databases/replace-a-complete-bounded-sqlite-cache-snapshot-with-a-generation.md) | storage-databases | pattern | caching, persistence, retry-recovery |
 | [Replace a File Atomically with a Sibling Temporary File](snippets/storage-databases/replace-a-file-atomically-with-a-sibling-temporary-file.md) | storage-databases | recipe | persistence, resource-management |
 | [Scope Caller-Owned SQLite Work with an Explicit Savepoint](snippets/storage-databases/scope-caller-owned-sqlite-work-with-an-explicit-savepoint.md) | storage-databases | pattern | persistence, resource-management |
@@ -783,8 +786,10 @@ not edit it by hand.
 | [Capture Mutable Mock Arguments at Call Time](snippets/testing-tooling/capture-mutable-mock-arguments-at-call-time.md) | testing-tooling | testing-technique | testing, validation |
 | [Check a Bounded Complete History for Linearizability Against a Deterministic Model](snippets/testing-tooling/check-a-bounded-complete-history-for-linearizability-against-a-deterministic-model.md) | testing-tooling | testing-technique | concurrency-control, testing, validation |
 | [Classify Bounded Interactive Python Source as Complete, Incomplete, or Invalid](snippets/testing-tooling/classify-bounded-interactive-python-source-as-complete-incomplete-or-invalid.md) | testing-tooling | testing-technique | parsing, testing, validation |
+| [Clean Up unittest Fixtures When setUp Fails with enterContext](snippets/testing-tooling/clean-up-unittest-fixtures-when-setup-fails-with-entercontext.md) | testing-tooling | testing-technique | lifecycle-management, resource-management, testing |
 | [Compare a Bounded Text Capture Against a Golden Fixture](snippets/testing-tooling/compare-a-bounded-text-capture-against-a-golden-fixture.md) | testing-tooling | testing-technique | testing, validation |
 | [Compare Bounded Python Expressions Structurally without Execution](snippets/testing-tooling/compare-bounded-python-expressions-structurally-without-execution.md) | testing-tooling | testing-technique | parsing, testing, validation |
+| [Copy a Test Fixture Tree with an Explicit Symlink Policy](snippets/testing-tooling/copy-a-test-fixture-tree-with-an-explicit-symlink-policy.md) | testing-tooling | testing-technique | resource-management, testing |
 | [Decode Bounded Python Source Bytes with Python Encoding Detection](snippets/testing-tooling/decode-bounded-python-source-bytes-with-tokenize-detect-encoding.md) | testing-tooling | testing-technique | parsing, testing, validation |
 | [Drive sched Events Deterministically with a Manually Advanced Clock](snippets/testing-tooling/drive-sched-events-deterministically-with-a-manually-advanced-clock.md) | testing-tooling | testing-technique | lifecycle-management, testing, validation |
 | [Enumerate Every Contiguous Chunking of Bounded Bytes for Stream Tests](snippets/testing-tooling/enumerate-every-contiguous-chunking-of-bounded-bytes-for-stream-tests.md) | testing-tooling | testing-technique | testing, validation |
