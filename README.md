@@ -18,16 +18,16 @@ not edit it by hand.
 | Category | Scope | Snippets |
 | --- | --- | ---: |
 | [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 48 |
-| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 237 |
+| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 238 |
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 46 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 37 |
 | [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 65 |
-| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 101 |
+| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 102 |
 | [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 78 |
-| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 66 |
-| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 104 |
+| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 67 |
+| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 105 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 34 |
-| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 73 |
+| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 74 |
 | [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 42 |
 
 ### Snippets
@@ -293,6 +293,7 @@ not edit it by hand.
 | [Resolve Stable Ordering Constraints with Topological Sort](snippets/algorithms-data-structures/resolve-stable-ordering-constraints-with-topological-sort.md) | algorithms-data-structures | algorithm | data-transformation, validation |
 | [Return the Next Lexicographic Permutation of Bounded Integers](snippets/algorithms-data-structures/return-the-next-lexicographic-permutation-of-bounded-integers.md) | algorithms-data-structures | algorithm | data-transformation, testing, validation |
 | [Schedule a Round-Robin Tournament with a Bye for Odd Groups](snippets/algorithms-data-structures/schedule-a-round-robin-tournament-with-a-bye-for-odd-groups.md) | algorithms-data-structures | algorithm | automation, data-transformation, resource-management |
+| [Schedule Jobs by Earliest Due Date to Minimize Maximum Lateness](snippets/algorithms-data-structures/schedule-jobs-by-earliest-due-date-to-minimize-maximum-lateness.md) | algorithms-data-structures | algorithm | automation, data-transformation, resource-management |
 | [Search a Bounded Exact-Cover System with Algorithm X](snippets/algorithms-data-structures/search-a-bounded-exact-cover-system-with-algorithm-x.md) | algorithms-data-structures | algorithm | data-transformation, testing, validation |
 | [Select a Canonical Maximum-Weight Independent Set in a Bounded Forest](snippets/algorithms-data-structures/select-a-canonical-maximum-weight-independent-set-in-a-bounded-forest.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Select a Maximum-Cardinality Set of Non-Overlapping Half-Open Integer Intervals](snippets/algorithms-data-structures/select-a-maximum-cardinality-set-of-non-overlapping-half-open-integer-intervals.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
@@ -507,6 +508,7 @@ not edit it by hand.
 | [Fan Out Events into Bounded Lookback Windows](snippets/data-processing/fan-out-events-into-bounded-lookback-windows.md) | data-processing | algorithm | data-transformation, resource-management, validation |
 | [Find a Half-Open Time Slice in Sorted Records with bisect](snippets/data-processing/find-a-half-open-time-slice-in-sorted-records-with-bisect.md) | data-processing | recipe | data-transformation |
 | [Find Deterministic Content-Defined Boundaries in Bounded Bytes with a Rolling Fingerprint](snippets/data-processing/find-deterministic-content-defined-boundaries-in-bounded-bytes-with-a-rolling-fingerprint.md) | data-processing | algorithm | caching, data-transformation, performance-optimization |
+| [Find the Nth Weekday in a Calendar Month](snippets/data-processing/find-the-nth-weekday-in-a-calendar-month.md) | data-processing | recipe | data-transformation |
 | [Group Items by an Exact Compatibility Signature and Report Unmatched Inputs](snippets/data-processing/group-items-by-an-exact-compatibility-signature-and-report-unmatched-inputs.md) | data-processing | algorithm | data-transformation, validation |
 | [Integrate Regular Rate Samples Across Explicit Time Buckets](snippets/data-processing/integrate-regular-rate-samples-across-explicit-time-buckets.md) | data-processing | algorithm | data-transformation, observability, validation |
 | [Interleave Bounded Finite Tuple Sources Round-Robin Until Exhausted](snippets/data-processing/interleave-bounded-finite-tuple-sources-round-robin-until-exhausted.md) | data-processing | algorithm | data-transformation, performance-optimization, validation |
@@ -703,6 +705,7 @@ not edit it by hand.
 | [Select Elapsed-Time Coverage Anchors from Bounded Snapshots](snippets/storage-databases/select-elapsed-time-coverage-anchors-from-bounded-snapshots.md) | storage-databases | algorithm | automation, data-transformation, validation |
 | [Select Expired Backup Names with Strict UTC Timestamps](snippets/storage-databases/select-expired-backup-names-with-strict-utc-timestamps.md) | storage-databases | recipe | automation, parsing, validation |
 | [Select Snapshot Representatives by UTC Calendar Buckets](snippets/storage-databases/select-snapshot-representatives-by-utc-calendar-buckets.md) | storage-databases | algorithm | automation, persistence |
+| [Skip Unchanged SQLite Upserts with a Null-Safe WHERE Clause](snippets/storage-databases/skip-unchanged-sqlite-upserts-with-a-null-safe-where-clause.md) | storage-databases | recipe | configuration, persistence |
 | [Split a Binary Stream into Exclusively Created Numbered Parts](snippets/storage-databases/split-a-binary-stream-into-exclusively-created-numbered-parts.md) | storage-databases | recipe | automation, persistence, resource-management |
 | [Split a Half-Open UTC Range Across Ordered Storage Tiers](snippets/storage-databases/split-a-half-open-utc-range-across-ordered-storage-tiers.md) | storage-databases | algorithm | data-transformation, persistence, validation |
 | [Spool a Bounded Byte Iterable into a Scoped Seekable Temporary File](snippets/storage-databases/spool-a-bounded-byte-iterable-into-a-scoped-seekable-temporary-file.md) | storage-databases | recipe | data-transformation, performance-optimization, resource-management |
@@ -729,6 +732,7 @@ not edit it by hand.
 | [Decode a Closed Integer Capability Mask with Strict IntFlag Boundaries](snippets/configuration-serialization/decode-a-closed-integer-capability-mask-with-strict-intflag-boundaries.md) | configuration-serialization | recipe | configuration, interoperability, parsing, validation |
 | [Decode Canonical Unpadded Base64url Under Encoded and Decoded Byte Limits](snippets/configuration-serialization/decode-canonical-unpadded-base64url-under-encoded-and-decoded-byte-limits.md) | configuration-serialization | recipe | interoperability, parsing, serialization, validation |
 | [Decode Fixed-Endian Signed 16-Bit Samples into a Native Array](snippets/configuration-serialization/decode-fixed-endian-signed-16-bit-samples-into-a-native-array.md) | configuration-serialization | recipe | data-transformation, interoperability |
+| [Decode Fixed-Width Packed Rows with a struct Iterator](snippets/configuration-serialization/decode-fixed-width-packed-rows-with-struct-iter-unpack.md) | configuration-serialization | recipe | interoperability, parsing |
 | [Decode One Bounded Strict UTF-8 Stream Across Arbitrary Byte Chunks](snippets/configuration-serialization/decode-one-bounded-strict-utf-8-stream-across-arbitrary-byte-chunks.md) | configuration-serialization | recipe | parsing, resource-management, validation |
 | [Decompress Gzip Bytes with an Explicit Output Limit](snippets/configuration-serialization/decompress-gzip-bytes-with-an-explicit-output-limit.md) | configuration-serialization | recipe | parsing, validation |
 | [Derive a Versioned Cache Key from Deterministically Encoded Bounded JSON](snippets/configuration-serialization/derive-a-versioned-cache-key-from-deterministically-encoded-bounded-json.md) | configuration-serialization | algorithm | caching, configuration, serialization, validation |
@@ -908,6 +912,7 @@ not edit it by hand.
 | [Replay a Randomized Test Case from a Generator Checkpoint](snippets/testing-tooling/replay-a-randomized-test-case-from-a-generator-checkpoint.md) | testing-tooling | testing-technique | testing |
 | [Report Duplicate Entry Point Names Without Loading Plugins](snippets/testing-tooling/report-duplicate-entry-point-names-without-loading-plugins.md) | testing-tooling | testing-technique | interoperability, testing, validation |
 | [Report Independent Table Cases with unittest subTest](snippets/testing-tooling/report-independent-table-cases-with-unittest-subtest.md) | testing-tooling | testing-technique | testing, validation |
+| [Report Missing and Unknown Keys from a TypedDict Declaration](snippets/testing-tooling/report-missing-and-unknown-keys-from-a-typeddict-declaration.md) | testing-tooling | testing-technique | configuration, testing, validation |
 | [Report Missing Declared Protocol Members Without Binding Descriptors](snippets/testing-tooling/report-missing-declared-protocol-members-without-binding-descriptors.md) | testing-tooling | testing-technique | interoperability, testing, validation |
 | [Run Trusted Doctest Examples with an Explicit Namespace](snippets/testing-tooling/run-trusted-doctest-examples-with-an-explicit-namespace.md) | testing-tooling | testing-technique | testing, validation |
 | [Scan Bounded Macro Declarations into a Canonical Event Index](snippets/testing-tooling/scan-bounded-macro-declarations-into-a-canonical-event-index.md) | testing-tooling | algorithm | parsing, testing, validation |
