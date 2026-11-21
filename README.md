@@ -19,15 +19,15 @@ not edit it by hand.
 | --- | --- | ---: |
 | [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 38 |
 | [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 221 |
-| [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 44 |
+| [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 45 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 37 |
 | [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 65 |
 | [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 90 |
-| [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 72 |
-| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 58 |
+| [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 73 |
+| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 59 |
 | [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 99 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 34 |
-| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 59 |
+| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 61 |
 | [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 39 |
 
 ### Snippets
@@ -334,6 +334,7 @@ not edit it by hand.
 | [Stop a Polling Worker Cooperatively with an Event](snippets/concurrency-lifecycle/stop-a-polling-worker-cooperatively-with-an-event.md) | concurrency-lifecycle | pattern | concurrency-control, resource-management |
 | [Stream Bounded stdout and stderr Lines from a POSIX Process](snippets/concurrency-lifecycle/stream-bounded-stdout-and-stderr-lines-from-a-posix-process.md) | concurrency-lifecycle | integration | automation, concurrency-control, lifecycle-management, resource-management |
 | [Submit a Callable with a Snapshot of the Current Context](snippets/concurrency-lifecycle/submit-a-callable-with-a-snapshot-of-the-current-context.md) | concurrency-lifecycle | recipe | concurrency-control, interoperability, observability |
+| [Tighten One asyncio Deadline After Reading a Work Budget](snippets/concurrency-lifecycle/tighten-one-asyncio-deadline-after-reading-a-work-budget.md) | concurrency-lifecycle | pattern | concurrency-control, lifecycle-management |
 | [Track Bounded Causal Order with Immutable Vector Clocks](snippets/concurrency-lifecycle/track-bounded-causal-order-with-immutable-vector-clocks.md) | concurrency-lifecycle | algorithm | concurrency-control, data-transformation, validation |
 | [Track Current and Peak Scoped Work with a Synchronized Counter](snippets/concurrency-lifecycle/track-current-and-peak-scoped-work-with-a-synchronized-counter.md) | concurrency-lifecycle | pattern | concurrency-control, observability, resource-management |
 | [Transfer Bounded Synchronous Cleanup Ownership with ExitStack Pop All](snippets/concurrency-lifecycle/transfer-bounded-synchronous-cleanup-ownership-with-exitstack-pop-all.md) | concurrency-lifecycle | pattern | lifecycle-management, resource-management, validation |
@@ -574,6 +575,7 @@ not edit it by hand.
 | [Compute Exact Squared Kendall Tau-b with Direction for Bounded Integer Pairs](snippets/machine-learning-statistics/compute-exact-squared-kendall-tau-b-with-direction-for-bounded-integer-pairs.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Compute Exact Squared Pearson Correlation with Direction](snippets/machine-learning-statistics/compute-exact-squared-pearson-correlation-with-direction.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Compute Exact Squared Spearman Rank Correlation with Direction](snippets/machine-learning-statistics/compute-exact-squared-spearman-rank-correlation-with-direction.md) | machine-learning-statistics | algorithm | data-transformation, validation |
+| [Compute Exact Trailing Sample Covariance for Integer Pairs](snippets/machine-learning-statistics/compute-exact-trailing-sample-covariance-for-integer-pairs.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Compute Exact Unweighted Cohen's Kappa from a Confusion Matrix](snippets/machine-learning-statistics/compute-exact-unweighted-cohens-kappa-from-a-confusion-matrix.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Compute Fisher's Exact Test with a Probability-Ordered Two-Sided P-Value](snippets/machine-learning-statistics/compute-fishers-exact-test-with-a-probability-ordered-two-sided-p-value.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Compute Mutual Information from a Bounded Integer Contingency Table](snippets/machine-learning-statistics/compute-mutual-information-from-a-bounded-integer-contingency-table.md) | machine-learning-statistics | algorithm | data-transformation, validation |
@@ -619,6 +621,7 @@ not edit it by hand.
 | [Enforce One Active SQLite Row per Key with a Partial Unique Index](snippets/storage-databases/enforce-one-active-sqlite-row-per-key-with-a-partial-unique-index.md) | storage-databases | pattern | persistence, validation |
 | [Execute a Trusted SQLite Query Under Progress-Callback and Row Caps](snippets/storage-databases/execute-a-trusted-sqlite-query-under-progress-callback-and-row-caps.md) | storage-databases | recipe | performance-optimization, resource-management, validation |
 | [Fill a Preallocated Bytearray Exactly with os.readinto](snippets/storage-databases/fill-a-preallocated-bytearray-exactly-with-os-readinto.md) | storage-databases | recipe | performance-optimization, resource-management, validation |
+| [Find Reachable Vertices with a Recursive SQLite CTE](snippets/storage-databases/find-reachable-vertices-with-a-recursive-sqlite-cte.md) | storage-databases | recipe | data-transformation, persistence |
 | [Fingerprint a Bounded Flat File Set with Framed SHA-256](snippets/storage-databases/fingerprint-a-bounded-flat-file-set-with-framed-sha-256.md) | storage-databases | recipe | caching, persistence, validation |
 | [Group Bounded SQLite Console Lines into Lexically Complete Batches Without Execution](snippets/storage-databases/group-bounded-sqlite-console-lines-into-lexically-complete-batches-without-execution.md) | storage-databases | recipe | automation, parsing, validation |
 | [Group Hard-Linked Names in One POSIX Directory](snippets/storage-databases/group-hard-linked-names-in-one-posix-directory.md) | storage-databases | recipe | persistence, validation |
@@ -806,6 +809,7 @@ not edit it by hand.
 | [Build a Collision-Audited Artifact Copy Plan](snippets/testing-tooling/build-a-collision-audited-artifact-copy-plan.md) | testing-tooling | algorithm | automation, resource-management, testing, validation |
 | [Capture Executed Lines for One Code Object with sys.monitoring](snippets/testing-tooling/capture-executed-lines-for-one-code-object-with-sys-monitoring.md) | testing-tooling | testing-technique | observability, testing |
 | [Capture Mutable Mock Arguments at Call Time](snippets/testing-tooling/capture-mutable-mock-arguments-at-call-time.md) | testing-tooling | testing-technique | testing, validation |
+| [Capture Unraisable Exception Types in a Scoped Test](snippets/testing-tooling/capture-unraisable-exception-types-in-a-scoped-test.md) | testing-tooling | testing-technique | lifecycle-management, observability, testing |
 | [Check a Bounded Complete History for Linearizability Against a Deterministic Model](snippets/testing-tooling/check-a-bounded-complete-history-for-linearizability-against-a-deterministic-model.md) | testing-tooling | testing-technique | concurrency-control, testing, validation |
 | [Classify Bounded Interactive Python Source as Complete, Incomplete, or Invalid](snippets/testing-tooling/classify-bounded-interactive-python-source-as-complete-incomplete-or-invalid.md) | testing-tooling | testing-technique | parsing, testing, validation |
 | [Clean Up unittest Fixtures When setUp Fails with enterContext](snippets/testing-tooling/clean-up-unittest-fixtures-when-setup-fails-with-entercontext.md) | testing-tooling | testing-technique | lifecycle-management, resource-management, testing |
@@ -839,6 +843,7 @@ not edit it by hand.
 | [Replace Selected Python NAME Tokens without Touching Strings or Comments](snippets/testing-tooling/replace-selected-python-name-tokens-without-touching-strings-or-comments.md) | testing-tooling | recipe | automation, testing, validation |
 | [Replay a Randomized Test Case from a Generator Checkpoint](snippets/testing-tooling/replay-a-randomized-test-case-from-a-generator-checkpoint.md) | testing-tooling | testing-technique | testing |
 | [Report Duplicate Entry Point Names Without Loading Plugins](snippets/testing-tooling/report-duplicate-entry-point-names-without-loading-plugins.md) | testing-tooling | testing-technique | interoperability, testing, validation |
+| [Report Independent Table Cases with unittest subTest](snippets/testing-tooling/report-independent-table-cases-with-unittest-subtest.md) | testing-tooling | testing-technique | testing, validation |
 | [Scan Bounded Macro Declarations into a Canonical Event Index](snippets/testing-tooling/scan-bounded-macro-declarations-into-a-canonical-event-index.md) | testing-tooling | algorithm | parsing, testing, validation |
 | [Seal Test Mocks Against Unconfigured Collaborator Calls](snippets/testing-tooling/seal-test-mocks-against-unconfigured-collaborator-calls.md) | testing-tooling | testing-technique | testing, validation |
 | [Shrink a Bounded Failing Sequence to a One-Deletion-Minimal Subsequence](snippets/testing-tooling/shrink-a-bounded-failing-sequence-to-a-one-deletion-minimal-subsequence.md) | testing-tooling | testing-technique | testing, validation |
