@@ -17,18 +17,18 @@ not edit it by hand.
 
 | Category | Scope | Snippets |
 | --- | --- | ---: |
-| [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 37 |
+| [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 38 |
 | [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 214 |
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 42 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 37 |
 | [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 65 |
-| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 80 |
+| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 82 |
 | [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 72 |
 | [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 52 |
 | [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 97 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 34 |
-| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 51 |
-| [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 35 |
+| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 52 |
+| [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 36 |
 
 ### Snippets
 
@@ -37,6 +37,7 @@ not edit it by hand.
 | [Add Bounded Stage Context Without Replacing an Exception](snippets/python-language/add-bounded-stage-context-without-replacing-an-exception.md) | python-language | idiom | observability, validation |
 | [Apply Partial Dataclass Updates with an Omitted-Value Sentinel](snippets/python-language/apply-partial-dataclass-updates-with-an-omitted-value-sentinel.md) | python-language | recipe | data-transformation, validation |
 | [Attach Best-Effort Cleanup with weakref.finalize Without Retaining the Owner](snippets/python-language/attach-best-effort-cleanup-with-weakref-finalize-without-retaining-the-owner.md) | python-language | pattern | lifecycle-management, resource-management |
+| [Attribute a Warning to the Caller Outside a Package](snippets/python-language/attribute-a-warning-to-the-caller-outside-a-package.md) | python-language | recipe | observability, validation |
 | [Batch Any Iterable Lazily with itertools.batched](snippets/python-language/batch-any-iterable-lazily-with-itertools-batched.md) | python-language | idiom | data-transformation, resource-management |
 | [Bind Non-Leading Positional Arguments with functools.Placeholder](snippets/python-language/bind-non-leading-positional-arguments-with-functools-placeholder.md) | python-language | idiom | data-transformation, validation |
 | [Build a Read-Only Mapping with Canonical Text Keys](snippets/python-language/build-a-read-only-mapping-with-canonical-text-keys.md) | python-language | recipe | interoperability, validation |
@@ -447,6 +448,7 @@ not edit it by hand.
 | [Co-Group Bounded Sorted Integer Keys with Full-Outer Coverage](snippets/data-processing/co-group-bounded-sorted-integer-keys-with-full-outer-coverage.md) | data-processing | algorithm | data-transformation, validation |
 | [Collect Expected Parse Failures Without Stopping a Batch](snippets/data-processing/collect-expected-parse-failures-without-stopping-a-batch.md) | data-processing | pattern | parsing, validation |
 | [Compare Ordered Integer Time-Series Snapshots with Explicit Tolerance](snippets/data-processing/compare-ordered-integer-time-series-snapshots-with-explicit-tolerance.md) | data-processing | algorithm | data-transformation, validation |
+| [Count Distinct Active Keys in a Trailing Event Window](snippets/data-processing/count-distinct-active-keys-in-a-trailing-event-window.md) | data-processing | algorithm | data-transformation, observability |
 | [Count Static Imports Across Bounded Python Notebook Cells](snippets/data-processing/count-static-imports-across-bounded-python-notebook-cells.md) | data-processing | algorithm | data-transformation, parsing, validation |
 | [Count Working Dates in a Half-Open Range with Explicit Closures](snippets/data-processing/count-working-dates-in-a-half-open-range-with-explicit-closures.md) | data-processing | algorithm | data-transformation, validation |
 | [Decode Bounded Fixed-Width ASCII Records Across Arbitrary Byte Chunks](snippets/data-processing/decode-bounded-fixed-width-ascii-records-across-arbitrary-byte-chunks.md) | data-processing | pattern | data-transformation, parsing, resource-management, validation |
@@ -502,6 +504,7 @@ not edit it by hand.
 | [Sample Stream Items Independently with a Fixed Probability](snippets/data-processing/sample-stream-items-independently-with-a-fixed-probability.md) | data-processing | algorithm | data-transformation |
 | [Select One Record per Key with an Explicit Ranking Rule](snippets/data-processing/select-one-record-per-key-with-an-explicit-ranking-rule.md) | data-processing | algorithm | data-transformation, validation |
 | [Shift an Exact Date by Whole Calendar Months with Explicit Day Overflow](snippets/data-processing/shift-an-exact-date-by-whole-calendar-months-with-explicit-day-overflow.md) | data-processing | algorithm | data-transformation, validation |
+| [Split a Half-Open Date Range into Clipped ISO Weeks](snippets/data-processing/split-a-half-open-date-range-into-clipped-iso-weeks.md) | data-processing | algorithm | data-transformation, validation |
 | [Split Quoted and Bracketed Log Fields](snippets/data-processing/split-quoted-and-bracketed-log-fields.md) | data-processing | algorithm | data-transformation, parsing |
 | [Stream Count Deltas Between Two Sorted Inventories](snippets/data-processing/stream-count-deltas-between-two-sorted-inventories.md) | data-processing | algorithm | data-transformation, validation |
 | [Summarize an Irregular Integer Gauge with Expiry](snippets/data-processing/summarize-an-irregular-integer-gauge-with-expiry.md) | data-processing | algorithm | data-transformation, observability |
@@ -808,6 +811,7 @@ not edit it by hand.
 | [Report Duplicate Entry Point Names Without Loading Plugins](snippets/testing-tooling/report-duplicate-entry-point-names-without-loading-plugins.md) | testing-tooling | testing-technique | interoperability, testing, validation |
 | [Scan Bounded Macro Declarations into a Canonical Event Index](snippets/testing-tooling/scan-bounded-macro-declarations-into-a-canonical-event-index.md) | testing-tooling | algorithm | parsing, testing, validation |
 | [Shrink a Bounded Failing Sequence to a One-Deletion-Minimal Subsequence](snippets/testing-tooling/shrink-a-bounded-failing-sequence-to-a-one-deletion-minimal-subsequence.md) | testing-tooling | testing-technique | testing, validation |
+| [Test Fixed-Width Header Changes in a Private File Mapping](snippets/testing-tooling/test-fixed-width-header-changes-in-a-private-file-mapping.md) | testing-tooling | testing-technique | resource-management, testing |
 | [Trace Transaction Boundaries in a SQLite Test Fixture](snippets/testing-tooling/trace-transaction-boundaries-in-a-sqlite-test-fixture.md) | testing-tooling | testing-technique | persistence, testing |
 | [Verify Calls to a Standalone Function with Autospec](snippets/testing-tooling/verify-calls-to-a-standalone-function-with-create-autospec.md) | testing-tooling | testing-technique | testing, validation |
 | [Verify Ordered HTTP Client Expectations with Bounded Mismatch Reports](snippets/testing-tooling/verify-ordered-http-client-expectations-with-bounded-mismatch-reports.md) | testing-tooling | testing-technique | networking, testing, validation |
@@ -817,6 +821,7 @@ not edit it by hand.
 | [Wait for Named Queue Conditions Under One Monotonic Deadline](snippets/testing-tooling/wait-for-named-queue-conditions-under-one-monotonic-deadline.md) | testing-tooling | testing-technique | concurrency-control, testing, validation |
 | [Aggregate Bounded Sampled Stacks into Deterministic Collapsed Counts](snippets/observability-operations/aggregate-bounded-sampled-stacks-into-deterministic-collapsed-counts.md) | observability-operations | algorithm | data-transformation, observability, serialization, validation |
 | [Capture a Bounded Pickle-Friendly Exception Report](snippets/observability-operations/capture-a-bounded-pickle-friendly-exception-report.md) | observability-operations | recipe | interoperability, observability, serialization |
+| [Capture One CPython Thread-Stack Snapshot to a File Descriptor](snippets/observability-operations/capture-one-cpython-thread-stack-snapshot-to-a-file-descriptor.md) | observability-operations | recipe | observability, resource-management |
 | [Classify a Finite Value with Warning and Critical Limits](snippets/observability-operations/classify-a-finite-value-with-warning-and-critical-limits.md) | observability-operations | recipe | observability, validation |
 | [Classify Paired Error-Budget Burn Windows from Cumulative Counter Snapshots](snippets/observability-operations/classify-paired-error-budget-burn-windows-from-cumulative-counter-snapshots.md) | observability-operations | algorithm | observability, validation |
 | [Classify Progress from Complete Bounded Counter Snapshots](snippets/observability-operations/classify-progress-from-complete-bounded-counter-snapshots.md) | observability-operations | recipe | observability, validation |
