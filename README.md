@@ -22,12 +22,12 @@ not edit it by hand.
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 42 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 37 |
 | [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 65 |
-| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 78 |
+| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 80 |
 | [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 72 |
 | [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 52 |
 | [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 97 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 34 |
-| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 48 |
+| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 51 |
 | [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 35 |
 
 ### Snippets
@@ -475,6 +475,7 @@ not edit it by hand.
 | [Map Exact pandas Dtypes to a Neutral Storage Schema](snippets/data-processing/map-exact-pandas-dtypes-to-a-neutral-storage-schema.md) | data-processing | integration | data-transformation, interoperability, validation |
 | [Match Increasing Timestamps to the Nearest Right Timestamp Within a Tolerance](snippets/data-processing/match-increasing-timestamps-to-the-nearest-right-timestamp-within-a-tolerance.md) | data-processing | algorithm | data-transformation, validation |
 | [Match Two Increasing Integer Sequences One-to-One Within a Tolerance](snippets/data-processing/match-two-increasing-integer-sequences-one-to-one-within-a-tolerance.md) | data-processing | algorithm | data-transformation, testing, validation |
+| [Measure Time Above a Threshold Between Linear Samples](snippets/data-processing/measure-time-above-a-threshold-between-linear-samples.md) | data-processing | algorithm | data-transformation, observability |
 | [Measure Time in a State Within a Half-Open Window](snippets/data-processing/measure-time-in-a-state-within-a-half-open-window.md) | data-processing | algorithm | data-transformation |
 | [Merge Bounded Row Batches with a First-Seen Schema Union](snippets/data-processing/merge-bounded-row-batches-with-a-first-seen-schema-union.md) | data-processing | algorithm | data-transformation, validation |
 | [Merge-Join Bounded Sorted Records with Duplicate-Key Cartesian Matches](snippets/data-processing/merge-join-bounded-sorted-records-with-duplicate-key-cartesian-matches.md) | data-processing | algorithm | data-transformation, validation |
@@ -502,6 +503,7 @@ not edit it by hand.
 | [Select One Record per Key with an Explicit Ranking Rule](snippets/data-processing/select-one-record-per-key-with-an-explicit-ranking-rule.md) | data-processing | algorithm | data-transformation, validation |
 | [Shift an Exact Date by Whole Calendar Months with Explicit Day Overflow](snippets/data-processing/shift-an-exact-date-by-whole-calendar-months-with-explicit-day-overflow.md) | data-processing | algorithm | data-transformation, validation |
 | [Split Quoted and Bracketed Log Fields](snippets/data-processing/split-quoted-and-bracketed-log-fields.md) | data-processing | algorithm | data-transformation, parsing |
+| [Stream Count Deltas Between Two Sorted Inventories](snippets/data-processing/stream-count-deltas-between-two-sorted-inventories.md) | data-processing | algorithm | data-transformation, validation |
 | [Summarize an Irregular Integer Gauge with Expiry](snippets/data-processing/summarize-an-irregular-integer-gauge-with-expiry.md) | data-processing | algorithm | data-transformation, observability |
 | [Transpose Bounded Ragged Exact-String Rows with None for Missing Cells](snippets/data-processing/transpose-bounded-ragged-exact-string-rows-with-none-for-missing-cells.md) | data-processing | recipe | data-transformation, validation |
 | [Validate and Expand a Bounded Image Variant Specification](snippets/data-processing/validate-and-expand-a-bounded-image-variant-specification.md) | data-processing | algorithm | data-transformation, resource-management, validation |
@@ -774,6 +776,7 @@ not edit it by hand.
 | [Audit Bounded Python Source for Tab-Width-Independent Indentation](snippets/testing-tooling/audit-bounded-python-source-for-tab-width-independent-indentation.md) | testing-tooling | testing-technique | parsing, testing, validation |
 | [Build a Bounded Release DAG Around a Manual Barrier](snippets/testing-tooling/build-a-bounded-release-dag-around-a-manual-barrier.md) | testing-tooling | pattern | automation, testing, validation |
 | [Build a Collision-Audited Artifact Copy Plan](snippets/testing-tooling/build-a-collision-audited-artifact-copy-plan.md) | testing-tooling | algorithm | automation, resource-management, testing, validation |
+| [Capture Executed Lines for One Code Object with sys.monitoring](snippets/testing-tooling/capture-executed-lines-for-one-code-object-with-sys-monitoring.md) | testing-tooling | testing-technique | observability, testing |
 | [Capture Mutable Mock Arguments at Call Time](snippets/testing-tooling/capture-mutable-mock-arguments-at-call-time.md) | testing-tooling | testing-technique | testing, validation |
 | [Check a Bounded Complete History for Linearizability Against a Deterministic Model](snippets/testing-tooling/check-a-bounded-complete-history-for-linearizability-against-a-deterministic-model.md) | testing-tooling | testing-technique | concurrency-control, testing, validation |
 | [Classify Bounded Interactive Python Source as Complete, Incomplete, or Invalid](snippets/testing-tooling/classify-bounded-interactive-python-source-as-complete-incomplete-or-invalid.md) | testing-tooling | testing-technique | parsing, testing, validation |
@@ -802,8 +805,10 @@ not edit it by hand.
 | [Parse a Bounded Space-Indented Test Outline into Leaf Paths](snippets/testing-tooling/parse-a-bounded-space-indented-test-outline-into-leaf-paths.md) | testing-tooling | algorithm | parsing, testing, validation |
 | [Render Bounded Request Snapshots into a Length-Framed Replay Payload](snippets/testing-tooling/render-bounded-request-snapshots-into-a-length-framed-replay-payload.md) | testing-tooling | recipe | networking, serialization, testing, validation |
 | [Replace Selected Python NAME Tokens without Touching Strings or Comments](snippets/testing-tooling/replace-selected-python-name-tokens-without-touching-strings-or-comments.md) | testing-tooling | recipe | automation, testing, validation |
+| [Report Duplicate Entry Point Names Without Loading Plugins](snippets/testing-tooling/report-duplicate-entry-point-names-without-loading-plugins.md) | testing-tooling | testing-technique | interoperability, testing, validation |
 | [Scan Bounded Macro Declarations into a Canonical Event Index](snippets/testing-tooling/scan-bounded-macro-declarations-into-a-canonical-event-index.md) | testing-tooling | algorithm | parsing, testing, validation |
 | [Shrink a Bounded Failing Sequence to a One-Deletion-Minimal Subsequence](snippets/testing-tooling/shrink-a-bounded-failing-sequence-to-a-one-deletion-minimal-subsequence.md) | testing-tooling | testing-technique | testing, validation |
+| [Trace Transaction Boundaries in a SQLite Test Fixture](snippets/testing-tooling/trace-transaction-boundaries-in-a-sqlite-test-fixture.md) | testing-tooling | testing-technique | persistence, testing |
 | [Verify Calls to a Standalone Function with Autospec](snippets/testing-tooling/verify-calls-to-a-standalone-function-with-create-autospec.md) | testing-tooling | testing-technique | testing, validation |
 | [Verify Ordered HTTP Client Expectations with Bounded Mismatch Reports](snippets/testing-tooling/verify-ordered-http-client-expectations-with-bounded-mismatch-reports.md) | testing-tooling | testing-technique | networking, testing, validation |
 | [Verify That an Async Collaborator Is Called and Awaited Exactly](snippets/testing-tooling/verify-that-an-async-collaborator-is-called-and-awaited-exactly.md) | testing-tooling | testing-technique | testing, validation |
