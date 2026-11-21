@@ -18,17 +18,17 @@ not edit it by hand.
 | Category | Scope | Snippets |
 | --- | --- | ---: |
 | [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 38 |
-| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 220 |
-| [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 43 |
+| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 221 |
+| [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 44 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 37 |
 | [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 65 |
-| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 89 |
+| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 90 |
 | [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 72 |
-| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 57 |
+| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 58 |
 | [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 99 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 34 |
 | [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 59 |
-| [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 38 |
+| [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 39 |
 
 ### Snippets
 
@@ -214,6 +214,7 @@ not edit it by hand.
 | [Find the Canonical Maximum-Sum Non-Empty Subrectangle of a Bounded Integer Matrix](snippets/algorithms-data-structures/find-the-canonical-maximum-sum-non-empty-subrectangle-of-a-bounded-integer-matrix.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Find the Canonical Shortest Cycle in a Bounded Directed Graph](snippets/algorithms-data-structures/find-the-canonical-shortest-cycle-in-a-bounded-directed-graph.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, testing, validation |
 | [Find the Canonical Square Root Modulo a Bounded Odd Prime with Tonelli-Shanks](snippets/algorithms-data-structures/find-the-canonical-square-root-modulo-a-bounded-odd-prime-with-tonelli-shanks.md) | algorithms-data-structures | algorithm | data-transformation, validation |
+| [Find the Earliest Common Slot in Multiple Availability Calendars](snippets/algorithms-data-structures/find-the-earliest-common-slot-in-multiple-availability-calendars.md) | algorithms-data-structures | algorithm | automation, data-transformation, resource-management |
 | [Find the Earliest Lexicographically Smallest Rotation of Bounded Unicode Text with Booth's Algorithm](snippets/algorithms-data-structures/find-the-earliest-lexicographically-smallest-rotation-of-bounded-unicode-text-with-booths-algorithm.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Find the Earliest Maximum-XOR Index Pair in Bounded Unsigned 64-Bit Integers with a Binary Trie](snippets/algorithms-data-structures/find-the-earliest-maximum-xor-index-pair-in-bounded-unsigned-64-bit-integers-with-a-binary-trie.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, testing, validation |
 | [Find the First Non-Empty Contiguous Integer Span with an Exact Sum](snippets/algorithms-data-structures/find-the-first-non-empty-contiguous-integer-span-with-an-exact-sum.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
@@ -298,6 +299,7 @@ not edit it by hand.
 | [Collect a Bounded Async-Generator Prefix with Deterministic Closure](snippets/concurrency-lifecycle/collect-a-bounded-async-generator-prefix-with-deterministic-closure.md) | concurrency-lifecycle | pattern | concurrency-control, lifecycle-management, resource-management |
 | [Collect a Bounded Thread-Pool Batch Under One Deadline](snippets/concurrency-lifecycle/collect-a-bounded-thread-pool-batch-under-one-deadline.md) | concurrency-lifecycle | pattern | concurrency-control, lifecycle-management, resource-management |
 | [Collect Thread-Pool Results and Errors as Futures Complete](snippets/concurrency-lifecycle/collect-thread-pool-results-and-errors-as-futures-complete.md) | concurrency-lifecycle | recipe | concurrency-control, resource-management |
+| [Complete One asyncio Future from a Worker-Thread Callback](snippets/concurrency-lifecycle/complete-one-asyncio-future-from-a-worker-thread-callback.md) | concurrency-lifecycle | pattern | concurrency-control, interoperability |
 | [Coordinate Versioned Bytes with Compare-and-Set and Waiting](snippets/concurrency-lifecycle/coordinate-versioned-bytes-with-compare-and-set-and-waiting.md) | concurrency-lifecycle | pattern | concurrency-control, resource-management, validation |
 | [Correlate Bounded Async Results by Original Task as They Complete](snippets/concurrency-lifecycle/correlate-bounded-async-results-by-original-task-as-they-complete.md) | concurrency-lifecycle | pattern | concurrency-control, lifecycle-management, resource-management |
 | [Drain Bounded asyncio Queue Work with Graceful Shutdown](snippets/concurrency-lifecycle/drain-bounded-asyncio-queue-work-with-graceful-shutdown.md) | concurrency-lifecycle | pattern | concurrency-control, lifecycle-management, resource-management |
@@ -444,6 +446,7 @@ not edit it by hand.
 | [Audit Candidate pandas Downcasts Before Applying Them](snippets/data-processing/audit-candidate-pandas-downcasts-before-applying-them.md) | data-processing | integration | data-transformation, performance-optimization, resource-management, validation |
 | [Audit pandas Missing-Value Shares Against Column Policies](snippets/data-processing/audit-pandas-missing-value-shares-against-column-policies.md) | data-processing | integration | data-transformation, validation |
 | [Batch Items by Estimated Byte Size](snippets/data-processing/batch-items-by-estimated-byte-size.md) | data-processing | algorithm | data-transformation, resource-management |
+| [Bound Forward Counter Deltas from Two Modular Readings](snippets/data-processing/bound-forward-counter-deltas-from-two-modular-readings.md) | data-processing | recipe | data-transformation, observability, validation |
 | [Build a Bounded Structural Profile of a pandas DataFrame](snippets/data-processing/build-a-bounded-structural-profile-of-a-pandas-dataframe.md) | data-processing | integration | data-transformation, observability, validation |
 | [Build a Conflict-Checked Remap from Synthetic XLSX Review Rows](snippets/data-processing/build-a-conflict-checked-remap-from-synthetic-xlsx-review-rows.md) | data-processing | integration | data-transformation, interoperability, validation |
 | [Build Bounded Digest Summaries Across Explicit Lookback Horizons](snippets/data-processing/build-bounded-digest-summaries-across-explicit-lookback-horizons.md) | data-processing | algorithm | data-transformation, resource-management, validation |
@@ -599,6 +602,7 @@ not edit it by hand.
 | [Select a Forecast Vector Only When It Beats a Frozen Baseline](snippets/machine-learning-statistics/select-a-forecast-vector-only-when-it-beats-a-frozen-baseline.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Select the Lower Weighted Median of Bounded Integer Observations](snippets/machine-learning-statistics/select-the-lower-weighted-median-of-bounded-integer-observations.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Audit a Bounded Transaction Schedule for Conflict Serializability](snippets/storage-databases/audit-a-bounded-transaction-schedule-for-conflict-serializability.md) | storage-databases | algorithm | data-transformation, testing, validation |
+| [Audit Existing SQLite Foreign Key Violations Without Changing Enforcement](snippets/storage-databases/audit-existing-sqlite-foreign-key-violations-without-changing-enforcement.md) | storage-databases | testing-technique | persistence, validation |
 | [Audit One SQLite Table Against an Exact Ordered Column Contract](snippets/storage-databases/audit-one-sqlite-table-against-an-exact-ordered-column-contract.md) | storage-databases | testing-technique | persistence, testing, validation |
 | [Build a Bounded File Manifest with Internal Symlink Aliases](snippets/storage-databases/build-a-bounded-file-manifest-with-internal-symlink-aliases.md) | storage-databases | recipe | persistence, resource-management, validation |
 | [Build and Apply a Deterministic Mapping Delta](snippets/storage-databases/build-and-apply-a-deterministic-mapping-delta.md) | storage-databases | algorithm | data-transformation, persistence |
@@ -864,6 +868,7 @@ not edit it by hand.
 | [Compute Linux cgroup v2 CPU Deltas from Two Bounded cpu.stat Snapshots](snippets/observability-operations/compute-linux-cgroup-v2-cpu-deltas-from-two-bounded-cpu-stat-snapshots.md) | observability-operations | algorithm | data-transformation, observability, validation |
 | [Compute Linux PSI Stall Deltas from Two Bounded System Snapshots](snippets/observability-operations/compute-linux-psi-stall-deltas-from-two-bounded-system-snapshots.md) | observability-operations | algorithm | data-transformation, observability, validation |
 | [Count Values in Fixed Upper-Bound Bins](snippets/observability-operations/count-values-in-fixed-upper-bound-bins.md) | observability-operations | algorithm | data-transformation, observability |
+| [Detect Wall Clock Divergence from Bracketed Monotonic Readings](snippets/observability-operations/detect-wall-clock-divergence-from-bracketed-monotonic-readings.md) | observability-operations | recipe | observability, validation |
 | [Format Log Records as JSON with Explicit Extra Fields](snippets/observability-operations/format-log-records-as-json-with-explicit-extra-fields.md) | observability-operations | recipe | observability, serialization |
 | [Group Metric Samples by Their Exact Label-Key Shape](snippets/observability-operations/group-metric-samples-by-their-exact-label-key-shape.md) | observability-operations | algorithm | data-transformation, observability, validation |
 | [Locate an Exact Quantile Rank in Bounded Fixed-Bucket Counts](snippets/observability-operations/locate-an-exact-quantile-rank-in-bounded-fixed-bucket-counts.md) | observability-operations | algorithm | data-transformation, observability, validation |
