@@ -22,13 +22,13 @@ not edit it by hand.
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 41 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 37 |
 | [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 65 |
-| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 76 |
+| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 78 |
 | [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 72 |
-| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 49 |
+| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 50 |
 | [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 96 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 34 |
-| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 47 |
-| [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 34 |
+| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 48 |
+| [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 35 |
 
 ### Snippets
 
@@ -446,6 +446,7 @@ not edit it by hand.
 | [Collect Expected Parse Failures Without Stopping a Batch](snippets/data-processing/collect-expected-parse-failures-without-stopping-a-batch.md) | data-processing | pattern | parsing, validation |
 | [Compare Ordered Integer Time-Series Snapshots with Explicit Tolerance](snippets/data-processing/compare-ordered-integer-time-series-snapshots-with-explicit-tolerance.md) | data-processing | algorithm | data-transformation, validation |
 | [Count Static Imports Across Bounded Python Notebook Cells](snippets/data-processing/count-static-imports-across-bounded-python-notebook-cells.md) | data-processing | algorithm | data-transformation, parsing, validation |
+| [Count Working Dates in a Half-Open Range with Explicit Closures](snippets/data-processing/count-working-dates-in-a-half-open-range-with-explicit-closures.md) | data-processing | algorithm | data-transformation, validation |
 | [Decode Bounded Fixed-Width ASCII Records Across Arbitrary Byte Chunks](snippets/data-processing/decode-bounded-fixed-width-ascii-records-across-arbitrary-byte-chunks.md) | data-processing | pattern | data-transformation, parsing, resource-management, validation |
 | [Decode Bounded JSON Lines Across Arbitrary Text Chunks](snippets/data-processing/decode-bounded-json-lines-across-arbitrary-text-chunks.md) | data-processing | pattern | data-transformation, parsing, resource-management, validation |
 | [Decode Strict CSV Records Across Arbitrary Text Chunks](snippets/data-processing/decode-strict-csv-records-across-arbitrary-text-chunks.md) | data-processing | pattern | data-transformation, parsing, resource-management, validation |
@@ -499,6 +500,7 @@ not edit it by hand.
 | [Select One Record per Key with an Explicit Ranking Rule](snippets/data-processing/select-one-record-per-key-with-an-explicit-ranking-rule.md) | data-processing | algorithm | data-transformation, validation |
 | [Shift an Exact Date by Whole Calendar Months with Explicit Day Overflow](snippets/data-processing/shift-an-exact-date-by-whole-calendar-months-with-explicit-day-overflow.md) | data-processing | algorithm | data-transformation, validation |
 | [Split Quoted and Bracketed Log Fields](snippets/data-processing/split-quoted-and-bracketed-log-fields.md) | data-processing | algorithm | data-transformation, parsing |
+| [Summarize an Irregular Integer Gauge with Expiry](snippets/data-processing/summarize-an-irregular-integer-gauge-with-expiry.md) | data-processing | algorithm | data-transformation, observability |
 | [Transpose Bounded Ragged Exact-String Rows with None for Missing Cells](snippets/data-processing/transpose-bounded-ragged-exact-string-rows-with-none-for-missing-cells.md) | data-processing | recipe | data-transformation, validation |
 | [Validate and Expand a Bounded Image Variant Specification](snippets/data-processing/validate-and-expand-a-bounded-image-variant-specification.md) | data-processing | algorithm | data-transformation, resource-management, validation |
 | [Validate Parsed CSV Rows with Bounded Structured Problems](snippets/data-processing/validate-parsed-csv-rows-with-bounded-structured-problems.md) | data-processing | recipe | parsing, validation |
@@ -587,6 +589,7 @@ not edit it by hand.
 | [Compare Bounded Apparent Sizes of Two File-Tree Snapshots](snippets/storage-databases/compare-bounded-apparent-sizes-of-two-file-tree-snapshots.md) | storage-databases | recipe | automation, persistence, resource-management |
 | [Compile a Bounded T-String into SQLite Qmark SQL and Parameters](snippets/storage-databases/compile-a-bounded-t-string-into-sqlite-qmark-sql-and-parameters.md) | storage-databases | pattern | persistence, security, validation |
 | [Decide Whether to Restore a Versioned Snapshot](snippets/storage-databases/decide-whether-to-restore-a-versioned-snapshot.md) | storage-databases | algorithm | configuration, data-transformation, validation |
+| [Enforce One Active SQLite Row per Key with a Partial Unique Index](snippets/storage-databases/enforce-one-active-sqlite-row-per-key-with-a-partial-unique-index.md) | storage-databases | pattern | persistence, validation |
 | [Execute a Trusted SQLite Query Under Progress-Callback and Row Caps](snippets/storage-databases/execute-a-trusted-sqlite-query-under-progress-callback-and-row-caps.md) | storage-databases | recipe | performance-optimization, resource-management, validation |
 | [Fill a Preallocated Bytearray Exactly with os.readinto](snippets/storage-databases/fill-a-preallocated-bytearray-exactly-with-os-readinto.md) | storage-databases | recipe | performance-optimization, resource-management, validation |
 | [Fingerprint a Bounded Flat File Set with Framed SHA-256](snippets/storage-databases/fingerprint-a-bounded-flat-file-set-with-framed-sha-256.md) | storage-databases | recipe | caching, persistence, validation |
@@ -766,6 +769,7 @@ not edit it by hand.
 | [Audit Bounded Python Source for Tab-Width-Independent Indentation](snippets/testing-tooling/audit-bounded-python-source-for-tab-width-independent-indentation.md) | testing-tooling | testing-technique | parsing, testing, validation |
 | [Build a Bounded Release DAG Around a Manual Barrier](snippets/testing-tooling/build-a-bounded-release-dag-around-a-manual-barrier.md) | testing-tooling | pattern | automation, testing, validation |
 | [Build a Collision-Audited Artifact Copy Plan](snippets/testing-tooling/build-a-collision-audited-artifact-copy-plan.md) | testing-tooling | algorithm | automation, resource-management, testing, validation |
+| [Capture Mutable Mock Arguments at Call Time](snippets/testing-tooling/capture-mutable-mock-arguments-at-call-time.md) | testing-tooling | testing-technique | testing, validation |
 | [Check a Bounded Complete History for Linearizability Against a Deterministic Model](snippets/testing-tooling/check-a-bounded-complete-history-for-linearizability-against-a-deterministic-model.md) | testing-tooling | testing-technique | concurrency-control, testing, validation |
 | [Classify Bounded Interactive Python Source as Complete, Incomplete, or Invalid](snippets/testing-tooling/classify-bounded-interactive-python-source-as-complete-incomplete-or-invalid.md) | testing-tooling | testing-technique | parsing, testing, validation |
 | [Compare a Bounded Text Capture Against a Golden Fixture](snippets/testing-tooling/compare-a-bounded-text-capture-against-a-golden-fixture.md) | testing-tooling | testing-technique | testing, validation |
@@ -821,6 +825,7 @@ not edit it by hand.
 | [Locate an Exact Quantile Rank in Bounded Fixed-Bucket Counts](snippets/observability-operations/locate-an-exact-quantile-rank-in-bounded-fixed-bucket-counts.md) | observability-operations | algorithm | data-transformation, observability, validation |
 | [Measure and Freeze Elapsed Time in a Context](snippets/observability-operations/measure-and-freeze-elapsed-time-in-a-context.md) | observability-operations | idiom | observability, performance-optimization |
 | [Measure Cache Hit Ratios from Monotonic Counter Snapshots](snippets/observability-operations/measure-cache-hit-ratios-from-monotonic-counter-snapshots.md) | observability-operations | algorithm | observability, validation |
+| [Merge Fixed-Bound Histograms at Their Shared Boundaries](snippets/observability-operations/merge-fixed-bound-histograms-at-their-shared-boundaries.md) | observability-operations | algorithm | data-transformation, observability, validation |
 | [Parse a Size-Capped systemd Journal Export Stream into Immutable Entries](snippets/observability-operations/parse-a-size-capped-systemd-journal-export-stream-into-immutable-entries.md) | observability-operations | recipe | observability, parsing, serialization, validation |
 | [Parse One Bounded RFC 5424 Syslog Message under a Closed Version-One Profile](snippets/observability-operations/parse-one-bounded-rfc-5424-syslog-message-under-a-closed-version-one-profile.md) | observability-operations | recipe | observability, parsing, validation |
 | [Process Log Records in a Background Thread with QueueListener](snippets/observability-operations/process-log-records-in-a-background-thread-with-queuelistener.md) | observability-operations | recipe | concurrency-control, lifecycle-management, observability |
