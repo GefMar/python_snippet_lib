@@ -17,18 +17,18 @@ not edit it by hand.
 
 | Category | Scope | Snippets |
 | --- | --- | ---: |
-| [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 43 |
+| [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 44 |
 | [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 228 |
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 45 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 37 |
 | [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 65 |
 | [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 96 |
-| [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 75 |
-| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 62 |
+| [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 77 |
+| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 63 |
 | [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 103 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 34 |
 | [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 68 |
-| [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 40 |
+| [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 41 |
 
 ### Snippets
 
@@ -52,6 +52,7 @@ not edit it by hand.
 | [Dispatch Named Strategies with an Explicit Function Mapping](snippets/python-language/dispatch-named-strategies-with-an-explicit-function-mapping.md) | python-language | pattern | configuration, interoperability |
 | [Dispatch on an Exact Tuple of Argument Types](snippets/python-language/dispatch-on-an-exact-tuple-of-argument-types.md) | python-language | pattern | data-transformation, interoperability, validation |
 | [Dispatch on First-Argument Type with functools.singledispatch](snippets/python-language/dispatch-on-first-argument-type-with-functools-singledispatch.md) | python-language | idiom | automation, interoperability |
+| [Enforce Unique Contiguous Ordered Codes with IntEnum](snippets/python-language/enforce-unique-contiguous-ordered-codes-with-intenum.md) | python-language | idiom | interoperability, validation |
 | [Handle Search Exhaustion with for/else](snippets/python-language/handle-search-exhaustion-with-for-else.md) | python-language | idiom | data-transformation, validation |
 | [Initialize a Closed Cooperative super() Diamond by Consuming Keyword Arguments](snippets/python-language/initialize-a-closed-cooperative-super-diamond-by-consuming-keyword-arguments.md) | python-language | pattern | interoperability, validation |
 | [Inspect Trusted Runtime Annotations while Preserving Unresolved Names](snippets/python-language/inspect-trusted-runtime-annotations-while-preserving-unresolved-names.md) | python-language | recipe | automation, validation |
@@ -588,6 +589,7 @@ not edit it by hand.
 | [Compute Exact Nominal Krippendorff's Alpha from Bounded Ratings with Missing Values](snippets/machine-learning-statistics/compute-exact-nominal-krippendorffs-alpha-from-bounded-ratings-with-missing-values.md) | machine-learning-statistics | algorithm | data-transformation, testing, validation |
 | [Compute Exact Pearson Chi-Square and Cramer's V Squared from a Bounded Contingency Table](snippets/machine-learning-statistics/compute-exact-pearson-chi-square-and-cramers-v-squared-from-a-bounded-contingency-table.md) | machine-learning-statistics | algorithm | data-transformation, testing, validation |
 | [Compute Exact Raw Cronbach's Alpha from a Bounded Integer Item-Score Matrix](snippets/machine-learning-statistics/compute-exact-raw-cronbachs-alpha-from-a-bounded-integer-item-score-matrix.md) | machine-learning-statistics | algorithm | data-transformation, testing, validation |
+| [Compute Exact Signed Squared Cosine from Sparse Integer Vectors](snippets/machine-learning-statistics/compute-exact-signed-squared-cosine-from-sparse-integer-vectors.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Compute Exact Silhouette Coefficients from a Bounded Integer Dissimilarity Matrix](snippets/machine-learning-statistics/compute-exact-silhouette-coefficients-from-a-bounded-integer-dissimilarity-matrix.md) | machine-learning-statistics | algorithm | data-transformation, testing, validation |
 | [Compute Exact Squared Energy Distance Between Two Bounded Integer Samples](snippets/machine-learning-statistics/compute-exact-squared-energy-distance-between-two-bounded-integer-samples.md) | machine-learning-statistics | algorithm | data-transformation, testing, validation |
 | [Compute Exact Squared Kendall Tau-b with Direction for Bounded Integer Pairs](snippets/machine-learning-statistics/compute-exact-squared-kendall-tau-b-with-direction-for-bounded-integer-pairs.md) | machine-learning-statistics | algorithm | data-transformation, validation |
@@ -617,6 +619,7 @@ not edit it by hand.
 | [Flag Groupwise Numeric Outliers with IQR Fences](snippets/machine-learning-statistics/flag-groupwise-numeric-outliers-with-iqr-fences.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Measure Drift Between Two Fixed-Bin Count Distributions with PSI](snippets/machine-learning-statistics/measure-drift-between-two-fixed-bin-count-distributions-with-psi.md) | machine-learning-statistics | algorithm | observability, validation |
 | [Plan Gap-Separated Expanding-Window Validation Splits for Ordered Rows](snippets/machine-learning-statistics/plan-gap-separated-expanding-window-validation-splits-for-ordered-rows.md) | machine-learning-statistics | algorithm | data-transformation, testing, validation |
+| [Query an Exact Empirical CDF from Sorted Integer Samples](snippets/machine-learning-statistics/query-an-exact-empirical-cdf-from-sorted-integer-samples.md) | machine-learning-statistics | recipe | data-transformation |
 | [Report Exact Binary Matthews-Correlation Evidence from Four Confusion Counts](snippets/machine-learning-statistics/report-exact-binary-matthews-correlation-evidence-from-four-confusion-counts.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Sample Weighted Negative Items Outside Explicit User Histories](snippets/machine-learning-statistics/sample-weighted-negative-items-outside-explicit-user-histories.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Sample Without Replacement from Category Counts](snippets/machine-learning-statistics/sample-without-replacement-from-category-counts.md) | machine-learning-statistics | recipe | data-transformation, testing |
@@ -667,6 +670,7 @@ not edit it by hand.
 | [Publish a New POSIX File Without Replacement and Sync Directory Entries](snippets/storage-databases/publish-a-new-posix-file-without-replacement-and-sync-directory-entries.md) | storage-databases | recipe | concurrency-control, persistence, resource-management |
 | [Read an Exact POSIX Byte Range with os.pread Without Moving the File Descriptor Offset](snippets/storage-databases/read-an-exact-posix-byte-range-with-os-pread-without-moving-the-file-descriptor-offset.md) | storage-databases | recipe | performance-optimization, resource-management, validation |
 | [Read and Write Bounded SQLite BLOB Slices with blobopen](snippets/storage-databases/read-and-write-bounded-sqlite-blob-slices-with-blobopen.md) | storage-databases | pattern | persistence, resource-management, validation |
+| [Read Every Named ZIP Member by ZipInfo When Names Repeat](snippets/storage-databases/read-every-named-zip-member-by-zipinfo-when-names-repeat.md) | storage-databases | recipe | parsing, persistence |
 | [Read the Last Bounded Binary Lines with a Read-Only mmap](snippets/storage-databases/read-the-last-bounded-binary-lines-with-a-read-only-mmap.md) | storage-databases | recipe | parsing, performance-optimization, resource-management |
 | [Recover a Verified Prefix from a Bounded CRC-Framed Byte Log](snippets/storage-databases/recover-a-verified-prefix-from-a-bounded-crc-framed-byte-log.md) | storage-databases | recipe | parsing, persistence, validation |
 | [Refresh a SQLite Read Cache After External Commits](snippets/storage-databases/refresh-a-sqlite-read-cache-after-external-commits.md) | storage-databases | pattern | caching, persistence |
@@ -914,6 +918,7 @@ not edit it by hand.
 | [Measure and Freeze Elapsed Time in a Context](snippets/observability-operations/measure-and-freeze-elapsed-time-in-a-context.md) | observability-operations | idiom | observability, performance-optimization |
 | [Measure Cache Hit Ratios from Monotonic Counter Snapshots](snippets/observability-operations/measure-cache-hit-ratios-from-monotonic-counter-snapshots.md) | observability-operations | algorithm | observability, validation |
 | [Measure Peak Python Allocations in an Owned Tracing Scope](snippets/observability-operations/measure-peak-python-allocations-in-a-owned-tracing-scope.md) | observability-operations | testing-technique | observability, testing |
+| [Measure Wall and Thread CPU Time for One Synchronous Operation](snippets/observability-operations/measure-wall-and-thread-cpu-time-for-one-synchronous-operation.md) | observability-operations | recipe | observability, performance-optimization |
 | [Merge Fixed-Bound Histograms at Their Shared Boundaries](snippets/observability-operations/merge-fixed-bound-histograms-at-their-shared-boundaries.md) | observability-operations | algorithm | data-transformation, observability, validation |
 | [Merge LoggerAdapter Defaults with Per-Call Logging Fields](snippets/observability-operations/merge-loggeradapter-defaults-with-per-call-logging-fields.md) | observability-operations | recipe | configuration, observability |
 | [Parse a Size-Capped systemd Journal Export Stream into Immutable Entries](snippets/observability-operations/parse-a-size-capped-systemd-journal-export-stream-into-immutable-entries.md) | observability-operations | recipe | observability, parsing, serialization, validation |
