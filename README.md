@@ -17,15 +17,15 @@ not edit it by hand.
 
 | Category | Scope | Snippets |
 | --- | --- | ---: |
-| [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 38 |
-| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 221 |
+| [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 39 |
+| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 222 |
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 45 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 37 |
 | [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 65 |
-| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 90 |
+| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 91 |
 | [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 73 |
-| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 59 |
-| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 99 |
+| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 60 |
+| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 100 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 34 |
 | [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 61 |
 | [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 39 |
@@ -39,6 +39,7 @@ not edit it by hand.
 | [Attach Best-Effort Cleanup with weakref.finalize Without Retaining the Owner](snippets/python-language/attach-best-effort-cleanup-with-weakref-finalize-without-retaining-the-owner.md) | python-language | pattern | lifecycle-management, resource-management |
 | [Attribute a Warning to the Caller Outside a Package](snippets/python-language/attribute-a-warning-to-the-caller-outside-a-package.md) | python-language | recipe | observability, validation |
 | [Batch Any Iterable Lazily with itertools.batched](snippets/python-language/batch-any-iterable-lazily-with-itertools-batched.md) | python-language | idiom | data-transformation, resource-management |
+| [Bind Call Arguments and Materialize Defaults from a Signature](snippets/python-language/bind-call-arguments-and-materialize-defaults-from-a-signature.md) | python-language | recipe | data-transformation, testing, validation |
 | [Bind Non-Leading Positional Arguments with functools.Placeholder](snippets/python-language/bind-non-leading-positional-arguments-with-functools-placeholder.md) | python-language | idiom | data-transformation, validation |
 | [Build a Read-Only Mapping with Canonical Text Keys](snippets/python-language/build-a-read-only-mapping-with-canonical-text-keys.md) | python-language | recipe | interoperability, validation |
 | [Build an Immutable Slice-Aware Sequence](snippets/python-language/build-an-immutable-slice-aware-sequence.md) | python-language | recipe | data-transformation, interoperability |
@@ -276,6 +277,7 @@ not edit it by hand.
 | [Select a Maximum-Weight Set of Non-Overlapping Half-Open Integer Intervals](snippets/algorithms-data-structures/select-a-maximum-weight-set-of-non-overlapping-half-open-integer-intervals.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Select a Minimum-Cost Set Cover with Canonical Ties](snippets/algorithms-data-structures/select-a-minimum-cost-set-cover-with-canonical-ties.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Select a Zero-Based Order Statistic from Bounded Integers with Three-Way Quickselect](snippets/algorithms-data-structures/select-a-zero-based-order-statistic-from-bounded-integers-with-three-way-quickselect.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
+| [Select a Zero-Based Order Statistic from Two Sorted Integer Sequences](snippets/algorithms-data-structures/select-a-zero-based-order-statistic-from-two-sorted-integer-sequences.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization |
 | [Select the Stable K Smallest Bounded Records with a Max-Heap](snippets/algorithms-data-structures/select-the-stable-k-smallest-bounded-records-with-a-max-heap.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Select Top-K Nodes for One Key with Deterministic Rendezvous Hashing](snippets/algorithms-data-structures/select-top-k-nodes-for-one-key-with-deterministic-rendezvous-hashing.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, resource-management |
 | [Send a Required Flow at Minimum Cost with a Residual Certificate](snippets/algorithms-data-structures/send-a-required-flow-at-minimum-cost-with-a-residual-certificate.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
@@ -509,6 +511,7 @@ not edit it by hand.
 | [Read CSV from a Borrowed Binary Stream Without Closing It](snippets/data-processing/read-csv-from-a-borrowed-binary-stream-without-closing-it.md) | data-processing | recipe | parsing, resource-management |
 | [Reconcile a Bounded Partial Record Under Explicit Field Policies](snippets/data-processing/reconcile-a-bounded-partial-record-under-explicit-field-policies.md) | data-processing | pattern | concurrency-control, data-transformation, validation |
 | [Reorder Bounded Out-of-Order Timestamped Records Under a Declared Lateness Bound](snippets/data-processing/reorder-bounded-out-of-order-timestamped-records-under-a-declared-lateness-bound.md) | data-processing | pattern | data-transformation, resource-management, validation |
+| [Replace Literal Strings in One Leftmost-Longest Pass](snippets/data-processing/replace-literal-strings-in-one-leftmost-longest-pass.md) | data-processing | recipe | data-transformation |
 | [Report Missing Grid-Tick Runs Without Enumerating the Grid](snippets/data-processing/report-missing-grid-tick-runs-without-enumerating-the-grid.md) | data-processing | algorithm | data-transformation, observability, validation |
 | [Report Unicode NFC Collisions Before Importing Keys](snippets/data-processing/report-unicode-nfc-collisions-before-importing-keys.md) | data-processing | recipe | data-transformation, validation |
 | [Reshape Repeated pandas Column Families with Wide-to-Long](snippets/data-processing/reshape-repeated-pandas-column-families-with-wide-to-long.md) | data-processing | integration | data-transformation, interoperability, validation |
@@ -606,6 +609,7 @@ not edit it by hand.
 | [Audit a Bounded Transaction Schedule for Conflict Serializability](snippets/storage-databases/audit-a-bounded-transaction-schedule-for-conflict-serializability.md) | storage-databases | algorithm | data-transformation, testing, validation |
 | [Audit Existing SQLite Foreign Key Violations Without Changing Enforcement](snippets/storage-databases/audit-existing-sqlite-foreign-key-violations-without-changing-enforcement.md) | storage-databases | testing-technique | persistence, validation |
 | [Audit One SQLite Table Against an Exact Ordered Column Contract](snippets/storage-databases/audit-one-sqlite-table-against-an-exact-ordered-column-contract.md) | storage-databases | testing-technique | persistence, testing, validation |
+| [Batch a SQLite IN Query Under the Connection Bind Limit](snippets/storage-databases/batch-a-sqlite-in-query-under-the-connection-bind-limit.md) | storage-databases | recipe | persistence, resource-management |
 | [Build a Bounded File Manifest with Internal Symlink Aliases](snippets/storage-databases/build-a-bounded-file-manifest-with-internal-symlink-aliases.md) | storage-databases | recipe | persistence, resource-management, validation |
 | [Build and Apply a Deterministic Mapping Delta](snippets/storage-databases/build-and-apply-a-deterministic-mapping-delta.md) | storage-databases | algorithm | data-transformation, persistence |
 | [Check Whether a Generated File Is Older Than Its Inputs](snippets/storage-databases/check-whether-a-generated-file-is-older-than-its-inputs.md) | storage-databases | recipe | automation, caching, validation |
@@ -678,6 +682,7 @@ not edit it by hand.
 | [Decode a Bounded Uncompressed TAR into Regular-File Byte Records](snippets/configuration-serialization/decode-a-bounded-uncompressed-tar-into-regular-file-byte-records.md) | configuration-serialization | recipe | data-transformation, interoperability, validation |
 | [Decode a Closed Integer Capability Mask with Strict IntFlag Boundaries](snippets/configuration-serialization/decode-a-closed-integer-capability-mask-with-strict-intflag-boundaries.md) | configuration-serialization | recipe | configuration, interoperability, parsing, validation |
 | [Decode Canonical Unpadded Base64url Under Encoded and Decoded Byte Limits](snippets/configuration-serialization/decode-canonical-unpadded-base64url-under-encoded-and-decoded-byte-limits.md) | configuration-serialization | recipe | interoperability, parsing, serialization, validation |
+| [Decode Fixed-Endian Signed 16-Bit Samples into a Native Array](snippets/configuration-serialization/decode-fixed-endian-signed-16-bit-samples-into-a-native-array.md) | configuration-serialization | recipe | data-transformation, interoperability |
 | [Decode One Bounded Strict UTF-8 Stream Across Arbitrary Byte Chunks](snippets/configuration-serialization/decode-one-bounded-strict-utf-8-stream-across-arbitrary-byte-chunks.md) | configuration-serialization | recipe | parsing, resource-management, validation |
 | [Decompress Gzip Bytes with an Explicit Output Limit](snippets/configuration-serialization/decompress-gzip-bytes-with-an-explicit-output-limit.md) | configuration-serialization | recipe | parsing, validation |
 | [Derive a Versioned Cache Key from Deterministically Encoded Bounded JSON](snippets/configuration-serialization/derive-a-versioned-cache-key-from-deterministically-encoded-bounded-json.md) | configuration-serialization | algorithm | caching, configuration, serialization, validation |
