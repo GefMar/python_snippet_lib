@@ -18,16 +18,16 @@ not edit it by hand.
 | Category | Scope | Snippets |
 | --- | --- | ---: |
 | [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 43 |
-| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 227 |
+| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 228 |
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 45 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 37 |
 | [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 65 |
-| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 95 |
-| [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 74 |
-| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 61 |
+| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 96 |
+| [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 75 |
+| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 62 |
 | [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 103 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 34 |
-| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 67 |
+| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 68 |
 | [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 40 |
 
 ### Snippets
@@ -111,6 +111,7 @@ not edit it by hand.
 | [Build a Static Interval Stabbing Index for Bounded Overlapping Integer Ranges](snippets/algorithms-data-structures/build-a-static-interval-stabbing-index-for-bounded-overlapping-integer-ranges.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Build an Exact Integer Alias Table for Repeated Weighted Sampling](snippets/algorithms-data-structures/build-an-exact-integer-alias-table-for-repeated-weighted-sampling.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, testing |
 | [Build and Evaluate a Bounded Binary Assignment Constraint System](snippets/algorithms-data-structures/build-and-evaluate-a-bounded-binary-assignment-constraint-system.md) | algorithms-data-structures | algorithm | data-transformation, resource-management, validation |
+| [Certify a Rectangle Tiling with Exact Area and Corner Parity](snippets/algorithms-data-structures/certify-a-rectangle-tiling-with-exact-area-and-corner-parity.md) | algorithms-data-structures | algorithm | data-transformation, validation |
 | [Choose a Deterministic Minimum Point Set Stabbing Bounded Closed Integer Intervals](snippets/algorithms-data-structures/choose-a-deterministic-minimum-point-set-stabbing-bounded-closed-integer-intervals.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Choose Nice Linear Axis Bounds and Tick Step](snippets/algorithms-data-structures/choose-nice-linear-axis-bounds-and-tick-step.md) | algorithms-data-structures | algorithm | data-transformation |
 | [Choose the First Eligible Candidate from Ordered Priority Groups](snippets/algorithms-data-structures/choose-the-first-eligible-candidate-from-ordered-priority-groups.md) | algorithms-data-structures | algorithm | data-transformation, validation |
@@ -536,6 +537,7 @@ not edit it by hand.
 | [Sample a Weighted Stream with a Fixed-Size Reservoir](snippets/data-processing/sample-a-weighted-stream-with-a-fixed-size-reservoir.md) | data-processing | algorithm | data-transformation, performance-optimization, resource-management |
 | [Sample Stream Items Independently with a Fixed Probability](snippets/data-processing/sample-stream-items-independently-with-a-fixed-probability.md) | data-processing | algorithm | data-transformation |
 | [Select One Record per Key with an Explicit Ranking Rule](snippets/data-processing/select-one-record-per-key-with-an-explicit-ranking-rule.md) | data-processing | algorithm | data-transformation, validation |
+| [Select Preferred Inline Text from a MIME Message](snippets/data-processing/select-preferred-inline-text-from-a-mime-message.md) | data-processing | recipe | interoperability, parsing |
 | [Shift an Exact Date by Whole Calendar Months with Explicit Day Overflow](snippets/data-processing/shift-an-exact-date-by-whole-calendar-months-with-explicit-day-overflow.md) | data-processing | algorithm | data-transformation, validation |
 | [Split a Half-Open Date Range into Clipped ISO Weeks](snippets/data-processing/split-a-half-open-date-range-into-clipped-iso-weeks.md) | data-processing | algorithm | data-transformation, validation |
 | [Split Quoted and Bracketed Log Fields](snippets/data-processing/split-quoted-and-bracketed-log-fields.md) | data-processing | algorithm | data-transformation, parsing |
@@ -617,6 +619,7 @@ not edit it by hand.
 | [Plan Gap-Separated Expanding-Window Validation Splits for Ordered Rows](snippets/machine-learning-statistics/plan-gap-separated-expanding-window-validation-splits-for-ordered-rows.md) | machine-learning-statistics | algorithm | data-transformation, testing, validation |
 | [Report Exact Binary Matthews-Correlation Evidence from Four Confusion Counts](snippets/machine-learning-statistics/report-exact-binary-matthews-correlation-evidence-from-four-confusion-counts.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Sample Weighted Negative Items Outside Explicit User Histories](snippets/machine-learning-statistics/sample-weighted-negative-items-outside-explicit-user-histories.md) | machine-learning-statistics | algorithm | data-transformation, validation |
+| [Sample Without Replacement from Category Counts](snippets/machine-learning-statistics/sample-without-replacement-from-category-counts.md) | machine-learning-statistics | recipe | data-transformation, testing |
 | [Score Feature Importances Against Bounded Null Runs](snippets/machine-learning-statistics/score-feature-importances-against-bounded-null-runs.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Select a Forecast Vector Only When It Beats a Frozen Baseline](snippets/machine-learning-statistics/select-a-forecast-vector-only-when-it-beats-a-frozen-baseline.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Select the Lower Weighted Median of Bounded Integer Observations](snippets/machine-learning-statistics/select-the-lower-weighted-median-of-bounded-integer-observations.md) | machine-learning-statistics | algorithm | data-transformation, validation |
@@ -633,6 +636,7 @@ not edit it by hand.
 | [Compare and Swap a Versioned SQLite Setting with One Conditional Update](snippets/storage-databases/compare-and-swap-a-versioned-sqlite-setting-with-one-conditional-update.md) | storage-databases | recipe | concurrency-control, persistence |
 | [Compare Bounded Apparent Sizes of Two File-Tree Snapshots](snippets/storage-databases/compare-bounded-apparent-sizes-of-two-file-tree-snapshots.md) | storage-databases | recipe | automation, persistence, resource-management |
 | [Compare Direct and Triggered SQLite Row Changes for One Write](snippets/storage-databases/compare-direct-and-triggered-sqlite-row-changes-for-one-write.md) | storage-databases | testing-technique | observability, persistence, testing |
+| [Compare Two Stable Regular Files by Content in Bounded Memory](snippets/storage-databases/compare-two-stable-regular-files-by-content-in-bounded-memory.md) | storage-databases | recipe | resource-management, validation |
 | [Compile a Bounded T-String into SQLite Qmark SQL and Parameters](snippets/storage-databases/compile-a-bounded-t-string-into-sqlite-qmark-sql-and-parameters.md) | storage-databases | pattern | persistence, security, validation |
 | [Decide Whether to Restore a Versioned Snapshot](snippets/storage-databases/decide-whether-to-restore-a-versioned-snapshot.md) | storage-databases | algorithm | configuration, data-transformation, validation |
 | [Enable SQLite Foreign Keys Before Starting Managed Transactions](snippets/storage-databases/enable-sqlite-foreign-keys-before-starting-managed-transactions.md) | storage-databases | recipe | persistence, validation |
@@ -866,6 +870,7 @@ not edit it by hand.
 | [Keep Repeated Tokens in Matching Blocks with SequenceMatcher](snippets/testing-tooling/keep-repeated-tokens-in-matching-blocks-with-sequence-matcher.md) | testing-tooling | testing-technique | data-transformation, testing |
 | [Parse a Bounded Debugger Function Listing into Canonical Source Locations](snippets/testing-tooling/parse-a-bounded-debugger-function-listing-into-canonical-source-locations.md) | testing-tooling | testing-technique | parsing, testing, validation |
 | [Parse a Bounded Space-Indented Test Outline into Leaf Paths](snippets/testing-tooling/parse-a-bounded-space-indented-test-outline-into-leaf-paths.md) | testing-tooling | algorithm | parsing, testing, validation |
+| [Refresh a Cached Path.info Classification After Replacing an Entry](snippets/testing-tooling/refresh-a-cached-path-info-classification-after-replacing-an-entry.md) | testing-tooling | testing-technique | testing, validation |
 | [Render a Unified Diff for Byte Lines with Unknown Encoding](snippets/testing-tooling/render-a-unified-diff-for-byte-lines-with-unknown-encoding.md) | testing-tooling | testing-technique | data-transformation, testing |
 | [Render Bounded Request Snapshots into a Length-Framed Replay Payload](snippets/testing-tooling/render-bounded-request-snapshots-into-a-length-framed-replay-payload.md) | testing-tooling | recipe | networking, serialization, testing, validation |
 | [Replace Selected Python NAME Tokens without Touching Strings or Comments](snippets/testing-tooling/replace-selected-python-name-tokens-without-touching-strings-or-comments.md) | testing-tooling | recipe | automation, testing, validation |
