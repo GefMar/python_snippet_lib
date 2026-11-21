@@ -18,17 +18,17 @@ not edit it by hand.
 | Category | Scope | Snippets |
 | --- | --- | ---: |
 | [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 38 |
-| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 219 |
+| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 220 |
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 43 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 37 |
 | [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 65 |
-| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 87 |
+| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 89 |
 | [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 72 |
 | [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 57 |
 | [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 99 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 34 |
-| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 58 |
-| [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 37 |
+| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 59 |
+| [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 38 |
 
 ### Snippets
 
@@ -174,6 +174,7 @@ not edit it by hand.
 | [Encode and Decode Bounded Labelled Trees with Prüfer Sequences](snippets/algorithms-data-structures/encode-and-decode-bounded-labelled-trees-with-prufer-sequences.md) | algorithms-data-structures | algorithm | data-transformation, testing, validation |
 | [Enumerate Bounded Maximal Cliques Deterministically with Bron-Kerbosch](snippets/algorithms-data-structures/enumerate-bounded-maximal-cliques-deterministically-with-bron-kerbosch.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Enumerate Primes in a Bounded Half-Open Range with a Segmented Sieve](snippets/algorithms-data-structures/enumerate-primes-in-a-bounded-half-open-range-with-a-segmented-sieve.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
+| [Enumerate the K Smallest Pair Sums from Two Sorted Integer Sequences](snippets/algorithms-data-structures/enumerate-the-k-smallest-pair-sums-from-two-sorted-integer-sequences.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization |
 | [Estimate Distinct Byte Strings with a Mergeable HyperLogLog](snippets/algorithms-data-structures/estimate-distinct-byte-strings-with-a-mergeable-hyperloglog.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization |
 | [Estimate Stream Frequencies with a Count-Min Sketch](snippets/algorithms-data-structures/estimate-stream-frequencies-with-a-count-min-sketch.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization |
 | [Evaluate a Bounded Float Polynomial with Fused Horner Steps](snippets/algorithms-data-structures/evaluate-a-bounded-float-polynomial-with-fused-horner-steps.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
@@ -454,6 +455,7 @@ not edit it by hand.
 | [Co-Group Bounded Sorted Integer Keys with Full-Outer Coverage](snippets/data-processing/co-group-bounded-sorted-integer-keys-with-full-outer-coverage.md) | data-processing | algorithm | data-transformation, validation |
 | [Collect Expected Parse Failures Without Stopping a Batch](snippets/data-processing/collect-expected-parse-failures-without-stopping-a-batch.md) | data-processing | pattern | parsing, validation |
 | [Compare Ordered Integer Time-Series Snapshots with Explicit Tolerance](snippets/data-processing/compare-ordered-integer-time-series-snapshots-with-explicit-tolerance.md) | data-processing | algorithm | data-transformation, validation |
+| [Count Changed Positions Between Two Run-Length Encoded Sequences](snippets/data-processing/count-changed-positions-between-two-run-length-encoded-sequences.md) | data-processing | algorithm | data-transformation, validation |
 | [Count Distinct Active Keys in a Trailing Event Window](snippets/data-processing/count-distinct-active-keys-in-a-trailing-event-window.md) | data-processing | algorithm | data-transformation, observability |
 | [Count Static Imports Across Bounded Python Notebook Cells](snippets/data-processing/count-static-imports-across-bounded-python-notebook-cells.md) | data-processing | algorithm | data-transformation, parsing, validation |
 | [Count Working Dates in a Half-Open Range with Explicit Closures](snippets/data-processing/count-working-dates-in-a-half-open-range-with-explicit-closures.md) | data-processing | algorithm | data-transformation, validation |
@@ -500,6 +502,7 @@ not edit it by hand.
 | [Project Bounded Records into Multiple Closed Output Schemas](snippets/data-processing/project-bounded-records-into-multiple-closed-output-schemas.md) | data-processing | recipe | data-transformation, resource-management, validation |
 | [Project Nested Records with Explicit Field Paths](snippets/data-processing/project-nested-records-with-explicit-field-paths.md) | data-processing | recipe | data-transformation, validation |
 | [Read Bounded CSV Text into pandas Under an Explicit Schema](snippets/data-processing/read-bounded-csv-text-into-pandas-under-an-explicit-schema.md) | data-processing | integration | data-transformation, parsing, validation |
+| [Read CSV from a Borrowed Binary Stream Without Closing It](snippets/data-processing/read-csv-from-a-borrowed-binary-stream-without-closing-it.md) | data-processing | recipe | parsing, resource-management |
 | [Reconcile a Bounded Partial Record Under Explicit Field Policies](snippets/data-processing/reconcile-a-bounded-partial-record-under-explicit-field-policies.md) | data-processing | pattern | concurrency-control, data-transformation, validation |
 | [Reorder Bounded Out-of-Order Timestamped Records Under a Declared Lateness Bound](snippets/data-processing/reorder-bounded-out-of-order-timestamped-records-under-a-declared-lateness-bound.md) | data-processing | pattern | data-transformation, resource-management, validation |
 | [Report Missing Grid-Tick Runs Without Enumerating the Grid](snippets/data-processing/report-missing-grid-tick-runs-without-enumerating-the-grid.md) | data-processing | algorithm | data-transformation, observability, validation |
@@ -825,6 +828,7 @@ not edit it by hand.
 | [Index Bounded Python Scope Bindings with symtable without Execution](snippets/testing-tooling/index-bounded-python-scope-bindings-with-symtable-without-execution.md) | testing-tooling | testing-technique | parsing, testing, validation |
 | [Inject One Failure at Every Ordered Checkpoint](snippets/testing-tooling/inject-one-failure-at-every-ordered-checkpoint.md) | testing-tooling | pattern | lifecycle-management, resource-management, testing, validation |
 | [Inspect Bounded Named Class Attributes Without Invoking Descriptors](snippets/testing-tooling/inspect-bounded-named-class-attributes-without-invoking-descriptors.md) | testing-tooling | testing-technique | automation, testing, validation |
+| [Keep Repeated Tokens in Matching Blocks with SequenceMatcher](snippets/testing-tooling/keep-repeated-tokens-in-matching-blocks-with-sequence-matcher.md) | testing-tooling | testing-technique | data-transformation, testing |
 | [Parse a Bounded Debugger Function Listing into Canonical Source Locations](snippets/testing-tooling/parse-a-bounded-debugger-function-listing-into-canonical-source-locations.md) | testing-tooling | testing-technique | parsing, testing, validation |
 | [Parse a Bounded Space-Indented Test Outline into Leaf Paths](snippets/testing-tooling/parse-a-bounded-space-indented-test-outline-into-leaf-paths.md) | testing-tooling | algorithm | parsing, testing, validation |
 | [Render Bounded Request Snapshots into a Length-Framed Replay Payload](snippets/testing-tooling/render-bounded-request-snapshots-into-a-length-framed-replay-payload.md) | testing-tooling | recipe | networking, serialization, testing, validation |
@@ -865,6 +869,7 @@ not edit it by hand.
 | [Locate an Exact Quantile Rank in Bounded Fixed-Bucket Counts](snippets/observability-operations/locate-an-exact-quantile-rank-in-bounded-fixed-bucket-counts.md) | observability-operations | algorithm | data-transformation, observability, validation |
 | [Measure and Freeze Elapsed Time in a Context](snippets/observability-operations/measure-and-freeze-elapsed-time-in-a-context.md) | observability-operations | idiom | observability, performance-optimization |
 | [Measure Cache Hit Ratios from Monotonic Counter Snapshots](snippets/observability-operations/measure-cache-hit-ratios-from-monotonic-counter-snapshots.md) | observability-operations | algorithm | observability, validation |
+| [Measure Peak Python Allocations in an Owned Tracing Scope](snippets/observability-operations/measure-peak-python-allocations-in-a-owned-tracing-scope.md) | observability-operations | testing-technique | observability, testing |
 | [Merge Fixed-Bound Histograms at Their Shared Boundaries](snippets/observability-operations/merge-fixed-bound-histograms-at-their-shared-boundaries.md) | observability-operations | algorithm | data-transformation, observability, validation |
 | [Parse a Size-Capped systemd Journal Export Stream into Immutable Entries](snippets/observability-operations/parse-a-size-capped-systemd-journal-export-stream-into-immutable-entries.md) | observability-operations | recipe | observability, parsing, serialization, validation |
 | [Parse One Bounded RFC 5424 Syslog Message under a Closed Version-One Profile](snippets/observability-operations/parse-one-bounded-rfc-5424-syslog-message-under-a-closed-version-one-profile.md) | observability-operations | recipe | observability, parsing, validation |
