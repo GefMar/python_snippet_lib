@@ -18,16 +18,16 @@ not edit it by hand.
 | Category | Scope | Snippets |
 | --- | --- | ---: |
 | [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 48 |
-| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 238 |
+| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 239 |
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 46 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 37 |
 | [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 65 |
-| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 102 |
+| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 103 |
 | [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 78 |
-| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 67 |
-| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 105 |
+| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 68 |
+| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 106 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 34 |
-| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 74 |
+| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 75 |
 | [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 42 |
 
 ### Snippets
@@ -252,6 +252,7 @@ not edit it by hand.
 | [Generate Smooth Weighted Round-Robin Slots for Fixed Consumers](snippets/algorithms-data-structures/generate-smooth-weighted-round-robin-slots-for-fixed-consumers.md) | algorithms-data-structures | algorithm | data-transformation, resource-management |
 | [Group a One-Dimensional NumPy Structured Array into Stable Index Sets](snippets/algorithms-data-structures/group-a-one-dimensional-numpy-structured-array-into-stable-index-sets.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Interpolate a Global Polynomial Exactly from Bounded Integer Points](snippets/algorithms-data-structures/interpolate-a-global-polynomial-exactly-from-bounded-integer-points.md) | algorithms-data-structures | algorithm | data-transformation, validation |
+| [Invert a Validated Index Permutation to Restore Parallel Records](snippets/algorithms-data-structures/invert-a-validated-index-permutation-to-restore-parallel-records.md) | algorithms-data-structures | recipe | data-transformation, validation |
 | [Invert Bounded Nonzero Prime-Field Residues with One Modular Inversion](snippets/algorithms-data-structures/invert-bounded-nonzero-prime-field-residues-with-one-modular-inversion.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Maintain a Bounded Indexed Min-Priority Queue with Exact Updates](snippets/algorithms-data-structures/maintain-a-bounded-indexed-min-priority-queue-with-exact-updates.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Maintain a Bounded Integer Multiset with Fenwick Rank and Select](snippets/algorithms-data-structures/maintain-a-bounded-integer-multiset-with-fenwick-rank-and-select.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
@@ -569,6 +570,7 @@ not edit it by hand.
 | [Try an Optional Text Header Without Consuming a Mismatch](snippets/data-processing/try-an-optional-text-header-without-consuming-a-mismatch.md) | data-processing | recipe | data-transformation, parsing |
 | [Validate and Expand a Bounded Image Variant Specification](snippets/data-processing/validate-and-expand-a-bounded-image-variant-specification.md) | data-processing | algorithm | data-transformation, resource-management, validation |
 | [Validate Parsed CSV Rows with Bounded Structured Problems](snippets/data-processing/validate-parsed-csv-rows-with-bounded-structured-problems.md) | data-processing | recipe | parsing, validation |
+| [Yield Only Complete Trailing Windows from a One-Shot Iterable](snippets/data-processing/yield-only-complete-trailing-windows-from-a-one-shot-iterable.md) | data-processing | recipe | data-transformation |
 | [Yield Stream Items with Bounded Neighbor Context](snippets/data-processing/yield-stream-items-with-bounded-neighbor-context.md) | data-processing | recipe | data-transformation, performance-optimization |
 | [Accumulate and Merge Finite Mean and Variance Statistics Under a Count Limit](snippets/machine-learning-statistics/accumulate-and-merge-finite-mean-and-variance-statistics-under-a-count-limit.md) | machine-learning-statistics | algorithm | data-transformation, performance-optimization, validation |
 | [Adjust Bounded Exact P-Values with Holm's Step-Down Method](snippets/machine-learning-statistics/adjust-bounded-exact-p-values-with-holms-step-down-method.md) | machine-learning-statistics | algorithm | data-transformation, validation |
@@ -696,6 +698,7 @@ not edit it by hand.
 | [Read and Write Bounded SQLite BLOB Slices with blobopen](snippets/storage-databases/read-and-write-bounded-sqlite-blob-slices-with-blobopen.md) | storage-databases | pattern | persistence, resource-management, validation |
 | [Read Every Named ZIP Member by ZipInfo When Names Repeat](snippets/storage-databases/read-every-named-zip-member-by-zipinfo-when-names-repeat.md) | storage-databases | recipe | parsing, persistence |
 | [Read the Last Bounded Binary Lines with a Read-Only mmap](snippets/storage-databases/read-the-last-bounded-binary-lines-with-a-read-only-mmap.md) | storage-databases | recipe | parsing, performance-optimization, resource-management |
+| [Recognize a Stale SQLite WAL Write Upgrade by Its Extended Error Code](snippets/storage-databases/recognize-a-stale-sqlite-wal-write-upgrade-by-its-extended-error-code.md) | storage-databases | recipe | concurrency-control, persistence, retry-recovery |
 | [Recover a Verified Prefix from a Bounded CRC-Framed Byte Log](snippets/storage-databases/recover-a-verified-prefix-from-a-bounded-crc-framed-byte-log.md) | storage-databases | recipe | parsing, persistence, validation |
 | [Refresh a SQLite Read Cache After External Commits](snippets/storage-databases/refresh-a-sqlite-read-cache-after-external-commits.md) | storage-databases | pattern | caching, persistence |
 | [Reject Ambiguous SQLite Row Aliases Before Fetching](snippets/storage-databases/reject-ambiguous-sqlite-row-aliases-before-fetching.md) | storage-databases | pattern | persistence, validation |
@@ -734,6 +737,7 @@ not edit it by hand.
 | [Decode Fixed-Endian Signed 16-Bit Samples into a Native Array](snippets/configuration-serialization/decode-fixed-endian-signed-16-bit-samples-into-a-native-array.md) | configuration-serialization | recipe | data-transformation, interoperability |
 | [Decode Fixed-Width Packed Rows with a struct Iterator](snippets/configuration-serialization/decode-fixed-width-packed-rows-with-struct-iter-unpack.md) | configuration-serialization | recipe | interoperability, parsing |
 | [Decode One Bounded Strict UTF-8 Stream Across Arbitrary Byte Chunks](snippets/configuration-serialization/decode-one-bounded-strict-utf-8-stream-across-arbitrary-byte-chunks.md) | configuration-serialization | recipe | parsing, resource-management, validation |
+| [Decode One JSON Prefix Before an Explicit Separator](snippets/configuration-serialization/decode-one-json-prefix-before-an-explicit-separator.md) | configuration-serialization | recipe | interoperability, parsing |
 | [Decompress Gzip Bytes with an Explicit Output Limit](snippets/configuration-serialization/decompress-gzip-bytes-with-an-explicit-output-limit.md) | configuration-serialization | recipe | parsing, validation |
 | [Derive a Versioned Cache Key from Deterministically Encoded Bounded JSON](snippets/configuration-serialization/derive-a-versioned-cache-key-from-deterministically-encoded-bounded-json.md) | configuration-serialization | algorithm | caching, configuration, serialization, validation |
 | [Derive a Versioned Record Key from Explicit Identity Fields](snippets/configuration-serialization/derive-a-versioned-record-key-from-explicit-identity-fields.md) | configuration-serialization | algorithm | serialization, validation |
@@ -900,6 +904,7 @@ not edit it by hand.
 | [Index Bounded Python Scope Bindings with symtable without Execution](snippets/testing-tooling/index-bounded-python-scope-bindings-with-symtable-without-execution.md) | testing-tooling | testing-technique | parsing, testing, validation |
 | [Inject One Failure at Every Ordered Checkpoint](snippets/testing-tooling/inject-one-failure-at-every-ordered-checkpoint.md) | testing-tooling | pattern | lifecycle-management, resource-management, testing, validation |
 | [Inspect Bounded Named Class Attributes Without Invoking Descriptors](snippets/testing-tooling/inspect-bounded-named-class-attributes-without-invoking-descriptors.md) | testing-tooling | testing-technique | automation, testing, validation |
+| [Invalidate Cached ABC Eligibility After Virtual Subclass Registration](snippets/testing-tooling/invalidate-cached-abc-eligibility-after-virtual-subclass-registration.md) | testing-tooling | testing-technique | caching, interoperability, testing |
 | [Keep Repeated Tokens in Matching Blocks with SequenceMatcher](snippets/testing-tooling/keep-repeated-tokens-in-matching-blocks-with-sequence-matcher.md) | testing-tooling | testing-technique | data-transformation, testing |
 | [Locate the Innermost Failing Expression as UTF-8 Byte Columns](snippets/testing-tooling/locate-the-innermost-failing-expression-as-utf-8-byte-columns.md) | testing-tooling | testing-technique | observability, testing |
 | [Parse a Bounded Debugger Function Listing into Canonical Source Locations](snippets/testing-tooling/parse-a-bounded-debugger-function-listing-into-canonical-source-locations.md) | testing-tooling | testing-technique | parsing, testing, validation |
