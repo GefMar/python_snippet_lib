@@ -17,17 +17,17 @@ not edit it by hand.
 
 | Category | Scope | Snippets |
 | --- | --- | ---: |
-| [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 48 |
+| [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 49 |
 | [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 239 |
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 46 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 37 |
 | [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 65 |
-| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 103 |
+| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 105 |
 | [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 78 |
 | [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 68 |
-| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 106 |
+| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 107 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 34 |
-| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 75 |
+| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 76 |
 | [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 42 |
 
 ### Snippets
@@ -71,6 +71,7 @@ not edit it by hand.
 | [Pass Constructor-Only Context with dataclasses.InitVar](snippets/python-language/pass-constructor-only-context-with-initvar.md) | python-language | idiom | data-transformation, validation |
 | [Preserve Span Invariants with a Custom Replace Protocol](snippets/python-language/preserve-span-invariants-with-a-custom-replace-protocol.md) | python-language | pattern | data-transformation, interoperability, validation |
 | [Read a Fixed-Width Byte Record with the Index Protocol](snippets/python-language/read-a-fixed-width-byte-record-with-the-index-protocol.md) | python-language | recipe | data-transformation, validation |
+| [Read Direct Generic Base Arguments at Runtime](snippets/python-language/read-direct-generic-base-arguments-at-runtime.md) | python-language | recipe | interoperability, testing |
 | [Read Fixed-Size Blocks with iter() and a Sentinel](snippets/python-language/read-fixed-size-blocks-with-iter-sentinel.md) | python-language | idiom | performance-optimization, resource-management |
 | [Recompute Abstract Methods After Installing Implementations with a Class Decorator](snippets/python-language/recompute-abstract-methods-after-installing-implementations-with-a-class-decorator.md) | python-language | recipe | interoperability, testing |
 | [Report Multiple Invalid Options in One ExceptionGroup](snippets/python-language/report-multiple-invalid-options-in-one-exceptiongroup.md) | python-language | recipe | configuration, validation |
@@ -477,6 +478,7 @@ not edit it by hand.
 | [Audit pandas Missing-Value Shares Against Column Policies](snippets/data-processing/audit-pandas-missing-value-shares-against-column-policies.md) | data-processing | integration | data-transformation, validation |
 | [Batch Items by Estimated Byte Size](snippets/data-processing/batch-items-by-estimated-byte-size.md) | data-processing | algorithm | data-transformation, resource-management |
 | [Bound Forward Counter Deltas from Two Modular Readings](snippets/data-processing/bound-forward-counter-deltas-from-two-modular-readings.md) | data-processing | recipe | data-transformation, observability, validation |
+| [Branch SHA-256 Digests After One Shared Prefix](snippets/data-processing/branch-sha-256-digests-after-one-shared-prefix.md) | data-processing | recipe | data-transformation, performance-optimization |
 | [Build a Bounded Structural Profile of a pandas DataFrame](snippets/data-processing/build-a-bounded-structural-profile-of-a-pandas-dataframe.md) | data-processing | integration | data-transformation, observability, validation |
 | [Build a Conflict-Checked Remap from Synthetic XLSX Review Rows](snippets/data-processing/build-a-conflict-checked-remap-from-synthetic-xlsx-review-rows.md) | data-processing | integration | data-transformation, interoperability, validation |
 | [Build Bounded Digest Summaries Across Explicit Lookback Horizons](snippets/data-processing/build-bounded-digest-summaries-across-explicit-lookback-horizons.md) | data-processing | algorithm | data-transformation, resource-management, validation |
@@ -511,6 +513,7 @@ not edit it by hand.
 | [Find Deterministic Content-Defined Boundaries in Bounded Bytes with a Rolling Fingerprint](snippets/data-processing/find-deterministic-content-defined-boundaries-in-bounded-bytes-with-a-rolling-fingerprint.md) | data-processing | algorithm | caching, data-transformation, performance-optimization |
 | [Find the Nth Weekday in a Calendar Month](snippets/data-processing/find-the-nth-weekday-in-a-calendar-month.md) | data-processing | recipe | data-transformation |
 | [Group Items by an Exact Compatibility Signature and Report Unmatched Inputs](snippets/data-processing/group-items-by-an-exact-compatibility-signature-and-report-unmatched-inputs.md) | data-processing | algorithm | data-transformation, validation |
+| [Guard Decimal Conversion Against Implicit Binary Floats](snippets/data-processing/guard-decimal-conversion-against-implicit-binary-floats.md) | data-processing | recipe | data-transformation, validation |
 | [Integrate Regular Rate Samples Across Explicit Time Buckets](snippets/data-processing/integrate-regular-rate-samples-across-explicit-time-buckets.md) | data-processing | algorithm | data-transformation, observability, validation |
 | [Interleave Bounded Finite Tuple Sources Round-Robin Until Exhausted](snippets/data-processing/interleave-bounded-finite-tuple-sources-round-robin-until-exhausted.md) | data-processing | algorithm | data-transformation, performance-optimization, validation |
 | [Interpolate Increasing Integer Time-Series Points Exactly](snippets/data-processing/interpolate-increasing-integer-time-series-points-exactly.md) | data-processing | algorithm | data-transformation, validation |
@@ -794,6 +797,7 @@ not edit it by hand.
 | [Parse a Closed RFC 3339 Timestamp Subset into an Aware Datetime](snippets/configuration-serialization/parse-a-closed-rfc-3339-timestamp-subset-into-an-aware-datetime.md) | configuration-serialization | recipe | configuration, interoperability, parsing, validation |
 | [Parse and Compare Bounded Semantic Versions 2.0.0](snippets/configuration-serialization/parse-and-compare-bounded-semantic-versions-2-0-0.md) | configuration-serialization | recipe | configuration, interoperability, parsing, serialization, validation |
 | [Parse and Render a Bounded Intel HEX Image Under a Closed Addressing Profile](snippets/configuration-serialization/parse-and-render-a-bounded-intel-hex-image-under-a-closed-addressing-profile.md) | configuration-serialization | recipe | interoperability, parsing, serialization, validation |
+| [Parse and Render a Canonical ISO Week Date](snippets/configuration-serialization/parse-and-render-a-canonical-iso-week-date.md) | configuration-serialization | recipe | parsing, serialization |
 | [Parse Bounded TOML into an Immutable Typed Tree](snippets/configuration-serialization/parse-bounded-toml-into-an-immutable-typed-tree.md) | configuration-serialization | recipe | configuration, parsing, serialization, validation |
 | [Parse Bounded UTF-8 JSON Without Duplicate Object Names or Non-Finite Numbers](snippets/configuration-serialization/parse-bounded-utf-8-json-without-duplicate-object-names-or-non-finite-numbers.md) | configuration-serialization | recipe | parsing, security, serialization, validation |
 | [Parse Compact Durations into timedelta](snippets/configuration-serialization/parse-compact-durations-into-timedelta.md) | configuration-serialization | recipe | configuration, parsing, validation |
@@ -882,6 +886,7 @@ not edit it by hand.
 | [Copy a Test Fixture Tree with an Explicit Symlink Policy](snippets/testing-tooling/copy-a-test-fixture-tree-with-an-explicit-symlink-policy.md) | testing-tooling | testing-technique | resource-management, testing |
 | [Decode Bounded Python Source Bytes with Python Encoding Detection](snippets/testing-tooling/decode-bounded-python-source-bytes-with-tokenize-detect-encoding.md) | testing-tooling | testing-technique | parsing, testing, validation |
 | [Drive sched Events Deterministically with a Manually Advanced Clock](snippets/testing-tooling/drive-sched-events-deterministically-with-a-manually-advanced-clock.md) | testing-tooling | testing-technique | lifecycle-management, testing, validation |
+| [Enumerate Binary Gray-Code Test Cases with the Changed Bit](snippets/testing-tooling/enumerate-binary-gray-code-test-cases-with-the-changed-bit.md) | testing-tooling | testing-technique | data-transformation, testing |
 | [Enumerate Every Contiguous Chunking of Bounded Bytes for Stream Tests](snippets/testing-tooling/enumerate-every-contiguous-chunking-of-bounded-bytes-for-stream-tests.md) | testing-tooling | testing-technique | testing, validation |
 | [Enumerate Every Topological Order of a Tiny DAG for Schedule Tests](snippets/testing-tooling/enumerate-every-topological-order-of-a-tiny-dag-for-schedule-tests.md) | testing-tooling | testing-technique | testing, validation |
 | [Extract a Bounded Static Python Annotation Index without Evaluation](snippets/testing-tooling/extract-a-bounded-static-python-annotation-index-without-evaluation.md) | testing-tooling | testing-technique | parsing, testing, validation |
