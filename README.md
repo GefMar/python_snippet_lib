@@ -18,17 +18,17 @@ not edit it by hand.
 | Category | Scope | Snippets |
 | --- | --- | ---: |
 | [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 38 |
-| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 215 |
+| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 216 |
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 42 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 37 |
 | [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 65 |
 | [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 85 |
 | [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 72 |
-| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 54 |
-| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 97 |
+| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 55 |
+| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 99 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 34 |
 | [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 56 |
-| [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 36 |
+| [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 37 |
 
 ### Snippets
 
@@ -224,6 +224,7 @@ not edit it by hand.
 | [Find the Narrowest Integer Range Covering Every Sorted Source](snippets/algorithms-data-structures/find-the-narrowest-integer-range-covering-every-sorted-source.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Find the Proposer-Optimal Stable Matching for Complete Strict Preferences](snippets/algorithms-data-structures/find-the-proposer-optimal-stable-matching-for-complete-strict-preferences.md) | algorithms-data-structures | algorithm | data-transformation, validation |
 | [Generate Event Times for a Linear Rate Ramp](snippets/algorithms-data-structures/generate-event-times-for-a-linear-rate-ramp.md) | algorithms-data-structures | algorithm | automation, performance-optimization |
+| [Generate Smooth Weighted Round-Robin Slots for Fixed Consumers](snippets/algorithms-data-structures/generate-smooth-weighted-round-robin-slots-for-fixed-consumers.md) | algorithms-data-structures | algorithm | data-transformation, resource-management |
 | [Group a One-Dimensional NumPy Structured Array into Stable Index Sets](snippets/algorithms-data-structures/group-a-one-dimensional-numpy-structured-array-into-stable-index-sets.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Interpolate a Global Polynomial Exactly from Bounded Integer Points](snippets/algorithms-data-structures/interpolate-a-global-polynomial-exactly-from-bounded-integer-points.md) | algorithms-data-structures | algorithm | data-transformation, validation |
 | [Invert Bounded Nonzero Prime-Field Residues with One Modular Inversion](snippets/algorithms-data-structures/invert-bounded-nonzero-prime-field-residues-with-one-modular-inversion.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
@@ -639,6 +640,7 @@ not edit it by hand.
 | [Split a Half-Open UTC Range Across Ordered Storage Tiers](snippets/storage-databases/split-a-half-open-utc-range-across-ordered-storage-tiers.md) | storage-databases | algorithm | data-transformation, persistence, validation |
 | [Spool a Bounded Byte Iterable into a Scoped Seekable Temporary File](snippets/storage-databases/spool-a-bounded-byte-iterable-into-a-scoped-seekable-temporary-file.md) | storage-databases | recipe | data-transformation, performance-optimization, resource-management |
 | [Store Bytes by Their Content Digest](snippets/storage-databases/store-bytes-by-their-content-digest.md) | storage-databases | recipe | caching, persistence |
+| [Suggest One-to-One File Content Matches Between Removed and Added Paths](snippets/storage-databases/suggest-one-to-one-file-content-matches-between-removed-and-added-paths.md) | storage-databases | recipe | automation, persistence, validation |
 | [Validate a Bounded Chunk Manifest Before a Conditional Version Switch](snippets/storage-databases/validate-a-bounded-chunk-manifest-before-a-conditional-version-switch.md) | storage-databases | pattern | concurrency-control, persistence, validation |
 | [Validate a Bounded Stage-Verify-Pointer-Switch Log](snippets/storage-databases/validate-a-bounded-stage-verify-pointer-switch-log.md) | storage-databases | pattern | persistence, validation |
 | [Write Bounded Byte Segments Exactly with os.writev](snippets/storage-databases/write-bounded-byte-segments-exactly-with-os-writev.md) | storage-databases | recipe | performance-optimization, resource-management, validation |
@@ -659,6 +661,7 @@ not edit it by hand.
 | [Decode a Closed Integer Capability Mask with Strict IntFlag Boundaries](snippets/configuration-serialization/decode-a-closed-integer-capability-mask-with-strict-intflag-boundaries.md) | configuration-serialization | recipe | configuration, interoperability, parsing, validation |
 | [Decode Canonical Unpadded Base64url Under Encoded and Decoded Byte Limits](snippets/configuration-serialization/decode-canonical-unpadded-base64url-under-encoded-and-decoded-byte-limits.md) | configuration-serialization | recipe | interoperability, parsing, serialization, validation |
 | [Decode One Bounded Strict UTF-8 Stream Across Arbitrary Byte Chunks](snippets/configuration-serialization/decode-one-bounded-strict-utf-8-stream-across-arbitrary-byte-chunks.md) | configuration-serialization | recipe | parsing, resource-management, validation |
+| [Decompress Gzip Bytes with an Explicit Output Limit](snippets/configuration-serialization/decompress-gzip-bytes-with-an-explicit-output-limit.md) | configuration-serialization | recipe | parsing, validation |
 | [Derive a Versioned Cache Key from Deterministically Encoded Bounded JSON](snippets/configuration-serialization/derive-a-versioned-cache-key-from-deterministically-encoded-bounded-json.md) | configuration-serialization | algorithm | caching, configuration, serialization, validation |
 | [Derive a Versioned Record Key from Explicit Identity Fields](snippets/configuration-serialization/derive-a-versioned-record-key-from-explicit-identity-fields.md) | configuration-serialization | algorithm | serialization, validation |
 | [Derive Deterministic Huffman Code Lengths from Bounded Byte Frequencies](snippets/configuration-serialization/derive-deterministic-huffman-code-lengths-from-bounded-byte-frequencies.md) | configuration-serialization | algorithm | data-transformation, serialization, validation |
@@ -734,6 +737,7 @@ not edit it by hand.
 | [Resolve Bounded Configuration Through Dependent Adapters](snippets/configuration-serialization/resolve-bounded-configuration-through-dependent-adapters.md) | configuration-serialization | pattern | configuration, data-transformation, validation |
 | [Resolve Declared Input Paths from an Explicit Execution Mode](snippets/configuration-serialization/resolve-declared-input-paths-from-an-explicit-execution-mode.md) | configuration-serialization | pattern | configuration, data-transformation, validation |
 | [Round-Trip a Bounded Nullable String Table with CSV Quote-Not-Null](snippets/configuration-serialization/round-trip-a-bounded-nullable-string-table-with-csv-quote-notnull.md) | configuration-serialization | recipe | interoperability, parsing, serialization, validation |
+| [Select a Compatible PEP 440 Version with Explicit Prerelease Fallback](snippets/configuration-serialization/select-a-compatible-pep-440-version-with-explicit-prerelease-fallback.md) | configuration-serialization | recipe | configuration, validation |
 | [Serialize a Bounded INI Mapping Only When It Round-Trips Exactly](snippets/configuration-serialization/serialize-a-bounded-ini-mapping-only-when-it-round-trips-exactly.md) | configuration-serialization | recipe | configuration, serialization, validation |
 | [Substitute Typed Values into a JSON-Like Template](snippets/configuration-serialization/substitute-typed-values-into-a-json-like-template.md) | configuration-serialization | recipe | configuration, serialization, validation |
 | [Tokenize a Bounded POSIX-Style Argument String Without Expansion](snippets/configuration-serialization/tokenize-a-bounded-posix-style-argument-string-without-expansion.md) | configuration-serialization | recipe | configuration, parsing, validation |
@@ -831,6 +835,7 @@ not edit it by hand.
 | [Wait for Named Queue Conditions Under One Monotonic Deadline](snippets/testing-tooling/wait-for-named-queue-conditions-under-one-monotonic-deadline.md) | testing-tooling | testing-technique | concurrency-control, testing, validation |
 | [Aggregate Bounded Sampled Stacks into Deterministic Collapsed Counts](snippets/observability-operations/aggregate-bounded-sampled-stacks-into-deterministic-collapsed-counts.md) | observability-operations | algorithm | data-transformation, observability, serialization, validation |
 | [Capture a Bounded Pickle-Friendly Exception Report](snippets/observability-operations/capture-a-bounded-pickle-friendly-exception-report.md) | observability-operations | recipe | interoperability, observability, serialization |
+| [Capture a Scoped Tail of Log Messages for a Failing Test](snippets/observability-operations/capture-a-scoped-tail-of-log-messages-for-a-failing-test.md) | observability-operations | testing-technique | lifecycle-management, observability, testing |
 | [Capture One CPython Thread-Stack Snapshot to a File Descriptor](snippets/observability-operations/capture-one-cpython-thread-stack-snapshot-to-a-file-descriptor.md) | observability-operations | recipe | observability, resource-management |
 | [Classify a Finite Value with Warning and Critical Limits](snippets/observability-operations/classify-a-finite-value-with-warning-and-critical-limits.md) | observability-operations | recipe | observability, validation |
 | [Classify Paired Error-Budget Burn Windows from Cumulative Counter Snapshots](snippets/observability-operations/classify-paired-error-budget-burn-windows-from-cumulative-counter-snapshots.md) | observability-operations | algorithm | observability, validation |
