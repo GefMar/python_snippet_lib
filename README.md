@@ -17,15 +17,15 @@ not edit it by hand.
 
 | Category | Scope | Snippets |
 | --- | --- | ---: |
-| [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 46 |
-| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 234 |
+| [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 48 |
+| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 235 |
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 45 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 37 |
 | [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 65 |
 | [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 100 |
 | [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 78 |
-| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 65 |
-| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 103 |
+| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 66 |
+| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 104 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 34 |
 | [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 72 |
 | [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 42 |
@@ -60,6 +60,7 @@ not edit it by hand.
 | [Keep a Dataclass Positional Match Interface Stable with Keyword-Only Fields](snippets/python-language/keep-a-dataclass-positional-match-interface-stable-with-keyword-only-fields.md) | python-language | idiom | interoperability, testing |
 | [Keep Bound-Method Registrations without Retaining Their Owners](snippets/python-language/keep-bound-method-registrations-without-retaining-their-owners.md) | python-language | pattern | lifecycle-management, resource-management |
 | [Keep Exception Handlers Narrow with try/else](snippets/python-language/keep-exception-handlers-narrow-with-try-else.md) | python-language | idiom | parsing, validation |
+| [Keep Stream Ownership When Accepting a Path or an Open Text Stream](snippets/python-language/keep-stream-ownership-when-accepting-a-path-or-an-open-text-stream.md) | python-language | recipe | interoperability, resource-management |
 | [Load Bounded Trusted Extension Factories by One Entry Point](snippets/python-language/load-bounded-trusted-extension-factories-by-one-entry-point.md) | python-language | recipe | interoperability, validation |
 | [Load Text Templates from Package Resources](snippets/python-language/load-text-templates-from-package-resources.md) | python-language | recipe | resource-management, validation |
 | [Make a Defensive Copy at a Mutable Input Boundary](snippets/python-language/make-a-defensive-copy-at-a-mutable-input-boundary.md) | python-language | idiom | data-transformation, resource-management |
@@ -72,6 +73,7 @@ not edit it by hand.
 | [Read a Fixed-Width Byte Record with the Index Protocol](snippets/python-language/read-a-fixed-width-byte-record-with-the-index-protocol.md) | python-language | recipe | data-transformation, validation |
 | [Read Fixed-Size Blocks with iter() and a Sentinel](snippets/python-language/read-fixed-size-blocks-with-iter-sentinel.md) | python-language | idiom | performance-optimization, resource-management |
 | [Recompute Abstract Methods After Installing Implementations with a Class Decorator](snippets/python-language/recompute-abstract-methods-after-installing-implementations-with-a-class-decorator.md) | python-language | recipe | interoperability, testing |
+| [Report Multiple Invalid Options in One ExceptionGroup](snippets/python-language/report-multiple-invalid-options-in-one-exceptiongroup.md) | python-language | recipe | configuration, validation |
 | [Return NotImplemented for Unsupported Rich Comparisons](snippets/python-language/return-notimplemented-for-unsupported-rich-comparisons.md) | python-language | idiom | interoperability, validation |
 | [Reuse Live Objects by Exact String Key with WeakValueDictionary](snippets/python-language/reuse-live-objects-by-exact-string-key-with-weakvaluedictionary.md) | python-language | pattern | caching, resource-management, validation |
 | [Split a Bounded ExceptionGroup by Closed Exception Types](snippets/python-language/split-a-bounded-exceptiongroup-by-closed-exception-types.md) | python-language | pattern | validation |
@@ -172,6 +174,7 @@ not edit it by hand.
 | [Count Exact Source-to-Target Paths in a Bounded DAG](snippets/algorithms-data-structures/count-exact-source-to-target-paths-in-a-bounded-dag.md) | algorithms-data-structures | algorithm | data-transformation, validation |
 | [Count Index-Distinct Longest Strictly Increasing Subsequences of Bounded Integers](snippets/algorithms-data-structures/count-index-distinct-longest-strictly-increasing-subsequences-of-bounded-integers.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Count Index-Distinct Pairs with a Target Sum in a Sorted Sequence](snippets/algorithms-data-structures/count-index-distinct-pairs-with-a-target-sum-in-a-sorted-sequence.md) | algorithms-data-structures | algorithm | data-transformation |
+| [Count Minimum Adjacent Swaps Between Equal Character Multisets](snippets/algorithms-data-structures/count-minimum-adjacent-swaps-between-equal-character-multisets.md) | algorithms-data-structures | algorithm | data-transformation |
 | [Count Perfect Matchings in a Bounded Balanced Bipartite Graph with Subset DP](snippets/algorithms-data-structures/count-perfect-matchings-in-a-bounded-balanced-bipartite-graph-with-subset-dp.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, testing, validation |
 | [Count Sparse Static Points in Half-Open Rectangles with an Offline Sweep](snippets/algorithms-data-structures/count-sparse-static-points-in-half-open-rectangles-with-an-offline-sweep.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Count Strict Inversions in a Bounded Integer Sequence](snippets/algorithms-data-structures/count-strict-inversions-in-a-bounded-integer-sequence.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
@@ -670,6 +673,7 @@ not edit it by hand.
 | [Inspect the Checksum-Valid Prefix of a Bounded SQLite WAL Image](snippets/storage-databases/inspect-the-checksum-valid-prefix-of-a-bounded-sqlite-wal-image.md) | storage-databases | recipe | parsing, persistence, validation |
 | [List an Open POSIX Directory After Its Path Is Replaced](snippets/storage-databases/list-an-open-posix-directory-after-its-path-is-replaced.md) | storage-databases | recipe | persistence, resource-management |
 | [Map a Namespaced POSIX Path Beneath a Logical Local Root](snippets/storage-databases/map-a-namespaced-posix-path-beneath-a-logical-local-root.md) | storage-databases | recipe | data-transformation, persistence, validation |
+| [Match a Literal Prefix with SQLite LIKE and an Explicit Escape](snippets/storage-databases/match-a-literal-prefix-with-sqlite-like-and-an-explicit-escape.md) | storage-databases | recipe | persistence, validation |
 | [Open a Verified Read-Only SQLite Connection Under a Closed Hardening Profile](snippets/storage-databases/open-a-verified-read-only-sqlite-connection-under-a-closed-hardening-profile.md) | storage-databases | recipe | persistence, resource-management, security, validation |
 | [Page Bounded SQLite Rows with a Composite Keyset Cursor](snippets/storage-databases/page-bounded-sqlite-rows-with-a-composite-keyset-cursor.md) | storage-databases | pattern | performance-optimization, persistence, validation |
 | [Plan a Bounded Named POSIX Layout Under Explicit Roots](snippets/storage-databases/plan-a-bounded-named-posix-layout-under-explicit-roots.md) | storage-databases | algorithm | data-transformation, persistence, validation |
@@ -729,6 +733,7 @@ not edit it by hand.
 | [Elide Nested Mapping Values That Match Explicit Defaults](snippets/configuration-serialization/elide-nested-mapping-values-that-match-explicit-defaults.md) | configuration-serialization | recipe | configuration, serialization |
 | [Embed a Small Routing Hint in a Random UUIDv8](snippets/configuration-serialization/embed-a-small-routing-hint-in-a-random-uuidv8.md) | configuration-serialization | recipe | interoperability, serialization, validation |
 | [Encode a Bounded Signed Integer in Its Shortest Big-Endian Two's-Complement Byte String](snippets/configuration-serialization/encode-a-bounded-signed-integer-in-its-shortest-big-endian-twos-complement-byte-string.md) | configuration-serialization | algorithm | interoperability, serialization, validation |
+| [Encode a Sortable Eight-Byte Key for Each Finite Binary64 Float](snippets/configuration-serialization/encode-a-sortable-eight-byte-key-for-each-finite-binary64-float.md) | configuration-serialization | recipe | interoperability, serialization |
 | [Encode and Decode a Bounded Big-Endian Complex Vector with struct](snippets/configuration-serialization/encode-and-decode-a-bounded-big-endian-complex-vector-with-struct.md) | configuration-serialization | recipe | interoperability, serialization, validation |
 | [Encode and Decode a Bounded Byte Block with a Canonical Greedy LZ77 Profile](snippets/configuration-serialization/encode-and-decode-a-bounded-byte-block-with-a-canonical-greedy-lz77-profile.md) | configuration-serialization | algorithm | data-transformation, serialization, validation |
 | [Encode and Decode a Bounded Full-Block Z85 Frame](snippets/configuration-serialization/encode-and-decode-a-bounded-full-block-z85-frame.md) | configuration-serialization | recipe | interoperability, serialization, validation |
