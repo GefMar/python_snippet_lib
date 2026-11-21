@@ -17,17 +17,17 @@ not edit it by hand.
 
 | Category | Scope | Snippets |
 | --- | --- | ---: |
-| [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 50 |
-| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 241 |
+| [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 51 |
+| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 242 |
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 46 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 37 |
 | [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 65 |
 | [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 107 |
 | [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 80 |
-| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 68 |
-| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 107 |
+| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 69 |
+| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 108 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 34 |
-| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 78 |
+| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 79 |
 | [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 43 |
 
 ### Snippets
@@ -56,6 +56,7 @@ not edit it by hand.
 | [Handle Search Exhaustion with for/else](snippets/python-language/handle-search-exhaustion-with-for-else.md) | python-language | idiom | data-transformation, validation |
 | [Initialize a Closed Cooperative super() Diamond by Consuming Keyword Arguments](snippets/python-language/initialize-a-closed-cooperative-super-diamond-by-consuming-keyword-arguments.md) | python-language | pattern | interoperability, validation |
 | [Inspect Trusted Runtime Annotations while Preserving Unresolved Names](snippets/python-language/inspect-trusted-runtime-annotations-while-preserving-unresolved-names.md) | python-language | recipe | automation, validation |
+| [Invalidate a Cached Property When Replacing Its Source Data](snippets/python-language/invalidate-a-cached-property-when-replacing-its-source-data.md) | python-language | recipe | caching, performance-optimization, testing |
 | [Keep a Compatibility Wrapper with warnings.deprecated](snippets/python-language/keep-a-compatibility-wrapper-with-warnings-deprecated.md) | python-language | pattern | interoperability, lifecycle-management, testing |
 | [Keep a Dataclass Positional Match Interface Stable with Keyword-Only Fields](snippets/python-language/keep-a-dataclass-positional-match-interface-stable-with-keyword-only-fields.md) | python-language | idiom | interoperability, testing |
 | [Keep Bound-Method Registrations without Retaining Their Owners](snippets/python-language/keep-bound-method-registrations-without-retaining-their-owners.md) | python-language | pattern | lifecycle-management, resource-management |
@@ -280,6 +281,7 @@ not edit it by hand.
 | [Partition the Edges of a Bounded Simple Undirected Graph into Vertex-Biconnected Blocks](snippets/algorithms-data-structures/partition-the-edges-of-a-bounded-simple-undirected-graph-into-vertex-biconnected-blocks.md) | algorithms-data-structures | algorithm | data-transformation, validation |
 | [Plan a Minimum-Cost Parenthesization for a Bounded Matrix Chain](snippets/algorithms-data-structures/plan-a-minimum-cost-parenthesization-for-a-bounded-matrix-chain.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Plan Unblocked Dependency Waves with graphlib TopologicalSorter](snippets/algorithms-data-structures/plan-unblocked-dependency-waves-with-graphlib-topologicalsorter.md) | algorithms-data-structures | recipe | automation, data-transformation |
+| [Project an Integer Point onto a Closed Segment Exactly](snippets/algorithms-data-structures/project-an-integer-point-onto-a-closed-segment-exactly.md) | algorithms-data-structures | algorithm | data-transformation, validation |
 | [Rank and Unrank Bounded Balanced-Parentheses Strings in Lexicographic Order](snippets/algorithms-data-structures/rank-and-unrank-bounded-balanced-parentheses-strings-in-lexicographic-order.md) | algorithms-data-structures | algorithm | data-transformation, testing, validation |
 | [Rank and Unrank Bounded Integer Partitions in Lexicographic Order](snippets/algorithms-data-structures/rank-and-unrank-bounded-integer-partitions-in-lexicographic-order.md) | algorithms-data-structures | algorithm | data-transformation, testing, validation |
 | [Rank and Unrank Distinct Permutations of a Bounded Integer Multiset in Lexicographic Order](snippets/algorithms-data-structures/rank-and-unrank-distinct-permutations-of-a-bounded-integer-multiset-in-lexicographic-order.md) | algorithms-data-structures | algorithm | data-transformation, testing, validation |
@@ -714,6 +716,7 @@ not edit it by hand.
 | [Reject Ambiguous SQLite Row Aliases Before Fetching](snippets/storage-databases/reject-ambiguous-sqlite-row-aliases-before-fetching.md) | storage-databases | pattern | persistence, validation |
 | [Replace a Complete Bounded SQLite Cache Snapshot with a Generation](snippets/storage-databases/replace-a-complete-bounded-sqlite-cache-snapshot-with-a-generation.md) | storage-databases | pattern | caching, persistence, retry-recovery |
 | [Replace a File Atomically with a Sibling Temporary File](snippets/storage-databases/replace-a-file-atomically-with-a-sibling-temporary-file.md) | storage-databases | recipe | persistence, resource-management |
+| [Report Missing and Extra POSIX Permission Bits Without Changing a File](snippets/storage-databases/report-missing-and-extra-posix-permission-bits-without-changing-a-file.md) | storage-databases | recipe | observability, validation |
 | [Scope Caller-Owned SQLite Work with an Explicit Savepoint](snippets/storage-databases/scope-caller-owned-sqlite-work-with-an-explicit-savepoint.md) | storage-databases | pattern | persistence, resource-management |
 | [Select Elapsed-Time Coverage Anchors from Bounded Snapshots](snippets/storage-databases/select-elapsed-time-coverage-anchors-from-bounded-snapshots.md) | storage-databases | algorithm | automation, data-transformation, validation |
 | [Select Expired Backup Names with Strict UTC Timestamps](snippets/storage-databases/select-expired-backup-names-with-strict-utc-timestamps.md) | storage-databases | recipe | automation, parsing, validation |
@@ -819,6 +822,7 @@ not edit it by hand.
 | [Render a Finite Decimal in Canonical Plain Notation](snippets/configuration-serialization/render-a-finite-decimal-in-canonical-plain-notation.md) | configuration-serialization | recipe | interoperability, serialization, validation |
 | [Render a Stable Unified Diff for Nested JSON Values](snippets/configuration-serialization/render-a-stable-unified-diff-for-nested-json-values.md) | configuration-serialization | recipe | serialization, testing, validation |
 | [Render Fixed Date Placeholders from an Explicit Anchor](snippets/configuration-serialization/render-fixed-date-placeholders-from-an-explicit-anchor.md) | configuration-serialization | recipe | automation, configuration, validation |
+| [Report Missing Template Variables Before Substitution](snippets/configuration-serialization/report-missing-template-variables-before-substitution.md) | configuration-serialization | recipe | configuration, validation |
 | [Resolve a Bounded Configuration Fragment Graph](snippets/configuration-serialization/resolve-a-bounded-configuration-fragment-graph.md) | configuration-serialization | algorithm | configuration, data-transformation, validation |
 | [Resolve a Bounded Plain JSON Pointer](snippets/configuration-serialization/resolve-a-bounded-plain-json-pointer.md) | configuration-serialization | recipe | configuration, parsing, validation |
 | [Resolve an Absolute or Percentage Limit](snippets/configuration-serialization/resolve-an-absolute-or-percentage-limit.md) | configuration-serialization | recipe | configuration, parsing, validation |
@@ -922,6 +926,7 @@ not edit it by hand.
 | [Locate the Innermost Failing Expression as UTF-8 Byte Columns](snippets/testing-tooling/locate-the-innermost-failing-expression-as-utf-8-byte-columns.md) | testing-tooling | testing-technique | observability, testing |
 | [Parse a Bounded Debugger Function Listing into Canonical Source Locations](snippets/testing-tooling/parse-a-bounded-debugger-function-listing-into-canonical-source-locations.md) | testing-tooling | testing-technique | parsing, testing, validation |
 | [Parse a Bounded Space-Indented Test Outline into Leaf Paths](snippets/testing-tooling/parse-a-bounded-space-indented-test-outline-into-leaf-paths.md) | testing-tooling | algorithm | parsing, testing, validation |
+| [Patch a Real Property with PropertyMock and Restore It on Error](snippets/testing-tooling/patch-a-real-property-with-propertymock-and-restore-it-on-error.md) | testing-tooling | testing-technique | lifecycle-management, testing |
 | [Profile One Synchronous Workload and Read Call Counts](snippets/testing-tooling/profile-one-synchronous-workload-and-read-call-counts.md) | testing-tooling | testing-technique | observability, performance-optimization, testing |
 | [Prune Named Generated Subtrees with Top-Down Path.walk](snippets/testing-tooling/prune-named-generated-subtrees-with-top-down-path-walk.md) | testing-tooling | recipe | automation, testing |
 | [Refresh a Cached Path.info Classification After Replacing an Entry](snippets/testing-tooling/refresh-a-cached-path-info-classification-after-replacing-an-entry.md) | testing-tooling | testing-technique | testing, validation |
