@@ -18,16 +18,16 @@ not edit it by hand.
 | Category | Scope | Snippets |
 | --- | --- | ---: |
 | [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 44 |
-| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 228 |
+| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 230 |
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 45 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 37 |
 | [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 65 |
-| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 96 |
+| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 97 |
 | [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 77 |
 | [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 63 |
 | [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 103 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 34 |
-| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 68 |
+| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 70 |
 | [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 41 |
 
 ### Snippets
@@ -254,6 +254,7 @@ not edit it by hand.
 | [Map Keys with an Immutable Consistent Hash Ring](snippets/algorithms-data-structures/map-keys-with-an-immutable-consistent-hash-ring.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization |
 | [Map Points Between Rectangular Coordinate Spaces](snippets/algorithms-data-structures/map-points-between-rectangular-coordinate-spaces.md) | algorithms-data-structures | algorithm | data-transformation, interoperability |
 | [Match Strict Mutual Nearest Neighbors with a Comparison Budget](snippets/algorithms-data-structures/match-strict-mutual-nearest-neighbors-with-a-comparison-budget.md) | algorithms-data-structures | algorithm | data-transformation, validation |
+| [Measure the Unsigned Angle Between Two Planar Vectors](snippets/algorithms-data-structures/measure-the-unsigned-angle-between-two-planar-vectors.md) | algorithms-data-structures | recipe | data-transformation |
 | [Merge Bounded Sorted Integer Runs with Observable Source-Order Ties](snippets/algorithms-data-structures/merge-bounded-sorted-integer-runs-with-observable-source-order-ties.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Minimize a Bounded Complete DFA into a Canonical Reachable Form](snippets/algorithms-data-structures/minimize-a-bounded-complete-dfa-into-a-canonical-reachable-form.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, testing, validation |
 | [Model Newest-Wins Lookups with Bounded Immutable LSM Segments](snippets/algorithms-data-structures/model-newest-wins-lookups-with-bounded-immutable-lsm-segments.md) | algorithms-data-structures | pattern | data-transformation, resource-management |
@@ -281,6 +282,7 @@ not edit it by hand.
 | [Resolve Bounded Integer Difference Constraints with Weighted Union-Find](snippets/algorithms-data-structures/resolve-bounded-integer-difference-constraints-with-weighted-union-find.md) | algorithms-data-structures | algorithm | data-transformation, validation |
 | [Resolve Stable Ordering Constraints with Topological Sort](snippets/algorithms-data-structures/resolve-stable-ordering-constraints-with-topological-sort.md) | algorithms-data-structures | algorithm | data-transformation, validation |
 | [Return the Next Lexicographic Permutation of Bounded Integers](snippets/algorithms-data-structures/return-the-next-lexicographic-permutation-of-bounded-integers.md) | algorithms-data-structures | algorithm | data-transformation, testing, validation |
+| [Schedule a Round-Robin Tournament with a Bye for Odd Groups](snippets/algorithms-data-structures/schedule-a-round-robin-tournament-with-a-bye-for-odd-groups.md) | algorithms-data-structures | algorithm | automation, data-transformation, resource-management |
 | [Search a Bounded Exact-Cover System with Algorithm X](snippets/algorithms-data-structures/search-a-bounded-exact-cover-system-with-algorithm-x.md) | algorithms-data-structures | algorithm | data-transformation, testing, validation |
 | [Select a Canonical Maximum-Weight Independent Set in a Bounded Forest](snippets/algorithms-data-structures/select-a-canonical-maximum-weight-independent-set-in-a-bounded-forest.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Select a Maximum-Cardinality Set of Non-Overlapping Half-Open Integer Intervals](snippets/algorithms-data-structures/select-a-maximum-cardinality-set-of-non-overlapping-half-open-integer-intervals.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
@@ -466,6 +468,7 @@ not edit it by hand.
 | [Build Bounded Digest Summaries Across Explicit Lookback Horizons](snippets/data-processing/build-bounded-digest-summaries-across-explicit-lookback-horizons.md) | data-processing | algorithm | data-transformation, resource-management, validation |
 | [Build Bounded Per-Key Validity Histories from Versioned Change Records](snippets/data-processing/build-bounded-per-key-validity-histories-from-versioned-change-records.md) | data-processing | algorithm | data-transformation, validation |
 | [Build Canonical CSR Arrays from Bounded Integer Coordinate Entries](snippets/data-processing/build-canonical-csr-arrays-from-bounded-integer-coordinate-entries.md) | data-processing | algorithm | data-transformation, performance-optimization, validation |
+| [Build Named Rows from Columns with Strict Zip](snippets/data-processing/build-named-rows-from-columns-with-strict-zip.md) | data-processing | recipe | data-transformation, validation |
 | [Build Quantized Decimal Views with Deltas at Explicit Scales](snippets/data-processing/build-quantized-decimal-views-with-deltas-at-explicit-scales.md) | data-processing | recipe | data-transformation, validation |
 | [Check a Value Against an Asymmetric Tolerance Band](snippets/data-processing/check-a-value-against-an-asymmetric-tolerance-band.md) | data-processing | algorithm | validation |
 | [Clean a pandas Series with First-Match Rules and Audit Counts](snippets/data-processing/clean-a-pandas-series-with-first-match-rules-and-audit-counts.md) | data-processing | integration | data-transformation, validation |
@@ -872,6 +875,7 @@ not edit it by hand.
 | [Inject One Failure at Every Ordered Checkpoint](snippets/testing-tooling/inject-one-failure-at-every-ordered-checkpoint.md) | testing-tooling | pattern | lifecycle-management, resource-management, testing, validation |
 | [Inspect Bounded Named Class Attributes Without Invoking Descriptors](snippets/testing-tooling/inspect-bounded-named-class-attributes-without-invoking-descriptors.md) | testing-tooling | testing-technique | automation, testing, validation |
 | [Keep Repeated Tokens in Matching Blocks with SequenceMatcher](snippets/testing-tooling/keep-repeated-tokens-in-matching-blocks-with-sequence-matcher.md) | testing-tooling | testing-technique | data-transformation, testing |
+| [Locate the Innermost Failing Expression as UTF-8 Byte Columns](snippets/testing-tooling/locate-the-innermost-failing-expression-as-utf-8-byte-columns.md) | testing-tooling | testing-technique | observability, testing |
 | [Parse a Bounded Debugger Function Listing into Canonical Source Locations](snippets/testing-tooling/parse-a-bounded-debugger-function-listing-into-canonical-source-locations.md) | testing-tooling | testing-technique | parsing, testing, validation |
 | [Parse a Bounded Space-Indented Test Outline into Leaf Paths](snippets/testing-tooling/parse-a-bounded-space-indented-test-outline-into-leaf-paths.md) | testing-tooling | algorithm | parsing, testing, validation |
 | [Refresh a Cached Path.info Classification After Replacing an Entry](snippets/testing-tooling/refresh-a-cached-path-info-classification-after-replacing-an-entry.md) | testing-tooling | testing-technique | testing, validation |
@@ -890,6 +894,7 @@ not edit it by hand.
 | [Verify Call Order Across Attached Mocks](snippets/testing-tooling/verify-call-order-across-multiple-mocks-with-attach-mock.md) | testing-tooling | testing-technique | testing, validation |
 | [Verify Calls to a Standalone Function with Autospec](snippets/testing-tooling/verify-calls-to-a-standalone-function-with-create-autospec.md) | testing-tooling | testing-technique | testing, validation |
 | [Verify Ordered HTTP Client Expectations with Bounded Mismatch Reports](snippets/testing-tooling/verify-ordered-http-client-expectations-with-bounded-mismatch-reports.md) | testing-tooling | testing-technique | networking, testing, validation |
+| [Verify Synchronous Generator Cleanup Before and After First Next](snippets/testing-tooling/verify-synchronous-generator-cleanup-before-and-after-first-next.md) | testing-tooling | testing-technique | lifecycle-management, testing |
 | [Verify That an Async Collaborator Is Called and Awaited Exactly](snippets/testing-tooling/verify-that-an-async-collaborator-is-called-and-awaited-exactly.md) | testing-tooling | testing-technique | testing, validation |
 | [Wait for a Cross-Thread Callback with ThreadingMock Instead of Sleeping](snippets/testing-tooling/wait-for-a-cross-thread-callback-with-threadingmock-instead-of-sleeping.md) | testing-tooling | testing-technique | concurrency-control, testing, validation |
 | [Wait for Every Named Connector Under One Shared Deadline](snippets/testing-tooling/wait-for-every-named-connector-under-one-shared-deadline.md) | testing-tooling | testing-technique | concurrency-control, resource-management, testing, validation |
