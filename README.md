@@ -17,17 +17,17 @@ not edit it by hand.
 
 | Category | Scope | Snippets |
 | --- | --- | ---: |
-| [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 51 |
-| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 242 |
+| [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 52 |
+| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 243 |
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 46 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 37 |
 | [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 65 |
-| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 107 |
+| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 109 |
 | [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 80 |
 | [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 69 |
 | [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 108 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 34 |
-| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 79 |
+| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 80 |
 | [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 43 |
 
 ### Snippets
@@ -80,6 +80,7 @@ not edit it by hand.
 | [Return NotImplemented for Unsupported Rich Comparisons](snippets/python-language/return-notimplemented-for-unsupported-rich-comparisons.md) | python-language | idiom | interoperability, validation |
 | [Reuse Live Objects by Exact String Key with WeakValueDictionary](snippets/python-language/reuse-live-objects-by-exact-string-key-with-weakvaluedictionary.md) | python-language | pattern | caching, resource-management, validation |
 | [Split a Bounded ExceptionGroup by Closed Exception Types](snippets/python-language/split-a-bounded-exceptiongroup-by-closed-exception-types.md) | python-language | pattern | validation |
+| [Split a One-Shot Iterable Before a Matching Item](snippets/python-language/split-a-one-shot-iterable-before-a-matching-item.md) | python-language | recipe | data-transformation, resource-management |
 | [Store Bounded Values by Weak Object Identity Without Equality or Hashing](snippets/python-language/store-bounded-values-by-weak-object-identity-without-equality-or-hashing.md) | python-language | pattern | caching, lifecycle-management |
 | [Type a Narrow Structural Interface with Protocol](snippets/python-language/type-a-narrow-structural-interface-with-protocol.md) | python-language | pattern | interoperability, validation |
 | [Update Native Unsigned Integers In Place Through a Cast memoryview](snippets/python-language/update-native-unsigned-integers-in-place-through-a-cast-memoryview.md) | python-language | recipe | data-transformation, performance-optimization, validation |
@@ -212,6 +213,7 @@ not edit it by hand.
 | [Find a Deterministic Minimum-Cost Assignment and Dual Certificate with the Hungarian Algorithm](snippets/algorithms-data-structures/find-a-deterministic-minimum-cost-perfect-assignment-and-dual-certificate-with-the-hungarian-algorithm.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Find a Deterministic Minimum Vertex Cover in a Bounded Bipartite Graph](snippets/algorithms-data-structures/find-a-deterministic-minimum-vertex-cover-in-a-bounded-bipartite-graph.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, testing, validation |
 | [Find a Deterministic Minimum Vertex-Disjoint Path Cover of a Bounded DAG](snippets/algorithms-data-structures/find-a-deterministic-minimum-vertex-disjoint-path-cover-of-a-bounded-dag.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
+| [Find a Farthest Manhattan Pair with Coordinate Extrema](snippets/algorithms-data-structures/find-a-farthest-manhattan-pair-with-coordinate-extrema.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization |
 | [Find a Lexicographically First Minimum-Cost Perfect Assignment by Bitmask DP](snippets/algorithms-data-structures/find-a-lexicographically-first-minimum-cost-perfect-assignment-by-bitmask-dp.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, resource-management, validation |
 | [Find a Longest Common Integer Subsequence with Earliest Index-Pair Ties](snippets/algorithms-data-structures/find-a-longest-common-integer-subsequence-with-earliest-index-pair-ties.md) | algorithms-data-structures | algorithm | data-transformation, validation |
 | [Find a Longest Strictly Increasing Integer Subsequence with Earliest-Index Ties](snippets/algorithms-data-structures/find-a-longest-strictly-increasing-integer-subsequence-with-earliest-index-ties.md) | algorithms-data-structures | algorithm | data-transformation, validation |
@@ -477,6 +479,7 @@ not edit it by hand.
 | [Yield Bounded SSE Frames with Serialized Comment Keepalives](snippets/networking-protocols/yield-bounded-sse-frames-with-serialized-comment-keepalives.md) | networking-protocols | integration | concurrency-control, networking, resource-management, serialization |
 | [Aggregate Consecutive Values into Weighted Runs](snippets/data-processing/aggregate-consecutive-values-into-weighted-runs.md) | data-processing | algorithm | data-transformation |
 | [Aggregate pandas Groups into Explicit Flat Columns](snippets/data-processing/aggregate-pandas-groups-into-explicit-flat-columns.md) | data-processing | integration | data-transformation, interoperability, validation |
+| [Align Uneven Nullable Columns Without Losing the Presence Bit](snippets/data-processing/align-uneven-nullable-columns-without-losing-the-presence-bit.md) | data-processing | recipe | data-transformation |
 | [Assemble Fixed-Width Feature Slots from Bounded Named Sources](snippets/data-processing/assemble-fixed-width-feature-slots-from-bounded-named-sources.md) | data-processing | algorithm | data-transformation, validation |
 | [Audit Bounded Keyed Half-Open Intervals with Gap and Overlap Evidence](snippets/data-processing/audit-bounded-keyed-half-open-intervals-with-gap-and-overlap-evidence.md) | data-processing | algorithm | data-transformation, validation |
 | [Audit Candidate pandas Downcasts Before Applying Them](snippets/data-processing/audit-candidate-pandas-downcasts-before-applying-them.md) | data-processing | integration | data-transformation, performance-optimization, resource-management, validation |
@@ -513,6 +516,7 @@ not edit it by hand.
 | [Extract a Finite 2D Bounding Box from Bounded WKB](snippets/data-processing/extract-a-finite-2d-bounding-box-from-bounded-wkb.md) | data-processing | integration | data-transformation, parsing, validation |
 | [Extract Bounded Anchor Targets from HTML with HTMLParser](snippets/data-processing/extract-bounded-anchor-targets-from-html-with-htmlparser.md) | data-processing | recipe | data-transformation, parsing, validation |
 | [Extract Bounded Features with an Explicit Abstention Outcome](snippets/data-processing/extract-bounded-features-with-an-explicit-abstention-outcome.md) | data-processing | algorithm | data-transformation, validation |
+| [Extract Flat XML Records and Detach Processed Elements](snippets/data-processing/extract-flat-xml-records-and-detach-processed-elements.md) | data-processing | recipe | parsing, resource-management |
 | [Fan Out Events into Bounded Lookback Windows](snippets/data-processing/fan-out-events-into-bounded-lookback-windows.md) | data-processing | algorithm | data-transformation, resource-management, validation |
 | [Find a Half-Open Time Slice in Sorted Records with bisect](snippets/data-processing/find-a-half-open-time-slice-in-sorted-records-with-bisect.md) | data-processing | recipe | data-transformation |
 | [Find Deterministic Content-Defined Boundaries in Bounded Bytes with a Rolling Fingerprint](snippets/data-processing/find-deterministic-content-defined-boundaries-in-bounded-bytes-with-a-rolling-fingerprint.md) | data-processing | algorithm | caching, data-transformation, performance-optimization |
@@ -938,6 +942,7 @@ not edit it by hand.
 | [Report Independent Table Cases with unittest subTest](snippets/testing-tooling/report-independent-table-cases-with-unittest-subtest.md) | testing-tooling | testing-technique | testing, validation |
 | [Report Missing and Unknown Keys from a TypedDict Declaration](snippets/testing-tooling/report-missing-and-unknown-keys-from-a-typeddict-declaration.md) | testing-tooling | testing-technique | configuration, testing, validation |
 | [Report Missing Declared Protocol Members Without Binding Descriptors](snippets/testing-tooling/report-missing-declared-protocol-members-without-binding-descriptors.md) | testing-tooling | testing-technique | interoperability, testing, validation |
+| [Report Surplus and Shortage in a Fixture Using Signed Counts](snippets/testing-tooling/report-surplus-and-shortage-in-a-fixture-using-signed-counts.md) | testing-tooling | testing-technique | testing, validation |
 | [Run Trusted Doctest Examples with an Explicit Namespace](snippets/testing-tooling/run-trusted-doctest-examples-with-an-explicit-namespace.md) | testing-tooling | testing-technique | testing, validation |
 | [Scan Bounded Macro Declarations into a Canonical Event Index](snippets/testing-tooling/scan-bounded-macro-declarations-into-a-canonical-event-index.md) | testing-tooling | algorithm | parsing, testing, validation |
 | [Seal Test Mocks Against Unconfigured Collaborator Calls](snippets/testing-tooling/seal-test-mocks-against-unconfigured-collaborator-calls.md) | testing-tooling | testing-technique | testing, validation |
