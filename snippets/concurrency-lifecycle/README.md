@@ -8,6 +8,7 @@ thread/process/resource lifecycle is the primary invariant.
 <!-- catalog:category:start -->
 | Snippet | Type | Use Cases | Problem |
 | --- | --- | --- | --- |
+| [Abort a Threading Barrier When One Participant Fails Preparation](abort-a-threading-barrier-when-one-participant-fails-preparation.md) | pattern | concurrency-control, lifecycle-management | Release the rest of a fixed group of threads when one participant cannot reach their shared barrier. |
 | [Acquire a Fixed Set of Keyed Thread Locks in Canonical Order](acquire-a-fixed-set-of-keyed-thread-locks-in-canonical-order.md) | pattern | concurrency-control, resource-management, validation | Acquire every lock for one multi-key critical section in a shared canonical order so competing threads cannot form a lock-order cycle. |
 | [Coalesce Concurrent Thread Calls by Exact Key with One Shared Result Cell](coalesce-concurrent-thread-calls-by-exact-key-with-one-shared-result-cell.md) | pattern | concurrency-control, lifecycle-management, resource-management | Let overlapping thread calls for one key share a single in-progress computation without turning its result into a cache. |
 | [Collect a Bounded Async-Generator Prefix with Deterministic Closure](collect-a-bounded-async-generator-prefix-with-deterministic-closure.md) | pattern | concurrency-control, lifecycle-management, resource-management | Take ownership of one exact async generator, collect no more than a declared prefix, and close the generator on every exit path. |

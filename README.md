@@ -19,15 +19,15 @@ not edit it by hand.
 | --- | --- | ---: |
 | [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 38 |
 | [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 216 |
-| [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 42 |
+| [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 43 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 37 |
 | [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 65 |
-| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 85 |
+| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 87 |
 | [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 72 |
-| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 55 |
+| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 56 |
 | [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 99 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 34 |
-| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 56 |
+| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 57 |
 | [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 37 |
 
 ### Snippets
@@ -288,6 +288,7 @@ not edit it by hand.
 | [Traverse a Parent Graph with Breadth-First Search](snippets/algorithms-data-structures/traverse-a-parent-graph-with-breadth-first-search.md) | algorithms-data-structures | algorithm | data-transformation, validation |
 | [Two-Color a Bounded Undirected Graph or Return an Odd-Cycle Witness](snippets/algorithms-data-structures/two-color-a-bounded-undirected-graph-or-return-an-odd-cycle-witness.md) | algorithms-data-structures | algorithm | data-transformation, validation |
 | [Wrap Bounded ASCII Words with Minimum Squared Raggedness](snippets/algorithms-data-structures/wrap-bounded-ascii-words-with-minimum-squared-raggedness.md) | algorithms-data-structures | algorithm | data-transformation, testing, validation |
+| [Abort a Threading Barrier When One Participant Fails Preparation](snippets/concurrency-lifecycle/abort-a-threading-barrier-when-one-participant-fails-preparation.md) | concurrency-lifecycle | pattern | concurrency-control, lifecycle-management |
 | [Acquire a Fixed Set of Keyed Thread Locks in Canonical Order](snippets/concurrency-lifecycle/acquire-a-fixed-set-of-keyed-thread-locks-in-canonical-order.md) | concurrency-lifecycle | pattern | concurrency-control, resource-management, validation |
 | [Coalesce Concurrent Thread Calls by Exact Key with One Shared Result Cell](snippets/concurrency-lifecycle/coalesce-concurrent-thread-calls-by-exact-key-with-one-shared-result-cell.md) | concurrency-lifecycle | pattern | concurrency-control, lifecycle-management, resource-management |
 | [Collect a Bounded Async-Generator Prefix with Deterministic Closure](snippets/concurrency-lifecycle/collect-a-bounded-async-generator-prefix-with-deterministic-closure.md) | concurrency-lifecycle | pattern | concurrency-control, lifecycle-management, resource-management |
@@ -477,6 +478,7 @@ not edit it by hand.
 | [Join Two Strictly Increasing Streams by Exact Timestamp](snippets/data-processing/join-two-strictly-increasing-streams-by-exact-timestamp.md) | data-processing | pattern | data-transformation, resource-management, validation |
 | [Limit Text Lines Across Arbitrary Chunks](snippets/data-processing/limit-text-lines-across-arbitrary-chunks.md) | data-processing | recipe | parsing, resource-management |
 | [Map Exact pandas Dtypes to a Neutral Storage Schema](snippets/data-processing/map-exact-pandas-dtypes-to-a-neutral-storage-schema.md) | data-processing | integration | data-transformation, interoperability, validation |
+| [Map String Offsets to Line and Column Across Mixed Newlines](snippets/data-processing/map-string-offsets-to-line-and-column-across-mixed-newlines.md) | data-processing | recipe | data-transformation, interoperability, validation |
 | [Map UTF-16 Code-Unit Offsets to Python String Boundaries](snippets/data-processing/map-utf-16-code-unit-offsets-to-python-string-boundaries.md) | data-processing | recipe | data-transformation, interoperability, validation |
 | [Match Increasing Timestamps to the Nearest Right Timestamp Within a Tolerance](snippets/data-processing/match-increasing-timestamps-to-the-nearest-right-timestamp-within-a-tolerance.md) | data-processing | algorithm | data-transformation, validation |
 | [Match Two Increasing Integer Sequences One-to-One Within a Tolerance](snippets/data-processing/match-two-increasing-integer-sequences-one-to-one-within-a-tolerance.md) | data-processing | algorithm | data-transformation, testing, validation |
@@ -497,6 +499,7 @@ not edit it by hand.
 | [Read Bounded CSV Text into pandas Under an Explicit Schema](snippets/data-processing/read-bounded-csv-text-into-pandas-under-an-explicit-schema.md) | data-processing | integration | data-transformation, parsing, validation |
 | [Reconcile a Bounded Partial Record Under Explicit Field Policies](snippets/data-processing/reconcile-a-bounded-partial-record-under-explicit-field-policies.md) | data-processing | pattern | concurrency-control, data-transformation, validation |
 | [Reorder Bounded Out-of-Order Timestamped Records Under a Declared Lateness Bound](snippets/data-processing/reorder-bounded-out-of-order-timestamped-records-under-a-declared-lateness-bound.md) | data-processing | pattern | data-transformation, resource-management, validation |
+| [Report Missing Grid-Tick Runs Without Enumerating the Grid](snippets/data-processing/report-missing-grid-tick-runs-without-enumerating-the-grid.md) | data-processing | algorithm | data-transformation, observability, validation |
 | [Report Unicode NFC Collisions Before Importing Keys](snippets/data-processing/report-unicode-nfc-collisions-before-importing-keys.md) | data-processing | recipe | data-transformation, validation |
 | [Reshape Repeated pandas Column Families with Wide-to-Long](snippets/data-processing/reshape-repeated-pandas-column-families-with-wide-to-long.md) | data-processing | integration | data-transformation, interoperability, validation |
 | [Resolve Bounded Overlapping Integer Intervals by Priority into Canonical Winner Spans](snippets/data-processing/resolve-bounded-overlapping-integer-intervals-by-priority-into-canonical-winner-spans.md) | data-processing | algorithm | data-transformation, validation |
@@ -609,6 +612,7 @@ not edit it by hand.
 | [Group Bounded SQLite Console Lines into Lexically Complete Batches Without Execution](snippets/storage-databases/group-bounded-sqlite-console-lines-into-lexically-complete-batches-without-execution.md) | storage-databases | recipe | automation, parsing, validation |
 | [Group Hard-Linked Names in One POSIX Directory](snippets/storage-databases/group-hard-linked-names-in-one-posix-directory.md) | storage-databases | recipe | persistence, validation |
 | [Hand Off Bounded Bytes Through a Scoped Named Temporary Path](snippets/storage-databases/hand-off-bounded-bytes-through-a-scoped-named-temporary-path.md) | storage-databases | recipe | interoperability, persistence, resource-management |
+| [Hold One SQLite WAL Read Snapshot Across Multiple Queries](snippets/storage-databases/hold-one-sqlite-wal-read-snapshot-across-multiple-queries.md) | storage-databases | pattern | persistence, resource-management |
 | [Inspect a Bounded SQLite Database Header from In-Memory Bytes](snippets/storage-databases/inspect-a-bounded-sqlite-database-header-from-in-memory-bytes.md) | storage-databases | recipe | parsing, persistence, validation |
 | [Inspect the Checksum-Valid Prefix of a Bounded SQLite WAL Image](snippets/storage-databases/inspect-the-checksum-valid-prefix-of-a-bounded-sqlite-wal-image.md) | storage-databases | recipe | parsing, persistence, validation |
 | [Map a Namespaced POSIX Path Beneath a Logical Local Root](snippets/storage-databases/map-a-namespaced-posix-path-beneath-a-logical-local-root.md) | storage-databases | recipe | data-transformation, persistence, validation |
@@ -821,6 +825,7 @@ not edit it by hand.
 | [Parse a Bounded Space-Indented Test Outline into Leaf Paths](snippets/testing-tooling/parse-a-bounded-space-indented-test-outline-into-leaf-paths.md) | testing-tooling | algorithm | parsing, testing, validation |
 | [Render Bounded Request Snapshots into a Length-Framed Replay Payload](snippets/testing-tooling/render-bounded-request-snapshots-into-a-length-framed-replay-payload.md) | testing-tooling | recipe | networking, serialization, testing, validation |
 | [Replace Selected Python NAME Tokens without Touching Strings or Comments](snippets/testing-tooling/replace-selected-python-name-tokens-without-touching-strings-or-comments.md) | testing-tooling | recipe | automation, testing, validation |
+| [Replay a Randomized Test Case from a Generator Checkpoint](snippets/testing-tooling/replay-a-randomized-test-case-from-a-generator-checkpoint.md) | testing-tooling | testing-technique | testing |
 | [Report Duplicate Entry Point Names Without Loading Plugins](snippets/testing-tooling/report-duplicate-entry-point-names-without-loading-plugins.md) | testing-tooling | testing-technique | interoperability, testing, validation |
 | [Scan Bounded Macro Declarations into a Canonical Event Index](snippets/testing-tooling/scan-bounded-macro-declarations-into-a-canonical-event-index.md) | testing-tooling | algorithm | parsing, testing, validation |
 | [Shrink a Bounded Failing Sequence to a One-Deletion-Minimal Subsequence](snippets/testing-tooling/shrink-a-bounded-failing-sequence-to-a-one-deletion-minimal-subsequence.md) | testing-tooling | testing-technique | testing, validation |
