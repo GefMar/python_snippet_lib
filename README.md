@@ -19,13 +19,13 @@ not edit it by hand.
 | --- | --- | ---: |
 | [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 52 |
 | [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 244 |
-| [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 47 |
+| [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 48 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 37 |
 | [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 65 |
-| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 110 |
+| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 111 |
 | [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 81 |
-| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 69 |
-| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 108 |
+| [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 71 |
+| [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 109 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 34 |
 | [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 81 |
 | [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 43 |
@@ -367,6 +367,7 @@ not edit it by hand.
 | [Run One Async Operation with a Bounded Resource Stack](snippets/concurrency-lifecycle/run-one-async-operation-with-a-bounded-resource-stack.md) | concurrency-lifecycle | pattern | concurrency-control, lifecycle-management, resource-management |
 | [Run One Trusted Stateless Function in a Short-Lived Subinterpreter](snippets/concurrency-lifecycle/run-one-trusted-stateless-function-in-a-short-lived-subinterpreter.md) | concurrency-lifecycle | pattern | lifecycle-management, resource-management, testing |
 | [Run Several Synchronous Entry Calls on One asyncio Runner](snippets/concurrency-lifecycle/run-several-synchronous-entry-calls-on-one-asyncio-runner.md) | concurrency-lifecycle | recipe | interoperability, lifecycle-management |
+| [Scope a Current Directory Change to One Synchronous Operation](snippets/concurrency-lifecycle/scope-a-current-directory-change-to-one-synchronous-operation.md) | concurrency-lifecycle | recipe | lifecycle-management, testing |
 | [Select a Reusable Lease for an Explicit Remaining Horizon](snippets/concurrency-lifecycle/select-a-reusable-lease-for-an-explicit-remaining-horizon.md) | concurrency-lifecycle | algorithm | concurrency-control, lifecycle-management, resource-management, validation |
 | [Select an Immediate Predecessor from a Bounded Contender Snapshot](snippets/concurrency-lifecycle/select-an-immediate-predecessor-from-a-bounded-contender-snapshot.md) | concurrency-lifecycle | algorithm | concurrency-control, lifecycle-management, validation |
 | [Start One Thread with an Explicit ContextVar Inheritance Policy](snippets/concurrency-lifecycle/start-one-thread-with-an-explicit-contextvar-inheritance-policy.md) | concurrency-lifecycle | recipe | concurrency-control, observability, resource-management |
@@ -573,6 +574,7 @@ not edit it by hand.
 | [Sample a Stream with a Fixed-Size Reservoir](snippets/data-processing/sample-a-stream-with-a-fixed-size-reservoir.md) | data-processing | algorithm | data-transformation, resource-management |
 | [Sample a Weighted Stream with a Fixed-Size Reservoir](snippets/data-processing/sample-a-weighted-stream-with-a-fixed-size-reservoir.md) | data-processing | algorithm | data-transformation, performance-optimization, resource-management |
 | [Sample Stream Items Independently with a Fixed Probability](snippets/data-processing/sample-stream-items-independently-with-a-fixed-probability.md) | data-processing | algorithm | data-transformation |
+| [Select a CSV Delimiter from an Exact Header](snippets/data-processing/select-a-csv-delimiter-from-an-exact-header.md) | data-processing | recipe | parsing, validation |
 | [Select One Record per Key with an Explicit Ranking Rule](snippets/data-processing/select-one-record-per-key-with-an-explicit-ranking-rule.md) | data-processing | algorithm | data-transformation, validation |
 | [Select Preferred Inline Text from a MIME Message](snippets/data-processing/select-preferred-inline-text-from-a-mime-message.md) | data-processing | recipe | interoperability, parsing |
 | [Shift an Exact Date by Whole Calendar Months with Explicit Day Overflow](snippets/data-processing/shift-an-exact-date-by-whole-calendar-months-with-explicit-day-overflow.md) | data-processing | algorithm | data-transformation, validation |
@@ -683,6 +685,7 @@ not edit it by hand.
 | [Compare and Swap a Versioned SQLite Setting with One Conditional Update](snippets/storage-databases/compare-and-swap-a-versioned-sqlite-setting-with-one-conditional-update.md) | storage-databases | recipe | concurrency-control, persistence |
 | [Compare Bounded Apparent Sizes of Two File-Tree Snapshots](snippets/storage-databases/compare-bounded-apparent-sizes-of-two-file-tree-snapshots.md) | storage-databases | recipe | automation, persistence, resource-management |
 | [Compare Direct and Triggered SQLite Row Changes for One Write](snippets/storage-databases/compare-direct-and-triggered-sqlite-row-changes-for-one-write.md) | storage-databases | testing-technique | observability, persistence, testing |
+| [Compare SQLite Row Multiplicities with a Signed Union](snippets/storage-databases/compare-sqlite-row-multiplicities-with-a-signed-union.md) | storage-databases | recipe | persistence, validation |
 | [Compare Two Stable Regular Files by Content in Bounded Memory](snippets/storage-databases/compare-two-stable-regular-files-by-content-in-bounded-memory.md) | storage-databases | recipe | resource-management, validation |
 | [Compile a Bounded T-String into SQLite Qmark SQL and Parameters](snippets/storage-databases/compile-a-bounded-t-string-into-sqlite-qmark-sql-and-parameters.md) | storage-databases | pattern | persistence, security, validation |
 | [Decide Whether to Restore a Versioned Snapshot](snippets/storage-databases/decide-whether-to-restore-a-versioned-snapshot.md) | storage-databases | algorithm | configuration, data-transformation, validation |
@@ -725,6 +728,7 @@ not edit it by hand.
 | [Replace a Complete Bounded SQLite Cache Snapshot with a Generation](snippets/storage-databases/replace-a-complete-bounded-sqlite-cache-snapshot-with-a-generation.md) | storage-databases | pattern | caching, persistence, retry-recovery |
 | [Replace a File Atomically with a Sibling Temporary File](snippets/storage-databases/replace-a-file-atomically-with-a-sibling-temporary-file.md) | storage-databases | recipe | persistence, resource-management |
 | [Report Missing and Extra POSIX Permission Bits Without Changing a File](snippets/storage-databases/report-missing-and-extra-posix-permission-bits-without-changing-a-file.md) | storage-databases | recipe | observability, validation |
+| [Restore Independent In-Memory SQLite Fixtures from One Trusted Byte Snapshot](snippets/storage-databases/restore-independent-in-memory-sqlite-fixtures-from-one-trusted-byte-snapshot.md) | storage-databases | recipe | persistence, resource-management, testing |
 | [Scope Caller-Owned SQLite Work with an Explicit Savepoint](snippets/storage-databases/scope-caller-owned-sqlite-work-with-an-explicit-savepoint.md) | storage-databases | pattern | persistence, resource-management |
 | [Select Elapsed-Time Coverage Anchors from Bounded Snapshots](snippets/storage-databases/select-elapsed-time-coverage-anchors-from-bounded-snapshots.md) | storage-databases | algorithm | automation, data-transformation, validation |
 | [Select Expired Backup Names with Strict UTC Timestamps](snippets/storage-databases/select-expired-backup-names-with-strict-utc-timestamps.md) | storage-databases | recipe | automation, parsing, validation |
@@ -791,6 +795,7 @@ not edit it by hand.
 | [Get Nested Values with a Validated Dot Path](snippets/configuration-serialization/get-nested-values-with-a-validated-dot-path.md) | configuration-serialization | recipe | configuration, parsing |
 | [Inspect a Bounded Native FLAC Metadata Prefix without Decoding Audio](snippets/configuration-serialization/inspect-a-bounded-native-flac-metadata-prefix-without-decoding-audio.md) | configuration-serialization | recipe | interoperability, parsing, security, validation |
 | [Inspect Bounded PNG Critical-Chunk Structure without Decompressing Pixels](snippets/configuration-serialization/inspect-bounded-png-critical-chunk-structure-without-decompressing-pixels.md) | configuration-serialization | recipe | interoperability, parsing, security, validation |
+| [Interleave Two Unsigned Coordinates into a Morton Key](snippets/configuration-serialization/interleave-two-unsigned-coordinates-into-a-morton-key.md) | configuration-serialization | algorithm | data-transformation, serialization |
 | [Load a Bounded Allocation Rule with Marshmallow Cross-Field Validation](snippets/configuration-serialization/load-a-bounded-allocation-rule-with-marshmallow-cross-field-validation.md) | configuration-serialization | integration | configuration, validation |
 | [Load a Bounded Protobuf Descriptor Set in Dependency Order](snippets/configuration-serialization/load-a-bounded-protobuf-descriptor-set-in-dependency-order.md) | configuration-serialization | integration | interoperability, serialization, validation |
 | [Match a Client Against a Bounded Platform Availability Rule](snippets/configuration-serialization/match-a-client-against-a-bounded-platform-availability-rule.md) | configuration-serialization | recipe | configuration, interoperability, validation |
