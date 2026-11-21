@@ -18,17 +18,17 @@ not edit it by hand.
 | Category | Scope | Snippets |
 | --- | --- | ---: |
 | [Python Language](snippets/python-language/README.md) | Python data-model, typing, decorator, descriptor or metaprogramming semantics are the learning objective, not merely the implementation language. | 46 |
-| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 231 |
+| [Algorithms and Data Structures](snippets/algorithms-data-structures/README.md) | A general computational procedure, complexity property or data structure determines correctness independent of a product domain. | 232 |
 | [Concurrency and Lifecycle](snippets/concurrency-lifecycle/README.md) | Scheduling, synchronization, cancellation, task ownership or thread/process/resource lifecycle is the primary invariant. | 45 |
 | [Reliability and Resilience](snippets/reliability-resilience/README.md) | Failure policy such as retry, deadline, idempotency, fallback, recovery, cache correctness or lease behavior is the primary invariant. | 37 |
 | [Networking and Protocols](snippets/networking-protocols/README.md) | Wire format, transport, HTTP/RPC/socket behavior or protocol-client semantics determine correctness. | 65 |
-| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 98 |
-| [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 77 |
+| [Data Processing](snippets/data-processing/README.md) | Tabular, streaming, ETL or validation pipeline transformation is the primary problem. | 99 |
+| [Machine Learning and Statistics](snippets/machine-learning-statistics/README.md) | Statistical assumptions, model behavior, features or evaluation semantics determine correctness. | 78 |
 | [Storage and Databases](snippets/storage-databases/README.md) | Durability, transaction, query, migration, filesystem or persistence semantics determine correctness. | 64 |
 | [Configuration and Serialization](snippets/configuration-serialization/README.md) | Configuration acquisition/layering or representation, schema, codec and serialization semantics determine correctness. | 103 |
 | [Security and Privacy](snippets/security-privacy/README.md) | A threat model, cryptographic, authentication, authorization, redaction, privacy or hostile-input invariant is central. | 34 |
-| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 70 |
-| [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 41 |
+| [Testing and Tooling](snippets/testing-tooling/README.md) | The primary consumer is a test/build/developer workflow and the taught behavior is how that workflow is constructed or validated. | 71 |
+| [Observability and Operations](snippets/observability-operations/README.md) | Telemetry, logging, metrics, monitoring or operational automation is the primary behavior. | 42 |
 
 ### Snippets
 
@@ -138,6 +138,7 @@ not edit it by hand.
 | [Compute Bounded Bellman-Ford Distances and Detect Reachable Negative Cycles](snippets/algorithms-data-structures/compute-bounded-bellman-ford-distances-and-detect-reachable-negative-cycles.md) | algorithms-data-structures | algorithm | data-transformation, validation |
 | [Compute Canonical Bézout Coefficients for Two Bounded Integers](snippets/algorithms-data-structures/compute-canonical-bezout-coefficients-for-two-bounded-integers.md) | algorithms-data-structures | algorithm | data-transformation, testing, validation |
 | [Compute Core Numbers and a Deterministic Degeneracy Order for a Bounded Undirected Graph](snippets/algorithms-data-structures/compute-core-numbers-and-a-deterministic-degeneracy-order-for-a-bounded-undirected-graph.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
+| [Compute Each Leave-One-Out Product Under a Composite Modulus](snippets/algorithms-data-structures/compute-each-leave-one-out-product-under-a-composite-modulus.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization |
 | [Compute Euler's Totient Function Through a Bounded Limit with a Linear Sieve](snippets/algorithms-data-structures/compute-eulers-totient-function-through-a-bounded-limit-with-a-linear-sieve.md) | algorithms-data-structures | algorithm | data-transformation, performance-optimization, validation |
 | [Compute Exact Dominator Sets in a Bounded Directed Flow Graph](snippets/algorithms-data-structures/compute-exact-dominator-sets-in-a-bounded-directed-flow-graph.md) | algorithms-data-structures | algorithm | data-transformation, testing, validation |
 | [Compute Exact Rational Reduced Row-Echelon Form and Rank for a Bounded Integer Matrix](snippets/algorithms-data-structures/compute-exact-rational-reduced-row-echelon-form-and-rank-for-a-bounded-integer-matrix.md) | algorithms-data-structures | algorithm | data-transformation, testing, validation |
@@ -533,6 +534,7 @@ not edit it by hand.
 | [Reject Ambiguous DictReader Headers and Ragged CSV Rows](snippets/data-processing/reject-ambiguous-dictreader-headers-and-ragged-csv-rows.md) | data-processing | recipe | parsing, validation |
 | [Reorder Bounded Out-of-Order Timestamped Records Under a Declared Lateness Bound](snippets/data-processing/reorder-bounded-out-of-order-timestamped-records-under-a-declared-lateness-bound.md) | data-processing | pattern | data-transformation, resource-management, validation |
 | [Replace Literal Strings in One Leftmost-Longest Pass](snippets/data-processing/replace-literal-strings-in-one-leftmost-longest-pass.md) | data-processing | recipe | data-transformation |
+| [Report Competition Ranks for Tied Scores](snippets/data-processing/report-competition-ranks-for-tied-scores.md) | data-processing | recipe | data-transformation |
 | [Report Missing Grid-Tick Runs Without Enumerating the Grid](snippets/data-processing/report-missing-grid-tick-runs-without-enumerating-the-grid.md) | data-processing | algorithm | data-transformation, observability, validation |
 | [Report Unicode NFC Collisions Before Importing Keys](snippets/data-processing/report-unicode-nfc-collisions-before-importing-keys.md) | data-processing | recipe | data-transformation, validation |
 | [Reshape Repeated pandas Column Families with Wide-to-Long](snippets/data-processing/reshape-repeated-pandas-column-families-with-wide-to-long.md) | data-processing | integration | data-transformation, interoperability, validation |
@@ -626,6 +628,7 @@ not edit it by hand.
 | [Flag Groupwise Numeric Outliers with IQR Fences](snippets/machine-learning-statistics/flag-groupwise-numeric-outliers-with-iqr-fences.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Measure Drift Between Two Fixed-Bin Count Distributions with PSI](snippets/machine-learning-statistics/measure-drift-between-two-fixed-bin-count-distributions-with-psi.md) | machine-learning-statistics | algorithm | observability, validation |
 | [Plan Gap-Separated Expanding-Window Validation Splits for Ordered Rows](snippets/machine-learning-statistics/plan-gap-separated-expanding-window-validation-splits-for-ordered-rows.md) | machine-learning-statistics | algorithm | data-transformation, testing, validation |
+| [Pool Exact Within-Group Sample Variance from Summaries](snippets/machine-learning-statistics/pool-exact-within-group-sample-variance-from-summaries.md) | machine-learning-statistics | recipe | data-transformation |
 | [Query an Exact Empirical CDF from Sorted Integer Samples](snippets/machine-learning-statistics/query-an-exact-empirical-cdf-from-sorted-integer-samples.md) | machine-learning-statistics | recipe | data-transformation |
 | [Report Exact Binary Matthews-Correlation Evidence from Four Confusion Counts](snippets/machine-learning-statistics/report-exact-binary-matthews-correlation-evidence-from-four-confusion-counts.md) | machine-learning-statistics | algorithm | data-transformation, validation |
 | [Sample Weighted Negative Items Outside Explicit User Histories](snippets/machine-learning-statistics/sample-weighted-negative-items-outside-explicit-user-histories.md) | machine-learning-statistics | algorithm | data-transformation, validation |
@@ -846,6 +849,7 @@ not edit it by hand.
 | [Audit Bounded Python Source for Tab-Width-Independent Indentation](snippets/testing-tooling/audit-bounded-python-source-for-tab-width-independent-indentation.md) | testing-tooling | testing-technique | parsing, testing, validation |
 | [Build a Bounded Release DAG Around a Manual Barrier](snippets/testing-tooling/build-a-bounded-release-dag-around-a-manual-barrier.md) | testing-tooling | pattern | automation, testing, validation |
 | [Build a Collision-Audited Artifact Copy Plan](snippets/testing-tooling/build-a-collision-audited-artifact-copy-plan.md) | testing-tooling | algorithm | automation, resource-management, testing, validation |
+| [Build Configuration Help from Dataclass Field Docs](snippets/testing-tooling/build-configuration-help-from-dataclass-field-docs.md) | testing-tooling | recipe | automation, configuration, testing |
 | [Capture Executed Lines for One Code Object with sys.monitoring](snippets/testing-tooling/capture-executed-lines-for-one-code-object-with-sys-monitoring.md) | testing-tooling | testing-technique | observability, testing |
 | [Capture Mutable Mock Arguments at Call Time](snippets/testing-tooling/capture-mutable-mock-arguments-at-call-time.md) | testing-tooling | testing-technique | testing, validation |
 | [Capture Unraisable Exception Types in a Scoped Test](snippets/testing-tooling/capture-unraisable-exception-types-in-a-scoped-test.md) | testing-tooling | testing-technique | lifecycle-management, observability, testing |
@@ -905,6 +909,7 @@ not edit it by hand.
 | [Wait for Every Named Connector Under One Shared Deadline](snippets/testing-tooling/wait-for-every-named-connector-under-one-shared-deadline.md) | testing-tooling | testing-technique | concurrency-control, resource-management, testing, validation |
 | [Wait for Named Queue Conditions Under One Monotonic Deadline](snippets/testing-tooling/wait-for-named-queue-conditions-under-one-monotonic-deadline.md) | testing-tooling | testing-technique | concurrency-control, testing, validation |
 | [Aggregate Bounded Sampled Stacks into Deterministic Collapsed Counts](snippets/observability-operations/aggregate-bounded-sampled-stacks-into-deterministic-collapsed-counts.md) | observability-operations | algorithm | data-transformation, observability, serialization, validation |
+| [Buffer Context Log Records Until Severity or Capacity Flushes](snippets/observability-operations/buffer-context-log-records-until-severity-or-capacity-flushes.md) | observability-operations | recipe | lifecycle-management, observability |
 | [Capture a Bounded Pickle-Friendly Exception Report](snippets/observability-operations/capture-a-bounded-pickle-friendly-exception-report.md) | observability-operations | recipe | interoperability, observability, serialization |
 | [Capture a Scoped Tail of Log Messages for a Failing Test](snippets/observability-operations/capture-a-scoped-tail-of-log-messages-for-a-failing-test.md) | observability-operations | testing-technique | lifecycle-management, observability, testing |
 | [Capture One CPython Thread-Stack Snapshot to a File Descriptor](snippets/observability-operations/capture-one-cpython-thread-stack-snapshot-to-a-file-descriptor.md) | observability-operations | recipe | observability, resource-management |
